@@ -1,0 +1,24 @@
+model Shift {
+  id String @id @default(uuid())
+  name      String @unique
+
+  class_routine_shift ClassRoutine[]
+
+  created_by_id String?
+  created_by    User?   @relation("shift_created_by", fields: [created_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
+  
+  updated_by_id String?
+  updated_by    User?     @relation("shift_updated_by", fields: [updated_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
+  
+  created_at    DateTime  @default(now())
+  updated_at    DateTime? @updatedAt
+  @@map("shifts")
+}
+
+/*
+**SHIFTS: **
+1. MORNING             For PLAYGROUP, NURSERY, KG, GRADE_ONE and GRADE_TWO
+2. DAY                 For PLAYGROUP, NURSERY, KG, GRADE_ONE and GRADE_TWO
+3. BOYS                For GRADE_SIX to GRADE_TEN
+4. GIRLS               For GRADE_SIX to GRADE_TEN
+*/

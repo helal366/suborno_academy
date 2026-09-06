@@ -1,0 +1,141 @@
+model User {
+  id                  String      @id @default(uuid())
+  full_name                String
+  mobile_number            String
+  is_mobile_verified       Boolean     @default(false)
+  gender                   Gender
+  blood_group              BloodGroup?
+  date_of_birth            DateTime?
+  height_in_cm             Float?
+  weight_in_kg             Float?
+  religion                 Religion?
+  nationality              String      @default("Bangladeshi")
+  birth_certificate_number String?
+  nid_number               String?
+  photo_url                String?
+
+  father_details_id String?
+  father_details    UserFatherDetails? @relation(name: "user_father_details", fields: [father_details_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
+
+  mother_details_id String?
+  mother_details    UserMotherDetails? @relation(name: "user_mother_details", fields: [mother_details_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
+
+  email         String? @unique
+  user_name     String? @unique
+  user_password String? @default("sm1234ps")
+
+  active_status           ActiveStatus             @default(ACTIVE)
+  active_inactive_history UserActiveInactiveHistory[] @relation("user_active_history")
+  is_deleted              Boolean                  @default(false)
+
+  position_id String?
+  position    UserPosition? @relation("user_position_relation", fields: [position_id], references: [position_id], onDelete: Restrict, onUpdate: Cascade)
+
+  role_name String?
+  role      UserRole?  @relation("user_role_relation", fields: [role_name], references: [role_name])
+
+  present_address   PresentAddress?
+  permanent_address PermanentAddress?
+
+  student_profile Student? @relation("user_student")
+  teacher_profile AcademicTeacher?
+
+  audit_logs AuditLog[]
+
+  created_classes Class[] @relation("class_created_by")
+  updated_classes Class[] @relation("class_updated_by")
+
+  created_routine ClassRoutine[] @relation("routine_created_by")
+  updated_routine ClassRoutine[] @relation("routine_updated_by")
+
+  created_books Book[]      @relation("book_created_by")
+  updated_books Book[]      @relation("book_updated_by")
+  book_links    BookClass[]
+
+  created_shifts Shift[] @relation("shift_created_by")
+  updated_shifts Shift[] @relation("shift_updated_by")
+
+  created_academic_results AcademicResult[] @relation("academic_result_created_by")
+  updated_academic_results AcademicResult[] @relation("academic_result_updated_by")
+
+  created_academic_teachers AcademicTeacher[] @relation("academic_teacher_created_by")
+  updated_academic_teachers AcademicTeacher[] @relation("academic_teacher_updated_by")
+
+  created_academic_years AcademicYear[] @relation("academic_year_created_by")
+  updated_academic_years AcademicYear[] @relation("academic_year_updated_by")
+
+  created_periods Period[] @relation("period_created_by")
+  updated_periods Period[] @relation("period_updated_by")
+
+  created_permanent_address PermanentAddress[] @relation("permanent_address_created_by")
+  updated_permanent_address PermanentAddress[] @relation("permanent_address_updated_by")
+
+  created_present_address PresentAddress[] @relation("present_address_created_by")
+  updated_present_address PresentAddress[] @relation("present_address_updated_by")
+
+  created_quranic_special_period QuranicSpecialPeriod[] @relation("quranic_special_period_created_by")
+  updated_quranic_special_period QuranicSpecialPeriod[] @relation("quranic_special_period_updated_by")
+
+  created_quranic_subjects QuranicSubject[] @relation("quranic_subject_created_by")
+  updated_quranic_subjects QuranicSubject[] @relation("quranic_subject_updated_by")
+
+  created_spouse_information SpouseInformation[] @relation("spouse_information_created_by")
+  updated_spouse_information SpouseInformation[] @relation("spouse_information_updated_by")
+
+  created_students Student[] @relation("student_created_by")
+  updated_students Student[] @relation("student_updated_by")
+
+  created_student_institute_addresses StudentInstitureAddress[] @relation("student_institute_address_created_by")
+  updated_student_institute_addresses StudentInstitureAddress[] @relation("student_institute_address_updated_by")
+
+  created_student_previous_institute_information StudentPreviousInstituteInformation[] @relation("student_previous_institute_information_created_by")
+  updated_student_previous_institute_information StudentPreviousInstituteInformation[] @relation("student_previous_institute_information_updated_by")
+
+  created_student_responsibilities StudentResponsibility[] @relation("student_responsibility_created_by")
+  updated_student_responsibilities StudentResponsibility[] @relation("student_responsibility_updated_by")
+
+  created_student_responsible_guardian_details StudentResponsibleGuardianDetails[] @relation("student_responsible_guardian_details_created_by")
+  updated_student_responsible_guardian_details StudentResponsibleGuardianDetails[] @relation("student_responsible_guardian_details_updated_by")
+
+  created_subject_teachers SubjectTeacher[] @relation("subject_teacher_created_by")
+  updated_subject_teachers SubjectTeacher[] @relation("subject_teacher_updated_by")
+
+  created_teacher_honourable_responsibilities TeacherHonourableResponsibility[] @relation("teacher_honourable_responsibility_created_by")
+  updated_teacher_honourable_responsibilities TeacherHonourableResponsibility[] @relation("teacher_honourable_responsibility_updated_by")
+
+  created_teacher_interview_information TeacherInterviewInformation[] @relation("teacher_interview_information_created_by")
+  updated_teacher_interview_information TeacherInterviewInformation[] @relation("teacher_interview_information_updated_by")
+
+  created_teacher_joining_histories TeacherJoiningHistory[] @relation("teacher_joining_history_created_by")
+  updated_teacher_joining_histories TeacherJoiningHistory[] @relation("teacher_joining_history_updated_by")
+
+  created_teacher_previous_institute_information TeacherPreviousInstituteInformation[] @relation("teacher_previous_institute_information_created_by")
+  updated_teacher_previous_institute_information TeacherPreviousInstituteInformation[] @relation("teacher_previous_institute_information_updated_by")
+
+  created_teacher_promoted_histories TeacherPromotedHistory[] @relation("teacher_promoted_history_created_by")
+  updated_teacher_promoted_histories TeacherPromotedHistory[] @relation("teacher_promoted_history_updated_by")
+
+  created_teacher_references TeacherReference[] @relation("teacher_reference_created_by")
+  updated_teacher_references TeacherReference[] @relation("teacher_reference_updated_by")
+
+  created_user_active_inactive_histories UserActiveInactiveHistory[] @relation("user_active_inactive_history_created_by")
+  updated_user_active_inactive_histories UserActiveInactiveHistory[] @relation("user_active_inactive_history_updated_by")
+
+  created_user_father_details UserFatherDetails[] @relation("user_father_details_created_by")
+  updated_user_father_details UserFatherDetails[] @relation("user_father_details_updated_by")
+
+  created_user_mother_details UserMotherDetails[] @relation("user_mother_details_created_by")
+  updated_user_mother_details UserMotherDetails[] @relation("user_mother_details_updated_by")
+
+  created_user_positions UserPosition[] @relation("user_position_created_by")
+  updated_user_positions UserPosition[] @relation("user_position_updated_by")
+
+  created_user_roles UserRole[] @relation("user_role_created_by")
+  updated_user_roles UserRole[] @relation("user_role_updated_by")
+
+  created_at DateTime  @default(now())
+  updated_at DateTime? @updatedAt
+
+  @@unique([full_name, mobile_number], name: "user_full_name_mobile_unique")
+  @@map("users")
+}

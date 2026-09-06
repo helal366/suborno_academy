@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "rootDir": "./", // Change from "./src" to "./" to support root config files
+    "outDir": "./dist",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "target": "ES2023",
+    "types": ["node", "express", "cookie-parser", "cors", "jsonwebtoken"],
+    "sourceMap": true,
+    "declaration": true,
+    "declarationMap": true,
+    "noUncheckedIndexedAccess": true,
+    "strict": true,
+    "isolatedModules": true,
+    "noUncheckedSideEffectImports": true,
+    "moduleDetection": "force",
+    "skipLibCheck": true,
+    "paths": {
+      "#db-client": ["./src/generated/client/client.ts"] // Adjusted path mapping
+    }
+  },
+  "include": ["src/**/*", "prisma.config.ts"], // Include prisma.config.ts here
+  "exclude": ["node_modules", "prisma/generated"] // Remove prisma.config.ts from here
+}

@@ -1,0 +1,24 @@
+model TeacherHonourableResponsibility {
+  id   String @id @default(uuid())
+  responsibility_name String @unique
+
+  teacher_id String?
+  teacher    AcademicTeacher? @relation(fields: [teacher_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
+
+  created_by_id String?
+  created_by    User?   @relation("teacher_honourable_responsibility_created_by", fields: [created_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
+  
+  updated_by_id String?
+  updated_by    User?   @relation("teacher_honourable_responsibility_updated_by", fields: [updated_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
+
+  created_at DateTime  @default(now())
+  updated_at DateTime? @updatedAt
+  @@map("teacher_honourableresponsibilities")
+}
+
+// teacher responsibilities:
+
+// SUBJECT_TEACHER
+// GROUP_TEACHER
+// GRADE_TEACHER
+// RESPONSIBLE_TEACHER

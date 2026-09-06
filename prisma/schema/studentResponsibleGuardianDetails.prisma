@@ -1,0 +1,24 @@
+model StudentResponsibleGuardianDetails {
+  id   String           @id @default(uuid())
+  guardian                  String
+  nid_no                    String?
+  occupation                String?
+  job_title                 String?
+  educational_qualification EducationDegree?
+  monthly_income            String?
+  mobile_no_1               String?
+  mobile_no_2               String?
+  mobile_no_3               String?
+
+  students Student[]
+
+  created_by_id String?
+  created_by    User?   @relation("student_responsible_guardian_details_created_by", fields: [created_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
+  
+  updated_by_id String?
+  updated_by    User?   @relation("student_responsible_guardian_details_updated_by", fields: [updated_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
+
+  created_at DateTime  @default(now())
+  updated_at DateTime? @updatedAt
+  @@map("student_responsible_guardians")
+}

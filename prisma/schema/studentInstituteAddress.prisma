@@ -1,0 +1,27 @@
+model StudentInstitureAddress {
+  id String  @id @default(uuid())
+  house_no             String?
+  house_name           String?
+  plot_no              String?
+  road_no              String?
+  neighbourhood        String?
+  region               String?
+  village              String?
+  post_code            Int?
+  post_office          String?
+  thana                String
+  district             String
+  country              String  @default("Bangladesh")
+
+  institute StudentPreviousInstituteInformation?
+
+  created_by_id String?
+  created_by    User?   @relation("student_institute_address_created_by", fields: [created_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
+  
+  updated_by_id String?
+  updated_by    User?   @relation("student_institute_address_updated_by", fields: [updated_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
+
+  created_at DateTime  @default(now())
+  updated_at DateTime? @updatedAt
+  @@map("student_institute_addresses")
+}

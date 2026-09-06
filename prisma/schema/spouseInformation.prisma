@@ -1,0 +1,28 @@
+model SpouseInformation {
+  spouse_id         String  @id @default(uuid())
+  full_name         String
+  contact_no        String?
+  father_name       String?
+  father_contact_no String?
+  mother_name       String?
+  mother_contact_no String?
+  occupation        String?
+  job_title         String?
+  monthly_income    Int?
+
+  present_address   PresentAddress?
+  permanent_address PermanentAddress?
+
+  teacher_id String?  @unique
+  teacher    AcademicTeacher? @relation(fields: [teacher_id], references: [id], onDelete: Cascade, onUpdate: Cascade)
+
+  created_by_id String?
+  created_by    User?   @relation("spouse_information_created_by", fields: [created_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
+  
+  updated_by_id String?
+  updated_by    User?   @relation("spouse_information_updated_by", fields: [updated_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
+
+  created_at DateTime  @default(now())
+  updated_at DateTime? @updatedAt
+  @@map("spouse_infromation")
+}

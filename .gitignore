@@ -1,0 +1,12 @@
+# Dependency directories (never upload node_modules!)
+node_modules/
+.pnpm-store/
+
+# Local environment variables containing passwords/JWT tokens
+.env
+.env.local
+
+# IDE and System files
+.DS_Store
+.vscode/
+dist/

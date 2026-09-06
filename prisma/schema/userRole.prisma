@@ -1,0 +1,27 @@
+model UserRole {
+  role_id   String      @id @default(uuid())
+  role_name String      @unique
+  user      User[]      @relation("user_role_relation")
+  positions UserPosition[] @relation("role_position_relation")
+
+  created_by_id String?
+  created_by    User?   @relation("user_role_created_by", fields: [created_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
+  
+  updated_by_id String?
+  updated_by    User?   @relation("user_role_updated_by", fields: [updated_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
+
+  created_at DateTime  @default(now())
+  updated_at DateTime? @updatedAt
+  @@map("user_roles")
+}
+
+// roles: 
+// SUPER_ADMIN
+// HIGHER_ADMIN
+// ADMIN
+// MANAGEMENT
+// ACADEMIC
+// TEACHER
+// STUDENT
+// MANAGEMENT_STAFF
+// GOVERNING_BODY

@@ -1,0 +1,25 @@
+model StudentResponsibility {
+  id String    @id @default(uuid())
+  responsibility_start      DateTime  @default(now())
+  responsibility_end        DateTime?
+
+  isActive Boolean @default(true)
+  academic_year_id String
+  academic_year AcademicYear @relation(fields: [academic_year_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
+
+  teacher_id String?
+  teacher    AcademicTeacher? @relation(fields: [teacher_id], references: [id], onDelete: Cascade, onUpdate: Cascade)
+
+  student_id String?
+  student    Student? @relation(fields: [student_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
+
+  created_by_id String?
+  created_by    User?   @relation("student_responsibility_created_by", fields: [created_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
+  
+  updated_by_id String?
+  updated_by    User?   @relation("student_responsibility_updated_by", fields: [updated_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
+
+  created_at DateTime  @default(now())
+  updated_at DateTime? @updatedAt
+  @@map("students_responsibility")
+}
