@@ -112,6 +112,11 @@ export type PermanentAddress = Prisma.PermanentAddressModel
  */
 export type PresentAddress = Prisma.PresentAddressModel
 /**
+ * Model QuranClub
+ * 
+ */
+export type QuranClub = Prisma.QuranClubModel
+/**
  * Model QuranicSpecialPeriod
  * 
  */

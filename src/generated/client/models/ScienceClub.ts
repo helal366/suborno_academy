@@ -26,28 +26,64 @@ export type AggregateScienceClub = {
 
 export type ScienceClubMinAggregateOutputType = {
   id: string | null
+  science_name: string | null
+  extra_curriculum_activity_id: string | null
+  created_by_id: string | null
+  updated_by_id: string | null
+  created_at: Date | null
+  updated_at: Date | null
 }
 
 export type ScienceClubMaxAggregateOutputType = {
   id: string | null
+  science_name: string | null
+  extra_curriculum_activity_id: string | null
+  created_by_id: string | null
+  updated_by_id: string | null
+  created_at: Date | null
+  updated_at: Date | null
 }
 
 export type ScienceClubCountAggregateOutputType = {
   id: number
+  science_name: number
+  extra_curriculum_activity_id: number
+  created_by_id: number
+  updated_by_id: number
+  created_at: number
+  updated_at: number
   _all: number
 }
 
 
 export type ScienceClubMinAggregateInputType = {
   id?: true
+  science_name?: true
+  extra_curriculum_activity_id?: true
+  created_by_id?: true
+  updated_by_id?: true
+  created_at?: true
+  updated_at?: true
 }
 
 export type ScienceClubMaxAggregateInputType = {
   id?: true
+  science_name?: true
+  extra_curriculum_activity_id?: true
+  created_by_id?: true
+  updated_by_id?: true
+  created_at?: true
+  updated_at?: true
 }
 
 export type ScienceClubCountAggregateInputType = {
   id?: true
+  science_name?: true
+  extra_curriculum_activity_id?: true
+  created_by_id?: true
+  updated_by_id?: true
+  created_at?: true
+  updated_at?: true
   _all?: true
 }
 
@@ -125,6 +161,12 @@ export type ScienceClubGroupByArgs<ExtArgs extends runtime.Types.Extensions.Inte
 
 export type ScienceClubGroupByOutputType = {
   id: string
+  science_name: string
+  extra_curriculum_activity_id: string | null
+  created_by_id: string | null
+  updated_by_id: string | null
+  created_at: Date
+  updated_at: Date | null
   _count: ScienceClubCountAggregateOutputType | null
   _min: ScienceClubMinAggregateOutputType | null
   _max: ScienceClubMaxAggregateOutputType | null
@@ -150,10 +192,28 @@ export type ScienceClubWhereInput = {
   OR?: Prisma.ScienceClubWhereInput[]
   NOT?: Prisma.ScienceClubWhereInput | Prisma.ScienceClubWhereInput[]
   id?: Prisma.StringFilter<"ScienceClub"> | string
+  science_name?: Prisma.StringFilter<"ScienceClub"> | string
+  extra_curriculum_activity_id?: Prisma.StringNullableFilter<"ScienceClub"> | string | null
+  created_by_id?: Prisma.StringNullableFilter<"ScienceClub"> | string | null
+  updated_by_id?: Prisma.StringNullableFilter<"ScienceClub"> | string | null
+  created_at?: Prisma.DateTimeFilter<"ScienceClub"> | Date | string
+  updated_at?: Prisma.DateTimeNullableFilter<"ScienceClub"> | Date | string | null
+  extra_curriculum_activity?: Prisma.XOR<Prisma.ExtraCurriculumActivityNullableScalarRelationFilter, Prisma.ExtraCurriculumActivityWhereInput> | null
+  created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
+  updated_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
 }
 
 export type ScienceClubOrderByWithRelationInput = {
   id?: Prisma.SortOrder
+  science_name?: Prisma.SortOrder
+  extra_curriculum_activity_id?: Prisma.SortOrderInput | Prisma.SortOrder
+  created_by_id?: Prisma.SortOrderInput | Prisma.SortOrder
+  updated_by_id?: Prisma.SortOrderInput | Prisma.SortOrder
+  created_at?: Prisma.SortOrder
+  updated_at?: Prisma.SortOrderInput | Prisma.SortOrder
+  extra_curriculum_activity?: Prisma.ExtraCurriculumActivityOrderByWithRelationInput
+  created_by?: Prisma.UserOrderByWithRelationInput
+  updated_by?: Prisma.UserOrderByWithRelationInput
 }
 
 export type ScienceClubWhereUniqueInput = Prisma.AtLeast<{
@@ -161,10 +221,25 @@ export type ScienceClubWhereUniqueInput = Prisma.AtLeast<{
   AND?: Prisma.ScienceClubWhereInput | Prisma.ScienceClubWhereInput[]
   OR?: Prisma.ScienceClubWhereInput[]
   NOT?: Prisma.ScienceClubWhereInput | Prisma.ScienceClubWhereInput[]
+  science_name?: Prisma.StringFilter<"ScienceClub"> | string
+  extra_curriculum_activity_id?: Prisma.StringNullableFilter<"ScienceClub"> | string | null
+  created_by_id?: Prisma.StringNullableFilter<"ScienceClub"> | string | null
+  updated_by_id?: Prisma.StringNullableFilter<"ScienceClub"> | string | null
+  created_at?: Prisma.DateTimeFilter<"ScienceClub"> | Date | string
+  updated_at?: Prisma.DateTimeNullableFilter<"ScienceClub"> | Date | string | null
+  extra_curriculum_activity?: Prisma.XOR<Prisma.ExtraCurriculumActivityNullableScalarRelationFilter, Prisma.ExtraCurriculumActivityWhereInput> | null
+  created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
+  updated_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
 }, "id">
 
 export type ScienceClubOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
+  science_name?: Prisma.SortOrder
+  extra_curriculum_activity_id?: Prisma.SortOrderInput | Prisma.SortOrder
+  created_by_id?: Prisma.SortOrderInput | Prisma.SortOrder
+  updated_by_id?: Prisma.SortOrderInput | Prisma.SortOrder
+  created_at?: Prisma.SortOrder
+  updated_at?: Prisma.SortOrderInput | Prisma.SortOrder
   _count?: Prisma.ScienceClubCountOrderByAggregateInput
   _max?: Prisma.ScienceClubMaxOrderByAggregateInput
   _min?: Prisma.ScienceClubMinOrderByAggregateInput
@@ -175,73 +250,583 @@ export type ScienceClubScalarWhereWithAggregatesInput = {
   OR?: Prisma.ScienceClubScalarWhereWithAggregatesInput[]
   NOT?: Prisma.ScienceClubScalarWhereWithAggregatesInput | Prisma.ScienceClubScalarWhereWithAggregatesInput[]
   id?: Prisma.StringWithAggregatesFilter<"ScienceClub"> | string
+  science_name?: Prisma.StringWithAggregatesFilter<"ScienceClub"> | string
+  extra_curriculum_activity_id?: Prisma.StringNullableWithAggregatesFilter<"ScienceClub"> | string | null
+  created_by_id?: Prisma.StringNullableWithAggregatesFilter<"ScienceClub"> | string | null
+  updated_by_id?: Prisma.StringNullableWithAggregatesFilter<"ScienceClub"> | string | null
+  created_at?: Prisma.DateTimeWithAggregatesFilter<"ScienceClub"> | Date | string
+  updated_at?: Prisma.DateTimeNullableWithAggregatesFilter<"ScienceClub"> | Date | string | null
 }
 
 export type ScienceClubCreateInput = {
   id?: string
+  science_name: string
+  created_at?: Date | string
+  updated_at?: Date | string | null
+  extra_curriculum_activity?: Prisma.ExtraCurriculumActivityCreateNestedOneWithoutScience_club_optionsInput
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_science_clubsInput
+  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_science_clubsInput
 }
 
 export type ScienceClubUncheckedCreateInput = {
   id?: string
+  science_name: string
+  extra_curriculum_activity_id?: string | null
+  created_by_id?: string | null
+  updated_by_id?: string | null
+  created_at?: Date | string
+  updated_at?: Date | string | null
 }
 
 export type ScienceClubUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
+  science_name?: Prisma.StringFieldUpdateOperationsInput | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  extra_curriculum_activity?: Prisma.ExtraCurriculumActivityUpdateOneWithoutScience_club_optionsNestedInput
+  created_by?: Prisma.UserUpdateOneWithoutCreated_science_clubsNestedInput
+  updated_by?: Prisma.UserUpdateOneWithoutUpdated_science_clubsNestedInput
 }
 
 export type ScienceClubUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
+  science_name?: Prisma.StringFieldUpdateOperationsInput | string
+  extra_curriculum_activity_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
 }
 
 export type ScienceClubCreateManyInput = {
   id?: string
+  science_name: string
+  extra_curriculum_activity_id?: string | null
+  created_by_id?: string | null
+  updated_by_id?: string | null
+  created_at?: Date | string
+  updated_at?: Date | string | null
 }
 
 export type ScienceClubUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
+  science_name?: Prisma.StringFieldUpdateOperationsInput | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
 }
 
 export type ScienceClubUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
+  science_name?: Prisma.StringFieldUpdateOperationsInput | string
+  extra_curriculum_activity_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+}
+
+export type ScienceClubListRelationFilter = {
+  every?: Prisma.ScienceClubWhereInput
+  some?: Prisma.ScienceClubWhereInput
+  none?: Prisma.ScienceClubWhereInput
+}
+
+export type ScienceClubOrderByRelationAggregateInput = {
+  _count?: Prisma.SortOrder
 }
 
 export type ScienceClubCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
+  science_name?: Prisma.SortOrder
+  extra_curriculum_activity_id?: Prisma.SortOrder
+  created_by_id?: Prisma.SortOrder
+  updated_by_id?: Prisma.SortOrder
+  created_at?: Prisma.SortOrder
+  updated_at?: Prisma.SortOrder
 }
 
 export type ScienceClubMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
+  science_name?: Prisma.SortOrder
+  extra_curriculum_activity_id?: Prisma.SortOrder
+  created_by_id?: Prisma.SortOrder
+  updated_by_id?: Prisma.SortOrder
+  created_at?: Prisma.SortOrder
+  updated_at?: Prisma.SortOrder
 }
 
 export type ScienceClubMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
+  science_name?: Prisma.SortOrder
+  extra_curriculum_activity_id?: Prisma.SortOrder
+  created_by_id?: Prisma.SortOrder
+  updated_by_id?: Prisma.SortOrder
+  created_at?: Prisma.SortOrder
+  updated_at?: Prisma.SortOrder
+}
+
+export type ScienceClubCreateNestedManyWithoutExtra_curriculum_activityInput = {
+  create?: Prisma.XOR<Prisma.ScienceClubCreateWithoutExtra_curriculum_activityInput, Prisma.ScienceClubUncheckedCreateWithoutExtra_curriculum_activityInput> | Prisma.ScienceClubCreateWithoutExtra_curriculum_activityInput[] | Prisma.ScienceClubUncheckedCreateWithoutExtra_curriculum_activityInput[]
+  connectOrCreate?: Prisma.ScienceClubCreateOrConnectWithoutExtra_curriculum_activityInput | Prisma.ScienceClubCreateOrConnectWithoutExtra_curriculum_activityInput[]
+  createMany?: Prisma.ScienceClubCreateManyExtra_curriculum_activityInputEnvelope
+  connect?: Prisma.ScienceClubWhereUniqueInput | Prisma.ScienceClubWhereUniqueInput[]
+}
+
+export type ScienceClubUncheckedCreateNestedManyWithoutExtra_curriculum_activityInput = {
+  create?: Prisma.XOR<Prisma.ScienceClubCreateWithoutExtra_curriculum_activityInput, Prisma.ScienceClubUncheckedCreateWithoutExtra_curriculum_activityInput> | Prisma.ScienceClubCreateWithoutExtra_curriculum_activityInput[] | Prisma.ScienceClubUncheckedCreateWithoutExtra_curriculum_activityInput[]
+  connectOrCreate?: Prisma.ScienceClubCreateOrConnectWithoutExtra_curriculum_activityInput | Prisma.ScienceClubCreateOrConnectWithoutExtra_curriculum_activityInput[]
+  createMany?: Prisma.ScienceClubCreateManyExtra_curriculum_activityInputEnvelope
+  connect?: Prisma.ScienceClubWhereUniqueInput | Prisma.ScienceClubWhereUniqueInput[]
+}
+
+export type ScienceClubUpdateManyWithoutExtra_curriculum_activityNestedInput = {
+  create?: Prisma.XOR<Prisma.ScienceClubCreateWithoutExtra_curriculum_activityInput, Prisma.ScienceClubUncheckedCreateWithoutExtra_curriculum_activityInput> | Prisma.ScienceClubCreateWithoutExtra_curriculum_activityInput[] | Prisma.ScienceClubUncheckedCreateWithoutExtra_curriculum_activityInput[]
+  connectOrCreate?: Prisma.ScienceClubCreateOrConnectWithoutExtra_curriculum_activityInput | Prisma.ScienceClubCreateOrConnectWithoutExtra_curriculum_activityInput[]
+  upsert?: Prisma.ScienceClubUpsertWithWhereUniqueWithoutExtra_curriculum_activityInput | Prisma.ScienceClubUpsertWithWhereUniqueWithoutExtra_curriculum_activityInput[]
+  createMany?: Prisma.ScienceClubCreateManyExtra_curriculum_activityInputEnvelope
+  set?: Prisma.ScienceClubWhereUniqueInput | Prisma.ScienceClubWhereUniqueInput[]
+  disconnect?: Prisma.ScienceClubWhereUniqueInput | Prisma.ScienceClubWhereUniqueInput[]
+  delete?: Prisma.ScienceClubWhereUniqueInput | Prisma.ScienceClubWhereUniqueInput[]
+  connect?: Prisma.ScienceClubWhereUniqueInput | Prisma.ScienceClubWhereUniqueInput[]
+  update?: Prisma.ScienceClubUpdateWithWhereUniqueWithoutExtra_curriculum_activityInput | Prisma.ScienceClubUpdateWithWhereUniqueWithoutExtra_curriculum_activityInput[]
+  updateMany?: Prisma.ScienceClubUpdateManyWithWhereWithoutExtra_curriculum_activityInput | Prisma.ScienceClubUpdateManyWithWhereWithoutExtra_curriculum_activityInput[]
+  deleteMany?: Prisma.ScienceClubScalarWhereInput | Prisma.ScienceClubScalarWhereInput[]
+}
+
+export type ScienceClubUncheckedUpdateManyWithoutExtra_curriculum_activityNestedInput = {
+  create?: Prisma.XOR<Prisma.ScienceClubCreateWithoutExtra_curriculum_activityInput, Prisma.ScienceClubUncheckedCreateWithoutExtra_curriculum_activityInput> | Prisma.ScienceClubCreateWithoutExtra_curriculum_activityInput[] | Prisma.ScienceClubUncheckedCreateWithoutExtra_curriculum_activityInput[]
+  connectOrCreate?: Prisma.ScienceClubCreateOrConnectWithoutExtra_curriculum_activityInput | Prisma.ScienceClubCreateOrConnectWithoutExtra_curriculum_activityInput[]
+  upsert?: Prisma.ScienceClubUpsertWithWhereUniqueWithoutExtra_curriculum_activityInput | Prisma.ScienceClubUpsertWithWhereUniqueWithoutExtra_curriculum_activityInput[]
+  createMany?: Prisma.ScienceClubCreateManyExtra_curriculum_activityInputEnvelope
+  set?: Prisma.ScienceClubWhereUniqueInput | Prisma.ScienceClubWhereUniqueInput[]
+  disconnect?: Prisma.ScienceClubWhereUniqueInput | Prisma.ScienceClubWhereUniqueInput[]
+  delete?: Prisma.ScienceClubWhereUniqueInput | Prisma.ScienceClubWhereUniqueInput[]
+  connect?: Prisma.ScienceClubWhereUniqueInput | Prisma.ScienceClubWhereUniqueInput[]
+  update?: Prisma.ScienceClubUpdateWithWhereUniqueWithoutExtra_curriculum_activityInput | Prisma.ScienceClubUpdateWithWhereUniqueWithoutExtra_curriculum_activityInput[]
+  updateMany?: Prisma.ScienceClubUpdateManyWithWhereWithoutExtra_curriculum_activityInput | Prisma.ScienceClubUpdateManyWithWhereWithoutExtra_curriculum_activityInput[]
+  deleteMany?: Prisma.ScienceClubScalarWhereInput | Prisma.ScienceClubScalarWhereInput[]
+}
+
+export type ScienceClubCreateNestedManyWithoutCreated_byInput = {
+  create?: Prisma.XOR<Prisma.ScienceClubCreateWithoutCreated_byInput, Prisma.ScienceClubUncheckedCreateWithoutCreated_byInput> | Prisma.ScienceClubCreateWithoutCreated_byInput[] | Prisma.ScienceClubUncheckedCreateWithoutCreated_byInput[]
+  connectOrCreate?: Prisma.ScienceClubCreateOrConnectWithoutCreated_byInput | Prisma.ScienceClubCreateOrConnectWithoutCreated_byInput[]
+  createMany?: Prisma.ScienceClubCreateManyCreated_byInputEnvelope
+  connect?: Prisma.ScienceClubWhereUniqueInput | Prisma.ScienceClubWhereUniqueInput[]
+}
+
+export type ScienceClubCreateNestedManyWithoutUpdated_byInput = {
+  create?: Prisma.XOR<Prisma.ScienceClubCreateWithoutUpdated_byInput, Prisma.ScienceClubUncheckedCreateWithoutUpdated_byInput> | Prisma.ScienceClubCreateWithoutUpdated_byInput[] | Prisma.ScienceClubUncheckedCreateWithoutUpdated_byInput[]
+  connectOrCreate?: Prisma.ScienceClubCreateOrConnectWithoutUpdated_byInput | Prisma.ScienceClubCreateOrConnectWithoutUpdated_byInput[]
+  createMany?: Prisma.ScienceClubCreateManyUpdated_byInputEnvelope
+  connect?: Prisma.ScienceClubWhereUniqueInput | Prisma.ScienceClubWhereUniqueInput[]
+}
+
+export type ScienceClubUncheckedCreateNestedManyWithoutCreated_byInput = {
+  create?: Prisma.XOR<Prisma.ScienceClubCreateWithoutCreated_byInput, Prisma.ScienceClubUncheckedCreateWithoutCreated_byInput> | Prisma.ScienceClubCreateWithoutCreated_byInput[] | Prisma.ScienceClubUncheckedCreateWithoutCreated_byInput[]
+  connectOrCreate?: Prisma.ScienceClubCreateOrConnectWithoutCreated_byInput | Prisma.ScienceClubCreateOrConnectWithoutCreated_byInput[]
+  createMany?: Prisma.ScienceClubCreateManyCreated_byInputEnvelope
+  connect?: Prisma.ScienceClubWhereUniqueInput | Prisma.ScienceClubWhereUniqueInput[]
+}
+
+export type ScienceClubUncheckedCreateNestedManyWithoutUpdated_byInput = {
+  create?: Prisma.XOR<Prisma.ScienceClubCreateWithoutUpdated_byInput, Prisma.ScienceClubUncheckedCreateWithoutUpdated_byInput> | Prisma.ScienceClubCreateWithoutUpdated_byInput[] | Prisma.ScienceClubUncheckedCreateWithoutUpdated_byInput[]
+  connectOrCreate?: Prisma.ScienceClubCreateOrConnectWithoutUpdated_byInput | Prisma.ScienceClubCreateOrConnectWithoutUpdated_byInput[]
+  createMany?: Prisma.ScienceClubCreateManyUpdated_byInputEnvelope
+  connect?: Prisma.ScienceClubWhereUniqueInput | Prisma.ScienceClubWhereUniqueInput[]
+}
+
+export type ScienceClubUpdateManyWithoutCreated_byNestedInput = {
+  create?: Prisma.XOR<Prisma.ScienceClubCreateWithoutCreated_byInput, Prisma.ScienceClubUncheckedCreateWithoutCreated_byInput> | Prisma.ScienceClubCreateWithoutCreated_byInput[] | Prisma.ScienceClubUncheckedCreateWithoutCreated_byInput[]
+  connectOrCreate?: Prisma.ScienceClubCreateOrConnectWithoutCreated_byInput | Prisma.ScienceClubCreateOrConnectWithoutCreated_byInput[]
+  upsert?: Prisma.ScienceClubUpsertWithWhereUniqueWithoutCreated_byInput | Prisma.ScienceClubUpsertWithWhereUniqueWithoutCreated_byInput[]
+  createMany?: Prisma.ScienceClubCreateManyCreated_byInputEnvelope
+  set?: Prisma.ScienceClubWhereUniqueInput | Prisma.ScienceClubWhereUniqueInput[]
+  disconnect?: Prisma.ScienceClubWhereUniqueInput | Prisma.ScienceClubWhereUniqueInput[]
+  delete?: Prisma.ScienceClubWhereUniqueInput | Prisma.ScienceClubWhereUniqueInput[]
+  connect?: Prisma.ScienceClubWhereUniqueInput | Prisma.ScienceClubWhereUniqueInput[]
+  update?: Prisma.ScienceClubUpdateWithWhereUniqueWithoutCreated_byInput | Prisma.ScienceClubUpdateWithWhereUniqueWithoutCreated_byInput[]
+  updateMany?: Prisma.ScienceClubUpdateManyWithWhereWithoutCreated_byInput | Prisma.ScienceClubUpdateManyWithWhereWithoutCreated_byInput[]
+  deleteMany?: Prisma.ScienceClubScalarWhereInput | Prisma.ScienceClubScalarWhereInput[]
+}
+
+export type ScienceClubUpdateManyWithoutUpdated_byNestedInput = {
+  create?: Prisma.XOR<Prisma.ScienceClubCreateWithoutUpdated_byInput, Prisma.ScienceClubUncheckedCreateWithoutUpdated_byInput> | Prisma.ScienceClubCreateWithoutUpdated_byInput[] | Prisma.ScienceClubUncheckedCreateWithoutUpdated_byInput[]
+  connectOrCreate?: Prisma.ScienceClubCreateOrConnectWithoutUpdated_byInput | Prisma.ScienceClubCreateOrConnectWithoutUpdated_byInput[]
+  upsert?: Prisma.ScienceClubUpsertWithWhereUniqueWithoutUpdated_byInput | Prisma.ScienceClubUpsertWithWhereUniqueWithoutUpdated_byInput[]
+  createMany?: Prisma.ScienceClubCreateManyUpdated_byInputEnvelope
+  set?: Prisma.ScienceClubWhereUniqueInput | Prisma.ScienceClubWhereUniqueInput[]
+  disconnect?: Prisma.ScienceClubWhereUniqueInput | Prisma.ScienceClubWhereUniqueInput[]
+  delete?: Prisma.ScienceClubWhereUniqueInput | Prisma.ScienceClubWhereUniqueInput[]
+  connect?: Prisma.ScienceClubWhereUniqueInput | Prisma.ScienceClubWhereUniqueInput[]
+  update?: Prisma.ScienceClubUpdateWithWhereUniqueWithoutUpdated_byInput | Prisma.ScienceClubUpdateWithWhereUniqueWithoutUpdated_byInput[]
+  updateMany?: Prisma.ScienceClubUpdateManyWithWhereWithoutUpdated_byInput | Prisma.ScienceClubUpdateManyWithWhereWithoutUpdated_byInput[]
+  deleteMany?: Prisma.ScienceClubScalarWhereInput | Prisma.ScienceClubScalarWhereInput[]
+}
+
+export type ScienceClubUncheckedUpdateManyWithoutCreated_byNestedInput = {
+  create?: Prisma.XOR<Prisma.ScienceClubCreateWithoutCreated_byInput, Prisma.ScienceClubUncheckedCreateWithoutCreated_byInput> | Prisma.ScienceClubCreateWithoutCreated_byInput[] | Prisma.ScienceClubUncheckedCreateWithoutCreated_byInput[]
+  connectOrCreate?: Prisma.ScienceClubCreateOrConnectWithoutCreated_byInput | Prisma.ScienceClubCreateOrConnectWithoutCreated_byInput[]
+  upsert?: Prisma.ScienceClubUpsertWithWhereUniqueWithoutCreated_byInput | Prisma.ScienceClubUpsertWithWhereUniqueWithoutCreated_byInput[]
+  createMany?: Prisma.ScienceClubCreateManyCreated_byInputEnvelope
+  set?: Prisma.ScienceClubWhereUniqueInput | Prisma.ScienceClubWhereUniqueInput[]
+  disconnect?: Prisma.ScienceClubWhereUniqueInput | Prisma.ScienceClubWhereUniqueInput[]
+  delete?: Prisma.ScienceClubWhereUniqueInput | Prisma.ScienceClubWhereUniqueInput[]
+  connect?: Prisma.ScienceClubWhereUniqueInput | Prisma.ScienceClubWhereUniqueInput[]
+  update?: Prisma.ScienceClubUpdateWithWhereUniqueWithoutCreated_byInput | Prisma.ScienceClubUpdateWithWhereUniqueWithoutCreated_byInput[]
+  updateMany?: Prisma.ScienceClubUpdateManyWithWhereWithoutCreated_byInput | Prisma.ScienceClubUpdateManyWithWhereWithoutCreated_byInput[]
+  deleteMany?: Prisma.ScienceClubScalarWhereInput | Prisma.ScienceClubScalarWhereInput[]
+}
+
+export type ScienceClubUncheckedUpdateManyWithoutUpdated_byNestedInput = {
+  create?: Prisma.XOR<Prisma.ScienceClubCreateWithoutUpdated_byInput, Prisma.ScienceClubUncheckedCreateWithoutUpdated_byInput> | Prisma.ScienceClubCreateWithoutUpdated_byInput[] | Prisma.ScienceClubUncheckedCreateWithoutUpdated_byInput[]
+  connectOrCreate?: Prisma.ScienceClubCreateOrConnectWithoutUpdated_byInput | Prisma.ScienceClubCreateOrConnectWithoutUpdated_byInput[]
+  upsert?: Prisma.ScienceClubUpsertWithWhereUniqueWithoutUpdated_byInput | Prisma.ScienceClubUpsertWithWhereUniqueWithoutUpdated_byInput[]
+  createMany?: Prisma.ScienceClubCreateManyUpdated_byInputEnvelope
+  set?: Prisma.ScienceClubWhereUniqueInput | Prisma.ScienceClubWhereUniqueInput[]
+  disconnect?: Prisma.ScienceClubWhereUniqueInput | Prisma.ScienceClubWhereUniqueInput[]
+  delete?: Prisma.ScienceClubWhereUniqueInput | Prisma.ScienceClubWhereUniqueInput[]
+  connect?: Prisma.ScienceClubWhereUniqueInput | Prisma.ScienceClubWhereUniqueInput[]
+  update?: Prisma.ScienceClubUpdateWithWhereUniqueWithoutUpdated_byInput | Prisma.ScienceClubUpdateWithWhereUniqueWithoutUpdated_byInput[]
+  updateMany?: Prisma.ScienceClubUpdateManyWithWhereWithoutUpdated_byInput | Prisma.ScienceClubUpdateManyWithWhereWithoutUpdated_byInput[]
+  deleteMany?: Prisma.ScienceClubScalarWhereInput | Prisma.ScienceClubScalarWhereInput[]
+}
+
+export type ScienceClubCreateWithoutExtra_curriculum_activityInput = {
+  id?: string
+  science_name: string
+  created_at?: Date | string
+  updated_at?: Date | string | null
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_science_clubsInput
+  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_science_clubsInput
+}
+
+export type ScienceClubUncheckedCreateWithoutExtra_curriculum_activityInput = {
+  id?: string
+  science_name: string
+  created_by_id?: string | null
+  updated_by_id?: string | null
+  created_at?: Date | string
+  updated_at?: Date | string | null
+}
+
+export type ScienceClubCreateOrConnectWithoutExtra_curriculum_activityInput = {
+  where: Prisma.ScienceClubWhereUniqueInput
+  create: Prisma.XOR<Prisma.ScienceClubCreateWithoutExtra_curriculum_activityInput, Prisma.ScienceClubUncheckedCreateWithoutExtra_curriculum_activityInput>
+}
+
+export type ScienceClubCreateManyExtra_curriculum_activityInputEnvelope = {
+  data: Prisma.ScienceClubCreateManyExtra_curriculum_activityInput | Prisma.ScienceClubCreateManyExtra_curriculum_activityInput[]
+  skipDuplicates?: boolean
+}
+
+export type ScienceClubUpsertWithWhereUniqueWithoutExtra_curriculum_activityInput = {
+  where: Prisma.ScienceClubWhereUniqueInput
+  update: Prisma.XOR<Prisma.ScienceClubUpdateWithoutExtra_curriculum_activityInput, Prisma.ScienceClubUncheckedUpdateWithoutExtra_curriculum_activityInput>
+  create: Prisma.XOR<Prisma.ScienceClubCreateWithoutExtra_curriculum_activityInput, Prisma.ScienceClubUncheckedCreateWithoutExtra_curriculum_activityInput>
+}
+
+export type ScienceClubUpdateWithWhereUniqueWithoutExtra_curriculum_activityInput = {
+  where: Prisma.ScienceClubWhereUniqueInput
+  data: Prisma.XOR<Prisma.ScienceClubUpdateWithoutExtra_curriculum_activityInput, Prisma.ScienceClubUncheckedUpdateWithoutExtra_curriculum_activityInput>
+}
+
+export type ScienceClubUpdateManyWithWhereWithoutExtra_curriculum_activityInput = {
+  where: Prisma.ScienceClubScalarWhereInput
+  data: Prisma.XOR<Prisma.ScienceClubUpdateManyMutationInput, Prisma.ScienceClubUncheckedUpdateManyWithoutExtra_curriculum_activityInput>
+}
+
+export type ScienceClubScalarWhereInput = {
+  AND?: Prisma.ScienceClubScalarWhereInput | Prisma.ScienceClubScalarWhereInput[]
+  OR?: Prisma.ScienceClubScalarWhereInput[]
+  NOT?: Prisma.ScienceClubScalarWhereInput | Prisma.ScienceClubScalarWhereInput[]
+  id?: Prisma.StringFilter<"ScienceClub"> | string
+  science_name?: Prisma.StringFilter<"ScienceClub"> | string
+  extra_curriculum_activity_id?: Prisma.StringNullableFilter<"ScienceClub"> | string | null
+  created_by_id?: Prisma.StringNullableFilter<"ScienceClub"> | string | null
+  updated_by_id?: Prisma.StringNullableFilter<"ScienceClub"> | string | null
+  created_at?: Prisma.DateTimeFilter<"ScienceClub"> | Date | string
+  updated_at?: Prisma.DateTimeNullableFilter<"ScienceClub"> | Date | string | null
+}
+
+export type ScienceClubCreateWithoutCreated_byInput = {
+  id?: string
+  science_name: string
+  created_at?: Date | string
+  updated_at?: Date | string | null
+  extra_curriculum_activity?: Prisma.ExtraCurriculumActivityCreateNestedOneWithoutScience_club_optionsInput
+  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_science_clubsInput
+}
+
+export type ScienceClubUncheckedCreateWithoutCreated_byInput = {
+  id?: string
+  science_name: string
+  extra_curriculum_activity_id?: string | null
+  updated_by_id?: string | null
+  created_at?: Date | string
+  updated_at?: Date | string | null
+}
+
+export type ScienceClubCreateOrConnectWithoutCreated_byInput = {
+  where: Prisma.ScienceClubWhereUniqueInput
+  create: Prisma.XOR<Prisma.ScienceClubCreateWithoutCreated_byInput, Prisma.ScienceClubUncheckedCreateWithoutCreated_byInput>
+}
+
+export type ScienceClubCreateManyCreated_byInputEnvelope = {
+  data: Prisma.ScienceClubCreateManyCreated_byInput | Prisma.ScienceClubCreateManyCreated_byInput[]
+  skipDuplicates?: boolean
+}
+
+export type ScienceClubCreateWithoutUpdated_byInput = {
+  id?: string
+  science_name: string
+  created_at?: Date | string
+  updated_at?: Date | string | null
+  extra_curriculum_activity?: Prisma.ExtraCurriculumActivityCreateNestedOneWithoutScience_club_optionsInput
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_science_clubsInput
+}
+
+export type ScienceClubUncheckedCreateWithoutUpdated_byInput = {
+  id?: string
+  science_name: string
+  extra_curriculum_activity_id?: string | null
+  created_by_id?: string | null
+  created_at?: Date | string
+  updated_at?: Date | string | null
+}
+
+export type ScienceClubCreateOrConnectWithoutUpdated_byInput = {
+  where: Prisma.ScienceClubWhereUniqueInput
+  create: Prisma.XOR<Prisma.ScienceClubCreateWithoutUpdated_byInput, Prisma.ScienceClubUncheckedCreateWithoutUpdated_byInput>
+}
+
+export type ScienceClubCreateManyUpdated_byInputEnvelope = {
+  data: Prisma.ScienceClubCreateManyUpdated_byInput | Prisma.ScienceClubCreateManyUpdated_byInput[]
+  skipDuplicates?: boolean
+}
+
+export type ScienceClubUpsertWithWhereUniqueWithoutCreated_byInput = {
+  where: Prisma.ScienceClubWhereUniqueInput
+  update: Prisma.XOR<Prisma.ScienceClubUpdateWithoutCreated_byInput, Prisma.ScienceClubUncheckedUpdateWithoutCreated_byInput>
+  create: Prisma.XOR<Prisma.ScienceClubCreateWithoutCreated_byInput, Prisma.ScienceClubUncheckedCreateWithoutCreated_byInput>
+}
+
+export type ScienceClubUpdateWithWhereUniqueWithoutCreated_byInput = {
+  where: Prisma.ScienceClubWhereUniqueInput
+  data: Prisma.XOR<Prisma.ScienceClubUpdateWithoutCreated_byInput, Prisma.ScienceClubUncheckedUpdateWithoutCreated_byInput>
+}
+
+export type ScienceClubUpdateManyWithWhereWithoutCreated_byInput = {
+  where: Prisma.ScienceClubScalarWhereInput
+  data: Prisma.XOR<Prisma.ScienceClubUpdateManyMutationInput, Prisma.ScienceClubUncheckedUpdateManyWithoutCreated_byInput>
+}
+
+export type ScienceClubUpsertWithWhereUniqueWithoutUpdated_byInput = {
+  where: Prisma.ScienceClubWhereUniqueInput
+  update: Prisma.XOR<Prisma.ScienceClubUpdateWithoutUpdated_byInput, Prisma.ScienceClubUncheckedUpdateWithoutUpdated_byInput>
+  create: Prisma.XOR<Prisma.ScienceClubCreateWithoutUpdated_byInput, Prisma.ScienceClubUncheckedCreateWithoutUpdated_byInput>
+}
+
+export type ScienceClubUpdateWithWhereUniqueWithoutUpdated_byInput = {
+  where: Prisma.ScienceClubWhereUniqueInput
+  data: Prisma.XOR<Prisma.ScienceClubUpdateWithoutUpdated_byInput, Prisma.ScienceClubUncheckedUpdateWithoutUpdated_byInput>
+}
+
+export type ScienceClubUpdateManyWithWhereWithoutUpdated_byInput = {
+  where: Prisma.ScienceClubScalarWhereInput
+  data: Prisma.XOR<Prisma.ScienceClubUpdateManyMutationInput, Prisma.ScienceClubUncheckedUpdateManyWithoutUpdated_byInput>
+}
+
+export type ScienceClubCreateManyExtra_curriculum_activityInput = {
+  id?: string
+  science_name: string
+  created_by_id?: string | null
+  updated_by_id?: string | null
+  created_at?: Date | string
+  updated_at?: Date | string | null
+}
+
+export type ScienceClubUpdateWithoutExtra_curriculum_activityInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  science_name?: Prisma.StringFieldUpdateOperationsInput | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  created_by?: Prisma.UserUpdateOneWithoutCreated_science_clubsNestedInput
+  updated_by?: Prisma.UserUpdateOneWithoutUpdated_science_clubsNestedInput
+}
+
+export type ScienceClubUncheckedUpdateWithoutExtra_curriculum_activityInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  science_name?: Prisma.StringFieldUpdateOperationsInput | string
+  created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+}
+
+export type ScienceClubUncheckedUpdateManyWithoutExtra_curriculum_activityInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  science_name?: Prisma.StringFieldUpdateOperationsInput | string
+  created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+}
+
+export type ScienceClubCreateManyCreated_byInput = {
+  id?: string
+  science_name: string
+  extra_curriculum_activity_id?: string | null
+  updated_by_id?: string | null
+  created_at?: Date | string
+  updated_at?: Date | string | null
+}
+
+export type ScienceClubCreateManyUpdated_byInput = {
+  id?: string
+  science_name: string
+  extra_curriculum_activity_id?: string | null
+  created_by_id?: string | null
+  created_at?: Date | string
+  updated_at?: Date | string | null
+}
+
+export type ScienceClubUpdateWithoutCreated_byInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  science_name?: Prisma.StringFieldUpdateOperationsInput | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  extra_curriculum_activity?: Prisma.ExtraCurriculumActivityUpdateOneWithoutScience_club_optionsNestedInput
+  updated_by?: Prisma.UserUpdateOneWithoutUpdated_science_clubsNestedInput
+}
+
+export type ScienceClubUncheckedUpdateWithoutCreated_byInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  science_name?: Prisma.StringFieldUpdateOperationsInput | string
+  extra_curriculum_activity_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+}
+
+export type ScienceClubUncheckedUpdateManyWithoutCreated_byInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  science_name?: Prisma.StringFieldUpdateOperationsInput | string
+  extra_curriculum_activity_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+}
+
+export type ScienceClubUpdateWithoutUpdated_byInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  science_name?: Prisma.StringFieldUpdateOperationsInput | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  extra_curriculum_activity?: Prisma.ExtraCurriculumActivityUpdateOneWithoutScience_club_optionsNestedInput
+  created_by?: Prisma.UserUpdateOneWithoutCreated_science_clubsNestedInput
+}
+
+export type ScienceClubUncheckedUpdateWithoutUpdated_byInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  science_name?: Prisma.StringFieldUpdateOperationsInput | string
+  extra_curriculum_activity_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+}
+
+export type ScienceClubUncheckedUpdateManyWithoutUpdated_byInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  science_name?: Prisma.StringFieldUpdateOperationsInput | string
+  extra_curriculum_activity_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
 }
 
 
 
 export type ScienceClubSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
+  science_name?: boolean
+  extra_curriculum_activity_id?: boolean
+  created_by_id?: boolean
+  updated_by_id?: boolean
+  created_at?: boolean
+  updated_at?: boolean
+  extra_curriculum_activity?: boolean | Prisma.ScienceClub$extra_curriculum_activityArgs<ExtArgs>
+  created_by?: boolean | Prisma.ScienceClub$created_byArgs<ExtArgs>
+  updated_by?: boolean | Prisma.ScienceClub$updated_byArgs<ExtArgs>
 }, ExtArgs["result"]["scienceClub"]>
 
 export type ScienceClubSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
+  science_name?: boolean
+  extra_curriculum_activity_id?: boolean
+  created_by_id?: boolean
+  updated_by_id?: boolean
+  created_at?: boolean
+  updated_at?: boolean
+  extra_curriculum_activity?: boolean | Prisma.ScienceClub$extra_curriculum_activityArgs<ExtArgs>
+  created_by?: boolean | Prisma.ScienceClub$created_byArgs<ExtArgs>
+  updated_by?: boolean | Prisma.ScienceClub$updated_byArgs<ExtArgs>
 }, ExtArgs["result"]["scienceClub"]>
 
 export type ScienceClubSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
+  science_name?: boolean
+  extra_curriculum_activity_id?: boolean
+  created_by_id?: boolean
+  updated_by_id?: boolean
+  created_at?: boolean
+  updated_at?: boolean
+  extra_curriculum_activity?: boolean | Prisma.ScienceClub$extra_curriculum_activityArgs<ExtArgs>
+  created_by?: boolean | Prisma.ScienceClub$created_byArgs<ExtArgs>
+  updated_by?: boolean | Prisma.ScienceClub$updated_byArgs<ExtArgs>
 }, ExtArgs["result"]["scienceClub"]>
 
 export type ScienceClubSelectScalar = {
   id?: boolean
+  science_name?: boolean
+  extra_curriculum_activity_id?: boolean
+  created_by_id?: boolean
+  updated_by_id?: boolean
+  created_at?: boolean
+  updated_at?: boolean
 }
 
-export type ScienceClubOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id", ExtArgs["result"]["scienceClub"]>
+export type ScienceClubOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "science_name" | "extra_curriculum_activity_id" | "created_by_id" | "updated_by_id" | "created_at" | "updated_at", ExtArgs["result"]["scienceClub"]>
+export type ScienceClubInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  extra_curriculum_activity?: boolean | Prisma.ScienceClub$extra_curriculum_activityArgs<ExtArgs>
+  created_by?: boolean | Prisma.ScienceClub$created_byArgs<ExtArgs>
+  updated_by?: boolean | Prisma.ScienceClub$updated_byArgs<ExtArgs>
+}
+export type ScienceClubIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  extra_curriculum_activity?: boolean | Prisma.ScienceClub$extra_curriculum_activityArgs<ExtArgs>
+  created_by?: boolean | Prisma.ScienceClub$created_byArgs<ExtArgs>
+  updated_by?: boolean | Prisma.ScienceClub$updated_byArgs<ExtArgs>
+}
+export type ScienceClubIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  extra_curriculum_activity?: boolean | Prisma.ScienceClub$extra_curriculum_activityArgs<ExtArgs>
+  created_by?: boolean | Prisma.ScienceClub$created_byArgs<ExtArgs>
+  updated_by?: boolean | Prisma.ScienceClub$updated_byArgs<ExtArgs>
+}
 
 export type $ScienceClubPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "ScienceClub"
-  objects: {}
+  objects: {
+    extra_curriculum_activity: Prisma.$ExtraCurriculumActivityPayload<ExtArgs> | null
+    created_by: Prisma.$UserPayload<ExtArgs> | null
+    updated_by: Prisma.$UserPayload<ExtArgs> | null
+  }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
+    science_name: string
+    extra_curriculum_activity_id: string | null
+    created_by_id: string | null
+    updated_by_id: string | null
+    created_at: Date
+    updated_at: Date | null
   }, ExtArgs["result"]["scienceClub"]>
   composites: {}
 }
@@ -636,6 +1221,9 @@ readonly fields: ScienceClubFieldRefs;
  */
 export interface Prisma__ScienceClubClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
+  extra_curriculum_activity<T extends Prisma.ScienceClub$extra_curriculum_activityArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ScienceClub$extra_curriculum_activityArgs<ExtArgs>>): Prisma.Prisma__ExtraCurriculumActivityClient<runtime.Types.Result.GetResult<Prisma.$ExtraCurriculumActivityPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  created_by<T extends Prisma.ScienceClub$created_byArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ScienceClub$created_byArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  updated_by<T extends Prisma.ScienceClub$updated_byArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ScienceClub$updated_byArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -666,6 +1254,12 @@ export interface Prisma__ScienceClubClient<T, Null = never, ExtArgs extends runt
  */
 export interface ScienceClubFieldRefs {
   readonly id: Prisma.FieldRef<"ScienceClub", 'String'>
+  readonly science_name: Prisma.FieldRef<"ScienceClub", 'String'>
+  readonly extra_curriculum_activity_id: Prisma.FieldRef<"ScienceClub", 'String'>
+  readonly created_by_id: Prisma.FieldRef<"ScienceClub", 'String'>
+  readonly updated_by_id: Prisma.FieldRef<"ScienceClub", 'String'>
+  readonly created_at: Prisma.FieldRef<"ScienceClub", 'DateTime'>
+  readonly updated_at: Prisma.FieldRef<"ScienceClub", 'DateTime'>
 }
     
 
@@ -682,6 +1276,10 @@ export type ScienceClubFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.I
    * Omit specific fields from the ScienceClub
    */
   omit?: Prisma.ScienceClubOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ScienceClubInclude<ExtArgs> | null
   /**
    * Filter, which ScienceClub to fetch.
    */
@@ -701,6 +1299,10 @@ export type ScienceClubFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Exten
    */
   omit?: Prisma.ScienceClubOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ScienceClubInclude<ExtArgs> | null
+  /**
    * Filter, which ScienceClub to fetch.
    */
   where: Prisma.ScienceClubWhereUniqueInput
@@ -718,6 +1320,10 @@ export type ScienceClubFindFirstArgs<ExtArgs extends runtime.Types.Extensions.In
    * Omit specific fields from the ScienceClub
    */
   omit?: Prisma.ScienceClubOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ScienceClubInclude<ExtArgs> | null
   /**
    * Filter, which ScienceClub to fetch.
    */
@@ -767,6 +1373,10 @@ export type ScienceClubFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extens
    */
   omit?: Prisma.ScienceClubOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ScienceClubInclude<ExtArgs> | null
+  /**
    * Filter, which ScienceClub to fetch.
    */
   where?: Prisma.ScienceClubWhereInput
@@ -814,6 +1424,10 @@ export type ScienceClubFindManyArgs<ExtArgs extends runtime.Types.Extensions.Int
    * Omit specific fields from the ScienceClub
    */
   omit?: Prisma.ScienceClubOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ScienceClubInclude<ExtArgs> | null
   /**
    * Filter, which ScienceClubs to fetch.
    */
@@ -863,9 +1477,13 @@ export type ScienceClubCreateArgs<ExtArgs extends runtime.Types.Extensions.Inter
    */
   omit?: Prisma.ScienceClubOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ScienceClubInclude<ExtArgs> | null
+  /**
    * The data needed to create a ScienceClub.
    */
-  data?: Prisma.XOR<Prisma.ScienceClubCreateInput, Prisma.ScienceClubUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.ScienceClubCreateInput, Prisma.ScienceClubUncheckedCreateInput>
 }
 
 /**
@@ -896,6 +1514,10 @@ export type ScienceClubCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Ext
    */
   data: Prisma.ScienceClubCreateManyInput | Prisma.ScienceClubCreateManyInput[]
   skipDuplicates?: boolean
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ScienceClubIncludeCreateManyAndReturn<ExtArgs> | null
 }
 
 /**
@@ -910,6 +1532,10 @@ export type ScienceClubUpdateArgs<ExtArgs extends runtime.Types.Extensions.Inter
    * Omit specific fields from the ScienceClub
    */
   omit?: Prisma.ScienceClubOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ScienceClubInclude<ExtArgs> | null
   /**
    * The data needed to update a ScienceClub.
    */
@@ -962,6 +1588,10 @@ export type ScienceClubUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Ext
    * Limit how many ScienceClubs to update.
    */
   limit?: number
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ScienceClubIncludeUpdateManyAndReturn<ExtArgs> | null
 }
 
 /**
@@ -976,6 +1606,10 @@ export type ScienceClubUpsertArgs<ExtArgs extends runtime.Types.Extensions.Inter
    * Omit specific fields from the ScienceClub
    */
   omit?: Prisma.ScienceClubOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ScienceClubInclude<ExtArgs> | null
   /**
    * The filter to search for the ScienceClub to update in case it exists.
    */
@@ -1003,6 +1637,10 @@ export type ScienceClubDeleteArgs<ExtArgs extends runtime.Types.Extensions.Inter
    */
   omit?: Prisma.ScienceClubOmit<ExtArgs> | null
   /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ScienceClubInclude<ExtArgs> | null
+  /**
    * Filter which ScienceClub to delete.
    */
   where: Prisma.ScienceClubWhereUniqueInput
@@ -1023,6 +1661,63 @@ export type ScienceClubDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.I
 }
 
 /**
+ * ScienceClub.extra_curriculum_activity
+ */
+export type ScienceClub$extra_curriculum_activityArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the ExtraCurriculumActivity
+   */
+  select?: Prisma.ExtraCurriculumActivitySelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the ExtraCurriculumActivity
+   */
+  omit?: Prisma.ExtraCurriculumActivityOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ExtraCurriculumActivityInclude<ExtArgs> | null
+  where?: Prisma.ExtraCurriculumActivityWhereInput
+}
+
+/**
+ * ScienceClub.created_by
+ */
+export type ScienceClub$created_byArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the User
+   */
+  select?: Prisma.UserSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the User
+   */
+  omit?: Prisma.UserOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UserInclude<ExtArgs> | null
+  where?: Prisma.UserWhereInput
+}
+
+/**
+ * ScienceClub.updated_by
+ */
+export type ScienceClub$updated_byArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the User
+   */
+  select?: Prisma.UserSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the User
+   */
+  omit?: Prisma.UserOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UserInclude<ExtArgs> | null
+  where?: Prisma.UserWhereInput
+}
+
+/**
  * ScienceClub without action
  */
 export type ScienceClubDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1034,4 +1729,8 @@ export type ScienceClubDefaultArgs<ExtArgs extends runtime.Types.Extensions.Inte
    * Omit specific fields from the ScienceClub
    */
   omit?: Prisma.ScienceClubOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ScienceClubInclude<ExtArgs> | null
 }

@@ -19,12 +19,12 @@ app.use(cookieParser())
 app.get("/", (req:Request,res:Response)=>{
     res.send(html)
 });
-app.use("/smps/auths", authRouter);
-app.use("/smps/users", userRouter);
-app.use("/smps/roles", roleRouter);
-app.use("/smps/positions", positionRouter);
-app.use("/smps/responsibillities", responsibilityRouter);
-app.use("/smps/classes", classRouter)
+app.use("/api/v1/smps/auth", authRouter);
+app.use("/api/v1/smps/user", userRouter);
+app.use("/api/v1/smps/role", roleRouter);
+app.use("/api/v1/smps/position", positionRouter);
+app.use("/api/v1/smps/responsibillity", responsibilityRouter);
+app.use("/api/v1/smps/class", classRouter)
 app.use(notFound);
 app.use(globalErrorHandler);
 export default app;

@@ -6,7 +6,7 @@ import { sendResponse } from "../../utils/sendResponse.js";
 import { StatusCodes } from "http-status-codes";
 
 const authLogin=catchAsync(async(req:Request, res:Response, next:NextFunction)=>{
-    const payload = req.body as IAuthLogin;
+    const payload:IAuthLogin = req.body;
     const {accessToken, refreshToken} = await authServices.authLogin(payload);
     res.cookie("accessToken",accessToken,{
         httpOnly:true,
@@ -27,6 +27,11 @@ const authLogin=catchAsync(async(req:Request, res:Response, next:NextFunction)=>
         data: {accessToken, refreshToken}
     })
 });
+
+const authRegister=catchAsync(async(req:Request, res:Response, next:NextFunction)=>{
+    const payload = req.body
+})
 export const authControllers={
-    authLogin
+    authLogin,
+    authRegister
 }

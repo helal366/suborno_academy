@@ -65,6 +65,7 @@ export const ModelName = {
   Period: 'Period',
   PermanentAddress: 'PermanentAddress',
   PresentAddress: 'PresentAddress',
+  QuranClub: 'QuranClub',
   QuranicSpecialPeriod: 'QuranicSpecialPeriod',
   QuranicSubject: 'QuranicSubject',
   ScienceClub: 'ScienceClub',
@@ -236,6 +237,7 @@ export type ClassRoutineScalarFieldEnum = (typeof ClassRoutineScalarFieldEnum)[k
 export const CulturalClubScalarFieldEnum = {
   id: 'id',
   cultural_name: 'cultural_name',
+  extra_curriculum_activity_id: 'extra_curriculum_activity_id',
   created_by_id: 'created_by_id',
   updated_by_id: 'updated_by_id',
   created_at: 'created_at',
@@ -247,7 +249,6 @@ export type CulturalClubScalarFieldEnum = (typeof CulturalClubScalarFieldEnum)[k
 
 export const ExtraCurriculumActivityScalarFieldEnum = {
   id: 'id',
-  cultural_club: 'cultural_club',
   quran_club: 'quran_club',
   language_club: 'language_club',
   science_club: 'science_club',
@@ -263,7 +264,12 @@ export type ExtraCurriculumActivityScalarFieldEnum = (typeof ExtraCurriculumActi
 
 export const LanguageClubScalarFieldEnum = {
   id: 'id',
-  language_name: 'language_name'
+  language_name: 'language_name',
+  extra_curriculum_activity_id: 'extra_curriculum_activity_id',
+  created_by_id: 'created_by_id',
+  updated_by_id: 'updated_by_id',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
 } as const
 
 export type LanguageClubScalarFieldEnum = (typeof LanguageClubScalarFieldEnum)[keyof typeof LanguageClubScalarFieldEnum]
@@ -331,6 +337,19 @@ export const PresentAddressScalarFieldEnum = {
 export type PresentAddressScalarFieldEnum = (typeof PresentAddressScalarFieldEnum)[keyof typeof PresentAddressScalarFieldEnum]
 
 
+export const QuranClubScalarFieldEnum = {
+  id: 'id',
+  quran_name: 'quran_name',
+  extra_curriculum_activity_id: 'extra_curriculum_activity_id',
+  created_by_id: 'created_by_id',
+  updated_by_id: 'updated_by_id',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
+} as const
+
+export type QuranClubScalarFieldEnum = (typeof QuranClubScalarFieldEnum)[keyof typeof QuranClubScalarFieldEnum]
+
+
 export const QuranicSpecialPeriodScalarFieldEnum = {
   id: 'id',
   period_name: 'period_name',
@@ -359,7 +378,13 @@ export type QuranicSubjectScalarFieldEnum = (typeof QuranicSubjectScalarFieldEnu
 
 
 export const ScienceClubScalarFieldEnum = {
-  id: 'id'
+  id: 'id',
+  science_name: 'science_name',
+  extra_curriculum_activity_id: 'extra_curriculum_activity_id',
+  created_by_id: 'created_by_id',
+  updated_by_id: 'updated_by_id',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
 } as const
 
 export type ScienceClubScalarFieldEnum = (typeof ScienceClubScalarFieldEnum)[keyof typeof ScienceClubScalarFieldEnum]
@@ -367,7 +392,12 @@ export type ScienceClubScalarFieldEnum = (typeof ScienceClubScalarFieldEnum)[key
 
 export const ScoutSportsClubScalarFieldEnum = {
   id: 'id',
-  scout_sports_name: 'scout_sports_name'
+  scout_sports_name: 'scout_sports_name',
+  extra_curriculum_activity_id: 'extra_curriculum_activity_id',
+  created_by_id: 'created_by_id',
+  updated_by_id: 'updated_by_id',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
 } as const
 
 export type ScoutSportsClubScalarFieldEnum = (typeof ScoutSportsClubScalarFieldEnum)[keyof typeof ScoutSportsClubScalarFieldEnum]

@@ -398,6 +398,7 @@ export const ModelName = {
   Period: 'Period',
   PermanentAddress: 'PermanentAddress',
   PresentAddress: 'PresentAddress',
+  QuranClub: 'QuranClub',
   QuranicSpecialPeriod: 'QuranicSpecialPeriod',
   QuranicSubject: 'QuranicSubject',
   ScienceClub: 'ScienceClub',
@@ -437,7 +438,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "academicResult" | "academicTeacher" | "academicYear" | "auditLog" | "book" | "bookClass" | "class" | "classRoutine" | "culturalClub" | "extraCurriculumActivity" | "languageClub" | "period" | "permanentAddress" | "presentAddress" | "quranicSpecialPeriod" | "quranicSubject" | "scienceClub" | "scoutSportsClub" | "shift" | "spouseInformation" | "student" | "studentInstitureAddress" | "studentPreviousInstituteInformation" | "studentResponsibility" | "studentResponsibleGuardianDetails" | "subjectTeacher" | "teacherHonourableResponsibility" | "teacherInterviewInformation" | "teacherJoiningHistory" | "teacherPreviousInstituteInformation" | "teacherPromotedHistory" | "teacherReference" | "user" | "userActiveInactiveHistory" | "userFatherDetails" | "userMotherDetails" | "userPosition" | "userRole"
+    modelProps: "academicResult" | "academicTeacher" | "academicYear" | "auditLog" | "book" | "bookClass" | "class" | "classRoutine" | "culturalClub" | "extraCurriculumActivity" | "languageClub" | "period" | "permanentAddress" | "presentAddress" | "quranClub" | "quranicSpecialPeriod" | "quranicSubject" | "scienceClub" | "scoutSportsClub" | "shift" | "spouseInformation" | "student" | "studentInstitureAddress" | "studentPreviousInstituteInformation" | "studentResponsibility" | "studentResponsibleGuardianDetails" | "subjectTeacher" | "teacherHonourableResponsibility" | "teacherInterviewInformation" | "teacherJoiningHistory" | "teacherPreviousInstituteInformation" | "teacherPromotedHistory" | "teacherReference" | "user" | "userActiveInactiveHistory" | "userFatherDetails" | "userMotherDetails" | "userPosition" | "userRole"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -1474,6 +1475,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         count: {
           args: Prisma.PresentAddressCountArgs<ExtArgs>
           result: runtime.Types.Utils.Optional<Prisma.PresentAddressCountAggregateOutputType> | number
+        }
+      }
+    }
+    QuranClub: {
+      payload: Prisma.$QuranClubPayload<ExtArgs>
+      fields: Prisma.QuranClubFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.QuranClubFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$QuranClubPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.QuranClubFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$QuranClubPayload>
+        }
+        findFirst: {
+          args: Prisma.QuranClubFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$QuranClubPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.QuranClubFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$QuranClubPayload>
+        }
+        findMany: {
+          args: Prisma.QuranClubFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$QuranClubPayload>[]
+        }
+        create: {
+          args: Prisma.QuranClubCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$QuranClubPayload>
+        }
+        createMany: {
+          args: Prisma.QuranClubCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.QuranClubCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$QuranClubPayload>[]
+        }
+        delete: {
+          args: Prisma.QuranClubDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$QuranClubPayload>
+        }
+        update: {
+          args: Prisma.QuranClubUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$QuranClubPayload>
+        }
+        deleteMany: {
+          args: Prisma.QuranClubDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.QuranClubUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.QuranClubUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$QuranClubPayload>[]
+        }
+        upsert: {
+          args: Prisma.QuranClubUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$QuranClubPayload>
+        }
+        aggregate: {
+          args: Prisma.QuranClubAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateQuranClub>
+        }
+        groupBy: {
+          args: Prisma.QuranClubGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.QuranClubGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.QuranClubCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.QuranClubCountAggregateOutputType> | number
         }
       }
     }
@@ -3421,6 +3496,7 @@ export type ClassRoutineScalarFieldEnum = (typeof ClassRoutineScalarFieldEnum)[k
 export const CulturalClubScalarFieldEnum = {
   id: 'id',
   cultural_name: 'cultural_name',
+  extra_curriculum_activity_id: 'extra_curriculum_activity_id',
   created_by_id: 'created_by_id',
   updated_by_id: 'updated_by_id',
   created_at: 'created_at',
@@ -3432,7 +3508,6 @@ export type CulturalClubScalarFieldEnum = (typeof CulturalClubScalarFieldEnum)[k
 
 export const ExtraCurriculumActivityScalarFieldEnum = {
   id: 'id',
-  cultural_club: 'cultural_club',
   quran_club: 'quran_club',
   language_club: 'language_club',
   science_club: 'science_club',
@@ -3448,7 +3523,12 @@ export type ExtraCurriculumActivityScalarFieldEnum = (typeof ExtraCurriculumActi
 
 export const LanguageClubScalarFieldEnum = {
   id: 'id',
-  language_name: 'language_name'
+  language_name: 'language_name',
+  extra_curriculum_activity_id: 'extra_curriculum_activity_id',
+  created_by_id: 'created_by_id',
+  updated_by_id: 'updated_by_id',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
 } as const
 
 export type LanguageClubScalarFieldEnum = (typeof LanguageClubScalarFieldEnum)[keyof typeof LanguageClubScalarFieldEnum]
@@ -3516,6 +3596,19 @@ export const PresentAddressScalarFieldEnum = {
 export type PresentAddressScalarFieldEnum = (typeof PresentAddressScalarFieldEnum)[keyof typeof PresentAddressScalarFieldEnum]
 
 
+export const QuranClubScalarFieldEnum = {
+  id: 'id',
+  quran_name: 'quran_name',
+  extra_curriculum_activity_id: 'extra_curriculum_activity_id',
+  created_by_id: 'created_by_id',
+  updated_by_id: 'updated_by_id',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
+} as const
+
+export type QuranClubScalarFieldEnum = (typeof QuranClubScalarFieldEnum)[keyof typeof QuranClubScalarFieldEnum]
+
+
 export const QuranicSpecialPeriodScalarFieldEnum = {
   id: 'id',
   period_name: 'period_name',
@@ -3544,7 +3637,13 @@ export type QuranicSubjectScalarFieldEnum = (typeof QuranicSubjectScalarFieldEnu
 
 
 export const ScienceClubScalarFieldEnum = {
-  id: 'id'
+  id: 'id',
+  science_name: 'science_name',
+  extra_curriculum_activity_id: 'extra_curriculum_activity_id',
+  created_by_id: 'created_by_id',
+  updated_by_id: 'updated_by_id',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
 } as const
 
 export type ScienceClubScalarFieldEnum = (typeof ScienceClubScalarFieldEnum)[keyof typeof ScienceClubScalarFieldEnum]
@@ -3552,7 +3651,12 @@ export type ScienceClubScalarFieldEnum = (typeof ScienceClubScalarFieldEnum)[key
 
 export const ScoutSportsClubScalarFieldEnum = {
   id: 'id',
-  scout_sports_name: 'scout_sports_name'
+  scout_sports_name: 'scout_sports_name',
+  extra_curriculum_activity_id: 'extra_curriculum_activity_id',
+  created_by_id: 'created_by_id',
+  updated_by_id: 'updated_by_id',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
 } as const
 
 export type ScoutSportsClubScalarFieldEnum = (typeof ScoutSportsClubScalarFieldEnum)[keyof typeof ScoutSportsClubScalarFieldEnum]
@@ -4267,6 +4371,7 @@ export type GlobalOmitConfig = {
   period?: Prisma.PeriodOmit
   permanentAddress?: Prisma.PermanentAddressOmit
   presentAddress?: Prisma.PresentAddressOmit
+  quranClub?: Prisma.QuranClubOmit
   quranicSpecialPeriod?: Prisma.QuranicSpecialPeriodOmit
   quranicSubject?: Prisma.QuranicSubjectOmit
   scienceClub?: Prisma.ScienceClubOmit

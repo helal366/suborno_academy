@@ -26,7 +26,6 @@ export type AggregateExtraCurriculumActivity = {
 
 export type ExtraCurriculumActivityMinAggregateOutputType = {
   id: string | null
-  cultural_club: string | null
   quran_club: string | null
   language_club: string | null
   science_club: string | null
@@ -39,7 +38,6 @@ export type ExtraCurriculumActivityMinAggregateOutputType = {
 
 export type ExtraCurriculumActivityMaxAggregateOutputType = {
   id: string | null
-  cultural_club: string | null
   quran_club: string | null
   language_club: string | null
   science_club: string | null
@@ -52,7 +50,6 @@ export type ExtraCurriculumActivityMaxAggregateOutputType = {
 
 export type ExtraCurriculumActivityCountAggregateOutputType = {
   id: number
-  cultural_club: number
   quran_club: number
   language_club: number
   science_club: number
@@ -67,7 +64,6 @@ export type ExtraCurriculumActivityCountAggregateOutputType = {
 
 export type ExtraCurriculumActivityMinAggregateInputType = {
   id?: true
-  cultural_club?: true
   quran_club?: true
   language_club?: true
   science_club?: true
@@ -80,7 +76,6 @@ export type ExtraCurriculumActivityMinAggregateInputType = {
 
 export type ExtraCurriculumActivityMaxAggregateInputType = {
   id?: true
-  cultural_club?: true
   quran_club?: true
   language_club?: true
   science_club?: true
@@ -93,7 +88,6 @@ export type ExtraCurriculumActivityMaxAggregateInputType = {
 
 export type ExtraCurriculumActivityCountAggregateInputType = {
   id?: true
-  cultural_club?: true
   quran_club?: true
   language_club?: true
   science_club?: true
@@ -179,7 +173,6 @@ export type ExtraCurriculumActivityGroupByArgs<ExtArgs extends runtime.Types.Ext
 
 export type ExtraCurriculumActivityGroupByOutputType = {
   id: string
-  cultural_club: string | null
   quran_club: string | null
   language_club: string | null
   science_club: string | null
@@ -213,7 +206,6 @@ export type ExtraCurriculumActivityWhereInput = {
   OR?: Prisma.ExtraCurriculumActivityWhereInput[]
   NOT?: Prisma.ExtraCurriculumActivityWhereInput | Prisma.ExtraCurriculumActivityWhereInput[]
   id?: Prisma.StringFilter<"ExtraCurriculumActivity"> | string
-  cultural_club?: Prisma.StringNullableFilter<"ExtraCurriculumActivity"> | string | null
   quran_club?: Prisma.StringNullableFilter<"ExtraCurriculumActivity"> | string | null
   language_club?: Prisma.StringNullableFilter<"ExtraCurriculumActivity"> | string | null
   science_club?: Prisma.StringNullableFilter<"ExtraCurriculumActivity"> | string | null
@@ -222,6 +214,11 @@ export type ExtraCurriculumActivityWhereInput = {
   updated_by_id?: Prisma.StringNullableFilter<"ExtraCurriculumActivity"> | string | null
   created_at?: Prisma.DateTimeFilter<"ExtraCurriculumActivity"> | Date | string
   updated_at?: Prisma.DateTimeNullableFilter<"ExtraCurriculumActivity"> | Date | string | null
+  cultural_club?: Prisma.CulturalClubListRelationFilter
+  quran_club_options?: Prisma.QuranClubListRelationFilter
+  language_club_options?: Prisma.LanguageClubListRelationFilter
+  science_club_options?: Prisma.ScienceClubListRelationFilter
+  scout_sports_club_options?: Prisma.ScoutSportsClubListRelationFilter
   students?: Prisma.StudentListRelationFilter
   created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
   updated_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
@@ -229,7 +226,6 @@ export type ExtraCurriculumActivityWhereInput = {
 
 export type ExtraCurriculumActivityOrderByWithRelationInput = {
   id?: Prisma.SortOrder
-  cultural_club?: Prisma.SortOrderInput | Prisma.SortOrder
   quran_club?: Prisma.SortOrderInput | Prisma.SortOrder
   language_club?: Prisma.SortOrderInput | Prisma.SortOrder
   science_club?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -238,6 +234,11 @@ export type ExtraCurriculumActivityOrderByWithRelationInput = {
   updated_by_id?: Prisma.SortOrderInput | Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrderInput | Prisma.SortOrder
+  cultural_club?: Prisma.CulturalClubOrderByRelationAggregateInput
+  quran_club_options?: Prisma.QuranClubOrderByRelationAggregateInput
+  language_club_options?: Prisma.LanguageClubOrderByRelationAggregateInput
+  science_club_options?: Prisma.ScienceClubOrderByRelationAggregateInput
+  scout_sports_club_options?: Prisma.ScoutSportsClubOrderByRelationAggregateInput
   students?: Prisma.StudentOrderByRelationAggregateInput
   created_by?: Prisma.UserOrderByWithRelationInput
   updated_by?: Prisma.UserOrderByWithRelationInput
@@ -248,7 +249,6 @@ export type ExtraCurriculumActivityWhereUniqueInput = Prisma.AtLeast<{
   AND?: Prisma.ExtraCurriculumActivityWhereInput | Prisma.ExtraCurriculumActivityWhereInput[]
   OR?: Prisma.ExtraCurriculumActivityWhereInput[]
   NOT?: Prisma.ExtraCurriculumActivityWhereInput | Prisma.ExtraCurriculumActivityWhereInput[]
-  cultural_club?: Prisma.StringNullableFilter<"ExtraCurriculumActivity"> | string | null
   quran_club?: Prisma.StringNullableFilter<"ExtraCurriculumActivity"> | string | null
   language_club?: Prisma.StringNullableFilter<"ExtraCurriculumActivity"> | string | null
   science_club?: Prisma.StringNullableFilter<"ExtraCurriculumActivity"> | string | null
@@ -257,6 +257,11 @@ export type ExtraCurriculumActivityWhereUniqueInput = Prisma.AtLeast<{
   updated_by_id?: Prisma.StringNullableFilter<"ExtraCurriculumActivity"> | string | null
   created_at?: Prisma.DateTimeFilter<"ExtraCurriculumActivity"> | Date | string
   updated_at?: Prisma.DateTimeNullableFilter<"ExtraCurriculumActivity"> | Date | string | null
+  cultural_club?: Prisma.CulturalClubListRelationFilter
+  quran_club_options?: Prisma.QuranClubListRelationFilter
+  language_club_options?: Prisma.LanguageClubListRelationFilter
+  science_club_options?: Prisma.ScienceClubListRelationFilter
+  scout_sports_club_options?: Prisma.ScoutSportsClubListRelationFilter
   students?: Prisma.StudentListRelationFilter
   created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
   updated_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
@@ -264,7 +269,6 @@ export type ExtraCurriculumActivityWhereUniqueInput = Prisma.AtLeast<{
 
 export type ExtraCurriculumActivityOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
-  cultural_club?: Prisma.SortOrderInput | Prisma.SortOrder
   quran_club?: Prisma.SortOrderInput | Prisma.SortOrder
   language_club?: Prisma.SortOrderInput | Prisma.SortOrder
   science_club?: Prisma.SortOrderInput | Prisma.SortOrder
@@ -283,7 +287,6 @@ export type ExtraCurriculumActivityScalarWhereWithAggregatesInput = {
   OR?: Prisma.ExtraCurriculumActivityScalarWhereWithAggregatesInput[]
   NOT?: Prisma.ExtraCurriculumActivityScalarWhereWithAggregatesInput | Prisma.ExtraCurriculumActivityScalarWhereWithAggregatesInput[]
   id?: Prisma.StringWithAggregatesFilter<"ExtraCurriculumActivity"> | string
-  cultural_club?: Prisma.StringNullableWithAggregatesFilter<"ExtraCurriculumActivity"> | string | null
   quran_club?: Prisma.StringNullableWithAggregatesFilter<"ExtraCurriculumActivity"> | string | null
   language_club?: Prisma.StringNullableWithAggregatesFilter<"ExtraCurriculumActivity"> | string | null
   science_club?: Prisma.StringNullableWithAggregatesFilter<"ExtraCurriculumActivity"> | string | null
@@ -296,13 +299,17 @@ export type ExtraCurriculumActivityScalarWhereWithAggregatesInput = {
 
 export type ExtraCurriculumActivityCreateInput = {
   id?: string
-  cultural_club?: string | null
   quran_club?: string | null
   language_club?: string | null
   science_club?: string | null
   scout_sports_club?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
+  cultural_club?: Prisma.CulturalClubCreateNestedManyWithoutExtra_curriculum_activityInput
+  quran_club_options?: Prisma.QuranClubCreateNestedManyWithoutExtra_curriculum_activityInput
+  language_club_options?: Prisma.LanguageClubCreateNestedManyWithoutExtra_curriculum_activityInput
+  science_club_options?: Prisma.ScienceClubCreateNestedManyWithoutExtra_curriculum_activityInput
+  scout_sports_club_options?: Prisma.ScoutSportsClubCreateNestedManyWithoutExtra_curriculum_activityInput
   students?: Prisma.StudentCreateNestedManyWithoutExtra_curriculum_activitiesInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_extra_curriculum_activityInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_extra_curriculum_activityInput
@@ -310,7 +317,6 @@ export type ExtraCurriculumActivityCreateInput = {
 
 export type ExtraCurriculumActivityUncheckedCreateInput = {
   id?: string
-  cultural_club?: string | null
   quran_club?: string | null
   language_club?: string | null
   science_club?: string | null
@@ -319,18 +325,27 @@ export type ExtraCurriculumActivityUncheckedCreateInput = {
   updated_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
+  cultural_club?: Prisma.CulturalClubUncheckedCreateNestedManyWithoutExtra_curriculum_activityInput
+  quran_club_options?: Prisma.QuranClubUncheckedCreateNestedManyWithoutExtra_curriculum_activityInput
+  language_club_options?: Prisma.LanguageClubUncheckedCreateNestedManyWithoutExtra_curriculum_activityInput
+  science_club_options?: Prisma.ScienceClubUncheckedCreateNestedManyWithoutExtra_curriculum_activityInput
+  scout_sports_club_options?: Prisma.ScoutSportsClubUncheckedCreateNestedManyWithoutExtra_curriculum_activityInput
   students?: Prisma.StudentUncheckedCreateNestedManyWithoutExtra_curriculum_activitiesInput
 }
 
 export type ExtraCurriculumActivityUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  cultural_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   quran_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   language_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   science_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   scout_sports_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  cultural_club?: Prisma.CulturalClubUpdateManyWithoutExtra_curriculum_activityNestedInput
+  quran_club_options?: Prisma.QuranClubUpdateManyWithoutExtra_curriculum_activityNestedInput
+  language_club_options?: Prisma.LanguageClubUpdateManyWithoutExtra_curriculum_activityNestedInput
+  science_club_options?: Prisma.ScienceClubUpdateManyWithoutExtra_curriculum_activityNestedInput
+  scout_sports_club_options?: Prisma.ScoutSportsClubUpdateManyWithoutExtra_curriculum_activityNestedInput
   students?: Prisma.StudentUpdateManyWithoutExtra_curriculum_activitiesNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_extra_curriculum_activityNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_extra_curriculum_activityNestedInput
@@ -338,7 +353,6 @@ export type ExtraCurriculumActivityUpdateInput = {
 
 export type ExtraCurriculumActivityUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  cultural_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   quran_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   language_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   science_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -347,12 +361,16 @@ export type ExtraCurriculumActivityUncheckedUpdateInput = {
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  cultural_club?: Prisma.CulturalClubUncheckedUpdateManyWithoutExtra_curriculum_activityNestedInput
+  quran_club_options?: Prisma.QuranClubUncheckedUpdateManyWithoutExtra_curriculum_activityNestedInput
+  language_club_options?: Prisma.LanguageClubUncheckedUpdateManyWithoutExtra_curriculum_activityNestedInput
+  science_club_options?: Prisma.ScienceClubUncheckedUpdateManyWithoutExtra_curriculum_activityNestedInput
+  scout_sports_club_options?: Prisma.ScoutSportsClubUncheckedUpdateManyWithoutExtra_curriculum_activityNestedInput
   students?: Prisma.StudentUncheckedUpdateManyWithoutExtra_curriculum_activitiesNestedInput
 }
 
 export type ExtraCurriculumActivityCreateManyInput = {
   id?: string
-  cultural_club?: string | null
   quran_club?: string | null
   language_club?: string | null
   science_club?: string | null
@@ -365,7 +383,6 @@ export type ExtraCurriculumActivityCreateManyInput = {
 
 export type ExtraCurriculumActivityUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  cultural_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   quran_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   language_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   science_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -376,7 +393,6 @@ export type ExtraCurriculumActivityUpdateManyMutationInput = {
 
 export type ExtraCurriculumActivityUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  cultural_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   quran_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   language_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   science_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -387,9 +403,13 @@ export type ExtraCurriculumActivityUncheckedUpdateManyInput = {
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
 }
 
+export type ExtraCurriculumActivityNullableScalarRelationFilter = {
+  is?: Prisma.ExtraCurriculumActivityWhereInput | null
+  isNot?: Prisma.ExtraCurriculumActivityWhereInput | null
+}
+
 export type ExtraCurriculumActivityCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  cultural_club?: Prisma.SortOrder
   quran_club?: Prisma.SortOrder
   language_club?: Prisma.SortOrder
   science_club?: Prisma.SortOrder
@@ -402,7 +422,6 @@ export type ExtraCurriculumActivityCountOrderByAggregateInput = {
 
 export type ExtraCurriculumActivityMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  cultural_club?: Prisma.SortOrder
   quran_club?: Prisma.SortOrder
   language_club?: Prisma.SortOrder
   science_club?: Prisma.SortOrder
@@ -415,7 +434,6 @@ export type ExtraCurriculumActivityMaxOrderByAggregateInput = {
 
 export type ExtraCurriculumActivityMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  cultural_club?: Prisma.SortOrder
   quran_club?: Prisma.SortOrder
   language_club?: Prisma.SortOrder
   science_club?: Prisma.SortOrder
@@ -434,6 +452,86 @@ export type ExtraCurriculumActivityListRelationFilter = {
 
 export type ExtraCurriculumActivityOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
+}
+
+export type ExtraCurriculumActivityCreateNestedOneWithoutCultural_clubInput = {
+  create?: Prisma.XOR<Prisma.ExtraCurriculumActivityCreateWithoutCultural_clubInput, Prisma.ExtraCurriculumActivityUncheckedCreateWithoutCultural_clubInput>
+  connectOrCreate?: Prisma.ExtraCurriculumActivityCreateOrConnectWithoutCultural_clubInput
+  connect?: Prisma.ExtraCurriculumActivityWhereUniqueInput
+}
+
+export type ExtraCurriculumActivityUpdateOneWithoutCultural_clubNestedInput = {
+  create?: Prisma.XOR<Prisma.ExtraCurriculumActivityCreateWithoutCultural_clubInput, Prisma.ExtraCurriculumActivityUncheckedCreateWithoutCultural_clubInput>
+  connectOrCreate?: Prisma.ExtraCurriculumActivityCreateOrConnectWithoutCultural_clubInput
+  upsert?: Prisma.ExtraCurriculumActivityUpsertWithoutCultural_clubInput
+  disconnect?: Prisma.ExtraCurriculumActivityWhereInput | boolean
+  delete?: Prisma.ExtraCurriculumActivityWhereInput | boolean
+  connect?: Prisma.ExtraCurriculumActivityWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.ExtraCurriculumActivityUpdateToOneWithWhereWithoutCultural_clubInput, Prisma.ExtraCurriculumActivityUpdateWithoutCultural_clubInput>, Prisma.ExtraCurriculumActivityUncheckedUpdateWithoutCultural_clubInput>
+}
+
+export type ExtraCurriculumActivityCreateNestedOneWithoutLanguage_club_optionsInput = {
+  create?: Prisma.XOR<Prisma.ExtraCurriculumActivityCreateWithoutLanguage_club_optionsInput, Prisma.ExtraCurriculumActivityUncheckedCreateWithoutLanguage_club_optionsInput>
+  connectOrCreate?: Prisma.ExtraCurriculumActivityCreateOrConnectWithoutLanguage_club_optionsInput
+  connect?: Prisma.ExtraCurriculumActivityWhereUniqueInput
+}
+
+export type ExtraCurriculumActivityUpdateOneWithoutLanguage_club_optionsNestedInput = {
+  create?: Prisma.XOR<Prisma.ExtraCurriculumActivityCreateWithoutLanguage_club_optionsInput, Prisma.ExtraCurriculumActivityUncheckedCreateWithoutLanguage_club_optionsInput>
+  connectOrCreate?: Prisma.ExtraCurriculumActivityCreateOrConnectWithoutLanguage_club_optionsInput
+  upsert?: Prisma.ExtraCurriculumActivityUpsertWithoutLanguage_club_optionsInput
+  disconnect?: Prisma.ExtraCurriculumActivityWhereInput | boolean
+  delete?: Prisma.ExtraCurriculumActivityWhereInput | boolean
+  connect?: Prisma.ExtraCurriculumActivityWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.ExtraCurriculumActivityUpdateToOneWithWhereWithoutLanguage_club_optionsInput, Prisma.ExtraCurriculumActivityUpdateWithoutLanguage_club_optionsInput>, Prisma.ExtraCurriculumActivityUncheckedUpdateWithoutLanguage_club_optionsInput>
+}
+
+export type ExtraCurriculumActivityCreateNestedOneWithoutQuran_club_optionsInput = {
+  create?: Prisma.XOR<Prisma.ExtraCurriculumActivityCreateWithoutQuran_club_optionsInput, Prisma.ExtraCurriculumActivityUncheckedCreateWithoutQuran_club_optionsInput>
+  connectOrCreate?: Prisma.ExtraCurriculumActivityCreateOrConnectWithoutQuran_club_optionsInput
+  connect?: Prisma.ExtraCurriculumActivityWhereUniqueInput
+}
+
+export type ExtraCurriculumActivityUpdateOneWithoutQuran_club_optionsNestedInput = {
+  create?: Prisma.XOR<Prisma.ExtraCurriculumActivityCreateWithoutQuran_club_optionsInput, Prisma.ExtraCurriculumActivityUncheckedCreateWithoutQuran_club_optionsInput>
+  connectOrCreate?: Prisma.ExtraCurriculumActivityCreateOrConnectWithoutQuran_club_optionsInput
+  upsert?: Prisma.ExtraCurriculumActivityUpsertWithoutQuran_club_optionsInput
+  disconnect?: Prisma.ExtraCurriculumActivityWhereInput | boolean
+  delete?: Prisma.ExtraCurriculumActivityWhereInput | boolean
+  connect?: Prisma.ExtraCurriculumActivityWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.ExtraCurriculumActivityUpdateToOneWithWhereWithoutQuran_club_optionsInput, Prisma.ExtraCurriculumActivityUpdateWithoutQuran_club_optionsInput>, Prisma.ExtraCurriculumActivityUncheckedUpdateWithoutQuran_club_optionsInput>
+}
+
+export type ExtraCurriculumActivityCreateNestedOneWithoutScience_club_optionsInput = {
+  create?: Prisma.XOR<Prisma.ExtraCurriculumActivityCreateWithoutScience_club_optionsInput, Prisma.ExtraCurriculumActivityUncheckedCreateWithoutScience_club_optionsInput>
+  connectOrCreate?: Prisma.ExtraCurriculumActivityCreateOrConnectWithoutScience_club_optionsInput
+  connect?: Prisma.ExtraCurriculumActivityWhereUniqueInput
+}
+
+export type ExtraCurriculumActivityUpdateOneWithoutScience_club_optionsNestedInput = {
+  create?: Prisma.XOR<Prisma.ExtraCurriculumActivityCreateWithoutScience_club_optionsInput, Prisma.ExtraCurriculumActivityUncheckedCreateWithoutScience_club_optionsInput>
+  connectOrCreate?: Prisma.ExtraCurriculumActivityCreateOrConnectWithoutScience_club_optionsInput
+  upsert?: Prisma.ExtraCurriculumActivityUpsertWithoutScience_club_optionsInput
+  disconnect?: Prisma.ExtraCurriculumActivityWhereInput | boolean
+  delete?: Prisma.ExtraCurriculumActivityWhereInput | boolean
+  connect?: Prisma.ExtraCurriculumActivityWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.ExtraCurriculumActivityUpdateToOneWithWhereWithoutScience_club_optionsInput, Prisma.ExtraCurriculumActivityUpdateWithoutScience_club_optionsInput>, Prisma.ExtraCurriculumActivityUncheckedUpdateWithoutScience_club_optionsInput>
+}
+
+export type ExtraCurriculumActivityCreateNestedOneWithoutScout_sports_club_optionsInput = {
+  create?: Prisma.XOR<Prisma.ExtraCurriculumActivityCreateWithoutScout_sports_club_optionsInput, Prisma.ExtraCurriculumActivityUncheckedCreateWithoutScout_sports_club_optionsInput>
+  connectOrCreate?: Prisma.ExtraCurriculumActivityCreateOrConnectWithoutScout_sports_club_optionsInput
+  connect?: Prisma.ExtraCurriculumActivityWhereUniqueInput
+}
+
+export type ExtraCurriculumActivityUpdateOneWithoutScout_sports_club_optionsNestedInput = {
+  create?: Prisma.XOR<Prisma.ExtraCurriculumActivityCreateWithoutScout_sports_club_optionsInput, Prisma.ExtraCurriculumActivityUncheckedCreateWithoutScout_sports_club_optionsInput>
+  connectOrCreate?: Prisma.ExtraCurriculumActivityCreateOrConnectWithoutScout_sports_club_optionsInput
+  upsert?: Prisma.ExtraCurriculumActivityUpsertWithoutScout_sports_club_optionsInput
+  disconnect?: Prisma.ExtraCurriculumActivityWhereInput | boolean
+  delete?: Prisma.ExtraCurriculumActivityWhereInput | boolean
+  connect?: Prisma.ExtraCurriculumActivityWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.ExtraCurriculumActivityUpdateToOneWithWhereWithoutScout_sports_club_optionsInput, Prisma.ExtraCurriculumActivityUpdateWithoutScout_sports_club_optionsInput>, Prisma.ExtraCurriculumActivityUncheckedUpdateWithoutScout_sports_club_optionsInput>
 }
 
 export type ExtraCurriculumActivityCreateNestedManyWithoutStudentsInput = {
@@ -558,22 +656,25 @@ export type ExtraCurriculumActivityUncheckedUpdateManyWithoutUpdated_byNestedInp
   deleteMany?: Prisma.ExtraCurriculumActivityScalarWhereInput | Prisma.ExtraCurriculumActivityScalarWhereInput[]
 }
 
-export type ExtraCurriculumActivityCreateWithoutStudentsInput = {
+export type ExtraCurriculumActivityCreateWithoutCultural_clubInput = {
   id?: string
-  cultural_club?: string | null
   quran_club?: string | null
   language_club?: string | null
   science_club?: string | null
   scout_sports_club?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
+  quran_club_options?: Prisma.QuranClubCreateNestedManyWithoutExtra_curriculum_activityInput
+  language_club_options?: Prisma.LanguageClubCreateNestedManyWithoutExtra_curriculum_activityInput
+  science_club_options?: Prisma.ScienceClubCreateNestedManyWithoutExtra_curriculum_activityInput
+  scout_sports_club_options?: Prisma.ScoutSportsClubCreateNestedManyWithoutExtra_curriculum_activityInput
+  students?: Prisma.StudentCreateNestedManyWithoutExtra_curriculum_activitiesInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_extra_curriculum_activityInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_extra_curriculum_activityInput
 }
 
-export type ExtraCurriculumActivityUncheckedCreateWithoutStudentsInput = {
+export type ExtraCurriculumActivityUncheckedCreateWithoutCultural_clubInput = {
   id?: string
-  cultural_club?: string | null
   quran_club?: string | null
   language_club?: string | null
   science_club?: string | null
@@ -582,6 +683,431 @@ export type ExtraCurriculumActivityUncheckedCreateWithoutStudentsInput = {
   updated_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
+  quran_club_options?: Prisma.QuranClubUncheckedCreateNestedManyWithoutExtra_curriculum_activityInput
+  language_club_options?: Prisma.LanguageClubUncheckedCreateNestedManyWithoutExtra_curriculum_activityInput
+  science_club_options?: Prisma.ScienceClubUncheckedCreateNestedManyWithoutExtra_curriculum_activityInput
+  scout_sports_club_options?: Prisma.ScoutSportsClubUncheckedCreateNestedManyWithoutExtra_curriculum_activityInput
+  students?: Prisma.StudentUncheckedCreateNestedManyWithoutExtra_curriculum_activitiesInput
+}
+
+export type ExtraCurriculumActivityCreateOrConnectWithoutCultural_clubInput = {
+  where: Prisma.ExtraCurriculumActivityWhereUniqueInput
+  create: Prisma.XOR<Prisma.ExtraCurriculumActivityCreateWithoutCultural_clubInput, Prisma.ExtraCurriculumActivityUncheckedCreateWithoutCultural_clubInput>
+}
+
+export type ExtraCurriculumActivityUpsertWithoutCultural_clubInput = {
+  update: Prisma.XOR<Prisma.ExtraCurriculumActivityUpdateWithoutCultural_clubInput, Prisma.ExtraCurriculumActivityUncheckedUpdateWithoutCultural_clubInput>
+  create: Prisma.XOR<Prisma.ExtraCurriculumActivityCreateWithoutCultural_clubInput, Prisma.ExtraCurriculumActivityUncheckedCreateWithoutCultural_clubInput>
+  where?: Prisma.ExtraCurriculumActivityWhereInput
+}
+
+export type ExtraCurriculumActivityUpdateToOneWithWhereWithoutCultural_clubInput = {
+  where?: Prisma.ExtraCurriculumActivityWhereInput
+  data: Prisma.XOR<Prisma.ExtraCurriculumActivityUpdateWithoutCultural_clubInput, Prisma.ExtraCurriculumActivityUncheckedUpdateWithoutCultural_clubInput>
+}
+
+export type ExtraCurriculumActivityUpdateWithoutCultural_clubInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  quran_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  language_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  science_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  scout_sports_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  quran_club_options?: Prisma.QuranClubUpdateManyWithoutExtra_curriculum_activityNestedInput
+  language_club_options?: Prisma.LanguageClubUpdateManyWithoutExtra_curriculum_activityNestedInput
+  science_club_options?: Prisma.ScienceClubUpdateManyWithoutExtra_curriculum_activityNestedInput
+  scout_sports_club_options?: Prisma.ScoutSportsClubUpdateManyWithoutExtra_curriculum_activityNestedInput
+  students?: Prisma.StudentUpdateManyWithoutExtra_curriculum_activitiesNestedInput
+  created_by?: Prisma.UserUpdateOneWithoutCreated_extra_curriculum_activityNestedInput
+  updated_by?: Prisma.UserUpdateOneWithoutUpdated_extra_curriculum_activityNestedInput
+}
+
+export type ExtraCurriculumActivityUncheckedUpdateWithoutCultural_clubInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  quran_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  language_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  science_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  scout_sports_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  quran_club_options?: Prisma.QuranClubUncheckedUpdateManyWithoutExtra_curriculum_activityNestedInput
+  language_club_options?: Prisma.LanguageClubUncheckedUpdateManyWithoutExtra_curriculum_activityNestedInput
+  science_club_options?: Prisma.ScienceClubUncheckedUpdateManyWithoutExtra_curriculum_activityNestedInput
+  scout_sports_club_options?: Prisma.ScoutSportsClubUncheckedUpdateManyWithoutExtra_curriculum_activityNestedInput
+  students?: Prisma.StudentUncheckedUpdateManyWithoutExtra_curriculum_activitiesNestedInput
+}
+
+export type ExtraCurriculumActivityCreateWithoutLanguage_club_optionsInput = {
+  id?: string
+  quran_club?: string | null
+  language_club?: string | null
+  science_club?: string | null
+  scout_sports_club?: string | null
+  created_at?: Date | string
+  updated_at?: Date | string | null
+  cultural_club?: Prisma.CulturalClubCreateNestedManyWithoutExtra_curriculum_activityInput
+  quran_club_options?: Prisma.QuranClubCreateNestedManyWithoutExtra_curriculum_activityInput
+  science_club_options?: Prisma.ScienceClubCreateNestedManyWithoutExtra_curriculum_activityInput
+  scout_sports_club_options?: Prisma.ScoutSportsClubCreateNestedManyWithoutExtra_curriculum_activityInput
+  students?: Prisma.StudentCreateNestedManyWithoutExtra_curriculum_activitiesInput
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_extra_curriculum_activityInput
+  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_extra_curriculum_activityInput
+}
+
+export type ExtraCurriculumActivityUncheckedCreateWithoutLanguage_club_optionsInput = {
+  id?: string
+  quran_club?: string | null
+  language_club?: string | null
+  science_club?: string | null
+  scout_sports_club?: string | null
+  created_by_id?: string | null
+  updated_by_id?: string | null
+  created_at?: Date | string
+  updated_at?: Date | string | null
+  cultural_club?: Prisma.CulturalClubUncheckedCreateNestedManyWithoutExtra_curriculum_activityInput
+  quran_club_options?: Prisma.QuranClubUncheckedCreateNestedManyWithoutExtra_curriculum_activityInput
+  science_club_options?: Prisma.ScienceClubUncheckedCreateNestedManyWithoutExtra_curriculum_activityInput
+  scout_sports_club_options?: Prisma.ScoutSportsClubUncheckedCreateNestedManyWithoutExtra_curriculum_activityInput
+  students?: Prisma.StudentUncheckedCreateNestedManyWithoutExtra_curriculum_activitiesInput
+}
+
+export type ExtraCurriculumActivityCreateOrConnectWithoutLanguage_club_optionsInput = {
+  where: Prisma.ExtraCurriculumActivityWhereUniqueInput
+  create: Prisma.XOR<Prisma.ExtraCurriculumActivityCreateWithoutLanguage_club_optionsInput, Prisma.ExtraCurriculumActivityUncheckedCreateWithoutLanguage_club_optionsInput>
+}
+
+export type ExtraCurriculumActivityUpsertWithoutLanguage_club_optionsInput = {
+  update: Prisma.XOR<Prisma.ExtraCurriculumActivityUpdateWithoutLanguage_club_optionsInput, Prisma.ExtraCurriculumActivityUncheckedUpdateWithoutLanguage_club_optionsInput>
+  create: Prisma.XOR<Prisma.ExtraCurriculumActivityCreateWithoutLanguage_club_optionsInput, Prisma.ExtraCurriculumActivityUncheckedCreateWithoutLanguage_club_optionsInput>
+  where?: Prisma.ExtraCurriculumActivityWhereInput
+}
+
+export type ExtraCurriculumActivityUpdateToOneWithWhereWithoutLanguage_club_optionsInput = {
+  where?: Prisma.ExtraCurriculumActivityWhereInput
+  data: Prisma.XOR<Prisma.ExtraCurriculumActivityUpdateWithoutLanguage_club_optionsInput, Prisma.ExtraCurriculumActivityUncheckedUpdateWithoutLanguage_club_optionsInput>
+}
+
+export type ExtraCurriculumActivityUpdateWithoutLanguage_club_optionsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  quran_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  language_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  science_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  scout_sports_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  cultural_club?: Prisma.CulturalClubUpdateManyWithoutExtra_curriculum_activityNestedInput
+  quran_club_options?: Prisma.QuranClubUpdateManyWithoutExtra_curriculum_activityNestedInput
+  science_club_options?: Prisma.ScienceClubUpdateManyWithoutExtra_curriculum_activityNestedInput
+  scout_sports_club_options?: Prisma.ScoutSportsClubUpdateManyWithoutExtra_curriculum_activityNestedInput
+  students?: Prisma.StudentUpdateManyWithoutExtra_curriculum_activitiesNestedInput
+  created_by?: Prisma.UserUpdateOneWithoutCreated_extra_curriculum_activityNestedInput
+  updated_by?: Prisma.UserUpdateOneWithoutUpdated_extra_curriculum_activityNestedInput
+}
+
+export type ExtraCurriculumActivityUncheckedUpdateWithoutLanguage_club_optionsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  quran_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  language_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  science_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  scout_sports_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  cultural_club?: Prisma.CulturalClubUncheckedUpdateManyWithoutExtra_curriculum_activityNestedInput
+  quran_club_options?: Prisma.QuranClubUncheckedUpdateManyWithoutExtra_curriculum_activityNestedInput
+  science_club_options?: Prisma.ScienceClubUncheckedUpdateManyWithoutExtra_curriculum_activityNestedInput
+  scout_sports_club_options?: Prisma.ScoutSportsClubUncheckedUpdateManyWithoutExtra_curriculum_activityNestedInput
+  students?: Prisma.StudentUncheckedUpdateManyWithoutExtra_curriculum_activitiesNestedInput
+}
+
+export type ExtraCurriculumActivityCreateWithoutQuran_club_optionsInput = {
+  id?: string
+  quran_club?: string | null
+  language_club?: string | null
+  science_club?: string | null
+  scout_sports_club?: string | null
+  created_at?: Date | string
+  updated_at?: Date | string | null
+  cultural_club?: Prisma.CulturalClubCreateNestedManyWithoutExtra_curriculum_activityInput
+  language_club_options?: Prisma.LanguageClubCreateNestedManyWithoutExtra_curriculum_activityInput
+  science_club_options?: Prisma.ScienceClubCreateNestedManyWithoutExtra_curriculum_activityInput
+  scout_sports_club_options?: Prisma.ScoutSportsClubCreateNestedManyWithoutExtra_curriculum_activityInput
+  students?: Prisma.StudentCreateNestedManyWithoutExtra_curriculum_activitiesInput
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_extra_curriculum_activityInput
+  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_extra_curriculum_activityInput
+}
+
+export type ExtraCurriculumActivityUncheckedCreateWithoutQuran_club_optionsInput = {
+  id?: string
+  quran_club?: string | null
+  language_club?: string | null
+  science_club?: string | null
+  scout_sports_club?: string | null
+  created_by_id?: string | null
+  updated_by_id?: string | null
+  created_at?: Date | string
+  updated_at?: Date | string | null
+  cultural_club?: Prisma.CulturalClubUncheckedCreateNestedManyWithoutExtra_curriculum_activityInput
+  language_club_options?: Prisma.LanguageClubUncheckedCreateNestedManyWithoutExtra_curriculum_activityInput
+  science_club_options?: Prisma.ScienceClubUncheckedCreateNestedManyWithoutExtra_curriculum_activityInput
+  scout_sports_club_options?: Prisma.ScoutSportsClubUncheckedCreateNestedManyWithoutExtra_curriculum_activityInput
+  students?: Prisma.StudentUncheckedCreateNestedManyWithoutExtra_curriculum_activitiesInput
+}
+
+export type ExtraCurriculumActivityCreateOrConnectWithoutQuran_club_optionsInput = {
+  where: Prisma.ExtraCurriculumActivityWhereUniqueInput
+  create: Prisma.XOR<Prisma.ExtraCurriculumActivityCreateWithoutQuran_club_optionsInput, Prisma.ExtraCurriculumActivityUncheckedCreateWithoutQuran_club_optionsInput>
+}
+
+export type ExtraCurriculumActivityUpsertWithoutQuran_club_optionsInput = {
+  update: Prisma.XOR<Prisma.ExtraCurriculumActivityUpdateWithoutQuran_club_optionsInput, Prisma.ExtraCurriculumActivityUncheckedUpdateWithoutQuran_club_optionsInput>
+  create: Prisma.XOR<Prisma.ExtraCurriculumActivityCreateWithoutQuran_club_optionsInput, Prisma.ExtraCurriculumActivityUncheckedCreateWithoutQuran_club_optionsInput>
+  where?: Prisma.ExtraCurriculumActivityWhereInput
+}
+
+export type ExtraCurriculumActivityUpdateToOneWithWhereWithoutQuran_club_optionsInput = {
+  where?: Prisma.ExtraCurriculumActivityWhereInput
+  data: Prisma.XOR<Prisma.ExtraCurriculumActivityUpdateWithoutQuran_club_optionsInput, Prisma.ExtraCurriculumActivityUncheckedUpdateWithoutQuran_club_optionsInput>
+}
+
+export type ExtraCurriculumActivityUpdateWithoutQuran_club_optionsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  quran_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  language_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  science_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  scout_sports_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  cultural_club?: Prisma.CulturalClubUpdateManyWithoutExtra_curriculum_activityNestedInput
+  language_club_options?: Prisma.LanguageClubUpdateManyWithoutExtra_curriculum_activityNestedInput
+  science_club_options?: Prisma.ScienceClubUpdateManyWithoutExtra_curriculum_activityNestedInput
+  scout_sports_club_options?: Prisma.ScoutSportsClubUpdateManyWithoutExtra_curriculum_activityNestedInput
+  students?: Prisma.StudentUpdateManyWithoutExtra_curriculum_activitiesNestedInput
+  created_by?: Prisma.UserUpdateOneWithoutCreated_extra_curriculum_activityNestedInput
+  updated_by?: Prisma.UserUpdateOneWithoutUpdated_extra_curriculum_activityNestedInput
+}
+
+export type ExtraCurriculumActivityUncheckedUpdateWithoutQuran_club_optionsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  quran_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  language_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  science_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  scout_sports_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  cultural_club?: Prisma.CulturalClubUncheckedUpdateManyWithoutExtra_curriculum_activityNestedInput
+  language_club_options?: Prisma.LanguageClubUncheckedUpdateManyWithoutExtra_curriculum_activityNestedInput
+  science_club_options?: Prisma.ScienceClubUncheckedUpdateManyWithoutExtra_curriculum_activityNestedInput
+  scout_sports_club_options?: Prisma.ScoutSportsClubUncheckedUpdateManyWithoutExtra_curriculum_activityNestedInput
+  students?: Prisma.StudentUncheckedUpdateManyWithoutExtra_curriculum_activitiesNestedInput
+}
+
+export type ExtraCurriculumActivityCreateWithoutScience_club_optionsInput = {
+  id?: string
+  quran_club?: string | null
+  language_club?: string | null
+  science_club?: string | null
+  scout_sports_club?: string | null
+  created_at?: Date | string
+  updated_at?: Date | string | null
+  cultural_club?: Prisma.CulturalClubCreateNestedManyWithoutExtra_curriculum_activityInput
+  quran_club_options?: Prisma.QuranClubCreateNestedManyWithoutExtra_curriculum_activityInput
+  language_club_options?: Prisma.LanguageClubCreateNestedManyWithoutExtra_curriculum_activityInput
+  scout_sports_club_options?: Prisma.ScoutSportsClubCreateNestedManyWithoutExtra_curriculum_activityInput
+  students?: Prisma.StudentCreateNestedManyWithoutExtra_curriculum_activitiesInput
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_extra_curriculum_activityInput
+  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_extra_curriculum_activityInput
+}
+
+export type ExtraCurriculumActivityUncheckedCreateWithoutScience_club_optionsInput = {
+  id?: string
+  quran_club?: string | null
+  language_club?: string | null
+  science_club?: string | null
+  scout_sports_club?: string | null
+  created_by_id?: string | null
+  updated_by_id?: string | null
+  created_at?: Date | string
+  updated_at?: Date | string | null
+  cultural_club?: Prisma.CulturalClubUncheckedCreateNestedManyWithoutExtra_curriculum_activityInput
+  quran_club_options?: Prisma.QuranClubUncheckedCreateNestedManyWithoutExtra_curriculum_activityInput
+  language_club_options?: Prisma.LanguageClubUncheckedCreateNestedManyWithoutExtra_curriculum_activityInput
+  scout_sports_club_options?: Prisma.ScoutSportsClubUncheckedCreateNestedManyWithoutExtra_curriculum_activityInput
+  students?: Prisma.StudentUncheckedCreateNestedManyWithoutExtra_curriculum_activitiesInput
+}
+
+export type ExtraCurriculumActivityCreateOrConnectWithoutScience_club_optionsInput = {
+  where: Prisma.ExtraCurriculumActivityWhereUniqueInput
+  create: Prisma.XOR<Prisma.ExtraCurriculumActivityCreateWithoutScience_club_optionsInput, Prisma.ExtraCurriculumActivityUncheckedCreateWithoutScience_club_optionsInput>
+}
+
+export type ExtraCurriculumActivityUpsertWithoutScience_club_optionsInput = {
+  update: Prisma.XOR<Prisma.ExtraCurriculumActivityUpdateWithoutScience_club_optionsInput, Prisma.ExtraCurriculumActivityUncheckedUpdateWithoutScience_club_optionsInput>
+  create: Prisma.XOR<Prisma.ExtraCurriculumActivityCreateWithoutScience_club_optionsInput, Prisma.ExtraCurriculumActivityUncheckedCreateWithoutScience_club_optionsInput>
+  where?: Prisma.ExtraCurriculumActivityWhereInput
+}
+
+export type ExtraCurriculumActivityUpdateToOneWithWhereWithoutScience_club_optionsInput = {
+  where?: Prisma.ExtraCurriculumActivityWhereInput
+  data: Prisma.XOR<Prisma.ExtraCurriculumActivityUpdateWithoutScience_club_optionsInput, Prisma.ExtraCurriculumActivityUncheckedUpdateWithoutScience_club_optionsInput>
+}
+
+export type ExtraCurriculumActivityUpdateWithoutScience_club_optionsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  quran_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  language_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  science_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  scout_sports_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  cultural_club?: Prisma.CulturalClubUpdateManyWithoutExtra_curriculum_activityNestedInput
+  quran_club_options?: Prisma.QuranClubUpdateManyWithoutExtra_curriculum_activityNestedInput
+  language_club_options?: Prisma.LanguageClubUpdateManyWithoutExtra_curriculum_activityNestedInput
+  scout_sports_club_options?: Prisma.ScoutSportsClubUpdateManyWithoutExtra_curriculum_activityNestedInput
+  students?: Prisma.StudentUpdateManyWithoutExtra_curriculum_activitiesNestedInput
+  created_by?: Prisma.UserUpdateOneWithoutCreated_extra_curriculum_activityNestedInput
+  updated_by?: Prisma.UserUpdateOneWithoutUpdated_extra_curriculum_activityNestedInput
+}
+
+export type ExtraCurriculumActivityUncheckedUpdateWithoutScience_club_optionsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  quran_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  language_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  science_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  scout_sports_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  cultural_club?: Prisma.CulturalClubUncheckedUpdateManyWithoutExtra_curriculum_activityNestedInput
+  quran_club_options?: Prisma.QuranClubUncheckedUpdateManyWithoutExtra_curriculum_activityNestedInput
+  language_club_options?: Prisma.LanguageClubUncheckedUpdateManyWithoutExtra_curriculum_activityNestedInput
+  scout_sports_club_options?: Prisma.ScoutSportsClubUncheckedUpdateManyWithoutExtra_curriculum_activityNestedInput
+  students?: Prisma.StudentUncheckedUpdateManyWithoutExtra_curriculum_activitiesNestedInput
+}
+
+export type ExtraCurriculumActivityCreateWithoutScout_sports_club_optionsInput = {
+  id?: string
+  quran_club?: string | null
+  language_club?: string | null
+  science_club?: string | null
+  scout_sports_club?: string | null
+  created_at?: Date | string
+  updated_at?: Date | string | null
+  cultural_club?: Prisma.CulturalClubCreateNestedManyWithoutExtra_curriculum_activityInput
+  quran_club_options?: Prisma.QuranClubCreateNestedManyWithoutExtra_curriculum_activityInput
+  language_club_options?: Prisma.LanguageClubCreateNestedManyWithoutExtra_curriculum_activityInput
+  science_club_options?: Prisma.ScienceClubCreateNestedManyWithoutExtra_curriculum_activityInput
+  students?: Prisma.StudentCreateNestedManyWithoutExtra_curriculum_activitiesInput
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_extra_curriculum_activityInput
+  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_extra_curriculum_activityInput
+}
+
+export type ExtraCurriculumActivityUncheckedCreateWithoutScout_sports_club_optionsInput = {
+  id?: string
+  quran_club?: string | null
+  language_club?: string | null
+  science_club?: string | null
+  scout_sports_club?: string | null
+  created_by_id?: string | null
+  updated_by_id?: string | null
+  created_at?: Date | string
+  updated_at?: Date | string | null
+  cultural_club?: Prisma.CulturalClubUncheckedCreateNestedManyWithoutExtra_curriculum_activityInput
+  quran_club_options?: Prisma.QuranClubUncheckedCreateNestedManyWithoutExtra_curriculum_activityInput
+  language_club_options?: Prisma.LanguageClubUncheckedCreateNestedManyWithoutExtra_curriculum_activityInput
+  science_club_options?: Prisma.ScienceClubUncheckedCreateNestedManyWithoutExtra_curriculum_activityInput
+  students?: Prisma.StudentUncheckedCreateNestedManyWithoutExtra_curriculum_activitiesInput
+}
+
+export type ExtraCurriculumActivityCreateOrConnectWithoutScout_sports_club_optionsInput = {
+  where: Prisma.ExtraCurriculumActivityWhereUniqueInput
+  create: Prisma.XOR<Prisma.ExtraCurriculumActivityCreateWithoutScout_sports_club_optionsInput, Prisma.ExtraCurriculumActivityUncheckedCreateWithoutScout_sports_club_optionsInput>
+}
+
+export type ExtraCurriculumActivityUpsertWithoutScout_sports_club_optionsInput = {
+  update: Prisma.XOR<Prisma.ExtraCurriculumActivityUpdateWithoutScout_sports_club_optionsInput, Prisma.ExtraCurriculumActivityUncheckedUpdateWithoutScout_sports_club_optionsInput>
+  create: Prisma.XOR<Prisma.ExtraCurriculumActivityCreateWithoutScout_sports_club_optionsInput, Prisma.ExtraCurriculumActivityUncheckedCreateWithoutScout_sports_club_optionsInput>
+  where?: Prisma.ExtraCurriculumActivityWhereInput
+}
+
+export type ExtraCurriculumActivityUpdateToOneWithWhereWithoutScout_sports_club_optionsInput = {
+  where?: Prisma.ExtraCurriculumActivityWhereInput
+  data: Prisma.XOR<Prisma.ExtraCurriculumActivityUpdateWithoutScout_sports_club_optionsInput, Prisma.ExtraCurriculumActivityUncheckedUpdateWithoutScout_sports_club_optionsInput>
+}
+
+export type ExtraCurriculumActivityUpdateWithoutScout_sports_club_optionsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  quran_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  language_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  science_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  scout_sports_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  cultural_club?: Prisma.CulturalClubUpdateManyWithoutExtra_curriculum_activityNestedInput
+  quran_club_options?: Prisma.QuranClubUpdateManyWithoutExtra_curriculum_activityNestedInput
+  language_club_options?: Prisma.LanguageClubUpdateManyWithoutExtra_curriculum_activityNestedInput
+  science_club_options?: Prisma.ScienceClubUpdateManyWithoutExtra_curriculum_activityNestedInput
+  students?: Prisma.StudentUpdateManyWithoutExtra_curriculum_activitiesNestedInput
+  created_by?: Prisma.UserUpdateOneWithoutCreated_extra_curriculum_activityNestedInput
+  updated_by?: Prisma.UserUpdateOneWithoutUpdated_extra_curriculum_activityNestedInput
+}
+
+export type ExtraCurriculumActivityUncheckedUpdateWithoutScout_sports_club_optionsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  quran_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  language_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  science_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  scout_sports_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  cultural_club?: Prisma.CulturalClubUncheckedUpdateManyWithoutExtra_curriculum_activityNestedInput
+  quran_club_options?: Prisma.QuranClubUncheckedUpdateManyWithoutExtra_curriculum_activityNestedInput
+  language_club_options?: Prisma.LanguageClubUncheckedUpdateManyWithoutExtra_curriculum_activityNestedInput
+  science_club_options?: Prisma.ScienceClubUncheckedUpdateManyWithoutExtra_curriculum_activityNestedInput
+  students?: Prisma.StudentUncheckedUpdateManyWithoutExtra_curriculum_activitiesNestedInput
+}
+
+export type ExtraCurriculumActivityCreateWithoutStudentsInput = {
+  id?: string
+  quran_club?: string | null
+  language_club?: string | null
+  science_club?: string | null
+  scout_sports_club?: string | null
+  created_at?: Date | string
+  updated_at?: Date | string | null
+  cultural_club?: Prisma.CulturalClubCreateNestedManyWithoutExtra_curriculum_activityInput
+  quran_club_options?: Prisma.QuranClubCreateNestedManyWithoutExtra_curriculum_activityInput
+  language_club_options?: Prisma.LanguageClubCreateNestedManyWithoutExtra_curriculum_activityInput
+  science_club_options?: Prisma.ScienceClubCreateNestedManyWithoutExtra_curriculum_activityInput
+  scout_sports_club_options?: Prisma.ScoutSportsClubCreateNestedManyWithoutExtra_curriculum_activityInput
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_extra_curriculum_activityInput
+  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_extra_curriculum_activityInput
+}
+
+export type ExtraCurriculumActivityUncheckedCreateWithoutStudentsInput = {
+  id?: string
+  quran_club?: string | null
+  language_club?: string | null
+  science_club?: string | null
+  scout_sports_club?: string | null
+  created_by_id?: string | null
+  updated_by_id?: string | null
+  created_at?: Date | string
+  updated_at?: Date | string | null
+  cultural_club?: Prisma.CulturalClubUncheckedCreateNestedManyWithoutExtra_curriculum_activityInput
+  quran_club_options?: Prisma.QuranClubUncheckedCreateNestedManyWithoutExtra_curriculum_activityInput
+  language_club_options?: Prisma.LanguageClubUncheckedCreateNestedManyWithoutExtra_curriculum_activityInput
+  science_club_options?: Prisma.ScienceClubUncheckedCreateNestedManyWithoutExtra_curriculum_activityInput
+  scout_sports_club_options?: Prisma.ScoutSportsClubUncheckedCreateNestedManyWithoutExtra_curriculum_activityInput
 }
 
 export type ExtraCurriculumActivityCreateOrConnectWithoutStudentsInput = {
@@ -610,7 +1136,6 @@ export type ExtraCurriculumActivityScalarWhereInput = {
   OR?: Prisma.ExtraCurriculumActivityScalarWhereInput[]
   NOT?: Prisma.ExtraCurriculumActivityScalarWhereInput | Prisma.ExtraCurriculumActivityScalarWhereInput[]
   id?: Prisma.StringFilter<"ExtraCurriculumActivity"> | string
-  cultural_club?: Prisma.StringNullableFilter<"ExtraCurriculumActivity"> | string | null
   quran_club?: Prisma.StringNullableFilter<"ExtraCurriculumActivity"> | string | null
   language_club?: Prisma.StringNullableFilter<"ExtraCurriculumActivity"> | string | null
   science_club?: Prisma.StringNullableFilter<"ExtraCurriculumActivity"> | string | null
@@ -623,20 +1148,23 @@ export type ExtraCurriculumActivityScalarWhereInput = {
 
 export type ExtraCurriculumActivityCreateWithoutCreated_byInput = {
   id?: string
-  cultural_club?: string | null
   quran_club?: string | null
   language_club?: string | null
   science_club?: string | null
   scout_sports_club?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
+  cultural_club?: Prisma.CulturalClubCreateNestedManyWithoutExtra_curriculum_activityInput
+  quran_club_options?: Prisma.QuranClubCreateNestedManyWithoutExtra_curriculum_activityInput
+  language_club_options?: Prisma.LanguageClubCreateNestedManyWithoutExtra_curriculum_activityInput
+  science_club_options?: Prisma.ScienceClubCreateNestedManyWithoutExtra_curriculum_activityInput
+  scout_sports_club_options?: Prisma.ScoutSportsClubCreateNestedManyWithoutExtra_curriculum_activityInput
   students?: Prisma.StudentCreateNestedManyWithoutExtra_curriculum_activitiesInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_extra_curriculum_activityInput
 }
 
 export type ExtraCurriculumActivityUncheckedCreateWithoutCreated_byInput = {
   id?: string
-  cultural_club?: string | null
   quran_club?: string | null
   language_club?: string | null
   science_club?: string | null
@@ -644,6 +1172,11 @@ export type ExtraCurriculumActivityUncheckedCreateWithoutCreated_byInput = {
   updated_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
+  cultural_club?: Prisma.CulturalClubUncheckedCreateNestedManyWithoutExtra_curriculum_activityInput
+  quran_club_options?: Prisma.QuranClubUncheckedCreateNestedManyWithoutExtra_curriculum_activityInput
+  language_club_options?: Prisma.LanguageClubUncheckedCreateNestedManyWithoutExtra_curriculum_activityInput
+  science_club_options?: Prisma.ScienceClubUncheckedCreateNestedManyWithoutExtra_curriculum_activityInput
+  scout_sports_club_options?: Prisma.ScoutSportsClubUncheckedCreateNestedManyWithoutExtra_curriculum_activityInput
   students?: Prisma.StudentUncheckedCreateNestedManyWithoutExtra_curriculum_activitiesInput
 }
 
@@ -659,20 +1192,23 @@ export type ExtraCurriculumActivityCreateManyCreated_byInputEnvelope = {
 
 export type ExtraCurriculumActivityCreateWithoutUpdated_byInput = {
   id?: string
-  cultural_club?: string | null
   quran_club?: string | null
   language_club?: string | null
   science_club?: string | null
   scout_sports_club?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
+  cultural_club?: Prisma.CulturalClubCreateNestedManyWithoutExtra_curriculum_activityInput
+  quran_club_options?: Prisma.QuranClubCreateNestedManyWithoutExtra_curriculum_activityInput
+  language_club_options?: Prisma.LanguageClubCreateNestedManyWithoutExtra_curriculum_activityInput
+  science_club_options?: Prisma.ScienceClubCreateNestedManyWithoutExtra_curriculum_activityInput
+  scout_sports_club_options?: Prisma.ScoutSportsClubCreateNestedManyWithoutExtra_curriculum_activityInput
   students?: Prisma.StudentCreateNestedManyWithoutExtra_curriculum_activitiesInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_extra_curriculum_activityInput
 }
 
 export type ExtraCurriculumActivityUncheckedCreateWithoutUpdated_byInput = {
   id?: string
-  cultural_club?: string | null
   quran_club?: string | null
   language_club?: string | null
   science_club?: string | null
@@ -680,6 +1216,11 @@ export type ExtraCurriculumActivityUncheckedCreateWithoutUpdated_byInput = {
   created_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
+  cultural_club?: Prisma.CulturalClubUncheckedCreateNestedManyWithoutExtra_curriculum_activityInput
+  quran_club_options?: Prisma.QuranClubUncheckedCreateNestedManyWithoutExtra_curriculum_activityInput
+  language_club_options?: Prisma.LanguageClubUncheckedCreateNestedManyWithoutExtra_curriculum_activityInput
+  science_club_options?: Prisma.ScienceClubUncheckedCreateNestedManyWithoutExtra_curriculum_activityInput
+  scout_sports_club_options?: Prisma.ScoutSportsClubUncheckedCreateNestedManyWithoutExtra_curriculum_activityInput
   students?: Prisma.StudentUncheckedCreateNestedManyWithoutExtra_curriculum_activitiesInput
 }
 
@@ -727,20 +1268,23 @@ export type ExtraCurriculumActivityUpdateManyWithWhereWithoutUpdated_byInput = {
 
 export type ExtraCurriculumActivityUpdateWithoutStudentsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  cultural_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   quran_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   language_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   science_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   scout_sports_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  cultural_club?: Prisma.CulturalClubUpdateManyWithoutExtra_curriculum_activityNestedInput
+  quran_club_options?: Prisma.QuranClubUpdateManyWithoutExtra_curriculum_activityNestedInput
+  language_club_options?: Prisma.LanguageClubUpdateManyWithoutExtra_curriculum_activityNestedInput
+  science_club_options?: Prisma.ScienceClubUpdateManyWithoutExtra_curriculum_activityNestedInput
+  scout_sports_club_options?: Prisma.ScoutSportsClubUpdateManyWithoutExtra_curriculum_activityNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_extra_curriculum_activityNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_extra_curriculum_activityNestedInput
 }
 
 export type ExtraCurriculumActivityUncheckedUpdateWithoutStudentsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  cultural_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   quran_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   language_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   science_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -749,11 +1293,15 @@ export type ExtraCurriculumActivityUncheckedUpdateWithoutStudentsInput = {
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  cultural_club?: Prisma.CulturalClubUncheckedUpdateManyWithoutExtra_curriculum_activityNestedInput
+  quran_club_options?: Prisma.QuranClubUncheckedUpdateManyWithoutExtra_curriculum_activityNestedInput
+  language_club_options?: Prisma.LanguageClubUncheckedUpdateManyWithoutExtra_curriculum_activityNestedInput
+  science_club_options?: Prisma.ScienceClubUncheckedUpdateManyWithoutExtra_curriculum_activityNestedInput
+  scout_sports_club_options?: Prisma.ScoutSportsClubUncheckedUpdateManyWithoutExtra_curriculum_activityNestedInput
 }
 
 export type ExtraCurriculumActivityUncheckedUpdateManyWithoutStudentsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  cultural_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   quran_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   language_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   science_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -766,7 +1314,6 @@ export type ExtraCurriculumActivityUncheckedUpdateManyWithoutStudentsInput = {
 
 export type ExtraCurriculumActivityCreateManyCreated_byInput = {
   id?: string
-  cultural_club?: string | null
   quran_club?: string | null
   language_club?: string | null
   science_club?: string | null
@@ -778,7 +1325,6 @@ export type ExtraCurriculumActivityCreateManyCreated_byInput = {
 
 export type ExtraCurriculumActivityCreateManyUpdated_byInput = {
   id?: string
-  cultural_club?: string | null
   quran_club?: string | null
   language_club?: string | null
   science_club?: string | null
@@ -790,20 +1336,23 @@ export type ExtraCurriculumActivityCreateManyUpdated_byInput = {
 
 export type ExtraCurriculumActivityUpdateWithoutCreated_byInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  cultural_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   quran_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   language_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   science_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   scout_sports_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  cultural_club?: Prisma.CulturalClubUpdateManyWithoutExtra_curriculum_activityNestedInput
+  quran_club_options?: Prisma.QuranClubUpdateManyWithoutExtra_curriculum_activityNestedInput
+  language_club_options?: Prisma.LanguageClubUpdateManyWithoutExtra_curriculum_activityNestedInput
+  science_club_options?: Prisma.ScienceClubUpdateManyWithoutExtra_curriculum_activityNestedInput
+  scout_sports_club_options?: Prisma.ScoutSportsClubUpdateManyWithoutExtra_curriculum_activityNestedInput
   students?: Prisma.StudentUpdateManyWithoutExtra_curriculum_activitiesNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_extra_curriculum_activityNestedInput
 }
 
 export type ExtraCurriculumActivityUncheckedUpdateWithoutCreated_byInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  cultural_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   quran_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   language_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   science_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -811,12 +1360,16 @@ export type ExtraCurriculumActivityUncheckedUpdateWithoutCreated_byInput = {
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  cultural_club?: Prisma.CulturalClubUncheckedUpdateManyWithoutExtra_curriculum_activityNestedInput
+  quran_club_options?: Prisma.QuranClubUncheckedUpdateManyWithoutExtra_curriculum_activityNestedInput
+  language_club_options?: Prisma.LanguageClubUncheckedUpdateManyWithoutExtra_curriculum_activityNestedInput
+  science_club_options?: Prisma.ScienceClubUncheckedUpdateManyWithoutExtra_curriculum_activityNestedInput
+  scout_sports_club_options?: Prisma.ScoutSportsClubUncheckedUpdateManyWithoutExtra_curriculum_activityNestedInput
   students?: Prisma.StudentUncheckedUpdateManyWithoutExtra_curriculum_activitiesNestedInput
 }
 
 export type ExtraCurriculumActivityUncheckedUpdateManyWithoutCreated_byInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  cultural_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   quran_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   language_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   science_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -828,20 +1381,23 @@ export type ExtraCurriculumActivityUncheckedUpdateManyWithoutCreated_byInput = {
 
 export type ExtraCurriculumActivityUpdateWithoutUpdated_byInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  cultural_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   quran_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   language_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   science_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   scout_sports_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  cultural_club?: Prisma.CulturalClubUpdateManyWithoutExtra_curriculum_activityNestedInput
+  quran_club_options?: Prisma.QuranClubUpdateManyWithoutExtra_curriculum_activityNestedInput
+  language_club_options?: Prisma.LanguageClubUpdateManyWithoutExtra_curriculum_activityNestedInput
+  science_club_options?: Prisma.ScienceClubUpdateManyWithoutExtra_curriculum_activityNestedInput
+  scout_sports_club_options?: Prisma.ScoutSportsClubUpdateManyWithoutExtra_curriculum_activityNestedInput
   students?: Prisma.StudentUpdateManyWithoutExtra_curriculum_activitiesNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_extra_curriculum_activityNestedInput
 }
 
 export type ExtraCurriculumActivityUncheckedUpdateWithoutUpdated_byInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  cultural_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   quran_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   language_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   science_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -849,12 +1405,16 @@ export type ExtraCurriculumActivityUncheckedUpdateWithoutUpdated_byInput = {
   created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  cultural_club?: Prisma.CulturalClubUncheckedUpdateManyWithoutExtra_curriculum_activityNestedInput
+  quran_club_options?: Prisma.QuranClubUncheckedUpdateManyWithoutExtra_curriculum_activityNestedInput
+  language_club_options?: Prisma.LanguageClubUncheckedUpdateManyWithoutExtra_curriculum_activityNestedInput
+  science_club_options?: Prisma.ScienceClubUncheckedUpdateManyWithoutExtra_curriculum_activityNestedInput
+  scout_sports_club_options?: Prisma.ScoutSportsClubUncheckedUpdateManyWithoutExtra_curriculum_activityNestedInput
   students?: Prisma.StudentUncheckedUpdateManyWithoutExtra_curriculum_activitiesNestedInput
 }
 
 export type ExtraCurriculumActivityUncheckedUpdateManyWithoutUpdated_byInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  cultural_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   quran_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   language_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   science_club?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -870,10 +1430,20 @@ export type ExtraCurriculumActivityUncheckedUpdateManyWithoutUpdated_byInput = {
  */
 
 export type ExtraCurriculumActivityCountOutputType = {
+  cultural_club: number
+  quran_club_options: number
+  language_club_options: number
+  science_club_options: number
+  scout_sports_club_options: number
   students: number
 }
 
 export type ExtraCurriculumActivityCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  cultural_club?: boolean | ExtraCurriculumActivityCountOutputTypeCountCultural_clubArgs
+  quran_club_options?: boolean | ExtraCurriculumActivityCountOutputTypeCountQuran_club_optionsArgs
+  language_club_options?: boolean | ExtraCurriculumActivityCountOutputTypeCountLanguage_club_optionsArgs
+  science_club_options?: boolean | ExtraCurriculumActivityCountOutputTypeCountScience_club_optionsArgs
+  scout_sports_club_options?: boolean | ExtraCurriculumActivityCountOutputTypeCountScout_sports_club_optionsArgs
   students?: boolean | ExtraCurriculumActivityCountOutputTypeCountStudentsArgs
 }
 
@@ -890,6 +1460,41 @@ export type ExtraCurriculumActivityCountOutputTypeDefaultArgs<ExtArgs extends ru
 /**
  * ExtraCurriculumActivityCountOutputType without action
  */
+export type ExtraCurriculumActivityCountOutputTypeCountCultural_clubArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.CulturalClubWhereInput
+}
+
+/**
+ * ExtraCurriculumActivityCountOutputType without action
+ */
+export type ExtraCurriculumActivityCountOutputTypeCountQuran_club_optionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.QuranClubWhereInput
+}
+
+/**
+ * ExtraCurriculumActivityCountOutputType without action
+ */
+export type ExtraCurriculumActivityCountOutputTypeCountLanguage_club_optionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.LanguageClubWhereInput
+}
+
+/**
+ * ExtraCurriculumActivityCountOutputType without action
+ */
+export type ExtraCurriculumActivityCountOutputTypeCountScience_club_optionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.ScienceClubWhereInput
+}
+
+/**
+ * ExtraCurriculumActivityCountOutputType without action
+ */
+export type ExtraCurriculumActivityCountOutputTypeCountScout_sports_club_optionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.ScoutSportsClubWhereInput
+}
+
+/**
+ * ExtraCurriculumActivityCountOutputType without action
+ */
 export type ExtraCurriculumActivityCountOutputTypeCountStudentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   where?: Prisma.StudentWhereInput
 }
@@ -897,7 +1502,6 @@ export type ExtraCurriculumActivityCountOutputTypeCountStudentsArgs<ExtArgs exte
 
 export type ExtraCurriculumActivitySelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  cultural_club?: boolean
   quran_club?: boolean
   language_club?: boolean
   science_club?: boolean
@@ -906,6 +1510,11 @@ export type ExtraCurriculumActivitySelect<ExtArgs extends runtime.Types.Extensio
   updated_by_id?: boolean
   created_at?: boolean
   updated_at?: boolean
+  cultural_club?: boolean | Prisma.ExtraCurriculumActivity$cultural_clubArgs<ExtArgs>
+  quran_club_options?: boolean | Prisma.ExtraCurriculumActivity$quran_club_optionsArgs<ExtArgs>
+  language_club_options?: boolean | Prisma.ExtraCurriculumActivity$language_club_optionsArgs<ExtArgs>
+  science_club_options?: boolean | Prisma.ExtraCurriculumActivity$science_club_optionsArgs<ExtArgs>
+  scout_sports_club_options?: boolean | Prisma.ExtraCurriculumActivity$scout_sports_club_optionsArgs<ExtArgs>
   students?: boolean | Prisma.ExtraCurriculumActivity$studentsArgs<ExtArgs>
   created_by?: boolean | Prisma.ExtraCurriculumActivity$created_byArgs<ExtArgs>
   updated_by?: boolean | Prisma.ExtraCurriculumActivity$updated_byArgs<ExtArgs>
@@ -914,7 +1523,6 @@ export type ExtraCurriculumActivitySelect<ExtArgs extends runtime.Types.Extensio
 
 export type ExtraCurriculumActivitySelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  cultural_club?: boolean
   quran_club?: boolean
   language_club?: boolean
   science_club?: boolean
@@ -929,7 +1537,6 @@ export type ExtraCurriculumActivitySelectCreateManyAndReturn<ExtArgs extends run
 
 export type ExtraCurriculumActivitySelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  cultural_club?: boolean
   quran_club?: boolean
   language_club?: boolean
   science_club?: boolean
@@ -944,7 +1551,6 @@ export type ExtraCurriculumActivitySelectUpdateManyAndReturn<ExtArgs extends run
 
 export type ExtraCurriculumActivitySelectScalar = {
   id?: boolean
-  cultural_club?: boolean
   quran_club?: boolean
   language_club?: boolean
   science_club?: boolean
@@ -955,8 +1561,13 @@ export type ExtraCurriculumActivitySelectScalar = {
   updated_at?: boolean
 }
 
-export type ExtraCurriculumActivityOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "cultural_club" | "quran_club" | "language_club" | "science_club" | "scout_sports_club" | "created_by_id" | "updated_by_id" | "created_at" | "updated_at", ExtArgs["result"]["extraCurriculumActivity"]>
+export type ExtraCurriculumActivityOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "quran_club" | "language_club" | "science_club" | "scout_sports_club" | "created_by_id" | "updated_by_id" | "created_at" | "updated_at", ExtArgs["result"]["extraCurriculumActivity"]>
 export type ExtraCurriculumActivityInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  cultural_club?: boolean | Prisma.ExtraCurriculumActivity$cultural_clubArgs<ExtArgs>
+  quran_club_options?: boolean | Prisma.ExtraCurriculumActivity$quran_club_optionsArgs<ExtArgs>
+  language_club_options?: boolean | Prisma.ExtraCurriculumActivity$language_club_optionsArgs<ExtArgs>
+  science_club_options?: boolean | Prisma.ExtraCurriculumActivity$science_club_optionsArgs<ExtArgs>
+  scout_sports_club_options?: boolean | Prisma.ExtraCurriculumActivity$scout_sports_club_optionsArgs<ExtArgs>
   students?: boolean | Prisma.ExtraCurriculumActivity$studentsArgs<ExtArgs>
   created_by?: boolean | Prisma.ExtraCurriculumActivity$created_byArgs<ExtArgs>
   updated_by?: boolean | Prisma.ExtraCurriculumActivity$updated_byArgs<ExtArgs>
@@ -974,13 +1585,17 @@ export type ExtraCurriculumActivityIncludeUpdateManyAndReturn<ExtArgs extends ru
 export type $ExtraCurriculumActivityPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "ExtraCurriculumActivity"
   objects: {
+    cultural_club: Prisma.$CulturalClubPayload<ExtArgs>[]
+    quran_club_options: Prisma.$QuranClubPayload<ExtArgs>[]
+    language_club_options: Prisma.$LanguageClubPayload<ExtArgs>[]
+    science_club_options: Prisma.$ScienceClubPayload<ExtArgs>[]
+    scout_sports_club_options: Prisma.$ScoutSportsClubPayload<ExtArgs>[]
     students: Prisma.$StudentPayload<ExtArgs>[]
     created_by: Prisma.$UserPayload<ExtArgs> | null
     updated_by: Prisma.$UserPayload<ExtArgs> | null
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
-    cultural_club: string | null
     quran_club: string | null
     language_club: string | null
     science_club: string | null
@@ -1383,6 +1998,11 @@ readonly fields: ExtraCurriculumActivityFieldRefs;
  */
 export interface Prisma__ExtraCurriculumActivityClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
+  cultural_club<T extends Prisma.ExtraCurriculumActivity$cultural_clubArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ExtraCurriculumActivity$cultural_clubArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$CulturalClubPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  quran_club_options<T extends Prisma.ExtraCurriculumActivity$quran_club_optionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ExtraCurriculumActivity$quran_club_optionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$QuranClubPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  language_club_options<T extends Prisma.ExtraCurriculumActivity$language_club_optionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ExtraCurriculumActivity$language_club_optionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$LanguageClubPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  science_club_options<T extends Prisma.ExtraCurriculumActivity$science_club_optionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ExtraCurriculumActivity$science_club_optionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ScienceClubPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  scout_sports_club_options<T extends Prisma.ExtraCurriculumActivity$scout_sports_club_optionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ExtraCurriculumActivity$scout_sports_club_optionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ScoutSportsClubPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   students<T extends Prisma.ExtraCurriculumActivity$studentsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ExtraCurriculumActivity$studentsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$StudentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   created_by<T extends Prisma.ExtraCurriculumActivity$created_byArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ExtraCurriculumActivity$created_byArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   updated_by<T extends Prisma.ExtraCurriculumActivity$updated_byArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ExtraCurriculumActivity$updated_byArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
@@ -1416,7 +2036,6 @@ export interface Prisma__ExtraCurriculumActivityClient<T, Null = never, ExtArgs 
  */
 export interface ExtraCurriculumActivityFieldRefs {
   readonly id: Prisma.FieldRef<"ExtraCurriculumActivity", 'String'>
-  readonly cultural_club: Prisma.FieldRef<"ExtraCurriculumActivity", 'String'>
   readonly quran_club: Prisma.FieldRef<"ExtraCurriculumActivity", 'String'>
   readonly language_club: Prisma.FieldRef<"ExtraCurriculumActivity", 'String'>
   readonly science_club: Prisma.FieldRef<"ExtraCurriculumActivity", 'String'>
@@ -1823,6 +2442,126 @@ export type ExtraCurriculumActivityDeleteManyArgs<ExtArgs extends runtime.Types.
    * Limit how many ExtraCurriculumActivities to delete.
    */
   limit?: number
+}
+
+/**
+ * ExtraCurriculumActivity.cultural_club
+ */
+export type ExtraCurriculumActivity$cultural_clubArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the CulturalClub
+   */
+  select?: Prisma.CulturalClubSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the CulturalClub
+   */
+  omit?: Prisma.CulturalClubOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.CulturalClubInclude<ExtArgs> | null
+  where?: Prisma.CulturalClubWhereInput
+  orderBy?: Prisma.CulturalClubOrderByWithRelationInput | Prisma.CulturalClubOrderByWithRelationInput[]
+  cursor?: Prisma.CulturalClubWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.CulturalClubScalarFieldEnum | Prisma.CulturalClubScalarFieldEnum[]
+}
+
+/**
+ * ExtraCurriculumActivity.quran_club_options
+ */
+export type ExtraCurriculumActivity$quran_club_optionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the QuranClub
+   */
+  select?: Prisma.QuranClubSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the QuranClub
+   */
+  omit?: Prisma.QuranClubOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.QuranClubInclude<ExtArgs> | null
+  where?: Prisma.QuranClubWhereInput
+  orderBy?: Prisma.QuranClubOrderByWithRelationInput | Prisma.QuranClubOrderByWithRelationInput[]
+  cursor?: Prisma.QuranClubWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.QuranClubScalarFieldEnum | Prisma.QuranClubScalarFieldEnum[]
+}
+
+/**
+ * ExtraCurriculumActivity.language_club_options
+ */
+export type ExtraCurriculumActivity$language_club_optionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the LanguageClub
+   */
+  select?: Prisma.LanguageClubSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the LanguageClub
+   */
+  omit?: Prisma.LanguageClubOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.LanguageClubInclude<ExtArgs> | null
+  where?: Prisma.LanguageClubWhereInput
+  orderBy?: Prisma.LanguageClubOrderByWithRelationInput | Prisma.LanguageClubOrderByWithRelationInput[]
+  cursor?: Prisma.LanguageClubWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.LanguageClubScalarFieldEnum | Prisma.LanguageClubScalarFieldEnum[]
+}
+
+/**
+ * ExtraCurriculumActivity.science_club_options
+ */
+export type ExtraCurriculumActivity$science_club_optionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the ScienceClub
+   */
+  select?: Prisma.ScienceClubSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the ScienceClub
+   */
+  omit?: Prisma.ScienceClubOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ScienceClubInclude<ExtArgs> | null
+  where?: Prisma.ScienceClubWhereInput
+  orderBy?: Prisma.ScienceClubOrderByWithRelationInput | Prisma.ScienceClubOrderByWithRelationInput[]
+  cursor?: Prisma.ScienceClubWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.ScienceClubScalarFieldEnum | Prisma.ScienceClubScalarFieldEnum[]
+}
+
+/**
+ * ExtraCurriculumActivity.scout_sports_club_options
+ */
+export type ExtraCurriculumActivity$scout_sports_club_optionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the ScoutSportsClub
+   */
+  select?: Prisma.ScoutSportsClubSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the ScoutSportsClub
+   */
+  omit?: Prisma.ScoutSportsClubOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ScoutSportsClubInclude<ExtArgs> | null
+  where?: Prisma.ScoutSportsClubWhereInput
+  orderBy?: Prisma.ScoutSportsClubOrderByWithRelationInput | Prisma.ScoutSportsClubOrderByWithRelationInput[]
+  cursor?: Prisma.ScoutSportsClubWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.ScoutSportsClubScalarFieldEnum | Prisma.ScoutSportsClubScalarFieldEnum[]
 }
 
 /**

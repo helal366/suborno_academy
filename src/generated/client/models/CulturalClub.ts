@@ -27,6 +27,7 @@ export type AggregateCulturalClub = {
 export type CulturalClubMinAggregateOutputType = {
   id: string | null
   cultural_name: string | null
+  extra_curriculum_activity_id: string | null
   created_by_id: string | null
   updated_by_id: string | null
   created_at: Date | null
@@ -36,6 +37,7 @@ export type CulturalClubMinAggregateOutputType = {
 export type CulturalClubMaxAggregateOutputType = {
   id: string | null
   cultural_name: string | null
+  extra_curriculum_activity_id: string | null
   created_by_id: string | null
   updated_by_id: string | null
   created_at: Date | null
@@ -45,6 +47,7 @@ export type CulturalClubMaxAggregateOutputType = {
 export type CulturalClubCountAggregateOutputType = {
   id: number
   cultural_name: number
+  extra_curriculum_activity_id: number
   created_by_id: number
   updated_by_id: number
   created_at: number
@@ -56,6 +59,7 @@ export type CulturalClubCountAggregateOutputType = {
 export type CulturalClubMinAggregateInputType = {
   id?: true
   cultural_name?: true
+  extra_curriculum_activity_id?: true
   created_by_id?: true
   updated_by_id?: true
   created_at?: true
@@ -65,6 +69,7 @@ export type CulturalClubMinAggregateInputType = {
 export type CulturalClubMaxAggregateInputType = {
   id?: true
   cultural_name?: true
+  extra_curriculum_activity_id?: true
   created_by_id?: true
   updated_by_id?: true
   created_at?: true
@@ -74,6 +79,7 @@ export type CulturalClubMaxAggregateInputType = {
 export type CulturalClubCountAggregateInputType = {
   id?: true
   cultural_name?: true
+  extra_curriculum_activity_id?: true
   created_by_id?: true
   updated_by_id?: true
   created_at?: true
@@ -156,6 +162,7 @@ export type CulturalClubGroupByArgs<ExtArgs extends runtime.Types.Extensions.Int
 export type CulturalClubGroupByOutputType = {
   id: string
   cultural_name: string
+  extra_curriculum_activity_id: string | null
   created_by_id: string | null
   updated_by_id: string | null
   created_at: Date
@@ -186,10 +193,12 @@ export type CulturalClubWhereInput = {
   NOT?: Prisma.CulturalClubWhereInput | Prisma.CulturalClubWhereInput[]
   id?: Prisma.StringFilter<"CulturalClub"> | string
   cultural_name?: Prisma.StringFilter<"CulturalClub"> | string
+  extra_curriculum_activity_id?: Prisma.StringNullableFilter<"CulturalClub"> | string | null
   created_by_id?: Prisma.StringNullableFilter<"CulturalClub"> | string | null
   updated_by_id?: Prisma.StringNullableFilter<"CulturalClub"> | string | null
   created_at?: Prisma.DateTimeFilter<"CulturalClub"> | Date | string
   updated_at?: Prisma.DateTimeNullableFilter<"CulturalClub"> | Date | string | null
+  extra_curriculum_activity?: Prisma.XOR<Prisma.ExtraCurriculumActivityNullableScalarRelationFilter, Prisma.ExtraCurriculumActivityWhereInput> | null
   created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
   updated_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
 }
@@ -197,10 +206,12 @@ export type CulturalClubWhereInput = {
 export type CulturalClubOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   cultural_name?: Prisma.SortOrder
+  extra_curriculum_activity_id?: Prisma.SortOrderInput | Prisma.SortOrder
   created_by_id?: Prisma.SortOrderInput | Prisma.SortOrder
   updated_by_id?: Prisma.SortOrderInput | Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrderInput | Prisma.SortOrder
+  extra_curriculum_activity?: Prisma.ExtraCurriculumActivityOrderByWithRelationInput
   created_by?: Prisma.UserOrderByWithRelationInput
   updated_by?: Prisma.UserOrderByWithRelationInput
 }
@@ -211,10 +222,12 @@ export type CulturalClubWhereUniqueInput = Prisma.AtLeast<{
   OR?: Prisma.CulturalClubWhereInput[]
   NOT?: Prisma.CulturalClubWhereInput | Prisma.CulturalClubWhereInput[]
   cultural_name?: Prisma.StringFilter<"CulturalClub"> | string
+  extra_curriculum_activity_id?: Prisma.StringNullableFilter<"CulturalClub"> | string | null
   created_by_id?: Prisma.StringNullableFilter<"CulturalClub"> | string | null
   updated_by_id?: Prisma.StringNullableFilter<"CulturalClub"> | string | null
   created_at?: Prisma.DateTimeFilter<"CulturalClub"> | Date | string
   updated_at?: Prisma.DateTimeNullableFilter<"CulturalClub"> | Date | string | null
+  extra_curriculum_activity?: Prisma.XOR<Prisma.ExtraCurriculumActivityNullableScalarRelationFilter, Prisma.ExtraCurriculumActivityWhereInput> | null
   created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
   updated_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
 }, "id">
@@ -222,6 +235,7 @@ export type CulturalClubWhereUniqueInput = Prisma.AtLeast<{
 export type CulturalClubOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   cultural_name?: Prisma.SortOrder
+  extra_curriculum_activity_id?: Prisma.SortOrderInput | Prisma.SortOrder
   created_by_id?: Prisma.SortOrderInput | Prisma.SortOrder
   updated_by_id?: Prisma.SortOrderInput | Prisma.SortOrder
   created_at?: Prisma.SortOrder
@@ -237,6 +251,7 @@ export type CulturalClubScalarWhereWithAggregatesInput = {
   NOT?: Prisma.CulturalClubScalarWhereWithAggregatesInput | Prisma.CulturalClubScalarWhereWithAggregatesInput[]
   id?: Prisma.StringWithAggregatesFilter<"CulturalClub"> | string
   cultural_name?: Prisma.StringWithAggregatesFilter<"CulturalClub"> | string
+  extra_curriculum_activity_id?: Prisma.StringNullableWithAggregatesFilter<"CulturalClub"> | string | null
   created_by_id?: Prisma.StringNullableWithAggregatesFilter<"CulturalClub"> | string | null
   updated_by_id?: Prisma.StringNullableWithAggregatesFilter<"CulturalClub"> | string | null
   created_at?: Prisma.DateTimeWithAggregatesFilter<"CulturalClub"> | Date | string
@@ -248,6 +263,7 @@ export type CulturalClubCreateInput = {
   cultural_name: string
   created_at?: Date | string
   updated_at?: Date | string | null
+  extra_curriculum_activity?: Prisma.ExtraCurriculumActivityCreateNestedOneWithoutCultural_clubInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_cultural_clubInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_cultural_clubInput
 }
@@ -255,6 +271,7 @@ export type CulturalClubCreateInput = {
 export type CulturalClubUncheckedCreateInput = {
   id?: string
   cultural_name: string
+  extra_curriculum_activity_id?: string | null
   created_by_id?: string | null
   updated_by_id?: string | null
   created_at?: Date | string
@@ -266,6 +283,7 @@ export type CulturalClubUpdateInput = {
   cultural_name?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  extra_curriculum_activity?: Prisma.ExtraCurriculumActivityUpdateOneWithoutCultural_clubNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_cultural_clubNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_cultural_clubNestedInput
 }
@@ -273,6 +291,7 @@ export type CulturalClubUpdateInput = {
 export type CulturalClubUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   cultural_name?: Prisma.StringFieldUpdateOperationsInput | string
+  extra_curriculum_activity_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -282,6 +301,7 @@ export type CulturalClubUncheckedUpdateInput = {
 export type CulturalClubCreateManyInput = {
   id?: string
   cultural_name: string
+  extra_curriculum_activity_id?: string | null
   created_by_id?: string | null
   updated_by_id?: string | null
   created_at?: Date | string
@@ -298,6 +318,7 @@ export type CulturalClubUpdateManyMutationInput = {
 export type CulturalClubUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   cultural_name?: Prisma.StringFieldUpdateOperationsInput | string
+  extra_curriculum_activity_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -307,6 +328,7 @@ export type CulturalClubUncheckedUpdateManyInput = {
 export type CulturalClubCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   cultural_name?: Prisma.SortOrder
+  extra_curriculum_activity_id?: Prisma.SortOrder
   created_by_id?: Prisma.SortOrder
   updated_by_id?: Prisma.SortOrder
   created_at?: Prisma.SortOrder
@@ -316,6 +338,7 @@ export type CulturalClubCountOrderByAggregateInput = {
 export type CulturalClubMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   cultural_name?: Prisma.SortOrder
+  extra_curriculum_activity_id?: Prisma.SortOrder
   created_by_id?: Prisma.SortOrder
   updated_by_id?: Prisma.SortOrder
   created_at?: Prisma.SortOrder
@@ -325,6 +348,7 @@ export type CulturalClubMaxOrderByAggregateInput = {
 export type CulturalClubMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   cultural_name?: Prisma.SortOrder
+  extra_curriculum_activity_id?: Prisma.SortOrder
   created_by_id?: Prisma.SortOrder
   updated_by_id?: Prisma.SortOrder
   created_at?: Prisma.SortOrder
@@ -339,6 +363,48 @@ export type CulturalClubListRelationFilter = {
 
 export type CulturalClubOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
+}
+
+export type CulturalClubCreateNestedManyWithoutExtra_curriculum_activityInput = {
+  create?: Prisma.XOR<Prisma.CulturalClubCreateWithoutExtra_curriculum_activityInput, Prisma.CulturalClubUncheckedCreateWithoutExtra_curriculum_activityInput> | Prisma.CulturalClubCreateWithoutExtra_curriculum_activityInput[] | Prisma.CulturalClubUncheckedCreateWithoutExtra_curriculum_activityInput[]
+  connectOrCreate?: Prisma.CulturalClubCreateOrConnectWithoutExtra_curriculum_activityInput | Prisma.CulturalClubCreateOrConnectWithoutExtra_curriculum_activityInput[]
+  createMany?: Prisma.CulturalClubCreateManyExtra_curriculum_activityInputEnvelope
+  connect?: Prisma.CulturalClubWhereUniqueInput | Prisma.CulturalClubWhereUniqueInput[]
+}
+
+export type CulturalClubUncheckedCreateNestedManyWithoutExtra_curriculum_activityInput = {
+  create?: Prisma.XOR<Prisma.CulturalClubCreateWithoutExtra_curriculum_activityInput, Prisma.CulturalClubUncheckedCreateWithoutExtra_curriculum_activityInput> | Prisma.CulturalClubCreateWithoutExtra_curriculum_activityInput[] | Prisma.CulturalClubUncheckedCreateWithoutExtra_curriculum_activityInput[]
+  connectOrCreate?: Prisma.CulturalClubCreateOrConnectWithoutExtra_curriculum_activityInput | Prisma.CulturalClubCreateOrConnectWithoutExtra_curriculum_activityInput[]
+  createMany?: Prisma.CulturalClubCreateManyExtra_curriculum_activityInputEnvelope
+  connect?: Prisma.CulturalClubWhereUniqueInput | Prisma.CulturalClubWhereUniqueInput[]
+}
+
+export type CulturalClubUpdateManyWithoutExtra_curriculum_activityNestedInput = {
+  create?: Prisma.XOR<Prisma.CulturalClubCreateWithoutExtra_curriculum_activityInput, Prisma.CulturalClubUncheckedCreateWithoutExtra_curriculum_activityInput> | Prisma.CulturalClubCreateWithoutExtra_curriculum_activityInput[] | Prisma.CulturalClubUncheckedCreateWithoutExtra_curriculum_activityInput[]
+  connectOrCreate?: Prisma.CulturalClubCreateOrConnectWithoutExtra_curriculum_activityInput | Prisma.CulturalClubCreateOrConnectWithoutExtra_curriculum_activityInput[]
+  upsert?: Prisma.CulturalClubUpsertWithWhereUniqueWithoutExtra_curriculum_activityInput | Prisma.CulturalClubUpsertWithWhereUniqueWithoutExtra_curriculum_activityInput[]
+  createMany?: Prisma.CulturalClubCreateManyExtra_curriculum_activityInputEnvelope
+  set?: Prisma.CulturalClubWhereUniqueInput | Prisma.CulturalClubWhereUniqueInput[]
+  disconnect?: Prisma.CulturalClubWhereUniqueInput | Prisma.CulturalClubWhereUniqueInput[]
+  delete?: Prisma.CulturalClubWhereUniqueInput | Prisma.CulturalClubWhereUniqueInput[]
+  connect?: Prisma.CulturalClubWhereUniqueInput | Prisma.CulturalClubWhereUniqueInput[]
+  update?: Prisma.CulturalClubUpdateWithWhereUniqueWithoutExtra_curriculum_activityInput | Prisma.CulturalClubUpdateWithWhereUniqueWithoutExtra_curriculum_activityInput[]
+  updateMany?: Prisma.CulturalClubUpdateManyWithWhereWithoutExtra_curriculum_activityInput | Prisma.CulturalClubUpdateManyWithWhereWithoutExtra_curriculum_activityInput[]
+  deleteMany?: Prisma.CulturalClubScalarWhereInput | Prisma.CulturalClubScalarWhereInput[]
+}
+
+export type CulturalClubUncheckedUpdateManyWithoutExtra_curriculum_activityNestedInput = {
+  create?: Prisma.XOR<Prisma.CulturalClubCreateWithoutExtra_curriculum_activityInput, Prisma.CulturalClubUncheckedCreateWithoutExtra_curriculum_activityInput> | Prisma.CulturalClubCreateWithoutExtra_curriculum_activityInput[] | Prisma.CulturalClubUncheckedCreateWithoutExtra_curriculum_activityInput[]
+  connectOrCreate?: Prisma.CulturalClubCreateOrConnectWithoutExtra_curriculum_activityInput | Prisma.CulturalClubCreateOrConnectWithoutExtra_curriculum_activityInput[]
+  upsert?: Prisma.CulturalClubUpsertWithWhereUniqueWithoutExtra_curriculum_activityInput | Prisma.CulturalClubUpsertWithWhereUniqueWithoutExtra_curriculum_activityInput[]
+  createMany?: Prisma.CulturalClubCreateManyExtra_curriculum_activityInputEnvelope
+  set?: Prisma.CulturalClubWhereUniqueInput | Prisma.CulturalClubWhereUniqueInput[]
+  disconnect?: Prisma.CulturalClubWhereUniqueInput | Prisma.CulturalClubWhereUniqueInput[]
+  delete?: Prisma.CulturalClubWhereUniqueInput | Prisma.CulturalClubWhereUniqueInput[]
+  connect?: Prisma.CulturalClubWhereUniqueInput | Prisma.CulturalClubWhereUniqueInput[]
+  update?: Prisma.CulturalClubUpdateWithWhereUniqueWithoutExtra_curriculum_activityInput | Prisma.CulturalClubUpdateWithWhereUniqueWithoutExtra_curriculum_activityInput[]
+  updateMany?: Prisma.CulturalClubUpdateManyWithWhereWithoutExtra_curriculum_activityInput | Prisma.CulturalClubUpdateManyWithWhereWithoutExtra_curriculum_activityInput[]
+  deleteMany?: Prisma.CulturalClubScalarWhereInput | Prisma.CulturalClubScalarWhereInput[]
 }
 
 export type CulturalClubCreateNestedManyWithoutCreated_byInput = {
@@ -425,17 +491,76 @@ export type CulturalClubUncheckedUpdateManyWithoutUpdated_byNestedInput = {
   deleteMany?: Prisma.CulturalClubScalarWhereInput | Prisma.CulturalClubScalarWhereInput[]
 }
 
+export type CulturalClubCreateWithoutExtra_curriculum_activityInput = {
+  id?: string
+  cultural_name: string
+  created_at?: Date | string
+  updated_at?: Date | string | null
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_cultural_clubInput
+  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_cultural_clubInput
+}
+
+export type CulturalClubUncheckedCreateWithoutExtra_curriculum_activityInput = {
+  id?: string
+  cultural_name: string
+  created_by_id?: string | null
+  updated_by_id?: string | null
+  created_at?: Date | string
+  updated_at?: Date | string | null
+}
+
+export type CulturalClubCreateOrConnectWithoutExtra_curriculum_activityInput = {
+  where: Prisma.CulturalClubWhereUniqueInput
+  create: Prisma.XOR<Prisma.CulturalClubCreateWithoutExtra_curriculum_activityInput, Prisma.CulturalClubUncheckedCreateWithoutExtra_curriculum_activityInput>
+}
+
+export type CulturalClubCreateManyExtra_curriculum_activityInputEnvelope = {
+  data: Prisma.CulturalClubCreateManyExtra_curriculum_activityInput | Prisma.CulturalClubCreateManyExtra_curriculum_activityInput[]
+  skipDuplicates?: boolean
+}
+
+export type CulturalClubUpsertWithWhereUniqueWithoutExtra_curriculum_activityInput = {
+  where: Prisma.CulturalClubWhereUniqueInput
+  update: Prisma.XOR<Prisma.CulturalClubUpdateWithoutExtra_curriculum_activityInput, Prisma.CulturalClubUncheckedUpdateWithoutExtra_curriculum_activityInput>
+  create: Prisma.XOR<Prisma.CulturalClubCreateWithoutExtra_curriculum_activityInput, Prisma.CulturalClubUncheckedCreateWithoutExtra_curriculum_activityInput>
+}
+
+export type CulturalClubUpdateWithWhereUniqueWithoutExtra_curriculum_activityInput = {
+  where: Prisma.CulturalClubWhereUniqueInput
+  data: Prisma.XOR<Prisma.CulturalClubUpdateWithoutExtra_curriculum_activityInput, Prisma.CulturalClubUncheckedUpdateWithoutExtra_curriculum_activityInput>
+}
+
+export type CulturalClubUpdateManyWithWhereWithoutExtra_curriculum_activityInput = {
+  where: Prisma.CulturalClubScalarWhereInput
+  data: Prisma.XOR<Prisma.CulturalClubUpdateManyMutationInput, Prisma.CulturalClubUncheckedUpdateManyWithoutExtra_curriculum_activityInput>
+}
+
+export type CulturalClubScalarWhereInput = {
+  AND?: Prisma.CulturalClubScalarWhereInput | Prisma.CulturalClubScalarWhereInput[]
+  OR?: Prisma.CulturalClubScalarWhereInput[]
+  NOT?: Prisma.CulturalClubScalarWhereInput | Prisma.CulturalClubScalarWhereInput[]
+  id?: Prisma.StringFilter<"CulturalClub"> | string
+  cultural_name?: Prisma.StringFilter<"CulturalClub"> | string
+  extra_curriculum_activity_id?: Prisma.StringNullableFilter<"CulturalClub"> | string | null
+  created_by_id?: Prisma.StringNullableFilter<"CulturalClub"> | string | null
+  updated_by_id?: Prisma.StringNullableFilter<"CulturalClub"> | string | null
+  created_at?: Prisma.DateTimeFilter<"CulturalClub"> | Date | string
+  updated_at?: Prisma.DateTimeNullableFilter<"CulturalClub"> | Date | string | null
+}
+
 export type CulturalClubCreateWithoutCreated_byInput = {
   id?: string
   cultural_name: string
   created_at?: Date | string
   updated_at?: Date | string | null
+  extra_curriculum_activity?: Prisma.ExtraCurriculumActivityCreateNestedOneWithoutCultural_clubInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_cultural_clubInput
 }
 
 export type CulturalClubUncheckedCreateWithoutCreated_byInput = {
   id?: string
   cultural_name: string
+  extra_curriculum_activity_id?: string | null
   updated_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
@@ -456,12 +581,14 @@ export type CulturalClubCreateWithoutUpdated_byInput = {
   cultural_name: string
   created_at?: Date | string
   updated_at?: Date | string | null
+  extra_curriculum_activity?: Prisma.ExtraCurriculumActivityCreateNestedOneWithoutCultural_clubInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_cultural_clubInput
 }
 
 export type CulturalClubUncheckedCreateWithoutUpdated_byInput = {
   id?: string
   cultural_name: string
+  extra_curriculum_activity_id?: string | null
   created_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
@@ -493,18 +620,6 @@ export type CulturalClubUpdateManyWithWhereWithoutCreated_byInput = {
   data: Prisma.XOR<Prisma.CulturalClubUpdateManyMutationInput, Prisma.CulturalClubUncheckedUpdateManyWithoutCreated_byInput>
 }
 
-export type CulturalClubScalarWhereInput = {
-  AND?: Prisma.CulturalClubScalarWhereInput | Prisma.CulturalClubScalarWhereInput[]
-  OR?: Prisma.CulturalClubScalarWhereInput[]
-  NOT?: Prisma.CulturalClubScalarWhereInput | Prisma.CulturalClubScalarWhereInput[]
-  id?: Prisma.StringFilter<"CulturalClub"> | string
-  cultural_name?: Prisma.StringFilter<"CulturalClub"> | string
-  created_by_id?: Prisma.StringNullableFilter<"CulturalClub"> | string | null
-  updated_by_id?: Prisma.StringNullableFilter<"CulturalClub"> | string | null
-  created_at?: Prisma.DateTimeFilter<"CulturalClub"> | Date | string
-  updated_at?: Prisma.DateTimeNullableFilter<"CulturalClub"> | Date | string | null
-}
-
 export type CulturalClubUpsertWithWhereUniqueWithoutUpdated_byInput = {
   where: Prisma.CulturalClubWhereUniqueInput
   update: Prisma.XOR<Prisma.CulturalClubUpdateWithoutUpdated_byInput, Prisma.CulturalClubUncheckedUpdateWithoutUpdated_byInput>
@@ -521,9 +636,46 @@ export type CulturalClubUpdateManyWithWhereWithoutUpdated_byInput = {
   data: Prisma.XOR<Prisma.CulturalClubUpdateManyMutationInput, Prisma.CulturalClubUncheckedUpdateManyWithoutUpdated_byInput>
 }
 
+export type CulturalClubCreateManyExtra_curriculum_activityInput = {
+  id?: string
+  cultural_name: string
+  created_by_id?: string | null
+  updated_by_id?: string | null
+  created_at?: Date | string
+  updated_at?: Date | string | null
+}
+
+export type CulturalClubUpdateWithoutExtra_curriculum_activityInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  cultural_name?: Prisma.StringFieldUpdateOperationsInput | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  created_by?: Prisma.UserUpdateOneWithoutCreated_cultural_clubNestedInput
+  updated_by?: Prisma.UserUpdateOneWithoutUpdated_cultural_clubNestedInput
+}
+
+export type CulturalClubUncheckedUpdateWithoutExtra_curriculum_activityInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  cultural_name?: Prisma.StringFieldUpdateOperationsInput | string
+  created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+}
+
+export type CulturalClubUncheckedUpdateManyWithoutExtra_curriculum_activityInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  cultural_name?: Prisma.StringFieldUpdateOperationsInput | string
+  created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+}
+
 export type CulturalClubCreateManyCreated_byInput = {
   id?: string
   cultural_name: string
+  extra_curriculum_activity_id?: string | null
   updated_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
@@ -532,6 +684,7 @@ export type CulturalClubCreateManyCreated_byInput = {
 export type CulturalClubCreateManyUpdated_byInput = {
   id?: string
   cultural_name: string
+  extra_curriculum_activity_id?: string | null
   created_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
@@ -542,12 +695,14 @@ export type CulturalClubUpdateWithoutCreated_byInput = {
   cultural_name?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  extra_curriculum_activity?: Prisma.ExtraCurriculumActivityUpdateOneWithoutCultural_clubNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_cultural_clubNestedInput
 }
 
 export type CulturalClubUncheckedUpdateWithoutCreated_byInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   cultural_name?: Prisma.StringFieldUpdateOperationsInput | string
+  extra_curriculum_activity_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -556,6 +711,7 @@ export type CulturalClubUncheckedUpdateWithoutCreated_byInput = {
 export type CulturalClubUncheckedUpdateManyWithoutCreated_byInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   cultural_name?: Prisma.StringFieldUpdateOperationsInput | string
+  extra_curriculum_activity_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -566,12 +722,14 @@ export type CulturalClubUpdateWithoutUpdated_byInput = {
   cultural_name?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  extra_curriculum_activity?: Prisma.ExtraCurriculumActivityUpdateOneWithoutCultural_clubNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_cultural_clubNestedInput
 }
 
 export type CulturalClubUncheckedUpdateWithoutUpdated_byInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   cultural_name?: Prisma.StringFieldUpdateOperationsInput | string
+  extra_curriculum_activity_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -580,6 +738,7 @@ export type CulturalClubUncheckedUpdateWithoutUpdated_byInput = {
 export type CulturalClubUncheckedUpdateManyWithoutUpdated_byInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   cultural_name?: Prisma.StringFieldUpdateOperationsInput | string
+  extra_curriculum_activity_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -590,10 +749,12 @@ export type CulturalClubUncheckedUpdateManyWithoutUpdated_byInput = {
 export type CulturalClubSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   cultural_name?: boolean
+  extra_curriculum_activity_id?: boolean
   created_by_id?: boolean
   updated_by_id?: boolean
   created_at?: boolean
   updated_at?: boolean
+  extra_curriculum_activity?: boolean | Prisma.CulturalClub$extra_curriculum_activityArgs<ExtArgs>
   created_by?: boolean | Prisma.CulturalClub$created_byArgs<ExtArgs>
   updated_by?: boolean | Prisma.CulturalClub$updated_byArgs<ExtArgs>
 }, ExtArgs["result"]["culturalClub"]>
@@ -601,10 +762,12 @@ export type CulturalClubSelect<ExtArgs extends runtime.Types.Extensions.Internal
 export type CulturalClubSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   cultural_name?: boolean
+  extra_curriculum_activity_id?: boolean
   created_by_id?: boolean
   updated_by_id?: boolean
   created_at?: boolean
   updated_at?: boolean
+  extra_curriculum_activity?: boolean | Prisma.CulturalClub$extra_curriculum_activityArgs<ExtArgs>
   created_by?: boolean | Prisma.CulturalClub$created_byArgs<ExtArgs>
   updated_by?: boolean | Prisma.CulturalClub$updated_byArgs<ExtArgs>
 }, ExtArgs["result"]["culturalClub"]>
@@ -612,10 +775,12 @@ export type CulturalClubSelectCreateManyAndReturn<ExtArgs extends runtime.Types.
 export type CulturalClubSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   cultural_name?: boolean
+  extra_curriculum_activity_id?: boolean
   created_by_id?: boolean
   updated_by_id?: boolean
   created_at?: boolean
   updated_at?: boolean
+  extra_curriculum_activity?: boolean | Prisma.CulturalClub$extra_curriculum_activityArgs<ExtArgs>
   created_by?: boolean | Prisma.CulturalClub$created_byArgs<ExtArgs>
   updated_by?: boolean | Prisma.CulturalClub$updated_byArgs<ExtArgs>
 }, ExtArgs["result"]["culturalClub"]>
@@ -623,22 +788,26 @@ export type CulturalClubSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.
 export type CulturalClubSelectScalar = {
   id?: boolean
   cultural_name?: boolean
+  extra_curriculum_activity_id?: boolean
   created_by_id?: boolean
   updated_by_id?: boolean
   created_at?: boolean
   updated_at?: boolean
 }
 
-export type CulturalClubOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "cultural_name" | "created_by_id" | "updated_by_id" | "created_at" | "updated_at", ExtArgs["result"]["culturalClub"]>
+export type CulturalClubOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "cultural_name" | "extra_curriculum_activity_id" | "created_by_id" | "updated_by_id" | "created_at" | "updated_at", ExtArgs["result"]["culturalClub"]>
 export type CulturalClubInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  extra_curriculum_activity?: boolean | Prisma.CulturalClub$extra_curriculum_activityArgs<ExtArgs>
   created_by?: boolean | Prisma.CulturalClub$created_byArgs<ExtArgs>
   updated_by?: boolean | Prisma.CulturalClub$updated_byArgs<ExtArgs>
 }
 export type CulturalClubIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  extra_curriculum_activity?: boolean | Prisma.CulturalClub$extra_curriculum_activityArgs<ExtArgs>
   created_by?: boolean | Prisma.CulturalClub$created_byArgs<ExtArgs>
   updated_by?: boolean | Prisma.CulturalClub$updated_byArgs<ExtArgs>
 }
 export type CulturalClubIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  extra_curriculum_activity?: boolean | Prisma.CulturalClub$extra_curriculum_activityArgs<ExtArgs>
   created_by?: boolean | Prisma.CulturalClub$created_byArgs<ExtArgs>
   updated_by?: boolean | Prisma.CulturalClub$updated_byArgs<ExtArgs>
 }
@@ -646,12 +815,14 @@ export type CulturalClubIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types
 export type $CulturalClubPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "CulturalClub"
   objects: {
+    extra_curriculum_activity: Prisma.$ExtraCurriculumActivityPayload<ExtArgs> | null
     created_by: Prisma.$UserPayload<ExtArgs> | null
     updated_by: Prisma.$UserPayload<ExtArgs> | null
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
     cultural_name: string
+    extra_curriculum_activity_id: string | null
     created_by_id: string | null
     updated_by_id: string | null
     created_at: Date
@@ -1050,6 +1221,7 @@ readonly fields: CulturalClubFieldRefs;
  */
 export interface Prisma__CulturalClubClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
+  extra_curriculum_activity<T extends Prisma.CulturalClub$extra_curriculum_activityArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.CulturalClub$extra_curriculum_activityArgs<ExtArgs>>): Prisma.Prisma__ExtraCurriculumActivityClient<runtime.Types.Result.GetResult<Prisma.$ExtraCurriculumActivityPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   created_by<T extends Prisma.CulturalClub$created_byArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.CulturalClub$created_byArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   updated_by<T extends Prisma.CulturalClub$updated_byArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.CulturalClub$updated_byArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   /**
@@ -1083,6 +1255,7 @@ export interface Prisma__CulturalClubClient<T, Null = never, ExtArgs extends run
 export interface CulturalClubFieldRefs {
   readonly id: Prisma.FieldRef<"CulturalClub", 'String'>
   readonly cultural_name: Prisma.FieldRef<"CulturalClub", 'String'>
+  readonly extra_curriculum_activity_id: Prisma.FieldRef<"CulturalClub", 'String'>
   readonly created_by_id: Prisma.FieldRef<"CulturalClub", 'String'>
   readonly updated_by_id: Prisma.FieldRef<"CulturalClub", 'String'>
   readonly created_at: Prisma.FieldRef<"CulturalClub", 'DateTime'>
@@ -1485,6 +1658,25 @@ export type CulturalClubDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.
    * Limit how many CulturalClubs to delete.
    */
   limit?: number
+}
+
+/**
+ * CulturalClub.extra_curriculum_activity
+ */
+export type CulturalClub$extra_curriculum_activityArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the ExtraCurriculumActivity
+   */
+  select?: Prisma.ExtraCurriculumActivitySelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the ExtraCurriculumActivity
+   */
+  omit?: Prisma.ExtraCurriculumActivityOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ExtraCurriculumActivityInclude<ExtArgs> | null
+  where?: Prisma.ExtraCurriculumActivityWhereInput
 }
 
 /**

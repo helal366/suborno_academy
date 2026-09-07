@@ -50,6 +50,9 @@ importers:
       ws:
         specifier: ^8.21.1
         version: 8.21.1
+      zod:
+        specifier: ^4.5.4
+        version: 4.5.4
     devDependencies:
       '@types/cookie-parser':
         specifier: ^1.4.10
@@ -2836,6 +2839,9 @@ packages:
   zod@4.1.11:
     resolution: {integrity: sha512-WPsqwxITS2tzx1bzhIKsEs19ABD5vmCVa4xBo2tq/SrV4RNZtfws1EnCWQXM6yh8bD08a1idvkB5MZSBiZsjwg==}
 
+  zod@4.5.4:
+    resolution: {integrity: sha512-sC95tT5iHHH9gtpj6A81kh+NEaRAUFN+qlUPDUbRfOMvNf5QCBqsb3WgvnpVtK5Y+4UfA6KqufotuTvMGiTlsA==}
+
 snapshots:
 
   '@bytecodealliance/preview2-shim@0.17.6': {}
@@ -3939,7 +3945,7 @@ snapshots:
       tar-stream: 3.1.7
       undici: 7.29.1
       xdg-app-paths: 5.1.0
-      zod: 4.1.11
+      zod: 4.5.4
     transitivePeerDependencies:
       - bare-abort-controller
       - react-native-b4a
@@ -5136,7 +5142,7 @@ snapshots:
       async-retry: 1.3.3
       debug: 4.4.3
       ws: 8.21.1
-      zod: 4.1.11
+      zod: 4.5.4
     transitivePeerDependencies:
       - bare-abort-controller
       - bufferutil
@@ -5521,3 +5527,5 @@ snapshots:
   zod@3.22.4: {}
 
   zod@4.1.11: {}
+
+  zod@4.5.4: {}
