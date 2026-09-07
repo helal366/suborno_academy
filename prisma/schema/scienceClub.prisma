@@ -1,0 +1,18 @@
+model ScienceClub{
+    id String @id @default(uuid())
+    science_name String
+
+    extra_curriculum_activity_id String?
+    extra_curriculum_activity ExtraCurriculumActivity? @relation(fields: [extra_curriculum_activity_id], references: [id])
+
+    created_by_id String?
+    created_by    User?   @relation("science_club_created_by", fields: [created_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
+
+    updated_by_id String?
+    updated_by    User?   @relation("science_club_updated_by", fields: [updated_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
+
+    created_at DateTime @default(now())
+    updated_at DateTime? @updatedAt
+
+    @@map("science_club")
+}

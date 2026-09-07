@@ -19,15 +19,24 @@
 * Each GRADE and GROUP teacher will be able to see the specific class's class routine which class's GRADE TEACHER or GROUP TEACHER he/she is.
 * ADMIN and SUPER_ADMIN can see any class's class routine and any teacher's class routine.
 
+## Hifz Nazera Class:
+*  Hifz and Nazera class separation depends on the students number. If the number of students is low then the authority will continue Hifz and Nazera in one class. But if number increase then the authority will separate the Hifz and Nazera class.
+* Hifz teacher will have the access of Nazera and Nurani teacher's class routine access.
+* Always there will be two teachers for Hifz and Nazera whether the class is combined or the classes are separate.
+
 ## Class scheduling/timimg:
 **SPECIAL PERIODS: **
 1. NURANI_MORNING: 07:00 to 08:00
-2. HIFZ_MORNING: 06:00 to 08:00
-3. NURANI_EVENING: 15:00 to 17:00
-3. HIFZ_EVENING: 15:00 to 17:00
-4. HIFZ_NIGHT: AFTER MAGRIB to 20:00
-5. NURANI_GIRLS: 09:45 to 10:30
-6. HIFZ_GIRLS: 08:00 to 10:30
+2. NAZERA_MORNING: 06:00 to 08:00
+3. HIFZ_MORNING: 06:00 to 08:00
+4. NURANI_EVENING: 15:00 to 17:00
+5. NAZERA_EVENING: 15:00 to 17:00
+6. HIFZ_EVENING: 15:00 to 17:00
+7. NAZERA_NIGHT: AFTER MAGRIB to 20:00
+8. HIFZ_NIGHT: AFTER MAGRIB to 20:00
+9. NURANI_GIRLS: 09:45 to 10:30
+10. NAZERA_GIRLS: 08:00 to 10:30
+11. HIFZ_GIRLS: 08:00 to 10:30
 
 **NURANI SUBJECTS**
 1. NURANI_PRELIMINARY

@@ -22,6 +22,8 @@ model Student {
   isActiveResponsibleTeacher Boolean @default(false)
   assigned_responsible_teacher StudentResponsibility[]
 
+  extra_curriculum_activities ExtraCurriculumActivity[]
+
   created_by_id String?
   created_by    User?   @relation("student_created_by", fields: [created_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
   

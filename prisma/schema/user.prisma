@@ -133,6 +133,24 @@ model User {
   created_user_roles UserRole[] @relation("user_role_created_by")
   updated_user_roles UserRole[] @relation("user_role_updated_by")
 
+  created_extra_curriculum_activity ExtraCurriculumActivity[] @relation("extra_curriculum_activity_created_by")
+  updated_extra_curriculum_activity ExtraCurriculumActivity[] @relation("extra_curriculum_activity_updated_by")
+
+  created_cultural_club CulturalClub[] @relation("cultural_club_created_by")
+  updated_cultural_club CulturalClub[] @relation("cultural_club_updated_by")
+
+  created_quran_clubs QuranClub[] @relation("quran_club_created_by")
+  updated_quran_clubs QuranClub[] @relation("quran_club_updated_by")
+
+  created_language_clubs LanguageClub[] @relation("language_club_created_by")
+  updated_language_clubs LanguageClub[] @relation("language_club_updated_by")
+
+  created_science_clubs ScienceClub[] @relation("science_club_created_by")
+  updated_science_clubs ScienceClub[] @relation("science_club_updated_by")
+
+  created_scout_sports_clubs ScoutSportsClub[] @relation("scout_sports_club_created_by")
+  updated_scout_sports_clubs ScoutSportsClub[] @relation("scout_sports_club_updated_by")
+  
   created_at DateTime  @default(now())
   updated_at DateTime? @updatedAt
 

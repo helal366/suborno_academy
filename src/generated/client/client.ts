@@ -82,6 +82,21 @@ export type Class = Prisma.ClassModel
  */
 export type ClassRoutine = Prisma.ClassRoutineModel
 /**
+ * Model CulturalClub
+ * 
+ */
+export type CulturalClub = Prisma.CulturalClubModel
+/**
+ * Model ExtraCurriculumActivity
+ * 
+ */
+export type ExtraCurriculumActivity = Prisma.ExtraCurriculumActivityModel
+/**
+ * Model LanguageClub
+ * 
+ */
+export type LanguageClub = Prisma.LanguageClubModel
+/**
  * Model Period
  * 
  */
@@ -106,6 +121,16 @@ export type QuranicSpecialPeriod = Prisma.QuranicSpecialPeriodModel
  * 
  */
 export type QuranicSubject = Prisma.QuranicSubjectModel
+/**
+ * Model ScienceClub
+ * 
+ */
+export type ScienceClub = Prisma.ScienceClubModel
+/**
+ * Model ScoutSportsClub
+ * 
+ */
+export type ScoutSportsClub = Prisma.ScoutSportsClubModel
 /**
  * Model Shift
  * 

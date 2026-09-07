@@ -45,6 +45,7 @@ export type Religion = (typeof Religion)[keyof typeof Religion]
 
 export const Quranic_Section = {
   NURANI: 'NURANI',
+  NAZERA: 'NAZERA',
   HIFZ: 'HIFZ'
 } as const
 

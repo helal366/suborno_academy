@@ -25,6 +25,7 @@ enum Religion {
 
 enum Quranic_Section {
   NURANI
+  NAZERA
   HIFZ
 }
 

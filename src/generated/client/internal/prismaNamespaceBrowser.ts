@@ -59,11 +59,16 @@ export const ModelName = {
   BookClass: 'BookClass',
   Class: 'Class',
   ClassRoutine: 'ClassRoutine',
+  CulturalClub: 'CulturalClub',
+  ExtraCurriculumActivity: 'ExtraCurriculumActivity',
+  LanguageClub: 'LanguageClub',
   Period: 'Period',
   PermanentAddress: 'PermanentAddress',
   PresentAddress: 'PresentAddress',
   QuranicSpecialPeriod: 'QuranicSpecialPeriod',
   QuranicSubject: 'QuranicSubject',
+  ScienceClub: 'ScienceClub',
+  ScoutSportsClub: 'ScoutSportsClub',
   Shift: 'Shift',
   SpouseInformation: 'SpouseInformation',
   Student: 'Student',
@@ -228,6 +233,42 @@ export const ClassRoutineScalarFieldEnum = {
 export type ClassRoutineScalarFieldEnum = (typeof ClassRoutineScalarFieldEnum)[keyof typeof ClassRoutineScalarFieldEnum]
 
 
+export const CulturalClubScalarFieldEnum = {
+  id: 'id',
+  cultural_name: 'cultural_name',
+  created_by_id: 'created_by_id',
+  updated_by_id: 'updated_by_id',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
+} as const
+
+export type CulturalClubScalarFieldEnum = (typeof CulturalClubScalarFieldEnum)[keyof typeof CulturalClubScalarFieldEnum]
+
+
+export const ExtraCurriculumActivityScalarFieldEnum = {
+  id: 'id',
+  cultural_club: 'cultural_club',
+  quran_club: 'quran_club',
+  language_club: 'language_club',
+  science_club: 'science_club',
+  scout_sports_club: 'scout_sports_club',
+  created_by_id: 'created_by_id',
+  updated_by_id: 'updated_by_id',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
+} as const
+
+export type ExtraCurriculumActivityScalarFieldEnum = (typeof ExtraCurriculumActivityScalarFieldEnum)[keyof typeof ExtraCurriculumActivityScalarFieldEnum]
+
+
+export const LanguageClubScalarFieldEnum = {
+  id: 'id',
+  language_name: 'language_name'
+} as const
+
+export type LanguageClubScalarFieldEnum = (typeof LanguageClubScalarFieldEnum)[keyof typeof LanguageClubScalarFieldEnum]
+
+
 export const PeriodScalarFieldEnum = {
   id: 'id',
   period_name: 'period_name',
@@ -315,6 +356,21 @@ export const QuranicSubjectScalarFieldEnum = {
 } as const
 
 export type QuranicSubjectScalarFieldEnum = (typeof QuranicSubjectScalarFieldEnum)[keyof typeof QuranicSubjectScalarFieldEnum]
+
+
+export const ScienceClubScalarFieldEnum = {
+  id: 'id'
+} as const
+
+export type ScienceClubScalarFieldEnum = (typeof ScienceClubScalarFieldEnum)[keyof typeof ScienceClubScalarFieldEnum]
+
+
+export const ScoutSportsClubScalarFieldEnum = {
+  id: 'id',
+  scout_sports_name: 'scout_sports_name'
+} as const
+
+export type ScoutSportsClubScalarFieldEnum = (typeof ScoutSportsClubScalarFieldEnum)[keyof typeof ScoutSportsClubScalarFieldEnum]
 
 
 export const ShiftScalarFieldEnum = {

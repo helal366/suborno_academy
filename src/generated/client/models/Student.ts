@@ -238,6 +238,7 @@ export type StudentWhereInput = {
   responsible_guardian?: Prisma.XOR<Prisma.StudentResponsibleGuardianDetailsNullableScalarRelationFilter, Prisma.StudentResponsibleGuardianDetailsWhereInput> | null
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
   assigned_responsible_teacher?: Prisma.StudentResponsibilityListRelationFilter
+  extra_curriculum_activities?: Prisma.ExtraCurriculumActivityListRelationFilter
   created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
   updated_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
 }
@@ -262,6 +263,7 @@ export type StudentOrderByWithRelationInput = {
   responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsOrderByWithRelationInput
   user?: Prisma.UserOrderByWithRelationInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityOrderByRelationAggregateInput
+  extra_curriculum_activities?: Prisma.ExtraCurriculumActivityOrderByRelationAggregateInput
   created_by?: Prisma.UserOrderByWithRelationInput
   updated_by?: Prisma.UserOrderByWithRelationInput
 }
@@ -289,6 +291,7 @@ export type StudentWhereUniqueInput = Prisma.AtLeast<{
   responsible_guardian?: Prisma.XOR<Prisma.StudentResponsibleGuardianDetailsNullableScalarRelationFilter, Prisma.StudentResponsibleGuardianDetailsWhereInput> | null
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
   assigned_responsible_teacher?: Prisma.StudentResponsibilityListRelationFilter
+  extra_curriculum_activities?: Prisma.ExtraCurriculumActivityListRelationFilter
   created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
   updated_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
 }, "id" | "user_id">
@@ -341,6 +344,7 @@ export type StudentCreateInput = {
   responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsCreateNestedOneWithoutStudentsInput
   user: Prisma.UserCreateNestedOneWithoutStudent_profileInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityCreateNestedManyWithoutStudentInput
+  extra_curriculum_activities?: Prisma.ExtraCurriculumActivityCreateNestedManyWithoutStudentsInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_studentsInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_studentsInput
 }
@@ -361,6 +365,7 @@ export type StudentUncheckedCreateInput = {
   quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedCreateNestedManyWithoutStudentsInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedCreateNestedManyWithoutStudentInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedCreateNestedManyWithoutStudentInput
+  extra_curriculum_activities?: Prisma.ExtraCurriculumActivityUncheckedCreateNestedManyWithoutStudentsInput
 }
 
 export type StudentUpdateInput = {
@@ -377,6 +382,7 @@ export type StudentUpdateInput = {
   responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsUpdateOneWithoutStudentsNestedInput
   user?: Prisma.UserUpdateOneRequiredWithoutStudent_profileNestedInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUpdateManyWithoutStudentNestedInput
+  extra_curriculum_activities?: Prisma.ExtraCurriculumActivityUpdateManyWithoutStudentsNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_studentsNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_studentsNestedInput
 }
@@ -397,6 +403,7 @@ export type StudentUncheckedUpdateInput = {
   quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedUpdateManyWithoutStudentsNestedInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedUpdateManyWithoutStudentNestedInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedUpdateManyWithoutStudentNestedInput
+  extra_curriculum_activities?: Prisma.ExtraCurriculumActivityUncheckedUpdateManyWithoutStudentsNestedInput
 }
 
 export type StudentCreateManyInput = {
@@ -574,6 +581,44 @@ export type StudentUncheckedUpdateManyWithoutActive_classNestedInput = {
   connect?: Prisma.StudentWhereUniqueInput | Prisma.StudentWhereUniqueInput[]
   update?: Prisma.StudentUpdateWithWhereUniqueWithoutActive_classInput | Prisma.StudentUpdateWithWhereUniqueWithoutActive_classInput[]
   updateMany?: Prisma.StudentUpdateManyWithWhereWithoutActive_classInput | Prisma.StudentUpdateManyWithWhereWithoutActive_classInput[]
+  deleteMany?: Prisma.StudentScalarWhereInput | Prisma.StudentScalarWhereInput[]
+}
+
+export type StudentCreateNestedManyWithoutExtra_curriculum_activitiesInput = {
+  create?: Prisma.XOR<Prisma.StudentCreateWithoutExtra_curriculum_activitiesInput, Prisma.StudentUncheckedCreateWithoutExtra_curriculum_activitiesInput> | Prisma.StudentCreateWithoutExtra_curriculum_activitiesInput[] | Prisma.StudentUncheckedCreateWithoutExtra_curriculum_activitiesInput[]
+  connectOrCreate?: Prisma.StudentCreateOrConnectWithoutExtra_curriculum_activitiesInput | Prisma.StudentCreateOrConnectWithoutExtra_curriculum_activitiesInput[]
+  connect?: Prisma.StudentWhereUniqueInput | Prisma.StudentWhereUniqueInput[]
+}
+
+export type StudentUncheckedCreateNestedManyWithoutExtra_curriculum_activitiesInput = {
+  create?: Prisma.XOR<Prisma.StudentCreateWithoutExtra_curriculum_activitiesInput, Prisma.StudentUncheckedCreateWithoutExtra_curriculum_activitiesInput> | Prisma.StudentCreateWithoutExtra_curriculum_activitiesInput[] | Prisma.StudentUncheckedCreateWithoutExtra_curriculum_activitiesInput[]
+  connectOrCreate?: Prisma.StudentCreateOrConnectWithoutExtra_curriculum_activitiesInput | Prisma.StudentCreateOrConnectWithoutExtra_curriculum_activitiesInput[]
+  connect?: Prisma.StudentWhereUniqueInput | Prisma.StudentWhereUniqueInput[]
+}
+
+export type StudentUpdateManyWithoutExtra_curriculum_activitiesNestedInput = {
+  create?: Prisma.XOR<Prisma.StudentCreateWithoutExtra_curriculum_activitiesInput, Prisma.StudentUncheckedCreateWithoutExtra_curriculum_activitiesInput> | Prisma.StudentCreateWithoutExtra_curriculum_activitiesInput[] | Prisma.StudentUncheckedCreateWithoutExtra_curriculum_activitiesInput[]
+  connectOrCreate?: Prisma.StudentCreateOrConnectWithoutExtra_curriculum_activitiesInput | Prisma.StudentCreateOrConnectWithoutExtra_curriculum_activitiesInput[]
+  upsert?: Prisma.StudentUpsertWithWhereUniqueWithoutExtra_curriculum_activitiesInput | Prisma.StudentUpsertWithWhereUniqueWithoutExtra_curriculum_activitiesInput[]
+  set?: Prisma.StudentWhereUniqueInput | Prisma.StudentWhereUniqueInput[]
+  disconnect?: Prisma.StudentWhereUniqueInput | Prisma.StudentWhereUniqueInput[]
+  delete?: Prisma.StudentWhereUniqueInput | Prisma.StudentWhereUniqueInput[]
+  connect?: Prisma.StudentWhereUniqueInput | Prisma.StudentWhereUniqueInput[]
+  update?: Prisma.StudentUpdateWithWhereUniqueWithoutExtra_curriculum_activitiesInput | Prisma.StudentUpdateWithWhereUniqueWithoutExtra_curriculum_activitiesInput[]
+  updateMany?: Prisma.StudentUpdateManyWithWhereWithoutExtra_curriculum_activitiesInput | Prisma.StudentUpdateManyWithWhereWithoutExtra_curriculum_activitiesInput[]
+  deleteMany?: Prisma.StudentScalarWhereInput | Prisma.StudentScalarWhereInput[]
+}
+
+export type StudentUncheckedUpdateManyWithoutExtra_curriculum_activitiesNestedInput = {
+  create?: Prisma.XOR<Prisma.StudentCreateWithoutExtra_curriculum_activitiesInput, Prisma.StudentUncheckedCreateWithoutExtra_curriculum_activitiesInput> | Prisma.StudentCreateWithoutExtra_curriculum_activitiesInput[] | Prisma.StudentUncheckedCreateWithoutExtra_curriculum_activitiesInput[]
+  connectOrCreate?: Prisma.StudentCreateOrConnectWithoutExtra_curriculum_activitiesInput | Prisma.StudentCreateOrConnectWithoutExtra_curriculum_activitiesInput[]
+  upsert?: Prisma.StudentUpsertWithWhereUniqueWithoutExtra_curriculum_activitiesInput | Prisma.StudentUpsertWithWhereUniqueWithoutExtra_curriculum_activitiesInput[]
+  set?: Prisma.StudentWhereUniqueInput | Prisma.StudentWhereUniqueInput[]
+  disconnect?: Prisma.StudentWhereUniqueInput | Prisma.StudentWhereUniqueInput[]
+  delete?: Prisma.StudentWhereUniqueInput | Prisma.StudentWhereUniqueInput[]
+  connect?: Prisma.StudentWhereUniqueInput | Prisma.StudentWhereUniqueInput[]
+  update?: Prisma.StudentUpdateWithWhereUniqueWithoutExtra_curriculum_activitiesInput | Prisma.StudentUpdateWithWhereUniqueWithoutExtra_curriculum_activitiesInput[]
+  updateMany?: Prisma.StudentUpdateManyWithWhereWithoutExtra_curriculum_activitiesInput | Prisma.StudentUpdateManyWithWhereWithoutExtra_curriculum_activitiesInput[]
   deleteMany?: Prisma.StudentScalarWhereInput | Prisma.StudentScalarWhereInput[]
 }
 
@@ -862,6 +907,7 @@ export type StudentCreateWithoutClassesInput = {
   responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsCreateNestedOneWithoutStudentsInput
   user: Prisma.UserCreateNestedOneWithoutStudent_profileInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityCreateNestedManyWithoutStudentInput
+  extra_curriculum_activities?: Prisma.ExtraCurriculumActivityCreateNestedManyWithoutStudentsInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_studentsInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_studentsInput
 }
@@ -881,6 +927,7 @@ export type StudentUncheckedCreateWithoutClassesInput = {
   quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedCreateNestedManyWithoutStudentsInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedCreateNestedManyWithoutStudentInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedCreateNestedManyWithoutStudentInput
+  extra_curriculum_activities?: Prisma.ExtraCurriculumActivityUncheckedCreateNestedManyWithoutStudentsInput
 }
 
 export type StudentCreateOrConnectWithoutClassesInput = {
@@ -901,6 +948,7 @@ export type StudentCreateWithoutActive_classInput = {
   responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsCreateNestedOneWithoutStudentsInput
   user: Prisma.UserCreateNestedOneWithoutStudent_profileInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityCreateNestedManyWithoutStudentInput
+  extra_curriculum_activities?: Prisma.ExtraCurriculumActivityCreateNestedManyWithoutStudentsInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_studentsInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_studentsInput
 }
@@ -920,6 +968,7 @@ export type StudentUncheckedCreateWithoutActive_classInput = {
   quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedCreateNestedManyWithoutStudentsInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedCreateNestedManyWithoutStudentInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedCreateNestedManyWithoutStudentInput
+  extra_curriculum_activities?: Prisma.ExtraCurriculumActivityUncheckedCreateNestedManyWithoutStudentsInput
 }
 
 export type StudentCreateOrConnectWithoutActive_classInput = {
@@ -981,6 +1030,63 @@ export type StudentUpdateManyWithWhereWithoutActive_classInput = {
   data: Prisma.XOR<Prisma.StudentUpdateManyMutationInput, Prisma.StudentUncheckedUpdateManyWithoutActive_classInput>
 }
 
+export type StudentCreateWithoutExtra_curriculum_activitiesInput = {
+  id?: string
+  quranic_section?: $Enums.Quranic_Section | null
+  isActiveResponsibleTeacher?: boolean
+  created_at?: Date | string
+  updated_at?: Date | string | null
+  classes?: Prisma.ClassCreateNestedManyWithoutStudentsInput
+  quranic_subject?: Prisma.QuranicSubjectCreateNestedOneWithoutStudentsInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodCreateNestedManyWithoutStudentsInput
+  active_class: Prisma.ClassCreateNestedOneWithoutActive_studentsInput
+  previous_institute_information?: Prisma.StudentPreviousInstituteInformationCreateNestedManyWithoutStudentInput
+  responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsCreateNestedOneWithoutStudentsInput
+  user: Prisma.UserCreateNestedOneWithoutStudent_profileInput
+  assigned_responsible_teacher?: Prisma.StudentResponsibilityCreateNestedManyWithoutStudentInput
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_studentsInput
+  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_studentsInput
+}
+
+export type StudentUncheckedCreateWithoutExtra_curriculum_activitiesInput = {
+  id?: string
+  quranic_section?: $Enums.Quranic_Section | null
+  quranic_subject_id?: string | null
+  active_class_id: string
+  responsible_guardian_id?: string | null
+  user_id: string
+  isActiveResponsibleTeacher?: boolean
+  created_by_id?: string | null
+  updated_by_id?: string | null
+  created_at?: Date | string
+  updated_at?: Date | string | null
+  classes?: Prisma.ClassUncheckedCreateNestedManyWithoutStudentsInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedCreateNestedManyWithoutStudentsInput
+  previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedCreateNestedManyWithoutStudentInput
+  assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedCreateNestedManyWithoutStudentInput
+}
+
+export type StudentCreateOrConnectWithoutExtra_curriculum_activitiesInput = {
+  where: Prisma.StudentWhereUniqueInput
+  create: Prisma.XOR<Prisma.StudentCreateWithoutExtra_curriculum_activitiesInput, Prisma.StudentUncheckedCreateWithoutExtra_curriculum_activitiesInput>
+}
+
+export type StudentUpsertWithWhereUniqueWithoutExtra_curriculum_activitiesInput = {
+  where: Prisma.StudentWhereUniqueInput
+  update: Prisma.XOR<Prisma.StudentUpdateWithoutExtra_curriculum_activitiesInput, Prisma.StudentUncheckedUpdateWithoutExtra_curriculum_activitiesInput>
+  create: Prisma.XOR<Prisma.StudentCreateWithoutExtra_curriculum_activitiesInput, Prisma.StudentUncheckedCreateWithoutExtra_curriculum_activitiesInput>
+}
+
+export type StudentUpdateWithWhereUniqueWithoutExtra_curriculum_activitiesInput = {
+  where: Prisma.StudentWhereUniqueInput
+  data: Prisma.XOR<Prisma.StudentUpdateWithoutExtra_curriculum_activitiesInput, Prisma.StudentUncheckedUpdateWithoutExtra_curriculum_activitiesInput>
+}
+
+export type StudentUpdateManyWithWhereWithoutExtra_curriculum_activitiesInput = {
+  where: Prisma.StudentScalarWhereInput
+  data: Prisma.XOR<Prisma.StudentUpdateManyMutationInput, Prisma.StudentUncheckedUpdateManyWithoutExtra_curriculum_activitiesInput>
+}
+
 export type StudentCreateWithoutQuranic_special_periodsInput = {
   id?: string
   quranic_section?: $Enums.Quranic_Section | null
@@ -994,6 +1100,7 @@ export type StudentCreateWithoutQuranic_special_periodsInput = {
   responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsCreateNestedOneWithoutStudentsInput
   user: Prisma.UserCreateNestedOneWithoutStudent_profileInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityCreateNestedManyWithoutStudentInput
+  extra_curriculum_activities?: Prisma.ExtraCurriculumActivityCreateNestedManyWithoutStudentsInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_studentsInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_studentsInput
 }
@@ -1013,6 +1120,7 @@ export type StudentUncheckedCreateWithoutQuranic_special_periodsInput = {
   classes?: Prisma.ClassUncheckedCreateNestedManyWithoutStudentsInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedCreateNestedManyWithoutStudentInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedCreateNestedManyWithoutStudentInput
+  extra_curriculum_activities?: Prisma.ExtraCurriculumActivityUncheckedCreateNestedManyWithoutStudentsInput
 }
 
 export type StudentCreateOrConnectWithoutQuranic_special_periodsInput = {
@@ -1049,6 +1157,7 @@ export type StudentCreateWithoutQuranic_subjectInput = {
   responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsCreateNestedOneWithoutStudentsInput
   user: Prisma.UserCreateNestedOneWithoutStudent_profileInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityCreateNestedManyWithoutStudentInput
+  extra_curriculum_activities?: Prisma.ExtraCurriculumActivityCreateNestedManyWithoutStudentsInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_studentsInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_studentsInput
 }
@@ -1068,6 +1177,7 @@ export type StudentUncheckedCreateWithoutQuranic_subjectInput = {
   quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedCreateNestedManyWithoutStudentsInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedCreateNestedManyWithoutStudentInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedCreateNestedManyWithoutStudentInput
+  extra_curriculum_activities?: Prisma.ExtraCurriculumActivityUncheckedCreateNestedManyWithoutStudentsInput
 }
 
 export type StudentCreateOrConnectWithoutQuranic_subjectInput = {
@@ -1109,6 +1219,7 @@ export type StudentCreateWithoutPrevious_institute_informationInput = {
   responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsCreateNestedOneWithoutStudentsInput
   user: Prisma.UserCreateNestedOneWithoutStudent_profileInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityCreateNestedManyWithoutStudentInput
+  extra_curriculum_activities?: Prisma.ExtraCurriculumActivityCreateNestedManyWithoutStudentsInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_studentsInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_studentsInput
 }
@@ -1128,6 +1239,7 @@ export type StudentUncheckedCreateWithoutPrevious_institute_informationInput = {
   classes?: Prisma.ClassUncheckedCreateNestedManyWithoutStudentsInput
   quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedCreateNestedManyWithoutStudentsInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedCreateNestedManyWithoutStudentInput
+  extra_curriculum_activities?: Prisma.ExtraCurriculumActivityUncheckedCreateNestedManyWithoutStudentsInput
 }
 
 export type StudentCreateOrConnectWithoutPrevious_institute_informationInput = {
@@ -1159,6 +1271,7 @@ export type StudentUpdateWithoutPrevious_institute_informationInput = {
   responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsUpdateOneWithoutStudentsNestedInput
   user?: Prisma.UserUpdateOneRequiredWithoutStudent_profileNestedInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUpdateManyWithoutStudentNestedInput
+  extra_curriculum_activities?: Prisma.ExtraCurriculumActivityUpdateManyWithoutStudentsNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_studentsNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_studentsNestedInput
 }
@@ -1178,6 +1291,7 @@ export type StudentUncheckedUpdateWithoutPrevious_institute_informationInput = {
   classes?: Prisma.ClassUncheckedUpdateManyWithoutStudentsNestedInput
   quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedUpdateManyWithoutStudentsNestedInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedUpdateManyWithoutStudentNestedInput
+  extra_curriculum_activities?: Prisma.ExtraCurriculumActivityUncheckedUpdateManyWithoutStudentsNestedInput
 }
 
 export type StudentCreateWithoutAssigned_responsible_teacherInput = {
@@ -1193,6 +1307,7 @@ export type StudentCreateWithoutAssigned_responsible_teacherInput = {
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationCreateNestedManyWithoutStudentInput
   responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsCreateNestedOneWithoutStudentsInput
   user: Prisma.UserCreateNestedOneWithoutStudent_profileInput
+  extra_curriculum_activities?: Prisma.ExtraCurriculumActivityCreateNestedManyWithoutStudentsInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_studentsInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_studentsInput
 }
@@ -1212,6 +1327,7 @@ export type StudentUncheckedCreateWithoutAssigned_responsible_teacherInput = {
   classes?: Prisma.ClassUncheckedCreateNestedManyWithoutStudentsInput
   quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedCreateNestedManyWithoutStudentsInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedCreateNestedManyWithoutStudentInput
+  extra_curriculum_activities?: Prisma.ExtraCurriculumActivityUncheckedCreateNestedManyWithoutStudentsInput
 }
 
 export type StudentCreateOrConnectWithoutAssigned_responsible_teacherInput = {
@@ -1243,6 +1359,7 @@ export type StudentUpdateWithoutAssigned_responsible_teacherInput = {
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUpdateManyWithoutStudentNestedInput
   responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsUpdateOneWithoutStudentsNestedInput
   user?: Prisma.UserUpdateOneRequiredWithoutStudent_profileNestedInput
+  extra_curriculum_activities?: Prisma.ExtraCurriculumActivityUpdateManyWithoutStudentsNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_studentsNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_studentsNestedInput
 }
@@ -1262,6 +1379,7 @@ export type StudentUncheckedUpdateWithoutAssigned_responsible_teacherInput = {
   classes?: Prisma.ClassUncheckedUpdateManyWithoutStudentsNestedInput
   quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedUpdateManyWithoutStudentsNestedInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedUpdateManyWithoutStudentNestedInput
+  extra_curriculum_activities?: Prisma.ExtraCurriculumActivityUncheckedUpdateManyWithoutStudentsNestedInput
 }
 
 export type StudentCreateWithoutResponsible_guardianInput = {
@@ -1277,6 +1395,7 @@ export type StudentCreateWithoutResponsible_guardianInput = {
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationCreateNestedManyWithoutStudentInput
   user: Prisma.UserCreateNestedOneWithoutStudent_profileInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityCreateNestedManyWithoutStudentInput
+  extra_curriculum_activities?: Prisma.ExtraCurriculumActivityCreateNestedManyWithoutStudentsInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_studentsInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_studentsInput
 }
@@ -1296,6 +1415,7 @@ export type StudentUncheckedCreateWithoutResponsible_guardianInput = {
   quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedCreateNestedManyWithoutStudentsInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedCreateNestedManyWithoutStudentInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedCreateNestedManyWithoutStudentInput
+  extra_curriculum_activities?: Prisma.ExtraCurriculumActivityUncheckedCreateNestedManyWithoutStudentsInput
 }
 
 export type StudentCreateOrConnectWithoutResponsible_guardianInput = {
@@ -1337,6 +1457,7 @@ export type StudentCreateWithoutUserInput = {
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationCreateNestedManyWithoutStudentInput
   responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsCreateNestedOneWithoutStudentsInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityCreateNestedManyWithoutStudentInput
+  extra_curriculum_activities?: Prisma.ExtraCurriculumActivityCreateNestedManyWithoutStudentsInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_studentsInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_studentsInput
 }
@@ -1356,6 +1477,7 @@ export type StudentUncheckedCreateWithoutUserInput = {
   quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedCreateNestedManyWithoutStudentsInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedCreateNestedManyWithoutStudentInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedCreateNestedManyWithoutStudentInput
+  extra_curriculum_activities?: Prisma.ExtraCurriculumActivityUncheckedCreateNestedManyWithoutStudentsInput
 }
 
 export type StudentCreateOrConnectWithoutUserInput = {
@@ -1377,6 +1499,7 @@ export type StudentCreateWithoutCreated_byInput = {
   responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsCreateNestedOneWithoutStudentsInput
   user: Prisma.UserCreateNestedOneWithoutStudent_profileInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityCreateNestedManyWithoutStudentInput
+  extra_curriculum_activities?: Prisma.ExtraCurriculumActivityCreateNestedManyWithoutStudentsInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_studentsInput
 }
 
@@ -1395,6 +1518,7 @@ export type StudentUncheckedCreateWithoutCreated_byInput = {
   quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedCreateNestedManyWithoutStudentsInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedCreateNestedManyWithoutStudentInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedCreateNestedManyWithoutStudentInput
+  extra_curriculum_activities?: Prisma.ExtraCurriculumActivityUncheckedCreateNestedManyWithoutStudentsInput
 }
 
 export type StudentCreateOrConnectWithoutCreated_byInput = {
@@ -1421,6 +1545,7 @@ export type StudentCreateWithoutUpdated_byInput = {
   responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsCreateNestedOneWithoutStudentsInput
   user: Prisma.UserCreateNestedOneWithoutStudent_profileInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityCreateNestedManyWithoutStudentInput
+  extra_curriculum_activities?: Prisma.ExtraCurriculumActivityCreateNestedManyWithoutStudentsInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_studentsInput
 }
 
@@ -1439,6 +1564,7 @@ export type StudentUncheckedCreateWithoutUpdated_byInput = {
   quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedCreateNestedManyWithoutStudentsInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedCreateNestedManyWithoutStudentInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedCreateNestedManyWithoutStudentInput
+  extra_curriculum_activities?: Prisma.ExtraCurriculumActivityUncheckedCreateNestedManyWithoutStudentsInput
 }
 
 export type StudentCreateOrConnectWithoutUpdated_byInput = {
@@ -1475,6 +1601,7 @@ export type StudentUpdateWithoutUserInput = {
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUpdateManyWithoutStudentNestedInput
   responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsUpdateOneWithoutStudentsNestedInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUpdateManyWithoutStudentNestedInput
+  extra_curriculum_activities?: Prisma.ExtraCurriculumActivityUpdateManyWithoutStudentsNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_studentsNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_studentsNestedInput
 }
@@ -1494,6 +1621,7 @@ export type StudentUncheckedUpdateWithoutUserInput = {
   quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedUpdateManyWithoutStudentsNestedInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedUpdateManyWithoutStudentNestedInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedUpdateManyWithoutStudentNestedInput
+  extra_curriculum_activities?: Prisma.ExtraCurriculumActivityUncheckedUpdateManyWithoutStudentsNestedInput
 }
 
 export type StudentUpsertWithWhereUniqueWithoutCreated_byInput = {
@@ -1554,6 +1682,7 @@ export type StudentUpdateWithoutClassesInput = {
   responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsUpdateOneWithoutStudentsNestedInput
   user?: Prisma.UserUpdateOneRequiredWithoutStudent_profileNestedInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUpdateManyWithoutStudentNestedInput
+  extra_curriculum_activities?: Prisma.ExtraCurriculumActivityUpdateManyWithoutStudentsNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_studentsNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_studentsNestedInput
 }
@@ -1573,6 +1702,7 @@ export type StudentUncheckedUpdateWithoutClassesInput = {
   quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedUpdateManyWithoutStudentsNestedInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedUpdateManyWithoutStudentNestedInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedUpdateManyWithoutStudentNestedInput
+  extra_curriculum_activities?: Prisma.ExtraCurriculumActivityUncheckedUpdateManyWithoutStudentsNestedInput
 }
 
 export type StudentUncheckedUpdateManyWithoutClassesInput = {
@@ -1602,6 +1732,7 @@ export type StudentUpdateWithoutActive_classInput = {
   responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsUpdateOneWithoutStudentsNestedInput
   user?: Prisma.UserUpdateOneRequiredWithoutStudent_profileNestedInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUpdateManyWithoutStudentNestedInput
+  extra_curriculum_activities?: Prisma.ExtraCurriculumActivityUpdateManyWithoutStudentsNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_studentsNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_studentsNestedInput
 }
@@ -1621,12 +1752,63 @@ export type StudentUncheckedUpdateWithoutActive_classInput = {
   quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedUpdateManyWithoutStudentsNestedInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedUpdateManyWithoutStudentNestedInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedUpdateManyWithoutStudentNestedInput
+  extra_curriculum_activities?: Prisma.ExtraCurriculumActivityUncheckedUpdateManyWithoutStudentsNestedInput
 }
 
 export type StudentUncheckedUpdateManyWithoutActive_classInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
   quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  responsible_guardian_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  isActiveResponsibleTeacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+}
+
+export type StudentUpdateWithoutExtra_curriculum_activitiesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
+  isActiveResponsibleTeacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  classes?: Prisma.ClassUpdateManyWithoutStudentsNestedInput
+  quranic_subject?: Prisma.QuranicSubjectUpdateOneWithoutStudentsNestedInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodUpdateManyWithoutStudentsNestedInput
+  active_class?: Prisma.ClassUpdateOneRequiredWithoutActive_studentsNestedInput
+  previous_institute_information?: Prisma.StudentPreviousInstituteInformationUpdateManyWithoutStudentNestedInput
+  responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsUpdateOneWithoutStudentsNestedInput
+  user?: Prisma.UserUpdateOneRequiredWithoutStudent_profileNestedInput
+  assigned_responsible_teacher?: Prisma.StudentResponsibilityUpdateManyWithoutStudentNestedInput
+  created_by?: Prisma.UserUpdateOneWithoutCreated_studentsNestedInput
+  updated_by?: Prisma.UserUpdateOneWithoutUpdated_studentsNestedInput
+}
+
+export type StudentUncheckedUpdateWithoutExtra_curriculum_activitiesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
+  quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
+  responsible_guardian_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  isActiveResponsibleTeacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  classes?: Prisma.ClassUncheckedUpdateManyWithoutStudentsNestedInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedUpdateManyWithoutStudentsNestedInput
+  previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedUpdateManyWithoutStudentNestedInput
+  assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedUpdateManyWithoutStudentNestedInput
+}
+
+export type StudentUncheckedUpdateManyWithoutExtra_curriculum_activitiesInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
+  quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
   responsible_guardian_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   user_id?: Prisma.StringFieldUpdateOperationsInput | string
   isActiveResponsibleTeacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
@@ -1649,6 +1831,7 @@ export type StudentUpdateWithoutQuranic_special_periodsInput = {
   responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsUpdateOneWithoutStudentsNestedInput
   user?: Prisma.UserUpdateOneRequiredWithoutStudent_profileNestedInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUpdateManyWithoutStudentNestedInput
+  extra_curriculum_activities?: Prisma.ExtraCurriculumActivityUpdateManyWithoutStudentsNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_studentsNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_studentsNestedInput
 }
@@ -1668,6 +1851,7 @@ export type StudentUncheckedUpdateWithoutQuranic_special_periodsInput = {
   classes?: Prisma.ClassUncheckedUpdateManyWithoutStudentsNestedInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedUpdateManyWithoutStudentNestedInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedUpdateManyWithoutStudentNestedInput
+  extra_curriculum_activities?: Prisma.ExtraCurriculumActivityUncheckedUpdateManyWithoutStudentsNestedInput
 }
 
 export type StudentUncheckedUpdateManyWithoutQuranic_special_periodsInput = {
@@ -1710,6 +1894,7 @@ export type StudentUpdateWithoutQuranic_subjectInput = {
   responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsUpdateOneWithoutStudentsNestedInput
   user?: Prisma.UserUpdateOneRequiredWithoutStudent_profileNestedInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUpdateManyWithoutStudentNestedInput
+  extra_curriculum_activities?: Prisma.ExtraCurriculumActivityUpdateManyWithoutStudentsNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_studentsNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_studentsNestedInput
 }
@@ -1729,6 +1914,7 @@ export type StudentUncheckedUpdateWithoutQuranic_subjectInput = {
   quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedUpdateManyWithoutStudentsNestedInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedUpdateManyWithoutStudentNestedInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedUpdateManyWithoutStudentNestedInput
+  extra_curriculum_activities?: Prisma.ExtraCurriculumActivityUncheckedUpdateManyWithoutStudentsNestedInput
 }
 
 export type StudentUncheckedUpdateManyWithoutQuranic_subjectInput = {
@@ -1770,6 +1956,7 @@ export type StudentUpdateWithoutResponsible_guardianInput = {
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUpdateManyWithoutStudentNestedInput
   user?: Prisma.UserUpdateOneRequiredWithoutStudent_profileNestedInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUpdateManyWithoutStudentNestedInput
+  extra_curriculum_activities?: Prisma.ExtraCurriculumActivityUpdateManyWithoutStudentsNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_studentsNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_studentsNestedInput
 }
@@ -1789,6 +1976,7 @@ export type StudentUncheckedUpdateWithoutResponsible_guardianInput = {
   quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedUpdateManyWithoutStudentsNestedInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedUpdateManyWithoutStudentNestedInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedUpdateManyWithoutStudentNestedInput
+  extra_curriculum_activities?: Prisma.ExtraCurriculumActivityUncheckedUpdateManyWithoutStudentsNestedInput
 }
 
 export type StudentUncheckedUpdateManyWithoutResponsible_guardianInput = {
@@ -1844,6 +2032,7 @@ export type StudentUpdateWithoutCreated_byInput = {
   responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsUpdateOneWithoutStudentsNestedInput
   user?: Prisma.UserUpdateOneRequiredWithoutStudent_profileNestedInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUpdateManyWithoutStudentNestedInput
+  extra_curriculum_activities?: Prisma.ExtraCurriculumActivityUpdateManyWithoutStudentsNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_studentsNestedInput
 }
 
@@ -1862,6 +2051,7 @@ export type StudentUncheckedUpdateWithoutCreated_byInput = {
   quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedUpdateManyWithoutStudentsNestedInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedUpdateManyWithoutStudentNestedInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedUpdateManyWithoutStudentNestedInput
+  extra_curriculum_activities?: Prisma.ExtraCurriculumActivityUncheckedUpdateManyWithoutStudentsNestedInput
 }
 
 export type StudentUncheckedUpdateManyWithoutCreated_byInput = {
@@ -1891,6 +2081,7 @@ export type StudentUpdateWithoutUpdated_byInput = {
   responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsUpdateOneWithoutStudentsNestedInput
   user?: Prisma.UserUpdateOneRequiredWithoutStudent_profileNestedInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUpdateManyWithoutStudentNestedInput
+  extra_curriculum_activities?: Prisma.ExtraCurriculumActivityUpdateManyWithoutStudentsNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_studentsNestedInput
 }
 
@@ -1909,6 +2100,7 @@ export type StudentUncheckedUpdateWithoutUpdated_byInput = {
   quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedUpdateManyWithoutStudentsNestedInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedUpdateManyWithoutStudentNestedInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedUpdateManyWithoutStudentNestedInput
+  extra_curriculum_activities?: Prisma.ExtraCurriculumActivityUncheckedUpdateManyWithoutStudentsNestedInput
 }
 
 export type StudentUncheckedUpdateManyWithoutUpdated_byInput = {
@@ -1934,6 +2126,7 @@ export type StudentCountOutputType = {
   quranic_special_periods: number
   previous_institute_information: number
   assigned_responsible_teacher: number
+  extra_curriculum_activities: number
 }
 
 export type StudentCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1941,6 +2134,7 @@ export type StudentCountOutputTypeSelect<ExtArgs extends runtime.Types.Extension
   quranic_special_periods?: boolean | StudentCountOutputTypeCountQuranic_special_periodsArgs
   previous_institute_information?: boolean | StudentCountOutputTypeCountPrevious_institute_informationArgs
   assigned_responsible_teacher?: boolean | StudentCountOutputTypeCountAssigned_responsible_teacherArgs
+  extra_curriculum_activities?: boolean | StudentCountOutputTypeCountExtra_curriculum_activitiesArgs
 }
 
 /**
@@ -1981,6 +2175,13 @@ export type StudentCountOutputTypeCountAssigned_responsible_teacherArgs<ExtArgs 
   where?: Prisma.StudentResponsibilityWhereInput
 }
 
+/**
+ * StudentCountOutputType without action
+ */
+export type StudentCountOutputTypeCountExtra_curriculum_activitiesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.ExtraCurriculumActivityWhereInput
+}
+
 
 export type StudentSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -2002,6 +2203,7 @@ export type StudentSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   responsible_guardian?: boolean | Prisma.Student$responsible_guardianArgs<ExtArgs>
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   assigned_responsible_teacher?: boolean | Prisma.Student$assigned_responsible_teacherArgs<ExtArgs>
+  extra_curriculum_activities?: boolean | Prisma.Student$extra_curriculum_activitiesArgs<ExtArgs>
   created_by?: boolean | Prisma.Student$created_byArgs<ExtArgs>
   updated_by?: boolean | Prisma.Student$updated_byArgs<ExtArgs>
   _count?: boolean | Prisma.StudentCountOutputTypeDefaultArgs<ExtArgs>
@@ -2071,6 +2273,7 @@ export type StudentInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs
   responsible_guardian?: boolean | Prisma.Student$responsible_guardianArgs<ExtArgs>
   user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   assigned_responsible_teacher?: boolean | Prisma.Student$assigned_responsible_teacherArgs<ExtArgs>
+  extra_curriculum_activities?: boolean | Prisma.Student$extra_curriculum_activitiesArgs<ExtArgs>
   created_by?: boolean | Prisma.Student$created_byArgs<ExtArgs>
   updated_by?: boolean | Prisma.Student$updated_byArgs<ExtArgs>
   _count?: boolean | Prisma.StudentCountOutputTypeDefaultArgs<ExtArgs>
@@ -2103,6 +2306,7 @@ export type $StudentPayload<ExtArgs extends runtime.Types.Extensions.InternalArg
     responsible_guardian: Prisma.$StudentResponsibleGuardianDetailsPayload<ExtArgs> | null
     user: Prisma.$UserPayload<ExtArgs>
     assigned_responsible_teacher: Prisma.$StudentResponsibilityPayload<ExtArgs>[]
+    extra_curriculum_activities: Prisma.$ExtraCurriculumActivityPayload<ExtArgs>[]
     created_by: Prisma.$UserPayload<ExtArgs> | null
     updated_by: Prisma.$UserPayload<ExtArgs> | null
   }
@@ -2520,6 +2724,7 @@ export interface Prisma__StudentClient<T, Null = never, ExtArgs extends runtime.
   responsible_guardian<T extends Prisma.Student$responsible_guardianArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Student$responsible_guardianArgs<ExtArgs>>): Prisma.Prisma__StudentResponsibleGuardianDetailsClient<runtime.Types.Result.GetResult<Prisma.$StudentResponsibleGuardianDetailsPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   user<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   assigned_responsible_teacher<T extends Prisma.Student$assigned_responsible_teacherArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Student$assigned_responsible_teacherArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$StudentResponsibilityPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  extra_curriculum_activities<T extends Prisma.Student$extra_curriculum_activitiesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Student$extra_curriculum_activitiesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ExtraCurriculumActivityPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   created_by<T extends Prisma.Student$created_byArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Student$created_byArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   updated_by<T extends Prisma.Student$updated_byArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Student$updated_byArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   /**
@@ -3094,6 +3299,30 @@ export type Student$assigned_responsible_teacherArgs<ExtArgs extends runtime.Typ
   take?: number
   skip?: number
   distinct?: Prisma.StudentResponsibilityScalarFieldEnum | Prisma.StudentResponsibilityScalarFieldEnum[]
+}
+
+/**
+ * Student.extra_curriculum_activities
+ */
+export type Student$extra_curriculum_activitiesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the ExtraCurriculumActivity
+   */
+  select?: Prisma.ExtraCurriculumActivitySelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the ExtraCurriculumActivity
+   */
+  omit?: Prisma.ExtraCurriculumActivityOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ExtraCurriculumActivityInclude<ExtArgs> | null
+  where?: Prisma.ExtraCurriculumActivityWhereInput
+  orderBy?: Prisma.ExtraCurriculumActivityOrderByWithRelationInput | Prisma.ExtraCurriculumActivityOrderByWithRelationInput[]
+  cursor?: Prisma.ExtraCurriculumActivityWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.ExtraCurriculumActivityScalarFieldEnum | Prisma.ExtraCurriculumActivityScalarFieldEnum[]
 }
 
 /**

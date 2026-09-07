@@ -392,11 +392,16 @@ export const ModelName = {
   BookClass: 'BookClass',
   Class: 'Class',
   ClassRoutine: 'ClassRoutine',
+  CulturalClub: 'CulturalClub',
+  ExtraCurriculumActivity: 'ExtraCurriculumActivity',
+  LanguageClub: 'LanguageClub',
   Period: 'Period',
   PermanentAddress: 'PermanentAddress',
   PresentAddress: 'PresentAddress',
   QuranicSpecialPeriod: 'QuranicSpecialPeriod',
   QuranicSubject: 'QuranicSubject',
+  ScienceClub: 'ScienceClub',
+  ScoutSportsClub: 'ScoutSportsClub',
   Shift: 'Shift',
   SpouseInformation: 'SpouseInformation',
   Student: 'Student',
@@ -432,7 +437,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "academicResult" | "academicTeacher" | "academicYear" | "auditLog" | "book" | "bookClass" | "class" | "classRoutine" | "period" | "permanentAddress" | "presentAddress" | "quranicSpecialPeriod" | "quranicSubject" | "shift" | "spouseInformation" | "student" | "studentInstitureAddress" | "studentPreviousInstituteInformation" | "studentResponsibility" | "studentResponsibleGuardianDetails" | "subjectTeacher" | "teacherHonourableResponsibility" | "teacherInterviewInformation" | "teacherJoiningHistory" | "teacherPreviousInstituteInformation" | "teacherPromotedHistory" | "teacherReference" | "user" | "userActiveInactiveHistory" | "userFatherDetails" | "userMotherDetails" | "userPosition" | "userRole"
+    modelProps: "academicResult" | "academicTeacher" | "academicYear" | "auditLog" | "book" | "bookClass" | "class" | "classRoutine" | "culturalClub" | "extraCurriculumActivity" | "languageClub" | "period" | "permanentAddress" | "presentAddress" | "quranicSpecialPeriod" | "quranicSubject" | "scienceClub" | "scoutSportsClub" | "shift" | "spouseInformation" | "student" | "studentInstitureAddress" | "studentPreviousInstituteInformation" | "studentResponsibility" | "studentResponsibleGuardianDetails" | "subjectTeacher" | "teacherHonourableResponsibility" | "teacherInterviewInformation" | "teacherJoiningHistory" | "teacherPreviousInstituteInformation" | "teacherPromotedHistory" | "teacherReference" | "user" | "userActiveInactiveHistory" | "userFatherDetails" | "userMotherDetails" | "userPosition" | "userRole"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -1028,6 +1033,228 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    CulturalClub: {
+      payload: Prisma.$CulturalClubPayload<ExtArgs>
+      fields: Prisma.CulturalClubFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.CulturalClubFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CulturalClubPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.CulturalClubFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CulturalClubPayload>
+        }
+        findFirst: {
+          args: Prisma.CulturalClubFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CulturalClubPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.CulturalClubFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CulturalClubPayload>
+        }
+        findMany: {
+          args: Prisma.CulturalClubFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CulturalClubPayload>[]
+        }
+        create: {
+          args: Prisma.CulturalClubCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CulturalClubPayload>
+        }
+        createMany: {
+          args: Prisma.CulturalClubCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.CulturalClubCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CulturalClubPayload>[]
+        }
+        delete: {
+          args: Prisma.CulturalClubDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CulturalClubPayload>
+        }
+        update: {
+          args: Prisma.CulturalClubUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CulturalClubPayload>
+        }
+        deleteMany: {
+          args: Prisma.CulturalClubDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.CulturalClubUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.CulturalClubUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CulturalClubPayload>[]
+        }
+        upsert: {
+          args: Prisma.CulturalClubUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$CulturalClubPayload>
+        }
+        aggregate: {
+          args: Prisma.CulturalClubAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateCulturalClub>
+        }
+        groupBy: {
+          args: Prisma.CulturalClubGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.CulturalClubGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.CulturalClubCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.CulturalClubCountAggregateOutputType> | number
+        }
+      }
+    }
+    ExtraCurriculumActivity: {
+      payload: Prisma.$ExtraCurriculumActivityPayload<ExtArgs>
+      fields: Prisma.ExtraCurriculumActivityFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.ExtraCurriculumActivityFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExtraCurriculumActivityPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.ExtraCurriculumActivityFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExtraCurriculumActivityPayload>
+        }
+        findFirst: {
+          args: Prisma.ExtraCurriculumActivityFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExtraCurriculumActivityPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.ExtraCurriculumActivityFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExtraCurriculumActivityPayload>
+        }
+        findMany: {
+          args: Prisma.ExtraCurriculumActivityFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExtraCurriculumActivityPayload>[]
+        }
+        create: {
+          args: Prisma.ExtraCurriculumActivityCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExtraCurriculumActivityPayload>
+        }
+        createMany: {
+          args: Prisma.ExtraCurriculumActivityCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.ExtraCurriculumActivityCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExtraCurriculumActivityPayload>[]
+        }
+        delete: {
+          args: Prisma.ExtraCurriculumActivityDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExtraCurriculumActivityPayload>
+        }
+        update: {
+          args: Prisma.ExtraCurriculumActivityUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExtraCurriculumActivityPayload>
+        }
+        deleteMany: {
+          args: Prisma.ExtraCurriculumActivityDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.ExtraCurriculumActivityUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.ExtraCurriculumActivityUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExtraCurriculumActivityPayload>[]
+        }
+        upsert: {
+          args: Prisma.ExtraCurriculumActivityUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ExtraCurriculumActivityPayload>
+        }
+        aggregate: {
+          args: Prisma.ExtraCurriculumActivityAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateExtraCurriculumActivity>
+        }
+        groupBy: {
+          args: Prisma.ExtraCurriculumActivityGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ExtraCurriculumActivityGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.ExtraCurriculumActivityCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ExtraCurriculumActivityCountAggregateOutputType> | number
+        }
+      }
+    }
+    LanguageClub: {
+      payload: Prisma.$LanguageClubPayload<ExtArgs>
+      fields: Prisma.LanguageClubFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.LanguageClubFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LanguageClubPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.LanguageClubFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LanguageClubPayload>
+        }
+        findFirst: {
+          args: Prisma.LanguageClubFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LanguageClubPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.LanguageClubFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LanguageClubPayload>
+        }
+        findMany: {
+          args: Prisma.LanguageClubFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LanguageClubPayload>[]
+        }
+        create: {
+          args: Prisma.LanguageClubCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LanguageClubPayload>
+        }
+        createMany: {
+          args: Prisma.LanguageClubCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.LanguageClubCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LanguageClubPayload>[]
+        }
+        delete: {
+          args: Prisma.LanguageClubDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LanguageClubPayload>
+        }
+        update: {
+          args: Prisma.LanguageClubUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LanguageClubPayload>
+        }
+        deleteMany: {
+          args: Prisma.LanguageClubDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.LanguageClubUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.LanguageClubUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LanguageClubPayload>[]
+        }
+        upsert: {
+          args: Prisma.LanguageClubUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$LanguageClubPayload>
+        }
+        aggregate: {
+          args: Prisma.LanguageClubAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateLanguageClub>
+        }
+        groupBy: {
+          args: Prisma.LanguageClubGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.LanguageClubGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.LanguageClubCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.LanguageClubCountAggregateOutputType> | number
+        }
+      }
+    }
     Period: {
       payload: Prisma.$PeriodPayload<ExtArgs>
       fields: Prisma.PeriodFieldRefs
@@ -1395,6 +1622,154 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         count: {
           args: Prisma.QuranicSubjectCountArgs<ExtArgs>
           result: runtime.Types.Utils.Optional<Prisma.QuranicSubjectCountAggregateOutputType> | number
+        }
+      }
+    }
+    ScienceClub: {
+      payload: Prisma.$ScienceClubPayload<ExtArgs>
+      fields: Prisma.ScienceClubFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.ScienceClubFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ScienceClubPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.ScienceClubFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ScienceClubPayload>
+        }
+        findFirst: {
+          args: Prisma.ScienceClubFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ScienceClubPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.ScienceClubFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ScienceClubPayload>
+        }
+        findMany: {
+          args: Prisma.ScienceClubFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ScienceClubPayload>[]
+        }
+        create: {
+          args: Prisma.ScienceClubCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ScienceClubPayload>
+        }
+        createMany: {
+          args: Prisma.ScienceClubCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.ScienceClubCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ScienceClubPayload>[]
+        }
+        delete: {
+          args: Prisma.ScienceClubDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ScienceClubPayload>
+        }
+        update: {
+          args: Prisma.ScienceClubUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ScienceClubPayload>
+        }
+        deleteMany: {
+          args: Prisma.ScienceClubDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.ScienceClubUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.ScienceClubUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ScienceClubPayload>[]
+        }
+        upsert: {
+          args: Prisma.ScienceClubUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ScienceClubPayload>
+        }
+        aggregate: {
+          args: Prisma.ScienceClubAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateScienceClub>
+        }
+        groupBy: {
+          args: Prisma.ScienceClubGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ScienceClubGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.ScienceClubCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ScienceClubCountAggregateOutputType> | number
+        }
+      }
+    }
+    ScoutSportsClub: {
+      payload: Prisma.$ScoutSportsClubPayload<ExtArgs>
+      fields: Prisma.ScoutSportsClubFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.ScoutSportsClubFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ScoutSportsClubPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.ScoutSportsClubFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ScoutSportsClubPayload>
+        }
+        findFirst: {
+          args: Prisma.ScoutSportsClubFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ScoutSportsClubPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.ScoutSportsClubFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ScoutSportsClubPayload>
+        }
+        findMany: {
+          args: Prisma.ScoutSportsClubFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ScoutSportsClubPayload>[]
+        }
+        create: {
+          args: Prisma.ScoutSportsClubCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ScoutSportsClubPayload>
+        }
+        createMany: {
+          args: Prisma.ScoutSportsClubCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.ScoutSportsClubCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ScoutSportsClubPayload>[]
+        }
+        delete: {
+          args: Prisma.ScoutSportsClubDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ScoutSportsClubPayload>
+        }
+        update: {
+          args: Prisma.ScoutSportsClubUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ScoutSportsClubPayload>
+        }
+        deleteMany: {
+          args: Prisma.ScoutSportsClubDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.ScoutSportsClubUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.ScoutSportsClubUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ScoutSportsClubPayload>[]
+        }
+        upsert: {
+          args: Prisma.ScoutSportsClubUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$ScoutSportsClubPayload>
+        }
+        aggregate: {
+          args: Prisma.ScoutSportsClubAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateScoutSportsClub>
+        }
+        groupBy: {
+          args: Prisma.ScoutSportsClubGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ScoutSportsClubGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.ScoutSportsClubCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ScoutSportsClubCountAggregateOutputType> | number
         }
       }
     }
@@ -3043,6 +3418,42 @@ export const ClassRoutineScalarFieldEnum = {
 export type ClassRoutineScalarFieldEnum = (typeof ClassRoutineScalarFieldEnum)[keyof typeof ClassRoutineScalarFieldEnum]
 
 
+export const CulturalClubScalarFieldEnum = {
+  id: 'id',
+  cultural_name: 'cultural_name',
+  created_by_id: 'created_by_id',
+  updated_by_id: 'updated_by_id',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
+} as const
+
+export type CulturalClubScalarFieldEnum = (typeof CulturalClubScalarFieldEnum)[keyof typeof CulturalClubScalarFieldEnum]
+
+
+export const ExtraCurriculumActivityScalarFieldEnum = {
+  id: 'id',
+  cultural_club: 'cultural_club',
+  quran_club: 'quran_club',
+  language_club: 'language_club',
+  science_club: 'science_club',
+  scout_sports_club: 'scout_sports_club',
+  created_by_id: 'created_by_id',
+  updated_by_id: 'updated_by_id',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
+} as const
+
+export type ExtraCurriculumActivityScalarFieldEnum = (typeof ExtraCurriculumActivityScalarFieldEnum)[keyof typeof ExtraCurriculumActivityScalarFieldEnum]
+
+
+export const LanguageClubScalarFieldEnum = {
+  id: 'id',
+  language_name: 'language_name'
+} as const
+
+export type LanguageClubScalarFieldEnum = (typeof LanguageClubScalarFieldEnum)[keyof typeof LanguageClubScalarFieldEnum]
+
+
 export const PeriodScalarFieldEnum = {
   id: 'id',
   period_name: 'period_name',
@@ -3130,6 +3541,21 @@ export const QuranicSubjectScalarFieldEnum = {
 } as const
 
 export type QuranicSubjectScalarFieldEnum = (typeof QuranicSubjectScalarFieldEnum)[keyof typeof QuranicSubjectScalarFieldEnum]
+
+
+export const ScienceClubScalarFieldEnum = {
+  id: 'id'
+} as const
+
+export type ScienceClubScalarFieldEnum = (typeof ScienceClubScalarFieldEnum)[keyof typeof ScienceClubScalarFieldEnum]
+
+
+export const ScoutSportsClubScalarFieldEnum = {
+  id: 'id',
+  scout_sports_name: 'scout_sports_name'
+} as const
+
+export type ScoutSportsClubScalarFieldEnum = (typeof ScoutSportsClubScalarFieldEnum)[keyof typeof ScoutSportsClubScalarFieldEnum]
 
 
 export const ShiftScalarFieldEnum = {
@@ -3835,11 +4261,16 @@ export type GlobalOmitConfig = {
   bookClass?: Prisma.BookClassOmit
   class?: Prisma.ClassOmit
   classRoutine?: Prisma.ClassRoutineOmit
+  culturalClub?: Prisma.CulturalClubOmit
+  extraCurriculumActivity?: Prisma.ExtraCurriculumActivityOmit
+  languageClub?: Prisma.LanguageClubOmit
   period?: Prisma.PeriodOmit
   permanentAddress?: Prisma.PermanentAddressOmit
   presentAddress?: Prisma.PresentAddressOmit
   quranicSpecialPeriod?: Prisma.QuranicSpecialPeriodOmit
   quranicSubject?: Prisma.QuranicSubjectOmit
+  scienceClub?: Prisma.ScienceClubOmit
+  scoutSportsClub?: Prisma.ScoutSportsClubOmit
   shift?: Prisma.ShiftOmit
   spouseInformation?: Prisma.SpouseInformationOmit
   student?: Prisma.StudentOmit
