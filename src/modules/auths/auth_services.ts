@@ -6,6 +6,7 @@ import bcrypt from "bcryptjs";
 import { JwtPayload, SignOptions } from "jsonwebtoken";
 import { jwtTokens } from "../../utils/jwtTokens.js";
 import { envVars } from "../../configs/index.js";
+import { TAuthRegistrationPayload } from "./auth_zod_validation.js";
 
 const authLogin = async (payload: IAuthLogin) => {
   const { user_name, user_password } = payload;
@@ -56,6 +57,18 @@ const authLogin = async (payload: IAuthLogin) => {
   // console.log({validRoles})
   return { accessToken, refreshToken };
 };
+
+const authRegister= async(payload:TAuthRegistrationPayload)=>{
+  const {full_name, mobile_number}=payload
+  const isExist = await prisma.user.findUnique({
+    where:{full_name, mobile_number}
+  });
+  if(!isExist){
+    throw new AppError("User already exists.", StatusCodes.CONFLICT)
+  };
+  
+}
 export const authServices = {
   authLogin,
+  authRegister
 };

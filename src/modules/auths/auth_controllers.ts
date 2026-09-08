@@ -4,6 +4,7 @@ import { authServices } from "./auth_services.js";
 import { IAuthLogin } from "./auth_interfaces.js";
 import { sendResponse } from "../../utils/sendResponse.js";
 import { StatusCodes } from "http-status-codes";
+import { TAuthRegistrationPayload } from "./auth_zod_validation.js";
 
 const authLogin=catchAsync(async(req:Request, res:Response, next:NextFunction)=>{
     const payload:IAuthLogin = req.body;
@@ -29,7 +30,8 @@ const authLogin=catchAsync(async(req:Request, res:Response, next:NextFunction)=>
 });
 
 const authRegister=catchAsync(async(req:Request, res:Response, next:NextFunction)=>{
-    const payload = req.body
+    const payload = req.body as TAuthRegistrationPayload;
+
 })
 export const authControllers={
     authLogin,
