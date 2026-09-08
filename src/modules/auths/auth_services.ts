@@ -7,6 +7,9 @@ import { JwtPayload, SignOptions } from "jsonwebtoken";
 import { jwtTokens } from "../../utils/jwtTokens.js";
 import { envVars } from "../../configs/index.js";
 import { TAuthRegistrationPayload } from "./auth_zod_validation.js";
+import { createPassword } from "../../helperFunctions/auth/create_password.js";
+import { getValidRoles } from "../../helperFunctions/cachedData/cache_roles.js";
+import { getValidPositions } from "../../helperFunctions/cachedData/cache_positions.js";
 
 const authLogin = async (payload: IAuthLogin) => {
   const { user_name, user_password } = payload;
@@ -79,19 +82,32 @@ const authRegister= async(payload:TAuthRegistrationPayload)=>{
   };
 
   // check role is valid or not
-  const checkValidRole = await prisma.userRole.findUnique({where: {role_name: role}});
-  if(!checkValidRole){
-    throw new AppError(`Provided Role is not valid: ${role}`, StatusCodes.BAD_REQUEST);
+  const validRoles:string[] = await getValidRoles();
+  const checkRoleValidity = validRoles.includes(role);
+  if(!checkRoleValidity){
+    throw new AppError(`Provided Role ${role} is not valid`, StatusCodes.BAD_REQUEST)
+  };
+
+  // check position is valid or not
+  const validPositions:string[] = await getValidPositions();
+  const checkPositionValidity = validPositions.includes(position);
+  if(!checkPositionValidity){
+    throw new AppError(`Provided Position ${position} is not valid`, StatusCodes.BAD_REQUEST);
   }
-  // set user name
-  const usersWithSameMobileNumber = await prisma.user.findMany({where: {mobile_number}});
+
+  // set user namec
+  const usersWithSameMobileNumber = await prisma.user.count({where: {mobile_number}});
   let user_name:string;
-  if(usersWithSameMobileNumber.length===0){
-    user_name=mobile_number
+  if(usersWithSameMobileNumber===0){
+    user_name=mobile_number;
   }else{
-    const len = usersWithSameMobileNumber.length;
-    user_name = `${mobile_number}-${len}`
+    const len = usersWithSameMobileNumber;
+    user_name = `${mobile_number}-${len}`;
   }
+
+  // create password with helper function
+  const password = await createPassword();
+  
   // const newUser = await prisma.user.create({
   //   data: payload
   // })

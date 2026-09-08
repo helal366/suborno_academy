@@ -132,3 +132,19 @@ export const createStudentAccount = async (req: Request, res: Response) => {
 };
 
 ```
+
+## sms.bd
+var request = require('request');
+var options = {
+  'method': 'POST',
+  'url': 'https://api.sms.net.bd/sendsms',
+  formData: {
+    'api_key': 'YOUR_API_KEY',
+    'msg': 'Test',
+    'to': '8801800000000'
+  }
+};
+request(options, function (error, response) {
+  if (error) throw new Error(error);
+  console.log(response.body);
+});

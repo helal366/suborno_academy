@@ -13,6 +13,7 @@ interface IEnvVariables {
   APP_LOCAL_URL: string;
   NEON_DB_LINK_DIRECT: string;
   COMMON_PASSWORD:string;
+  SMS_BD_API_KEY:string;
 }
 const loadEnvVariables = (): IEnvVariables => {
   const envVars: string[] = [
@@ -27,6 +28,7 @@ const loadEnvVariables = (): IEnvVariables => {
     "APP_LOCAL_URL",
     "NEON_DB_LINK_DIRECT",
     "COMMON_PASSWORD",
+    "SMS_BD_API_KEY"
   ];
   for (const varName of envVars) {
     if (!process.env[varName]) {
@@ -45,6 +47,7 @@ const loadEnvVariables = (): IEnvVariables => {
     APP_LOCAL_URL: process.env.APP_LOCAL_URL as string,
     NEON_DB_LINK_DIRECT: process.env.NEON_DB_LINK_DIRECT as string,
     COMMON_PASSWORD: process.env.COMMON_PASSWORD as string,
+    SMS_BD_API_KEY:process.env.SMS_BD_API_KEY as string
   };
 };
 export const envVars = loadEnvVariables();
