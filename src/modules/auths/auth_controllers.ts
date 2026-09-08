@@ -31,6 +31,13 @@ const authLogin=catchAsync(async(req:Request, res:Response, next:NextFunction)=>
 
 const authRegister=catchAsync(async(req:Request, res:Response, next:NextFunction)=>{
     const payload = req.body as TAuthRegistrationPayload;
+    const result = await authServices.authRegister(payload);
+    sendResponse(res, {
+        success: true, 
+        statusCode: StatusCodes.OK,
+        message : "Credential registration successful.",
+        data: result
+    })
 
 })
 export const authControllers={

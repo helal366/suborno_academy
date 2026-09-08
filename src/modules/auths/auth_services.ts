@@ -59,14 +59,42 @@ const authLogin = async (payload: IAuthLogin) => {
 };
 
 const authRegister= async(payload:TAuthRegistrationPayload)=>{
-  const {full_name, mobile_number}=payload
+  const {full_name, mobile_number, email, position, role}=payload
   const isExist = await prisma.user.findUnique({
-    where:{full_name, mobile_number}
+    where: {user_full_name_mobile_unique:{full_name, mobile_number}}
   });
+
+  // check required values
   if(!isExist){
-    throw new AppError("User already exists.", StatusCodes.CONFLICT)
+    throw new AppError("User already exists.", StatusCodes.CONFLICT);
   };
-  
+  if(!email){
+    throw new AppError("Email is required", StatusCodes.NOT_FOUND);
+  }
+  if(!position){
+    throw new AppError("Position not found", StatusCodes.NOT_FOUND);
+  }
+  if(!role){
+    throw new AppError("Role not found.", StatusCodes.NOT_FOUND);
+  };
+
+  // check role is valid or not
+  const checkValidRole = await prisma.userRole.findUnique({where: {role_name: role}});
+  if(!checkValidRole){
+    throw new AppError(`Provided Role is not valid: ${role}`, StatusCodes.BAD_REQUEST);
+  }
+  // set user name
+  const usersWithSameMobileNumber = await prisma.user.findMany({where: {mobile_number}});
+  let user_name:string;
+  if(usersWithSameMobileNumber.length===0){
+    user_name=mobile_number
+  }else{
+    const len = usersWithSameMobileNumber.length;
+    user_name = `${mobile_number}-${len}`
+  }
+  // const newUser = await prisma.user.create({
+  //   data: payload
+  // })
 }
 export const authServices = {
   authLogin,
