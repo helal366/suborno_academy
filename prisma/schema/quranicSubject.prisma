@@ -1,35 +1,34 @@
-model QuranicSubject{
-    id String @id @default(uuid())
-    subject_name String @unique
-    quranic_section Quranic_Section
+model QuranicSubject {
+  id              String          @id @default(uuid())
+  subject_name    String          @unique
+  quranic_section Quranic_Section
 
-    students Student[] 
+  students Student[]
 
-    created_by_id String?
-    created_by    User?   @relation("quranic_subject_created_by", fields: [created_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
-    
-    updated_by_id String?
-    updated_by    User?   @relation("quranic_subject_updated_by", fields: [updated_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
-    
-    created_at DateTime  @default(now())
-    updated_at DateTime? @updatedAt
-    @@map("quranic_subjects")
+  created_by_id String?
+  created_by    User?   @relation("quranic_subject_created_by", fields: [created_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
+
+  updated_by_id String?
+  updated_by    User?   @relation("quranic_subject_updated_by", fields: [updated_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
+
+  created_at DateTime  @default(now())
+  updated_at DateTime? @updatedAt
+
+  @@map("quranic_subjects")
 }
 
 /**
-**NURANI SUBJECTS**
-1. NURANI_PRELIMINARY
-2. NURANI_ADVANCE
-3. NURANI_AMPARA
-
-**HIFZ_NAZERA SUBJECTS**
-1. HIFZ
-2. NAZERA
-
-## Nurani curriculum for different classes:
-NURANI_PLAYGROUP: ARABIC ALPHABET
-NURANI_NURSERY: ARABIC WORD MAKING
-NURANI_PRELIMINARY: কায়েদা শুরু থেকে মাদ্দ অধ্যায় পর্যন্ত
-NURANI_ADVANCE: হরকত অধ্যায় থেকে শেষ পর্যন্ত
-NURANI_AMPARA: শুরু থেকে শেষ পর্যন্ত
-*/
+ * *NURANI SUBJECTS**
+ * 1. NURANI_PRELIMINARY
+ * 2. NURANI_ADVANCE
+ * 3. NURANI_AMPARA
+ * *HIFZ_NAZERA SUBJECTS**
+ * 1. HIFZ
+ * 2. NAZERA
+ * ## Nurani curriculum for different classes:
+ * NURANI_PLAYGROUP: ARABIC ALPHABET
+ * NURANI_NURSERY: ARABIC WORD MAKING
+ * NURANI_PRELIMINARY: কায়েদা শুরু থেকে মাদ্দ অধ্যায় পর্যন্ত
+ * NURANI_ADVANCE: হরকত অধ্যায় থেকে শেষ পর্যন্ত
+ * NURANI_AMPARA: শুরু থেকে শেষ পর্যন্ত
+ */

@@ -198,7 +198,7 @@ export type SubjectTeacherWhereInput = {
   updated_by_id?: Prisma.StringNullableFilter<"SubjectTeacher"> | string | null
   created_at?: Prisma.DateTimeFilter<"SubjectTeacher"> | Date | string
   updated_at?: Prisma.DateTimeNullableFilter<"SubjectTeacher"> | Date | string | null
-  teacher?: Prisma.XOR<Prisma.AcademicTeacherScalarRelationFilter, Prisma.AcademicTeacherWhereInput>
+  teacher?: Prisma.XOR<Prisma.AcademicAdministrativeStaffScalarRelationFilter, Prisma.AcademicAdministrativeStaffWhereInput>
   created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
   updated_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
 }
@@ -211,7 +211,7 @@ export type SubjectTeacherOrderByWithRelationInput = {
   updated_by_id?: Prisma.SortOrderInput | Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrderInput | Prisma.SortOrder
-  teacher?: Prisma.AcademicTeacherOrderByWithRelationInput
+  teacher?: Prisma.AcademicAdministrativeStaffOrderByWithRelationInput
   created_by?: Prisma.UserOrderByWithRelationInput
   updated_by?: Prisma.UserOrderByWithRelationInput
 }
@@ -227,7 +227,7 @@ export type SubjectTeacherWhereUniqueInput = Prisma.AtLeast<{
   updated_by_id?: Prisma.StringNullableFilter<"SubjectTeacher"> | string | null
   created_at?: Prisma.DateTimeFilter<"SubjectTeacher"> | Date | string
   updated_at?: Prisma.DateTimeNullableFilter<"SubjectTeacher"> | Date | string | null
-  teacher?: Prisma.XOR<Prisma.AcademicTeacherScalarRelationFilter, Prisma.AcademicTeacherWhereInput>
+  teacher?: Prisma.XOR<Prisma.AcademicAdministrativeStaffScalarRelationFilter, Prisma.AcademicAdministrativeStaffWhereInput>
   created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
   updated_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
 }, "id">
@@ -263,7 +263,7 @@ export type SubjectTeacherCreateInput = {
   subject_name: string
   created_at?: Date | string
   updated_at?: Date | string | null
-  teacher: Prisma.AcademicTeacherCreateNestedOneWithoutSubjectsInput
+  teacher: Prisma.AcademicAdministrativeStaffCreateNestedOneWithoutSubjectsInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_subject_teachersInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_subject_teachersInput
 }
@@ -283,7 +283,7 @@ export type SubjectTeacherUpdateInput = {
   subject_name?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  teacher?: Prisma.AcademicTeacherUpdateOneRequiredWithoutSubjectsNestedInput
+  teacher?: Prisma.AcademicAdministrativeStaffUpdateOneRequiredWithoutSubjectsNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_subject_teachersNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_subject_teachersNestedInput
 }
@@ -553,7 +553,7 @@ export type SubjectTeacherCreateWithoutCreated_byInput = {
   subject_name: string
   created_at?: Date | string
   updated_at?: Date | string | null
-  teacher: Prisma.AcademicTeacherCreateNestedOneWithoutSubjectsInput
+  teacher: Prisma.AcademicAdministrativeStaffCreateNestedOneWithoutSubjectsInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_subject_teachersInput
 }
 
@@ -581,7 +581,7 @@ export type SubjectTeacherCreateWithoutUpdated_byInput = {
   subject_name: string
   created_at?: Date | string
   updated_at?: Date | string | null
-  teacher: Prisma.AcademicTeacherCreateNestedOneWithoutSubjectsInput
+  teacher: Prisma.AcademicAdministrativeStaffCreateNestedOneWithoutSubjectsInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_subject_teachersInput
 }
 
@@ -695,7 +695,7 @@ export type SubjectTeacherUpdateWithoutCreated_byInput = {
   subject_name?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  teacher?: Prisma.AcademicTeacherUpdateOneRequiredWithoutSubjectsNestedInput
+  teacher?: Prisma.AcademicAdministrativeStaffUpdateOneRequiredWithoutSubjectsNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_subject_teachersNestedInput
 }
 
@@ -722,7 +722,7 @@ export type SubjectTeacherUpdateWithoutUpdated_byInput = {
   subject_name?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  teacher?: Prisma.AcademicTeacherUpdateOneRequiredWithoutSubjectsNestedInput
+  teacher?: Prisma.AcademicAdministrativeStaffUpdateOneRequiredWithoutSubjectsNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_subject_teachersNestedInput
 }
 
@@ -754,7 +754,7 @@ export type SubjectTeacherSelect<ExtArgs extends runtime.Types.Extensions.Intern
   updated_by_id?: boolean
   created_at?: boolean
   updated_at?: boolean
-  teacher?: boolean | Prisma.AcademicTeacherDefaultArgs<ExtArgs>
+  teacher?: boolean | Prisma.AcademicAdministrativeStaffDefaultArgs<ExtArgs>
   created_by?: boolean | Prisma.SubjectTeacher$created_byArgs<ExtArgs>
   updated_by?: boolean | Prisma.SubjectTeacher$updated_byArgs<ExtArgs>
 }, ExtArgs["result"]["subjectTeacher"]>
@@ -767,7 +767,7 @@ export type SubjectTeacherSelectCreateManyAndReturn<ExtArgs extends runtime.Type
   updated_by_id?: boolean
   created_at?: boolean
   updated_at?: boolean
-  teacher?: boolean | Prisma.AcademicTeacherDefaultArgs<ExtArgs>
+  teacher?: boolean | Prisma.AcademicAdministrativeStaffDefaultArgs<ExtArgs>
   created_by?: boolean | Prisma.SubjectTeacher$created_byArgs<ExtArgs>
   updated_by?: boolean | Prisma.SubjectTeacher$updated_byArgs<ExtArgs>
 }, ExtArgs["result"]["subjectTeacher"]>
@@ -780,7 +780,7 @@ export type SubjectTeacherSelectUpdateManyAndReturn<ExtArgs extends runtime.Type
   updated_by_id?: boolean
   created_at?: boolean
   updated_at?: boolean
-  teacher?: boolean | Prisma.AcademicTeacherDefaultArgs<ExtArgs>
+  teacher?: boolean | Prisma.AcademicAdministrativeStaffDefaultArgs<ExtArgs>
   created_by?: boolean | Prisma.SubjectTeacher$created_byArgs<ExtArgs>
   updated_by?: boolean | Prisma.SubjectTeacher$updated_byArgs<ExtArgs>
 }, ExtArgs["result"]["subjectTeacher"]>
@@ -797,17 +797,17 @@ export type SubjectTeacherSelectScalar = {
 
 export type SubjectTeacherOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "subject_name" | "teacher_id" | "created_by_id" | "updated_by_id" | "created_at" | "updated_at", ExtArgs["result"]["subjectTeacher"]>
 export type SubjectTeacherInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  teacher?: boolean | Prisma.AcademicTeacherDefaultArgs<ExtArgs>
+  teacher?: boolean | Prisma.AcademicAdministrativeStaffDefaultArgs<ExtArgs>
   created_by?: boolean | Prisma.SubjectTeacher$created_byArgs<ExtArgs>
   updated_by?: boolean | Prisma.SubjectTeacher$updated_byArgs<ExtArgs>
 }
 export type SubjectTeacherIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  teacher?: boolean | Prisma.AcademicTeacherDefaultArgs<ExtArgs>
+  teacher?: boolean | Prisma.AcademicAdministrativeStaffDefaultArgs<ExtArgs>
   created_by?: boolean | Prisma.SubjectTeacher$created_byArgs<ExtArgs>
   updated_by?: boolean | Prisma.SubjectTeacher$updated_byArgs<ExtArgs>
 }
 export type SubjectTeacherIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  teacher?: boolean | Prisma.AcademicTeacherDefaultArgs<ExtArgs>
+  teacher?: boolean | Prisma.AcademicAdministrativeStaffDefaultArgs<ExtArgs>
   created_by?: boolean | Prisma.SubjectTeacher$created_byArgs<ExtArgs>
   updated_by?: boolean | Prisma.SubjectTeacher$updated_byArgs<ExtArgs>
 }
@@ -815,7 +815,7 @@ export type SubjectTeacherIncludeUpdateManyAndReturn<ExtArgs extends runtime.Typ
 export type $SubjectTeacherPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "SubjectTeacher"
   objects: {
-    teacher: Prisma.$AcademicTeacherPayload<ExtArgs>
+    teacher: Prisma.$AcademicAdministrativeStaffPayload<ExtArgs>
     created_by: Prisma.$UserPayload<ExtArgs> | null
     updated_by: Prisma.$UserPayload<ExtArgs> | null
   }
@@ -1221,7 +1221,7 @@ readonly fields: SubjectTeacherFieldRefs;
  */
 export interface Prisma__SubjectTeacherClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  teacher<T extends Prisma.AcademicTeacherDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AcademicTeacherDefaultArgs<ExtArgs>>): Prisma.Prisma__AcademicTeacherClient<runtime.Types.Result.GetResult<Prisma.$AcademicTeacherPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  teacher<T extends Prisma.AcademicAdministrativeStaffDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AcademicAdministrativeStaffDefaultArgs<ExtArgs>>): Prisma.Prisma__AcademicAdministrativeStaffClient<runtime.Types.Result.GetResult<Prisma.$AcademicAdministrativeStaffPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   created_by<T extends Prisma.SubjectTeacher$created_byArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.SubjectTeacher$created_byArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   updated_by<T extends Prisma.SubjectTeacher$updated_byArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.SubjectTeacher$updated_byArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   /**

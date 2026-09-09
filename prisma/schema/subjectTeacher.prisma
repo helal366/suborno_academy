@@ -1,17 +1,18 @@
 model SubjectTeacher {
-  id String @id @default(uuid())
-  subject_name       String
+  id           String @id @default(uuid())
+  subject_name String
 
   teacher_id String
-  teacher    AcademicTeacher @relation(fields: [teacher_id], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  teacher    AcademicAdministrativeStaff @relation(fields: [teacher_id], references: [id], onDelete: Cascade, onUpdate: Cascade)
 
   created_by_id String?
   created_by    User?   @relation("subject_teacher_created_by", fields: [created_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
-  
+
   updated_by_id String?
   updated_by    User?   @relation("subject_teacher_updated_by", fields: [updated_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
 
   created_at DateTime  @default(now())
   updated_at DateTime? @updatedAt
+
   @@map("subject_teachers")
 }

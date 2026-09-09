@@ -198,6 +198,7 @@ export type LanguageClubWhereInput = {
   updated_by_id?: Prisma.StringNullableFilter<"LanguageClub"> | string | null
   created_at?: Prisma.DateTimeFilter<"LanguageClub"> | Date | string
   updated_at?: Prisma.DateTimeNullableFilter<"LanguageClub"> | Date | string | null
+  students?: Prisma.StudentListRelationFilter
   extra_curriculum_activity?: Prisma.XOR<Prisma.ExtraCurriculumActivityNullableScalarRelationFilter, Prisma.ExtraCurriculumActivityWhereInput> | null
   created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
   updated_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
@@ -211,6 +212,7 @@ export type LanguageClubOrderByWithRelationInput = {
   updated_by_id?: Prisma.SortOrderInput | Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrderInput | Prisma.SortOrder
+  students?: Prisma.StudentOrderByRelationAggregateInput
   extra_curriculum_activity?: Prisma.ExtraCurriculumActivityOrderByWithRelationInput
   created_by?: Prisma.UserOrderByWithRelationInput
   updated_by?: Prisma.UserOrderByWithRelationInput
@@ -227,6 +229,7 @@ export type LanguageClubWhereUniqueInput = Prisma.AtLeast<{
   updated_by_id?: Prisma.StringNullableFilter<"LanguageClub"> | string | null
   created_at?: Prisma.DateTimeFilter<"LanguageClub"> | Date | string
   updated_at?: Prisma.DateTimeNullableFilter<"LanguageClub"> | Date | string | null
+  students?: Prisma.StudentListRelationFilter
   extra_curriculum_activity?: Prisma.XOR<Prisma.ExtraCurriculumActivityNullableScalarRelationFilter, Prisma.ExtraCurriculumActivityWhereInput> | null
   created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
   updated_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
@@ -263,6 +266,7 @@ export type LanguageClubCreateInput = {
   language_name: string
   created_at?: Date | string
   updated_at?: Date | string | null
+  students?: Prisma.StudentCreateNestedManyWithoutLanguage_club_optionsInput
   extra_curriculum_activity?: Prisma.ExtraCurriculumActivityCreateNestedOneWithoutLanguage_club_optionsInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_language_clubsInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_language_clubsInput
@@ -276,6 +280,7 @@ export type LanguageClubUncheckedCreateInput = {
   updated_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
+  students?: Prisma.StudentUncheckedCreateNestedManyWithoutLanguage_club_optionsInput
 }
 
 export type LanguageClubUpdateInput = {
@@ -283,6 +288,7 @@ export type LanguageClubUpdateInput = {
   language_name?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  students?: Prisma.StudentUpdateManyWithoutLanguage_club_optionsNestedInput
   extra_curriculum_activity?: Prisma.ExtraCurriculumActivityUpdateOneWithoutLanguage_club_optionsNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_language_clubsNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_language_clubsNestedInput
@@ -296,6 +302,7 @@ export type LanguageClubUncheckedUpdateInput = {
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  students?: Prisma.StudentUncheckedUpdateManyWithoutLanguage_club_optionsNestedInput
 }
 
 export type LanguageClubCreateManyInput = {
@@ -407,6 +414,44 @@ export type LanguageClubUncheckedUpdateManyWithoutExtra_curriculum_activityNeste
   deleteMany?: Prisma.LanguageClubScalarWhereInput | Prisma.LanguageClubScalarWhereInput[]
 }
 
+export type LanguageClubCreateNestedManyWithoutStudentsInput = {
+  create?: Prisma.XOR<Prisma.LanguageClubCreateWithoutStudentsInput, Prisma.LanguageClubUncheckedCreateWithoutStudentsInput> | Prisma.LanguageClubCreateWithoutStudentsInput[] | Prisma.LanguageClubUncheckedCreateWithoutStudentsInput[]
+  connectOrCreate?: Prisma.LanguageClubCreateOrConnectWithoutStudentsInput | Prisma.LanguageClubCreateOrConnectWithoutStudentsInput[]
+  connect?: Prisma.LanguageClubWhereUniqueInput | Prisma.LanguageClubWhereUniqueInput[]
+}
+
+export type LanguageClubUncheckedCreateNestedManyWithoutStudentsInput = {
+  create?: Prisma.XOR<Prisma.LanguageClubCreateWithoutStudentsInput, Prisma.LanguageClubUncheckedCreateWithoutStudentsInput> | Prisma.LanguageClubCreateWithoutStudentsInput[] | Prisma.LanguageClubUncheckedCreateWithoutStudentsInput[]
+  connectOrCreate?: Prisma.LanguageClubCreateOrConnectWithoutStudentsInput | Prisma.LanguageClubCreateOrConnectWithoutStudentsInput[]
+  connect?: Prisma.LanguageClubWhereUniqueInput | Prisma.LanguageClubWhereUniqueInput[]
+}
+
+export type LanguageClubUpdateManyWithoutStudentsNestedInput = {
+  create?: Prisma.XOR<Prisma.LanguageClubCreateWithoutStudentsInput, Prisma.LanguageClubUncheckedCreateWithoutStudentsInput> | Prisma.LanguageClubCreateWithoutStudentsInput[] | Prisma.LanguageClubUncheckedCreateWithoutStudentsInput[]
+  connectOrCreate?: Prisma.LanguageClubCreateOrConnectWithoutStudentsInput | Prisma.LanguageClubCreateOrConnectWithoutStudentsInput[]
+  upsert?: Prisma.LanguageClubUpsertWithWhereUniqueWithoutStudentsInput | Prisma.LanguageClubUpsertWithWhereUniqueWithoutStudentsInput[]
+  set?: Prisma.LanguageClubWhereUniqueInput | Prisma.LanguageClubWhereUniqueInput[]
+  disconnect?: Prisma.LanguageClubWhereUniqueInput | Prisma.LanguageClubWhereUniqueInput[]
+  delete?: Prisma.LanguageClubWhereUniqueInput | Prisma.LanguageClubWhereUniqueInput[]
+  connect?: Prisma.LanguageClubWhereUniqueInput | Prisma.LanguageClubWhereUniqueInput[]
+  update?: Prisma.LanguageClubUpdateWithWhereUniqueWithoutStudentsInput | Prisma.LanguageClubUpdateWithWhereUniqueWithoutStudentsInput[]
+  updateMany?: Prisma.LanguageClubUpdateManyWithWhereWithoutStudentsInput | Prisma.LanguageClubUpdateManyWithWhereWithoutStudentsInput[]
+  deleteMany?: Prisma.LanguageClubScalarWhereInput | Prisma.LanguageClubScalarWhereInput[]
+}
+
+export type LanguageClubUncheckedUpdateManyWithoutStudentsNestedInput = {
+  create?: Prisma.XOR<Prisma.LanguageClubCreateWithoutStudentsInput, Prisma.LanguageClubUncheckedCreateWithoutStudentsInput> | Prisma.LanguageClubCreateWithoutStudentsInput[] | Prisma.LanguageClubUncheckedCreateWithoutStudentsInput[]
+  connectOrCreate?: Prisma.LanguageClubCreateOrConnectWithoutStudentsInput | Prisma.LanguageClubCreateOrConnectWithoutStudentsInput[]
+  upsert?: Prisma.LanguageClubUpsertWithWhereUniqueWithoutStudentsInput | Prisma.LanguageClubUpsertWithWhereUniqueWithoutStudentsInput[]
+  set?: Prisma.LanguageClubWhereUniqueInput | Prisma.LanguageClubWhereUniqueInput[]
+  disconnect?: Prisma.LanguageClubWhereUniqueInput | Prisma.LanguageClubWhereUniqueInput[]
+  delete?: Prisma.LanguageClubWhereUniqueInput | Prisma.LanguageClubWhereUniqueInput[]
+  connect?: Prisma.LanguageClubWhereUniqueInput | Prisma.LanguageClubWhereUniqueInput[]
+  update?: Prisma.LanguageClubUpdateWithWhereUniqueWithoutStudentsInput | Prisma.LanguageClubUpdateWithWhereUniqueWithoutStudentsInput[]
+  updateMany?: Prisma.LanguageClubUpdateManyWithWhereWithoutStudentsInput | Prisma.LanguageClubUpdateManyWithWhereWithoutStudentsInput[]
+  deleteMany?: Prisma.LanguageClubScalarWhereInput | Prisma.LanguageClubScalarWhereInput[]
+}
+
 export type LanguageClubCreateNestedManyWithoutCreated_byInput = {
   create?: Prisma.XOR<Prisma.LanguageClubCreateWithoutCreated_byInput, Prisma.LanguageClubUncheckedCreateWithoutCreated_byInput> | Prisma.LanguageClubCreateWithoutCreated_byInput[] | Prisma.LanguageClubUncheckedCreateWithoutCreated_byInput[]
   connectOrCreate?: Prisma.LanguageClubCreateOrConnectWithoutCreated_byInput | Prisma.LanguageClubCreateOrConnectWithoutCreated_byInput[]
@@ -496,6 +541,7 @@ export type LanguageClubCreateWithoutExtra_curriculum_activityInput = {
   language_name: string
   created_at?: Date | string
   updated_at?: Date | string | null
+  students?: Prisma.StudentCreateNestedManyWithoutLanguage_club_optionsInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_language_clubsInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_language_clubsInput
 }
@@ -507,6 +553,7 @@ export type LanguageClubUncheckedCreateWithoutExtra_curriculum_activityInput = {
   updated_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
+  students?: Prisma.StudentUncheckedCreateNestedManyWithoutLanguage_club_optionsInput
 }
 
 export type LanguageClubCreateOrConnectWithoutExtra_curriculum_activityInput = {
@@ -548,11 +595,53 @@ export type LanguageClubScalarWhereInput = {
   updated_at?: Prisma.DateTimeNullableFilter<"LanguageClub"> | Date | string | null
 }
 
+export type LanguageClubCreateWithoutStudentsInput = {
+  id?: string
+  language_name: string
+  created_at?: Date | string
+  updated_at?: Date | string | null
+  extra_curriculum_activity?: Prisma.ExtraCurriculumActivityCreateNestedOneWithoutLanguage_club_optionsInput
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_language_clubsInput
+  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_language_clubsInput
+}
+
+export type LanguageClubUncheckedCreateWithoutStudentsInput = {
+  id?: string
+  language_name: string
+  extra_curriculum_activity_id?: string | null
+  created_by_id?: string | null
+  updated_by_id?: string | null
+  created_at?: Date | string
+  updated_at?: Date | string | null
+}
+
+export type LanguageClubCreateOrConnectWithoutStudentsInput = {
+  where: Prisma.LanguageClubWhereUniqueInput
+  create: Prisma.XOR<Prisma.LanguageClubCreateWithoutStudentsInput, Prisma.LanguageClubUncheckedCreateWithoutStudentsInput>
+}
+
+export type LanguageClubUpsertWithWhereUniqueWithoutStudentsInput = {
+  where: Prisma.LanguageClubWhereUniqueInput
+  update: Prisma.XOR<Prisma.LanguageClubUpdateWithoutStudentsInput, Prisma.LanguageClubUncheckedUpdateWithoutStudentsInput>
+  create: Prisma.XOR<Prisma.LanguageClubCreateWithoutStudentsInput, Prisma.LanguageClubUncheckedCreateWithoutStudentsInput>
+}
+
+export type LanguageClubUpdateWithWhereUniqueWithoutStudentsInput = {
+  where: Prisma.LanguageClubWhereUniqueInput
+  data: Prisma.XOR<Prisma.LanguageClubUpdateWithoutStudentsInput, Prisma.LanguageClubUncheckedUpdateWithoutStudentsInput>
+}
+
+export type LanguageClubUpdateManyWithWhereWithoutStudentsInput = {
+  where: Prisma.LanguageClubScalarWhereInput
+  data: Prisma.XOR<Prisma.LanguageClubUpdateManyMutationInput, Prisma.LanguageClubUncheckedUpdateManyWithoutStudentsInput>
+}
+
 export type LanguageClubCreateWithoutCreated_byInput = {
   id?: string
   language_name: string
   created_at?: Date | string
   updated_at?: Date | string | null
+  students?: Prisma.StudentCreateNestedManyWithoutLanguage_club_optionsInput
   extra_curriculum_activity?: Prisma.ExtraCurriculumActivityCreateNestedOneWithoutLanguage_club_optionsInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_language_clubsInput
 }
@@ -564,6 +653,7 @@ export type LanguageClubUncheckedCreateWithoutCreated_byInput = {
   updated_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
+  students?: Prisma.StudentUncheckedCreateNestedManyWithoutLanguage_club_optionsInput
 }
 
 export type LanguageClubCreateOrConnectWithoutCreated_byInput = {
@@ -581,6 +671,7 @@ export type LanguageClubCreateWithoutUpdated_byInput = {
   language_name: string
   created_at?: Date | string
   updated_at?: Date | string | null
+  students?: Prisma.StudentCreateNestedManyWithoutLanguage_club_optionsInput
   extra_curriculum_activity?: Prisma.ExtraCurriculumActivityCreateNestedOneWithoutLanguage_club_optionsInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_language_clubsInput
 }
@@ -592,6 +683,7 @@ export type LanguageClubUncheckedCreateWithoutUpdated_byInput = {
   created_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
+  students?: Prisma.StudentUncheckedCreateNestedManyWithoutLanguage_club_optionsInput
 }
 
 export type LanguageClubCreateOrConnectWithoutUpdated_byInput = {
@@ -650,6 +742,7 @@ export type LanguageClubUpdateWithoutExtra_curriculum_activityInput = {
   language_name?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  students?: Prisma.StudentUpdateManyWithoutLanguage_club_optionsNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_language_clubsNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_language_clubsNestedInput
 }
@@ -661,11 +754,42 @@ export type LanguageClubUncheckedUpdateWithoutExtra_curriculum_activityInput = {
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  students?: Prisma.StudentUncheckedUpdateManyWithoutLanguage_club_optionsNestedInput
 }
 
 export type LanguageClubUncheckedUpdateManyWithoutExtra_curriculum_activityInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   language_name?: Prisma.StringFieldUpdateOperationsInput | string
+  created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+}
+
+export type LanguageClubUpdateWithoutStudentsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  language_name?: Prisma.StringFieldUpdateOperationsInput | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  extra_curriculum_activity?: Prisma.ExtraCurriculumActivityUpdateOneWithoutLanguage_club_optionsNestedInput
+  created_by?: Prisma.UserUpdateOneWithoutCreated_language_clubsNestedInput
+  updated_by?: Prisma.UserUpdateOneWithoutUpdated_language_clubsNestedInput
+}
+
+export type LanguageClubUncheckedUpdateWithoutStudentsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  language_name?: Prisma.StringFieldUpdateOperationsInput | string
+  extra_curriculum_activity_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+}
+
+export type LanguageClubUncheckedUpdateManyWithoutStudentsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  language_name?: Prisma.StringFieldUpdateOperationsInput | string
+  extra_curriculum_activity_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -695,6 +819,7 @@ export type LanguageClubUpdateWithoutCreated_byInput = {
   language_name?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  students?: Prisma.StudentUpdateManyWithoutLanguage_club_optionsNestedInput
   extra_curriculum_activity?: Prisma.ExtraCurriculumActivityUpdateOneWithoutLanguage_club_optionsNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_language_clubsNestedInput
 }
@@ -706,6 +831,7 @@ export type LanguageClubUncheckedUpdateWithoutCreated_byInput = {
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  students?: Prisma.StudentUncheckedUpdateManyWithoutLanguage_club_optionsNestedInput
 }
 
 export type LanguageClubUncheckedUpdateManyWithoutCreated_byInput = {
@@ -722,6 +848,7 @@ export type LanguageClubUpdateWithoutUpdated_byInput = {
   language_name?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  students?: Prisma.StudentUpdateManyWithoutLanguage_club_optionsNestedInput
   extra_curriculum_activity?: Prisma.ExtraCurriculumActivityUpdateOneWithoutLanguage_club_optionsNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_language_clubsNestedInput
 }
@@ -733,6 +860,7 @@ export type LanguageClubUncheckedUpdateWithoutUpdated_byInput = {
   created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  students?: Prisma.StudentUncheckedUpdateManyWithoutLanguage_club_optionsNestedInput
 }
 
 export type LanguageClubUncheckedUpdateManyWithoutUpdated_byInput = {
@@ -745,6 +873,35 @@ export type LanguageClubUncheckedUpdateManyWithoutUpdated_byInput = {
 }
 
 
+/**
+ * Count Type LanguageClubCountOutputType
+ */
+
+export type LanguageClubCountOutputType = {
+  students: number
+}
+
+export type LanguageClubCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  students?: boolean | LanguageClubCountOutputTypeCountStudentsArgs
+}
+
+/**
+ * LanguageClubCountOutputType without action
+ */
+export type LanguageClubCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the LanguageClubCountOutputType
+   */
+  select?: Prisma.LanguageClubCountOutputTypeSelect<ExtArgs> | null
+}
+
+/**
+ * LanguageClubCountOutputType without action
+ */
+export type LanguageClubCountOutputTypeCountStudentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.StudentWhereInput
+}
+
 
 export type LanguageClubSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -754,9 +911,11 @@ export type LanguageClubSelect<ExtArgs extends runtime.Types.Extensions.Internal
   updated_by_id?: boolean
   created_at?: boolean
   updated_at?: boolean
+  students?: boolean | Prisma.LanguageClub$studentsArgs<ExtArgs>
   extra_curriculum_activity?: boolean | Prisma.LanguageClub$extra_curriculum_activityArgs<ExtArgs>
   created_by?: boolean | Prisma.LanguageClub$created_byArgs<ExtArgs>
   updated_by?: boolean | Prisma.LanguageClub$updated_byArgs<ExtArgs>
+  _count?: boolean | Prisma.LanguageClubCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["languageClub"]>
 
 export type LanguageClubSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -797,9 +956,11 @@ export type LanguageClubSelectScalar = {
 
 export type LanguageClubOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "language_name" | "extra_curriculum_activity_id" | "created_by_id" | "updated_by_id" | "created_at" | "updated_at", ExtArgs["result"]["languageClub"]>
 export type LanguageClubInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  students?: boolean | Prisma.LanguageClub$studentsArgs<ExtArgs>
   extra_curriculum_activity?: boolean | Prisma.LanguageClub$extra_curriculum_activityArgs<ExtArgs>
   created_by?: boolean | Prisma.LanguageClub$created_byArgs<ExtArgs>
   updated_by?: boolean | Prisma.LanguageClub$updated_byArgs<ExtArgs>
+  _count?: boolean | Prisma.LanguageClubCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type LanguageClubIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   extra_curriculum_activity?: boolean | Prisma.LanguageClub$extra_curriculum_activityArgs<ExtArgs>
@@ -815,6 +976,7 @@ export type LanguageClubIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types
 export type $LanguageClubPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "LanguageClub"
   objects: {
+    students: Prisma.$StudentPayload<ExtArgs>[]
     extra_curriculum_activity: Prisma.$ExtraCurriculumActivityPayload<ExtArgs> | null
     created_by: Prisma.$UserPayload<ExtArgs> | null
     updated_by: Prisma.$UserPayload<ExtArgs> | null
@@ -1221,6 +1383,7 @@ readonly fields: LanguageClubFieldRefs;
  */
 export interface Prisma__LanguageClubClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
+  students<T extends Prisma.LanguageClub$studentsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.LanguageClub$studentsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$StudentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   extra_curriculum_activity<T extends Prisma.LanguageClub$extra_curriculum_activityArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.LanguageClub$extra_curriculum_activityArgs<ExtArgs>>): Prisma.Prisma__ExtraCurriculumActivityClient<runtime.Types.Result.GetResult<Prisma.$ExtraCurriculumActivityPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   created_by<T extends Prisma.LanguageClub$created_byArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.LanguageClub$created_byArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   updated_by<T extends Prisma.LanguageClub$updated_byArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.LanguageClub$updated_byArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
@@ -1658,6 +1821,30 @@ export type LanguageClubDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.
    * Limit how many LanguageClubs to delete.
    */
   limit?: number
+}
+
+/**
+ * LanguageClub.students
+ */
+export type LanguageClub$studentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Student
+   */
+  select?: Prisma.StudentSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Student
+   */
+  omit?: Prisma.StudentOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.StudentInclude<ExtArgs> | null
+  where?: Prisma.StudentWhereInput
+  orderBy?: Prisma.StudentOrderByWithRelationInput | Prisma.StudentOrderByWithRelationInput[]
+  cursor?: Prisma.StudentWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.StudentScalarFieldEnum | Prisma.StudentScalarFieldEnum[]
 }
 
 /**

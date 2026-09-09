@@ -231,7 +231,7 @@ export type StudentResponsibilityWhereInput = {
   created_at?: Prisma.DateTimeFilter<"StudentResponsibility"> | Date | string
   updated_at?: Prisma.DateTimeNullableFilter<"StudentResponsibility"> | Date | string | null
   academic_year?: Prisma.XOR<Prisma.AcademicYearScalarRelationFilter, Prisma.AcademicYearWhereInput>
-  teacher?: Prisma.XOR<Prisma.AcademicTeacherNullableScalarRelationFilter, Prisma.AcademicTeacherWhereInput> | null
+  teacher?: Prisma.XOR<Prisma.AcademicAdministrativeStaffNullableScalarRelationFilter, Prisma.AcademicAdministrativeStaffWhereInput> | null
   student?: Prisma.XOR<Prisma.StudentNullableScalarRelationFilter, Prisma.StudentWhereInput> | null
   created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
   updated_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
@@ -250,7 +250,7 @@ export type StudentResponsibilityOrderByWithRelationInput = {
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrderInput | Prisma.SortOrder
   academic_year?: Prisma.AcademicYearOrderByWithRelationInput
-  teacher?: Prisma.AcademicTeacherOrderByWithRelationInput
+  teacher?: Prisma.AcademicAdministrativeStaffOrderByWithRelationInput
   student?: Prisma.StudentOrderByWithRelationInput
   created_by?: Prisma.UserOrderByWithRelationInput
   updated_by?: Prisma.UserOrderByWithRelationInput
@@ -272,7 +272,7 @@ export type StudentResponsibilityWhereUniqueInput = Prisma.AtLeast<{
   created_at?: Prisma.DateTimeFilter<"StudentResponsibility"> | Date | string
   updated_at?: Prisma.DateTimeNullableFilter<"StudentResponsibility"> | Date | string | null
   academic_year?: Prisma.XOR<Prisma.AcademicYearScalarRelationFilter, Prisma.AcademicYearWhereInput>
-  teacher?: Prisma.XOR<Prisma.AcademicTeacherNullableScalarRelationFilter, Prisma.AcademicTeacherWhereInput> | null
+  teacher?: Prisma.XOR<Prisma.AcademicAdministrativeStaffNullableScalarRelationFilter, Prisma.AcademicAdministrativeStaffWhereInput> | null
   student?: Prisma.XOR<Prisma.StudentNullableScalarRelationFilter, Prisma.StudentWhereInput> | null
   created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
   updated_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
@@ -320,7 +320,7 @@ export type StudentResponsibilityCreateInput = {
   created_at?: Date | string
   updated_at?: Date | string | null
   academic_year: Prisma.AcademicYearCreateNestedOneWithoutStudents_responsibilityInput
-  teacher?: Prisma.AcademicTeacherCreateNestedOneWithoutStudents_in_responsibilityInput
+  teacher?: Prisma.AcademicAdministrativeStaffCreateNestedOneWithoutStudents_in_responsibilityInput
   student?: Prisma.StudentCreateNestedOneWithoutAssigned_responsible_teacherInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_student_responsibilitiesInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_student_responsibilitiesInput
@@ -348,7 +348,7 @@ export type StudentResponsibilityUpdateInput = {
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   academic_year?: Prisma.AcademicYearUpdateOneRequiredWithoutStudents_responsibilityNestedInput
-  teacher?: Prisma.AcademicTeacherUpdateOneWithoutStudents_in_responsibilityNestedInput
+  teacher?: Prisma.AcademicAdministrativeStaffUpdateOneWithoutStudents_in_responsibilityNestedInput
   student?: Prisma.StudentUpdateOneWithoutAssigned_responsible_teacherNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_student_responsibilitiesNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_student_responsibilitiesNestedInput
@@ -743,7 +743,7 @@ export type StudentResponsibilityCreateWithoutAcademic_yearInput = {
   isActive?: boolean
   created_at?: Date | string
   updated_at?: Date | string | null
-  teacher?: Prisma.AcademicTeacherCreateNestedOneWithoutStudents_in_responsibilityInput
+  teacher?: Prisma.AcademicAdministrativeStaffCreateNestedOneWithoutStudents_in_responsibilityInput
   student?: Prisma.StudentCreateNestedOneWithoutAssigned_responsible_teacherInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_student_responsibilitiesInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_student_responsibilitiesInput
@@ -796,7 +796,7 @@ export type StudentResponsibilityCreateWithoutStudentInput = {
   created_at?: Date | string
   updated_at?: Date | string | null
   academic_year: Prisma.AcademicYearCreateNestedOneWithoutStudents_responsibilityInput
-  teacher?: Prisma.AcademicTeacherCreateNestedOneWithoutStudents_in_responsibilityInput
+  teacher?: Prisma.AcademicAdministrativeStaffCreateNestedOneWithoutStudents_in_responsibilityInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_student_responsibilitiesInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_student_responsibilitiesInput
 }
@@ -848,7 +848,7 @@ export type StudentResponsibilityCreateWithoutCreated_byInput = {
   created_at?: Date | string
   updated_at?: Date | string | null
   academic_year: Prisma.AcademicYearCreateNestedOneWithoutStudents_responsibilityInput
-  teacher?: Prisma.AcademicTeacherCreateNestedOneWithoutStudents_in_responsibilityInput
+  teacher?: Prisma.AcademicAdministrativeStaffCreateNestedOneWithoutStudents_in_responsibilityInput
   student?: Prisma.StudentCreateNestedOneWithoutAssigned_responsible_teacherInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_student_responsibilitiesInput
 }
@@ -884,7 +884,7 @@ export type StudentResponsibilityCreateWithoutUpdated_byInput = {
   created_at?: Date | string
   updated_at?: Date | string | null
   academic_year: Prisma.AcademicYearCreateNestedOneWithoutStudents_responsibilityInput
-  teacher?: Prisma.AcademicTeacherCreateNestedOneWithoutStudents_in_responsibilityInput
+  teacher?: Prisma.AcademicAdministrativeStaffCreateNestedOneWithoutStudents_in_responsibilityInput
   student?: Prisma.StudentCreateNestedOneWithoutAssigned_responsible_teacherInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_student_responsibilitiesInput
 }
@@ -1016,7 +1016,7 @@ export type StudentResponsibilityUpdateWithoutAcademic_yearInput = {
   isActive?: Prisma.BoolFieldUpdateOperationsInput | boolean
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  teacher?: Prisma.AcademicTeacherUpdateOneWithoutStudents_in_responsibilityNestedInput
+  teacher?: Prisma.AcademicAdministrativeStaffUpdateOneWithoutStudents_in_responsibilityNestedInput
   student?: Prisma.StudentUpdateOneWithoutAssigned_responsible_teacherNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_student_responsibilitiesNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_student_responsibilitiesNestedInput
@@ -1069,7 +1069,7 @@ export type StudentResponsibilityUpdateWithoutStudentInput = {
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   academic_year?: Prisma.AcademicYearUpdateOneRequiredWithoutStudents_responsibilityNestedInput
-  teacher?: Prisma.AcademicTeacherUpdateOneWithoutStudents_in_responsibilityNestedInput
+  teacher?: Prisma.AcademicAdministrativeStaffUpdateOneWithoutStudents_in_responsibilityNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_student_responsibilitiesNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_student_responsibilitiesNestedInput
 }
@@ -1134,7 +1134,7 @@ export type StudentResponsibilityUpdateWithoutCreated_byInput = {
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   academic_year?: Prisma.AcademicYearUpdateOneRequiredWithoutStudents_responsibilityNestedInput
-  teacher?: Prisma.AcademicTeacherUpdateOneWithoutStudents_in_responsibilityNestedInput
+  teacher?: Prisma.AcademicAdministrativeStaffUpdateOneWithoutStudents_in_responsibilityNestedInput
   student?: Prisma.StudentUpdateOneWithoutAssigned_responsible_teacherNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_student_responsibilitiesNestedInput
 }
@@ -1173,7 +1173,7 @@ export type StudentResponsibilityUpdateWithoutUpdated_byInput = {
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   academic_year?: Prisma.AcademicYearUpdateOneRequiredWithoutStudents_responsibilityNestedInput
-  teacher?: Prisma.AcademicTeacherUpdateOneWithoutStudents_in_responsibilityNestedInput
+  teacher?: Prisma.AcademicAdministrativeStaffUpdateOneWithoutStudents_in_responsibilityNestedInput
   student?: Prisma.StudentUpdateOneWithoutAssigned_responsible_teacherNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_student_responsibilitiesNestedInput
 }
@@ -1304,7 +1304,7 @@ export type $StudentResponsibilityPayload<ExtArgs extends runtime.Types.Extensio
   name: "StudentResponsibility"
   objects: {
     academic_year: Prisma.$AcademicYearPayload<ExtArgs>
-    teacher: Prisma.$AcademicTeacherPayload<ExtArgs> | null
+    teacher: Prisma.$AcademicAdministrativeStaffPayload<ExtArgs> | null
     student: Prisma.$StudentPayload<ExtArgs> | null
     created_by: Prisma.$UserPayload<ExtArgs> | null
     updated_by: Prisma.$UserPayload<ExtArgs> | null
@@ -1716,7 +1716,7 @@ readonly fields: StudentResponsibilityFieldRefs;
 export interface Prisma__StudentResponsibilityClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
   academic_year<T extends Prisma.AcademicYearDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AcademicYearDefaultArgs<ExtArgs>>): Prisma.Prisma__AcademicYearClient<runtime.Types.Result.GetResult<Prisma.$AcademicYearPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  teacher<T extends Prisma.StudentResponsibility$teacherArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.StudentResponsibility$teacherArgs<ExtArgs>>): Prisma.Prisma__AcademicTeacherClient<runtime.Types.Result.GetResult<Prisma.$AcademicTeacherPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  teacher<T extends Prisma.StudentResponsibility$teacherArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.StudentResponsibility$teacherArgs<ExtArgs>>): Prisma.Prisma__AcademicAdministrativeStaffClient<runtime.Types.Result.GetResult<Prisma.$AcademicAdministrativeStaffPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   student<T extends Prisma.StudentResponsibility$studentArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.StudentResponsibility$studentArgs<ExtArgs>>): Prisma.Prisma__StudentClient<runtime.Types.Result.GetResult<Prisma.$StudentPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   created_by<T extends Prisma.StudentResponsibility$created_byArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.StudentResponsibility$created_byArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   updated_by<T extends Prisma.StudentResponsibility$updated_byArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.StudentResponsibility$updated_byArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
@@ -2165,18 +2165,18 @@ export type StudentResponsibilityDeleteManyArgs<ExtArgs extends runtime.Types.Ex
  */
 export type StudentResponsibility$teacherArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the AcademicTeacher
+   * Select specific fields to fetch from the AcademicAdministrativeStaff
    */
-  select?: Prisma.AcademicTeacherSelect<ExtArgs> | null
+  select?: Prisma.AcademicAdministrativeStaffSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the AcademicTeacher
+   * Omit specific fields from the AcademicAdministrativeStaff
    */
-  omit?: Prisma.AcademicTeacherOmit<ExtArgs> | null
+  omit?: Prisma.AcademicAdministrativeStaffOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.AcademicTeacherInclude<ExtArgs> | null
-  where?: Prisma.AcademicTeacherWhereInput
+  include?: Prisma.AcademicAdministrativeStaffInclude<ExtArgs> | null
+  where?: Prisma.AcademicAdministrativeStaffWhereInput
 }
 
 /**

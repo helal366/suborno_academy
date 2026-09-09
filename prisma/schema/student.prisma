@@ -1,10 +1,10 @@
 model Student {
-  id String  @id @default(uuid())
-  classes    Class[] @relation("student_classes")
+  id      String  @id @default(uuid())
+  classes Class[] @relation("student_classes")
 
-  quranic_section Quranic_Section?
+  quranic_section    Quranic_Section?
   quranic_subject_id String?
-  quranic_subject QuranicSubject? @relation(fields: [quranic_subject_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
+  quranic_subject    QuranicSubject?  @relation(fields: [quranic_subject_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
 
   quranic_special_periods QuranicSpecialPeriod[]
 
@@ -16,21 +16,26 @@ model Student {
   responsible_guardian_id String?
   responsible_guardian    StudentResponsibleGuardianDetails? @relation(fields: [responsible_guardian_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
 
-  user_id           String @unique
-  user User   @relation("user_student",fields: [user_id], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  user_id String @unique
+  user    User   @relation("user_student", fields: [user_id], references: [id], onDelete: Cascade, onUpdate: Cascade)
 
-  isActiveResponsibleTeacher Boolean @default(false)
+  isActiveResponsibleTeacher   Boolean                 @default(false)
   assigned_responsible_teacher StudentResponsibility[]
 
-  extra_curriculum_activities ExtraCurriculumActivity[]
+  cultural_club_options     CulturalClub[]
+  quran_club_options        QuranClub[]
+  language_club_options     LanguageClub[]
+  science_club_options      ScienceClub[]
+  scout_sports_club_options ScoutSportsClub[]
 
   created_by_id String?
   created_by    User?   @relation("student_created_by", fields: [created_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
-  
+
   updated_by_id String?
   updated_by    User?   @relation("student_updated_by", fields: [updated_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
 
   created_at DateTime  @default(now())
   updated_at DateTime? @updatedAt
+
   @@map("students")
 }

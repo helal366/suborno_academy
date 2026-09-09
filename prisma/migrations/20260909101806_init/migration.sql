@@ -8,7 +8,7 @@ CREATE TYPE "BloodGroup" AS ENUM ('A_POSITIVE', 'A_NEGATIVE', 'B_POSITIVE', 'B_N
 CREATE TYPE "Religion" AS ENUM ('ISLAM', 'HINDU', 'CHRISTIAN', 'BUDDO', 'OTHER');
 
 -- CreateEnum
-CREATE TYPE "Quranic_Section" AS ENUM ('NURANI', 'HIFZ');
+CREATE TYPE "Quranic_Section" AS ENUM ('NURANI', 'NAZERA', 'HIFZ');
 
 -- CreateEnum
 CREATE TYPE "WeekDays" AS ENUM ('SATURDAY', 'SUNDAY', 'MONDAY', 'TUESDAY', 'WEDNESDAY', 'THURSDAY', 'FRIDAY');
@@ -24,6 +24,26 @@ CREATE TYPE "AuditAction" AS ENUM ('CREATE', 'UPDATE', 'DELETE');
 
 -- CreateEnum
 CREATE TYPE "EducationDegree" AS ENUM ('SSC', 'HSC', 'BSC', 'B_COM', 'B_ARTS', 'MSC', 'M_COM', 'M_ARTS', 'PHD', 'ALIM', 'DAKHIL', 'KAMIL', 'FAZIL', 'OTHERS');
+
+-- CreateTable
+CREATE TABLE "academic_teachers" (
+    "id" TEXT NOT NULL,
+    "full_name" TEXT NOT NULL,
+    "current_position_id" TEXT NOT NULL,
+    "current_role_id" TEXT NOT NULL,
+    "teaching_working_experience_year" INTEGER,
+    "teaching_working_experience_month" INTEGER,
+    "alternative_contact_no" TEXT[],
+    "user_id" TEXT NOT NULL,
+    "is_subject_teacher" BOOLEAN NOT NULL DEFAULT false,
+    "is_responsible_teacher" BOOLEAN NOT NULL DEFAULT false,
+    "created_by_id" TEXT,
+    "updated_by_id" TEXT,
+    "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updated_at" TIMESTAMP(3),
+
+    CONSTRAINT "academic_teachers_pkey" PRIMARY KEY ("id")
+);
 
 -- CreateTable
 CREATE TABLE "academic_results" (
@@ -43,29 +63,6 @@ CREATE TABLE "academic_results" (
     "updated_at" TIMESTAMP(3),
 
     CONSTRAINT "academic_results_pkey" PRIMARY KEY ("id")
-);
-
--- CreateTable
-CREATE TABLE "academic_teachers" (
-    "id" TEXT NOT NULL,
-    "full_name" TEXT NOT NULL,
-    "role" TEXT NOT NULL,
-    "position" TEXT NOT NULL,
-    "current_position" TEXT,
-    "positions" TEXT[],
-    "teaching_experience_year" INTEGER,
-    "teaching_experience_month" INTEGER,
-    "alternative_contact_no" TEXT[],
-    "extra_curricular_activities" TEXT[],
-    "user_id" TEXT NOT NULL,
-    "is_subject_teacher" BOOLEAN NOT NULL DEFAULT false,
-    "is_responsible_teacher" BOOLEAN NOT NULL DEFAULT false,
-    "created_by_id" TEXT,
-    "updated_by_id" TEXT,
-    "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updated_at" TIMESTAMP(3),
-
-    CONSTRAINT "academic_teachers_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
@@ -152,6 +149,74 @@ CREATE TABLE "class_routine" (
 );
 
 -- CreateTable
+CREATE TABLE "cultural_club" (
+    "id" TEXT NOT NULL,
+    "cultural_name" TEXT NOT NULL,
+    "extra_curriculum_activity_id" TEXT,
+    "created_by_id" TEXT,
+    "updated_by_id" TEXT,
+    "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updated_at" TIMESTAMP(3),
+
+    CONSTRAINT "cultural_club_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "extra_curriculum_activities" (
+    "id" TEXT NOT NULL,
+    "created_by_id" TEXT,
+    "updated_by_id" TEXT,
+    "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updated_at" TIMESTAMP(3),
+
+    CONSTRAINT "extra_curriculum_activities_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "teacher_interview_information" (
+    "id" TEXT NOT NULL,
+    "writen_marks" DOUBLE PRECISION,
+    "viva_voice_mark" DOUBLE PRECISION,
+    "practical_mark" DOUBLE PRECISION,
+    "total_mark" DOUBLE PRECISION,
+    "joining_history_id" TEXT,
+    "created_by_id" TEXT,
+    "updated_by_id" TEXT,
+    "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updated_at" TIMESTAMP(3),
+
+    CONSTRAINT "teacher_interview_information_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "teacher_joining_history" (
+    "id" TEXT NOT NULL,
+    "applied_position" TEXT,
+    "joining_date" TIMESTAMP(3),
+    "resign_data" TIMESTAMP(3),
+    "teacher_id" TEXT,
+    "created_by_id" TEXT,
+    "updated_by_id" TEXT,
+    "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updated_at" TIMESTAMP(3),
+
+    CONSTRAINT "teacher_joining_history_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "language_club" (
+    "id" TEXT NOT NULL,
+    "language_name" TEXT NOT NULL,
+    "extra_curriculum_activity_id" TEXT,
+    "created_by_id" TEXT,
+    "updated_by_id" TEXT,
+    "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updated_at" TIMESTAMP(3),
+
+    CONSTRAINT "language_club_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
 CREATE TABLE "periods" (
     "id" TEXT NOT NULL,
     "period_name" TEXT NOT NULL,
@@ -214,6 +279,54 @@ CREATE TABLE "present_addresses" (
 );
 
 -- CreateTable
+CREATE TABLE "teacher_previous_institute_information" (
+    "id" TEXT NOT NULL,
+    "institute_name" TEXT,
+    "institute_contact" TEXT,
+    "job_duration_year" INTEGER,
+    "job_duration_month" INTEGER,
+    "salary" INTEGER,
+    "designation" TEXT,
+    "joining_history_id" TEXT,
+    "created_by_id" TEXT,
+    "updated_by_id" TEXT,
+    "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updated_at" TIMESTAMP(3),
+
+    CONSTRAINT "teacher_previous_institute_information_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "teacher_promoted_history" (
+    "id" TEXT NOT NULL,
+    "previous_position" TEXT NOT NULL,
+    "promoted_position" TEXT NOT NULL,
+    "previous_position_joining_date" TIMESTAMP(3) NOT NULL,
+    "previous_position_ending_date" TIMESTAMP(3) NOT NULL,
+    "promoted_position_joining_date" TIMESTAMP(3) NOT NULL,
+    "academic_administrative_staff_id" TEXT,
+    "created_by_id" TEXT,
+    "updated_by_id" TEXT,
+    "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updated_at" TIMESTAMP(3),
+
+    CONSTRAINT "teacher_promoted_history_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "quran_club" (
+    "id" TEXT NOT NULL,
+    "quran_name" TEXT NOT NULL,
+    "extra_curriculum_activity_id" TEXT,
+    "created_by_id" TEXT,
+    "updated_by_id" TEXT,
+    "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updated_at" TIMESTAMP(3),
+
+    CONSTRAINT "quran_club_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
 CREATE TABLE "quranic_special_periods" (
     "id" TEXT NOT NULL,
     "period_name" TEXT NOT NULL,
@@ -238,6 +351,52 @@ CREATE TABLE "quranic_subjects" (
     "updated_at" TIMESTAMP(3),
 
     CONSTRAINT "quranic_subjects_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "teacher_references" (
+    "id" TEXT NOT NULL,
+    "ref1_name" TEXT,
+    "ref1_mobile_number" TEXT,
+    "ref1_occupation" TEXT,
+    "ref1_job_title" TEXT,
+    "ref2_name" TEXT,
+    "ref2_mobile_number" TEXT,
+    "ref2_occupation" TEXT,
+    "ref2_job_title" TEXT,
+    "joining_history_id" TEXT,
+    "created_by_id" TEXT,
+    "updated_by_id" TEXT,
+    "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updated_at" TIMESTAMP(3),
+
+    CONSTRAINT "teacher_references_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "science_club" (
+    "id" TEXT NOT NULL,
+    "science_name" TEXT NOT NULL,
+    "extra_curriculum_activity_id" TEXT,
+    "created_by_id" TEXT,
+    "updated_by_id" TEXT,
+    "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updated_at" TIMESTAMP(3),
+
+    CONSTRAINT "science_club_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "scout_sports_club" (
+    "id" TEXT NOT NULL,
+    "scout_sports_name" TEXT NOT NULL,
+    "extra_curriculum_activity_id" TEXT,
+    "created_by_id" TEXT,
+    "updated_by_id" TEXT,
+    "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    "updated_at" TIMESTAMP(3),
+
+    CONSTRAINT "scout_sports_club_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
@@ -394,92 +553,6 @@ CREATE TABLE "teacher_honourableresponsibilities" (
 );
 
 -- CreateTable
-CREATE TABLE "teacher_interview_information" (
-    "id" TEXT NOT NULL,
-    "writen_marks" DOUBLE PRECISION,
-    "viva_voice_mark" DOUBLE PRECISION,
-    "practical_mark" DOUBLE PRECISION,
-    "total_mark" DOUBLE PRECISION,
-    "joining_history_id" TEXT,
-    "created_by_id" TEXT,
-    "updated_by_id" TEXT,
-    "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updated_at" TIMESTAMP(3),
-
-    CONSTRAINT "teacher_interview_information_pkey" PRIMARY KEY ("id")
-);
-
--- CreateTable
-CREATE TABLE "teacher_joining_history" (
-    "id" TEXT NOT NULL,
-    "applied_position" TEXT,
-    "joining_date" TIMESTAMP(3),
-    "resign_data" TIMESTAMP(3),
-    "teacher_id" TEXT,
-    "created_by_id" TEXT,
-    "updated_by_id" TEXT,
-    "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updated_at" TIMESTAMP(3),
-
-    CONSTRAINT "teacher_joining_history_pkey" PRIMARY KEY ("id")
-);
-
--- CreateTable
-CREATE TABLE "teacher_previous_institute_information" (
-    "id" TEXT NOT NULL,
-    "institute_name" TEXT,
-    "institute_contact" TEXT,
-    "job_duration_year" INTEGER,
-    "job_duration_month" INTEGER,
-    "salary" INTEGER,
-    "designation" TEXT,
-    "joining_history_id" TEXT,
-    "created_by_id" TEXT,
-    "updated_by_id" TEXT,
-    "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updated_at" TIMESTAMP(3),
-
-    CONSTRAINT "teacher_previous_institute_information_pkey" PRIMARY KEY ("id")
-);
-
--- CreateTable
-CREATE TABLE "teacher_promoted_history" (
-    "id" TEXT NOT NULL,
-    "previous_position" TEXT NOT NULL,
-    "promoted_position" TEXT NOT NULL,
-    "previous_position_joining_date" TIMESTAMP(3) NOT NULL,
-    "previous_position_ending_date" TIMESTAMP(3) NOT NULL,
-    "promoted_position_joining_date" TIMESTAMP(3) NOT NULL,
-    "joining_history_id" TEXT,
-    "created_by_id" TEXT,
-    "updated_by_id" TEXT,
-    "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updated_at" TIMESTAMP(3),
-
-    CONSTRAINT "teacher_promoted_history_pkey" PRIMARY KEY ("id")
-);
-
--- CreateTable
-CREATE TABLE "teacher_references" (
-    "id" TEXT NOT NULL,
-    "ref1_name" TEXT,
-    "ref1_mobile_number" TEXT,
-    "ref1_occupation" TEXT,
-    "ref1_job_title" TEXT,
-    "ref2_name" TEXT,
-    "ref2_mobile_number" TEXT,
-    "ref2_occupation" TEXT,
-    "ref2_job_title" TEXT,
-    "joining_history_id" TEXT,
-    "created_by_id" TEXT,
-    "updated_by_id" TEXT,
-    "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    "updated_at" TIMESTAMP(3),
-
-    CONSTRAINT "teacher_references_pkey" PRIMARY KEY ("id")
-);
-
--- CreateTable
 CREATE TABLE "users" (
     "id" TEXT NOT NULL,
     "full_name" TEXT NOT NULL,
@@ -567,27 +640,43 @@ CREATE TABLE "user_mother_details" (
 
 -- CreateTable
 CREATE TABLE "user_positions" (
-    "position_id" TEXT NOT NULL,
+    "id" TEXT NOT NULL,
     "position_name" TEXT NOT NULL,
-    "role_name" TEXT NOT NULL,
+    "role_id" TEXT NOT NULL,
     "created_by_id" TEXT,
     "updated_by_id" TEXT,
     "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updated_at" TIMESTAMP(3),
 
-    CONSTRAINT "user_positions_pkey" PRIMARY KEY ("position_id")
+    CONSTRAINT "user_positions_pkey" PRIMARY KEY ("id")
 );
 
 -- CreateTable
 CREATE TABLE "user_roles" (
-    "role_id" TEXT NOT NULL,
+    "id" TEXT NOT NULL,
     "role_name" TEXT NOT NULL,
     "created_by_id" TEXT,
     "updated_by_id" TEXT,
     "created_at" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
     "updated_at" TIMESTAMP(3),
 
-    CONSTRAINT "user_roles_pkey" PRIMARY KEY ("role_id")
+    CONSTRAINT "user_roles_pkey" PRIMARY KEY ("id")
+);
+
+-- CreateTable
+CREATE TABLE "_academic_teacher_positions" (
+    "A" TEXT NOT NULL,
+    "B" TEXT NOT NULL,
+
+    CONSTRAINT "_academic_teacher_positions_AB_pkey" PRIMARY KEY ("A","B")
+);
+
+-- CreateTable
+CREATE TABLE "_academic_teacher_roles" (
+    "A" TEXT NOT NULL,
+    "B" TEXT NOT NULL,
+
+    CONSTRAINT "_academic_teacher_roles_AB_pkey" PRIMARY KEY ("A","B")
 );
 
 -- CreateTable
@@ -599,6 +688,30 @@ CREATE TABLE "_student_classes" (
 );
 
 -- CreateTable
+CREATE TABLE "_CulturalClubToStudent" (
+    "A" TEXT NOT NULL,
+    "B" TEXT NOT NULL,
+
+    CONSTRAINT "_CulturalClubToStudent_AB_pkey" PRIMARY KEY ("A","B")
+);
+
+-- CreateTable
+CREATE TABLE "_LanguageClubToStudent" (
+    "A" TEXT NOT NULL,
+    "B" TEXT NOT NULL,
+
+    CONSTRAINT "_LanguageClubToStudent_AB_pkey" PRIMARY KEY ("A","B")
+);
+
+-- CreateTable
+CREATE TABLE "_QuranClubToStudent" (
+    "A" TEXT NOT NULL,
+    "B" TEXT NOT NULL,
+
+    CONSTRAINT "_QuranClubToStudent_AB_pkey" PRIMARY KEY ("A","B")
+);
+
+-- CreateTable
 CREATE TABLE "_QuranicSpecialPeriodToStudent" (
     "A" TEXT NOT NULL,
     "B" TEXT NOT NULL,
@@ -606,11 +719,27 @@ CREATE TABLE "_QuranicSpecialPeriodToStudent" (
     CONSTRAINT "_QuranicSpecialPeriodToStudent_AB_pkey" PRIMARY KEY ("A","B")
 );
 
--- CreateIndex
-CREATE UNIQUE INDEX "academic_results_teacher_id_key" ON "academic_results"("teacher_id");
+-- CreateTable
+CREATE TABLE "_ScienceClubToStudent" (
+    "A" TEXT NOT NULL,
+    "B" TEXT NOT NULL,
+
+    CONSTRAINT "_ScienceClubToStudent_AB_pkey" PRIMARY KEY ("A","B")
+);
+
+-- CreateTable
+CREATE TABLE "_ScoutSportsClubToStudent" (
+    "A" TEXT NOT NULL,
+    "B" TEXT NOT NULL,
+
+    CONSTRAINT "_ScoutSportsClubToStudent_AB_pkey" PRIMARY KEY ("A","B")
+);
 
 -- CreateIndex
 CREATE UNIQUE INDEX "academic_teachers_user_id_key" ON "academic_teachers"("user_id");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "academic_results_teacher_id_key" ON "academic_results"("teacher_id");
 
 -- CreateIndex
 CREATE INDEX "books_book_name_idx" ON "books"("book_name");
@@ -637,6 +766,9 @@ CREATE UNIQUE INDEX "class_routine_day_period_id_teacher_id_key" ON "class_routi
 CREATE UNIQUE INDEX "class_routine_day_period_id_class_id_key" ON "class_routine"("day", "period_id", "class_id");
 
 -- CreateIndex
+CREATE UNIQUE INDEX "teacher_interview_information_joining_history_id_key" ON "teacher_interview_information"("joining_history_id");
+
+-- CreateIndex
 CREATE UNIQUE INDEX "permanent_addresses_user_id_key" ON "permanent_addresses"("user_id");
 
 -- CreateIndex
@@ -649,10 +781,19 @@ CREATE UNIQUE INDEX "present_addresses_user_id_key" ON "present_addresses"("user
 CREATE UNIQUE INDEX "present_addresses_spouse_id_key" ON "present_addresses"("spouse_id");
 
 -- CreateIndex
+CREATE UNIQUE INDEX "teacher_previous_institute_information_joining_history_id_key" ON "teacher_previous_institute_information"("joining_history_id");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "teacher_promoted_history_academic_administrative_staff_id_key" ON "teacher_promoted_history"("academic_administrative_staff_id");
+
+-- CreateIndex
 CREATE UNIQUE INDEX "quranic_special_periods_period_name_key" ON "quranic_special_periods"("period_name");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "quranic_subjects_subject_name_key" ON "quranic_subjects"("subject_name");
+
+-- CreateIndex
+CREATE UNIQUE INDEX "teacher_references_joining_history_id_key" ON "teacher_references"("joining_history_id");
 
 -- CreateIndex
 CREATE UNIQUE INDEX "shifts_name_key" ON "shifts"("name");
@@ -670,18 +811,6 @@ CREATE UNIQUE INDEX "student_previous_institute_information_institute_address_id
 CREATE UNIQUE INDEX "teacher_honourableresponsibilities_responsibility_name_key" ON "teacher_honourableresponsibilities"("responsibility_name");
 
 -- CreateIndex
-CREATE UNIQUE INDEX "teacher_interview_information_joining_history_id_key" ON "teacher_interview_information"("joining_history_id");
-
--- CreateIndex
-CREATE UNIQUE INDEX "teacher_previous_institute_information_joining_history_id_key" ON "teacher_previous_institute_information"("joining_history_id");
-
--- CreateIndex
-CREATE UNIQUE INDEX "teacher_promoted_history_joining_history_id_key" ON "teacher_promoted_history"("joining_history_id");
-
--- CreateIndex
-CREATE UNIQUE INDEX "teacher_references_joining_history_id_key" ON "teacher_references"("joining_history_id");
-
--- CreateIndex
 CREATE UNIQUE INDEX "users_email_key" ON "users"("email");
 
 -- CreateIndex
@@ -697,19 +826,37 @@ CREATE UNIQUE INDEX "user_positions_position_name_key" ON "user_positions"("posi
 CREATE UNIQUE INDEX "user_roles_role_name_key" ON "user_roles"("role_name");
 
 -- CreateIndex
+CREATE INDEX "_academic_teacher_positions_B_index" ON "_academic_teacher_positions"("B");
+
+-- CreateIndex
+CREATE INDEX "_academic_teacher_roles_B_index" ON "_academic_teacher_roles"("B");
+
+-- CreateIndex
 CREATE INDEX "_student_classes_B_index" ON "_student_classes"("B");
+
+-- CreateIndex
+CREATE INDEX "_CulturalClubToStudent_B_index" ON "_CulturalClubToStudent"("B");
+
+-- CreateIndex
+CREATE INDEX "_LanguageClubToStudent_B_index" ON "_LanguageClubToStudent"("B");
+
+-- CreateIndex
+CREATE INDEX "_QuranClubToStudent_B_index" ON "_QuranClubToStudent"("B");
 
 -- CreateIndex
 CREATE INDEX "_QuranicSpecialPeriodToStudent_B_index" ON "_QuranicSpecialPeriodToStudent"("B");
 
--- AddForeignKey
-ALTER TABLE "academic_results" ADD CONSTRAINT "academic_results_teacher_id_fkey" FOREIGN KEY ("teacher_id") REFERENCES "academic_teachers"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+-- CreateIndex
+CREATE INDEX "_ScienceClubToStudent_B_index" ON "_ScienceClubToStudent"("B");
+
+-- CreateIndex
+CREATE INDEX "_ScoutSportsClubToStudent_B_index" ON "_ScoutSportsClubToStudent"("B");
 
 -- AddForeignKey
-ALTER TABLE "academic_results" ADD CONSTRAINT "academic_results_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE "academic_teachers" ADD CONSTRAINT "academic_teachers_current_position_id_fkey" FOREIGN KEY ("current_position_id") REFERENCES "user_positions"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "academic_results" ADD CONSTRAINT "academic_results_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE "academic_teachers" ADD CONSTRAINT "academic_teachers_current_role_id_fkey" FOREIGN KEY ("current_role_id") REFERENCES "user_roles"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "academic_teachers" ADD CONSTRAINT "academic_teachers_user_id_fkey" FOREIGN KEY ("user_id") REFERENCES "users"("id") ON DELETE CASCADE ON UPDATE CASCADE;
@@ -719,6 +866,15 @@ ALTER TABLE "academic_teachers" ADD CONSTRAINT "academic_teachers_created_by_id_
 
 -- AddForeignKey
 ALTER TABLE "academic_teachers" ADD CONSTRAINT "academic_teachers_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "academic_results" ADD CONSTRAINT "academic_results_teacher_id_fkey" FOREIGN KEY ("teacher_id") REFERENCES "academic_teachers"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "academic_results" ADD CONSTRAINT "academic_results_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "academic_results" ADD CONSTRAINT "academic_results_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "academic_years" ADD CONSTRAINT "academic_years_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
@@ -781,6 +937,48 @@ ALTER TABLE "class_routine" ADD CONSTRAINT "class_routine_created_by_id_fkey" FO
 ALTER TABLE "class_routine" ADD CONSTRAINT "class_routine_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
+ALTER TABLE "cultural_club" ADD CONSTRAINT "cultural_club_extra_curriculum_activity_id_fkey" FOREIGN KEY ("extra_curriculum_activity_id") REFERENCES "extra_curriculum_activities"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "cultural_club" ADD CONSTRAINT "cultural_club_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "cultural_club" ADD CONSTRAINT "cultural_club_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "extra_curriculum_activities" ADD CONSTRAINT "extra_curriculum_activities_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "extra_curriculum_activities" ADD CONSTRAINT "extra_curriculum_activities_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "teacher_interview_information" ADD CONSTRAINT "teacher_interview_information_joining_history_id_fkey" FOREIGN KEY ("joining_history_id") REFERENCES "teacher_joining_history"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "teacher_interview_information" ADD CONSTRAINT "teacher_interview_information_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "teacher_interview_information" ADD CONSTRAINT "teacher_interview_information_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "teacher_joining_history" ADD CONSTRAINT "teacher_joining_history_teacher_id_fkey" FOREIGN KEY ("teacher_id") REFERENCES "academic_teachers"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "teacher_joining_history" ADD CONSTRAINT "teacher_joining_history_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "teacher_joining_history" ADD CONSTRAINT "teacher_joining_history_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "language_club" ADD CONSTRAINT "language_club_extra_curriculum_activity_id_fkey" FOREIGN KEY ("extra_curriculum_activity_id") REFERENCES "extra_curriculum_activities"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "language_club" ADD CONSTRAINT "language_club_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "language_club" ADD CONSTRAINT "language_club_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
 ALTER TABLE "periods" ADD CONSTRAINT "periods_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
@@ -811,6 +1009,33 @@ ALTER TABLE "present_addresses" ADD CONSTRAINT "present_addresses_created_by_id_
 ALTER TABLE "present_addresses" ADD CONSTRAINT "present_addresses_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
+ALTER TABLE "teacher_previous_institute_information" ADD CONSTRAINT "teacher_previous_institute_information_joining_history_id_fkey" FOREIGN KEY ("joining_history_id") REFERENCES "teacher_joining_history"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "teacher_previous_institute_information" ADD CONSTRAINT "teacher_previous_institute_information_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "teacher_previous_institute_information" ADD CONSTRAINT "teacher_previous_institute_information_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "teacher_promoted_history" ADD CONSTRAINT "teacher_promoted_history_academic_administrative_staff_id_fkey" FOREIGN KEY ("academic_administrative_staff_id") REFERENCES "academic_teachers"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "teacher_promoted_history" ADD CONSTRAINT "teacher_promoted_history_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "teacher_promoted_history" ADD CONSTRAINT "teacher_promoted_history_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "quran_club" ADD CONSTRAINT "quran_club_extra_curriculum_activity_id_fkey" FOREIGN KEY ("extra_curriculum_activity_id") REFERENCES "extra_curriculum_activities"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "quran_club" ADD CONSTRAINT "quran_club_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "quran_club" ADD CONSTRAINT "quran_club_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
 ALTER TABLE "quranic_special_periods" ADD CONSTRAINT "quranic_special_periods_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
@@ -821,6 +1046,33 @@ ALTER TABLE "quranic_subjects" ADD CONSTRAINT "quranic_subjects_created_by_id_fk
 
 -- AddForeignKey
 ALTER TABLE "quranic_subjects" ADD CONSTRAINT "quranic_subjects_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "teacher_references" ADD CONSTRAINT "teacher_references_joining_history_id_fkey" FOREIGN KEY ("joining_history_id") REFERENCES "teacher_joining_history"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "teacher_references" ADD CONSTRAINT "teacher_references_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "teacher_references" ADD CONSTRAINT "teacher_references_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "science_club" ADD CONSTRAINT "science_club_extra_curriculum_activity_id_fkey" FOREIGN KEY ("extra_curriculum_activity_id") REFERENCES "extra_curriculum_activities"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "science_club" ADD CONSTRAINT "science_club_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "science_club" ADD CONSTRAINT "science_club_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "scout_sports_club" ADD CONSTRAINT "scout_sports_club_extra_curriculum_activity_id_fkey" FOREIGN KEY ("extra_curriculum_activity_id") REFERENCES "extra_curriculum_activities"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "scout_sports_club" ADD CONSTRAINT "scout_sports_club_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "scout_sports_club" ADD CONSTRAINT "scout_sports_club_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "shifts" ADD CONSTRAINT "shifts_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
@@ -913,58 +1165,13 @@ ALTER TABLE "teacher_honourableresponsibilities" ADD CONSTRAINT "teacher_honoura
 ALTER TABLE "teacher_honourableresponsibilities" ADD CONSTRAINT "teacher_honourableresponsibilities_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "teacher_interview_information" ADD CONSTRAINT "teacher_interview_information_joining_history_id_fkey" FOREIGN KEY ("joining_history_id") REFERENCES "teacher_joining_history"("id") ON DELETE CASCADE ON UPDATE CASCADE;
-
--- AddForeignKey
-ALTER TABLE "teacher_interview_information" ADD CONSTRAINT "teacher_interview_information_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
-
--- AddForeignKey
-ALTER TABLE "teacher_interview_information" ADD CONSTRAINT "teacher_interview_information_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
-
--- AddForeignKey
-ALTER TABLE "teacher_joining_history" ADD CONSTRAINT "teacher_joining_history_teacher_id_fkey" FOREIGN KEY ("teacher_id") REFERENCES "academic_teachers"("id") ON DELETE CASCADE ON UPDATE CASCADE;
-
--- AddForeignKey
-ALTER TABLE "teacher_joining_history" ADD CONSTRAINT "teacher_joining_history_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
-
--- AddForeignKey
-ALTER TABLE "teacher_joining_history" ADD CONSTRAINT "teacher_joining_history_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
-
--- AddForeignKey
-ALTER TABLE "teacher_previous_institute_information" ADD CONSTRAINT "teacher_previous_institute_information_joining_history_id_fkey" FOREIGN KEY ("joining_history_id") REFERENCES "teacher_joining_history"("id") ON DELETE CASCADE ON UPDATE CASCADE;
-
--- AddForeignKey
-ALTER TABLE "teacher_previous_institute_information" ADD CONSTRAINT "teacher_previous_institute_information_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
-
--- AddForeignKey
-ALTER TABLE "teacher_previous_institute_information" ADD CONSTRAINT "teacher_previous_institute_information_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
-
--- AddForeignKey
-ALTER TABLE "teacher_promoted_history" ADD CONSTRAINT "teacher_promoted_history_joining_history_id_fkey" FOREIGN KEY ("joining_history_id") REFERENCES "teacher_joining_history"("id") ON DELETE CASCADE ON UPDATE CASCADE;
-
--- AddForeignKey
-ALTER TABLE "teacher_promoted_history" ADD CONSTRAINT "teacher_promoted_history_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
-
--- AddForeignKey
-ALTER TABLE "teacher_promoted_history" ADD CONSTRAINT "teacher_promoted_history_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
-
--- AddForeignKey
-ALTER TABLE "teacher_references" ADD CONSTRAINT "teacher_references_joining_history_id_fkey" FOREIGN KEY ("joining_history_id") REFERENCES "teacher_joining_history"("id") ON DELETE CASCADE ON UPDATE CASCADE;
-
--- AddForeignKey
-ALTER TABLE "teacher_references" ADD CONSTRAINT "teacher_references_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
-
--- AddForeignKey
-ALTER TABLE "teacher_references" ADD CONSTRAINT "teacher_references_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
-
--- AddForeignKey
 ALTER TABLE "users" ADD CONSTRAINT "users_father_details_id_fkey" FOREIGN KEY ("father_details_id") REFERENCES "user_father_details"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "users" ADD CONSTRAINT "users_mother_details_id_fkey" FOREIGN KEY ("mother_details_id") REFERENCES "user_mother_details"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "users" ADD CONSTRAINT "users_position_id_fkey" FOREIGN KEY ("position_id") REFERENCES "user_positions"("position_id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "users" ADD CONSTRAINT "users_position_id_fkey" FOREIGN KEY ("position_id") REFERENCES "user_positions"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "users" ADD CONSTRAINT "users_role_name_fkey" FOREIGN KEY ("role_name") REFERENCES "user_roles"("role_name") ON DELETE SET NULL ON UPDATE CASCADE;
@@ -991,7 +1198,7 @@ ALTER TABLE "user_mother_details" ADD CONSTRAINT "user_mother_details_created_by
 ALTER TABLE "user_mother_details" ADD CONSTRAINT "user_mother_details_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "user_positions" ADD CONSTRAINT "user_positions_role_name_fkey" FOREIGN KEY ("role_name") REFERENCES "user_roles"("role_name") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "user_positions" ADD CONSTRAINT "user_positions_role_id_fkey" FOREIGN KEY ("role_id") REFERENCES "user_roles"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "user_positions" ADD CONSTRAINT "user_positions_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
@@ -1006,13 +1213,60 @@ ALTER TABLE "user_roles" ADD CONSTRAINT "user_roles_created_by_id_fkey" FOREIGN 
 ALTER TABLE "user_roles" ADD CONSTRAINT "user_roles_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
+ALTER TABLE "_academic_teacher_positions" ADD CONSTRAINT "_academic_teacher_positions_A_fkey" FOREIGN KEY ("A") REFERENCES "academic_teachers"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "_academic_teacher_positions" ADD CONSTRAINT "_academic_teacher_positions_B_fkey" FOREIGN KEY ("B") REFERENCES "user_positions"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "_academic_teacher_roles" ADD CONSTRAINT "_academic_teacher_roles_A_fkey" FOREIGN KEY ("A") REFERENCES "academic_teachers"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "_academic_teacher_roles" ADD CONSTRAINT "_academic_teacher_roles_B_fkey" FOREIGN KEY ("B") REFERENCES "user_roles"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
 ALTER TABLE "_student_classes" ADD CONSTRAINT "_student_classes_A_fkey" FOREIGN KEY ("A") REFERENCES "classes"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "_student_classes" ADD CONSTRAINT "_student_classes_B_fkey" FOREIGN KEY ("B") REFERENCES "students"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
+ALTER TABLE "_CulturalClubToStudent" ADD CONSTRAINT "_CulturalClubToStudent_A_fkey" FOREIGN KEY ("A") REFERENCES "cultural_club"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "_CulturalClubToStudent" ADD CONSTRAINT "_CulturalClubToStudent_B_fkey" FOREIGN KEY ("B") REFERENCES "students"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "_LanguageClubToStudent" ADD CONSTRAINT "_LanguageClubToStudent_A_fkey" FOREIGN KEY ("A") REFERENCES "language_club"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "_LanguageClubToStudent" ADD CONSTRAINT "_LanguageClubToStudent_B_fkey" FOREIGN KEY ("B") REFERENCES "students"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "_QuranClubToStudent" ADD CONSTRAINT "_QuranClubToStudent_A_fkey" FOREIGN KEY ("A") REFERENCES "quran_club"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "_QuranClubToStudent" ADD CONSTRAINT "_QuranClubToStudent_B_fkey" FOREIGN KEY ("B") REFERENCES "students"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
 ALTER TABLE "_QuranicSpecialPeriodToStudent" ADD CONSTRAINT "_QuranicSpecialPeriodToStudent_A_fkey" FOREIGN KEY ("A") REFERENCES "quranic_special_periods"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "_QuranicSpecialPeriodToStudent" ADD CONSTRAINT "_QuranicSpecialPeriodToStudent_B_fkey" FOREIGN KEY ("B") REFERENCES "students"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "_ScienceClubToStudent" ADD CONSTRAINT "_ScienceClubToStudent_A_fkey" FOREIGN KEY ("A") REFERENCES "science_club"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "_ScienceClubToStudent" ADD CONSTRAINT "_ScienceClubToStudent_B_fkey" FOREIGN KEY ("B") REFERENCES "students"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "_ScoutSportsClubToStudent" ADD CONSTRAINT "_ScoutSportsClubToStudent_A_fkey" FOREIGN KEY ("A") REFERENCES "scout_sports_club"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "_ScoutSportsClubToStudent" ADD CONSTRAINT "_ScoutSportsClubToStudent_B_fkey" FOREIGN KEY ("B") REFERENCES "students"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddUniqueConstraintForSingleResponsibleTeacher
+CREATE UNIQUE INDEX student_single_active_responsibility_idx 
+ON "students_responsibility" ("student_id") 
+WHERE "isActive" = true;

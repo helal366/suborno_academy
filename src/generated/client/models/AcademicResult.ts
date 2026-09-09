@@ -254,7 +254,7 @@ export type AcademicResultWhereInput = {
   updated_by_id?: Prisma.StringNullableFilter<"AcademicResult"> | string | null
   created_at?: Prisma.DateTimeFilter<"AcademicResult"> | Date | string
   updated_at?: Prisma.DateTimeNullableFilter<"AcademicResult"> | Date | string | null
-  teacher?: Prisma.XOR<Prisma.AcademicTeacherNullableScalarRelationFilter, Prisma.AcademicTeacherWhereInput> | null
+  teacher?: Prisma.XOR<Prisma.AcademicAdministrativeStaffNullableScalarRelationFilter, Prisma.AcademicAdministrativeStaffWhereInput> | null
   created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
   updated_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
 }
@@ -274,7 +274,7 @@ export type AcademicResultOrderByWithRelationInput = {
   updated_by_id?: Prisma.SortOrderInput | Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrderInput | Prisma.SortOrder
-  teacher?: Prisma.AcademicTeacherOrderByWithRelationInput
+  teacher?: Prisma.AcademicAdministrativeStaffOrderByWithRelationInput
   created_by?: Prisma.UserOrderByWithRelationInput
   updated_by?: Prisma.UserOrderByWithRelationInput
 }
@@ -297,7 +297,7 @@ export type AcademicResultWhereUniqueInput = Prisma.AtLeast<{
   updated_by_id?: Prisma.StringNullableFilter<"AcademicResult"> | string | null
   created_at?: Prisma.DateTimeFilter<"AcademicResult"> | Date | string
   updated_at?: Prisma.DateTimeNullableFilter<"AcademicResult"> | Date | string | null
-  teacher?: Prisma.XOR<Prisma.AcademicTeacherNullableScalarRelationFilter, Prisma.AcademicTeacherWhereInput> | null
+  teacher?: Prisma.XOR<Prisma.AcademicAdministrativeStaffNullableScalarRelationFilter, Prisma.AcademicAdministrativeStaffWhereInput> | null
   created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
   updated_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
 }, "id" | "teacher_id">
@@ -354,7 +354,7 @@ export type AcademicResultCreateInput = {
   kamil?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
-  teacher?: Prisma.AcademicTeacherCreateNestedOneWithoutAcademic_resultsInput
+  teacher?: Prisma.AcademicAdministrativeStaffCreateNestedOneWithoutAcademic_resultsInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_academic_resultsInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_academic_resultsInput
 }
@@ -388,7 +388,7 @@ export type AcademicResultUpdateInput = {
   kamil?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  teacher?: Prisma.AcademicTeacherUpdateOneWithoutAcademic_resultsNestedInput
+  teacher?: Prisma.AcademicAdministrativeStaffUpdateOneWithoutAcademic_resultsNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_academic_resultsNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_academic_resultsNestedInput
 }
@@ -458,6 +458,11 @@ export type AcademicResultUncheckedUpdateManyInput = {
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
 }
 
+export type AcademicResultNullableScalarRelationFilter = {
+  is?: Prisma.AcademicResultWhereInput | null
+  isNot?: Prisma.AcademicResultWhereInput | null
+}
+
 export type AcademicResultCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   ssc_result?: Prisma.SortOrder
@@ -509,11 +514,6 @@ export type AcademicResultMinOrderByAggregateInput = {
   updated_at?: Prisma.SortOrder
 }
 
-export type AcademicResultNullableScalarRelationFilter = {
-  is?: Prisma.AcademicResultWhereInput | null
-  isNot?: Prisma.AcademicResultWhereInput | null
-}
-
 export type AcademicResultListRelationFilter = {
   every?: Prisma.AcademicResultWhereInput
   some?: Prisma.AcademicResultWhereInput
@@ -522,22 +522,6 @@ export type AcademicResultListRelationFilter = {
 
 export type AcademicResultOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
-}
-
-export type StringFieldUpdateOperationsInput = {
-  set?: string
-}
-
-export type NullableStringFieldUpdateOperationsInput = {
-  set?: string | null
-}
-
-export type DateTimeFieldUpdateOperationsInput = {
-  set?: Date | string
-}
-
-export type NullableDateTimeFieldUpdateOperationsInput = {
-  set?: Date | string | null
 }
 
 export type AcademicResultCreateNestedOneWithoutTeacherInput = {
@@ -748,7 +732,7 @@ export type AcademicResultCreateWithoutCreated_byInput = {
   kamil?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
-  teacher?: Prisma.AcademicTeacherCreateNestedOneWithoutAcademic_resultsInput
+  teacher?: Prisma.AcademicAdministrativeStaffCreateNestedOneWithoutAcademic_resultsInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_academic_resultsInput
 }
 
@@ -790,7 +774,7 @@ export type AcademicResultCreateWithoutUpdated_byInput = {
   kamil?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
-  teacher?: Prisma.AcademicTeacherCreateNestedOneWithoutAcademic_resultsInput
+  teacher?: Prisma.AcademicAdministrativeStaffCreateNestedOneWithoutAcademic_resultsInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_academic_resultsInput
 }
 
@@ -916,7 +900,7 @@ export type AcademicResultUpdateWithoutCreated_byInput = {
   kamil?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  teacher?: Prisma.AcademicTeacherUpdateOneWithoutAcademic_resultsNestedInput
+  teacher?: Prisma.AcademicAdministrativeStaffUpdateOneWithoutAcademic_resultsNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_academic_resultsNestedInput
 }
 
@@ -964,7 +948,7 @@ export type AcademicResultUpdateWithoutUpdated_byInput = {
   kamil?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  teacher?: Prisma.AcademicTeacherUpdateOneWithoutAcademic_resultsNestedInput
+  teacher?: Prisma.AcademicAdministrativeStaffUpdateOneWithoutAcademic_resultsNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_academic_resultsNestedInput
 }
 
@@ -1099,7 +1083,7 @@ export type AcademicResultIncludeUpdateManyAndReturn<ExtArgs extends runtime.Typ
 export type $AcademicResultPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "AcademicResult"
   objects: {
-    teacher: Prisma.$AcademicTeacherPayload<ExtArgs> | null
+    teacher: Prisma.$AcademicAdministrativeStaffPayload<ExtArgs> | null
     created_by: Prisma.$UserPayload<ExtArgs> | null
     updated_by: Prisma.$UserPayload<ExtArgs> | null
   }
@@ -1512,7 +1496,7 @@ readonly fields: AcademicResultFieldRefs;
  */
 export interface Prisma__AcademicResultClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  teacher<T extends Prisma.AcademicResult$teacherArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AcademicResult$teacherArgs<ExtArgs>>): Prisma.Prisma__AcademicTeacherClient<runtime.Types.Result.GetResult<Prisma.$AcademicTeacherPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  teacher<T extends Prisma.AcademicResult$teacherArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AcademicResult$teacherArgs<ExtArgs>>): Prisma.Prisma__AcademicAdministrativeStaffClient<runtime.Types.Result.GetResult<Prisma.$AcademicAdministrativeStaffPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   created_by<T extends Prisma.AcademicResult$created_byArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AcademicResult$created_byArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   updated_by<T extends Prisma.AcademicResult$updated_byArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AcademicResult$updated_byArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   /**
@@ -1963,18 +1947,18 @@ export type AcademicResultDeleteManyArgs<ExtArgs extends runtime.Types.Extension
  */
 export type AcademicResult$teacherArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the AcademicTeacher
+   * Select specific fields to fetch from the AcademicAdministrativeStaff
    */
-  select?: Prisma.AcademicTeacherSelect<ExtArgs> | null
+  select?: Prisma.AcademicAdministrativeStaffSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the AcademicTeacher
+   * Omit specific fields from the AcademicAdministrativeStaff
    */
-  omit?: Prisma.AcademicTeacherOmit<ExtArgs> | null
+  omit?: Prisma.AcademicAdministrativeStaffOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.AcademicTeacherInclude<ExtArgs> | null
-  where?: Prisma.AcademicTeacherWhereInput
+  include?: Prisma.AcademicAdministrativeStaffInclude<ExtArgs> | null
+  where?: Prisma.AcademicAdministrativeStaffWhereInput
 }
 
 /**

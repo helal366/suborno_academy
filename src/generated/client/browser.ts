@@ -18,15 +18,15 @@ export { Prisma }
 export * as $Enums from './enums.js'
 export * from './enums.js';
 /**
+ * Model AcademicAdministrativeStaff
+ * 
+ */
+export type AcademicAdministrativeStaff = Prisma.AcademicAdministrativeStaffModel
+/**
  * Model AcademicResult
  * 
  */
 export type AcademicResult = Prisma.AcademicResultModel
-/**
- * Model AcademicTeacher
- * 
- */
-export type AcademicTeacher = Prisma.AcademicTeacherModel
 /**
  * Model AcademicYear
  * 
@@ -68,6 +68,16 @@ export type CulturalClub = Prisma.CulturalClubModel
  */
 export type ExtraCurriculumActivity = Prisma.ExtraCurriculumActivityModel
 /**
+ * Model InterviewInformation
+ * 
+ */
+export type InterviewInformation = Prisma.InterviewInformationModel
+/**
+ * Model JoiningHistory
+ * 
+ */
+export type JoiningHistory = Prisma.JoiningHistoryModel
+/**
  * Model LanguageClub
  * 
  */
@@ -88,6 +98,16 @@ export type PermanentAddress = Prisma.PermanentAddressModel
  */
 export type PresentAddress = Prisma.PresentAddressModel
 /**
+ * Model PreviousInstituteInformation
+ * 
+ */
+export type PreviousInstituteInformation = Prisma.PreviousInstituteInformationModel
+/**
+ * Model PromotedHistory
+ * 
+ */
+export type PromotedHistory = Prisma.PromotedHistoryModel
+/**
  * Model QuranClub
  * 
  */
@@ -102,6 +122,11 @@ export type QuranicSpecialPeriod = Prisma.QuranicSpecialPeriodModel
  * 
  */
 export type QuranicSubject = Prisma.QuranicSubjectModel
+/**
+ * Model Reference
+ * 
+ */
+export type Reference = Prisma.ReferenceModel
 /**
  * Model ScienceClub
  * 
@@ -157,31 +182,6 @@ export type SubjectTeacher = Prisma.SubjectTeacherModel
  * 
  */
 export type TeacherHonourableResponsibility = Prisma.TeacherHonourableResponsibilityModel
-/**
- * Model TeacherInterviewInformation
- * 
- */
-export type TeacherInterviewInformation = Prisma.TeacherInterviewInformationModel
-/**
- * Model TeacherJoiningHistory
- * 
- */
-export type TeacherJoiningHistory = Prisma.TeacherJoiningHistoryModel
-/**
- * Model TeacherPreviousInstituteInformation
- * 
- */
-export type TeacherPreviousInstituteInformation = Prisma.TeacherPreviousInstituteInformationModel
-/**
- * Model TeacherPromotedHistory
- * 
- */
-export type TeacherPromotedHistory = Prisma.TeacherPromotedHistoryModel
-/**
- * Model TeacherReference
- * 
- */
-export type TeacherReference = Prisma.TeacherReferenceModel
 /**
  * Model User
  * 

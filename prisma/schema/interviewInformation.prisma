@@ -1,20 +1,21 @@
-model TeacherInterviewInformation {
-  id String @id @default(uuid())
-  writen_marks             Float?
-  viva_voice_mark          Float?
-  practical_mark           Float?
-  total_mark               Float?
+model InterviewInformation {
+  id              String @id @default(uuid())
+  writen_marks    Float?
+  viva_voice_mark Float?
+  practical_mark  Float?
+  total_mark      Float?
 
-  joining_history_id String?          @unique
-  joining_history    TeacherJoiningHistory? @relation(fields: [joining_history_id], references: [id], onDelete: Cascade, onUpdate: Cascade)
+  joining_history_id String?                @unique
+  joining_history    JoiningHistory? @relation(fields: [joining_history_id], references: [id], onDelete: Cascade, onUpdate: Cascade)
 
   created_by_id String?
   created_by    User?   @relation("teacher_interview_information_created_by", fields: [created_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
-  
+
   updated_by_id String?
   updated_by    User?   @relation("teacher_interview_information_updated_by", fields: [updated_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
 
   created_at DateTime  @default(now())
   updated_at DateTime? @updatedAt
+
   @@map("teacher_interview_information")
 }

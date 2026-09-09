@@ -13,5 +13,6 @@ model AuditLog {
   new_value Json?
 
   created_at DateTime @default(now())
+
   @@map("audit_log")
 }

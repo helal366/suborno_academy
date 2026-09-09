@@ -7,13 +7,15 @@ const createPosition = async (payload: ICreatePosition) => {
   const { position_name, role_name } = payload;
   const clean_position_name = position_name.trim().toUpperCase();
   const clean_role_name = role_name.trim().toUpperCase();
-  const isRoleExists =
-    (await prisma.userRole.count({
-      where: {
-        role_name: clean_role_name,
-      },
-    })) > 0;
-  if (!isRoleExists) {
+  const role = await prisma.userRole.findUnique({
+    where: {
+      role_name: clean_role_name,
+    },
+    select: {
+      id: true,
+    },
+  });
+  if (!role) {
     throw new AppError("Invalid role provided.", StatusCodes.BAD_REQUEST);
   }
   const existing = await prisma.userPosition.findUnique({
@@ -27,7 +29,7 @@ const createPosition = async (payload: ICreatePosition) => {
   const createdPosition = await prisma.userPosition.create({
     data: {
       position_name: clean_position_name,
-      role_name: clean_role_name,
+      role_id: role.id,
     },
   });
   return createdPosition;

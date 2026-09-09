@@ -1,5 +1,5 @@
 model StudentResponsibleGuardianDetails {
-  id   String           @id @default(uuid())
+  id                        String           @id @default(uuid())
   guardian                  String
   nid_no                    String?
   occupation                String?
@@ -14,11 +14,12 @@ model StudentResponsibleGuardianDetails {
 
   created_by_id String?
   created_by    User?   @relation("student_responsible_guardian_details_created_by", fields: [created_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
-  
+
   updated_by_id String?
   updated_by    User?   @relation("student_responsible_guardian_details_updated_by", fields: [updated_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
 
   created_at DateTime  @default(now())
   updated_at DateTime? @updatedAt
+
   @@map("student_responsible_guardians")
 }

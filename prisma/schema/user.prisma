@@ -1,5 +1,5 @@
 model User {
-  id                  String      @id @default(uuid())
+  id                       String      @id @default(uuid())
   full_name                String
   mobile_number            String
   is_mobile_verified       Boolean     @default(false)
@@ -24,21 +24,21 @@ model User {
   user_name     String? @unique
   user_password String? @default("sm1234ps")
 
-  active_status           ActiveStatus             @default(ACTIVE)
+  active_status           ActiveStatus                @default(ACTIVE)
   active_inactive_history UserActiveInactiveHistory[] @relation("user_active_history")
-  is_deleted              Boolean                  @default(false)
+  is_deleted              Boolean                     @default(false)
 
   position_id String?
-  position    UserPosition? @relation("user_position_relation", fields: [position_id], references: [position_id], onDelete: Restrict, onUpdate: Cascade)
+  position    UserPosition? @relation("user_position_relation", fields: [position_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
 
   role_name String?
-  role      UserRole?  @relation("user_role_relation", fields: [role_name], references: [role_name])
+  role      UserRole? @relation("user_role_relation", fields: [role_name], references: [role_name])
 
   present_address   PresentAddress?
   permanent_address PermanentAddress?
 
-  student_profile Student? @relation("user_student")
-  teacher_profile AcademicTeacher?
+  student_profile Student?         @relation("user_student")
+  teacher_profile AcademicAdministrativeStaff?
 
   audit_logs AuditLog[]
 
@@ -58,8 +58,8 @@ model User {
   created_academic_results AcademicResult[] @relation("academic_result_created_by")
   updated_academic_results AcademicResult[] @relation("academic_result_updated_by")
 
-  created_academic_teachers AcademicTeacher[] @relation("academic_teacher_created_by")
-  updated_academic_teachers AcademicTeacher[] @relation("academic_teacher_updated_by")
+  created_academic_teachers AcademicAdministrativeStaff[] @relation("academic_teacher_created_by")
+  updated_academic_teachers AcademicAdministrativeStaff[] @relation("academic_teacher_updated_by")
 
   created_academic_years AcademicYear[] @relation("academic_year_created_by")
   updated_academic_years AcademicYear[] @relation("academic_year_updated_by")
@@ -103,20 +103,20 @@ model User {
   created_teacher_honourable_responsibilities TeacherHonourableResponsibility[] @relation("teacher_honourable_responsibility_created_by")
   updated_teacher_honourable_responsibilities TeacherHonourableResponsibility[] @relation("teacher_honourable_responsibility_updated_by")
 
-  created_teacher_interview_information TeacherInterviewInformation[] @relation("teacher_interview_information_created_by")
-  updated_teacher_interview_information TeacherInterviewInformation[] @relation("teacher_interview_information_updated_by")
+  created_teacher_interview_information InterviewInformation[] @relation("teacher_interview_information_created_by")
+  updated_teacher_interview_information InterviewInformation[] @relation("teacher_interview_information_updated_by")
 
-  created_teacher_joining_histories TeacherJoiningHistory[] @relation("teacher_joining_history_created_by")
-  updated_teacher_joining_histories TeacherJoiningHistory[] @relation("teacher_joining_history_updated_by")
+  created_teacher_joining_histories JoiningHistory[] @relation("teacher_joining_history_created_by")
+  updated_teacher_joining_histories JoiningHistory[] @relation("teacher_joining_history_updated_by")
 
-  created_teacher_previous_institute_information TeacherPreviousInstituteInformation[] @relation("teacher_previous_institute_information_created_by")
-  updated_teacher_previous_institute_information TeacherPreviousInstituteInformation[] @relation("teacher_previous_institute_information_updated_by")
+  created_teacher_previous_institute_information PreviousInstituteInformation[] @relation("teacher_previous_institute_information_created_by")
+  updated_teacher_previous_institute_information PreviousInstituteInformation[] @relation("teacher_previous_institute_information_updated_by")
 
-  created_teacher_promoted_histories TeacherPromotedHistory[] @relation("teacher_promoted_history_created_by")
-  updated_teacher_promoted_histories TeacherPromotedHistory[] @relation("teacher_promoted_history_updated_by")
+  created_teacher_promoted_histories PromotedHistory[] @relation("teacher_promoted_history_created_by")
+  updated_teacher_promoted_histories PromotedHistory[] @relation("teacher_promoted_history_updated_by")
 
-  created_teacher_references TeacherReference[] @relation("teacher_reference_created_by")
-  updated_teacher_references TeacherReference[] @relation("teacher_reference_updated_by")
+  created_teacher_references Reference[] @relation("teacher_reference_created_by")
+  updated_teacher_references Reference[] @relation("teacher_reference_updated_by")
 
   created_user_active_inactive_histories UserActiveInactiveHistory[] @relation("user_active_inactive_history_created_by")
   updated_user_active_inactive_histories UserActiveInactiveHistory[] @relation("user_active_inactive_history_updated_by")
@@ -150,7 +150,7 @@ model User {
 
   created_scout_sports_clubs ScoutSportsClub[] @relation("scout_sports_club_created_by")
   updated_scout_sports_clubs ScoutSportsClub[] @relation("scout_sports_club_updated_by")
-  
+
   created_at DateTime  @default(now())
   updated_at DateTime? @updatedAt
 

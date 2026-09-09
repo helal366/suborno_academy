@@ -198,6 +198,7 @@ export type ScoutSportsClubWhereInput = {
   updated_by_id?: Prisma.StringNullableFilter<"ScoutSportsClub"> | string | null
   created_at?: Prisma.DateTimeFilter<"ScoutSportsClub"> | Date | string
   updated_at?: Prisma.DateTimeNullableFilter<"ScoutSportsClub"> | Date | string | null
+  students?: Prisma.StudentListRelationFilter
   extra_curriculum_activity?: Prisma.XOR<Prisma.ExtraCurriculumActivityNullableScalarRelationFilter, Prisma.ExtraCurriculumActivityWhereInput> | null
   created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
   updated_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
@@ -211,6 +212,7 @@ export type ScoutSportsClubOrderByWithRelationInput = {
   updated_by_id?: Prisma.SortOrderInput | Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrderInput | Prisma.SortOrder
+  students?: Prisma.StudentOrderByRelationAggregateInput
   extra_curriculum_activity?: Prisma.ExtraCurriculumActivityOrderByWithRelationInput
   created_by?: Prisma.UserOrderByWithRelationInput
   updated_by?: Prisma.UserOrderByWithRelationInput
@@ -227,6 +229,7 @@ export type ScoutSportsClubWhereUniqueInput = Prisma.AtLeast<{
   updated_by_id?: Prisma.StringNullableFilter<"ScoutSportsClub"> | string | null
   created_at?: Prisma.DateTimeFilter<"ScoutSportsClub"> | Date | string
   updated_at?: Prisma.DateTimeNullableFilter<"ScoutSportsClub"> | Date | string | null
+  students?: Prisma.StudentListRelationFilter
   extra_curriculum_activity?: Prisma.XOR<Prisma.ExtraCurriculumActivityNullableScalarRelationFilter, Prisma.ExtraCurriculumActivityWhereInput> | null
   created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
   updated_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
@@ -263,6 +266,7 @@ export type ScoutSportsClubCreateInput = {
   scout_sports_name: string
   created_at?: Date | string
   updated_at?: Date | string | null
+  students?: Prisma.StudentCreateNestedManyWithoutScout_sports_club_optionsInput
   extra_curriculum_activity?: Prisma.ExtraCurriculumActivityCreateNestedOneWithoutScout_sports_club_optionsInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_scout_sports_clubsInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_scout_sports_clubsInput
@@ -276,6 +280,7 @@ export type ScoutSportsClubUncheckedCreateInput = {
   updated_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
+  students?: Prisma.StudentUncheckedCreateNestedManyWithoutScout_sports_club_optionsInput
 }
 
 export type ScoutSportsClubUpdateInput = {
@@ -283,6 +288,7 @@ export type ScoutSportsClubUpdateInput = {
   scout_sports_name?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  students?: Prisma.StudentUpdateManyWithoutScout_sports_club_optionsNestedInput
   extra_curriculum_activity?: Prisma.ExtraCurriculumActivityUpdateOneWithoutScout_sports_club_optionsNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_scout_sports_clubsNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_scout_sports_clubsNestedInput
@@ -296,6 +302,7 @@ export type ScoutSportsClubUncheckedUpdateInput = {
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  students?: Prisma.StudentUncheckedUpdateManyWithoutScout_sports_club_optionsNestedInput
 }
 
 export type ScoutSportsClubCreateManyInput = {
@@ -407,6 +414,44 @@ export type ScoutSportsClubUncheckedUpdateManyWithoutExtra_curriculum_activityNe
   deleteMany?: Prisma.ScoutSportsClubScalarWhereInput | Prisma.ScoutSportsClubScalarWhereInput[]
 }
 
+export type ScoutSportsClubCreateNestedManyWithoutStudentsInput = {
+  create?: Prisma.XOR<Prisma.ScoutSportsClubCreateWithoutStudentsInput, Prisma.ScoutSportsClubUncheckedCreateWithoutStudentsInput> | Prisma.ScoutSportsClubCreateWithoutStudentsInput[] | Prisma.ScoutSportsClubUncheckedCreateWithoutStudentsInput[]
+  connectOrCreate?: Prisma.ScoutSportsClubCreateOrConnectWithoutStudentsInput | Prisma.ScoutSportsClubCreateOrConnectWithoutStudentsInput[]
+  connect?: Prisma.ScoutSportsClubWhereUniqueInput | Prisma.ScoutSportsClubWhereUniqueInput[]
+}
+
+export type ScoutSportsClubUncheckedCreateNestedManyWithoutStudentsInput = {
+  create?: Prisma.XOR<Prisma.ScoutSportsClubCreateWithoutStudentsInput, Prisma.ScoutSportsClubUncheckedCreateWithoutStudentsInput> | Prisma.ScoutSportsClubCreateWithoutStudentsInput[] | Prisma.ScoutSportsClubUncheckedCreateWithoutStudentsInput[]
+  connectOrCreate?: Prisma.ScoutSportsClubCreateOrConnectWithoutStudentsInput | Prisma.ScoutSportsClubCreateOrConnectWithoutStudentsInput[]
+  connect?: Prisma.ScoutSportsClubWhereUniqueInput | Prisma.ScoutSportsClubWhereUniqueInput[]
+}
+
+export type ScoutSportsClubUpdateManyWithoutStudentsNestedInput = {
+  create?: Prisma.XOR<Prisma.ScoutSportsClubCreateWithoutStudentsInput, Prisma.ScoutSportsClubUncheckedCreateWithoutStudentsInput> | Prisma.ScoutSportsClubCreateWithoutStudentsInput[] | Prisma.ScoutSportsClubUncheckedCreateWithoutStudentsInput[]
+  connectOrCreate?: Prisma.ScoutSportsClubCreateOrConnectWithoutStudentsInput | Prisma.ScoutSportsClubCreateOrConnectWithoutStudentsInput[]
+  upsert?: Prisma.ScoutSportsClubUpsertWithWhereUniqueWithoutStudentsInput | Prisma.ScoutSportsClubUpsertWithWhereUniqueWithoutStudentsInput[]
+  set?: Prisma.ScoutSportsClubWhereUniqueInput | Prisma.ScoutSportsClubWhereUniqueInput[]
+  disconnect?: Prisma.ScoutSportsClubWhereUniqueInput | Prisma.ScoutSportsClubWhereUniqueInput[]
+  delete?: Prisma.ScoutSportsClubWhereUniqueInput | Prisma.ScoutSportsClubWhereUniqueInput[]
+  connect?: Prisma.ScoutSportsClubWhereUniqueInput | Prisma.ScoutSportsClubWhereUniqueInput[]
+  update?: Prisma.ScoutSportsClubUpdateWithWhereUniqueWithoutStudentsInput | Prisma.ScoutSportsClubUpdateWithWhereUniqueWithoutStudentsInput[]
+  updateMany?: Prisma.ScoutSportsClubUpdateManyWithWhereWithoutStudentsInput | Prisma.ScoutSportsClubUpdateManyWithWhereWithoutStudentsInput[]
+  deleteMany?: Prisma.ScoutSportsClubScalarWhereInput | Prisma.ScoutSportsClubScalarWhereInput[]
+}
+
+export type ScoutSportsClubUncheckedUpdateManyWithoutStudentsNestedInput = {
+  create?: Prisma.XOR<Prisma.ScoutSportsClubCreateWithoutStudentsInput, Prisma.ScoutSportsClubUncheckedCreateWithoutStudentsInput> | Prisma.ScoutSportsClubCreateWithoutStudentsInput[] | Prisma.ScoutSportsClubUncheckedCreateWithoutStudentsInput[]
+  connectOrCreate?: Prisma.ScoutSportsClubCreateOrConnectWithoutStudentsInput | Prisma.ScoutSportsClubCreateOrConnectWithoutStudentsInput[]
+  upsert?: Prisma.ScoutSportsClubUpsertWithWhereUniqueWithoutStudentsInput | Prisma.ScoutSportsClubUpsertWithWhereUniqueWithoutStudentsInput[]
+  set?: Prisma.ScoutSportsClubWhereUniqueInput | Prisma.ScoutSportsClubWhereUniqueInput[]
+  disconnect?: Prisma.ScoutSportsClubWhereUniqueInput | Prisma.ScoutSportsClubWhereUniqueInput[]
+  delete?: Prisma.ScoutSportsClubWhereUniqueInput | Prisma.ScoutSportsClubWhereUniqueInput[]
+  connect?: Prisma.ScoutSportsClubWhereUniqueInput | Prisma.ScoutSportsClubWhereUniqueInput[]
+  update?: Prisma.ScoutSportsClubUpdateWithWhereUniqueWithoutStudentsInput | Prisma.ScoutSportsClubUpdateWithWhereUniqueWithoutStudentsInput[]
+  updateMany?: Prisma.ScoutSportsClubUpdateManyWithWhereWithoutStudentsInput | Prisma.ScoutSportsClubUpdateManyWithWhereWithoutStudentsInput[]
+  deleteMany?: Prisma.ScoutSportsClubScalarWhereInput | Prisma.ScoutSportsClubScalarWhereInput[]
+}
+
 export type ScoutSportsClubCreateNestedManyWithoutCreated_byInput = {
   create?: Prisma.XOR<Prisma.ScoutSportsClubCreateWithoutCreated_byInput, Prisma.ScoutSportsClubUncheckedCreateWithoutCreated_byInput> | Prisma.ScoutSportsClubCreateWithoutCreated_byInput[] | Prisma.ScoutSportsClubUncheckedCreateWithoutCreated_byInput[]
   connectOrCreate?: Prisma.ScoutSportsClubCreateOrConnectWithoutCreated_byInput | Prisma.ScoutSportsClubCreateOrConnectWithoutCreated_byInput[]
@@ -496,6 +541,7 @@ export type ScoutSportsClubCreateWithoutExtra_curriculum_activityInput = {
   scout_sports_name: string
   created_at?: Date | string
   updated_at?: Date | string | null
+  students?: Prisma.StudentCreateNestedManyWithoutScout_sports_club_optionsInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_scout_sports_clubsInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_scout_sports_clubsInput
 }
@@ -507,6 +553,7 @@ export type ScoutSportsClubUncheckedCreateWithoutExtra_curriculum_activityInput 
   updated_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
+  students?: Prisma.StudentUncheckedCreateNestedManyWithoutScout_sports_club_optionsInput
 }
 
 export type ScoutSportsClubCreateOrConnectWithoutExtra_curriculum_activityInput = {
@@ -548,11 +595,53 @@ export type ScoutSportsClubScalarWhereInput = {
   updated_at?: Prisma.DateTimeNullableFilter<"ScoutSportsClub"> | Date | string | null
 }
 
+export type ScoutSportsClubCreateWithoutStudentsInput = {
+  id?: string
+  scout_sports_name: string
+  created_at?: Date | string
+  updated_at?: Date | string | null
+  extra_curriculum_activity?: Prisma.ExtraCurriculumActivityCreateNestedOneWithoutScout_sports_club_optionsInput
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_scout_sports_clubsInput
+  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_scout_sports_clubsInput
+}
+
+export type ScoutSportsClubUncheckedCreateWithoutStudentsInput = {
+  id?: string
+  scout_sports_name: string
+  extra_curriculum_activity_id?: string | null
+  created_by_id?: string | null
+  updated_by_id?: string | null
+  created_at?: Date | string
+  updated_at?: Date | string | null
+}
+
+export type ScoutSportsClubCreateOrConnectWithoutStudentsInput = {
+  where: Prisma.ScoutSportsClubWhereUniqueInput
+  create: Prisma.XOR<Prisma.ScoutSportsClubCreateWithoutStudentsInput, Prisma.ScoutSportsClubUncheckedCreateWithoutStudentsInput>
+}
+
+export type ScoutSportsClubUpsertWithWhereUniqueWithoutStudentsInput = {
+  where: Prisma.ScoutSportsClubWhereUniqueInput
+  update: Prisma.XOR<Prisma.ScoutSportsClubUpdateWithoutStudentsInput, Prisma.ScoutSportsClubUncheckedUpdateWithoutStudentsInput>
+  create: Prisma.XOR<Prisma.ScoutSportsClubCreateWithoutStudentsInput, Prisma.ScoutSportsClubUncheckedCreateWithoutStudentsInput>
+}
+
+export type ScoutSportsClubUpdateWithWhereUniqueWithoutStudentsInput = {
+  where: Prisma.ScoutSportsClubWhereUniqueInput
+  data: Prisma.XOR<Prisma.ScoutSportsClubUpdateWithoutStudentsInput, Prisma.ScoutSportsClubUncheckedUpdateWithoutStudentsInput>
+}
+
+export type ScoutSportsClubUpdateManyWithWhereWithoutStudentsInput = {
+  where: Prisma.ScoutSportsClubScalarWhereInput
+  data: Prisma.XOR<Prisma.ScoutSportsClubUpdateManyMutationInput, Prisma.ScoutSportsClubUncheckedUpdateManyWithoutStudentsInput>
+}
+
 export type ScoutSportsClubCreateWithoutCreated_byInput = {
   id?: string
   scout_sports_name: string
   created_at?: Date | string
   updated_at?: Date | string | null
+  students?: Prisma.StudentCreateNestedManyWithoutScout_sports_club_optionsInput
   extra_curriculum_activity?: Prisma.ExtraCurriculumActivityCreateNestedOneWithoutScout_sports_club_optionsInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_scout_sports_clubsInput
 }
@@ -564,6 +653,7 @@ export type ScoutSportsClubUncheckedCreateWithoutCreated_byInput = {
   updated_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
+  students?: Prisma.StudentUncheckedCreateNestedManyWithoutScout_sports_club_optionsInput
 }
 
 export type ScoutSportsClubCreateOrConnectWithoutCreated_byInput = {
@@ -581,6 +671,7 @@ export type ScoutSportsClubCreateWithoutUpdated_byInput = {
   scout_sports_name: string
   created_at?: Date | string
   updated_at?: Date | string | null
+  students?: Prisma.StudentCreateNestedManyWithoutScout_sports_club_optionsInput
   extra_curriculum_activity?: Prisma.ExtraCurriculumActivityCreateNestedOneWithoutScout_sports_club_optionsInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_scout_sports_clubsInput
 }
@@ -592,6 +683,7 @@ export type ScoutSportsClubUncheckedCreateWithoutUpdated_byInput = {
   created_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
+  students?: Prisma.StudentUncheckedCreateNestedManyWithoutScout_sports_club_optionsInput
 }
 
 export type ScoutSportsClubCreateOrConnectWithoutUpdated_byInput = {
@@ -650,6 +742,7 @@ export type ScoutSportsClubUpdateWithoutExtra_curriculum_activityInput = {
   scout_sports_name?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  students?: Prisma.StudentUpdateManyWithoutScout_sports_club_optionsNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_scout_sports_clubsNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_scout_sports_clubsNestedInput
 }
@@ -661,11 +754,42 @@ export type ScoutSportsClubUncheckedUpdateWithoutExtra_curriculum_activityInput 
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  students?: Prisma.StudentUncheckedUpdateManyWithoutScout_sports_club_optionsNestedInput
 }
 
 export type ScoutSportsClubUncheckedUpdateManyWithoutExtra_curriculum_activityInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   scout_sports_name?: Prisma.StringFieldUpdateOperationsInput | string
+  created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+}
+
+export type ScoutSportsClubUpdateWithoutStudentsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  scout_sports_name?: Prisma.StringFieldUpdateOperationsInput | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  extra_curriculum_activity?: Prisma.ExtraCurriculumActivityUpdateOneWithoutScout_sports_club_optionsNestedInput
+  created_by?: Prisma.UserUpdateOneWithoutCreated_scout_sports_clubsNestedInput
+  updated_by?: Prisma.UserUpdateOneWithoutUpdated_scout_sports_clubsNestedInput
+}
+
+export type ScoutSportsClubUncheckedUpdateWithoutStudentsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  scout_sports_name?: Prisma.StringFieldUpdateOperationsInput | string
+  extra_curriculum_activity_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+}
+
+export type ScoutSportsClubUncheckedUpdateManyWithoutStudentsInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  scout_sports_name?: Prisma.StringFieldUpdateOperationsInput | string
+  extra_curriculum_activity_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -695,6 +819,7 @@ export type ScoutSportsClubUpdateWithoutCreated_byInput = {
   scout_sports_name?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  students?: Prisma.StudentUpdateManyWithoutScout_sports_club_optionsNestedInput
   extra_curriculum_activity?: Prisma.ExtraCurriculumActivityUpdateOneWithoutScout_sports_club_optionsNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_scout_sports_clubsNestedInput
 }
@@ -706,6 +831,7 @@ export type ScoutSportsClubUncheckedUpdateWithoutCreated_byInput = {
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  students?: Prisma.StudentUncheckedUpdateManyWithoutScout_sports_club_optionsNestedInput
 }
 
 export type ScoutSportsClubUncheckedUpdateManyWithoutCreated_byInput = {
@@ -722,6 +848,7 @@ export type ScoutSportsClubUpdateWithoutUpdated_byInput = {
   scout_sports_name?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  students?: Prisma.StudentUpdateManyWithoutScout_sports_club_optionsNestedInput
   extra_curriculum_activity?: Prisma.ExtraCurriculumActivityUpdateOneWithoutScout_sports_club_optionsNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_scout_sports_clubsNestedInput
 }
@@ -733,6 +860,7 @@ export type ScoutSportsClubUncheckedUpdateWithoutUpdated_byInput = {
   created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  students?: Prisma.StudentUncheckedUpdateManyWithoutScout_sports_club_optionsNestedInput
 }
 
 export type ScoutSportsClubUncheckedUpdateManyWithoutUpdated_byInput = {
@@ -745,6 +873,35 @@ export type ScoutSportsClubUncheckedUpdateManyWithoutUpdated_byInput = {
 }
 
 
+/**
+ * Count Type ScoutSportsClubCountOutputType
+ */
+
+export type ScoutSportsClubCountOutputType = {
+  students: number
+}
+
+export type ScoutSportsClubCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  students?: boolean | ScoutSportsClubCountOutputTypeCountStudentsArgs
+}
+
+/**
+ * ScoutSportsClubCountOutputType without action
+ */
+export type ScoutSportsClubCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the ScoutSportsClubCountOutputType
+   */
+  select?: Prisma.ScoutSportsClubCountOutputTypeSelect<ExtArgs> | null
+}
+
+/**
+ * ScoutSportsClubCountOutputType without action
+ */
+export type ScoutSportsClubCountOutputTypeCountStudentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.StudentWhereInput
+}
+
 
 export type ScoutSportsClubSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -754,9 +911,11 @@ export type ScoutSportsClubSelect<ExtArgs extends runtime.Types.Extensions.Inter
   updated_by_id?: boolean
   created_at?: boolean
   updated_at?: boolean
+  students?: boolean | Prisma.ScoutSportsClub$studentsArgs<ExtArgs>
   extra_curriculum_activity?: boolean | Prisma.ScoutSportsClub$extra_curriculum_activityArgs<ExtArgs>
   created_by?: boolean | Prisma.ScoutSportsClub$created_byArgs<ExtArgs>
   updated_by?: boolean | Prisma.ScoutSportsClub$updated_byArgs<ExtArgs>
+  _count?: boolean | Prisma.ScoutSportsClubCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["scoutSportsClub"]>
 
 export type ScoutSportsClubSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -797,9 +956,11 @@ export type ScoutSportsClubSelectScalar = {
 
 export type ScoutSportsClubOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "scout_sports_name" | "extra_curriculum_activity_id" | "created_by_id" | "updated_by_id" | "created_at" | "updated_at", ExtArgs["result"]["scoutSportsClub"]>
 export type ScoutSportsClubInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  students?: boolean | Prisma.ScoutSportsClub$studentsArgs<ExtArgs>
   extra_curriculum_activity?: boolean | Prisma.ScoutSportsClub$extra_curriculum_activityArgs<ExtArgs>
   created_by?: boolean | Prisma.ScoutSportsClub$created_byArgs<ExtArgs>
   updated_by?: boolean | Prisma.ScoutSportsClub$updated_byArgs<ExtArgs>
+  _count?: boolean | Prisma.ScoutSportsClubCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type ScoutSportsClubIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   extra_curriculum_activity?: boolean | Prisma.ScoutSportsClub$extra_curriculum_activityArgs<ExtArgs>
@@ -815,6 +976,7 @@ export type ScoutSportsClubIncludeUpdateManyAndReturn<ExtArgs extends runtime.Ty
 export type $ScoutSportsClubPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "ScoutSportsClub"
   objects: {
+    students: Prisma.$StudentPayload<ExtArgs>[]
     extra_curriculum_activity: Prisma.$ExtraCurriculumActivityPayload<ExtArgs> | null
     created_by: Prisma.$UserPayload<ExtArgs> | null
     updated_by: Prisma.$UserPayload<ExtArgs> | null
@@ -1221,6 +1383,7 @@ readonly fields: ScoutSportsClubFieldRefs;
  */
 export interface Prisma__ScoutSportsClubClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
+  students<T extends Prisma.ScoutSportsClub$studentsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ScoutSportsClub$studentsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$StudentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   extra_curriculum_activity<T extends Prisma.ScoutSportsClub$extra_curriculum_activityArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ScoutSportsClub$extra_curriculum_activityArgs<ExtArgs>>): Prisma.Prisma__ExtraCurriculumActivityClient<runtime.Types.Result.GetResult<Prisma.$ExtraCurriculumActivityPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   created_by<T extends Prisma.ScoutSportsClub$created_byArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ScoutSportsClub$created_byArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   updated_by<T extends Prisma.ScoutSportsClub$updated_byArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ScoutSportsClub$updated_byArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
@@ -1658,6 +1821,30 @@ export type ScoutSportsClubDeleteManyArgs<ExtArgs extends runtime.Types.Extensio
    * Limit how many ScoutSportsClubs to delete.
    */
   limit?: number
+}
+
+/**
+ * ScoutSportsClub.students
+ */
+export type ScoutSportsClub$studentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Student
+   */
+  select?: Prisma.StudentSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Student
+   */
+  omit?: Prisma.StudentOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.StudentInclude<ExtArgs> | null
+  where?: Prisma.StudentWhereInput
+  orderBy?: Prisma.StudentOrderByWithRelationInput | Prisma.StudentOrderByWithRelationInput[]
+  cursor?: Prisma.StudentWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.StudentScalarFieldEnum | Prisma.StudentScalarFieldEnum[]
 }
 
 /**

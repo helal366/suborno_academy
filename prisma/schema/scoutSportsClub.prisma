@@ -1,18 +1,20 @@
-model ScoutSportsClub{
-    id String @id @default(uuid())
-    scout_sports_name String
+model ScoutSportsClub {
+  id                String @id @default(uuid())
+  scout_sports_name String
 
-    extra_curriculum_activity_id String?
-    extra_curriculum_activity ExtraCurriculumActivity? @relation(fields: [extra_curriculum_activity_id], references: [id])
+  students Student[]
 
-    created_by_id String?
-    created_by    User?   @relation("scout_sports_club_created_by", fields: [created_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
+  extra_curriculum_activity_id String?
+  extra_curriculum_activity    ExtraCurriculumActivity? @relation(fields: [extra_curriculum_activity_id], references: [id])
 
-    updated_by_id String?
-    updated_by    User?   @relation("scout_sports_club_updated_by", fields: [updated_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
+  created_by_id String?
+  created_by    User?   @relation("scout_sports_club_created_by", fields: [created_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
 
-    created_at DateTime @default(now())
-    updated_at DateTime? @updatedAt
+  updated_by_id String?
+  updated_by    User?   @relation("scout_sports_club_updated_by", fields: [updated_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
 
-    @@map("scout_sports_club")
+  created_at DateTime  @default(now())
+  updated_at DateTime? @updatedAt
+
+  @@map("scout_sports_club")
 }

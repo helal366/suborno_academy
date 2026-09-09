@@ -1,11 +1,11 @@
 model AcademicYear {
-  id     String @id @default(uuid())
+  id                   String @id @default(uuid())
   academic_year_number Int
 
   students_responsibility StudentResponsibility[]
-  class_routine ClassRoutine[]
-  book_classes BookClass[]
-  
+  class_routine           ClassRoutine[]
+  book_classes            BookClass[]
+
   created_by_id String?
   created_by    User?   @relation("academic_year_created_by", fields: [created_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
 
@@ -14,5 +14,6 @@ model AcademicYear {
 
   created_at DateTime  @default(now())
   updated_at DateTime? @updatedAt
+
   @@map("academic_years")
 }

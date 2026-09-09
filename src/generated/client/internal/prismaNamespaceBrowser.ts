@@ -51,8 +51,8 @@ export const AnyNull = runtime.AnyNull
 
 
 export const ModelName = {
+  AcademicAdministrativeStaff: 'AcademicAdministrativeStaff',
   AcademicResult: 'AcademicResult',
-  AcademicTeacher: 'AcademicTeacher',
   AcademicYear: 'AcademicYear',
   AuditLog: 'AuditLog',
   Book: 'Book',
@@ -61,13 +61,18 @@ export const ModelName = {
   ClassRoutine: 'ClassRoutine',
   CulturalClub: 'CulturalClub',
   ExtraCurriculumActivity: 'ExtraCurriculumActivity',
+  InterviewInformation: 'InterviewInformation',
+  JoiningHistory: 'JoiningHistory',
   LanguageClub: 'LanguageClub',
   Period: 'Period',
   PermanentAddress: 'PermanentAddress',
   PresentAddress: 'PresentAddress',
+  PreviousInstituteInformation: 'PreviousInstituteInformation',
+  PromotedHistory: 'PromotedHistory',
   QuranClub: 'QuranClub',
   QuranicSpecialPeriod: 'QuranicSpecialPeriod',
   QuranicSubject: 'QuranicSubject',
+  Reference: 'Reference',
   ScienceClub: 'ScienceClub',
   ScoutSportsClub: 'ScoutSportsClub',
   Shift: 'Shift',
@@ -79,11 +84,6 @@ export const ModelName = {
   StudentResponsibleGuardianDetails: 'StudentResponsibleGuardianDetails',
   SubjectTeacher: 'SubjectTeacher',
   TeacherHonourableResponsibility: 'TeacherHonourableResponsibility',
-  TeacherInterviewInformation: 'TeacherInterviewInformation',
-  TeacherJoiningHistory: 'TeacherJoiningHistory',
-  TeacherPreviousInstituteInformation: 'TeacherPreviousInstituteInformation',
-  TeacherPromotedHistory: 'TeacherPromotedHistory',
-  TeacherReference: 'TeacherReference',
   User: 'User',
   UserActiveInactiveHistory: 'UserActiveInactiveHistory',
   UserFatherDetails: 'UserFatherDetails',
@@ -108,6 +108,26 @@ export const TransactionIsolationLevel = runtime.makeStrictEnum({
 export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
 
 
+export const AcademicAdministrativeStaffScalarFieldEnum = {
+  id: 'id',
+  full_name: 'full_name',
+  current_position_id: 'current_position_id',
+  current_role_id: 'current_role_id',
+  teaching_working_experience_year: 'teaching_working_experience_year',
+  teaching_working_experience_month: 'teaching_working_experience_month',
+  alternative_contact_no: 'alternative_contact_no',
+  user_id: 'user_id',
+  is_subject_teacher: 'is_subject_teacher',
+  is_responsible_teacher: 'is_responsible_teacher',
+  created_by_id: 'created_by_id',
+  updated_by_id: 'updated_by_id',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
+} as const
+
+export type AcademicAdministrativeStaffScalarFieldEnum = (typeof AcademicAdministrativeStaffScalarFieldEnum)[keyof typeof AcademicAdministrativeStaffScalarFieldEnum]
+
+
 export const AcademicResultScalarFieldEnum = {
   id: 'id',
   ssc_result: 'ssc_result',
@@ -126,29 +146,6 @@ export const AcademicResultScalarFieldEnum = {
 } as const
 
 export type AcademicResultScalarFieldEnum = (typeof AcademicResultScalarFieldEnum)[keyof typeof AcademicResultScalarFieldEnum]
-
-
-export const AcademicTeacherScalarFieldEnum = {
-  id: 'id',
-  full_name: 'full_name',
-  role: 'role',
-  position: 'position',
-  current_position: 'current_position',
-  positions: 'positions',
-  teaching_experience_year: 'teaching_experience_year',
-  teaching_experience_month: 'teaching_experience_month',
-  alternative_contact_no: 'alternative_contact_no',
-  extra_curricular_activities: 'extra_curricular_activities',
-  user_id: 'user_id',
-  is_subject_teacher: 'is_subject_teacher',
-  is_responsible_teacher: 'is_responsible_teacher',
-  created_by_id: 'created_by_id',
-  updated_by_id: 'updated_by_id',
-  created_at: 'created_at',
-  updated_at: 'updated_at'
-} as const
-
-export type AcademicTeacherScalarFieldEnum = (typeof AcademicTeacherScalarFieldEnum)[keyof typeof AcademicTeacherScalarFieldEnum]
 
 
 export const AcademicYearScalarFieldEnum = {
@@ -249,10 +246,6 @@ export type CulturalClubScalarFieldEnum = (typeof CulturalClubScalarFieldEnum)[k
 
 export const ExtraCurriculumActivityScalarFieldEnum = {
   id: 'id',
-  quran_club: 'quran_club',
-  language_club: 'language_club',
-  science_club: 'science_club',
-  scout_sports_club: 'scout_sports_club',
   created_by_id: 'created_by_id',
   updated_by_id: 'updated_by_id',
   created_at: 'created_at',
@@ -260,6 +253,37 @@ export const ExtraCurriculumActivityScalarFieldEnum = {
 } as const
 
 export type ExtraCurriculumActivityScalarFieldEnum = (typeof ExtraCurriculumActivityScalarFieldEnum)[keyof typeof ExtraCurriculumActivityScalarFieldEnum]
+
+
+export const InterviewInformationScalarFieldEnum = {
+  id: 'id',
+  writen_marks: 'writen_marks',
+  viva_voice_mark: 'viva_voice_mark',
+  practical_mark: 'practical_mark',
+  total_mark: 'total_mark',
+  joining_history_id: 'joining_history_id',
+  created_by_id: 'created_by_id',
+  updated_by_id: 'updated_by_id',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
+} as const
+
+export type InterviewInformationScalarFieldEnum = (typeof InterviewInformationScalarFieldEnum)[keyof typeof InterviewInformationScalarFieldEnum]
+
+
+export const JoiningHistoryScalarFieldEnum = {
+  id: 'id',
+  applied_position: 'applied_position',
+  joining_date: 'joining_date',
+  resign_data: 'resign_data',
+  teacher_id: 'teacher_id',
+  created_by_id: 'created_by_id',
+  updated_by_id: 'updated_by_id',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
+} as const
+
+export type JoiningHistoryScalarFieldEnum = (typeof JoiningHistoryScalarFieldEnum)[keyof typeof JoiningHistoryScalarFieldEnum]
 
 
 export const LanguageClubScalarFieldEnum = {
@@ -337,6 +361,41 @@ export const PresentAddressScalarFieldEnum = {
 export type PresentAddressScalarFieldEnum = (typeof PresentAddressScalarFieldEnum)[keyof typeof PresentAddressScalarFieldEnum]
 
 
+export const PreviousInstituteInformationScalarFieldEnum = {
+  id: 'id',
+  institute_name: 'institute_name',
+  institute_contact: 'institute_contact',
+  job_duration_year: 'job_duration_year',
+  job_duration_month: 'job_duration_month',
+  salary: 'salary',
+  designation: 'designation',
+  joining_history_id: 'joining_history_id',
+  created_by_id: 'created_by_id',
+  updated_by_id: 'updated_by_id',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
+} as const
+
+export type PreviousInstituteInformationScalarFieldEnum = (typeof PreviousInstituteInformationScalarFieldEnum)[keyof typeof PreviousInstituteInformationScalarFieldEnum]
+
+
+export const PromotedHistoryScalarFieldEnum = {
+  id: 'id',
+  previous_position: 'previous_position',
+  promoted_position: 'promoted_position',
+  previous_position_joining_date: 'previous_position_joining_date',
+  previous_position_ending_date: 'previous_position_ending_date',
+  promoted_position_joining_date: 'promoted_position_joining_date',
+  academic_administrative_staff_id: 'academic_administrative_staff_id',
+  created_by_id: 'created_by_id',
+  updated_by_id: 'updated_by_id',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
+} as const
+
+export type PromotedHistoryScalarFieldEnum = (typeof PromotedHistoryScalarFieldEnum)[keyof typeof PromotedHistoryScalarFieldEnum]
+
+
 export const QuranClubScalarFieldEnum = {
   id: 'id',
   quran_name: 'quran_name',
@@ -375,6 +434,26 @@ export const QuranicSubjectScalarFieldEnum = {
 } as const
 
 export type QuranicSubjectScalarFieldEnum = (typeof QuranicSubjectScalarFieldEnum)[keyof typeof QuranicSubjectScalarFieldEnum]
+
+
+export const ReferenceScalarFieldEnum = {
+  id: 'id',
+  ref1_name: 'ref1_name',
+  ref1_mobile_number: 'ref1_mobile_number',
+  ref1_occupation: 'ref1_occupation',
+  ref1_job_title: 'ref1_job_title',
+  ref2_name: 'ref2_name',
+  ref2_mobile_number: 'ref2_mobile_number',
+  ref2_occupation: 'ref2_occupation',
+  ref2_job_title: 'ref2_job_title',
+  joining_history_id: 'joining_history_id',
+  created_by_id: 'created_by_id',
+  updated_by_id: 'updated_by_id',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
+} as const
+
+export type ReferenceScalarFieldEnum = (typeof ReferenceScalarFieldEnum)[keyof typeof ReferenceScalarFieldEnum]
 
 
 export const ScienceClubScalarFieldEnum = {
@@ -556,92 +635,6 @@ export const TeacherHonourableResponsibilityScalarFieldEnum = {
 export type TeacherHonourableResponsibilityScalarFieldEnum = (typeof TeacherHonourableResponsibilityScalarFieldEnum)[keyof typeof TeacherHonourableResponsibilityScalarFieldEnum]
 
 
-export const TeacherInterviewInformationScalarFieldEnum = {
-  id: 'id',
-  writen_marks: 'writen_marks',
-  viva_voice_mark: 'viva_voice_mark',
-  practical_mark: 'practical_mark',
-  total_mark: 'total_mark',
-  joining_history_id: 'joining_history_id',
-  created_by_id: 'created_by_id',
-  updated_by_id: 'updated_by_id',
-  created_at: 'created_at',
-  updated_at: 'updated_at'
-} as const
-
-export type TeacherInterviewInformationScalarFieldEnum = (typeof TeacherInterviewInformationScalarFieldEnum)[keyof typeof TeacherInterviewInformationScalarFieldEnum]
-
-
-export const TeacherJoiningHistoryScalarFieldEnum = {
-  id: 'id',
-  applied_position: 'applied_position',
-  joining_date: 'joining_date',
-  resign_data: 'resign_data',
-  teacher_id: 'teacher_id',
-  created_by_id: 'created_by_id',
-  updated_by_id: 'updated_by_id',
-  created_at: 'created_at',
-  updated_at: 'updated_at'
-} as const
-
-export type TeacherJoiningHistoryScalarFieldEnum = (typeof TeacherJoiningHistoryScalarFieldEnum)[keyof typeof TeacherJoiningHistoryScalarFieldEnum]
-
-
-export const TeacherPreviousInstituteInformationScalarFieldEnum = {
-  id: 'id',
-  institute_name: 'institute_name',
-  institute_contact: 'institute_contact',
-  job_duration_year: 'job_duration_year',
-  job_duration_month: 'job_duration_month',
-  salary: 'salary',
-  designation: 'designation',
-  joining_history_id: 'joining_history_id',
-  created_by_id: 'created_by_id',
-  updated_by_id: 'updated_by_id',
-  created_at: 'created_at',
-  updated_at: 'updated_at'
-} as const
-
-export type TeacherPreviousInstituteInformationScalarFieldEnum = (typeof TeacherPreviousInstituteInformationScalarFieldEnum)[keyof typeof TeacherPreviousInstituteInformationScalarFieldEnum]
-
-
-export const TeacherPromotedHistoryScalarFieldEnum = {
-  id: 'id',
-  previous_position: 'previous_position',
-  promoted_position: 'promoted_position',
-  previous_position_joining_date: 'previous_position_joining_date',
-  previous_position_ending_date: 'previous_position_ending_date',
-  promoted_position_joining_date: 'promoted_position_joining_date',
-  joining_history_id: 'joining_history_id',
-  created_by_id: 'created_by_id',
-  updated_by_id: 'updated_by_id',
-  created_at: 'created_at',
-  updated_at: 'updated_at'
-} as const
-
-export type TeacherPromotedHistoryScalarFieldEnum = (typeof TeacherPromotedHistoryScalarFieldEnum)[keyof typeof TeacherPromotedHistoryScalarFieldEnum]
-
-
-export const TeacherReferenceScalarFieldEnum = {
-  id: 'id',
-  ref1_name: 'ref1_name',
-  ref1_mobile_number: 'ref1_mobile_number',
-  ref1_occupation: 'ref1_occupation',
-  ref1_job_title: 'ref1_job_title',
-  ref2_name: 'ref2_name',
-  ref2_mobile_number: 'ref2_mobile_number',
-  ref2_occupation: 'ref2_occupation',
-  ref2_job_title: 'ref2_job_title',
-  joining_history_id: 'joining_history_id',
-  created_by_id: 'created_by_id',
-  updated_by_id: 'updated_by_id',
-  created_at: 'created_at',
-  updated_at: 'updated_at'
-} as const
-
-export type TeacherReferenceScalarFieldEnum = (typeof TeacherReferenceScalarFieldEnum)[keyof typeof TeacherReferenceScalarFieldEnum]
-
-
 export const UserScalarFieldEnum = {
   id: 'id',
   full_name: 'full_name',
@@ -729,9 +722,9 @@ export type UserMotherDetailsScalarFieldEnum = (typeof UserMotherDetailsScalarFi
 
 
 export const UserPositionScalarFieldEnum = {
-  position_id: 'position_id',
+  id: 'id',
   position_name: 'position_name',
-  role_name: 'role_name',
+  role_id: 'role_id',
   created_by_id: 'created_by_id',
   updated_by_id: 'updated_by_id',
   created_at: 'created_at',
@@ -742,7 +735,7 @@ export type UserPositionScalarFieldEnum = (typeof UserPositionScalarFieldEnum)[k
 
 
 export const UserRoleScalarFieldEnum = {
-  role_id: 'role_id',
+  id: 'id',
   role_name: 'role_name',
   created_by_id: 'created_by_id',
   updated_by_id: 'updated_by_id',

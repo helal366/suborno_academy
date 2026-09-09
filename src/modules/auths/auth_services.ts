@@ -61,8 +61,9 @@ const authLogin = async (payload: IAuthLogin) => {
   return { accessToken, refreshToken };
 };
 
+// REGISTRATION
 const authRegister= async(payload:TAuthRegistrationPayload)=>{
-  const {full_name, mobile_number, email, position, role}=payload
+  const {full_name, mobile_number, email, position, role, ...otherFields}=payload
   const isExist = await prisma.user.findUnique({
     where: {user_full_name_mobile_unique:{full_name, mobile_number}}
   });
@@ -106,11 +107,20 @@ const authRegister= async(payload:TAuthRegistrationPayload)=>{
   }
 
   // create password with helper function
-  const password = await createPassword();
+  // const password = await createPassword();
   
-  // const newUser = await prisma.user.create({
-  //   data: payload
-  // })
+  // CREATE USER
+  const newUser = await prisma.user.create({
+    data: {
+      full_name, 
+      mobile_number, 
+      email, 
+      position:{
+        connect: {position_name: position, role_name: role}
+      }, 
+      ...otherFields
+    }
+  })
 }
 export const authServices = {
   authLogin,

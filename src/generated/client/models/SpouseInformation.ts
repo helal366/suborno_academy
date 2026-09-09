@@ -298,7 +298,7 @@ export type SpouseInformationWhereInput = {
   updated_at?: Prisma.DateTimeNullableFilter<"SpouseInformation"> | Date | string | null
   present_address?: Prisma.XOR<Prisma.PresentAddressNullableScalarRelationFilter, Prisma.PresentAddressWhereInput> | null
   permanent_address?: Prisma.XOR<Prisma.PermanentAddressNullableScalarRelationFilter, Prisma.PermanentAddressWhereInput> | null
-  teacher?: Prisma.XOR<Prisma.AcademicTeacherNullableScalarRelationFilter, Prisma.AcademicTeacherWhereInput> | null
+  teacher?: Prisma.XOR<Prisma.AcademicAdministrativeStaffNullableScalarRelationFilter, Prisma.AcademicAdministrativeStaffWhereInput> | null
   created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
   updated_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
 }
@@ -321,7 +321,7 @@ export type SpouseInformationOrderByWithRelationInput = {
   updated_at?: Prisma.SortOrderInput | Prisma.SortOrder
   present_address?: Prisma.PresentAddressOrderByWithRelationInput
   permanent_address?: Prisma.PermanentAddressOrderByWithRelationInput
-  teacher?: Prisma.AcademicTeacherOrderByWithRelationInput
+  teacher?: Prisma.AcademicAdministrativeStaffOrderByWithRelationInput
   created_by?: Prisma.UserOrderByWithRelationInput
   updated_by?: Prisma.UserOrderByWithRelationInput
 }
@@ -347,7 +347,7 @@ export type SpouseInformationWhereUniqueInput = Prisma.AtLeast<{
   updated_at?: Prisma.DateTimeNullableFilter<"SpouseInformation"> | Date | string | null
   present_address?: Prisma.XOR<Prisma.PresentAddressNullableScalarRelationFilter, Prisma.PresentAddressWhereInput> | null
   permanent_address?: Prisma.XOR<Prisma.PermanentAddressNullableScalarRelationFilter, Prisma.PermanentAddressWhereInput> | null
-  teacher?: Prisma.XOR<Prisma.AcademicTeacherNullableScalarRelationFilter, Prisma.AcademicTeacherWhereInput> | null
+  teacher?: Prisma.XOR<Prisma.AcademicAdministrativeStaffNullableScalarRelationFilter, Prisma.AcademicAdministrativeStaffWhereInput> | null
   created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
   updated_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
 }, "spouse_id" | "teacher_id">
@@ -411,7 +411,7 @@ export type SpouseInformationCreateInput = {
   updated_at?: Date | string | null
   present_address?: Prisma.PresentAddressCreateNestedOneWithoutSpouseInput
   permanent_address?: Prisma.PermanentAddressCreateNestedOneWithoutSpouseInput
-  teacher?: Prisma.AcademicTeacherCreateNestedOneWithoutSpouse_informationInput
+  teacher?: Prisma.AcademicAdministrativeStaffCreateNestedOneWithoutSpouse_informationInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_spouse_informationInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_spouse_informationInput
 }
@@ -451,7 +451,7 @@ export type SpouseInformationUpdateInput = {
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   present_address?: Prisma.PresentAddressUpdateOneWithoutSpouseNestedInput
   permanent_address?: Prisma.PermanentAddressUpdateOneWithoutSpouseNestedInput
-  teacher?: Prisma.AcademicTeacherUpdateOneWithoutSpouse_informationNestedInput
+  teacher?: Prisma.AcademicAdministrativeStaffUpdateOneWithoutSpouse_informationNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_spouse_informationNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_spouse_informationNestedInput
 }
@@ -858,7 +858,7 @@ export type SpouseInformationCreateWithoutPermanent_addressInput = {
   created_at?: Date | string
   updated_at?: Date | string | null
   present_address?: Prisma.PresentAddressCreateNestedOneWithoutSpouseInput
-  teacher?: Prisma.AcademicTeacherCreateNestedOneWithoutSpouse_informationInput
+  teacher?: Prisma.AcademicAdministrativeStaffCreateNestedOneWithoutSpouse_informationInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_spouse_informationInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_spouse_informationInput
 }
@@ -912,7 +912,7 @@ export type SpouseInformationUpdateWithoutPermanent_addressInput = {
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   present_address?: Prisma.PresentAddressUpdateOneWithoutSpouseNestedInput
-  teacher?: Prisma.AcademicTeacherUpdateOneWithoutSpouse_informationNestedInput
+  teacher?: Prisma.AcademicAdministrativeStaffUpdateOneWithoutSpouse_informationNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_spouse_informationNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_spouse_informationNestedInput
 }
@@ -950,7 +950,7 @@ export type SpouseInformationCreateWithoutPresent_addressInput = {
   created_at?: Date | string
   updated_at?: Date | string | null
   permanent_address?: Prisma.PermanentAddressCreateNestedOneWithoutSpouseInput
-  teacher?: Prisma.AcademicTeacherCreateNestedOneWithoutSpouse_informationInput
+  teacher?: Prisma.AcademicAdministrativeStaffCreateNestedOneWithoutSpouse_informationInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_spouse_informationInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_spouse_informationInput
 }
@@ -1004,7 +1004,7 @@ export type SpouseInformationUpdateWithoutPresent_addressInput = {
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   permanent_address?: Prisma.PermanentAddressUpdateOneWithoutSpouseNestedInput
-  teacher?: Prisma.AcademicTeacherUpdateOneWithoutSpouse_informationNestedInput
+  teacher?: Prisma.AcademicAdministrativeStaffUpdateOneWithoutSpouse_informationNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_spouse_informationNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_spouse_informationNestedInput
 }
@@ -1043,7 +1043,7 @@ export type SpouseInformationCreateWithoutCreated_byInput = {
   updated_at?: Date | string | null
   present_address?: Prisma.PresentAddressCreateNestedOneWithoutSpouseInput
   permanent_address?: Prisma.PermanentAddressCreateNestedOneWithoutSpouseInput
-  teacher?: Prisma.AcademicTeacherCreateNestedOneWithoutSpouse_informationInput
+  teacher?: Prisma.AcademicAdministrativeStaffCreateNestedOneWithoutSpouse_informationInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_spouse_informationInput
 }
 
@@ -1091,7 +1091,7 @@ export type SpouseInformationCreateWithoutUpdated_byInput = {
   updated_at?: Date | string | null
   present_address?: Prisma.PresentAddressCreateNestedOneWithoutSpouseInput
   permanent_address?: Prisma.PermanentAddressCreateNestedOneWithoutSpouseInput
-  teacher?: Prisma.AcademicTeacherCreateNestedOneWithoutSpouse_informationInput
+  teacher?: Prisma.AcademicAdministrativeStaffCreateNestedOneWithoutSpouse_informationInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_spouse_informationInput
 }
 
@@ -1226,7 +1226,7 @@ export type SpouseInformationUpdateWithoutCreated_byInput = {
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   present_address?: Prisma.PresentAddressUpdateOneWithoutSpouseNestedInput
   permanent_address?: Prisma.PermanentAddressUpdateOneWithoutSpouseNestedInput
-  teacher?: Prisma.AcademicTeacherUpdateOneWithoutSpouse_informationNestedInput
+  teacher?: Prisma.AcademicAdministrativeStaffUpdateOneWithoutSpouse_informationNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_spouse_informationNestedInput
 }
 
@@ -1281,7 +1281,7 @@ export type SpouseInformationUpdateWithoutUpdated_byInput = {
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   present_address?: Prisma.PresentAddressUpdateOneWithoutSpouseNestedInput
   permanent_address?: Prisma.PermanentAddressUpdateOneWithoutSpouseNestedInput
-  teacher?: Prisma.AcademicTeacherUpdateOneWithoutSpouse_informationNestedInput
+  teacher?: Prisma.AcademicAdministrativeStaffUpdateOneWithoutSpouse_informationNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_spouse_informationNestedInput
 }
 
@@ -1430,7 +1430,7 @@ export type $SpouseInformationPayload<ExtArgs extends runtime.Types.Extensions.I
   objects: {
     present_address: Prisma.$PresentAddressPayload<ExtArgs> | null
     permanent_address: Prisma.$PermanentAddressPayload<ExtArgs> | null
-    teacher: Prisma.$AcademicTeacherPayload<ExtArgs> | null
+    teacher: Prisma.$AcademicAdministrativeStaffPayload<ExtArgs> | null
     created_by: Prisma.$UserPayload<ExtArgs> | null
     updated_by: Prisma.$UserPayload<ExtArgs> | null
   }
@@ -1846,7 +1846,7 @@ export interface Prisma__SpouseInformationClient<T, Null = never, ExtArgs extend
   readonly [Symbol.toStringTag]: "PrismaPromise"
   present_address<T extends Prisma.SpouseInformation$present_addressArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.SpouseInformation$present_addressArgs<ExtArgs>>): Prisma.Prisma__PresentAddressClient<runtime.Types.Result.GetResult<Prisma.$PresentAddressPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   permanent_address<T extends Prisma.SpouseInformation$permanent_addressArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.SpouseInformation$permanent_addressArgs<ExtArgs>>): Prisma.Prisma__PermanentAddressClient<runtime.Types.Result.GetResult<Prisma.$PermanentAddressPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-  teacher<T extends Prisma.SpouseInformation$teacherArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.SpouseInformation$teacherArgs<ExtArgs>>): Prisma.Prisma__AcademicTeacherClient<runtime.Types.Result.GetResult<Prisma.$AcademicTeacherPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  teacher<T extends Prisma.SpouseInformation$teacherArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.SpouseInformation$teacherArgs<ExtArgs>>): Prisma.Prisma__AcademicAdministrativeStaffClient<runtime.Types.Result.GetResult<Prisma.$AcademicAdministrativeStaffPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   created_by<T extends Prisma.SpouseInformation$created_byArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.SpouseInformation$created_byArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   updated_by<T extends Prisma.SpouseInformation$updated_byArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.SpouseInformation$updated_byArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   /**
@@ -2336,18 +2336,18 @@ export type SpouseInformation$permanent_addressArgs<ExtArgs extends runtime.Type
  */
 export type SpouseInformation$teacherArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the AcademicTeacher
+   * Select specific fields to fetch from the AcademicAdministrativeStaff
    */
-  select?: Prisma.AcademicTeacherSelect<ExtArgs> | null
+  select?: Prisma.AcademicAdministrativeStaffSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the AcademicTeacher
+   * Omit specific fields from the AcademicAdministrativeStaff
    */
-  omit?: Prisma.AcademicTeacherOmit<ExtArgs> | null
+  omit?: Prisma.AcademicAdministrativeStaffOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.AcademicTeacherInclude<ExtArgs> | null
-  where?: Prisma.AcademicTeacherWhereInput
+  include?: Prisma.AcademicAdministrativeStaffInclude<ExtArgs> | null
+  where?: Prisma.AcademicAdministrativeStaffWhereInput
 }
 
 /**

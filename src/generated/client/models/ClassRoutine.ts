@@ -232,7 +232,7 @@ export type ClassRoutineWhereInput = {
   updated_at?: Prisma.DateTimeNullableFilter<"ClassRoutine"> | Date | string | null
   shift?: Prisma.XOR<Prisma.ShiftScalarRelationFilter, Prisma.ShiftWhereInput>
   period?: Prisma.XOR<Prisma.PeriodScalarRelationFilter, Prisma.PeriodWhereInput>
-  teacher?: Prisma.XOR<Prisma.AcademicTeacherScalarRelationFilter, Prisma.AcademicTeacherWhereInput>
+  teacher?: Prisma.XOR<Prisma.AcademicAdministrativeStaffScalarRelationFilter, Prisma.AcademicAdministrativeStaffWhereInput>
   class?: Prisma.XOR<Prisma.ClassScalarRelationFilter, Prisma.ClassWhereInput>
   academic_year?: Prisma.XOR<Prisma.AcademicYearScalarRelationFilter, Prisma.AcademicYearWhereInput>
   created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
@@ -253,7 +253,7 @@ export type ClassRoutineOrderByWithRelationInput = {
   updated_at?: Prisma.SortOrderInput | Prisma.SortOrder
   shift?: Prisma.ShiftOrderByWithRelationInput
   period?: Prisma.PeriodOrderByWithRelationInput
-  teacher?: Prisma.AcademicTeacherOrderByWithRelationInput
+  teacher?: Prisma.AcademicAdministrativeStaffOrderByWithRelationInput
   class?: Prisma.ClassOrderByWithRelationInput
   academic_year?: Prisma.AcademicYearOrderByWithRelationInput
   created_by?: Prisma.UserOrderByWithRelationInput
@@ -279,7 +279,7 @@ export type ClassRoutineWhereUniqueInput = Prisma.AtLeast<{
   updated_at?: Prisma.DateTimeNullableFilter<"ClassRoutine"> | Date | string | null
   shift?: Prisma.XOR<Prisma.ShiftScalarRelationFilter, Prisma.ShiftWhereInput>
   period?: Prisma.XOR<Prisma.PeriodScalarRelationFilter, Prisma.PeriodWhereInput>
-  teacher?: Prisma.XOR<Prisma.AcademicTeacherScalarRelationFilter, Prisma.AcademicTeacherWhereInput>
+  teacher?: Prisma.XOR<Prisma.AcademicAdministrativeStaffScalarRelationFilter, Prisma.AcademicAdministrativeStaffWhereInput>
   class?: Prisma.XOR<Prisma.ClassScalarRelationFilter, Prisma.ClassWhereInput>
   academic_year?: Prisma.XOR<Prisma.AcademicYearScalarRelationFilter, Prisma.AcademicYearWhereInput>
   created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
@@ -327,7 +327,7 @@ export type ClassRoutineCreateInput = {
   updated_at?: Date | string | null
   shift: Prisma.ShiftCreateNestedOneWithoutClass_routine_shiftInput
   period: Prisma.PeriodCreateNestedOneWithoutClasses_from_routineInput
-  teacher: Prisma.AcademicTeacherCreateNestedOneWithoutMy_classesInput
+  teacher: Prisma.AcademicAdministrativeStaffCreateNestedOneWithoutMy_classesInput
   class: Prisma.ClassCreateNestedOneWithoutClass_routinesInput
   academic_year: Prisma.AcademicYearCreateNestedOneWithoutClass_routineInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_routineInput
@@ -355,7 +355,7 @@ export type ClassRoutineUpdateInput = {
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   shift?: Prisma.ShiftUpdateOneRequiredWithoutClass_routine_shiftNestedInput
   period?: Prisma.PeriodUpdateOneRequiredWithoutClasses_from_routineNestedInput
-  teacher?: Prisma.AcademicTeacherUpdateOneRequiredWithoutMy_classesNestedInput
+  teacher?: Prisma.AcademicAdministrativeStaffUpdateOneRequiredWithoutMy_classesNestedInput
   class?: Prisma.ClassUpdateOneRequiredWithoutClass_routinesNestedInput
   academic_year?: Prisma.AcademicYearUpdateOneRequiredWithoutClass_routineNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_routineNestedInput
@@ -849,7 +849,7 @@ export type ClassRoutineCreateWithoutAcademic_yearInput = {
   updated_at?: Date | string | null
   shift: Prisma.ShiftCreateNestedOneWithoutClass_routine_shiftInput
   period: Prisma.PeriodCreateNestedOneWithoutClasses_from_routineInput
-  teacher: Prisma.AcademicTeacherCreateNestedOneWithoutMy_classesInput
+  teacher: Prisma.AcademicAdministrativeStaffCreateNestedOneWithoutMy_classesInput
   class: Prisma.ClassCreateNestedOneWithoutClass_routinesInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_routineInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_routineInput
@@ -901,7 +901,7 @@ export type ClassRoutineCreateWithoutClassInput = {
   updated_at?: Date | string | null
   shift: Prisma.ShiftCreateNestedOneWithoutClass_routine_shiftInput
   period: Prisma.PeriodCreateNestedOneWithoutClasses_from_routineInput
-  teacher: Prisma.AcademicTeacherCreateNestedOneWithoutMy_classesInput
+  teacher: Prisma.AcademicAdministrativeStaffCreateNestedOneWithoutMy_classesInput
   academic_year: Prisma.AcademicYearCreateNestedOneWithoutClass_routineInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_routineInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_routineInput
@@ -952,7 +952,7 @@ export type ClassRoutineCreateWithoutPeriodInput = {
   created_at?: Date | string
   updated_at?: Date | string | null
   shift: Prisma.ShiftCreateNestedOneWithoutClass_routine_shiftInput
-  teacher: Prisma.AcademicTeacherCreateNestedOneWithoutMy_classesInput
+  teacher: Prisma.AcademicAdministrativeStaffCreateNestedOneWithoutMy_classesInput
   class: Prisma.ClassCreateNestedOneWithoutClass_routinesInput
   academic_year: Prisma.AcademicYearCreateNestedOneWithoutClass_routineInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_routineInput
@@ -1004,7 +1004,7 @@ export type ClassRoutineCreateWithoutShiftInput = {
   created_at?: Date | string
   updated_at?: Date | string | null
   period: Prisma.PeriodCreateNestedOneWithoutClasses_from_routineInput
-  teacher: Prisma.AcademicTeacherCreateNestedOneWithoutMy_classesInput
+  teacher: Prisma.AcademicAdministrativeStaffCreateNestedOneWithoutMy_classesInput
   class: Prisma.ClassCreateNestedOneWithoutClass_routinesInput
   academic_year: Prisma.AcademicYearCreateNestedOneWithoutClass_routineInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_routineInput
@@ -1057,7 +1057,7 @@ export type ClassRoutineCreateWithoutCreated_byInput = {
   updated_at?: Date | string | null
   shift: Prisma.ShiftCreateNestedOneWithoutClass_routine_shiftInput
   period: Prisma.PeriodCreateNestedOneWithoutClasses_from_routineInput
-  teacher: Prisma.AcademicTeacherCreateNestedOneWithoutMy_classesInput
+  teacher: Prisma.AcademicAdministrativeStaffCreateNestedOneWithoutMy_classesInput
   class: Prisma.ClassCreateNestedOneWithoutClass_routinesInput
   academic_year: Prisma.AcademicYearCreateNestedOneWithoutClass_routineInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_routineInput
@@ -1093,7 +1093,7 @@ export type ClassRoutineCreateWithoutUpdated_byInput = {
   updated_at?: Date | string | null
   shift: Prisma.ShiftCreateNestedOneWithoutClass_routine_shiftInput
   period: Prisma.PeriodCreateNestedOneWithoutClasses_from_routineInput
-  teacher: Prisma.AcademicTeacherCreateNestedOneWithoutMy_classesInput
+  teacher: Prisma.AcademicAdministrativeStaffCreateNestedOneWithoutMy_classesInput
   class: Prisma.ClassCreateNestedOneWithoutClass_routinesInput
   academic_year: Prisma.AcademicYearCreateNestedOneWithoutClass_routineInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_routineInput
@@ -1226,7 +1226,7 @@ export type ClassRoutineUpdateWithoutAcademic_yearInput = {
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   shift?: Prisma.ShiftUpdateOneRequiredWithoutClass_routine_shiftNestedInput
   period?: Prisma.PeriodUpdateOneRequiredWithoutClasses_from_routineNestedInput
-  teacher?: Prisma.AcademicTeacherUpdateOneRequiredWithoutMy_classesNestedInput
+  teacher?: Prisma.AcademicAdministrativeStaffUpdateOneRequiredWithoutMy_classesNestedInput
   class?: Prisma.ClassUpdateOneRequiredWithoutClass_routinesNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_routineNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_routineNestedInput
@@ -1278,7 +1278,7 @@ export type ClassRoutineUpdateWithoutClassInput = {
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   shift?: Prisma.ShiftUpdateOneRequiredWithoutClass_routine_shiftNestedInput
   period?: Prisma.PeriodUpdateOneRequiredWithoutClasses_from_routineNestedInput
-  teacher?: Prisma.AcademicTeacherUpdateOneRequiredWithoutMy_classesNestedInput
+  teacher?: Prisma.AcademicAdministrativeStaffUpdateOneRequiredWithoutMy_classesNestedInput
   academic_year?: Prisma.AcademicYearUpdateOneRequiredWithoutClass_routineNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_routineNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_routineNestedInput
@@ -1329,7 +1329,7 @@ export type ClassRoutineUpdateWithoutPeriodInput = {
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   shift?: Prisma.ShiftUpdateOneRequiredWithoutClass_routine_shiftNestedInput
-  teacher?: Prisma.AcademicTeacherUpdateOneRequiredWithoutMy_classesNestedInput
+  teacher?: Prisma.AcademicAdministrativeStaffUpdateOneRequiredWithoutMy_classesNestedInput
   class?: Prisma.ClassUpdateOneRequiredWithoutClass_routinesNestedInput
   academic_year?: Prisma.AcademicYearUpdateOneRequiredWithoutClass_routineNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_routineNestedInput
@@ -1381,7 +1381,7 @@ export type ClassRoutineUpdateWithoutShiftInput = {
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   period?: Prisma.PeriodUpdateOneRequiredWithoutClasses_from_routineNestedInput
-  teacher?: Prisma.AcademicTeacherUpdateOneRequiredWithoutMy_classesNestedInput
+  teacher?: Prisma.AcademicAdministrativeStaffUpdateOneRequiredWithoutMy_classesNestedInput
   class?: Prisma.ClassUpdateOneRequiredWithoutClass_routinesNestedInput
   academic_year?: Prisma.AcademicYearUpdateOneRequiredWithoutClass_routineNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_routineNestedInput
@@ -1447,7 +1447,7 @@ export type ClassRoutineUpdateWithoutCreated_byInput = {
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   shift?: Prisma.ShiftUpdateOneRequiredWithoutClass_routine_shiftNestedInput
   period?: Prisma.PeriodUpdateOneRequiredWithoutClasses_from_routineNestedInput
-  teacher?: Prisma.AcademicTeacherUpdateOneRequiredWithoutMy_classesNestedInput
+  teacher?: Prisma.AcademicAdministrativeStaffUpdateOneRequiredWithoutMy_classesNestedInput
   class?: Prisma.ClassUpdateOneRequiredWithoutClass_routinesNestedInput
   academic_year?: Prisma.AcademicYearUpdateOneRequiredWithoutClass_routineNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_routineNestedInput
@@ -1486,7 +1486,7 @@ export type ClassRoutineUpdateWithoutUpdated_byInput = {
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   shift?: Prisma.ShiftUpdateOneRequiredWithoutClass_routine_shiftNestedInput
   period?: Prisma.PeriodUpdateOneRequiredWithoutClasses_from_routineNestedInput
-  teacher?: Prisma.AcademicTeacherUpdateOneRequiredWithoutMy_classesNestedInput
+  teacher?: Prisma.AcademicAdministrativeStaffUpdateOneRequiredWithoutMy_classesNestedInput
   class?: Prisma.ClassUpdateOneRequiredWithoutClass_routinesNestedInput
   academic_year?: Prisma.AcademicYearUpdateOneRequiredWithoutClass_routineNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_routineNestedInput
@@ -1534,7 +1534,7 @@ export type ClassRoutineSelect<ExtArgs extends runtime.Types.Extensions.Internal
   updated_at?: boolean
   shift?: boolean | Prisma.ShiftDefaultArgs<ExtArgs>
   period?: boolean | Prisma.PeriodDefaultArgs<ExtArgs>
-  teacher?: boolean | Prisma.AcademicTeacherDefaultArgs<ExtArgs>
+  teacher?: boolean | Prisma.AcademicAdministrativeStaffDefaultArgs<ExtArgs>
   class?: boolean | Prisma.ClassDefaultArgs<ExtArgs>
   academic_year?: boolean | Prisma.AcademicYearDefaultArgs<ExtArgs>
   created_by?: boolean | Prisma.ClassRoutine$created_byArgs<ExtArgs>
@@ -1555,7 +1555,7 @@ export type ClassRoutineSelectCreateManyAndReturn<ExtArgs extends runtime.Types.
   updated_at?: boolean
   shift?: boolean | Prisma.ShiftDefaultArgs<ExtArgs>
   period?: boolean | Prisma.PeriodDefaultArgs<ExtArgs>
-  teacher?: boolean | Prisma.AcademicTeacherDefaultArgs<ExtArgs>
+  teacher?: boolean | Prisma.AcademicAdministrativeStaffDefaultArgs<ExtArgs>
   class?: boolean | Prisma.ClassDefaultArgs<ExtArgs>
   academic_year?: boolean | Prisma.AcademicYearDefaultArgs<ExtArgs>
   created_by?: boolean | Prisma.ClassRoutine$created_byArgs<ExtArgs>
@@ -1576,7 +1576,7 @@ export type ClassRoutineSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.
   updated_at?: boolean
   shift?: boolean | Prisma.ShiftDefaultArgs<ExtArgs>
   period?: boolean | Prisma.PeriodDefaultArgs<ExtArgs>
-  teacher?: boolean | Prisma.AcademicTeacherDefaultArgs<ExtArgs>
+  teacher?: boolean | Prisma.AcademicAdministrativeStaffDefaultArgs<ExtArgs>
   class?: boolean | Prisma.ClassDefaultArgs<ExtArgs>
   academic_year?: boolean | Prisma.AcademicYearDefaultArgs<ExtArgs>
   created_by?: boolean | Prisma.ClassRoutine$created_byArgs<ExtArgs>
@@ -1601,7 +1601,7 @@ export type ClassRoutineOmit<ExtArgs extends runtime.Types.Extensions.InternalAr
 export type ClassRoutineInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   shift?: boolean | Prisma.ShiftDefaultArgs<ExtArgs>
   period?: boolean | Prisma.PeriodDefaultArgs<ExtArgs>
-  teacher?: boolean | Prisma.AcademicTeacherDefaultArgs<ExtArgs>
+  teacher?: boolean | Prisma.AcademicAdministrativeStaffDefaultArgs<ExtArgs>
   class?: boolean | Prisma.ClassDefaultArgs<ExtArgs>
   academic_year?: boolean | Prisma.AcademicYearDefaultArgs<ExtArgs>
   created_by?: boolean | Prisma.ClassRoutine$created_byArgs<ExtArgs>
@@ -1610,7 +1610,7 @@ export type ClassRoutineInclude<ExtArgs extends runtime.Types.Extensions.Interna
 export type ClassRoutineIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   shift?: boolean | Prisma.ShiftDefaultArgs<ExtArgs>
   period?: boolean | Prisma.PeriodDefaultArgs<ExtArgs>
-  teacher?: boolean | Prisma.AcademicTeacherDefaultArgs<ExtArgs>
+  teacher?: boolean | Prisma.AcademicAdministrativeStaffDefaultArgs<ExtArgs>
   class?: boolean | Prisma.ClassDefaultArgs<ExtArgs>
   academic_year?: boolean | Prisma.AcademicYearDefaultArgs<ExtArgs>
   created_by?: boolean | Prisma.ClassRoutine$created_byArgs<ExtArgs>
@@ -1619,7 +1619,7 @@ export type ClassRoutineIncludeCreateManyAndReturn<ExtArgs extends runtime.Types
 export type ClassRoutineIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   shift?: boolean | Prisma.ShiftDefaultArgs<ExtArgs>
   period?: boolean | Prisma.PeriodDefaultArgs<ExtArgs>
-  teacher?: boolean | Prisma.AcademicTeacherDefaultArgs<ExtArgs>
+  teacher?: boolean | Prisma.AcademicAdministrativeStaffDefaultArgs<ExtArgs>
   class?: boolean | Prisma.ClassDefaultArgs<ExtArgs>
   academic_year?: boolean | Prisma.AcademicYearDefaultArgs<ExtArgs>
   created_by?: boolean | Prisma.ClassRoutine$created_byArgs<ExtArgs>
@@ -1631,7 +1631,7 @@ export type $ClassRoutinePayload<ExtArgs extends runtime.Types.Extensions.Intern
   objects: {
     shift: Prisma.$ShiftPayload<ExtArgs>
     period: Prisma.$PeriodPayload<ExtArgs>
-    teacher: Prisma.$AcademicTeacherPayload<ExtArgs>
+    teacher: Prisma.$AcademicAdministrativeStaffPayload<ExtArgs>
     class: Prisma.$ClassPayload<ExtArgs>
     academic_year: Prisma.$AcademicYearPayload<ExtArgs>
     created_by: Prisma.$UserPayload<ExtArgs> | null
@@ -2045,7 +2045,7 @@ export interface Prisma__ClassRoutineClient<T, Null = never, ExtArgs extends run
   readonly [Symbol.toStringTag]: "PrismaPromise"
   shift<T extends Prisma.ShiftDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ShiftDefaultArgs<ExtArgs>>): Prisma.Prisma__ShiftClient<runtime.Types.Result.GetResult<Prisma.$ShiftPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   period<T extends Prisma.PeriodDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.PeriodDefaultArgs<ExtArgs>>): Prisma.Prisma__PeriodClient<runtime.Types.Result.GetResult<Prisma.$PeriodPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  teacher<T extends Prisma.AcademicTeacherDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AcademicTeacherDefaultArgs<ExtArgs>>): Prisma.Prisma__AcademicTeacherClient<runtime.Types.Result.GetResult<Prisma.$AcademicTeacherPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  teacher<T extends Prisma.AcademicAdministrativeStaffDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AcademicAdministrativeStaffDefaultArgs<ExtArgs>>): Prisma.Prisma__AcademicAdministrativeStaffClient<runtime.Types.Result.GetResult<Prisma.$AcademicAdministrativeStaffPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   class<T extends Prisma.ClassDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ClassDefaultArgs<ExtArgs>>): Prisma.Prisma__ClassClient<runtime.Types.Result.GetResult<Prisma.$ClassPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   academic_year<T extends Prisma.AcademicYearDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AcademicYearDefaultArgs<ExtArgs>>): Prisma.Prisma__AcademicYearClient<runtime.Types.Result.GetResult<Prisma.$AcademicYearPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   created_by<T extends Prisma.ClassRoutine$created_byArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ClassRoutine$created_byArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
