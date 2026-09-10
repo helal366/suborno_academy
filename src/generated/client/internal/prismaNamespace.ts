@@ -415,7 +415,7 @@ export const ModelName = {
   StudentPreviousInstituteInformation: 'StudentPreviousInstituteInformation',
   StudentResponsibility: 'StudentResponsibility',
   StudentResponsibleGuardianDetails: 'StudentResponsibleGuardianDetails',
-  SubjectTeacher: 'SubjectTeacher',
+  SubjectOfSubjectTeacher: 'SubjectOfSubjectTeacher',
   TeacherHonourableResponsibility: 'TeacherHonourableResponsibility',
   User: 'User',
   UserActiveInactiveHistory: 'UserActiveInactiveHistory',
@@ -438,7 +438,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "academicAdministrativeStaff" | "academicResult" | "academicYear" | "auditLog" | "book" | "bookClass" | "class" | "classRoutine" | "culturalClub" | "extraCurriculumActivity" | "interviewInformation" | "joiningHistory" | "languageClub" | "period" | "permanentAddress" | "presentAddress" | "previousInstituteInformation" | "promotedHistory" | "quranClub" | "quranicSpecialPeriod" | "quranicSubject" | "reference" | "scienceClub" | "scoutSportsClub" | "shift" | "spouseInformation" | "student" | "studentInstitureAddress" | "studentPreviousInstituteInformation" | "studentResponsibility" | "studentResponsibleGuardianDetails" | "subjectTeacher" | "teacherHonourableResponsibility" | "user" | "userActiveInactiveHistory" | "userFatherDetails" | "userMotherDetails" | "userPosition" | "userRole"
+    modelProps: "academicAdministrativeStaff" | "academicResult" | "academicYear" | "auditLog" | "book" | "bookClass" | "class" | "classRoutine" | "culturalClub" | "extraCurriculumActivity" | "interviewInformation" | "joiningHistory" | "languageClub" | "period" | "permanentAddress" | "presentAddress" | "previousInstituteInformation" | "promotedHistory" | "quranClub" | "quranicSpecialPeriod" | "quranicSubject" | "reference" | "scienceClub" | "scoutSportsClub" | "shift" | "spouseInformation" | "student" | "studentInstitureAddress" | "studentPreviousInstituteInformation" | "studentResponsibility" | "studentResponsibleGuardianDetails" | "subjectOfSubjectTeacher" | "teacherHonourableResponsibility" | "user" | "userActiveInactiveHistory" | "userFatherDetails" | "userMotherDetails" | "userPosition" | "userRole"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -2736,77 +2736,77 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
-    SubjectTeacher: {
-      payload: Prisma.$SubjectTeacherPayload<ExtArgs>
-      fields: Prisma.SubjectTeacherFieldRefs
+    SubjectOfSubjectTeacher: {
+      payload: Prisma.$SubjectOfSubjectTeacherPayload<ExtArgs>
+      fields: Prisma.SubjectOfSubjectTeacherFieldRefs
       operations: {
         findUnique: {
-          args: Prisma.SubjectTeacherFindUniqueArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$SubjectTeacherPayload> | null
+          args: Prisma.SubjectOfSubjectTeacherFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SubjectOfSubjectTeacherPayload> | null
         }
         findUniqueOrThrow: {
-          args: Prisma.SubjectTeacherFindUniqueOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$SubjectTeacherPayload>
+          args: Prisma.SubjectOfSubjectTeacherFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SubjectOfSubjectTeacherPayload>
         }
         findFirst: {
-          args: Prisma.SubjectTeacherFindFirstArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$SubjectTeacherPayload> | null
+          args: Prisma.SubjectOfSubjectTeacherFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SubjectOfSubjectTeacherPayload> | null
         }
         findFirstOrThrow: {
-          args: Prisma.SubjectTeacherFindFirstOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$SubjectTeacherPayload>
+          args: Prisma.SubjectOfSubjectTeacherFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SubjectOfSubjectTeacherPayload>
         }
         findMany: {
-          args: Prisma.SubjectTeacherFindManyArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$SubjectTeacherPayload>[]
+          args: Prisma.SubjectOfSubjectTeacherFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SubjectOfSubjectTeacherPayload>[]
         }
         create: {
-          args: Prisma.SubjectTeacherCreateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$SubjectTeacherPayload>
+          args: Prisma.SubjectOfSubjectTeacherCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SubjectOfSubjectTeacherPayload>
         }
         createMany: {
-          args: Prisma.SubjectTeacherCreateManyArgs<ExtArgs>
+          args: Prisma.SubjectOfSubjectTeacherCreateManyArgs<ExtArgs>
           result: BatchPayload
         }
         createManyAndReturn: {
-          args: Prisma.SubjectTeacherCreateManyAndReturnArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$SubjectTeacherPayload>[]
+          args: Prisma.SubjectOfSubjectTeacherCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SubjectOfSubjectTeacherPayload>[]
         }
         delete: {
-          args: Prisma.SubjectTeacherDeleteArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$SubjectTeacherPayload>
+          args: Prisma.SubjectOfSubjectTeacherDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SubjectOfSubjectTeacherPayload>
         }
         update: {
-          args: Prisma.SubjectTeacherUpdateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$SubjectTeacherPayload>
+          args: Prisma.SubjectOfSubjectTeacherUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SubjectOfSubjectTeacherPayload>
         }
         deleteMany: {
-          args: Prisma.SubjectTeacherDeleteManyArgs<ExtArgs>
+          args: Prisma.SubjectOfSubjectTeacherDeleteManyArgs<ExtArgs>
           result: BatchPayload
         }
         updateMany: {
-          args: Prisma.SubjectTeacherUpdateManyArgs<ExtArgs>
+          args: Prisma.SubjectOfSubjectTeacherUpdateManyArgs<ExtArgs>
           result: BatchPayload
         }
         updateManyAndReturn: {
-          args: Prisma.SubjectTeacherUpdateManyAndReturnArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$SubjectTeacherPayload>[]
+          args: Prisma.SubjectOfSubjectTeacherUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SubjectOfSubjectTeacherPayload>[]
         }
         upsert: {
-          args: Prisma.SubjectTeacherUpsertArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$SubjectTeacherPayload>
+          args: Prisma.SubjectOfSubjectTeacherUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$SubjectOfSubjectTeacherPayload>
         }
         aggregate: {
-          args: Prisma.SubjectTeacherAggregateArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.AggregateSubjectTeacher>
+          args: Prisma.SubjectOfSubjectTeacherAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateSubjectOfSubjectTeacher>
         }
         groupBy: {
-          args: Prisma.SubjectTeacherGroupByArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.SubjectTeacherGroupByOutputType>[]
+          args: Prisma.SubjectOfSubjectTeacherGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.SubjectOfSubjectTeacherGroupByOutputType>[]
         }
         count: {
-          args: Prisma.SubjectTeacherCountArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.SubjectTeacherCountAggregateOutputType> | number
+          args: Prisma.SubjectOfSubjectTeacherCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.SubjectOfSubjectTeacherCountAggregateOutputType> | number
         }
       }
     }
@@ -3370,11 +3370,13 @@ export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof
 export const AcademicAdministrativeStaffScalarFieldEnum = {
   id: 'id',
   full_name: 'full_name',
-  current_position_id: 'current_position_id',
-  current_role_id: 'current_role_id',
+  mobile_number: 'mobile_number',
   teaching_working_experience_year: 'teaching_working_experience_year',
   teaching_working_experience_month: 'teaching_working_experience_month',
   alternative_contact_no: 'alternative_contact_no',
+  current_position_id: 'current_position_id',
+  current_role_id: 'current_role_id',
+  is_currenly_active_staff: 'is_currenly_active_staff',
   user_id: 'user_id',
   is_subject_teacher: 'is_subject_teacher',
   is_responsible_teacher: 'is_responsible_teacher',
@@ -3397,7 +3399,7 @@ export const AcademicResultScalarFieldEnum = {
   fazil_result: 'fazil_result',
   masters_result: 'masters_result',
   kamil: 'kamil',
-  teacher_id: 'teacher_id',
+  staff_id: 'staff_id',
   created_by_id: 'created_by_id',
   updated_by_id: 'updated_by_id',
   created_at: 'created_at',
@@ -3421,12 +3423,12 @@ export type AcademicYearScalarFieldEnum = (typeof AcademicYearScalarFieldEnum)[k
 
 export const AuditLogScalarFieldEnum = {
   audit_id: 'audit_id',
-  entity_name: 'entity_name',
   entity_id: 'entity_id',
-  action: 'action',
-  changed_by_id: 'changed_by_id',
+  entity_name: 'entity_name',
   old_value: 'old_value',
   new_value: 'new_value',
+  action: 'action',
+  changed_by_id: 'changed_by_id',
   created_at: 'created_at'
 } as const
 
@@ -3535,7 +3537,7 @@ export const JoiningHistoryScalarFieldEnum = {
   applied_position: 'applied_position',
   joining_date: 'joining_date',
   resign_data: 'resign_data',
-  teacher_id: 'teacher_id',
+  staff_id: 'staff_id',
   created_by_id: 'created_by_id',
   updated_by_id: 'updated_by_id',
   created_at: 'created_at',
@@ -3551,8 +3553,8 @@ export const LanguageClubScalarFieldEnum = {
   extra_curriculum_activity_id: 'extra_curriculum_activity_id',
   created_by_id: 'created_by_id',
   updated_by_id: 'updated_by_id',
-  created_at: 'created_at',
-  updated_at: 'updated_at'
+  updated_at: 'updated_at',
+  created_at: 'created_at'
 } as const
 
 export type LanguageClubScalarFieldEnum = (typeof LanguageClubScalarFieldEnum)[keyof typeof LanguageClubScalarFieldEnum]
@@ -3657,7 +3659,7 @@ export type PromotedHistoryScalarFieldEnum = (typeof PromotedHistoryScalarFieldE
 
 export const QuranClubScalarFieldEnum = {
   id: 'id',
-  quran_name: 'quran_name',
+  item_name: 'item_name',
   extra_curriculum_activity_id: 'extra_curriculum_activity_id',
   created_by_id: 'created_by_id',
   updated_by_id: 'updated_by_id',
@@ -3764,7 +3766,7 @@ export const SpouseInformationScalarFieldEnum = {
   occupation: 'occupation',
   job_title: 'job_title',
   monthly_income: 'monthly_income',
-  teacher_id: 'teacher_id',
+  staff_id: 'staff_id',
   created_by_id: 'created_by_id',
   updated_by_id: 'updated_by_id',
   created_at: 'created_at',
@@ -3776,12 +3778,14 @@ export type SpouseInformationScalarFieldEnum = (typeof SpouseInformationScalarFi
 
 export const StudentScalarFieldEnum = {
   id: 'id',
-  quranic_section: 'quranic_section',
-  quranic_subject_id: 'quranic_subject_id',
-  active_class_id: 'active_class_id',
+  full_name: 'full_name',
+  mobile_number: 'mobile_number',
   responsible_guardian_id: 'responsible_guardian_id',
-  user_id: 'user_id',
+  quranic_subject_id: 'quranic_subject_id',
+  quranic_section: 'quranic_section',
   isActiveResponsibleTeacher: 'isActiveResponsibleTeacher',
+  user_id: 'user_id',
+  active_class_id: 'active_class_id',
   created_by_id: 'created_by_id',
   updated_by_id: 'updated_by_id',
   created_at: 'created_at',
@@ -3868,7 +3872,7 @@ export const StudentResponsibleGuardianDetailsScalarFieldEnum = {
 export type StudentResponsibleGuardianDetailsScalarFieldEnum = (typeof StudentResponsibleGuardianDetailsScalarFieldEnum)[keyof typeof StudentResponsibleGuardianDetailsScalarFieldEnum]
 
 
-export const SubjectTeacherScalarFieldEnum = {
+export const SubjectOfSubjectTeacherScalarFieldEnum = {
   id: 'id',
   subject_name: 'subject_name',
   teacher_id: 'teacher_id',
@@ -3878,7 +3882,7 @@ export const SubjectTeacherScalarFieldEnum = {
   updated_at: 'updated_at'
 } as const
 
-export type SubjectTeacherScalarFieldEnum = (typeof SubjectTeacherScalarFieldEnum)[keyof typeof SubjectTeacherScalarFieldEnum]
+export type SubjectOfSubjectTeacherScalarFieldEnum = (typeof SubjectOfSubjectTeacherScalarFieldEnum)[keyof typeof SubjectOfSubjectTeacherScalarFieldEnum]
 
 
 export const TeacherHonourableResponsibilityScalarFieldEnum = {
@@ -3900,6 +3904,7 @@ export const UserScalarFieldEnum = {
   mobile_number: 'mobile_number',
   is_mobile_verified: 'is_mobile_verified',
   gender: 'gender',
+  email: 'email',
   blood_group: 'blood_group',
   date_of_birth: 'date_of_birth',
   height_in_cm: 'height_in_cm',
@@ -3909,13 +3914,12 @@ export const UserScalarFieldEnum = {
   birth_certificate_number: 'birth_certificate_number',
   nid_number: 'nid_number',
   photo_url: 'photo_url',
-  father_details_id: 'father_details_id',
-  mother_details_id: 'mother_details_id',
-  email: 'email',
   user_name: 'user_name',
   user_password: 'user_password',
   active_status: 'active_status',
   is_deleted: 'is_deleted',
+  father_details_id: 'father_details_id',
+  mother_details_id: 'mother_details_id',
   position_id: 'position_id',
   role_name: 'role_name',
   created_at: 'created_at',
@@ -3983,11 +3987,11 @@ export type UserMotherDetailsScalarFieldEnum = (typeof UserMotherDetailsScalarFi
 export const UserPositionScalarFieldEnum = {
   id: 'id',
   position_name: 'position_name',
-  role_id: 'role_id',
   created_by_id: 'created_by_id',
   updated_by_id: 'updated_by_id',
   created_at: 'created_at',
-  updated_at: 'updated_at'
+  updated_at: 'updated_at',
+  role_id: 'role_id'
 } as const
 
 export type UserPositionScalarFieldEnum = (typeof UserPositionScalarFieldEnum)[keyof typeof UserPositionScalarFieldEnum]
@@ -4102,20 +4106,6 @@ export type ListDateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaM
 
 
 /**
- * Reference to a field of type 'AuditAction'
- */
-export type EnumAuditActionFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'AuditAction'>
-    
-
-
-/**
- * Reference to a field of type 'AuditAction[]'
- */
-export type ListEnumAuditActionFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'AuditAction[]'>
-    
-
-
-/**
  * Reference to a field of type 'Json'
  */
 export type JsonFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Json'>
@@ -4126,6 +4116,20 @@ export type JsonFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'J
  * Reference to a field of type 'QueryMode'
  */
 export type EnumQueryModeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'QueryMode'>
+    
+
+
+/**
+ * Reference to a field of type 'AuditAction'
+ */
+export type EnumAuditActionFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'AuditAction'>
+    
+
+
+/**
+ * Reference to a field of type 'AuditAction[]'
+ */
+export type ListEnumAuditActionFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'AuditAction[]'>
     
 
 
@@ -4381,7 +4385,7 @@ export type GlobalOmitConfig = {
   studentPreviousInstituteInformation?: Prisma.StudentPreviousInstituteInformationOmit
   studentResponsibility?: Prisma.StudentResponsibilityOmit
   studentResponsibleGuardianDetails?: Prisma.StudentResponsibleGuardianDetailsOmit
-  subjectTeacher?: Prisma.SubjectTeacherOmit
+  subjectOfSubjectTeacher?: Prisma.SubjectOfSubjectTeacherOmit
   teacherHonourableResponsibility?: Prisma.TeacherHonourableResponsibilityOmit
   user?: Prisma.UserOmit
   userActiveInactiveHistory?: Prisma.UserActiveInactiveHistoryOmit

@@ -1,22 +1,30 @@
 model ClassRoutine {
   id               String                      @id @default(uuid())
   day              WeekDays
+  
   shift_id         String
+  shift            Shift                       @relation(fields: [shift_id], references: [id])
+  
   period_id        String
+  period           Period                      @relation(fields: [period_id], references: [id], onDelete: Cascade)
+  
   teacher_id       String
+  teacher          AcademicAdministrativeStaff @relation(fields: [teacher_id], references: [id], onDelete: Cascade)
+  
   class_id         String
+  class            Class                       @relation(fields: [class_id], references: [id], onDelete: Cascade)
+  
   academic_year_id String
+  academic_year    AcademicYear                @relation(fields: [academic_year_id], references: [id])
+  
   created_by_id    String?
+  created_by       User?                       @relation("routine_created_by", fields: [created_by_id], references: [id])
+  
   updated_by_id    String?
+  updated_by       User?                       @relation("routine_updated_by", fields: [updated_by_id], references: [id])
+  
   created_at       DateTime                    @default(now())
   updated_at       DateTime?                   @updatedAt
-  academic_year    AcademicYear                @relation(fields: [academic_year_id], references: [id])
-  class            Class                       @relation(fields: [class_id], references: [id], onDelete: Cascade)
-  created_by       User?                       @relation("routine_created_by", fields: [created_by_id], references: [id])
-  period           Period                      @relation(fields: [period_id], references: [id], onDelete: Cascade)
-  shift            Shift                       @relation(fields: [shift_id], references: [id])
-  teacher          AcademicAdministrativeStaff @relation(fields: [teacher_id], references: [id], onDelete: Cascade)
-  updated_by       User?                       @relation("routine_updated_by", fields: [updated_by_id], references: [id])
 
   @@unique([day, period_id, teacher_id], name: "teacher_schedule_clash_preventer")
   @@unique([day, period_id, class_id], name: "class_schedule_clash_preventer")

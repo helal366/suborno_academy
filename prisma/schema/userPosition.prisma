@@ -5,13 +5,13 @@ model UserPosition {
   updated_by_id             String?
   created_at                DateTime                      @default(now())
   updated_at                DateTime?                     @updatedAt
-  current_academic_teachers AcademicAdministrativeStaff[] @relation("academic_teacher_current_position")
+  current_academic_staffs AcademicAdministrativeStaff[] @relation("staff_current_position")
   created_by                User?                         @relation("user_position_created_by", fields: [created_by_id], references: [id])
   role_id                   String
   role                      UserRole                      @relation("role_position_relation", fields: [role_id], references: [id])
   updated_by                User?                         @relation("user_position_updated_by", fields: [updated_by_id], references: [id])
   user                      User[]                        @relation("user_position_relation")
-  academic_administrative_staffs     AcademicAdministrativeStaff[] @relation("academic_teacher_positions")
+  academic_administrative_staffs     AcademicAdministrativeStaff[] @relation("staff_positions")
 
   @@map("user_positions")
 }

@@ -30,8 +30,12 @@ const authLogin=catchAsync(async(req:Request, res:Response, next:NextFunction)=>
 });
 
 const authRegister=catchAsync(async(req:Request, res:Response, next:NextFunction)=>{
-    const payload = req.body as TAuthRegistrationPayload;
-    const result = await authServices.authRegister(payload);
+    const payload: TAuthRegistrationPayload = req.body;
+    const {role} = payload;
+    let result;
+    if(role === "ACADEMIC" || role === "ADMINISTRATIVE" || role === "SUPER_ADMIN"){
+        result = await authServices.authRegisterStaff(payload);
+    }
     sendResponse(res, {
         success: true, 
         statusCode: StatusCodes.OK,

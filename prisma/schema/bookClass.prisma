@@ -1,15 +1,19 @@
 model BookClass {
   id               String       @unique @default(uuid())
   class_id         String
+  class            Class        @relation(fields: [class_id], references: [id])
+
   book_id          String
+  book             Book         @relation(fields: [book_id], references: [id])
+
   academic_year_id String
+  academic_year    AcademicYear @relation(fields: [academic_year_id], references: [id])
+
   created_by_id    String?
+  created_by       User?        @relation(fields: [created_by_id], references: [id])
+  
   created_at       DateTime     @default(now())
   updated_at       DateTime?    @updatedAt
-  academic_year    AcademicYear @relation(fields: [academic_year_id], references: [id])
-  book             Book         @relation(fields: [book_id], references: [id])
-  class            Class        @relation(fields: [class_id], references: [id])
-  created_by       User?        @relation(fields: [created_by_id], references: [id])
 
   @@id([book_id, class_id, academic_year_id])
   @@map("books_classes")

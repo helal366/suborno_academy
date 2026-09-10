@@ -8,7 +8,7 @@ const createRole = async (payload: TRoleCreateZodSchema) => {
   const clean_role_name = payload.role_name.toUpperCase();
   
   // check role existance
-  const validRoles = await getValidRoleNames();
+  const validRoles:string[] = await getValidRoleNames();
   if (validRoles.includes(clean_role_name)) {
     throw new AppError("Role already exists", StatusCodes.CONFLICT);
   }

@@ -3,7 +3,7 @@ import z4 from "zod/v4";
 
 export const authRegistrationZodSchema = z4.object({
     full_name: z4.string("Invalid name format").trim().min(1, "Full name is required."),
-    mobile_number: z4.string().trim().length(14, "Mobile number must be 11 digit").regex(/^\+880[1]\d{9}$/, "Invalid Bangladeshi mobile number."),
+    mobile_number: z4.string().trim().length(14, "Mobile number must be 14 digit and start with +88").regex(/^\+880[1]\d{9}$/, "Invalid Bangladeshi mobile number."),
     gender: z4.enum(Gender, "Invalid gender."),
     blood_group: z4.enum(BloodGroup, "Invalid blood group.").optional(),
     date_of_birth: z4.string("Input is expected to be a string but received null").pipe(z4.coerce.date("Invalid format.")).optional(),
@@ -14,8 +14,8 @@ export const authRegistrationZodSchema = z4.object({
     birth_certificate_number: z4.string().optional(),
     nid_number: z4.string("Invalid nid number").optional(),
     email: z4.string().check(z4.email("Invalid email format")).optional(),
-    position: z4.string( "Invalid position name").optional(),
-    role: z4.string( "Invalid user role").optional()
+    position: z4.string( "Invalid position name").toUpperCase().optional(),
+    role: z4.string( "Invalid user role").toUpperCase().optional()
 })
 
 export type TAuthRegistrationPayload = z4.infer<typeof authRegistrationZodSchema>;

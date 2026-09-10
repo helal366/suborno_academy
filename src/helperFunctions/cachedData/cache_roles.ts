@@ -1,8 +1,5 @@
+import { ICacheRole } from "../../commonInterfaces/commonInterfaces.js";
 import { prisma } from "../../lib/prisma.js";
-interface ICacheRole{
-    id:string;
-    role_name:string;
-}
 
 let cacheValidRoles: Promise<ICacheRole[]> | null = null;
 export const getValidRoles = async():Promise<ICacheRole[]> =>{

@@ -4,6 +4,7 @@ import { AppError } from "../../utils/appError.js";
 import { TPositionCreateZodSchema } from "./position_zod_validation.js";
 import { clearCachePositions, getValidPositionNames} from "../../helperFunctions/cachedData/cache_positions.js";
 import { getValidRoles } from "../../helperFunctions/cachedData/cache_roles.js";
+import { ICacheRole } from "../../commonInterfaces/commonInterfaces.js";
 
 const createPosition = async (payload: TPositionCreateZodSchema) => {
   const { position_name, role_name } = payload;
@@ -11,7 +12,7 @@ const createPosition = async (payload: TPositionCreateZodSchema) => {
   const clean_role_name = role_name.toUpperCase();
 
   // role existance check from cache
-  const validRoles = await getValidRoles();
+  const validRoles:ICacheRole[] = await getValidRoles();
   const existingRole = validRoles.find((singleRole)=> singleRole.role_name === clean_role_name)
 
   if (!existingRole) {
@@ -19,7 +20,7 @@ const createPosition = async (payload: TPositionCreateZodSchema) => {
   }
 
   // position existance check from cache
-  const existingPositions = await getValidPositionNames()
+  const existingPositions:string[] = await getValidPositionNames()
   if (existingPositions.includes(clean_position_name)) {
     throw new AppError(`Position already exists`, StatusCodes.CONFLICT);
   }

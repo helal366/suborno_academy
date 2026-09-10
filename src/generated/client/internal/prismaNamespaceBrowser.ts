@@ -82,7 +82,7 @@ export const ModelName = {
   StudentPreviousInstituteInformation: 'StudentPreviousInstituteInformation',
   StudentResponsibility: 'StudentResponsibility',
   StudentResponsibleGuardianDetails: 'StudentResponsibleGuardianDetails',
-  SubjectTeacher: 'SubjectTeacher',
+  SubjectOfSubjectTeacher: 'SubjectOfSubjectTeacher',
   TeacherHonourableResponsibility: 'TeacherHonourableResponsibility',
   User: 'User',
   UserActiveInactiveHistory: 'UserActiveInactiveHistory',
@@ -111,11 +111,13 @@ export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof
 export const AcademicAdministrativeStaffScalarFieldEnum = {
   id: 'id',
   full_name: 'full_name',
-  current_position_id: 'current_position_id',
-  current_role_id: 'current_role_id',
+  mobile_number: 'mobile_number',
   teaching_working_experience_year: 'teaching_working_experience_year',
   teaching_working_experience_month: 'teaching_working_experience_month',
   alternative_contact_no: 'alternative_contact_no',
+  current_position_id: 'current_position_id',
+  current_role_id: 'current_role_id',
+  is_currenly_active_staff: 'is_currenly_active_staff',
   user_id: 'user_id',
   is_subject_teacher: 'is_subject_teacher',
   is_responsible_teacher: 'is_responsible_teacher',
@@ -138,7 +140,7 @@ export const AcademicResultScalarFieldEnum = {
   fazil_result: 'fazil_result',
   masters_result: 'masters_result',
   kamil: 'kamil',
-  teacher_id: 'teacher_id',
+  staff_id: 'staff_id',
   created_by_id: 'created_by_id',
   updated_by_id: 'updated_by_id',
   created_at: 'created_at',
@@ -162,12 +164,12 @@ export type AcademicYearScalarFieldEnum = (typeof AcademicYearScalarFieldEnum)[k
 
 export const AuditLogScalarFieldEnum = {
   audit_id: 'audit_id',
-  entity_name: 'entity_name',
   entity_id: 'entity_id',
-  action: 'action',
-  changed_by_id: 'changed_by_id',
+  entity_name: 'entity_name',
   old_value: 'old_value',
   new_value: 'new_value',
+  action: 'action',
+  changed_by_id: 'changed_by_id',
   created_at: 'created_at'
 } as const
 
@@ -276,7 +278,7 @@ export const JoiningHistoryScalarFieldEnum = {
   applied_position: 'applied_position',
   joining_date: 'joining_date',
   resign_data: 'resign_data',
-  teacher_id: 'teacher_id',
+  staff_id: 'staff_id',
   created_by_id: 'created_by_id',
   updated_by_id: 'updated_by_id',
   created_at: 'created_at',
@@ -292,8 +294,8 @@ export const LanguageClubScalarFieldEnum = {
   extra_curriculum_activity_id: 'extra_curriculum_activity_id',
   created_by_id: 'created_by_id',
   updated_by_id: 'updated_by_id',
-  created_at: 'created_at',
-  updated_at: 'updated_at'
+  updated_at: 'updated_at',
+  created_at: 'created_at'
 } as const
 
 export type LanguageClubScalarFieldEnum = (typeof LanguageClubScalarFieldEnum)[keyof typeof LanguageClubScalarFieldEnum]
@@ -398,7 +400,7 @@ export type PromotedHistoryScalarFieldEnum = (typeof PromotedHistoryScalarFieldE
 
 export const QuranClubScalarFieldEnum = {
   id: 'id',
-  quran_name: 'quran_name',
+  item_name: 'item_name',
   extra_curriculum_activity_id: 'extra_curriculum_activity_id',
   created_by_id: 'created_by_id',
   updated_by_id: 'updated_by_id',
@@ -505,7 +507,7 @@ export const SpouseInformationScalarFieldEnum = {
   occupation: 'occupation',
   job_title: 'job_title',
   monthly_income: 'monthly_income',
-  teacher_id: 'teacher_id',
+  staff_id: 'staff_id',
   created_by_id: 'created_by_id',
   updated_by_id: 'updated_by_id',
   created_at: 'created_at',
@@ -517,12 +519,14 @@ export type SpouseInformationScalarFieldEnum = (typeof SpouseInformationScalarFi
 
 export const StudentScalarFieldEnum = {
   id: 'id',
-  quranic_section: 'quranic_section',
-  quranic_subject_id: 'quranic_subject_id',
-  active_class_id: 'active_class_id',
+  full_name: 'full_name',
+  mobile_number: 'mobile_number',
   responsible_guardian_id: 'responsible_guardian_id',
-  user_id: 'user_id',
+  quranic_subject_id: 'quranic_subject_id',
+  quranic_section: 'quranic_section',
   isActiveResponsibleTeacher: 'isActiveResponsibleTeacher',
+  user_id: 'user_id',
+  active_class_id: 'active_class_id',
   created_by_id: 'created_by_id',
   updated_by_id: 'updated_by_id',
   created_at: 'created_at',
@@ -609,7 +613,7 @@ export const StudentResponsibleGuardianDetailsScalarFieldEnum = {
 export type StudentResponsibleGuardianDetailsScalarFieldEnum = (typeof StudentResponsibleGuardianDetailsScalarFieldEnum)[keyof typeof StudentResponsibleGuardianDetailsScalarFieldEnum]
 
 
-export const SubjectTeacherScalarFieldEnum = {
+export const SubjectOfSubjectTeacherScalarFieldEnum = {
   id: 'id',
   subject_name: 'subject_name',
   teacher_id: 'teacher_id',
@@ -619,7 +623,7 @@ export const SubjectTeacherScalarFieldEnum = {
   updated_at: 'updated_at'
 } as const
 
-export type SubjectTeacherScalarFieldEnum = (typeof SubjectTeacherScalarFieldEnum)[keyof typeof SubjectTeacherScalarFieldEnum]
+export type SubjectOfSubjectTeacherScalarFieldEnum = (typeof SubjectOfSubjectTeacherScalarFieldEnum)[keyof typeof SubjectOfSubjectTeacherScalarFieldEnum]
 
 
 export const TeacherHonourableResponsibilityScalarFieldEnum = {
@@ -641,6 +645,7 @@ export const UserScalarFieldEnum = {
   mobile_number: 'mobile_number',
   is_mobile_verified: 'is_mobile_verified',
   gender: 'gender',
+  email: 'email',
   blood_group: 'blood_group',
   date_of_birth: 'date_of_birth',
   height_in_cm: 'height_in_cm',
@@ -650,13 +655,12 @@ export const UserScalarFieldEnum = {
   birth_certificate_number: 'birth_certificate_number',
   nid_number: 'nid_number',
   photo_url: 'photo_url',
-  father_details_id: 'father_details_id',
-  mother_details_id: 'mother_details_id',
-  email: 'email',
   user_name: 'user_name',
   user_password: 'user_password',
   active_status: 'active_status',
   is_deleted: 'is_deleted',
+  father_details_id: 'father_details_id',
+  mother_details_id: 'mother_details_id',
   position_id: 'position_id',
   role_name: 'role_name',
   created_at: 'created_at',
@@ -724,11 +728,11 @@ export type UserMotherDetailsScalarFieldEnum = (typeof UserMotherDetailsScalarFi
 export const UserPositionScalarFieldEnum = {
   id: 'id',
   position_name: 'position_name',
-  role_id: 'role_id',
   created_by_id: 'created_by_id',
   updated_by_id: 'updated_by_id',
   created_at: 'created_at',
-  updated_at: 'updated_at'
+  updated_at: 'updated_at',
+  role_id: 'role_id'
 } as const
 
 export type UserPositionScalarFieldEnum = (typeof UserPositionScalarFieldEnum)[keyof typeof UserPositionScalarFieldEnum]

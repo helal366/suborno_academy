@@ -7,9 +7,9 @@ import { JwtPayload, SignOptions } from "jsonwebtoken";
 import { jwtTokens } from "../../utils/jwtTokens.js";
 import { envVars } from "../../configs/index.js";
 import { TAuthRegistrationPayload } from "./auth_zod_validation.js";
-import { createPassword } from "../../helperFunctions/auth/create_password.js";
-import { getValidRoles } from "../../helperFunctions/cachedData/cache_roles.js";
-import { getValidPositions } from "../../helperFunctions/cachedData/cache_positions.js";
+import {  getValidRoles} from "../../helperFunctions/cachedData/cache_roles.js";
+import {  getValidPositions } from "../../helperFunctions/cachedData/cache_positions.js";
+import { ICachePosition, ICacheRole } from "../../commonInterfaces/commonInterfaces.js";
 
 const authLogin = async (payload: IAuthLogin) => {
   const { user_name, user_password } = payload;
@@ -62,14 +62,14 @@ const authLogin = async (payload: IAuthLogin) => {
 };
 
 // REGISTRATION
-const authRegister= async(payload:TAuthRegistrationPayload)=>{
+const authRegisterStaff= async(payload:TAuthRegistrationPayload)=>{
   const {full_name, mobile_number, email, position, role, ...otherFields}=payload
   const isExist = await prisma.user.findUnique({
     where: {user_full_name_mobile_unique:{full_name, mobile_number}}
   });
 
   // check required values
-  if(!isExist){
+  if(isExist){
     throw new AppError("User already exists.", StatusCodes.CONFLICT);
   };
   if(!email){
@@ -83,20 +83,20 @@ const authRegister= async(payload:TAuthRegistrationPayload)=>{
   };
 
   // check role is valid or not
-  const validRoles:string[] = await getValidRoles();
-  const checkRoleValidity = validRoles.includes(role);
-  if(!checkRoleValidity){
+  const validRoles:ICacheRole[] = await getValidRoles();
+  const findRole = validRoles.find((singleRole)=>singleRole.role_name === role);
+  if(!findRole){
     throw new AppError(`Provided Role ${role} is not valid`, StatusCodes.BAD_REQUEST)
-  };
+  }
 
   // check position is valid or not
-  const validPositions:string[] = await getValidPositions();
-  const checkPositionValidity = validPositions.includes(position);
-  if(!checkPositionValidity){
+  const validPositions:ICachePosition[] = await getValidPositions();
+  const findPosition = validPositions.find((singlePosition)=>singlePosition.position_name === position)
+  if(!findPosition){
     throw new AppError(`Provided Position ${position} is not valid`, StatusCodes.BAD_REQUEST);
   }
 
-  // set user namec
+  // set user name
   const usersWithSameMobileNumber = await prisma.user.count({where: {mobile_number}});
   let user_name:string;
   if(usersWithSameMobileNumber===0){
@@ -116,13 +116,21 @@ const authRegister= async(payload:TAuthRegistrationPayload)=>{
       mobile_number, 
       email, 
       position:{
-        connect: {position_name: position, role_name: role}
+        connect: {position_name: position, role_id: findRole.id}
       }, 
-      ...otherFields
-    }
+      ...otherFields,
+      staff_profile: {
+        create:{
+          full_name,
+          mobile_number, 
+          current_position: {connect: {id: findPosition.id}},
+          current_role: {connect:{id: findRole.id}}
+        }
+      }
+    },
   })
 }
 export const authServices = {
   authLogin,
-  authRegister
+  authRegisterStaff
 };

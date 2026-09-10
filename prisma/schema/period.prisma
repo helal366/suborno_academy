@@ -1,13 +1,16 @@
 model Period {
   id                   String         @id @default(uuid())
   period_name          String
+  classes_from_routine ClassRoutine[]
+  
   created_by_id        String?
+  created_by           User?          @relation("period_created_by", fields: [created_by_id], references: [id])
+  
   updated_by_id        String?
+  updated_by           User?          @relation("period_updated_by", fields: [updated_by_id], references: [id])
+  
   created_at           DateTime       @default(now())
   updated_at           DateTime?      @updatedAt
-  classes_from_routine ClassRoutine[]
-  created_by           User?          @relation("period_created_by", fields: [created_by_id], references: [id])
-  updated_by           User?          @relation("period_updated_by", fields: [updated_by_id], references: [id])
 
   @@map("periods")
 }

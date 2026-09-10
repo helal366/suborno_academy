@@ -8,14 +8,18 @@ model AcademicResult {
   fazil_result   String?
   masters_result String?
   kamil          String?
-  teacher_id     String?                      @unique
+  
+  staff_id     String?                      @unique
+  staff        AcademicAdministrativeStaff? @relation(fields: [staff_id], references: [id], onDelete: Cascade)
+  
   created_by_id  String?
+  created_by     User?                        @relation("academic_result_created_by", fields: [created_by_id], references: [id])
+  
   updated_by_id  String?
+  updated_by     User?                        @relation("academic_result_updated_by", fields: [updated_by_id], references: [id])
+  
   created_at     DateTime                     @default(now())
   updated_at     DateTime?                    @updatedAt
-  created_by     User?                        @relation("academic_result_created_by", fields: [created_by_id], references: [id])
-  teacher        AcademicAdministrativeStaff? @relation(fields: [teacher_id], references: [id], onDelete: Cascade)
-  updated_by     User?                        @relation("academic_result_updated_by", fields: [updated_by_id], references: [id])
 
   @@map("academic_results")
 }

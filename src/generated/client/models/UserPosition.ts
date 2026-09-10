@@ -27,31 +27,31 @@ export type AggregateUserPosition = {
 export type UserPositionMinAggregateOutputType = {
   id: string | null
   position_name: string | null
-  role_id: string | null
   created_by_id: string | null
   updated_by_id: string | null
   created_at: Date | null
   updated_at: Date | null
+  role_id: string | null
 }
 
 export type UserPositionMaxAggregateOutputType = {
   id: string | null
   position_name: string | null
-  role_id: string | null
   created_by_id: string | null
   updated_by_id: string | null
   created_at: Date | null
   updated_at: Date | null
+  role_id: string | null
 }
 
 export type UserPositionCountAggregateOutputType = {
   id: number
   position_name: number
-  role_id: number
   created_by_id: number
   updated_by_id: number
   created_at: number
   updated_at: number
+  role_id: number
   _all: number
 }
 
@@ -59,31 +59,31 @@ export type UserPositionCountAggregateOutputType = {
 export type UserPositionMinAggregateInputType = {
   id?: true
   position_name?: true
-  role_id?: true
   created_by_id?: true
   updated_by_id?: true
   created_at?: true
   updated_at?: true
+  role_id?: true
 }
 
 export type UserPositionMaxAggregateInputType = {
   id?: true
   position_name?: true
-  role_id?: true
   created_by_id?: true
   updated_by_id?: true
   created_at?: true
   updated_at?: true
+  role_id?: true
 }
 
 export type UserPositionCountAggregateInputType = {
   id?: true
   position_name?: true
-  role_id?: true
   created_by_id?: true
   updated_by_id?: true
   created_at?: true
   updated_at?: true
+  role_id?: true
   _all?: true
 }
 
@@ -162,11 +162,11 @@ export type UserPositionGroupByArgs<ExtArgs extends runtime.Types.Extensions.Int
 export type UserPositionGroupByOutputType = {
   id: string
   position_name: string
-  role_id: string
   created_by_id: string | null
   updated_by_id: string | null
   created_at: Date
   updated_at: Date | null
+  role_id: string
   _count: UserPositionCountAggregateOutputType | null
   _min: UserPositionMinAggregateOutputType | null
   _max: UserPositionMaxAggregateOutputType | null
@@ -193,12 +193,12 @@ export type UserPositionWhereInput = {
   NOT?: Prisma.UserPositionWhereInput | Prisma.UserPositionWhereInput[]
   id?: Prisma.StringFilter<"UserPosition"> | string
   position_name?: Prisma.StringFilter<"UserPosition"> | string
-  role_id?: Prisma.StringFilter<"UserPosition"> | string
   created_by_id?: Prisma.StringNullableFilter<"UserPosition"> | string | null
   updated_by_id?: Prisma.StringNullableFilter<"UserPosition"> | string | null
   created_at?: Prisma.DateTimeFilter<"UserPosition"> | Date | string
   updated_at?: Prisma.DateTimeNullableFilter<"UserPosition"> | Date | string | null
-  current_academic_teachers?: Prisma.AcademicAdministrativeStaffListRelationFilter
+  role_id?: Prisma.StringFilter<"UserPosition"> | string
+  current_academic_staffs?: Prisma.AcademicAdministrativeStaffListRelationFilter
   created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
   role?: Prisma.XOR<Prisma.UserRoleScalarRelationFilter, Prisma.UserRoleWhereInput>
   updated_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
@@ -209,12 +209,12 @@ export type UserPositionWhereInput = {
 export type UserPositionOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   position_name?: Prisma.SortOrder
-  role_id?: Prisma.SortOrder
   created_by_id?: Prisma.SortOrderInput | Prisma.SortOrder
   updated_by_id?: Prisma.SortOrderInput | Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrderInput | Prisma.SortOrder
-  current_academic_teachers?: Prisma.AcademicAdministrativeStaffOrderByRelationAggregateInput
+  role_id?: Prisma.SortOrder
+  current_academic_staffs?: Prisma.AcademicAdministrativeStaffOrderByRelationAggregateInput
   created_by?: Prisma.UserOrderByWithRelationInput
   role?: Prisma.UserRoleOrderByWithRelationInput
   updated_by?: Prisma.UserOrderByWithRelationInput
@@ -228,12 +228,12 @@ export type UserPositionWhereUniqueInput = Prisma.AtLeast<{
   AND?: Prisma.UserPositionWhereInput | Prisma.UserPositionWhereInput[]
   OR?: Prisma.UserPositionWhereInput[]
   NOT?: Prisma.UserPositionWhereInput | Prisma.UserPositionWhereInput[]
-  role_id?: Prisma.StringFilter<"UserPosition"> | string
   created_by_id?: Prisma.StringNullableFilter<"UserPosition"> | string | null
   updated_by_id?: Prisma.StringNullableFilter<"UserPosition"> | string | null
   created_at?: Prisma.DateTimeFilter<"UserPosition"> | Date | string
   updated_at?: Prisma.DateTimeNullableFilter<"UserPosition"> | Date | string | null
-  current_academic_teachers?: Prisma.AcademicAdministrativeStaffListRelationFilter
+  role_id?: Prisma.StringFilter<"UserPosition"> | string
+  current_academic_staffs?: Prisma.AcademicAdministrativeStaffListRelationFilter
   created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
   role?: Prisma.XOR<Prisma.UserRoleScalarRelationFilter, Prisma.UserRoleWhereInput>
   updated_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
@@ -244,11 +244,11 @@ export type UserPositionWhereUniqueInput = Prisma.AtLeast<{
 export type UserPositionOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   position_name?: Prisma.SortOrder
-  role_id?: Prisma.SortOrder
   created_by_id?: Prisma.SortOrderInput | Prisma.SortOrder
   updated_by_id?: Prisma.SortOrderInput | Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrderInput | Prisma.SortOrder
+  role_id?: Prisma.SortOrder
   _count?: Prisma.UserPositionCountOrderByAggregateInput
   _max?: Prisma.UserPositionMaxOrderByAggregateInput
   _min?: Prisma.UserPositionMinOrderByAggregateInput
@@ -260,11 +260,11 @@ export type UserPositionScalarWhereWithAggregatesInput = {
   NOT?: Prisma.UserPositionScalarWhereWithAggregatesInput | Prisma.UserPositionScalarWhereWithAggregatesInput[]
   id?: Prisma.StringWithAggregatesFilter<"UserPosition"> | string
   position_name?: Prisma.StringWithAggregatesFilter<"UserPosition"> | string
-  role_id?: Prisma.StringWithAggregatesFilter<"UserPosition"> | string
   created_by_id?: Prisma.StringNullableWithAggregatesFilter<"UserPosition"> | string | null
   updated_by_id?: Prisma.StringNullableWithAggregatesFilter<"UserPosition"> | string | null
   created_at?: Prisma.DateTimeWithAggregatesFilter<"UserPosition"> | Date | string
   updated_at?: Prisma.DateTimeNullableWithAggregatesFilter<"UserPosition"> | Date | string | null
+  role_id?: Prisma.StringWithAggregatesFilter<"UserPosition"> | string
 }
 
 export type UserPositionCreateInput = {
@@ -272,7 +272,7 @@ export type UserPositionCreateInput = {
   position_name: string
   created_at?: Date | string
   updated_at?: Date | string | null
-  current_academic_teachers?: Prisma.AcademicAdministrativeStaffCreateNestedManyWithoutCurrent_positionInput
+  current_academic_staffs?: Prisma.AcademicAdministrativeStaffCreateNestedManyWithoutCurrent_positionInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_user_positionsInput
   role: Prisma.UserRoleCreateNestedOneWithoutPositionsInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_user_positionsInput
@@ -283,12 +283,12 @@ export type UserPositionCreateInput = {
 export type UserPositionUncheckedCreateInput = {
   id?: string
   position_name: string
-  role_id: string
   created_by_id?: string | null
   updated_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
-  current_academic_teachers?: Prisma.AcademicAdministrativeStaffUncheckedCreateNestedManyWithoutCurrent_positionInput
+  role_id: string
+  current_academic_staffs?: Prisma.AcademicAdministrativeStaffUncheckedCreateNestedManyWithoutCurrent_positionInput
   user?: Prisma.UserUncheckedCreateNestedManyWithoutPositionInput
   academic_administrative_staffs?: Prisma.AcademicAdministrativeStaffUncheckedCreateNestedManyWithoutPositionsInput
 }
@@ -298,7 +298,7 @@ export type UserPositionUpdateInput = {
   position_name?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  current_academic_teachers?: Prisma.AcademicAdministrativeStaffUpdateManyWithoutCurrent_positionNestedInput
+  current_academic_staffs?: Prisma.AcademicAdministrativeStaffUpdateManyWithoutCurrent_positionNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_user_positionsNestedInput
   role?: Prisma.UserRoleUpdateOneRequiredWithoutPositionsNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_user_positionsNestedInput
@@ -309,12 +309,12 @@ export type UserPositionUpdateInput = {
 export type UserPositionUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   position_name?: Prisma.StringFieldUpdateOperationsInput | string
-  role_id?: Prisma.StringFieldUpdateOperationsInput | string
   created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  current_academic_teachers?: Prisma.AcademicAdministrativeStaffUncheckedUpdateManyWithoutCurrent_positionNestedInput
+  role_id?: Prisma.StringFieldUpdateOperationsInput | string
+  current_academic_staffs?: Prisma.AcademicAdministrativeStaffUncheckedUpdateManyWithoutCurrent_positionNestedInput
   user?: Prisma.UserUncheckedUpdateManyWithoutPositionNestedInput
   academic_administrative_staffs?: Prisma.AcademicAdministrativeStaffUncheckedUpdateManyWithoutPositionsNestedInput
 }
@@ -322,11 +322,11 @@ export type UserPositionUncheckedUpdateInput = {
 export type UserPositionCreateManyInput = {
   id?: string
   position_name: string
-  role_id: string
   created_by_id?: string | null
   updated_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
+  role_id: string
 }
 
 export type UserPositionUpdateManyMutationInput = {
@@ -339,11 +339,11 @@ export type UserPositionUpdateManyMutationInput = {
 export type UserPositionUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   position_name?: Prisma.StringFieldUpdateOperationsInput | string
-  role_id?: Prisma.StringFieldUpdateOperationsInput | string
   created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  role_id?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type UserPositionScalarRelationFilter = {
@@ -369,36 +369,36 @@ export type UserPositionNullableScalarRelationFilter = {
 export type UserPositionCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   position_name?: Prisma.SortOrder
-  role_id?: Prisma.SortOrder
   created_by_id?: Prisma.SortOrder
   updated_by_id?: Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrder
+  role_id?: Prisma.SortOrder
 }
 
 export type UserPositionMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   position_name?: Prisma.SortOrder
-  role_id?: Prisma.SortOrder
   created_by_id?: Prisma.SortOrder
   updated_by_id?: Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrder
+  role_id?: Prisma.SortOrder
 }
 
 export type UserPositionMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   position_name?: Prisma.SortOrder
-  role_id?: Prisma.SortOrder
   created_by_id?: Prisma.SortOrder
   updated_by_id?: Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrder
+  role_id?: Prisma.SortOrder
 }
 
-export type UserPositionCreateNestedOneWithoutCurrent_academic_teachersInput = {
-  create?: Prisma.XOR<Prisma.UserPositionCreateWithoutCurrent_academic_teachersInput, Prisma.UserPositionUncheckedCreateWithoutCurrent_academic_teachersInput>
-  connectOrCreate?: Prisma.UserPositionCreateOrConnectWithoutCurrent_academic_teachersInput
+export type UserPositionCreateNestedOneWithoutCurrent_academic_staffsInput = {
+  create?: Prisma.XOR<Prisma.UserPositionCreateWithoutCurrent_academic_staffsInput, Prisma.UserPositionUncheckedCreateWithoutCurrent_academic_staffsInput>
+  connectOrCreate?: Prisma.UserPositionCreateOrConnectWithoutCurrent_academic_staffsInput
   connect?: Prisma.UserPositionWhereUniqueInput
 }
 
@@ -414,12 +414,12 @@ export type UserPositionUncheckedCreateNestedManyWithoutAcademic_administrative_
   connect?: Prisma.UserPositionWhereUniqueInput | Prisma.UserPositionWhereUniqueInput[]
 }
 
-export type UserPositionUpdateOneRequiredWithoutCurrent_academic_teachersNestedInput = {
-  create?: Prisma.XOR<Prisma.UserPositionCreateWithoutCurrent_academic_teachersInput, Prisma.UserPositionUncheckedCreateWithoutCurrent_academic_teachersInput>
-  connectOrCreate?: Prisma.UserPositionCreateOrConnectWithoutCurrent_academic_teachersInput
-  upsert?: Prisma.UserPositionUpsertWithoutCurrent_academic_teachersInput
+export type UserPositionUpdateOneRequiredWithoutCurrent_academic_staffsNestedInput = {
+  create?: Prisma.XOR<Prisma.UserPositionCreateWithoutCurrent_academic_staffsInput, Prisma.UserPositionUncheckedCreateWithoutCurrent_academic_staffsInput>
+  connectOrCreate?: Prisma.UserPositionCreateOrConnectWithoutCurrent_academic_staffsInput
+  upsert?: Prisma.UserPositionUpsertWithoutCurrent_academic_staffsInput
   connect?: Prisma.UserPositionWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.UserPositionUpdateToOneWithWhereWithoutCurrent_academic_teachersInput, Prisma.UserPositionUpdateWithoutCurrent_academic_teachersInput>, Prisma.UserPositionUncheckedUpdateWithoutCurrent_academic_teachersInput>
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserPositionUpdateToOneWithWhereWithoutCurrent_academic_staffsInput, Prisma.UserPositionUpdateWithoutCurrent_academic_staffsInput>, Prisma.UserPositionUncheckedUpdateWithoutCurrent_academic_staffsInput>
 }
 
 export type UserPositionUpdateManyWithoutAcademic_administrative_staffsNestedInput = {
@@ -448,6 +448,12 @@ export type UserPositionUncheckedUpdateManyWithoutAcademic_administrative_staffs
   deleteMany?: Prisma.UserPositionScalarWhereInput | Prisma.UserPositionScalarWhereInput[]
 }
 
+export type UserPositionCreateNestedOneWithoutUserInput = {
+  create?: Prisma.XOR<Prisma.UserPositionCreateWithoutUserInput, Prisma.UserPositionUncheckedCreateWithoutUserInput>
+  connectOrCreate?: Prisma.UserPositionCreateOrConnectWithoutUserInput
+  connect?: Prisma.UserPositionWhereUniqueInput
+}
+
 export type UserPositionCreateNestedManyWithoutCreated_byInput = {
   create?: Prisma.XOR<Prisma.UserPositionCreateWithoutCreated_byInput, Prisma.UserPositionUncheckedCreateWithoutCreated_byInput> | Prisma.UserPositionCreateWithoutCreated_byInput[] | Prisma.UserPositionUncheckedCreateWithoutCreated_byInput[]
   connectOrCreate?: Prisma.UserPositionCreateOrConnectWithoutCreated_byInput | Prisma.UserPositionCreateOrConnectWithoutCreated_byInput[]
@@ -462,12 +468,6 @@ export type UserPositionCreateNestedManyWithoutUpdated_byInput = {
   connect?: Prisma.UserPositionWhereUniqueInput | Prisma.UserPositionWhereUniqueInput[]
 }
 
-export type UserPositionCreateNestedOneWithoutUserInput = {
-  create?: Prisma.XOR<Prisma.UserPositionCreateWithoutUserInput, Prisma.UserPositionUncheckedCreateWithoutUserInput>
-  connectOrCreate?: Prisma.UserPositionCreateOrConnectWithoutUserInput
-  connect?: Prisma.UserPositionWhereUniqueInput
-}
-
 export type UserPositionUncheckedCreateNestedManyWithoutCreated_byInput = {
   create?: Prisma.XOR<Prisma.UserPositionCreateWithoutCreated_byInput, Prisma.UserPositionUncheckedCreateWithoutCreated_byInput> | Prisma.UserPositionCreateWithoutCreated_byInput[] | Prisma.UserPositionUncheckedCreateWithoutCreated_byInput[]
   connectOrCreate?: Prisma.UserPositionCreateOrConnectWithoutCreated_byInput | Prisma.UserPositionCreateOrConnectWithoutCreated_byInput[]
@@ -480,6 +480,16 @@ export type UserPositionUncheckedCreateNestedManyWithoutUpdated_byInput = {
   connectOrCreate?: Prisma.UserPositionCreateOrConnectWithoutUpdated_byInput | Prisma.UserPositionCreateOrConnectWithoutUpdated_byInput[]
   createMany?: Prisma.UserPositionCreateManyUpdated_byInputEnvelope
   connect?: Prisma.UserPositionWhereUniqueInput | Prisma.UserPositionWhereUniqueInput[]
+}
+
+export type UserPositionUpdateOneWithoutUserNestedInput = {
+  create?: Prisma.XOR<Prisma.UserPositionCreateWithoutUserInput, Prisma.UserPositionUncheckedCreateWithoutUserInput>
+  connectOrCreate?: Prisma.UserPositionCreateOrConnectWithoutUserInput
+  upsert?: Prisma.UserPositionUpsertWithoutUserInput
+  disconnect?: Prisma.UserPositionWhereInput | boolean
+  delete?: Prisma.UserPositionWhereInput | boolean
+  connect?: Prisma.UserPositionWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserPositionUpdateToOneWithWhereWithoutUserInput, Prisma.UserPositionUpdateWithoutUserInput>, Prisma.UserPositionUncheckedUpdateWithoutUserInput>
 }
 
 export type UserPositionUpdateManyWithoutCreated_byNestedInput = {
@@ -508,16 +518,6 @@ export type UserPositionUpdateManyWithoutUpdated_byNestedInput = {
   update?: Prisma.UserPositionUpdateWithWhereUniqueWithoutUpdated_byInput | Prisma.UserPositionUpdateWithWhereUniqueWithoutUpdated_byInput[]
   updateMany?: Prisma.UserPositionUpdateManyWithWhereWithoutUpdated_byInput | Prisma.UserPositionUpdateManyWithWhereWithoutUpdated_byInput[]
   deleteMany?: Prisma.UserPositionScalarWhereInput | Prisma.UserPositionScalarWhereInput[]
-}
-
-export type UserPositionUpdateOneWithoutUserNestedInput = {
-  create?: Prisma.XOR<Prisma.UserPositionCreateWithoutUserInput, Prisma.UserPositionUncheckedCreateWithoutUserInput>
-  connectOrCreate?: Prisma.UserPositionCreateOrConnectWithoutUserInput
-  upsert?: Prisma.UserPositionUpsertWithoutUserInput
-  disconnect?: Prisma.UserPositionWhereInput | boolean
-  delete?: Prisma.UserPositionWhereInput | boolean
-  connect?: Prisma.UserPositionWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.UserPositionUpdateToOneWithWhereWithoutUserInput, Prisma.UserPositionUpdateWithoutUserInput>, Prisma.UserPositionUncheckedUpdateWithoutUserInput>
 }
 
 export type UserPositionUncheckedUpdateManyWithoutCreated_byNestedInput = {
@@ -590,7 +590,7 @@ export type UserPositionUncheckedUpdateManyWithoutRoleNestedInput = {
   deleteMany?: Prisma.UserPositionScalarWhereInput | Prisma.UserPositionScalarWhereInput[]
 }
 
-export type UserPositionCreateWithoutCurrent_academic_teachersInput = {
+export type UserPositionCreateWithoutCurrent_academic_staffsInput = {
   id?: string
   position_name: string
   created_at?: Date | string
@@ -602,21 +602,21 @@ export type UserPositionCreateWithoutCurrent_academic_teachersInput = {
   academic_administrative_staffs?: Prisma.AcademicAdministrativeStaffCreateNestedManyWithoutPositionsInput
 }
 
-export type UserPositionUncheckedCreateWithoutCurrent_academic_teachersInput = {
+export type UserPositionUncheckedCreateWithoutCurrent_academic_staffsInput = {
   id?: string
   position_name: string
-  role_id: string
   created_by_id?: string | null
   updated_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
+  role_id: string
   user?: Prisma.UserUncheckedCreateNestedManyWithoutPositionInput
   academic_administrative_staffs?: Prisma.AcademicAdministrativeStaffUncheckedCreateNestedManyWithoutPositionsInput
 }
 
-export type UserPositionCreateOrConnectWithoutCurrent_academic_teachersInput = {
+export type UserPositionCreateOrConnectWithoutCurrent_academic_staffsInput = {
   where: Prisma.UserPositionWhereUniqueInput
-  create: Prisma.XOR<Prisma.UserPositionCreateWithoutCurrent_academic_teachersInput, Prisma.UserPositionUncheckedCreateWithoutCurrent_academic_teachersInput>
+  create: Prisma.XOR<Prisma.UserPositionCreateWithoutCurrent_academic_staffsInput, Prisma.UserPositionUncheckedCreateWithoutCurrent_academic_staffsInput>
 }
 
 export type UserPositionCreateWithoutAcademic_administrative_staffsInput = {
@@ -624,7 +624,7 @@ export type UserPositionCreateWithoutAcademic_administrative_staffsInput = {
   position_name: string
   created_at?: Date | string
   updated_at?: Date | string | null
-  current_academic_teachers?: Prisma.AcademicAdministrativeStaffCreateNestedManyWithoutCurrent_positionInput
+  current_academic_staffs?: Prisma.AcademicAdministrativeStaffCreateNestedManyWithoutCurrent_positionInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_user_positionsInput
   role: Prisma.UserRoleCreateNestedOneWithoutPositionsInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_user_positionsInput
@@ -634,12 +634,12 @@ export type UserPositionCreateWithoutAcademic_administrative_staffsInput = {
 export type UserPositionUncheckedCreateWithoutAcademic_administrative_staffsInput = {
   id?: string
   position_name: string
-  role_id: string
   created_by_id?: string | null
   updated_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
-  current_academic_teachers?: Prisma.AcademicAdministrativeStaffUncheckedCreateNestedManyWithoutCurrent_positionInput
+  role_id: string
+  current_academic_staffs?: Prisma.AcademicAdministrativeStaffUncheckedCreateNestedManyWithoutCurrent_positionInput
   user?: Prisma.UserUncheckedCreateNestedManyWithoutPositionInput
 }
 
@@ -648,18 +648,18 @@ export type UserPositionCreateOrConnectWithoutAcademic_administrative_staffsInpu
   create: Prisma.XOR<Prisma.UserPositionCreateWithoutAcademic_administrative_staffsInput, Prisma.UserPositionUncheckedCreateWithoutAcademic_administrative_staffsInput>
 }
 
-export type UserPositionUpsertWithoutCurrent_academic_teachersInput = {
-  update: Prisma.XOR<Prisma.UserPositionUpdateWithoutCurrent_academic_teachersInput, Prisma.UserPositionUncheckedUpdateWithoutCurrent_academic_teachersInput>
-  create: Prisma.XOR<Prisma.UserPositionCreateWithoutCurrent_academic_teachersInput, Prisma.UserPositionUncheckedCreateWithoutCurrent_academic_teachersInput>
+export type UserPositionUpsertWithoutCurrent_academic_staffsInput = {
+  update: Prisma.XOR<Prisma.UserPositionUpdateWithoutCurrent_academic_staffsInput, Prisma.UserPositionUncheckedUpdateWithoutCurrent_academic_staffsInput>
+  create: Prisma.XOR<Prisma.UserPositionCreateWithoutCurrent_academic_staffsInput, Prisma.UserPositionUncheckedCreateWithoutCurrent_academic_staffsInput>
   where?: Prisma.UserPositionWhereInput
 }
 
-export type UserPositionUpdateToOneWithWhereWithoutCurrent_academic_teachersInput = {
+export type UserPositionUpdateToOneWithWhereWithoutCurrent_academic_staffsInput = {
   where?: Prisma.UserPositionWhereInput
-  data: Prisma.XOR<Prisma.UserPositionUpdateWithoutCurrent_academic_teachersInput, Prisma.UserPositionUncheckedUpdateWithoutCurrent_academic_teachersInput>
+  data: Prisma.XOR<Prisma.UserPositionUpdateWithoutCurrent_academic_staffsInput, Prisma.UserPositionUncheckedUpdateWithoutCurrent_academic_staffsInput>
 }
 
-export type UserPositionUpdateWithoutCurrent_academic_teachersInput = {
+export type UserPositionUpdateWithoutCurrent_academic_staffsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   position_name?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -671,14 +671,14 @@ export type UserPositionUpdateWithoutCurrent_academic_teachersInput = {
   academic_administrative_staffs?: Prisma.AcademicAdministrativeStaffUpdateManyWithoutPositionsNestedInput
 }
 
-export type UserPositionUncheckedUpdateWithoutCurrent_academic_teachersInput = {
+export type UserPositionUncheckedUpdateWithoutCurrent_academic_staffsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   position_name?: Prisma.StringFieldUpdateOperationsInput | string
-  role_id?: Prisma.StringFieldUpdateOperationsInput | string
   created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  role_id?: Prisma.StringFieldUpdateOperationsInput | string
   user?: Prisma.UserUncheckedUpdateManyWithoutPositionNestedInput
   academic_administrative_staffs?: Prisma.AcademicAdministrativeStaffUncheckedUpdateManyWithoutPositionsNestedInput
 }
@@ -705,11 +705,40 @@ export type UserPositionScalarWhereInput = {
   NOT?: Prisma.UserPositionScalarWhereInput | Prisma.UserPositionScalarWhereInput[]
   id?: Prisma.StringFilter<"UserPosition"> | string
   position_name?: Prisma.StringFilter<"UserPosition"> | string
-  role_id?: Prisma.StringFilter<"UserPosition"> | string
   created_by_id?: Prisma.StringNullableFilter<"UserPosition"> | string | null
   updated_by_id?: Prisma.StringNullableFilter<"UserPosition"> | string | null
   created_at?: Prisma.DateTimeFilter<"UserPosition"> | Date | string
   updated_at?: Prisma.DateTimeNullableFilter<"UserPosition"> | Date | string | null
+  role_id?: Prisma.StringFilter<"UserPosition"> | string
+}
+
+export type UserPositionCreateWithoutUserInput = {
+  id?: string
+  position_name: string
+  created_at?: Date | string
+  updated_at?: Date | string | null
+  current_academic_staffs?: Prisma.AcademicAdministrativeStaffCreateNestedManyWithoutCurrent_positionInput
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_user_positionsInput
+  role: Prisma.UserRoleCreateNestedOneWithoutPositionsInput
+  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_user_positionsInput
+  academic_administrative_staffs?: Prisma.AcademicAdministrativeStaffCreateNestedManyWithoutPositionsInput
+}
+
+export type UserPositionUncheckedCreateWithoutUserInput = {
+  id?: string
+  position_name: string
+  created_by_id?: string | null
+  updated_by_id?: string | null
+  created_at?: Date | string
+  updated_at?: Date | string | null
+  role_id: string
+  current_academic_staffs?: Prisma.AcademicAdministrativeStaffUncheckedCreateNestedManyWithoutCurrent_positionInput
+  academic_administrative_staffs?: Prisma.AcademicAdministrativeStaffUncheckedCreateNestedManyWithoutPositionsInput
+}
+
+export type UserPositionCreateOrConnectWithoutUserInput = {
+  where: Prisma.UserPositionWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserPositionCreateWithoutUserInput, Prisma.UserPositionUncheckedCreateWithoutUserInput>
 }
 
 export type UserPositionCreateWithoutCreated_byInput = {
@@ -717,7 +746,7 @@ export type UserPositionCreateWithoutCreated_byInput = {
   position_name: string
   created_at?: Date | string
   updated_at?: Date | string | null
-  current_academic_teachers?: Prisma.AcademicAdministrativeStaffCreateNestedManyWithoutCurrent_positionInput
+  current_academic_staffs?: Prisma.AcademicAdministrativeStaffCreateNestedManyWithoutCurrent_positionInput
   role: Prisma.UserRoleCreateNestedOneWithoutPositionsInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_user_positionsInput
   user?: Prisma.UserCreateNestedManyWithoutPositionInput
@@ -727,11 +756,11 @@ export type UserPositionCreateWithoutCreated_byInput = {
 export type UserPositionUncheckedCreateWithoutCreated_byInput = {
   id?: string
   position_name: string
-  role_id: string
   updated_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
-  current_academic_teachers?: Prisma.AcademicAdministrativeStaffUncheckedCreateNestedManyWithoutCurrent_positionInput
+  role_id: string
+  current_academic_staffs?: Prisma.AcademicAdministrativeStaffUncheckedCreateNestedManyWithoutCurrent_positionInput
   user?: Prisma.UserUncheckedCreateNestedManyWithoutPositionInput
   academic_administrative_staffs?: Prisma.AcademicAdministrativeStaffUncheckedCreateNestedManyWithoutPositionsInput
 }
@@ -751,7 +780,7 @@ export type UserPositionCreateWithoutUpdated_byInput = {
   position_name: string
   created_at?: Date | string
   updated_at?: Date | string | null
-  current_academic_teachers?: Prisma.AcademicAdministrativeStaffCreateNestedManyWithoutCurrent_positionInput
+  current_academic_staffs?: Prisma.AcademicAdministrativeStaffCreateNestedManyWithoutCurrent_positionInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_user_positionsInput
   role: Prisma.UserRoleCreateNestedOneWithoutPositionsInput
   user?: Prisma.UserCreateNestedManyWithoutPositionInput
@@ -761,11 +790,11 @@ export type UserPositionCreateWithoutUpdated_byInput = {
 export type UserPositionUncheckedCreateWithoutUpdated_byInput = {
   id?: string
   position_name: string
-  role_id: string
   created_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
-  current_academic_teachers?: Prisma.AcademicAdministrativeStaffUncheckedCreateNestedManyWithoutCurrent_positionInput
+  role_id: string
+  current_academic_staffs?: Prisma.AcademicAdministrativeStaffUncheckedCreateNestedManyWithoutCurrent_positionInput
   user?: Prisma.UserUncheckedCreateNestedManyWithoutPositionInput
   academic_administrative_staffs?: Prisma.AcademicAdministrativeStaffUncheckedCreateNestedManyWithoutPositionsInput
 }
@@ -780,33 +809,39 @@ export type UserPositionCreateManyUpdated_byInputEnvelope = {
   skipDuplicates?: boolean
 }
 
-export type UserPositionCreateWithoutUserInput = {
-  id?: string
-  position_name: string
-  created_at?: Date | string
-  updated_at?: Date | string | null
-  current_academic_teachers?: Prisma.AcademicAdministrativeStaffCreateNestedManyWithoutCurrent_positionInput
-  created_by?: Prisma.UserCreateNestedOneWithoutCreated_user_positionsInput
-  role: Prisma.UserRoleCreateNestedOneWithoutPositionsInput
-  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_user_positionsInput
-  academic_administrative_staffs?: Prisma.AcademicAdministrativeStaffCreateNestedManyWithoutPositionsInput
-}
-
-export type UserPositionUncheckedCreateWithoutUserInput = {
-  id?: string
-  position_name: string
-  role_id: string
-  created_by_id?: string | null
-  updated_by_id?: string | null
-  created_at?: Date | string
-  updated_at?: Date | string | null
-  current_academic_teachers?: Prisma.AcademicAdministrativeStaffUncheckedCreateNestedManyWithoutCurrent_positionInput
-  academic_administrative_staffs?: Prisma.AcademicAdministrativeStaffUncheckedCreateNestedManyWithoutPositionsInput
-}
-
-export type UserPositionCreateOrConnectWithoutUserInput = {
-  where: Prisma.UserPositionWhereUniqueInput
+export type UserPositionUpsertWithoutUserInput = {
+  update: Prisma.XOR<Prisma.UserPositionUpdateWithoutUserInput, Prisma.UserPositionUncheckedUpdateWithoutUserInput>
   create: Prisma.XOR<Prisma.UserPositionCreateWithoutUserInput, Prisma.UserPositionUncheckedCreateWithoutUserInput>
+  where?: Prisma.UserPositionWhereInput
+}
+
+export type UserPositionUpdateToOneWithWhereWithoutUserInput = {
+  where?: Prisma.UserPositionWhereInput
+  data: Prisma.XOR<Prisma.UserPositionUpdateWithoutUserInput, Prisma.UserPositionUncheckedUpdateWithoutUserInput>
+}
+
+export type UserPositionUpdateWithoutUserInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  position_name?: Prisma.StringFieldUpdateOperationsInput | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  current_academic_staffs?: Prisma.AcademicAdministrativeStaffUpdateManyWithoutCurrent_positionNestedInput
+  created_by?: Prisma.UserUpdateOneWithoutCreated_user_positionsNestedInput
+  role?: Prisma.UserRoleUpdateOneRequiredWithoutPositionsNestedInput
+  updated_by?: Prisma.UserUpdateOneWithoutUpdated_user_positionsNestedInput
+  academic_administrative_staffs?: Prisma.AcademicAdministrativeStaffUpdateManyWithoutPositionsNestedInput
+}
+
+export type UserPositionUncheckedUpdateWithoutUserInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  position_name?: Prisma.StringFieldUpdateOperationsInput | string
+  created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  role_id?: Prisma.StringFieldUpdateOperationsInput | string
+  current_academic_staffs?: Prisma.AcademicAdministrativeStaffUncheckedUpdateManyWithoutCurrent_positionNestedInput
+  academic_administrative_staffs?: Prisma.AcademicAdministrativeStaffUncheckedUpdateManyWithoutPositionsNestedInput
 }
 
 export type UserPositionUpsertWithWhereUniqueWithoutCreated_byInput = {
@@ -841,47 +876,12 @@ export type UserPositionUpdateManyWithWhereWithoutUpdated_byInput = {
   data: Prisma.XOR<Prisma.UserPositionUpdateManyMutationInput, Prisma.UserPositionUncheckedUpdateManyWithoutUpdated_byInput>
 }
 
-export type UserPositionUpsertWithoutUserInput = {
-  update: Prisma.XOR<Prisma.UserPositionUpdateWithoutUserInput, Prisma.UserPositionUncheckedUpdateWithoutUserInput>
-  create: Prisma.XOR<Prisma.UserPositionCreateWithoutUserInput, Prisma.UserPositionUncheckedCreateWithoutUserInput>
-  where?: Prisma.UserPositionWhereInput
-}
-
-export type UserPositionUpdateToOneWithWhereWithoutUserInput = {
-  where?: Prisma.UserPositionWhereInput
-  data: Prisma.XOR<Prisma.UserPositionUpdateWithoutUserInput, Prisma.UserPositionUncheckedUpdateWithoutUserInput>
-}
-
-export type UserPositionUpdateWithoutUserInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  position_name?: Prisma.StringFieldUpdateOperationsInput | string
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  current_academic_teachers?: Prisma.AcademicAdministrativeStaffUpdateManyWithoutCurrent_positionNestedInput
-  created_by?: Prisma.UserUpdateOneWithoutCreated_user_positionsNestedInput
-  role?: Prisma.UserRoleUpdateOneRequiredWithoutPositionsNestedInput
-  updated_by?: Prisma.UserUpdateOneWithoutUpdated_user_positionsNestedInput
-  academic_administrative_staffs?: Prisma.AcademicAdministrativeStaffUpdateManyWithoutPositionsNestedInput
-}
-
-export type UserPositionUncheckedUpdateWithoutUserInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  position_name?: Prisma.StringFieldUpdateOperationsInput | string
-  role_id?: Prisma.StringFieldUpdateOperationsInput | string
-  created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  current_academic_teachers?: Prisma.AcademicAdministrativeStaffUncheckedUpdateManyWithoutCurrent_positionNestedInput
-  academic_administrative_staffs?: Prisma.AcademicAdministrativeStaffUncheckedUpdateManyWithoutPositionsNestedInput
-}
-
 export type UserPositionCreateWithoutRoleInput = {
   id?: string
   position_name: string
   created_at?: Date | string
   updated_at?: Date | string | null
-  current_academic_teachers?: Prisma.AcademicAdministrativeStaffCreateNestedManyWithoutCurrent_positionInput
+  current_academic_staffs?: Prisma.AcademicAdministrativeStaffCreateNestedManyWithoutCurrent_positionInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_user_positionsInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_user_positionsInput
   user?: Prisma.UserCreateNestedManyWithoutPositionInput
@@ -895,7 +895,7 @@ export type UserPositionUncheckedCreateWithoutRoleInput = {
   updated_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
-  current_academic_teachers?: Prisma.AcademicAdministrativeStaffUncheckedCreateNestedManyWithoutCurrent_positionInput
+  current_academic_staffs?: Prisma.AcademicAdministrativeStaffUncheckedCreateNestedManyWithoutCurrent_positionInput
   user?: Prisma.UserUncheckedCreateNestedManyWithoutPositionInput
   academic_administrative_staffs?: Prisma.AcademicAdministrativeStaffUncheckedCreateNestedManyWithoutPositionsInput
 }
@@ -931,7 +931,7 @@ export type UserPositionUpdateWithoutAcademic_administrative_staffsInput = {
   position_name?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  current_academic_teachers?: Prisma.AcademicAdministrativeStaffUpdateManyWithoutCurrent_positionNestedInput
+  current_academic_staffs?: Prisma.AcademicAdministrativeStaffUpdateManyWithoutCurrent_positionNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_user_positionsNestedInput
   role?: Prisma.UserRoleUpdateOneRequiredWithoutPositionsNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_user_positionsNestedInput
@@ -941,41 +941,41 @@ export type UserPositionUpdateWithoutAcademic_administrative_staffsInput = {
 export type UserPositionUncheckedUpdateWithoutAcademic_administrative_staffsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   position_name?: Prisma.StringFieldUpdateOperationsInput | string
-  role_id?: Prisma.StringFieldUpdateOperationsInput | string
   created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  current_academic_teachers?: Prisma.AcademicAdministrativeStaffUncheckedUpdateManyWithoutCurrent_positionNestedInput
+  role_id?: Prisma.StringFieldUpdateOperationsInput | string
+  current_academic_staffs?: Prisma.AcademicAdministrativeStaffUncheckedUpdateManyWithoutCurrent_positionNestedInput
   user?: Prisma.UserUncheckedUpdateManyWithoutPositionNestedInput
 }
 
 export type UserPositionUncheckedUpdateManyWithoutAcademic_administrative_staffsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   position_name?: Prisma.StringFieldUpdateOperationsInput | string
-  role_id?: Prisma.StringFieldUpdateOperationsInput | string
   created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  role_id?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type UserPositionCreateManyCreated_byInput = {
   id?: string
   position_name: string
-  role_id: string
   updated_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
+  role_id: string
 }
 
 export type UserPositionCreateManyUpdated_byInput = {
   id?: string
   position_name: string
-  role_id: string
   created_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
+  role_id: string
 }
 
 export type UserPositionUpdateWithoutCreated_byInput = {
@@ -983,7 +983,7 @@ export type UserPositionUpdateWithoutCreated_byInput = {
   position_name?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  current_academic_teachers?: Prisma.AcademicAdministrativeStaffUpdateManyWithoutCurrent_positionNestedInput
+  current_academic_staffs?: Prisma.AcademicAdministrativeStaffUpdateManyWithoutCurrent_positionNestedInput
   role?: Prisma.UserRoleUpdateOneRequiredWithoutPositionsNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_user_positionsNestedInput
   user?: Prisma.UserUpdateManyWithoutPositionNestedInput
@@ -993,11 +993,11 @@ export type UserPositionUpdateWithoutCreated_byInput = {
 export type UserPositionUncheckedUpdateWithoutCreated_byInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   position_name?: Prisma.StringFieldUpdateOperationsInput | string
-  role_id?: Prisma.StringFieldUpdateOperationsInput | string
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  current_academic_teachers?: Prisma.AcademicAdministrativeStaffUncheckedUpdateManyWithoutCurrent_positionNestedInput
+  role_id?: Prisma.StringFieldUpdateOperationsInput | string
+  current_academic_staffs?: Prisma.AcademicAdministrativeStaffUncheckedUpdateManyWithoutCurrent_positionNestedInput
   user?: Prisma.UserUncheckedUpdateManyWithoutPositionNestedInput
   academic_administrative_staffs?: Prisma.AcademicAdministrativeStaffUncheckedUpdateManyWithoutPositionsNestedInput
 }
@@ -1005,10 +1005,10 @@ export type UserPositionUncheckedUpdateWithoutCreated_byInput = {
 export type UserPositionUncheckedUpdateManyWithoutCreated_byInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   position_name?: Prisma.StringFieldUpdateOperationsInput | string
-  role_id?: Prisma.StringFieldUpdateOperationsInput | string
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  role_id?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type UserPositionUpdateWithoutUpdated_byInput = {
@@ -1016,7 +1016,7 @@ export type UserPositionUpdateWithoutUpdated_byInput = {
   position_name?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  current_academic_teachers?: Prisma.AcademicAdministrativeStaffUpdateManyWithoutCurrent_positionNestedInput
+  current_academic_staffs?: Prisma.AcademicAdministrativeStaffUpdateManyWithoutCurrent_positionNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_user_positionsNestedInput
   role?: Prisma.UserRoleUpdateOneRequiredWithoutPositionsNestedInput
   user?: Prisma.UserUpdateManyWithoutPositionNestedInput
@@ -1026,11 +1026,11 @@ export type UserPositionUpdateWithoutUpdated_byInput = {
 export type UserPositionUncheckedUpdateWithoutUpdated_byInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   position_name?: Prisma.StringFieldUpdateOperationsInput | string
-  role_id?: Prisma.StringFieldUpdateOperationsInput | string
   created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  current_academic_teachers?: Prisma.AcademicAdministrativeStaffUncheckedUpdateManyWithoutCurrent_positionNestedInput
+  role_id?: Prisma.StringFieldUpdateOperationsInput | string
+  current_academic_staffs?: Prisma.AcademicAdministrativeStaffUncheckedUpdateManyWithoutCurrent_positionNestedInput
   user?: Prisma.UserUncheckedUpdateManyWithoutPositionNestedInput
   academic_administrative_staffs?: Prisma.AcademicAdministrativeStaffUncheckedUpdateManyWithoutPositionsNestedInput
 }
@@ -1038,10 +1038,10 @@ export type UserPositionUncheckedUpdateWithoutUpdated_byInput = {
 export type UserPositionUncheckedUpdateManyWithoutUpdated_byInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   position_name?: Prisma.StringFieldUpdateOperationsInput | string
-  role_id?: Prisma.StringFieldUpdateOperationsInput | string
   created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  role_id?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type UserPositionCreateManyRoleInput = {
@@ -1058,7 +1058,7 @@ export type UserPositionUpdateWithoutRoleInput = {
   position_name?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  current_academic_teachers?: Prisma.AcademicAdministrativeStaffUpdateManyWithoutCurrent_positionNestedInput
+  current_academic_staffs?: Prisma.AcademicAdministrativeStaffUpdateManyWithoutCurrent_positionNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_user_positionsNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_user_positionsNestedInput
   user?: Prisma.UserUpdateManyWithoutPositionNestedInput
@@ -1072,7 +1072,7 @@ export type UserPositionUncheckedUpdateWithoutRoleInput = {
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  current_academic_teachers?: Prisma.AcademicAdministrativeStaffUncheckedUpdateManyWithoutCurrent_positionNestedInput
+  current_academic_staffs?: Prisma.AcademicAdministrativeStaffUncheckedUpdateManyWithoutCurrent_positionNestedInput
   user?: Prisma.UserUncheckedUpdateManyWithoutPositionNestedInput
   academic_administrative_staffs?: Prisma.AcademicAdministrativeStaffUncheckedUpdateManyWithoutPositionsNestedInput
 }
@@ -1092,13 +1092,13 @@ export type UserPositionUncheckedUpdateManyWithoutRoleInput = {
  */
 
 export type UserPositionCountOutputType = {
-  current_academic_teachers: number
+  current_academic_staffs: number
   user: number
   academic_administrative_staffs: number
 }
 
 export type UserPositionCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  current_academic_teachers?: boolean | UserPositionCountOutputTypeCountCurrent_academic_teachersArgs
+  current_academic_staffs?: boolean | UserPositionCountOutputTypeCountCurrent_academic_staffsArgs
   user?: boolean | UserPositionCountOutputTypeCountUserArgs
   academic_administrative_staffs?: boolean | UserPositionCountOutputTypeCountAcademic_administrative_staffsArgs
 }
@@ -1116,7 +1116,7 @@ export type UserPositionCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types
 /**
  * UserPositionCountOutputType without action
  */
-export type UserPositionCountOutputTypeCountCurrent_academic_teachersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type UserPositionCountOutputTypeCountCurrent_academic_staffsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   where?: Prisma.AcademicAdministrativeStaffWhereInput
 }
 
@@ -1138,12 +1138,12 @@ export type UserPositionCountOutputTypeCountAcademic_administrative_staffsArgs<E
 export type UserPositionSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   position_name?: boolean
-  role_id?: boolean
   created_by_id?: boolean
   updated_by_id?: boolean
   created_at?: boolean
   updated_at?: boolean
-  current_academic_teachers?: boolean | Prisma.UserPosition$current_academic_teachersArgs<ExtArgs>
+  role_id?: boolean
+  current_academic_staffs?: boolean | Prisma.UserPosition$current_academic_staffsArgs<ExtArgs>
   created_by?: boolean | Prisma.UserPosition$created_byArgs<ExtArgs>
   role?: boolean | Prisma.UserRoleDefaultArgs<ExtArgs>
   updated_by?: boolean | Prisma.UserPosition$updated_byArgs<ExtArgs>
@@ -1155,11 +1155,11 @@ export type UserPositionSelect<ExtArgs extends runtime.Types.Extensions.Internal
 export type UserPositionSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   position_name?: boolean
-  role_id?: boolean
   created_by_id?: boolean
   updated_by_id?: boolean
   created_at?: boolean
   updated_at?: boolean
+  role_id?: boolean
   created_by?: boolean | Prisma.UserPosition$created_byArgs<ExtArgs>
   role?: boolean | Prisma.UserRoleDefaultArgs<ExtArgs>
   updated_by?: boolean | Prisma.UserPosition$updated_byArgs<ExtArgs>
@@ -1168,11 +1168,11 @@ export type UserPositionSelectCreateManyAndReturn<ExtArgs extends runtime.Types.
 export type UserPositionSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   position_name?: boolean
-  role_id?: boolean
   created_by_id?: boolean
   updated_by_id?: boolean
   created_at?: boolean
   updated_at?: boolean
+  role_id?: boolean
   created_by?: boolean | Prisma.UserPosition$created_byArgs<ExtArgs>
   role?: boolean | Prisma.UserRoleDefaultArgs<ExtArgs>
   updated_by?: boolean | Prisma.UserPosition$updated_byArgs<ExtArgs>
@@ -1181,16 +1181,16 @@ export type UserPositionSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.
 export type UserPositionSelectScalar = {
   id?: boolean
   position_name?: boolean
-  role_id?: boolean
   created_by_id?: boolean
   updated_by_id?: boolean
   created_at?: boolean
   updated_at?: boolean
+  role_id?: boolean
 }
 
-export type UserPositionOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "position_name" | "role_id" | "created_by_id" | "updated_by_id" | "created_at" | "updated_at", ExtArgs["result"]["userPosition"]>
+export type UserPositionOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "position_name" | "created_by_id" | "updated_by_id" | "created_at" | "updated_at" | "role_id", ExtArgs["result"]["userPosition"]>
 export type UserPositionInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  current_academic_teachers?: boolean | Prisma.UserPosition$current_academic_teachersArgs<ExtArgs>
+  current_academic_staffs?: boolean | Prisma.UserPosition$current_academic_staffsArgs<ExtArgs>
   created_by?: boolean | Prisma.UserPosition$created_byArgs<ExtArgs>
   role?: boolean | Prisma.UserRoleDefaultArgs<ExtArgs>
   updated_by?: boolean | Prisma.UserPosition$updated_byArgs<ExtArgs>
@@ -1212,7 +1212,7 @@ export type UserPositionIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types
 export type $UserPositionPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "UserPosition"
   objects: {
-    current_academic_teachers: Prisma.$AcademicAdministrativeStaffPayload<ExtArgs>[]
+    current_academic_staffs: Prisma.$AcademicAdministrativeStaffPayload<ExtArgs>[]
     created_by: Prisma.$UserPayload<ExtArgs> | null
     role: Prisma.$UserRolePayload<ExtArgs>
     updated_by: Prisma.$UserPayload<ExtArgs> | null
@@ -1222,11 +1222,11 @@ export type $UserPositionPayload<ExtArgs extends runtime.Types.Extensions.Intern
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
     position_name: string
-    role_id: string
     created_by_id: string | null
     updated_by_id: string | null
     created_at: Date
     updated_at: Date | null
+    role_id: string
   }, ExtArgs["result"]["userPosition"]>
   composites: {}
 }
@@ -1621,7 +1621,7 @@ readonly fields: UserPositionFieldRefs;
  */
 export interface Prisma__UserPositionClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  current_academic_teachers<T extends Prisma.UserPosition$current_academic_teachersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserPosition$current_academic_teachersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AcademicAdministrativeStaffPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  current_academic_staffs<T extends Prisma.UserPosition$current_academic_staffsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserPosition$current_academic_staffsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$AcademicAdministrativeStaffPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   created_by<T extends Prisma.UserPosition$created_byArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserPosition$created_byArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   role<T extends Prisma.UserRoleDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserRoleDefaultArgs<ExtArgs>>): Prisma.Prisma__UserRoleClient<runtime.Types.Result.GetResult<Prisma.$UserRolePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   updated_by<T extends Prisma.UserPosition$updated_byArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserPosition$updated_byArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
@@ -1658,11 +1658,11 @@ export interface Prisma__UserPositionClient<T, Null = never, ExtArgs extends run
 export interface UserPositionFieldRefs {
   readonly id: Prisma.FieldRef<"UserPosition", 'String'>
   readonly position_name: Prisma.FieldRef<"UserPosition", 'String'>
-  readonly role_id: Prisma.FieldRef<"UserPosition", 'String'>
   readonly created_by_id: Prisma.FieldRef<"UserPosition", 'String'>
   readonly updated_by_id: Prisma.FieldRef<"UserPosition", 'String'>
   readonly created_at: Prisma.FieldRef<"UserPosition", 'DateTime'>
   readonly updated_at: Prisma.FieldRef<"UserPosition", 'DateTime'>
+  readonly role_id: Prisma.FieldRef<"UserPosition", 'String'>
 }
     
 
@@ -2064,9 +2064,9 @@ export type UserPositionDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.
 }
 
 /**
- * UserPosition.current_academic_teachers
+ * UserPosition.current_academic_staffs
  */
-export type UserPosition$current_academic_teachersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type UserPosition$current_academic_staffsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
    * Select specific fields to fetch from the AcademicAdministrativeStaff
    */

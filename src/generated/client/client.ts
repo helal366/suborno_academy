@@ -197,10 +197,10 @@ export type StudentResponsibility = Prisma.StudentResponsibilityModel
  */
 export type StudentResponsibleGuardianDetails = Prisma.StudentResponsibleGuardianDetailsModel
 /**
- * Model SubjectTeacher
+ * Model SubjectOfSubjectTeacher
  * 
  */
-export type SubjectTeacher = Prisma.SubjectTeacherModel
+export type SubjectOfSubjectTeacher = Prisma.SubjectOfSubjectTeacherModel
 /**
  * Model TeacherHonourableResponsibility
  * 

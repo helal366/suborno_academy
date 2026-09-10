@@ -24,7 +24,8 @@
 *  Hifz and Nazera class separation depends on the students number. If the number of students is low then the authority will continue Hifz and Nazera in one class. But if number increase then the authority will separate the Hifz and Nazera class.
 * Hifz teacher will have the access of Nazera and Nurani teacher's class routine access.
 * Always there will be two teachers for Hifz and Nazera whether the class is combined or the classes are separate.
-
+## Current role and current position :
+* Will update by business logic when promoted
 ## Class scheduling/timimg:
 **SPECIAL PERIODS: **
 1. NURANI_MORNING: 07:00 to 08:00
@@ -94,3 +95,9 @@
 1. A student will only have one responsible teacher at a time.
 2. A teacher will have more than one responsible teacher at a time.
 3. Principal sir will decide, how many students' responsibility a teacher will take. Primarily, a teacher can take upto 10(ten) students' responsibility.
+
+## Partial migrate
+-- AddUniqueConstraintForSingleResponsibleTeacher
+CREATE UNIQUE INDEX student_single_active_responsibility_idx 
+ON "students_responsibility" ("student_id") 
+WHERE "isActive" = true;

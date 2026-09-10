@@ -1,20 +1,26 @@
 model Class {
   id               String                       @id @default(uuid())
   class_name       String                       @unique
+  
   grade_teacher_id String?                      @unique
+  grade_teacher    AcademicAdministrativeStaff? @relation("grade_teacher_class", fields: [grade_teacher_id], references: [id], onDelete: Restrict)
+  
   group_teacher_id String?                      @unique
+  group_teacher    AcademicAdministrativeStaff? @relation("group_teacher_class", fields: [group_teacher_id], references: [id], onDelete: Restrict)
+  
   created_by_id    String?
-  updated_by_id    String?
-  created_at       DateTime                     @default(now())
-  updated_at       DateTime?                    @updatedAt
+  created_by       User?                        @relation("class_created_by", fields: [created_by_id], references: [id])
+  
   book_classes     BookClass[]
   class_routines   ClassRoutine[]
-  created_by       User?                        @relation("class_created_by", fields: [created_by_id], references: [id])
-  grade_teacher    AcademicAdministrativeStaff? @relation("grade_teacher_class", fields: [grade_teacher_id], references: [id], onDelete: Restrict)
-  group_teacher    AcademicAdministrativeStaff? @relation("group_teacher_class", fields: [group_teacher_id], references: [id], onDelete: Restrict)
-  updated_by       User?                        @relation("class_updated_by", fields: [updated_by_id], references: [id])
   active_students  Student[]                    @relation("student_active_classes")
   students         Student[]                    @relation("student_classes")
+  
+  updated_by_id    String?
+  updated_by       User?                        @relation("class_updated_by", fields: [updated_by_id], references: [id])
+  
+  created_at       DateTime                     @default(now())
+  updated_at       DateTime?                    @updatedAt
 
   @@map("classes")
 }

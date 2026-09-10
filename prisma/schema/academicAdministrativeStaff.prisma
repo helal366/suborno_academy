@@ -1,35 +1,51 @@
 model AcademicAdministrativeStaff {
   id                                String                            @id @default(uuid())
   full_name                         String
-  current_position_id               String
-  current_role_id                   String
+  mobile_number                     String
+  
+  academic_results                  AcademicResult?
   teaching_working_experience_year  Int?
   teaching_working_experience_month Int?
   alternative_contact_no            String[]
+
+  current_position_id               String
+  current_position                  UserPosition                      @relation("staff_current_position", fields: [current_position_id], references: [id])
+  
+  current_role_id                   String
+  current_role                      UserRole                          @relation("staff_current_role", fields: [current_role_id], references: [id])
+  is_currenly_active_staff          Boolean   @default(true)
+  
   user_id                           String                            @unique
-  is_subject_teacher                Boolean                           @default(false)
-  is_responsible_teacher            Boolean                           @default(false)
-  created_by_id                     String?
-  updated_by_id                     String?
-  created_at                        DateTime                          @default(now())
-  updated_at                        DateTime?                         @updatedAt
-  academic_results                  AcademicResult?
-  created_by                        User?                             @relation("academic_teacher_created_by", fields: [created_by_id], references: [id])
-  current_position                  UserPosition                      @relation("academic_teacher_current_position", fields: [current_position_id], references: [id])
-  current_role                      UserRole                          @relation("academic_teacher_current_role", fields: [current_role_id], references: [id])
-  updated_by                        User?                             @relation("academic_teacher_updated_by", fields: [updated_by_id], references: [id])
   user_primary_data                 User                              @relation(fields: [user_id], references: [id], onDelete: Cascade)
+  
+  spouse_information                SpouseInformation?
+  positions                         UserPosition[]                    @relation("staff_positions")
+  roles                             UserRole[]                        @relation("staff_roles")
+  
+  joining_history                   JoiningHistory[]
+  promoted_history                  PromotedHistory[]
+  
+  is_subject_teacher                Boolean                           @default(false)
+  subjects_of_subject_teacher       SubjectOfSubjectTeacher[]
+  
+  is_responsible_teacher            Boolean                           @default(false)
+  students_in_responsibility        StudentResponsibility[]
+  
+  honourable_responsibilities       TeacherHonourableResponsibility[]
+  
   my_classes                        ClassRoutine[]
   grade_teacher_class_name          Class?                            @relation("grade_teacher_class")
   group_teacher_class_name          Class?                            @relation("group_teacher_class")
-  spouse_information                SpouseInformation?
-  students_in_responsibility        StudentResponsibility[]
-  subjects                          SubjectTeacher[]
-  honourable_responsibilities       TeacherHonourableResponsibility[]
-  joining_history                   JoiningHistory[]
-  promoted_history                  PromotedHistory?
-  positions                         UserPosition[]                    @relation("academic_teacher_positions")
-  roles                             UserRole[]                        @relation("academic_teacher_roles")
+  
+  created_by_id                     String?
+  created_by                        User?                             @relation("academic_teacher_created_by", fields: [created_by_id], references: [id])
+  
+  updated_by_id                     String?
+  updated_by                        User?                             @relation("academic_teacher_updated_by", fields: [updated_by_id], references: [id])
+  
+  created_at                        DateTime                          @default(now())
+  updated_at                        DateTime?                         @updatedAt
 
+  @@unique([full_name, mobile_number], name: "user_full_name_mobile_unique")
   @@map("academic_teachers")
 }

@@ -6,7 +6,6 @@ import { StatusCodes } from "http-status-codes";
 import { AppError } from "../../utils/appError.js";
 import { userServices } from "./user_services.js";
 
-
 const updateUser=catchAsync(async(req:Request, res:Response, next:NextFunction)=>{
     const payload = req.body as IUpdateUserRequest;
 

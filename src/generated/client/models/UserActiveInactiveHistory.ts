@@ -409,6 +409,13 @@ export type UserActiveInactiveHistoryMinOrderByAggregateInput = {
   updated_at?: Prisma.SortOrder
 }
 
+export type UserActiveInactiveHistoryCreateNestedManyWithoutUserInput = {
+  create?: Prisma.XOR<Prisma.UserActiveInactiveHistoryCreateWithoutUserInput, Prisma.UserActiveInactiveHistoryUncheckedCreateWithoutUserInput> | Prisma.UserActiveInactiveHistoryCreateWithoutUserInput[] | Prisma.UserActiveInactiveHistoryUncheckedCreateWithoutUserInput[]
+  connectOrCreate?: Prisma.UserActiveInactiveHistoryCreateOrConnectWithoutUserInput | Prisma.UserActiveInactiveHistoryCreateOrConnectWithoutUserInput[]
+  createMany?: Prisma.UserActiveInactiveHistoryCreateManyUserInputEnvelope
+  connect?: Prisma.UserActiveInactiveHistoryWhereUniqueInput | Prisma.UserActiveInactiveHistoryWhereUniqueInput[]
+}
+
 export type UserActiveInactiveHistoryCreateNestedManyWithoutCreated_byInput = {
   create?: Prisma.XOR<Prisma.UserActiveInactiveHistoryCreateWithoutCreated_byInput, Prisma.UserActiveInactiveHistoryUncheckedCreateWithoutCreated_byInput> | Prisma.UserActiveInactiveHistoryCreateWithoutCreated_byInput[] | Prisma.UserActiveInactiveHistoryUncheckedCreateWithoutCreated_byInput[]
   connectOrCreate?: Prisma.UserActiveInactiveHistoryCreateOrConnectWithoutCreated_byInput | Prisma.UserActiveInactiveHistoryCreateOrConnectWithoutCreated_byInput[]
@@ -423,7 +430,7 @@ export type UserActiveInactiveHistoryCreateNestedManyWithoutUpdated_byInput = {
   connect?: Prisma.UserActiveInactiveHistoryWhereUniqueInput | Prisma.UserActiveInactiveHistoryWhereUniqueInput[]
 }
 
-export type UserActiveInactiveHistoryCreateNestedManyWithoutUserInput = {
+export type UserActiveInactiveHistoryUncheckedCreateNestedManyWithoutUserInput = {
   create?: Prisma.XOR<Prisma.UserActiveInactiveHistoryCreateWithoutUserInput, Prisma.UserActiveInactiveHistoryUncheckedCreateWithoutUserInput> | Prisma.UserActiveInactiveHistoryCreateWithoutUserInput[] | Prisma.UserActiveInactiveHistoryUncheckedCreateWithoutUserInput[]
   connectOrCreate?: Prisma.UserActiveInactiveHistoryCreateOrConnectWithoutUserInput | Prisma.UserActiveInactiveHistoryCreateOrConnectWithoutUserInput[]
   createMany?: Prisma.UserActiveInactiveHistoryCreateManyUserInputEnvelope
@@ -444,11 +451,18 @@ export type UserActiveInactiveHistoryUncheckedCreateNestedManyWithoutUpdated_byI
   connect?: Prisma.UserActiveInactiveHistoryWhereUniqueInput | Prisma.UserActiveInactiveHistoryWhereUniqueInput[]
 }
 
-export type UserActiveInactiveHistoryUncheckedCreateNestedManyWithoutUserInput = {
+export type UserActiveInactiveHistoryUpdateManyWithoutUserNestedInput = {
   create?: Prisma.XOR<Prisma.UserActiveInactiveHistoryCreateWithoutUserInput, Prisma.UserActiveInactiveHistoryUncheckedCreateWithoutUserInput> | Prisma.UserActiveInactiveHistoryCreateWithoutUserInput[] | Prisma.UserActiveInactiveHistoryUncheckedCreateWithoutUserInput[]
   connectOrCreate?: Prisma.UserActiveInactiveHistoryCreateOrConnectWithoutUserInput | Prisma.UserActiveInactiveHistoryCreateOrConnectWithoutUserInput[]
+  upsert?: Prisma.UserActiveInactiveHistoryUpsertWithWhereUniqueWithoutUserInput | Prisma.UserActiveInactiveHistoryUpsertWithWhereUniqueWithoutUserInput[]
   createMany?: Prisma.UserActiveInactiveHistoryCreateManyUserInputEnvelope
+  set?: Prisma.UserActiveInactiveHistoryWhereUniqueInput | Prisma.UserActiveInactiveHistoryWhereUniqueInput[]
+  disconnect?: Prisma.UserActiveInactiveHistoryWhereUniqueInput | Prisma.UserActiveInactiveHistoryWhereUniqueInput[]
+  delete?: Prisma.UserActiveInactiveHistoryWhereUniqueInput | Prisma.UserActiveInactiveHistoryWhereUniqueInput[]
   connect?: Prisma.UserActiveInactiveHistoryWhereUniqueInput | Prisma.UserActiveInactiveHistoryWhereUniqueInput[]
+  update?: Prisma.UserActiveInactiveHistoryUpdateWithWhereUniqueWithoutUserInput | Prisma.UserActiveInactiveHistoryUpdateWithWhereUniqueWithoutUserInput[]
+  updateMany?: Prisma.UserActiveInactiveHistoryUpdateManyWithWhereWithoutUserInput | Prisma.UserActiveInactiveHistoryUpdateManyWithWhereWithoutUserInput[]
+  deleteMany?: Prisma.UserActiveInactiveHistoryScalarWhereInput | Prisma.UserActiveInactiveHistoryScalarWhereInput[]
 }
 
 export type UserActiveInactiveHistoryUpdateManyWithoutCreated_byNestedInput = {
@@ -479,7 +493,7 @@ export type UserActiveInactiveHistoryUpdateManyWithoutUpdated_byNestedInput = {
   deleteMany?: Prisma.UserActiveInactiveHistoryScalarWhereInput | Prisma.UserActiveInactiveHistoryScalarWhereInput[]
 }
 
-export type UserActiveInactiveHistoryUpdateManyWithoutUserNestedInput = {
+export type UserActiveInactiveHistoryUncheckedUpdateManyWithoutUserNestedInput = {
   create?: Prisma.XOR<Prisma.UserActiveInactiveHistoryCreateWithoutUserInput, Prisma.UserActiveInactiveHistoryUncheckedCreateWithoutUserInput> | Prisma.UserActiveInactiveHistoryCreateWithoutUserInput[] | Prisma.UserActiveInactiveHistoryUncheckedCreateWithoutUserInput[]
   connectOrCreate?: Prisma.UserActiveInactiveHistoryCreateOrConnectWithoutUserInput | Prisma.UserActiveInactiveHistoryCreateOrConnectWithoutUserInput[]
   upsert?: Prisma.UserActiveInactiveHistoryUpsertWithWhereUniqueWithoutUserInput | Prisma.UserActiveInactiveHistoryUpsertWithWhereUniqueWithoutUserInput[]
@@ -521,18 +535,36 @@ export type UserActiveInactiveHistoryUncheckedUpdateManyWithoutUpdated_byNestedI
   deleteMany?: Prisma.UserActiveInactiveHistoryScalarWhereInput | Prisma.UserActiveInactiveHistoryScalarWhereInput[]
 }
 
-export type UserActiveInactiveHistoryUncheckedUpdateManyWithoutUserNestedInput = {
-  create?: Prisma.XOR<Prisma.UserActiveInactiveHistoryCreateWithoutUserInput, Prisma.UserActiveInactiveHistoryUncheckedCreateWithoutUserInput> | Prisma.UserActiveInactiveHistoryCreateWithoutUserInput[] | Prisma.UserActiveInactiveHistoryUncheckedCreateWithoutUserInput[]
-  connectOrCreate?: Prisma.UserActiveInactiveHistoryCreateOrConnectWithoutUserInput | Prisma.UserActiveInactiveHistoryCreateOrConnectWithoutUserInput[]
-  upsert?: Prisma.UserActiveInactiveHistoryUpsertWithWhereUniqueWithoutUserInput | Prisma.UserActiveInactiveHistoryUpsertWithWhereUniqueWithoutUserInput[]
-  createMany?: Prisma.UserActiveInactiveHistoryCreateManyUserInputEnvelope
-  set?: Prisma.UserActiveInactiveHistoryWhereUniqueInput | Prisma.UserActiveInactiveHistoryWhereUniqueInput[]
-  disconnect?: Prisma.UserActiveInactiveHistoryWhereUniqueInput | Prisma.UserActiveInactiveHistoryWhereUniqueInput[]
-  delete?: Prisma.UserActiveInactiveHistoryWhereUniqueInput | Prisma.UserActiveInactiveHistoryWhereUniqueInput[]
-  connect?: Prisma.UserActiveInactiveHistoryWhereUniqueInput | Prisma.UserActiveInactiveHistoryWhereUniqueInput[]
-  update?: Prisma.UserActiveInactiveHistoryUpdateWithWhereUniqueWithoutUserInput | Prisma.UserActiveInactiveHistoryUpdateWithWhereUniqueWithoutUserInput[]
-  updateMany?: Prisma.UserActiveInactiveHistoryUpdateManyWithWhereWithoutUserInput | Prisma.UserActiveInactiveHistoryUpdateManyWithWhereWithoutUserInput[]
-  deleteMany?: Prisma.UserActiveInactiveHistoryScalarWhereInput | Prisma.UserActiveInactiveHistoryScalarWhereInput[]
+export type UserActiveInactiveHistoryCreateWithoutUserInput = {
+  id?: string
+  active_status: $Enums.ActiveStatus
+  activation_time?: Date | string | null
+  inactivation_time?: Date | string | null
+  created_at?: Date | string
+  updated_at?: Date | string | null
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_user_active_inactive_historiesInput
+  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_user_active_inactive_historiesInput
+}
+
+export type UserActiveInactiveHistoryUncheckedCreateWithoutUserInput = {
+  id?: string
+  active_status: $Enums.ActiveStatus
+  activation_time?: Date | string | null
+  inactivation_time?: Date | string | null
+  created_by_id?: string | null
+  updated_by_id?: string | null
+  created_at?: Date | string
+  updated_at?: Date | string | null
+}
+
+export type UserActiveInactiveHistoryCreateOrConnectWithoutUserInput = {
+  where: Prisma.UserActiveInactiveHistoryWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserActiveInactiveHistoryCreateWithoutUserInput, Prisma.UserActiveInactiveHistoryUncheckedCreateWithoutUserInput>
+}
+
+export type UserActiveInactiveHistoryCreateManyUserInputEnvelope = {
+  data: Prisma.UserActiveInactiveHistoryCreateManyUserInput | Prisma.UserActiveInactiveHistoryCreateManyUserInput[]
+  skipDuplicates?: boolean
 }
 
 export type UserActiveInactiveHistoryCreateWithoutCreated_byInput = {
@@ -599,36 +631,35 @@ export type UserActiveInactiveHistoryCreateManyUpdated_byInputEnvelope = {
   skipDuplicates?: boolean
 }
 
-export type UserActiveInactiveHistoryCreateWithoutUserInput = {
-  id?: string
-  active_status: $Enums.ActiveStatus
-  activation_time?: Date | string | null
-  inactivation_time?: Date | string | null
-  created_at?: Date | string
-  updated_at?: Date | string | null
-  created_by?: Prisma.UserCreateNestedOneWithoutCreated_user_active_inactive_historiesInput
-  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_user_active_inactive_historiesInput
-}
-
-export type UserActiveInactiveHistoryUncheckedCreateWithoutUserInput = {
-  id?: string
-  active_status: $Enums.ActiveStatus
-  activation_time?: Date | string | null
-  inactivation_time?: Date | string | null
-  created_by_id?: string | null
-  updated_by_id?: string | null
-  created_at?: Date | string
-  updated_at?: Date | string | null
-}
-
-export type UserActiveInactiveHistoryCreateOrConnectWithoutUserInput = {
+export type UserActiveInactiveHistoryUpsertWithWhereUniqueWithoutUserInput = {
   where: Prisma.UserActiveInactiveHistoryWhereUniqueInput
+  update: Prisma.XOR<Prisma.UserActiveInactiveHistoryUpdateWithoutUserInput, Prisma.UserActiveInactiveHistoryUncheckedUpdateWithoutUserInput>
   create: Prisma.XOR<Prisma.UserActiveInactiveHistoryCreateWithoutUserInput, Prisma.UserActiveInactiveHistoryUncheckedCreateWithoutUserInput>
 }
 
-export type UserActiveInactiveHistoryCreateManyUserInputEnvelope = {
-  data: Prisma.UserActiveInactiveHistoryCreateManyUserInput | Prisma.UserActiveInactiveHistoryCreateManyUserInput[]
-  skipDuplicates?: boolean
+export type UserActiveInactiveHistoryUpdateWithWhereUniqueWithoutUserInput = {
+  where: Prisma.UserActiveInactiveHistoryWhereUniqueInput
+  data: Prisma.XOR<Prisma.UserActiveInactiveHistoryUpdateWithoutUserInput, Prisma.UserActiveInactiveHistoryUncheckedUpdateWithoutUserInput>
+}
+
+export type UserActiveInactiveHistoryUpdateManyWithWhereWithoutUserInput = {
+  where: Prisma.UserActiveInactiveHistoryScalarWhereInput
+  data: Prisma.XOR<Prisma.UserActiveInactiveHistoryUpdateManyMutationInput, Prisma.UserActiveInactiveHistoryUncheckedUpdateManyWithoutUserInput>
+}
+
+export type UserActiveInactiveHistoryScalarWhereInput = {
+  AND?: Prisma.UserActiveInactiveHistoryScalarWhereInput | Prisma.UserActiveInactiveHistoryScalarWhereInput[]
+  OR?: Prisma.UserActiveInactiveHistoryScalarWhereInput[]
+  NOT?: Prisma.UserActiveInactiveHistoryScalarWhereInput | Prisma.UserActiveInactiveHistoryScalarWhereInput[]
+  id?: Prisma.StringFilter<"UserActiveInactiveHistory"> | string
+  active_status?: Prisma.EnumActiveStatusFilter<"UserActiveInactiveHistory"> | $Enums.ActiveStatus
+  activation_time?: Prisma.DateTimeNullableFilter<"UserActiveInactiveHistory"> | Date | string | null
+  inactivation_time?: Prisma.DateTimeNullableFilter<"UserActiveInactiveHistory"> | Date | string | null
+  user_id?: Prisma.StringFilter<"UserActiveInactiveHistory"> | string
+  created_by_id?: Prisma.StringNullableFilter<"UserActiveInactiveHistory"> | string | null
+  updated_by_id?: Prisma.StringNullableFilter<"UserActiveInactiveHistory"> | string | null
+  created_at?: Prisma.DateTimeFilter<"UserActiveInactiveHistory"> | Date | string
+  updated_at?: Prisma.DateTimeNullableFilter<"UserActiveInactiveHistory"> | Date | string | null
 }
 
 export type UserActiveInactiveHistoryUpsertWithWhereUniqueWithoutCreated_byInput = {
@@ -647,21 +678,6 @@ export type UserActiveInactiveHistoryUpdateManyWithWhereWithoutCreated_byInput =
   data: Prisma.XOR<Prisma.UserActiveInactiveHistoryUpdateManyMutationInput, Prisma.UserActiveInactiveHistoryUncheckedUpdateManyWithoutCreated_byInput>
 }
 
-export type UserActiveInactiveHistoryScalarWhereInput = {
-  AND?: Prisma.UserActiveInactiveHistoryScalarWhereInput | Prisma.UserActiveInactiveHistoryScalarWhereInput[]
-  OR?: Prisma.UserActiveInactiveHistoryScalarWhereInput[]
-  NOT?: Prisma.UserActiveInactiveHistoryScalarWhereInput | Prisma.UserActiveInactiveHistoryScalarWhereInput[]
-  id?: Prisma.StringFilter<"UserActiveInactiveHistory"> | string
-  active_status?: Prisma.EnumActiveStatusFilter<"UserActiveInactiveHistory"> | $Enums.ActiveStatus
-  activation_time?: Prisma.DateTimeNullableFilter<"UserActiveInactiveHistory"> | Date | string | null
-  inactivation_time?: Prisma.DateTimeNullableFilter<"UserActiveInactiveHistory"> | Date | string | null
-  user_id?: Prisma.StringFilter<"UserActiveInactiveHistory"> | string
-  created_by_id?: Prisma.StringNullableFilter<"UserActiveInactiveHistory"> | string | null
-  updated_by_id?: Prisma.StringNullableFilter<"UserActiveInactiveHistory"> | string | null
-  created_at?: Prisma.DateTimeFilter<"UserActiveInactiveHistory"> | Date | string
-  updated_at?: Prisma.DateTimeNullableFilter<"UserActiveInactiveHistory"> | Date | string | null
-}
-
 export type UserActiveInactiveHistoryUpsertWithWhereUniqueWithoutUpdated_byInput = {
   where: Prisma.UserActiveInactiveHistoryWhereUniqueInput
   update: Prisma.XOR<Prisma.UserActiveInactiveHistoryUpdateWithoutUpdated_byInput, Prisma.UserActiveInactiveHistoryUncheckedUpdateWithoutUpdated_byInput>
@@ -678,20 +694,15 @@ export type UserActiveInactiveHistoryUpdateManyWithWhereWithoutUpdated_byInput =
   data: Prisma.XOR<Prisma.UserActiveInactiveHistoryUpdateManyMutationInput, Prisma.UserActiveInactiveHistoryUncheckedUpdateManyWithoutUpdated_byInput>
 }
 
-export type UserActiveInactiveHistoryUpsertWithWhereUniqueWithoutUserInput = {
-  where: Prisma.UserActiveInactiveHistoryWhereUniqueInput
-  update: Prisma.XOR<Prisma.UserActiveInactiveHistoryUpdateWithoutUserInput, Prisma.UserActiveInactiveHistoryUncheckedUpdateWithoutUserInput>
-  create: Prisma.XOR<Prisma.UserActiveInactiveHistoryCreateWithoutUserInput, Prisma.UserActiveInactiveHistoryUncheckedCreateWithoutUserInput>
-}
-
-export type UserActiveInactiveHistoryUpdateWithWhereUniqueWithoutUserInput = {
-  where: Prisma.UserActiveInactiveHistoryWhereUniqueInput
-  data: Prisma.XOR<Prisma.UserActiveInactiveHistoryUpdateWithoutUserInput, Prisma.UserActiveInactiveHistoryUncheckedUpdateWithoutUserInput>
-}
-
-export type UserActiveInactiveHistoryUpdateManyWithWhereWithoutUserInput = {
-  where: Prisma.UserActiveInactiveHistoryScalarWhereInput
-  data: Prisma.XOR<Prisma.UserActiveInactiveHistoryUpdateManyMutationInput, Prisma.UserActiveInactiveHistoryUncheckedUpdateManyWithoutUserInput>
+export type UserActiveInactiveHistoryCreateManyUserInput = {
+  id?: string
+  active_status: $Enums.ActiveStatus
+  activation_time?: Date | string | null
+  inactivation_time?: Date | string | null
+  created_by_id?: string | null
+  updated_by_id?: string | null
+  created_at?: Date | string
+  updated_at?: Date | string | null
 }
 
 export type UserActiveInactiveHistoryCreateManyCreated_byInput = {
@@ -716,15 +727,37 @@ export type UserActiveInactiveHistoryCreateManyUpdated_byInput = {
   updated_at?: Date | string | null
 }
 
-export type UserActiveInactiveHistoryCreateManyUserInput = {
-  id?: string
-  active_status: $Enums.ActiveStatus
-  activation_time?: Date | string | null
-  inactivation_time?: Date | string | null
-  created_by_id?: string | null
-  updated_by_id?: string | null
-  created_at?: Date | string
-  updated_at?: Date | string | null
+export type UserActiveInactiveHistoryUpdateWithoutUserInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
+  activation_time?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  inactivation_time?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  created_by?: Prisma.UserUpdateOneWithoutCreated_user_active_inactive_historiesNestedInput
+  updated_by?: Prisma.UserUpdateOneWithoutUpdated_user_active_inactive_historiesNestedInput
+}
+
+export type UserActiveInactiveHistoryUncheckedUpdateWithoutUserInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
+  activation_time?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  inactivation_time?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+}
+
+export type UserActiveInactiveHistoryUncheckedUpdateManyWithoutUserInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
+  activation_time?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  inactivation_time?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
 }
 
 export type UserActiveInactiveHistoryUpdateWithoutCreated_byInput = {
@@ -789,39 +822,6 @@ export type UserActiveInactiveHistoryUncheckedUpdateManyWithoutUpdated_byInput =
   inactivation_time?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   user_id?: Prisma.StringFieldUpdateOperationsInput | string
   created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-}
-
-export type UserActiveInactiveHistoryUpdateWithoutUserInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
-  activation_time?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  inactivation_time?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  created_by?: Prisma.UserUpdateOneWithoutCreated_user_active_inactive_historiesNestedInput
-  updated_by?: Prisma.UserUpdateOneWithoutUpdated_user_active_inactive_historiesNestedInput
-}
-
-export type UserActiveInactiveHistoryUncheckedUpdateWithoutUserInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
-  activation_time?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  inactivation_time?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-}
-
-export type UserActiveInactiveHistoryUncheckedUpdateManyWithoutUserInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  active_status?: Prisma.EnumActiveStatusFieldUpdateOperationsInput | $Enums.ActiveStatus
-  activation_time?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  inactivation_time?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
 }

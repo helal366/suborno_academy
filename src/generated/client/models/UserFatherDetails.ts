@@ -463,15 +463,15 @@ export type UserFatherDetailsUncheckedUpdateManyInput = {
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
 }
 
+export type UserFatherDetailsNullableScalarRelationFilter = {
+  is?: Prisma.UserFatherDetailsWhereInput | null
+  isNot?: Prisma.UserFatherDetailsWhereInput | null
+}
+
 export type UserFatherDetailsListRelationFilter = {
   every?: Prisma.UserFatherDetailsWhereInput
   some?: Prisma.UserFatherDetailsWhereInput
   none?: Prisma.UserFatherDetailsWhereInput
-}
-
-export type UserFatherDetailsNullableScalarRelationFilter = {
-  is?: Prisma.UserFatherDetailsWhereInput | null
-  isNot?: Prisma.UserFatherDetailsWhereInput | null
 }
 
 export type UserFatherDetailsOrderByRelationAggregateInput = {
@@ -529,6 +529,12 @@ export type UserFatherDetailsMinOrderByAggregateInput = {
   updated_at?: Prisma.SortOrder
 }
 
+export type UserFatherDetailsCreateNestedOneWithoutUserInput = {
+  create?: Prisma.XOR<Prisma.UserFatherDetailsCreateWithoutUserInput, Prisma.UserFatherDetailsUncheckedCreateWithoutUserInput>
+  connectOrCreate?: Prisma.UserFatherDetailsCreateOrConnectWithoutUserInput
+  connect?: Prisma.UserFatherDetailsWhereUniqueInput
+}
+
 export type UserFatherDetailsCreateNestedManyWithoutCreated_byInput = {
   create?: Prisma.XOR<Prisma.UserFatherDetailsCreateWithoutCreated_byInput, Prisma.UserFatherDetailsUncheckedCreateWithoutCreated_byInput> | Prisma.UserFatherDetailsCreateWithoutCreated_byInput[] | Prisma.UserFatherDetailsUncheckedCreateWithoutCreated_byInput[]
   connectOrCreate?: Prisma.UserFatherDetailsCreateOrConnectWithoutCreated_byInput | Prisma.UserFatherDetailsCreateOrConnectWithoutCreated_byInput[]
@@ -543,12 +549,6 @@ export type UserFatherDetailsCreateNestedManyWithoutUpdated_byInput = {
   connect?: Prisma.UserFatherDetailsWhereUniqueInput | Prisma.UserFatherDetailsWhereUniqueInput[]
 }
 
-export type UserFatherDetailsCreateNestedOneWithoutUserInput = {
-  create?: Prisma.XOR<Prisma.UserFatherDetailsCreateWithoutUserInput, Prisma.UserFatherDetailsUncheckedCreateWithoutUserInput>
-  connectOrCreate?: Prisma.UserFatherDetailsCreateOrConnectWithoutUserInput
-  connect?: Prisma.UserFatherDetailsWhereUniqueInput
-}
-
 export type UserFatherDetailsUncheckedCreateNestedManyWithoutCreated_byInput = {
   create?: Prisma.XOR<Prisma.UserFatherDetailsCreateWithoutCreated_byInput, Prisma.UserFatherDetailsUncheckedCreateWithoutCreated_byInput> | Prisma.UserFatherDetailsCreateWithoutCreated_byInput[] | Prisma.UserFatherDetailsUncheckedCreateWithoutCreated_byInput[]
   connectOrCreate?: Prisma.UserFatherDetailsCreateOrConnectWithoutCreated_byInput | Prisma.UserFatherDetailsCreateOrConnectWithoutCreated_byInput[]
@@ -561,6 +561,16 @@ export type UserFatherDetailsUncheckedCreateNestedManyWithoutUpdated_byInput = {
   connectOrCreate?: Prisma.UserFatherDetailsCreateOrConnectWithoutUpdated_byInput | Prisma.UserFatherDetailsCreateOrConnectWithoutUpdated_byInput[]
   createMany?: Prisma.UserFatherDetailsCreateManyUpdated_byInputEnvelope
   connect?: Prisma.UserFatherDetailsWhereUniqueInput | Prisma.UserFatherDetailsWhereUniqueInput[]
+}
+
+export type UserFatherDetailsUpdateOneWithoutUserNestedInput = {
+  create?: Prisma.XOR<Prisma.UserFatherDetailsCreateWithoutUserInput, Prisma.UserFatherDetailsUncheckedCreateWithoutUserInput>
+  connectOrCreate?: Prisma.UserFatherDetailsCreateOrConnectWithoutUserInput
+  upsert?: Prisma.UserFatherDetailsUpsertWithoutUserInput
+  disconnect?: Prisma.UserFatherDetailsWhereInput | boolean
+  delete?: Prisma.UserFatherDetailsWhereInput | boolean
+  connect?: Prisma.UserFatherDetailsWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserFatherDetailsUpdateToOneWithWhereWithoutUserInput, Prisma.UserFatherDetailsUpdateWithoutUserInput>, Prisma.UserFatherDetailsUncheckedUpdateWithoutUserInput>
 }
 
 export type UserFatherDetailsUpdateManyWithoutCreated_byNestedInput = {
@@ -591,16 +601,6 @@ export type UserFatherDetailsUpdateManyWithoutUpdated_byNestedInput = {
   deleteMany?: Prisma.UserFatherDetailsScalarWhereInput | Prisma.UserFatherDetailsScalarWhereInput[]
 }
 
-export type UserFatherDetailsUpdateOneWithoutUserNestedInput = {
-  create?: Prisma.XOR<Prisma.UserFatherDetailsCreateWithoutUserInput, Prisma.UserFatherDetailsUncheckedCreateWithoutUserInput>
-  connectOrCreate?: Prisma.UserFatherDetailsCreateOrConnectWithoutUserInput
-  upsert?: Prisma.UserFatherDetailsUpsertWithoutUserInput
-  disconnect?: Prisma.UserFatherDetailsWhereInput | boolean
-  delete?: Prisma.UserFatherDetailsWhereInput | boolean
-  connect?: Prisma.UserFatherDetailsWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.UserFatherDetailsUpdateToOneWithWhereWithoutUserInput, Prisma.UserFatherDetailsUpdateWithoutUserInput>, Prisma.UserFatherDetailsUncheckedUpdateWithoutUserInput>
-}
-
 export type UserFatherDetailsUncheckedUpdateManyWithoutCreated_byNestedInput = {
   create?: Prisma.XOR<Prisma.UserFatherDetailsCreateWithoutCreated_byInput, Prisma.UserFatherDetailsUncheckedCreateWithoutCreated_byInput> | Prisma.UserFatherDetailsCreateWithoutCreated_byInput[] | Prisma.UserFatherDetailsUncheckedCreateWithoutCreated_byInput[]
   connectOrCreate?: Prisma.UserFatherDetailsCreateOrConnectWithoutCreated_byInput | Prisma.UserFatherDetailsCreateOrConnectWithoutCreated_byInput[]
@@ -627,6 +627,45 @@ export type UserFatherDetailsUncheckedUpdateManyWithoutUpdated_byNestedInput = {
   update?: Prisma.UserFatherDetailsUpdateWithWhereUniqueWithoutUpdated_byInput | Prisma.UserFatherDetailsUpdateWithWhereUniqueWithoutUpdated_byInput[]
   updateMany?: Prisma.UserFatherDetailsUpdateManyWithWhereWithoutUpdated_byInput | Prisma.UserFatherDetailsUpdateManyWithWhereWithoutUpdated_byInput[]
   deleteMany?: Prisma.UserFatherDetailsScalarWhereInput | Prisma.UserFatherDetailsScalarWhereInput[]
+}
+
+export type UserFatherDetailsCreateWithoutUserInput = {
+  id?: string
+  father_name: string
+  nid_no?: string | null
+  occupation?: string | null
+  job_title?: string | null
+  educational_qualification?: $Enums.EducationDegree | null
+  monthly_income?: string | null
+  mobile_no_1?: string | null
+  mobile_no_2?: string | null
+  mobile_no_3?: string | null
+  created_at?: Date | string
+  updated_at?: Date | string | null
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_user_father_detailsInput
+  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_user_father_detailsInput
+}
+
+export type UserFatherDetailsUncheckedCreateWithoutUserInput = {
+  id?: string
+  father_name: string
+  nid_no?: string | null
+  occupation?: string | null
+  job_title?: string | null
+  educational_qualification?: $Enums.EducationDegree | null
+  monthly_income?: string | null
+  mobile_no_1?: string | null
+  mobile_no_2?: string | null
+  mobile_no_3?: string | null
+  created_by_id?: string | null
+  updated_by_id?: string | null
+  created_at?: Date | string
+  updated_at?: Date | string | null
+}
+
+export type UserFatherDetailsCreateOrConnectWithoutUserInput = {
+  where: Prisma.UserFatherDetailsWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserFatherDetailsCreateWithoutUserInput, Prisma.UserFatherDetailsUncheckedCreateWithoutUserInput>
 }
 
 export type UserFatherDetailsCreateWithoutCreated_byInput = {
@@ -717,43 +756,49 @@ export type UserFatherDetailsCreateManyUpdated_byInputEnvelope = {
   skipDuplicates?: boolean
 }
 
-export type UserFatherDetailsCreateWithoutUserInput = {
-  id?: string
-  father_name: string
-  nid_no?: string | null
-  occupation?: string | null
-  job_title?: string | null
-  educational_qualification?: $Enums.EducationDegree | null
-  monthly_income?: string | null
-  mobile_no_1?: string | null
-  mobile_no_2?: string | null
-  mobile_no_3?: string | null
-  created_at?: Date | string
-  updated_at?: Date | string | null
-  created_by?: Prisma.UserCreateNestedOneWithoutCreated_user_father_detailsInput
-  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_user_father_detailsInput
-}
-
-export type UserFatherDetailsUncheckedCreateWithoutUserInput = {
-  id?: string
-  father_name: string
-  nid_no?: string | null
-  occupation?: string | null
-  job_title?: string | null
-  educational_qualification?: $Enums.EducationDegree | null
-  monthly_income?: string | null
-  mobile_no_1?: string | null
-  mobile_no_2?: string | null
-  mobile_no_3?: string | null
-  created_by_id?: string | null
-  updated_by_id?: string | null
-  created_at?: Date | string
-  updated_at?: Date | string | null
-}
-
-export type UserFatherDetailsCreateOrConnectWithoutUserInput = {
-  where: Prisma.UserFatherDetailsWhereUniqueInput
+export type UserFatherDetailsUpsertWithoutUserInput = {
+  update: Prisma.XOR<Prisma.UserFatherDetailsUpdateWithoutUserInput, Prisma.UserFatherDetailsUncheckedUpdateWithoutUserInput>
   create: Prisma.XOR<Prisma.UserFatherDetailsCreateWithoutUserInput, Prisma.UserFatherDetailsUncheckedCreateWithoutUserInput>
+  where?: Prisma.UserFatherDetailsWhereInput
+}
+
+export type UserFatherDetailsUpdateToOneWithWhereWithoutUserInput = {
+  where?: Prisma.UserFatherDetailsWhereInput
+  data: Prisma.XOR<Prisma.UserFatherDetailsUpdateWithoutUserInput, Prisma.UserFatherDetailsUncheckedUpdateWithoutUserInput>
+}
+
+export type UserFatherDetailsUpdateWithoutUserInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  father_name?: Prisma.StringFieldUpdateOperationsInput | string
+  nid_no?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  occupation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  job_title?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  educational_qualification?: Prisma.NullableEnumEducationDegreeFieldUpdateOperationsInput | $Enums.EducationDegree | null
+  monthly_income?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  mobile_no_1?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  mobile_no_2?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  mobile_no_3?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  created_by?: Prisma.UserUpdateOneWithoutCreated_user_father_detailsNestedInput
+  updated_by?: Prisma.UserUpdateOneWithoutUpdated_user_father_detailsNestedInput
+}
+
+export type UserFatherDetailsUncheckedUpdateWithoutUserInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  father_name?: Prisma.StringFieldUpdateOperationsInput | string
+  nid_no?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  occupation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  job_title?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  educational_qualification?: Prisma.NullableEnumEducationDegreeFieldUpdateOperationsInput | $Enums.EducationDegree | null
+  monthly_income?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  mobile_no_1?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  mobile_no_2?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  mobile_no_3?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
 }
 
 export type UserFatherDetailsUpsertWithWhereUniqueWithoutCreated_byInput = {
@@ -806,51 +851,6 @@ export type UserFatherDetailsUpdateWithWhereUniqueWithoutUpdated_byInput = {
 export type UserFatherDetailsUpdateManyWithWhereWithoutUpdated_byInput = {
   where: Prisma.UserFatherDetailsScalarWhereInput
   data: Prisma.XOR<Prisma.UserFatherDetailsUpdateManyMutationInput, Prisma.UserFatherDetailsUncheckedUpdateManyWithoutUpdated_byInput>
-}
-
-export type UserFatherDetailsUpsertWithoutUserInput = {
-  update: Prisma.XOR<Prisma.UserFatherDetailsUpdateWithoutUserInput, Prisma.UserFatherDetailsUncheckedUpdateWithoutUserInput>
-  create: Prisma.XOR<Prisma.UserFatherDetailsCreateWithoutUserInput, Prisma.UserFatherDetailsUncheckedCreateWithoutUserInput>
-  where?: Prisma.UserFatherDetailsWhereInput
-}
-
-export type UserFatherDetailsUpdateToOneWithWhereWithoutUserInput = {
-  where?: Prisma.UserFatherDetailsWhereInput
-  data: Prisma.XOR<Prisma.UserFatherDetailsUpdateWithoutUserInput, Prisma.UserFatherDetailsUncheckedUpdateWithoutUserInput>
-}
-
-export type UserFatherDetailsUpdateWithoutUserInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  father_name?: Prisma.StringFieldUpdateOperationsInput | string
-  nid_no?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  occupation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  job_title?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  educational_qualification?: Prisma.NullableEnumEducationDegreeFieldUpdateOperationsInput | $Enums.EducationDegree | null
-  monthly_income?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  mobile_no_1?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  mobile_no_2?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  mobile_no_3?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  created_by?: Prisma.UserUpdateOneWithoutCreated_user_father_detailsNestedInput
-  updated_by?: Prisma.UserUpdateOneWithoutUpdated_user_father_detailsNestedInput
-}
-
-export type UserFatherDetailsUncheckedUpdateWithoutUserInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  father_name?: Prisma.StringFieldUpdateOperationsInput | string
-  nid_no?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  occupation?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  job_title?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  educational_qualification?: Prisma.NullableEnumEducationDegreeFieldUpdateOperationsInput | $Enums.EducationDegree | null
-  monthly_income?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  mobile_no_1?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  mobile_no_2?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  mobile_no_3?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
 }
 
 export type UserFatherDetailsCreateManyCreated_byInput = {

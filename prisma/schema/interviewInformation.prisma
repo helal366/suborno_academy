@@ -4,14 +4,18 @@ model InterviewInformation {
   viva_voice_mark    Float?
   practical_mark     Float?
   total_mark         Float?
+
   joining_history_id String?         @unique
+  joining_history    JoiningHistory? @relation(fields: [joining_history_id], references: [id], onDelete: Cascade)
+  
   created_by_id      String?
+  created_by         User?           @relation("teacher_interview_information_created_by", fields: [created_by_id], references: [id])
+  
   updated_by_id      String?
+  updated_by         User?           @relation("teacher_interview_information_updated_by", fields: [updated_by_id], references: [id])
+  
   created_at         DateTime        @default(now())
   updated_at         DateTime?       @updatedAt
-  created_by         User?           @relation("teacher_interview_information_created_by", fields: [created_by_id], references: [id])
-  joining_history    JoiningHistory? @relation(fields: [joining_history_id], references: [id], onDelete: Cascade)
-  updated_by         User?           @relation("teacher_interview_information_updated_by", fields: [updated_by_id], references: [id])
 
   @@map("teacher_interview_information")
 }

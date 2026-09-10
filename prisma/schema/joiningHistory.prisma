@@ -3,17 +3,22 @@ model JoiningHistory {
   applied_position               String?
   joining_date                   DateTime?
   resign_data                    DateTime?
-  teacher_id                     String?
-  created_by_id                  String?
-  updated_by_id                  String?
-  created_at                     DateTime                      @default(now())
-  updated_at                     DateTime?                     @updatedAt
+  
   interview_information          InterviewInformation?
-  created_by                     User?                         @relation("teacher_joining_history_created_by", fields: [created_by_id], references: [id])
-  teacher                        AcademicAdministrativeStaff?  @relation(fields: [teacher_id], references: [id], onDelete: Cascade)
-  updated_by                     User?                         @relation("teacher_joining_history_updated_by", fields: [updated_by_id], references: [id])
   previous_institute_information PreviousInstituteInformation?
   references                     Reference?
+  
+  staff_id                     String?
+  staff                        AcademicAdministrativeStaff?  @relation(fields: [staff_id], references: [id], onDelete: Cascade)
+  
+  created_by_id                  String?
+  created_by                     User?                         @relation("teacher_joining_history_created_by", fields: [created_by_id], references: [id])
+  
+  updated_by_id                  String?
+  updated_by                     User?                         @relation("teacher_joining_history_updated_by", fields: [updated_by_id], references: [id])
+  
+  created_at                     DateTime                      @default(now())
+  updated_at                     DateTime?                     @updatedAt
 
   @@map("teacher_joining_history")
 }

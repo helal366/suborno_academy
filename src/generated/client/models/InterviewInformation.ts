@@ -268,8 +268,8 @@ export type InterviewInformationWhereInput = {
   updated_by_id?: Prisma.StringNullableFilter<"InterviewInformation"> | string | null
   created_at?: Prisma.DateTimeFilter<"InterviewInformation"> | Date | string
   updated_at?: Prisma.DateTimeNullableFilter<"InterviewInformation"> | Date | string | null
-  created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
   joining_history?: Prisma.XOR<Prisma.JoiningHistoryNullableScalarRelationFilter, Prisma.JoiningHistoryWhereInput> | null
+  created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
   updated_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
 }
 
@@ -284,8 +284,8 @@ export type InterviewInformationOrderByWithRelationInput = {
   updated_by_id?: Prisma.SortOrderInput | Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrderInput | Prisma.SortOrder
-  created_by?: Prisma.UserOrderByWithRelationInput
   joining_history?: Prisma.JoiningHistoryOrderByWithRelationInput
+  created_by?: Prisma.UserOrderByWithRelationInput
   updated_by?: Prisma.UserOrderByWithRelationInput
 }
 
@@ -303,8 +303,8 @@ export type InterviewInformationWhereUniqueInput = Prisma.AtLeast<{
   updated_by_id?: Prisma.StringNullableFilter<"InterviewInformation"> | string | null
   created_at?: Prisma.DateTimeFilter<"InterviewInformation"> | Date | string
   updated_at?: Prisma.DateTimeNullableFilter<"InterviewInformation"> | Date | string | null
-  created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
   joining_history?: Prisma.XOR<Prisma.JoiningHistoryNullableScalarRelationFilter, Prisma.JoiningHistoryWhereInput> | null
+  created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
   updated_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
 }, "id" | "joining_history_id">
 
@@ -350,8 +350,8 @@ export type InterviewInformationCreateInput = {
   total_mark?: number | null
   created_at?: Date | string
   updated_at?: Date | string | null
-  created_by?: Prisma.UserCreateNestedOneWithoutCreated_teacher_interview_informationInput
   joining_history?: Prisma.JoiningHistoryCreateNestedOneWithoutInterview_informationInput
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_teacher_interview_informationInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_teacher_interview_informationInput
 }
 
@@ -376,8 +376,8 @@ export type InterviewInformationUpdateInput = {
   total_mark?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  created_by?: Prisma.UserUpdateOneWithoutCreated_teacher_interview_informationNestedInput
   joining_history?: Prisma.JoiningHistoryUpdateOneWithoutInterview_informationNestedInput
+  created_by?: Prisma.UserUpdateOneWithoutCreated_teacher_interview_informationNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_teacher_interview_informationNestedInput
 }
 
@@ -728,8 +728,8 @@ export type InterviewInformationCreateWithoutUpdated_byInput = {
   total_mark?: number | null
   created_at?: Date | string
   updated_at?: Date | string | null
-  created_by?: Prisma.UserCreateNestedOneWithoutCreated_teacher_interview_informationInput
   joining_history?: Prisma.JoiningHistoryCreateNestedOneWithoutInterview_informationInput
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_teacher_interview_informationInput
 }
 
 export type InterviewInformationUncheckedCreateWithoutUpdated_byInput = {
@@ -870,8 +870,8 @@ export type InterviewInformationUpdateWithoutUpdated_byInput = {
   total_mark?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  created_by?: Prisma.UserUpdateOneWithoutCreated_teacher_interview_informationNestedInput
   joining_history?: Prisma.JoiningHistoryUpdateOneWithoutInterview_informationNestedInput
+  created_by?: Prisma.UserUpdateOneWithoutCreated_teacher_interview_informationNestedInput
 }
 
 export type InterviewInformationUncheckedUpdateWithoutUpdated_byInput = {
@@ -911,8 +911,8 @@ export type InterviewInformationSelect<ExtArgs extends runtime.Types.Extensions.
   updated_by_id?: boolean
   created_at?: boolean
   updated_at?: boolean
-  created_by?: boolean | Prisma.InterviewInformation$created_byArgs<ExtArgs>
   joining_history?: boolean | Prisma.InterviewInformation$joining_historyArgs<ExtArgs>
+  created_by?: boolean | Prisma.InterviewInformation$created_byArgs<ExtArgs>
   updated_by?: boolean | Prisma.InterviewInformation$updated_byArgs<ExtArgs>
 }, ExtArgs["result"]["interviewInformation"]>
 
@@ -927,8 +927,8 @@ export type InterviewInformationSelectCreateManyAndReturn<ExtArgs extends runtim
   updated_by_id?: boolean
   created_at?: boolean
   updated_at?: boolean
-  created_by?: boolean | Prisma.InterviewInformation$created_byArgs<ExtArgs>
   joining_history?: boolean | Prisma.InterviewInformation$joining_historyArgs<ExtArgs>
+  created_by?: boolean | Prisma.InterviewInformation$created_byArgs<ExtArgs>
   updated_by?: boolean | Prisma.InterviewInformation$updated_byArgs<ExtArgs>
 }, ExtArgs["result"]["interviewInformation"]>
 
@@ -943,8 +943,8 @@ export type InterviewInformationSelectUpdateManyAndReturn<ExtArgs extends runtim
   updated_by_id?: boolean
   created_at?: boolean
   updated_at?: boolean
-  created_by?: boolean | Prisma.InterviewInformation$created_byArgs<ExtArgs>
   joining_history?: boolean | Prisma.InterviewInformation$joining_historyArgs<ExtArgs>
+  created_by?: boolean | Prisma.InterviewInformation$created_byArgs<ExtArgs>
   updated_by?: boolean | Prisma.InterviewInformation$updated_byArgs<ExtArgs>
 }, ExtArgs["result"]["interviewInformation"]>
 
@@ -963,26 +963,26 @@ export type InterviewInformationSelectScalar = {
 
 export type InterviewInformationOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "writen_marks" | "viva_voice_mark" | "practical_mark" | "total_mark" | "joining_history_id" | "created_by_id" | "updated_by_id" | "created_at" | "updated_at", ExtArgs["result"]["interviewInformation"]>
 export type InterviewInformationInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  created_by?: boolean | Prisma.InterviewInformation$created_byArgs<ExtArgs>
   joining_history?: boolean | Prisma.InterviewInformation$joining_historyArgs<ExtArgs>
+  created_by?: boolean | Prisma.InterviewInformation$created_byArgs<ExtArgs>
   updated_by?: boolean | Prisma.InterviewInformation$updated_byArgs<ExtArgs>
 }
 export type InterviewInformationIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  created_by?: boolean | Prisma.InterviewInformation$created_byArgs<ExtArgs>
   joining_history?: boolean | Prisma.InterviewInformation$joining_historyArgs<ExtArgs>
+  created_by?: boolean | Prisma.InterviewInformation$created_byArgs<ExtArgs>
   updated_by?: boolean | Prisma.InterviewInformation$updated_byArgs<ExtArgs>
 }
 export type InterviewInformationIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  created_by?: boolean | Prisma.InterviewInformation$created_byArgs<ExtArgs>
   joining_history?: boolean | Prisma.InterviewInformation$joining_historyArgs<ExtArgs>
+  created_by?: boolean | Prisma.InterviewInformation$created_byArgs<ExtArgs>
   updated_by?: boolean | Prisma.InterviewInformation$updated_byArgs<ExtArgs>
 }
 
 export type $InterviewInformationPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "InterviewInformation"
   objects: {
-    created_by: Prisma.$UserPayload<ExtArgs> | null
     joining_history: Prisma.$JoiningHistoryPayload<ExtArgs> | null
+    created_by: Prisma.$UserPayload<ExtArgs> | null
     updated_by: Prisma.$UserPayload<ExtArgs> | null
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
@@ -1390,8 +1390,8 @@ readonly fields: InterviewInformationFieldRefs;
  */
 export interface Prisma__InterviewInformationClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  created_by<T extends Prisma.InterviewInformation$created_byArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.InterviewInformation$created_byArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   joining_history<T extends Prisma.InterviewInformation$joining_historyArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.InterviewInformation$joining_historyArgs<ExtArgs>>): Prisma.Prisma__JoiningHistoryClient<runtime.Types.Result.GetResult<Prisma.$JoiningHistoryPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  created_by<T extends Prisma.InterviewInformation$created_byArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.InterviewInformation$created_byArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   updated_by<T extends Prisma.InterviewInformation$updated_byArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.InterviewInformation$updated_byArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -1833,25 +1833,6 @@ export type InterviewInformationDeleteManyArgs<ExtArgs extends runtime.Types.Ext
 }
 
 /**
- * InterviewInformation.created_by
- */
-export type InterviewInformation$created_byArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the User
-   */
-  select?: Prisma.UserSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the User
-   */
-  omit?: Prisma.UserOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.UserInclude<ExtArgs> | null
-  where?: Prisma.UserWhereInput
-}
-
-/**
  * InterviewInformation.joining_history
  */
 export type InterviewInformation$joining_historyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1868,6 +1849,25 @@ export type InterviewInformation$joining_historyArgs<ExtArgs extends runtime.Typ
    */
   include?: Prisma.JoiningHistoryInclude<ExtArgs> | null
   where?: Prisma.JoiningHistoryWhereInput
+}
+
+/**
+ * InterviewInformation.created_by
+ */
+export type InterviewInformation$created_byArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the User
+   */
+  select?: Prisma.UserSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the User
+   */
+  omit?: Prisma.UserOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UserInclude<ExtArgs> | null
+  where?: Prisma.UserWhereInput
 }
 
 /**

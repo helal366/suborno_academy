@@ -1,30 +1,43 @@
 model Student {
   id                             String                                @id @default(uuid())
-  quranic_section                Quranic_Section?
-  quranic_subject_id             String?
-  active_class_id                String
-  responsible_guardian_id        String?
-  user_id                        String                                @unique
-  isActiveResponsibleTeacher     Boolean                               @default(false)
-  created_by_id                  String?
-  updated_by_id                  String?
-  created_at                     DateTime                              @default(now())
-  updated_at                     DateTime?                             @updatedAt
+  full_name                      String
+  mobile_number                  String
+  
+  classes                        Class[]                               @relation("student_classes")
   previous_institute_information StudentPreviousInstituteInformation[]
-  active_class                   Class                                 @relation("student_active_classes", fields: [active_class_id], references: [id])
-  created_by                     User?                                 @relation("student_created_by", fields: [created_by_id], references: [id])
-  quranic_subject                QuranicSubject?                       @relation(fields: [quranic_subject_id], references: [id], onDelete: Restrict)
+  
+  responsible_guardian_id        String?
   responsible_guardian           StudentResponsibleGuardianDetails?    @relation(fields: [responsible_guardian_id], references: [id], onDelete: Restrict)
-  updated_by                     User?                                 @relation("student_updated_by", fields: [updated_by_id], references: [id])
-  user                           User                                  @relation("user_student", fields: [user_id], references: [id], onDelete: Cascade)
+  
+  quranic_subject_id             String?
+  quranic_subject                QuranicSubject?                       @relation(fields: [quranic_subject_id], references: [id], onDelete: Restrict)
+  quranic_section                Quranic_Section?
+  quranic_special_periods        QuranicSpecialPeriod[]                @relation("QuranicSpecialPeriodToStudent")
+  
   assigned_responsible_teacher   StudentResponsibility?
+  isActiveResponsibleTeacher     Boolean                               @default(false)
+  
   cultural_club_options          CulturalClub[]                        @relation("CulturalClubToStudent")
   language_club_options          LanguageClub[]                        @relation("LanguageClubToStudent")
   quran_club_options             QuranClub[]                           @relation("QuranClubToStudent")
-  quranic_special_periods        QuranicSpecialPeriod[]                @relation("QuranicSpecialPeriodToStudent")
   science_club_options           ScienceClub[]                         @relation("ScienceClubToStudent")
   scout_sports_club_options      ScoutSportsClub[]                     @relation("ScoutSportsClubToStudent")
-  classes                        Class[]                               @relation("student_classes")
+  
+  user_id                        String                                @unique
+  user                           User                                  @relation("user_student", fields: [user_id], references: [id], onDelete: Cascade)
+  
+  active_class_id                String
+  active_class                   Class                                 @relation("student_active_classes", fields: [active_class_id], references: [id])
+  
+  created_by_id                  String?
+  created_by                     User?                                 @relation("student_created_by", fields: [created_by_id], references: [id])
+  
+  updated_by_id                  String?
+  updated_by                     User?                                 @relation("student_updated_by", fields: [updated_by_id], references: [id])
+  
+  created_at                     DateTime                              @default(now())
+  updated_at                     DateTime?                             @updatedAt
 
+  @@unique([full_name, mobile_number], name: "user_full_name_mobile_unique")
   @@map("students")
 }

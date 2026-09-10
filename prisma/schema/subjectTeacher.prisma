@@ -1,14 +1,16 @@
-model SubjectTeacher {
+model SubjectOfSubjectTeacher {
   id            String                      @id @default(uuid())
   subject_name  String
   teacher_id    String
+  teacher       AcademicAdministrativeStaff @relation(fields: [teacher_id], references: [id], onDelete: Cascade)
+  
   created_by_id String?
+  created_by    User?                       @relation("subject_teacher_created_by", fields: [created_by_id], references: [id])
   updated_by_id String?
+  updated_by    User?                       @relation("subject_teacher_updated_by", fields: [updated_by_id], references: [id])
+  
   created_at    DateTime                    @default(now())
   updated_at    DateTime?                   @updatedAt
-  created_by    User?                       @relation("subject_teacher_created_by", fields: [created_by_id], references: [id])
-  teacher       AcademicAdministrativeStaff @relation(fields: [teacher_id], references: [id], onDelete: Cascade)
-  updated_by    User?                       @relation("subject_teacher_updated_by", fields: [updated_by_id], references: [id])
 
-  @@map("subject_teachers")
+  @@map("subjects_of_subject_teacher")
 }

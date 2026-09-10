@@ -26,12 +26,14 @@ export type AggregateStudent = {
 
 export type StudentMinAggregateOutputType = {
   id: string | null
-  quranic_section: $Enums.Quranic_Section | null
-  quranic_subject_id: string | null
-  active_class_id: string | null
+  full_name: string | null
+  mobile_number: string | null
   responsible_guardian_id: string | null
-  user_id: string | null
+  quranic_subject_id: string | null
+  quranic_section: $Enums.Quranic_Section | null
   isActiveResponsibleTeacher: boolean | null
+  user_id: string | null
+  active_class_id: string | null
   created_by_id: string | null
   updated_by_id: string | null
   created_at: Date | null
@@ -40,12 +42,14 @@ export type StudentMinAggregateOutputType = {
 
 export type StudentMaxAggregateOutputType = {
   id: string | null
-  quranic_section: $Enums.Quranic_Section | null
-  quranic_subject_id: string | null
-  active_class_id: string | null
+  full_name: string | null
+  mobile_number: string | null
   responsible_guardian_id: string | null
-  user_id: string | null
+  quranic_subject_id: string | null
+  quranic_section: $Enums.Quranic_Section | null
   isActiveResponsibleTeacher: boolean | null
+  user_id: string | null
+  active_class_id: string | null
   created_by_id: string | null
   updated_by_id: string | null
   created_at: Date | null
@@ -54,12 +58,14 @@ export type StudentMaxAggregateOutputType = {
 
 export type StudentCountAggregateOutputType = {
   id: number
-  quranic_section: number
-  quranic_subject_id: number
-  active_class_id: number
+  full_name: number
+  mobile_number: number
   responsible_guardian_id: number
-  user_id: number
+  quranic_subject_id: number
+  quranic_section: number
   isActiveResponsibleTeacher: number
+  user_id: number
+  active_class_id: number
   created_by_id: number
   updated_by_id: number
   created_at: number
@@ -70,12 +76,14 @@ export type StudentCountAggregateOutputType = {
 
 export type StudentMinAggregateInputType = {
   id?: true
-  quranic_section?: true
-  quranic_subject_id?: true
-  active_class_id?: true
+  full_name?: true
+  mobile_number?: true
   responsible_guardian_id?: true
-  user_id?: true
+  quranic_subject_id?: true
+  quranic_section?: true
   isActiveResponsibleTeacher?: true
+  user_id?: true
+  active_class_id?: true
   created_by_id?: true
   updated_by_id?: true
   created_at?: true
@@ -84,12 +92,14 @@ export type StudentMinAggregateInputType = {
 
 export type StudentMaxAggregateInputType = {
   id?: true
-  quranic_section?: true
-  quranic_subject_id?: true
-  active_class_id?: true
+  full_name?: true
+  mobile_number?: true
   responsible_guardian_id?: true
-  user_id?: true
+  quranic_subject_id?: true
+  quranic_section?: true
   isActiveResponsibleTeacher?: true
+  user_id?: true
+  active_class_id?: true
   created_by_id?: true
   updated_by_id?: true
   created_at?: true
@@ -98,12 +108,14 @@ export type StudentMaxAggregateInputType = {
 
 export type StudentCountAggregateInputType = {
   id?: true
-  quranic_section?: true
-  quranic_subject_id?: true
-  active_class_id?: true
+  full_name?: true
+  mobile_number?: true
   responsible_guardian_id?: true
-  user_id?: true
+  quranic_subject_id?: true
+  quranic_section?: true
   isActiveResponsibleTeacher?: true
+  user_id?: true
+  active_class_id?: true
   created_by_id?: true
   updated_by_id?: true
   created_at?: true
@@ -185,12 +197,14 @@ export type StudentGroupByArgs<ExtArgs extends runtime.Types.Extensions.Internal
 
 export type StudentGroupByOutputType = {
   id: string
-  quranic_section: $Enums.Quranic_Section | null
-  quranic_subject_id: string | null
-  active_class_id: string
+  full_name: string
+  mobile_number: string
   responsible_guardian_id: string | null
-  user_id: string
+  quranic_subject_id: string | null
+  quranic_section: $Enums.Quranic_Section | null
   isActiveResponsibleTeacher: boolean
+  user_id: string
+  active_class_id: string
   created_by_id: string | null
   updated_by_id: string | null
   created_at: Date
@@ -220,102 +234,111 @@ export type StudentWhereInput = {
   OR?: Prisma.StudentWhereInput[]
   NOT?: Prisma.StudentWhereInput | Prisma.StudentWhereInput[]
   id?: Prisma.StringFilter<"Student"> | string
-  quranic_section?: Prisma.EnumQuranic_SectionNullableFilter<"Student"> | $Enums.Quranic_Section | null
-  quranic_subject_id?: Prisma.StringNullableFilter<"Student"> | string | null
-  active_class_id?: Prisma.StringFilter<"Student"> | string
+  full_name?: Prisma.StringFilter<"Student"> | string
+  mobile_number?: Prisma.StringFilter<"Student"> | string
   responsible_guardian_id?: Prisma.StringNullableFilter<"Student"> | string | null
-  user_id?: Prisma.StringFilter<"Student"> | string
+  quranic_subject_id?: Prisma.StringNullableFilter<"Student"> | string | null
+  quranic_section?: Prisma.EnumQuranic_SectionNullableFilter<"Student"> | $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: Prisma.BoolFilter<"Student"> | boolean
+  user_id?: Prisma.StringFilter<"Student"> | string
+  active_class_id?: Prisma.StringFilter<"Student"> | string
   created_by_id?: Prisma.StringNullableFilter<"Student"> | string | null
   updated_by_id?: Prisma.StringNullableFilter<"Student"> | string | null
   created_at?: Prisma.DateTimeFilter<"Student"> | Date | string
   updated_at?: Prisma.DateTimeNullableFilter<"Student"> | Date | string | null
+  classes?: Prisma.ClassListRelationFilter
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationListRelationFilter
-  active_class?: Prisma.XOR<Prisma.ClassScalarRelationFilter, Prisma.ClassWhereInput>
-  created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
-  quranic_subject?: Prisma.XOR<Prisma.QuranicSubjectNullableScalarRelationFilter, Prisma.QuranicSubjectWhereInput> | null
   responsible_guardian?: Prisma.XOR<Prisma.StudentResponsibleGuardianDetailsNullableScalarRelationFilter, Prisma.StudentResponsibleGuardianDetailsWhereInput> | null
-  updated_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
-  user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  quranic_subject?: Prisma.XOR<Prisma.QuranicSubjectNullableScalarRelationFilter, Prisma.QuranicSubjectWhereInput> | null
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodListRelationFilter
   assigned_responsible_teacher?: Prisma.XOR<Prisma.StudentResponsibilityNullableScalarRelationFilter, Prisma.StudentResponsibilityWhereInput> | null
   cultural_club_options?: Prisma.CulturalClubListRelationFilter
   language_club_options?: Prisma.LanguageClubListRelationFilter
   quran_club_options?: Prisma.QuranClubListRelationFilter
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodListRelationFilter
   science_club_options?: Prisma.ScienceClubListRelationFilter
   scout_sports_club_options?: Prisma.ScoutSportsClubListRelationFilter
-  classes?: Prisma.ClassListRelationFilter
+  user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  active_class?: Prisma.XOR<Prisma.ClassScalarRelationFilter, Prisma.ClassWhereInput>
+  created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
+  updated_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
 }
 
 export type StudentOrderByWithRelationInput = {
   id?: Prisma.SortOrder
-  quranic_section?: Prisma.SortOrderInput | Prisma.SortOrder
-  quranic_subject_id?: Prisma.SortOrderInput | Prisma.SortOrder
-  active_class_id?: Prisma.SortOrder
+  full_name?: Prisma.SortOrder
+  mobile_number?: Prisma.SortOrder
   responsible_guardian_id?: Prisma.SortOrderInput | Prisma.SortOrder
-  user_id?: Prisma.SortOrder
+  quranic_subject_id?: Prisma.SortOrderInput | Prisma.SortOrder
+  quranic_section?: Prisma.SortOrderInput | Prisma.SortOrder
   isActiveResponsibleTeacher?: Prisma.SortOrder
+  user_id?: Prisma.SortOrder
+  active_class_id?: Prisma.SortOrder
   created_by_id?: Prisma.SortOrderInput | Prisma.SortOrder
   updated_by_id?: Prisma.SortOrderInput | Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrderInput | Prisma.SortOrder
+  classes?: Prisma.ClassOrderByRelationAggregateInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationOrderByRelationAggregateInput
-  active_class?: Prisma.ClassOrderByWithRelationInput
-  created_by?: Prisma.UserOrderByWithRelationInput
-  quranic_subject?: Prisma.QuranicSubjectOrderByWithRelationInput
   responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsOrderByWithRelationInput
-  updated_by?: Prisma.UserOrderByWithRelationInput
-  user?: Prisma.UserOrderByWithRelationInput
+  quranic_subject?: Prisma.QuranicSubjectOrderByWithRelationInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodOrderByRelationAggregateInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityOrderByWithRelationInput
   cultural_club_options?: Prisma.CulturalClubOrderByRelationAggregateInput
   language_club_options?: Prisma.LanguageClubOrderByRelationAggregateInput
   quran_club_options?: Prisma.QuranClubOrderByRelationAggregateInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodOrderByRelationAggregateInput
   science_club_options?: Prisma.ScienceClubOrderByRelationAggregateInput
   scout_sports_club_options?: Prisma.ScoutSportsClubOrderByRelationAggregateInput
-  classes?: Prisma.ClassOrderByRelationAggregateInput
+  user?: Prisma.UserOrderByWithRelationInput
+  active_class?: Prisma.ClassOrderByWithRelationInput
+  created_by?: Prisma.UserOrderByWithRelationInput
+  updated_by?: Prisma.UserOrderByWithRelationInput
 }
 
 export type StudentWhereUniqueInput = Prisma.AtLeast<{
   id?: string
   user_id?: string
+  user_full_name_mobile_unique?: Prisma.StudentUser_full_name_mobile_uniqueCompoundUniqueInput
   AND?: Prisma.StudentWhereInput | Prisma.StudentWhereInput[]
   OR?: Prisma.StudentWhereInput[]
   NOT?: Prisma.StudentWhereInput | Prisma.StudentWhereInput[]
-  quranic_section?: Prisma.EnumQuranic_SectionNullableFilter<"Student"> | $Enums.Quranic_Section | null
-  quranic_subject_id?: Prisma.StringNullableFilter<"Student"> | string | null
-  active_class_id?: Prisma.StringFilter<"Student"> | string
+  full_name?: Prisma.StringFilter<"Student"> | string
+  mobile_number?: Prisma.StringFilter<"Student"> | string
   responsible_guardian_id?: Prisma.StringNullableFilter<"Student"> | string | null
+  quranic_subject_id?: Prisma.StringNullableFilter<"Student"> | string | null
+  quranic_section?: Prisma.EnumQuranic_SectionNullableFilter<"Student"> | $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: Prisma.BoolFilter<"Student"> | boolean
+  active_class_id?: Prisma.StringFilter<"Student"> | string
   created_by_id?: Prisma.StringNullableFilter<"Student"> | string | null
   updated_by_id?: Prisma.StringNullableFilter<"Student"> | string | null
   created_at?: Prisma.DateTimeFilter<"Student"> | Date | string
   updated_at?: Prisma.DateTimeNullableFilter<"Student"> | Date | string | null
+  classes?: Prisma.ClassListRelationFilter
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationListRelationFilter
-  active_class?: Prisma.XOR<Prisma.ClassScalarRelationFilter, Prisma.ClassWhereInput>
-  created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
-  quranic_subject?: Prisma.XOR<Prisma.QuranicSubjectNullableScalarRelationFilter, Prisma.QuranicSubjectWhereInput> | null
   responsible_guardian?: Prisma.XOR<Prisma.StudentResponsibleGuardianDetailsNullableScalarRelationFilter, Prisma.StudentResponsibleGuardianDetailsWhereInput> | null
-  updated_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
-  user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  quranic_subject?: Prisma.XOR<Prisma.QuranicSubjectNullableScalarRelationFilter, Prisma.QuranicSubjectWhereInput> | null
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodListRelationFilter
   assigned_responsible_teacher?: Prisma.XOR<Prisma.StudentResponsibilityNullableScalarRelationFilter, Prisma.StudentResponsibilityWhereInput> | null
   cultural_club_options?: Prisma.CulturalClubListRelationFilter
   language_club_options?: Prisma.LanguageClubListRelationFilter
   quran_club_options?: Prisma.QuranClubListRelationFilter
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodListRelationFilter
   science_club_options?: Prisma.ScienceClubListRelationFilter
   scout_sports_club_options?: Prisma.ScoutSportsClubListRelationFilter
-  classes?: Prisma.ClassListRelationFilter
-}, "id" | "user_id">
+  user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
+  active_class?: Prisma.XOR<Prisma.ClassScalarRelationFilter, Prisma.ClassWhereInput>
+  created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
+  updated_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
+}, "id" | "user_id" | "user_full_name_mobile_unique">
 
 export type StudentOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
-  quranic_section?: Prisma.SortOrderInput | Prisma.SortOrder
-  quranic_subject_id?: Prisma.SortOrderInput | Prisma.SortOrder
-  active_class_id?: Prisma.SortOrder
+  full_name?: Prisma.SortOrder
+  mobile_number?: Prisma.SortOrder
   responsible_guardian_id?: Prisma.SortOrderInput | Prisma.SortOrder
-  user_id?: Prisma.SortOrder
+  quranic_subject_id?: Prisma.SortOrderInput | Prisma.SortOrder
+  quranic_section?: Prisma.SortOrderInput | Prisma.SortOrder
   isActiveResponsibleTeacher?: Prisma.SortOrder
+  user_id?: Prisma.SortOrder
+  active_class_id?: Prisma.SortOrder
   created_by_id?: Prisma.SortOrderInput | Prisma.SortOrder
   updated_by_id?: Prisma.SortOrderInput | Prisma.SortOrder
   created_at?: Prisma.SortOrder
@@ -330,12 +353,14 @@ export type StudentScalarWhereWithAggregatesInput = {
   OR?: Prisma.StudentScalarWhereWithAggregatesInput[]
   NOT?: Prisma.StudentScalarWhereWithAggregatesInput | Prisma.StudentScalarWhereWithAggregatesInput[]
   id?: Prisma.StringWithAggregatesFilter<"Student"> | string
-  quranic_section?: Prisma.EnumQuranic_SectionNullableWithAggregatesFilter<"Student"> | $Enums.Quranic_Section | null
-  quranic_subject_id?: Prisma.StringNullableWithAggregatesFilter<"Student"> | string | null
-  active_class_id?: Prisma.StringWithAggregatesFilter<"Student"> | string
+  full_name?: Prisma.StringWithAggregatesFilter<"Student"> | string
+  mobile_number?: Prisma.StringWithAggregatesFilter<"Student"> | string
   responsible_guardian_id?: Prisma.StringNullableWithAggregatesFilter<"Student"> | string | null
-  user_id?: Prisma.StringWithAggregatesFilter<"Student"> | string
+  quranic_subject_id?: Prisma.StringNullableWithAggregatesFilter<"Student"> | string | null
+  quranic_section?: Prisma.EnumQuranic_SectionNullableWithAggregatesFilter<"Student"> | $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: Prisma.BoolWithAggregatesFilter<"Student"> | boolean
+  user_id?: Prisma.StringWithAggregatesFilter<"Student"> | string
+  active_class_id?: Prisma.StringWithAggregatesFilter<"Student"> | string
   created_by_id?: Prisma.StringNullableWithAggregatesFilter<"Student"> | string | null
   updated_by_id?: Prisma.StringNullableWithAggregatesFilter<"Student"> | string | null
   created_at?: Prisma.DateTimeWithAggregatesFilter<"Student"> | Date | string
@@ -344,104 +369,114 @@ export type StudentScalarWhereWithAggregatesInput = {
 
 export type StudentCreateInput = {
   id?: string
+  full_name: string
+  mobile_number: string
   quranic_section?: $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: boolean
   created_at?: Date | string
   updated_at?: Date | string | null
+  classes?: Prisma.ClassCreateNestedManyWithoutStudentsInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationCreateNestedManyWithoutStudentInput
-  active_class: Prisma.ClassCreateNestedOneWithoutActive_studentsInput
-  created_by?: Prisma.UserCreateNestedOneWithoutCreated_studentsInput
-  quranic_subject?: Prisma.QuranicSubjectCreateNestedOneWithoutStudentsInput
   responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsCreateNestedOneWithoutStudentsInput
-  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_studentsInput
-  user: Prisma.UserCreateNestedOneWithoutStudent_profileInput
+  quranic_subject?: Prisma.QuranicSubjectCreateNestedOneWithoutStudentsInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodCreateNestedManyWithoutStudentsInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityCreateNestedOneWithoutStudentInput
   cultural_club_options?: Prisma.CulturalClubCreateNestedManyWithoutStudentsInput
   language_club_options?: Prisma.LanguageClubCreateNestedManyWithoutStudentsInput
   quran_club_options?: Prisma.QuranClubCreateNestedManyWithoutStudentsInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodCreateNestedManyWithoutStudentsInput
   science_club_options?: Prisma.ScienceClubCreateNestedManyWithoutStudentsInput
   scout_sports_club_options?: Prisma.ScoutSportsClubCreateNestedManyWithoutStudentsInput
-  classes?: Prisma.ClassCreateNestedManyWithoutStudentsInput
+  user: Prisma.UserCreateNestedOneWithoutStudent_profileInput
+  active_class: Prisma.ClassCreateNestedOneWithoutActive_studentsInput
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_studentsInput
+  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_studentsInput
 }
 
 export type StudentUncheckedCreateInput = {
   id?: string
-  quranic_section?: $Enums.Quranic_Section | null
-  quranic_subject_id?: string | null
-  active_class_id: string
+  full_name: string
+  mobile_number: string
   responsible_guardian_id?: string | null
-  user_id: string
+  quranic_subject_id?: string | null
+  quranic_section?: $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: boolean
+  user_id: string
+  active_class_id: string
   created_by_id?: string | null
   updated_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
+  classes?: Prisma.ClassUncheckedCreateNestedManyWithoutStudentsInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedCreateNestedManyWithoutStudentInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedCreateNestedManyWithoutStudentsInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedCreateNestedOneWithoutStudentInput
   cultural_club_options?: Prisma.CulturalClubUncheckedCreateNestedManyWithoutStudentsInput
   language_club_options?: Prisma.LanguageClubUncheckedCreateNestedManyWithoutStudentsInput
   quran_club_options?: Prisma.QuranClubUncheckedCreateNestedManyWithoutStudentsInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedCreateNestedManyWithoutStudentsInput
   science_club_options?: Prisma.ScienceClubUncheckedCreateNestedManyWithoutStudentsInput
   scout_sports_club_options?: Prisma.ScoutSportsClubUncheckedCreateNestedManyWithoutStudentsInput
-  classes?: Prisma.ClassUncheckedCreateNestedManyWithoutStudentsInput
 }
 
 export type StudentUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
   quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  classes?: Prisma.ClassUpdateManyWithoutStudentsNestedInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUpdateManyWithoutStudentNestedInput
-  active_class?: Prisma.ClassUpdateOneRequiredWithoutActive_studentsNestedInput
-  created_by?: Prisma.UserUpdateOneWithoutCreated_studentsNestedInput
-  quranic_subject?: Prisma.QuranicSubjectUpdateOneWithoutStudentsNestedInput
   responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsUpdateOneWithoutStudentsNestedInput
-  updated_by?: Prisma.UserUpdateOneWithoutUpdated_studentsNestedInput
-  user?: Prisma.UserUpdateOneRequiredWithoutStudent_profileNestedInput
+  quranic_subject?: Prisma.QuranicSubjectUpdateOneWithoutStudentsNestedInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodUpdateManyWithoutStudentsNestedInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUpdateOneWithoutStudentNestedInput
   cultural_club_options?: Prisma.CulturalClubUpdateManyWithoutStudentsNestedInput
   language_club_options?: Prisma.LanguageClubUpdateManyWithoutStudentsNestedInput
   quran_club_options?: Prisma.QuranClubUpdateManyWithoutStudentsNestedInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodUpdateManyWithoutStudentsNestedInput
   science_club_options?: Prisma.ScienceClubUpdateManyWithoutStudentsNestedInput
   scout_sports_club_options?: Prisma.ScoutSportsClubUpdateManyWithoutStudentsNestedInput
-  classes?: Prisma.ClassUpdateManyWithoutStudentsNestedInput
+  user?: Prisma.UserUpdateOneRequiredWithoutStudent_profileNestedInput
+  active_class?: Prisma.ClassUpdateOneRequiredWithoutActive_studentsNestedInput
+  created_by?: Prisma.UserUpdateOneWithoutCreated_studentsNestedInput
+  updated_by?: Prisma.UserUpdateOneWithoutUpdated_studentsNestedInput
 }
 
 export type StudentUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
-  quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
   responsible_guardian_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
   created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  classes?: Prisma.ClassUncheckedUpdateManyWithoutStudentsNestedInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedUpdateManyWithoutStudentNestedInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedUpdateManyWithoutStudentsNestedInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedUpdateOneWithoutStudentNestedInput
   cultural_club_options?: Prisma.CulturalClubUncheckedUpdateManyWithoutStudentsNestedInput
   language_club_options?: Prisma.LanguageClubUncheckedUpdateManyWithoutStudentsNestedInput
   quran_club_options?: Prisma.QuranClubUncheckedUpdateManyWithoutStudentsNestedInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedUpdateManyWithoutStudentsNestedInput
   science_club_options?: Prisma.ScienceClubUncheckedUpdateManyWithoutStudentsNestedInput
   scout_sports_club_options?: Prisma.ScoutSportsClubUncheckedUpdateManyWithoutStudentsNestedInput
-  classes?: Prisma.ClassUncheckedUpdateManyWithoutStudentsNestedInput
 }
 
 export type StudentCreateManyInput = {
   id?: string
-  quranic_section?: $Enums.Quranic_Section | null
-  quranic_subject_id?: string | null
-  active_class_id: string
+  full_name: string
+  mobile_number: string
   responsible_guardian_id?: string | null
-  user_id: string
+  quranic_subject_id?: string | null
+  quranic_section?: $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: boolean
+  user_id: string
+  active_class_id: string
   created_by_id?: string | null
   updated_by_id?: string | null
   created_at?: Date | string
@@ -450,6 +485,8 @@ export type StudentCreateManyInput = {
 
 export type StudentUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
   quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -458,12 +495,14 @@ export type StudentUpdateManyMutationInput = {
 
 export type StudentUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
-  quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
   responsible_guardian_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
   created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -480,14 +519,21 @@ export type StudentOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
 }
 
+export type StudentUser_full_name_mobile_uniqueCompoundUniqueInput = {
+  full_name: string
+  mobile_number: string
+}
+
 export type StudentCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  quranic_section?: Prisma.SortOrder
-  quranic_subject_id?: Prisma.SortOrder
-  active_class_id?: Prisma.SortOrder
+  full_name?: Prisma.SortOrder
+  mobile_number?: Prisma.SortOrder
   responsible_guardian_id?: Prisma.SortOrder
-  user_id?: Prisma.SortOrder
+  quranic_subject_id?: Prisma.SortOrder
+  quranic_section?: Prisma.SortOrder
   isActiveResponsibleTeacher?: Prisma.SortOrder
+  user_id?: Prisma.SortOrder
+  active_class_id?: Prisma.SortOrder
   created_by_id?: Prisma.SortOrder
   updated_by_id?: Prisma.SortOrder
   created_at?: Prisma.SortOrder
@@ -496,12 +542,14 @@ export type StudentCountOrderByAggregateInput = {
 
 export type StudentMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  quranic_section?: Prisma.SortOrder
-  quranic_subject_id?: Prisma.SortOrder
-  active_class_id?: Prisma.SortOrder
+  full_name?: Prisma.SortOrder
+  mobile_number?: Prisma.SortOrder
   responsible_guardian_id?: Prisma.SortOrder
-  user_id?: Prisma.SortOrder
+  quranic_subject_id?: Prisma.SortOrder
+  quranic_section?: Prisma.SortOrder
   isActiveResponsibleTeacher?: Prisma.SortOrder
+  user_id?: Prisma.SortOrder
+  active_class_id?: Prisma.SortOrder
   created_by_id?: Prisma.SortOrder
   updated_by_id?: Prisma.SortOrder
   created_at?: Prisma.SortOrder
@@ -510,12 +558,14 @@ export type StudentMaxOrderByAggregateInput = {
 
 export type StudentMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
-  quranic_section?: Prisma.SortOrder
-  quranic_subject_id?: Prisma.SortOrder
-  active_class_id?: Prisma.SortOrder
+  full_name?: Prisma.SortOrder
+  mobile_number?: Prisma.SortOrder
   responsible_guardian_id?: Prisma.SortOrder
-  user_id?: Prisma.SortOrder
+  quranic_subject_id?: Prisma.SortOrder
+  quranic_section?: Prisma.SortOrder
   isActiveResponsibleTeacher?: Prisma.SortOrder
+  user_id?: Prisma.SortOrder
+  active_class_id?: Prisma.SortOrder
   created_by_id?: Prisma.SortOrder
   updated_by_id?: Prisma.SortOrder
   created_at?: Prisma.SortOrder
@@ -958,6 +1008,12 @@ export type StudentUncheckedUpdateManyWithoutResponsible_guardianNestedInput = {
   deleteMany?: Prisma.StudentScalarWhereInput | Prisma.StudentScalarWhereInput[]
 }
 
+export type StudentCreateNestedOneWithoutUserInput = {
+  create?: Prisma.XOR<Prisma.StudentCreateWithoutUserInput, Prisma.StudentUncheckedCreateWithoutUserInput>
+  connectOrCreate?: Prisma.StudentCreateOrConnectWithoutUserInput
+  connect?: Prisma.StudentWhereUniqueInput
+}
+
 export type StudentCreateNestedManyWithoutCreated_byInput = {
   create?: Prisma.XOR<Prisma.StudentCreateWithoutCreated_byInput, Prisma.StudentUncheckedCreateWithoutCreated_byInput> | Prisma.StudentCreateWithoutCreated_byInput[] | Prisma.StudentUncheckedCreateWithoutCreated_byInput[]
   connectOrCreate?: Prisma.StudentCreateOrConnectWithoutCreated_byInput | Prisma.StudentCreateOrConnectWithoutCreated_byInput[]
@@ -972,7 +1028,7 @@ export type StudentCreateNestedManyWithoutUpdated_byInput = {
   connect?: Prisma.StudentWhereUniqueInput | Prisma.StudentWhereUniqueInput[]
 }
 
-export type StudentCreateNestedOneWithoutUserInput = {
+export type StudentUncheckedCreateNestedOneWithoutUserInput = {
   create?: Prisma.XOR<Prisma.StudentCreateWithoutUserInput, Prisma.StudentUncheckedCreateWithoutUserInput>
   connectOrCreate?: Prisma.StudentCreateOrConnectWithoutUserInput
   connect?: Prisma.StudentWhereUniqueInput
@@ -992,10 +1048,14 @@ export type StudentUncheckedCreateNestedManyWithoutUpdated_byInput = {
   connect?: Prisma.StudentWhereUniqueInput | Prisma.StudentWhereUniqueInput[]
 }
 
-export type StudentUncheckedCreateNestedOneWithoutUserInput = {
+export type StudentUpdateOneWithoutUserNestedInput = {
   create?: Prisma.XOR<Prisma.StudentCreateWithoutUserInput, Prisma.StudentUncheckedCreateWithoutUserInput>
   connectOrCreate?: Prisma.StudentCreateOrConnectWithoutUserInput
+  upsert?: Prisma.StudentUpsertWithoutUserInput
+  disconnect?: Prisma.StudentWhereInput | boolean
+  delete?: Prisma.StudentWhereInput | boolean
   connect?: Prisma.StudentWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.StudentUpdateToOneWithWhereWithoutUserInput, Prisma.StudentUpdateWithoutUserInput>, Prisma.StudentUncheckedUpdateWithoutUserInput>
 }
 
 export type StudentUpdateManyWithoutCreated_byNestedInput = {
@@ -1026,7 +1086,7 @@ export type StudentUpdateManyWithoutUpdated_byNestedInput = {
   deleteMany?: Prisma.StudentScalarWhereInput | Prisma.StudentScalarWhereInput[]
 }
 
-export type StudentUpdateOneWithoutUserNestedInput = {
+export type StudentUncheckedUpdateOneWithoutUserNestedInput = {
   create?: Prisma.XOR<Prisma.StudentCreateWithoutUserInput, Prisma.StudentUncheckedCreateWithoutUserInput>
   connectOrCreate?: Prisma.StudentCreateOrConnectWithoutUserInput
   upsert?: Prisma.StudentUpsertWithoutUserInput
@@ -1064,58 +1124,52 @@ export type StudentUncheckedUpdateManyWithoutUpdated_byNestedInput = {
   deleteMany?: Prisma.StudentScalarWhereInput | Prisma.StudentScalarWhereInput[]
 }
 
-export type StudentUncheckedUpdateOneWithoutUserNestedInput = {
-  create?: Prisma.XOR<Prisma.StudentCreateWithoutUserInput, Prisma.StudentUncheckedCreateWithoutUserInput>
-  connectOrCreate?: Prisma.StudentCreateOrConnectWithoutUserInput
-  upsert?: Prisma.StudentUpsertWithoutUserInput
-  disconnect?: Prisma.StudentWhereInput | boolean
-  delete?: Prisma.StudentWhereInput | boolean
-  connect?: Prisma.StudentWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.StudentUpdateToOneWithWhereWithoutUserInput, Prisma.StudentUpdateWithoutUserInput>, Prisma.StudentUncheckedUpdateWithoutUserInput>
-}
-
 export type StudentCreateWithoutActive_classInput = {
   id?: string
+  full_name: string
+  mobile_number: string
   quranic_section?: $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: boolean
   created_at?: Date | string
   updated_at?: Date | string | null
+  classes?: Prisma.ClassCreateNestedManyWithoutStudentsInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationCreateNestedManyWithoutStudentInput
-  created_by?: Prisma.UserCreateNestedOneWithoutCreated_studentsInput
-  quranic_subject?: Prisma.QuranicSubjectCreateNestedOneWithoutStudentsInput
   responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsCreateNestedOneWithoutStudentsInput
-  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_studentsInput
-  user: Prisma.UserCreateNestedOneWithoutStudent_profileInput
+  quranic_subject?: Prisma.QuranicSubjectCreateNestedOneWithoutStudentsInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodCreateNestedManyWithoutStudentsInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityCreateNestedOneWithoutStudentInput
   cultural_club_options?: Prisma.CulturalClubCreateNestedManyWithoutStudentsInput
   language_club_options?: Prisma.LanguageClubCreateNestedManyWithoutStudentsInput
   quran_club_options?: Prisma.QuranClubCreateNestedManyWithoutStudentsInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodCreateNestedManyWithoutStudentsInput
   science_club_options?: Prisma.ScienceClubCreateNestedManyWithoutStudentsInput
   scout_sports_club_options?: Prisma.ScoutSportsClubCreateNestedManyWithoutStudentsInput
-  classes?: Prisma.ClassCreateNestedManyWithoutStudentsInput
+  user: Prisma.UserCreateNestedOneWithoutStudent_profileInput
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_studentsInput
+  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_studentsInput
 }
 
 export type StudentUncheckedCreateWithoutActive_classInput = {
   id?: string
-  quranic_section?: $Enums.Quranic_Section | null
-  quranic_subject_id?: string | null
+  full_name: string
+  mobile_number: string
   responsible_guardian_id?: string | null
-  user_id: string
+  quranic_subject_id?: string | null
+  quranic_section?: $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: boolean
+  user_id: string
   created_by_id?: string | null
   updated_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
+  classes?: Prisma.ClassUncheckedCreateNestedManyWithoutStudentsInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedCreateNestedManyWithoutStudentInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedCreateNestedManyWithoutStudentsInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedCreateNestedOneWithoutStudentInput
   cultural_club_options?: Prisma.CulturalClubUncheckedCreateNestedManyWithoutStudentsInput
   language_club_options?: Prisma.LanguageClubUncheckedCreateNestedManyWithoutStudentsInput
   quran_club_options?: Prisma.QuranClubUncheckedCreateNestedManyWithoutStudentsInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedCreateNestedManyWithoutStudentsInput
   science_club_options?: Prisma.ScienceClubUncheckedCreateNestedManyWithoutStudentsInput
   scout_sports_club_options?: Prisma.ScoutSportsClubUncheckedCreateNestedManyWithoutStudentsInput
-  classes?: Prisma.ClassUncheckedCreateNestedManyWithoutStudentsInput
 }
 
 export type StudentCreateOrConnectWithoutActive_classInput = {
@@ -1130,44 +1184,48 @@ export type StudentCreateManyActive_classInputEnvelope = {
 
 export type StudentCreateWithoutClassesInput = {
   id?: string
+  full_name: string
+  mobile_number: string
   quranic_section?: $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: boolean
   created_at?: Date | string
   updated_at?: Date | string | null
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationCreateNestedManyWithoutStudentInput
-  active_class: Prisma.ClassCreateNestedOneWithoutActive_studentsInput
-  created_by?: Prisma.UserCreateNestedOneWithoutCreated_studentsInput
-  quranic_subject?: Prisma.QuranicSubjectCreateNestedOneWithoutStudentsInput
   responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsCreateNestedOneWithoutStudentsInput
-  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_studentsInput
-  user: Prisma.UserCreateNestedOneWithoutStudent_profileInput
+  quranic_subject?: Prisma.QuranicSubjectCreateNestedOneWithoutStudentsInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodCreateNestedManyWithoutStudentsInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityCreateNestedOneWithoutStudentInput
   cultural_club_options?: Prisma.CulturalClubCreateNestedManyWithoutStudentsInput
   language_club_options?: Prisma.LanguageClubCreateNestedManyWithoutStudentsInput
   quran_club_options?: Prisma.QuranClubCreateNestedManyWithoutStudentsInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodCreateNestedManyWithoutStudentsInput
   science_club_options?: Prisma.ScienceClubCreateNestedManyWithoutStudentsInput
   scout_sports_club_options?: Prisma.ScoutSportsClubCreateNestedManyWithoutStudentsInput
+  user: Prisma.UserCreateNestedOneWithoutStudent_profileInput
+  active_class: Prisma.ClassCreateNestedOneWithoutActive_studentsInput
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_studentsInput
+  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_studentsInput
 }
 
 export type StudentUncheckedCreateWithoutClassesInput = {
   id?: string
-  quranic_section?: $Enums.Quranic_Section | null
-  quranic_subject_id?: string | null
-  active_class_id: string
+  full_name: string
+  mobile_number: string
   responsible_guardian_id?: string | null
-  user_id: string
+  quranic_subject_id?: string | null
+  quranic_section?: $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: boolean
+  user_id: string
+  active_class_id: string
   created_by_id?: string | null
   updated_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedCreateNestedManyWithoutStudentInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedCreateNestedManyWithoutStudentsInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedCreateNestedOneWithoutStudentInput
   cultural_club_options?: Prisma.CulturalClubUncheckedCreateNestedManyWithoutStudentsInput
   language_club_options?: Prisma.LanguageClubUncheckedCreateNestedManyWithoutStudentsInput
   quran_club_options?: Prisma.QuranClubUncheckedCreateNestedManyWithoutStudentsInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedCreateNestedManyWithoutStudentsInput
   science_club_options?: Prisma.ScienceClubUncheckedCreateNestedManyWithoutStudentsInput
   scout_sports_club_options?: Prisma.ScoutSportsClubUncheckedCreateNestedManyWithoutStudentsInput
 }
@@ -1198,12 +1256,14 @@ export type StudentScalarWhereInput = {
   OR?: Prisma.StudentScalarWhereInput[]
   NOT?: Prisma.StudentScalarWhereInput | Prisma.StudentScalarWhereInput[]
   id?: Prisma.StringFilter<"Student"> | string
-  quranic_section?: Prisma.EnumQuranic_SectionNullableFilter<"Student"> | $Enums.Quranic_Section | null
-  quranic_subject_id?: Prisma.StringNullableFilter<"Student"> | string | null
-  active_class_id?: Prisma.StringFilter<"Student"> | string
+  full_name?: Prisma.StringFilter<"Student"> | string
+  mobile_number?: Prisma.StringFilter<"Student"> | string
   responsible_guardian_id?: Prisma.StringNullableFilter<"Student"> | string | null
-  user_id?: Prisma.StringFilter<"Student"> | string
+  quranic_subject_id?: Prisma.StringNullableFilter<"Student"> | string | null
+  quranic_section?: Prisma.EnumQuranic_SectionNullableFilter<"Student"> | $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: Prisma.BoolFilter<"Student"> | boolean
+  user_id?: Prisma.StringFilter<"Student"> | string
+  active_class_id?: Prisma.StringFilter<"Student"> | string
   created_by_id?: Prisma.StringNullableFilter<"Student"> | string | null
   updated_by_id?: Prisma.StringNullableFilter<"Student"> | string | null
   created_at?: Prisma.DateTimeFilter<"Student"> | Date | string
@@ -1228,46 +1288,50 @@ export type StudentUpdateManyWithWhereWithoutClassesInput = {
 
 export type StudentCreateWithoutCultural_club_optionsInput = {
   id?: string
+  full_name: string
+  mobile_number: string
   quranic_section?: $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: boolean
   created_at?: Date | string
   updated_at?: Date | string | null
+  classes?: Prisma.ClassCreateNestedManyWithoutStudentsInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationCreateNestedManyWithoutStudentInput
-  active_class: Prisma.ClassCreateNestedOneWithoutActive_studentsInput
-  created_by?: Prisma.UserCreateNestedOneWithoutCreated_studentsInput
-  quranic_subject?: Prisma.QuranicSubjectCreateNestedOneWithoutStudentsInput
   responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsCreateNestedOneWithoutStudentsInput
-  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_studentsInput
-  user: Prisma.UserCreateNestedOneWithoutStudent_profileInput
+  quranic_subject?: Prisma.QuranicSubjectCreateNestedOneWithoutStudentsInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodCreateNestedManyWithoutStudentsInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityCreateNestedOneWithoutStudentInput
   language_club_options?: Prisma.LanguageClubCreateNestedManyWithoutStudentsInput
   quran_club_options?: Prisma.QuranClubCreateNestedManyWithoutStudentsInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodCreateNestedManyWithoutStudentsInput
   science_club_options?: Prisma.ScienceClubCreateNestedManyWithoutStudentsInput
   scout_sports_club_options?: Prisma.ScoutSportsClubCreateNestedManyWithoutStudentsInput
-  classes?: Prisma.ClassCreateNestedManyWithoutStudentsInput
+  user: Prisma.UserCreateNestedOneWithoutStudent_profileInput
+  active_class: Prisma.ClassCreateNestedOneWithoutActive_studentsInput
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_studentsInput
+  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_studentsInput
 }
 
 export type StudentUncheckedCreateWithoutCultural_club_optionsInput = {
   id?: string
-  quranic_section?: $Enums.Quranic_Section | null
-  quranic_subject_id?: string | null
-  active_class_id: string
+  full_name: string
+  mobile_number: string
   responsible_guardian_id?: string | null
-  user_id: string
+  quranic_subject_id?: string | null
+  quranic_section?: $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: boolean
+  user_id: string
+  active_class_id: string
   created_by_id?: string | null
   updated_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
+  classes?: Prisma.ClassUncheckedCreateNestedManyWithoutStudentsInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedCreateNestedManyWithoutStudentInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedCreateNestedManyWithoutStudentsInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedCreateNestedOneWithoutStudentInput
   language_club_options?: Prisma.LanguageClubUncheckedCreateNestedManyWithoutStudentsInput
   quran_club_options?: Prisma.QuranClubUncheckedCreateNestedManyWithoutStudentsInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedCreateNestedManyWithoutStudentsInput
   science_club_options?: Prisma.ScienceClubUncheckedCreateNestedManyWithoutStudentsInput
   scout_sports_club_options?: Prisma.ScoutSportsClubUncheckedCreateNestedManyWithoutStudentsInput
-  classes?: Prisma.ClassUncheckedCreateNestedManyWithoutStudentsInput
 }
 
 export type StudentCreateOrConnectWithoutCultural_club_optionsInput = {
@@ -1293,46 +1357,50 @@ export type StudentUpdateManyWithWhereWithoutCultural_club_optionsInput = {
 
 export type StudentCreateWithoutLanguage_club_optionsInput = {
   id?: string
+  full_name: string
+  mobile_number: string
   quranic_section?: $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: boolean
   created_at?: Date | string
   updated_at?: Date | string | null
+  classes?: Prisma.ClassCreateNestedManyWithoutStudentsInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationCreateNestedManyWithoutStudentInput
-  active_class: Prisma.ClassCreateNestedOneWithoutActive_studentsInput
-  created_by?: Prisma.UserCreateNestedOneWithoutCreated_studentsInput
-  quranic_subject?: Prisma.QuranicSubjectCreateNestedOneWithoutStudentsInput
   responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsCreateNestedOneWithoutStudentsInput
-  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_studentsInput
-  user: Prisma.UserCreateNestedOneWithoutStudent_profileInput
+  quranic_subject?: Prisma.QuranicSubjectCreateNestedOneWithoutStudentsInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodCreateNestedManyWithoutStudentsInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityCreateNestedOneWithoutStudentInput
   cultural_club_options?: Prisma.CulturalClubCreateNestedManyWithoutStudentsInput
   quran_club_options?: Prisma.QuranClubCreateNestedManyWithoutStudentsInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodCreateNestedManyWithoutStudentsInput
   science_club_options?: Prisma.ScienceClubCreateNestedManyWithoutStudentsInput
   scout_sports_club_options?: Prisma.ScoutSportsClubCreateNestedManyWithoutStudentsInput
-  classes?: Prisma.ClassCreateNestedManyWithoutStudentsInput
+  user: Prisma.UserCreateNestedOneWithoutStudent_profileInput
+  active_class: Prisma.ClassCreateNestedOneWithoutActive_studentsInput
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_studentsInput
+  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_studentsInput
 }
 
 export type StudentUncheckedCreateWithoutLanguage_club_optionsInput = {
   id?: string
-  quranic_section?: $Enums.Quranic_Section | null
-  quranic_subject_id?: string | null
-  active_class_id: string
+  full_name: string
+  mobile_number: string
   responsible_guardian_id?: string | null
-  user_id: string
+  quranic_subject_id?: string | null
+  quranic_section?: $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: boolean
+  user_id: string
+  active_class_id: string
   created_by_id?: string | null
   updated_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
+  classes?: Prisma.ClassUncheckedCreateNestedManyWithoutStudentsInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedCreateNestedManyWithoutStudentInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedCreateNestedManyWithoutStudentsInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedCreateNestedOneWithoutStudentInput
   cultural_club_options?: Prisma.CulturalClubUncheckedCreateNestedManyWithoutStudentsInput
   quran_club_options?: Prisma.QuranClubUncheckedCreateNestedManyWithoutStudentsInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedCreateNestedManyWithoutStudentsInput
   science_club_options?: Prisma.ScienceClubUncheckedCreateNestedManyWithoutStudentsInput
   scout_sports_club_options?: Prisma.ScoutSportsClubUncheckedCreateNestedManyWithoutStudentsInput
-  classes?: Prisma.ClassUncheckedCreateNestedManyWithoutStudentsInput
 }
 
 export type StudentCreateOrConnectWithoutLanguage_club_optionsInput = {
@@ -1358,46 +1426,50 @@ export type StudentUpdateManyWithWhereWithoutLanguage_club_optionsInput = {
 
 export type StudentCreateWithoutQuran_club_optionsInput = {
   id?: string
+  full_name: string
+  mobile_number: string
   quranic_section?: $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: boolean
   created_at?: Date | string
   updated_at?: Date | string | null
+  classes?: Prisma.ClassCreateNestedManyWithoutStudentsInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationCreateNestedManyWithoutStudentInput
-  active_class: Prisma.ClassCreateNestedOneWithoutActive_studentsInput
-  created_by?: Prisma.UserCreateNestedOneWithoutCreated_studentsInput
-  quranic_subject?: Prisma.QuranicSubjectCreateNestedOneWithoutStudentsInput
   responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsCreateNestedOneWithoutStudentsInput
-  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_studentsInput
-  user: Prisma.UserCreateNestedOneWithoutStudent_profileInput
+  quranic_subject?: Prisma.QuranicSubjectCreateNestedOneWithoutStudentsInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodCreateNestedManyWithoutStudentsInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityCreateNestedOneWithoutStudentInput
   cultural_club_options?: Prisma.CulturalClubCreateNestedManyWithoutStudentsInput
   language_club_options?: Prisma.LanguageClubCreateNestedManyWithoutStudentsInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodCreateNestedManyWithoutStudentsInput
   science_club_options?: Prisma.ScienceClubCreateNestedManyWithoutStudentsInput
   scout_sports_club_options?: Prisma.ScoutSportsClubCreateNestedManyWithoutStudentsInput
-  classes?: Prisma.ClassCreateNestedManyWithoutStudentsInput
+  user: Prisma.UserCreateNestedOneWithoutStudent_profileInput
+  active_class: Prisma.ClassCreateNestedOneWithoutActive_studentsInput
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_studentsInput
+  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_studentsInput
 }
 
 export type StudentUncheckedCreateWithoutQuran_club_optionsInput = {
   id?: string
-  quranic_section?: $Enums.Quranic_Section | null
-  quranic_subject_id?: string | null
-  active_class_id: string
+  full_name: string
+  mobile_number: string
   responsible_guardian_id?: string | null
-  user_id: string
+  quranic_subject_id?: string | null
+  quranic_section?: $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: boolean
+  user_id: string
+  active_class_id: string
   created_by_id?: string | null
   updated_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
+  classes?: Prisma.ClassUncheckedCreateNestedManyWithoutStudentsInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedCreateNestedManyWithoutStudentInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedCreateNestedManyWithoutStudentsInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedCreateNestedOneWithoutStudentInput
   cultural_club_options?: Prisma.CulturalClubUncheckedCreateNestedManyWithoutStudentsInput
   language_club_options?: Prisma.LanguageClubUncheckedCreateNestedManyWithoutStudentsInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedCreateNestedManyWithoutStudentsInput
   science_club_options?: Prisma.ScienceClubUncheckedCreateNestedManyWithoutStudentsInput
   scout_sports_club_options?: Prisma.ScoutSportsClubUncheckedCreateNestedManyWithoutStudentsInput
-  classes?: Prisma.ClassUncheckedCreateNestedManyWithoutStudentsInput
 }
 
 export type StudentCreateOrConnectWithoutQuran_club_optionsInput = {
@@ -1423,38 +1495,43 @@ export type StudentUpdateManyWithWhereWithoutQuran_club_optionsInput = {
 
 export type StudentCreateWithoutQuranic_special_periodsInput = {
   id?: string
+  full_name: string
+  mobile_number: string
   quranic_section?: $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: boolean
   created_at?: Date | string
   updated_at?: Date | string | null
+  classes?: Prisma.ClassCreateNestedManyWithoutStudentsInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationCreateNestedManyWithoutStudentInput
-  active_class: Prisma.ClassCreateNestedOneWithoutActive_studentsInput
-  created_by?: Prisma.UserCreateNestedOneWithoutCreated_studentsInput
-  quranic_subject?: Prisma.QuranicSubjectCreateNestedOneWithoutStudentsInput
   responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsCreateNestedOneWithoutStudentsInput
-  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_studentsInput
-  user: Prisma.UserCreateNestedOneWithoutStudent_profileInput
+  quranic_subject?: Prisma.QuranicSubjectCreateNestedOneWithoutStudentsInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityCreateNestedOneWithoutStudentInput
   cultural_club_options?: Prisma.CulturalClubCreateNestedManyWithoutStudentsInput
   language_club_options?: Prisma.LanguageClubCreateNestedManyWithoutStudentsInput
   quran_club_options?: Prisma.QuranClubCreateNestedManyWithoutStudentsInput
   science_club_options?: Prisma.ScienceClubCreateNestedManyWithoutStudentsInput
   scout_sports_club_options?: Prisma.ScoutSportsClubCreateNestedManyWithoutStudentsInput
-  classes?: Prisma.ClassCreateNestedManyWithoutStudentsInput
+  user: Prisma.UserCreateNestedOneWithoutStudent_profileInput
+  active_class: Prisma.ClassCreateNestedOneWithoutActive_studentsInput
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_studentsInput
+  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_studentsInput
 }
 
 export type StudentUncheckedCreateWithoutQuranic_special_periodsInput = {
   id?: string
-  quranic_section?: $Enums.Quranic_Section | null
-  quranic_subject_id?: string | null
-  active_class_id: string
+  full_name: string
+  mobile_number: string
   responsible_guardian_id?: string | null
-  user_id: string
+  quranic_subject_id?: string | null
+  quranic_section?: $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: boolean
+  user_id: string
+  active_class_id: string
   created_by_id?: string | null
   updated_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
+  classes?: Prisma.ClassUncheckedCreateNestedManyWithoutStudentsInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedCreateNestedManyWithoutStudentInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedCreateNestedOneWithoutStudentInput
   cultural_club_options?: Prisma.CulturalClubUncheckedCreateNestedManyWithoutStudentsInput
@@ -1462,7 +1539,6 @@ export type StudentUncheckedCreateWithoutQuranic_special_periodsInput = {
   quran_club_options?: Prisma.QuranClubUncheckedCreateNestedManyWithoutStudentsInput
   science_club_options?: Prisma.ScienceClubUncheckedCreateNestedManyWithoutStudentsInput
   scout_sports_club_options?: Prisma.ScoutSportsClubUncheckedCreateNestedManyWithoutStudentsInput
-  classes?: Prisma.ClassUncheckedCreateNestedManyWithoutStudentsInput
 }
 
 export type StudentCreateOrConnectWithoutQuranic_special_periodsInput = {
@@ -1488,46 +1564,50 @@ export type StudentUpdateManyWithWhereWithoutQuranic_special_periodsInput = {
 
 export type StudentCreateWithoutQuranic_subjectInput = {
   id?: string
+  full_name: string
+  mobile_number: string
   quranic_section?: $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: boolean
   created_at?: Date | string
   updated_at?: Date | string | null
+  classes?: Prisma.ClassCreateNestedManyWithoutStudentsInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationCreateNestedManyWithoutStudentInput
-  active_class: Prisma.ClassCreateNestedOneWithoutActive_studentsInput
-  created_by?: Prisma.UserCreateNestedOneWithoutCreated_studentsInput
   responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsCreateNestedOneWithoutStudentsInput
-  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_studentsInput
-  user: Prisma.UserCreateNestedOneWithoutStudent_profileInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodCreateNestedManyWithoutStudentsInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityCreateNestedOneWithoutStudentInput
   cultural_club_options?: Prisma.CulturalClubCreateNestedManyWithoutStudentsInput
   language_club_options?: Prisma.LanguageClubCreateNestedManyWithoutStudentsInput
   quran_club_options?: Prisma.QuranClubCreateNestedManyWithoutStudentsInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodCreateNestedManyWithoutStudentsInput
   science_club_options?: Prisma.ScienceClubCreateNestedManyWithoutStudentsInput
   scout_sports_club_options?: Prisma.ScoutSportsClubCreateNestedManyWithoutStudentsInput
-  classes?: Prisma.ClassCreateNestedManyWithoutStudentsInput
+  user: Prisma.UserCreateNestedOneWithoutStudent_profileInput
+  active_class: Prisma.ClassCreateNestedOneWithoutActive_studentsInput
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_studentsInput
+  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_studentsInput
 }
 
 export type StudentUncheckedCreateWithoutQuranic_subjectInput = {
   id?: string
-  quranic_section?: $Enums.Quranic_Section | null
-  active_class_id: string
+  full_name: string
+  mobile_number: string
   responsible_guardian_id?: string | null
-  user_id: string
+  quranic_section?: $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: boolean
+  user_id: string
+  active_class_id: string
   created_by_id?: string | null
   updated_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
+  classes?: Prisma.ClassUncheckedCreateNestedManyWithoutStudentsInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedCreateNestedManyWithoutStudentInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedCreateNestedManyWithoutStudentsInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedCreateNestedOneWithoutStudentInput
   cultural_club_options?: Prisma.CulturalClubUncheckedCreateNestedManyWithoutStudentsInput
   language_club_options?: Prisma.LanguageClubUncheckedCreateNestedManyWithoutStudentsInput
   quran_club_options?: Prisma.QuranClubUncheckedCreateNestedManyWithoutStudentsInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedCreateNestedManyWithoutStudentsInput
   science_club_options?: Prisma.ScienceClubUncheckedCreateNestedManyWithoutStudentsInput
   scout_sports_club_options?: Prisma.ScoutSportsClubUncheckedCreateNestedManyWithoutStudentsInput
-  classes?: Prisma.ClassUncheckedCreateNestedManyWithoutStudentsInput
 }
 
 export type StudentCreateOrConnectWithoutQuranic_subjectInput = {
@@ -1558,46 +1638,50 @@ export type StudentUpdateManyWithWhereWithoutQuranic_subjectInput = {
 
 export type StudentCreateWithoutScience_club_optionsInput = {
   id?: string
+  full_name: string
+  mobile_number: string
   quranic_section?: $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: boolean
   created_at?: Date | string
   updated_at?: Date | string | null
+  classes?: Prisma.ClassCreateNestedManyWithoutStudentsInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationCreateNestedManyWithoutStudentInput
-  active_class: Prisma.ClassCreateNestedOneWithoutActive_studentsInput
-  created_by?: Prisma.UserCreateNestedOneWithoutCreated_studentsInput
-  quranic_subject?: Prisma.QuranicSubjectCreateNestedOneWithoutStudentsInput
   responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsCreateNestedOneWithoutStudentsInput
-  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_studentsInput
-  user: Prisma.UserCreateNestedOneWithoutStudent_profileInput
+  quranic_subject?: Prisma.QuranicSubjectCreateNestedOneWithoutStudentsInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodCreateNestedManyWithoutStudentsInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityCreateNestedOneWithoutStudentInput
   cultural_club_options?: Prisma.CulturalClubCreateNestedManyWithoutStudentsInput
   language_club_options?: Prisma.LanguageClubCreateNestedManyWithoutStudentsInput
   quran_club_options?: Prisma.QuranClubCreateNestedManyWithoutStudentsInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodCreateNestedManyWithoutStudentsInput
   scout_sports_club_options?: Prisma.ScoutSportsClubCreateNestedManyWithoutStudentsInput
-  classes?: Prisma.ClassCreateNestedManyWithoutStudentsInput
+  user: Prisma.UserCreateNestedOneWithoutStudent_profileInput
+  active_class: Prisma.ClassCreateNestedOneWithoutActive_studentsInput
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_studentsInput
+  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_studentsInput
 }
 
 export type StudentUncheckedCreateWithoutScience_club_optionsInput = {
   id?: string
-  quranic_section?: $Enums.Quranic_Section | null
-  quranic_subject_id?: string | null
-  active_class_id: string
+  full_name: string
+  mobile_number: string
   responsible_guardian_id?: string | null
-  user_id: string
+  quranic_subject_id?: string | null
+  quranic_section?: $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: boolean
+  user_id: string
+  active_class_id: string
   created_by_id?: string | null
   updated_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
+  classes?: Prisma.ClassUncheckedCreateNestedManyWithoutStudentsInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedCreateNestedManyWithoutStudentInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedCreateNestedManyWithoutStudentsInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedCreateNestedOneWithoutStudentInput
   cultural_club_options?: Prisma.CulturalClubUncheckedCreateNestedManyWithoutStudentsInput
   language_club_options?: Prisma.LanguageClubUncheckedCreateNestedManyWithoutStudentsInput
   quran_club_options?: Prisma.QuranClubUncheckedCreateNestedManyWithoutStudentsInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedCreateNestedManyWithoutStudentsInput
   scout_sports_club_options?: Prisma.ScoutSportsClubUncheckedCreateNestedManyWithoutStudentsInput
-  classes?: Prisma.ClassUncheckedCreateNestedManyWithoutStudentsInput
 }
 
 export type StudentCreateOrConnectWithoutScience_club_optionsInput = {
@@ -1623,46 +1707,50 @@ export type StudentUpdateManyWithWhereWithoutScience_club_optionsInput = {
 
 export type StudentCreateWithoutScout_sports_club_optionsInput = {
   id?: string
+  full_name: string
+  mobile_number: string
   quranic_section?: $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: boolean
   created_at?: Date | string
   updated_at?: Date | string | null
+  classes?: Prisma.ClassCreateNestedManyWithoutStudentsInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationCreateNestedManyWithoutStudentInput
-  active_class: Prisma.ClassCreateNestedOneWithoutActive_studentsInput
-  created_by?: Prisma.UserCreateNestedOneWithoutCreated_studentsInput
-  quranic_subject?: Prisma.QuranicSubjectCreateNestedOneWithoutStudentsInput
   responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsCreateNestedOneWithoutStudentsInput
-  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_studentsInput
-  user: Prisma.UserCreateNestedOneWithoutStudent_profileInput
+  quranic_subject?: Prisma.QuranicSubjectCreateNestedOneWithoutStudentsInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodCreateNestedManyWithoutStudentsInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityCreateNestedOneWithoutStudentInput
   cultural_club_options?: Prisma.CulturalClubCreateNestedManyWithoutStudentsInput
   language_club_options?: Prisma.LanguageClubCreateNestedManyWithoutStudentsInput
   quran_club_options?: Prisma.QuranClubCreateNestedManyWithoutStudentsInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodCreateNestedManyWithoutStudentsInput
   science_club_options?: Prisma.ScienceClubCreateNestedManyWithoutStudentsInput
-  classes?: Prisma.ClassCreateNestedManyWithoutStudentsInput
+  user: Prisma.UserCreateNestedOneWithoutStudent_profileInput
+  active_class: Prisma.ClassCreateNestedOneWithoutActive_studentsInput
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_studentsInput
+  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_studentsInput
 }
 
 export type StudentUncheckedCreateWithoutScout_sports_club_optionsInput = {
   id?: string
-  quranic_section?: $Enums.Quranic_Section | null
-  quranic_subject_id?: string | null
-  active_class_id: string
+  full_name: string
+  mobile_number: string
   responsible_guardian_id?: string | null
-  user_id: string
+  quranic_subject_id?: string | null
+  quranic_section?: $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: boolean
+  user_id: string
+  active_class_id: string
   created_by_id?: string | null
   updated_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
+  classes?: Prisma.ClassUncheckedCreateNestedManyWithoutStudentsInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedCreateNestedManyWithoutStudentInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedCreateNestedManyWithoutStudentsInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedCreateNestedOneWithoutStudentInput
   cultural_club_options?: Prisma.CulturalClubUncheckedCreateNestedManyWithoutStudentsInput
   language_club_options?: Prisma.LanguageClubUncheckedCreateNestedManyWithoutStudentsInput
   quran_club_options?: Prisma.QuranClubUncheckedCreateNestedManyWithoutStudentsInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedCreateNestedManyWithoutStudentsInput
   science_club_options?: Prisma.ScienceClubUncheckedCreateNestedManyWithoutStudentsInput
-  classes?: Prisma.ClassUncheckedCreateNestedManyWithoutStudentsInput
 }
 
 export type StudentCreateOrConnectWithoutScout_sports_club_optionsInput = {
@@ -1688,46 +1776,50 @@ export type StudentUpdateManyWithWhereWithoutScout_sports_club_optionsInput = {
 
 export type StudentCreateWithoutPrevious_institute_informationInput = {
   id?: string
+  full_name: string
+  mobile_number: string
   quranic_section?: $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: boolean
   created_at?: Date | string
   updated_at?: Date | string | null
-  active_class: Prisma.ClassCreateNestedOneWithoutActive_studentsInput
-  created_by?: Prisma.UserCreateNestedOneWithoutCreated_studentsInput
-  quranic_subject?: Prisma.QuranicSubjectCreateNestedOneWithoutStudentsInput
+  classes?: Prisma.ClassCreateNestedManyWithoutStudentsInput
   responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsCreateNestedOneWithoutStudentsInput
-  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_studentsInput
-  user: Prisma.UserCreateNestedOneWithoutStudent_profileInput
+  quranic_subject?: Prisma.QuranicSubjectCreateNestedOneWithoutStudentsInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodCreateNestedManyWithoutStudentsInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityCreateNestedOneWithoutStudentInput
   cultural_club_options?: Prisma.CulturalClubCreateNestedManyWithoutStudentsInput
   language_club_options?: Prisma.LanguageClubCreateNestedManyWithoutStudentsInput
   quran_club_options?: Prisma.QuranClubCreateNestedManyWithoutStudentsInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodCreateNestedManyWithoutStudentsInput
   science_club_options?: Prisma.ScienceClubCreateNestedManyWithoutStudentsInput
   scout_sports_club_options?: Prisma.ScoutSportsClubCreateNestedManyWithoutStudentsInput
-  classes?: Prisma.ClassCreateNestedManyWithoutStudentsInput
+  user: Prisma.UserCreateNestedOneWithoutStudent_profileInput
+  active_class: Prisma.ClassCreateNestedOneWithoutActive_studentsInput
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_studentsInput
+  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_studentsInput
 }
 
 export type StudentUncheckedCreateWithoutPrevious_institute_informationInput = {
   id?: string
-  quranic_section?: $Enums.Quranic_Section | null
-  quranic_subject_id?: string | null
-  active_class_id: string
+  full_name: string
+  mobile_number: string
   responsible_guardian_id?: string | null
-  user_id: string
+  quranic_subject_id?: string | null
+  quranic_section?: $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: boolean
+  user_id: string
+  active_class_id: string
   created_by_id?: string | null
   updated_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
+  classes?: Prisma.ClassUncheckedCreateNestedManyWithoutStudentsInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedCreateNestedManyWithoutStudentsInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedCreateNestedOneWithoutStudentInput
   cultural_club_options?: Prisma.CulturalClubUncheckedCreateNestedManyWithoutStudentsInput
   language_club_options?: Prisma.LanguageClubUncheckedCreateNestedManyWithoutStudentsInput
   quran_club_options?: Prisma.QuranClubUncheckedCreateNestedManyWithoutStudentsInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedCreateNestedManyWithoutStudentsInput
   science_club_options?: Prisma.ScienceClubUncheckedCreateNestedManyWithoutStudentsInput
   scout_sports_club_options?: Prisma.ScoutSportsClubUncheckedCreateNestedManyWithoutStudentsInput
-  classes?: Prisma.ClassUncheckedCreateNestedManyWithoutStudentsInput
 }
 
 export type StudentCreateOrConnectWithoutPrevious_institute_informationInput = {
@@ -1748,90 +1840,98 @@ export type StudentUpdateToOneWithWhereWithoutPrevious_institute_informationInpu
 
 export type StudentUpdateWithoutPrevious_institute_informationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
   quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  active_class?: Prisma.ClassUpdateOneRequiredWithoutActive_studentsNestedInput
-  created_by?: Prisma.UserUpdateOneWithoutCreated_studentsNestedInput
-  quranic_subject?: Prisma.QuranicSubjectUpdateOneWithoutStudentsNestedInput
+  classes?: Prisma.ClassUpdateManyWithoutStudentsNestedInput
   responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsUpdateOneWithoutStudentsNestedInput
-  updated_by?: Prisma.UserUpdateOneWithoutUpdated_studentsNestedInput
-  user?: Prisma.UserUpdateOneRequiredWithoutStudent_profileNestedInput
+  quranic_subject?: Prisma.QuranicSubjectUpdateOneWithoutStudentsNestedInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodUpdateManyWithoutStudentsNestedInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUpdateOneWithoutStudentNestedInput
   cultural_club_options?: Prisma.CulturalClubUpdateManyWithoutStudentsNestedInput
   language_club_options?: Prisma.LanguageClubUpdateManyWithoutStudentsNestedInput
   quran_club_options?: Prisma.QuranClubUpdateManyWithoutStudentsNestedInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodUpdateManyWithoutStudentsNestedInput
   science_club_options?: Prisma.ScienceClubUpdateManyWithoutStudentsNestedInput
   scout_sports_club_options?: Prisma.ScoutSportsClubUpdateManyWithoutStudentsNestedInput
-  classes?: Prisma.ClassUpdateManyWithoutStudentsNestedInput
+  user?: Prisma.UserUpdateOneRequiredWithoutStudent_profileNestedInput
+  active_class?: Prisma.ClassUpdateOneRequiredWithoutActive_studentsNestedInput
+  created_by?: Prisma.UserUpdateOneWithoutCreated_studentsNestedInput
+  updated_by?: Prisma.UserUpdateOneWithoutUpdated_studentsNestedInput
 }
 
 export type StudentUncheckedUpdateWithoutPrevious_institute_informationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
-  quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
   responsible_guardian_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
   created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  classes?: Prisma.ClassUncheckedUpdateManyWithoutStudentsNestedInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedUpdateManyWithoutStudentsNestedInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedUpdateOneWithoutStudentNestedInput
   cultural_club_options?: Prisma.CulturalClubUncheckedUpdateManyWithoutStudentsNestedInput
   language_club_options?: Prisma.LanguageClubUncheckedUpdateManyWithoutStudentsNestedInput
   quran_club_options?: Prisma.QuranClubUncheckedUpdateManyWithoutStudentsNestedInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedUpdateManyWithoutStudentsNestedInput
   science_club_options?: Prisma.ScienceClubUncheckedUpdateManyWithoutStudentsNestedInput
   scout_sports_club_options?: Prisma.ScoutSportsClubUncheckedUpdateManyWithoutStudentsNestedInput
-  classes?: Prisma.ClassUncheckedUpdateManyWithoutStudentsNestedInput
 }
 
 export type StudentCreateWithoutAssigned_responsible_teacherInput = {
   id?: string
+  full_name: string
+  mobile_number: string
   quranic_section?: $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: boolean
   created_at?: Date | string
   updated_at?: Date | string | null
+  classes?: Prisma.ClassCreateNestedManyWithoutStudentsInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationCreateNestedManyWithoutStudentInput
-  active_class: Prisma.ClassCreateNestedOneWithoutActive_studentsInput
-  created_by?: Prisma.UserCreateNestedOneWithoutCreated_studentsInput
-  quranic_subject?: Prisma.QuranicSubjectCreateNestedOneWithoutStudentsInput
   responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsCreateNestedOneWithoutStudentsInput
-  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_studentsInput
-  user: Prisma.UserCreateNestedOneWithoutStudent_profileInput
+  quranic_subject?: Prisma.QuranicSubjectCreateNestedOneWithoutStudentsInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodCreateNestedManyWithoutStudentsInput
   cultural_club_options?: Prisma.CulturalClubCreateNestedManyWithoutStudentsInput
   language_club_options?: Prisma.LanguageClubCreateNestedManyWithoutStudentsInput
   quran_club_options?: Prisma.QuranClubCreateNestedManyWithoutStudentsInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodCreateNestedManyWithoutStudentsInput
   science_club_options?: Prisma.ScienceClubCreateNestedManyWithoutStudentsInput
   scout_sports_club_options?: Prisma.ScoutSportsClubCreateNestedManyWithoutStudentsInput
-  classes?: Prisma.ClassCreateNestedManyWithoutStudentsInput
+  user: Prisma.UserCreateNestedOneWithoutStudent_profileInput
+  active_class: Prisma.ClassCreateNestedOneWithoutActive_studentsInput
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_studentsInput
+  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_studentsInput
 }
 
 export type StudentUncheckedCreateWithoutAssigned_responsible_teacherInput = {
   id?: string
-  quranic_section?: $Enums.Quranic_Section | null
-  quranic_subject_id?: string | null
-  active_class_id: string
+  full_name: string
+  mobile_number: string
   responsible_guardian_id?: string | null
-  user_id: string
+  quranic_subject_id?: string | null
+  quranic_section?: $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: boolean
+  user_id: string
+  active_class_id: string
   created_by_id?: string | null
   updated_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
+  classes?: Prisma.ClassUncheckedCreateNestedManyWithoutStudentsInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedCreateNestedManyWithoutStudentInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedCreateNestedManyWithoutStudentsInput
   cultural_club_options?: Prisma.CulturalClubUncheckedCreateNestedManyWithoutStudentsInput
   language_club_options?: Prisma.LanguageClubUncheckedCreateNestedManyWithoutStudentsInput
   quran_club_options?: Prisma.QuranClubUncheckedCreateNestedManyWithoutStudentsInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedCreateNestedManyWithoutStudentsInput
   science_club_options?: Prisma.ScienceClubUncheckedCreateNestedManyWithoutStudentsInput
   scout_sports_club_options?: Prisma.ScoutSportsClubUncheckedCreateNestedManyWithoutStudentsInput
-  classes?: Prisma.ClassUncheckedCreateNestedManyWithoutStudentsInput
 }
 
 export type StudentCreateOrConnectWithoutAssigned_responsible_teacherInput = {
@@ -1852,90 +1952,98 @@ export type StudentUpdateToOneWithWhereWithoutAssigned_responsible_teacherInput 
 
 export type StudentUpdateWithoutAssigned_responsible_teacherInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
   quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  classes?: Prisma.ClassUpdateManyWithoutStudentsNestedInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUpdateManyWithoutStudentNestedInput
-  active_class?: Prisma.ClassUpdateOneRequiredWithoutActive_studentsNestedInput
-  created_by?: Prisma.UserUpdateOneWithoutCreated_studentsNestedInput
-  quranic_subject?: Prisma.QuranicSubjectUpdateOneWithoutStudentsNestedInput
   responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsUpdateOneWithoutStudentsNestedInput
-  updated_by?: Prisma.UserUpdateOneWithoutUpdated_studentsNestedInput
-  user?: Prisma.UserUpdateOneRequiredWithoutStudent_profileNestedInput
+  quranic_subject?: Prisma.QuranicSubjectUpdateOneWithoutStudentsNestedInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodUpdateManyWithoutStudentsNestedInput
   cultural_club_options?: Prisma.CulturalClubUpdateManyWithoutStudentsNestedInput
   language_club_options?: Prisma.LanguageClubUpdateManyWithoutStudentsNestedInput
   quran_club_options?: Prisma.QuranClubUpdateManyWithoutStudentsNestedInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodUpdateManyWithoutStudentsNestedInput
   science_club_options?: Prisma.ScienceClubUpdateManyWithoutStudentsNestedInput
   scout_sports_club_options?: Prisma.ScoutSportsClubUpdateManyWithoutStudentsNestedInput
-  classes?: Prisma.ClassUpdateManyWithoutStudentsNestedInput
+  user?: Prisma.UserUpdateOneRequiredWithoutStudent_profileNestedInput
+  active_class?: Prisma.ClassUpdateOneRequiredWithoutActive_studentsNestedInput
+  created_by?: Prisma.UserUpdateOneWithoutCreated_studentsNestedInput
+  updated_by?: Prisma.UserUpdateOneWithoutUpdated_studentsNestedInput
 }
 
 export type StudentUncheckedUpdateWithoutAssigned_responsible_teacherInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
-  quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
   responsible_guardian_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
   created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  classes?: Prisma.ClassUncheckedUpdateManyWithoutStudentsNestedInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedUpdateManyWithoutStudentNestedInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedUpdateManyWithoutStudentsNestedInput
   cultural_club_options?: Prisma.CulturalClubUncheckedUpdateManyWithoutStudentsNestedInput
   language_club_options?: Prisma.LanguageClubUncheckedUpdateManyWithoutStudentsNestedInput
   quran_club_options?: Prisma.QuranClubUncheckedUpdateManyWithoutStudentsNestedInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedUpdateManyWithoutStudentsNestedInput
   science_club_options?: Prisma.ScienceClubUncheckedUpdateManyWithoutStudentsNestedInput
   scout_sports_club_options?: Prisma.ScoutSportsClubUncheckedUpdateManyWithoutStudentsNestedInput
-  classes?: Prisma.ClassUncheckedUpdateManyWithoutStudentsNestedInput
 }
 
 export type StudentCreateWithoutResponsible_guardianInput = {
   id?: string
+  full_name: string
+  mobile_number: string
   quranic_section?: $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: boolean
   created_at?: Date | string
   updated_at?: Date | string | null
+  classes?: Prisma.ClassCreateNestedManyWithoutStudentsInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationCreateNestedManyWithoutStudentInput
-  active_class: Prisma.ClassCreateNestedOneWithoutActive_studentsInput
-  created_by?: Prisma.UserCreateNestedOneWithoutCreated_studentsInput
   quranic_subject?: Prisma.QuranicSubjectCreateNestedOneWithoutStudentsInput
-  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_studentsInput
-  user: Prisma.UserCreateNestedOneWithoutStudent_profileInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodCreateNestedManyWithoutStudentsInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityCreateNestedOneWithoutStudentInput
   cultural_club_options?: Prisma.CulturalClubCreateNestedManyWithoutStudentsInput
   language_club_options?: Prisma.LanguageClubCreateNestedManyWithoutStudentsInput
   quran_club_options?: Prisma.QuranClubCreateNestedManyWithoutStudentsInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodCreateNestedManyWithoutStudentsInput
   science_club_options?: Prisma.ScienceClubCreateNestedManyWithoutStudentsInput
   scout_sports_club_options?: Prisma.ScoutSportsClubCreateNestedManyWithoutStudentsInput
-  classes?: Prisma.ClassCreateNestedManyWithoutStudentsInput
+  user: Prisma.UserCreateNestedOneWithoutStudent_profileInput
+  active_class: Prisma.ClassCreateNestedOneWithoutActive_studentsInput
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_studentsInput
+  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_studentsInput
 }
 
 export type StudentUncheckedCreateWithoutResponsible_guardianInput = {
   id?: string
-  quranic_section?: $Enums.Quranic_Section | null
+  full_name: string
+  mobile_number: string
   quranic_subject_id?: string | null
-  active_class_id: string
-  user_id: string
+  quranic_section?: $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: boolean
+  user_id: string
+  active_class_id: string
   created_by_id?: string | null
   updated_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
+  classes?: Prisma.ClassUncheckedCreateNestedManyWithoutStudentsInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedCreateNestedManyWithoutStudentInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedCreateNestedManyWithoutStudentsInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedCreateNestedOneWithoutStudentInput
   cultural_club_options?: Prisma.CulturalClubUncheckedCreateNestedManyWithoutStudentsInput
   language_club_options?: Prisma.LanguageClubUncheckedCreateNestedManyWithoutStudentsInput
   quran_club_options?: Prisma.QuranClubUncheckedCreateNestedManyWithoutStudentsInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedCreateNestedManyWithoutStudentsInput
   science_club_options?: Prisma.ScienceClubUncheckedCreateNestedManyWithoutStudentsInput
   scout_sports_club_options?: Prisma.ScoutSportsClubUncheckedCreateNestedManyWithoutStudentsInput
-  classes?: Prisma.ClassUncheckedCreateNestedManyWithoutStudentsInput
 }
 
 export type StudentCreateOrConnectWithoutResponsible_guardianInput = {
@@ -1964,48 +2072,105 @@ export type StudentUpdateManyWithWhereWithoutResponsible_guardianInput = {
   data: Prisma.XOR<Prisma.StudentUpdateManyMutationInput, Prisma.StudentUncheckedUpdateManyWithoutResponsible_guardianInput>
 }
 
-export type StudentCreateWithoutCreated_byInput = {
+export type StudentCreateWithoutUserInput = {
   id?: string
+  full_name: string
+  mobile_number: string
   quranic_section?: $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: boolean
   created_at?: Date | string
   updated_at?: Date | string | null
+  classes?: Prisma.ClassCreateNestedManyWithoutStudentsInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationCreateNestedManyWithoutStudentInput
-  active_class: Prisma.ClassCreateNestedOneWithoutActive_studentsInput
-  quranic_subject?: Prisma.QuranicSubjectCreateNestedOneWithoutStudentsInput
   responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsCreateNestedOneWithoutStudentsInput
-  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_studentsInput
-  user: Prisma.UserCreateNestedOneWithoutStudent_profileInput
+  quranic_subject?: Prisma.QuranicSubjectCreateNestedOneWithoutStudentsInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodCreateNestedManyWithoutStudentsInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityCreateNestedOneWithoutStudentInput
   cultural_club_options?: Prisma.CulturalClubCreateNestedManyWithoutStudentsInput
   language_club_options?: Prisma.LanguageClubCreateNestedManyWithoutStudentsInput
   quran_club_options?: Prisma.QuranClubCreateNestedManyWithoutStudentsInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodCreateNestedManyWithoutStudentsInput
   science_club_options?: Prisma.ScienceClubCreateNestedManyWithoutStudentsInput
   scout_sports_club_options?: Prisma.ScoutSportsClubCreateNestedManyWithoutStudentsInput
-  classes?: Prisma.ClassCreateNestedManyWithoutStudentsInput
+  active_class: Prisma.ClassCreateNestedOneWithoutActive_studentsInput
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_studentsInput
+  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_studentsInput
 }
 
-export type StudentUncheckedCreateWithoutCreated_byInput = {
+export type StudentUncheckedCreateWithoutUserInput = {
   id?: string
-  quranic_section?: $Enums.Quranic_Section | null
-  quranic_subject_id?: string | null
-  active_class_id: string
+  full_name: string
+  mobile_number: string
   responsible_guardian_id?: string | null
-  user_id: string
+  quranic_subject_id?: string | null
+  quranic_section?: $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: boolean
+  active_class_id: string
+  created_by_id?: string | null
   updated_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
+  classes?: Prisma.ClassUncheckedCreateNestedManyWithoutStudentsInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedCreateNestedManyWithoutStudentInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedCreateNestedManyWithoutStudentsInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedCreateNestedOneWithoutStudentInput
   cultural_club_options?: Prisma.CulturalClubUncheckedCreateNestedManyWithoutStudentsInput
   language_club_options?: Prisma.LanguageClubUncheckedCreateNestedManyWithoutStudentsInput
   quran_club_options?: Prisma.QuranClubUncheckedCreateNestedManyWithoutStudentsInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedCreateNestedManyWithoutStudentsInput
   science_club_options?: Prisma.ScienceClubUncheckedCreateNestedManyWithoutStudentsInput
   scout_sports_club_options?: Prisma.ScoutSportsClubUncheckedCreateNestedManyWithoutStudentsInput
+}
+
+export type StudentCreateOrConnectWithoutUserInput = {
+  where: Prisma.StudentWhereUniqueInput
+  create: Prisma.XOR<Prisma.StudentCreateWithoutUserInput, Prisma.StudentUncheckedCreateWithoutUserInput>
+}
+
+export type StudentCreateWithoutCreated_byInput = {
+  id?: string
+  full_name: string
+  mobile_number: string
+  quranic_section?: $Enums.Quranic_Section | null
+  isActiveResponsibleTeacher?: boolean
+  created_at?: Date | string
+  updated_at?: Date | string | null
+  classes?: Prisma.ClassCreateNestedManyWithoutStudentsInput
+  previous_institute_information?: Prisma.StudentPreviousInstituteInformationCreateNestedManyWithoutStudentInput
+  responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsCreateNestedOneWithoutStudentsInput
+  quranic_subject?: Prisma.QuranicSubjectCreateNestedOneWithoutStudentsInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodCreateNestedManyWithoutStudentsInput
+  assigned_responsible_teacher?: Prisma.StudentResponsibilityCreateNestedOneWithoutStudentInput
+  cultural_club_options?: Prisma.CulturalClubCreateNestedManyWithoutStudentsInput
+  language_club_options?: Prisma.LanguageClubCreateNestedManyWithoutStudentsInput
+  quran_club_options?: Prisma.QuranClubCreateNestedManyWithoutStudentsInput
+  science_club_options?: Prisma.ScienceClubCreateNestedManyWithoutStudentsInput
+  scout_sports_club_options?: Prisma.ScoutSportsClubCreateNestedManyWithoutStudentsInput
+  user: Prisma.UserCreateNestedOneWithoutStudent_profileInput
+  active_class: Prisma.ClassCreateNestedOneWithoutActive_studentsInput
+  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_studentsInput
+}
+
+export type StudentUncheckedCreateWithoutCreated_byInput = {
+  id?: string
+  full_name: string
+  mobile_number: string
+  responsible_guardian_id?: string | null
+  quranic_subject_id?: string | null
+  quranic_section?: $Enums.Quranic_Section | null
+  isActiveResponsibleTeacher?: boolean
+  user_id: string
+  active_class_id: string
+  updated_by_id?: string | null
+  created_at?: Date | string
+  updated_at?: Date | string | null
   classes?: Prisma.ClassUncheckedCreateNestedManyWithoutStudentsInput
+  previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedCreateNestedManyWithoutStudentInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedCreateNestedManyWithoutStudentsInput
+  assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedCreateNestedOneWithoutStudentInput
+  cultural_club_options?: Prisma.CulturalClubUncheckedCreateNestedManyWithoutStudentsInput
+  language_club_options?: Prisma.LanguageClubUncheckedCreateNestedManyWithoutStudentsInput
+  quran_club_options?: Prisma.QuranClubUncheckedCreateNestedManyWithoutStudentsInput
+  science_club_options?: Prisma.ScienceClubUncheckedCreateNestedManyWithoutStudentsInput
+  scout_sports_club_options?: Prisma.ScoutSportsClubUncheckedCreateNestedManyWithoutStudentsInput
 }
 
 export type StudentCreateOrConnectWithoutCreated_byInput = {
@@ -2020,46 +2185,50 @@ export type StudentCreateManyCreated_byInputEnvelope = {
 
 export type StudentCreateWithoutUpdated_byInput = {
   id?: string
+  full_name: string
+  mobile_number: string
   quranic_section?: $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: boolean
   created_at?: Date | string
   updated_at?: Date | string | null
+  classes?: Prisma.ClassCreateNestedManyWithoutStudentsInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationCreateNestedManyWithoutStudentInput
-  active_class: Prisma.ClassCreateNestedOneWithoutActive_studentsInput
-  created_by?: Prisma.UserCreateNestedOneWithoutCreated_studentsInput
-  quranic_subject?: Prisma.QuranicSubjectCreateNestedOneWithoutStudentsInput
   responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsCreateNestedOneWithoutStudentsInput
-  user: Prisma.UserCreateNestedOneWithoutStudent_profileInput
+  quranic_subject?: Prisma.QuranicSubjectCreateNestedOneWithoutStudentsInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodCreateNestedManyWithoutStudentsInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityCreateNestedOneWithoutStudentInput
   cultural_club_options?: Prisma.CulturalClubCreateNestedManyWithoutStudentsInput
   language_club_options?: Prisma.LanguageClubCreateNestedManyWithoutStudentsInput
   quran_club_options?: Prisma.QuranClubCreateNestedManyWithoutStudentsInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodCreateNestedManyWithoutStudentsInput
   science_club_options?: Prisma.ScienceClubCreateNestedManyWithoutStudentsInput
   scout_sports_club_options?: Prisma.ScoutSportsClubCreateNestedManyWithoutStudentsInput
-  classes?: Prisma.ClassCreateNestedManyWithoutStudentsInput
+  user: Prisma.UserCreateNestedOneWithoutStudent_profileInput
+  active_class: Prisma.ClassCreateNestedOneWithoutActive_studentsInput
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_studentsInput
 }
 
 export type StudentUncheckedCreateWithoutUpdated_byInput = {
   id?: string
-  quranic_section?: $Enums.Quranic_Section | null
-  quranic_subject_id?: string | null
-  active_class_id: string
+  full_name: string
+  mobile_number: string
   responsible_guardian_id?: string | null
-  user_id: string
+  quranic_subject_id?: string | null
+  quranic_section?: $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: boolean
+  user_id: string
+  active_class_id: string
   created_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
+  classes?: Prisma.ClassUncheckedCreateNestedManyWithoutStudentsInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedCreateNestedManyWithoutStudentInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedCreateNestedManyWithoutStudentsInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedCreateNestedOneWithoutStudentInput
   cultural_club_options?: Prisma.CulturalClubUncheckedCreateNestedManyWithoutStudentsInput
   language_club_options?: Prisma.LanguageClubUncheckedCreateNestedManyWithoutStudentsInput
   quran_club_options?: Prisma.QuranClubUncheckedCreateNestedManyWithoutStudentsInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedCreateNestedManyWithoutStudentsInput
   science_club_options?: Prisma.ScienceClubUncheckedCreateNestedManyWithoutStudentsInput
   scout_sports_club_options?: Prisma.ScoutSportsClubUncheckedCreateNestedManyWithoutStudentsInput
-  classes?: Prisma.ClassUncheckedCreateNestedManyWithoutStudentsInput
 }
 
 export type StudentCreateOrConnectWithoutUpdated_byInput = {
@@ -2072,53 +2241,63 @@ export type StudentCreateManyUpdated_byInputEnvelope = {
   skipDuplicates?: boolean
 }
 
-export type StudentCreateWithoutUserInput = {
-  id?: string
-  quranic_section?: $Enums.Quranic_Section | null
-  isActiveResponsibleTeacher?: boolean
-  created_at?: Date | string
-  updated_at?: Date | string | null
-  previous_institute_information?: Prisma.StudentPreviousInstituteInformationCreateNestedManyWithoutStudentInput
-  active_class: Prisma.ClassCreateNestedOneWithoutActive_studentsInput
-  created_by?: Prisma.UserCreateNestedOneWithoutCreated_studentsInput
-  quranic_subject?: Prisma.QuranicSubjectCreateNestedOneWithoutStudentsInput
-  responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsCreateNestedOneWithoutStudentsInput
-  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_studentsInput
-  assigned_responsible_teacher?: Prisma.StudentResponsibilityCreateNestedOneWithoutStudentInput
-  cultural_club_options?: Prisma.CulturalClubCreateNestedManyWithoutStudentsInput
-  language_club_options?: Prisma.LanguageClubCreateNestedManyWithoutStudentsInput
-  quran_club_options?: Prisma.QuranClubCreateNestedManyWithoutStudentsInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodCreateNestedManyWithoutStudentsInput
-  science_club_options?: Prisma.ScienceClubCreateNestedManyWithoutStudentsInput
-  scout_sports_club_options?: Prisma.ScoutSportsClubCreateNestedManyWithoutStudentsInput
-  classes?: Prisma.ClassCreateNestedManyWithoutStudentsInput
-}
-
-export type StudentUncheckedCreateWithoutUserInput = {
-  id?: string
-  quranic_section?: $Enums.Quranic_Section | null
-  quranic_subject_id?: string | null
-  active_class_id: string
-  responsible_guardian_id?: string | null
-  isActiveResponsibleTeacher?: boolean
-  created_by_id?: string | null
-  updated_by_id?: string | null
-  created_at?: Date | string
-  updated_at?: Date | string | null
-  previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedCreateNestedManyWithoutStudentInput
-  assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedCreateNestedOneWithoutStudentInput
-  cultural_club_options?: Prisma.CulturalClubUncheckedCreateNestedManyWithoutStudentsInput
-  language_club_options?: Prisma.LanguageClubUncheckedCreateNestedManyWithoutStudentsInput
-  quran_club_options?: Prisma.QuranClubUncheckedCreateNestedManyWithoutStudentsInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedCreateNestedManyWithoutStudentsInput
-  science_club_options?: Prisma.ScienceClubUncheckedCreateNestedManyWithoutStudentsInput
-  scout_sports_club_options?: Prisma.ScoutSportsClubUncheckedCreateNestedManyWithoutStudentsInput
-  classes?: Prisma.ClassUncheckedCreateNestedManyWithoutStudentsInput
-}
-
-export type StudentCreateOrConnectWithoutUserInput = {
-  where: Prisma.StudentWhereUniqueInput
+export type StudentUpsertWithoutUserInput = {
+  update: Prisma.XOR<Prisma.StudentUpdateWithoutUserInput, Prisma.StudentUncheckedUpdateWithoutUserInput>
   create: Prisma.XOR<Prisma.StudentCreateWithoutUserInput, Prisma.StudentUncheckedCreateWithoutUserInput>
+  where?: Prisma.StudentWhereInput
+}
+
+export type StudentUpdateToOneWithWhereWithoutUserInput = {
+  where?: Prisma.StudentWhereInput
+  data: Prisma.XOR<Prisma.StudentUpdateWithoutUserInput, Prisma.StudentUncheckedUpdateWithoutUserInput>
+}
+
+export type StudentUpdateWithoutUserInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
+  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
+  isActiveResponsibleTeacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  classes?: Prisma.ClassUpdateManyWithoutStudentsNestedInput
+  previous_institute_information?: Prisma.StudentPreviousInstituteInformationUpdateManyWithoutStudentNestedInput
+  responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsUpdateOneWithoutStudentsNestedInput
+  quranic_subject?: Prisma.QuranicSubjectUpdateOneWithoutStudentsNestedInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodUpdateManyWithoutStudentsNestedInput
+  assigned_responsible_teacher?: Prisma.StudentResponsibilityUpdateOneWithoutStudentNestedInput
+  cultural_club_options?: Prisma.CulturalClubUpdateManyWithoutStudentsNestedInput
+  language_club_options?: Prisma.LanguageClubUpdateManyWithoutStudentsNestedInput
+  quran_club_options?: Prisma.QuranClubUpdateManyWithoutStudentsNestedInput
+  science_club_options?: Prisma.ScienceClubUpdateManyWithoutStudentsNestedInput
+  scout_sports_club_options?: Prisma.ScoutSportsClubUpdateManyWithoutStudentsNestedInput
+  active_class?: Prisma.ClassUpdateOneRequiredWithoutActive_studentsNestedInput
+  created_by?: Prisma.UserUpdateOneWithoutCreated_studentsNestedInput
+  updated_by?: Prisma.UserUpdateOneWithoutUpdated_studentsNestedInput
+}
+
+export type StudentUncheckedUpdateWithoutUserInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
+  responsible_guardian_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
+  isActiveResponsibleTeacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
+  created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  classes?: Prisma.ClassUncheckedUpdateManyWithoutStudentsNestedInput
+  previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedUpdateManyWithoutStudentNestedInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedUpdateManyWithoutStudentsNestedInput
+  assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedUpdateOneWithoutStudentNestedInput
+  cultural_club_options?: Prisma.CulturalClubUncheckedUpdateManyWithoutStudentsNestedInput
+  language_club_options?: Prisma.LanguageClubUncheckedUpdateManyWithoutStudentsNestedInput
+  quran_club_options?: Prisma.QuranClubUncheckedUpdateManyWithoutStudentsNestedInput
+  science_club_options?: Prisma.ScienceClubUncheckedUpdateManyWithoutStudentsNestedInput
+  scout_sports_club_options?: Prisma.ScoutSportsClubUncheckedUpdateManyWithoutStudentsNestedInput
 }
 
 export type StudentUpsertWithWhereUniqueWithoutCreated_byInput = {
@@ -2153,68 +2332,15 @@ export type StudentUpdateManyWithWhereWithoutUpdated_byInput = {
   data: Prisma.XOR<Prisma.StudentUpdateManyMutationInput, Prisma.StudentUncheckedUpdateManyWithoutUpdated_byInput>
 }
 
-export type StudentUpsertWithoutUserInput = {
-  update: Prisma.XOR<Prisma.StudentUpdateWithoutUserInput, Prisma.StudentUncheckedUpdateWithoutUserInput>
-  create: Prisma.XOR<Prisma.StudentCreateWithoutUserInput, Prisma.StudentUncheckedCreateWithoutUserInput>
-  where?: Prisma.StudentWhereInput
-}
-
-export type StudentUpdateToOneWithWhereWithoutUserInput = {
-  where?: Prisma.StudentWhereInput
-  data: Prisma.XOR<Prisma.StudentUpdateWithoutUserInput, Prisma.StudentUncheckedUpdateWithoutUserInput>
-}
-
-export type StudentUpdateWithoutUserInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
-  isActiveResponsibleTeacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  previous_institute_information?: Prisma.StudentPreviousInstituteInformationUpdateManyWithoutStudentNestedInput
-  active_class?: Prisma.ClassUpdateOneRequiredWithoutActive_studentsNestedInput
-  created_by?: Prisma.UserUpdateOneWithoutCreated_studentsNestedInput
-  quranic_subject?: Prisma.QuranicSubjectUpdateOneWithoutStudentsNestedInput
-  responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsUpdateOneWithoutStudentsNestedInput
-  updated_by?: Prisma.UserUpdateOneWithoutUpdated_studentsNestedInput
-  assigned_responsible_teacher?: Prisma.StudentResponsibilityUpdateOneWithoutStudentNestedInput
-  cultural_club_options?: Prisma.CulturalClubUpdateManyWithoutStudentsNestedInput
-  language_club_options?: Prisma.LanguageClubUpdateManyWithoutStudentsNestedInput
-  quran_club_options?: Prisma.QuranClubUpdateManyWithoutStudentsNestedInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodUpdateManyWithoutStudentsNestedInput
-  science_club_options?: Prisma.ScienceClubUpdateManyWithoutStudentsNestedInput
-  scout_sports_club_options?: Prisma.ScoutSportsClubUpdateManyWithoutStudentsNestedInput
-  classes?: Prisma.ClassUpdateManyWithoutStudentsNestedInput
-}
-
-export type StudentUncheckedUpdateWithoutUserInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
-  quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
-  responsible_guardian_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  isActiveResponsibleTeacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedUpdateManyWithoutStudentNestedInput
-  assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedUpdateOneWithoutStudentNestedInput
-  cultural_club_options?: Prisma.CulturalClubUncheckedUpdateManyWithoutStudentsNestedInput
-  language_club_options?: Prisma.LanguageClubUncheckedUpdateManyWithoutStudentsNestedInput
-  quran_club_options?: Prisma.QuranClubUncheckedUpdateManyWithoutStudentsNestedInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedUpdateManyWithoutStudentsNestedInput
-  science_club_options?: Prisma.ScienceClubUncheckedUpdateManyWithoutStudentsNestedInput
-  scout_sports_club_options?: Prisma.ScoutSportsClubUncheckedUpdateManyWithoutStudentsNestedInput
-  classes?: Prisma.ClassUncheckedUpdateManyWithoutStudentsNestedInput
-}
-
 export type StudentCreateManyActive_classInput = {
   id?: string
-  quranic_section?: $Enums.Quranic_Section | null
-  quranic_subject_id?: string | null
+  full_name: string
+  mobile_number: string
   responsible_guardian_id?: string | null
-  user_id: string
+  quranic_subject_id?: string | null
+  quranic_section?: $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: boolean
+  user_id: string
   created_by_id?: string | null
   updated_by_id?: string | null
   created_at?: Date | string
@@ -2223,55 +2349,61 @@ export type StudentCreateManyActive_classInput = {
 
 export type StudentUpdateWithoutActive_classInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
   quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  classes?: Prisma.ClassUpdateManyWithoutStudentsNestedInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUpdateManyWithoutStudentNestedInput
-  created_by?: Prisma.UserUpdateOneWithoutCreated_studentsNestedInput
-  quranic_subject?: Prisma.QuranicSubjectUpdateOneWithoutStudentsNestedInput
   responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsUpdateOneWithoutStudentsNestedInput
-  updated_by?: Prisma.UserUpdateOneWithoutUpdated_studentsNestedInput
-  user?: Prisma.UserUpdateOneRequiredWithoutStudent_profileNestedInput
+  quranic_subject?: Prisma.QuranicSubjectUpdateOneWithoutStudentsNestedInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodUpdateManyWithoutStudentsNestedInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUpdateOneWithoutStudentNestedInput
   cultural_club_options?: Prisma.CulturalClubUpdateManyWithoutStudentsNestedInput
   language_club_options?: Prisma.LanguageClubUpdateManyWithoutStudentsNestedInput
   quran_club_options?: Prisma.QuranClubUpdateManyWithoutStudentsNestedInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodUpdateManyWithoutStudentsNestedInput
   science_club_options?: Prisma.ScienceClubUpdateManyWithoutStudentsNestedInput
   scout_sports_club_options?: Prisma.ScoutSportsClubUpdateManyWithoutStudentsNestedInput
-  classes?: Prisma.ClassUpdateManyWithoutStudentsNestedInput
+  user?: Prisma.UserUpdateOneRequiredWithoutStudent_profileNestedInput
+  created_by?: Prisma.UserUpdateOneWithoutCreated_studentsNestedInput
+  updated_by?: Prisma.UserUpdateOneWithoutUpdated_studentsNestedInput
 }
 
 export type StudentUncheckedUpdateWithoutActive_classInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
-  quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
   responsible_guardian_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  user_id?: Prisma.StringFieldUpdateOperationsInput | string
   created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  classes?: Prisma.ClassUncheckedUpdateManyWithoutStudentsNestedInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedUpdateManyWithoutStudentNestedInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedUpdateManyWithoutStudentsNestedInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedUpdateOneWithoutStudentNestedInput
   cultural_club_options?: Prisma.CulturalClubUncheckedUpdateManyWithoutStudentsNestedInput
   language_club_options?: Prisma.LanguageClubUncheckedUpdateManyWithoutStudentsNestedInput
   quran_club_options?: Prisma.QuranClubUncheckedUpdateManyWithoutStudentsNestedInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedUpdateManyWithoutStudentsNestedInput
   science_club_options?: Prisma.ScienceClubUncheckedUpdateManyWithoutStudentsNestedInput
   scout_sports_club_options?: Prisma.ScoutSportsClubUncheckedUpdateManyWithoutStudentsNestedInput
-  classes?: Prisma.ClassUncheckedUpdateManyWithoutStudentsNestedInput
 }
 
 export type StudentUncheckedUpdateManyWithoutActive_classInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
-  quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
   responsible_guardian_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  user_id?: Prisma.StringFieldUpdateOperationsInput | string
   created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -2280,56 +2412,62 @@ export type StudentUncheckedUpdateManyWithoutActive_classInput = {
 
 export type StudentUpdateWithoutClassesInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
   quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUpdateManyWithoutStudentNestedInput
-  active_class?: Prisma.ClassUpdateOneRequiredWithoutActive_studentsNestedInput
-  created_by?: Prisma.UserUpdateOneWithoutCreated_studentsNestedInput
-  quranic_subject?: Prisma.QuranicSubjectUpdateOneWithoutStudentsNestedInput
   responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsUpdateOneWithoutStudentsNestedInput
-  updated_by?: Prisma.UserUpdateOneWithoutUpdated_studentsNestedInput
-  user?: Prisma.UserUpdateOneRequiredWithoutStudent_profileNestedInput
+  quranic_subject?: Prisma.QuranicSubjectUpdateOneWithoutStudentsNestedInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodUpdateManyWithoutStudentsNestedInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUpdateOneWithoutStudentNestedInput
   cultural_club_options?: Prisma.CulturalClubUpdateManyWithoutStudentsNestedInput
   language_club_options?: Prisma.LanguageClubUpdateManyWithoutStudentsNestedInput
   quran_club_options?: Prisma.QuranClubUpdateManyWithoutStudentsNestedInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodUpdateManyWithoutStudentsNestedInput
   science_club_options?: Prisma.ScienceClubUpdateManyWithoutStudentsNestedInput
   scout_sports_club_options?: Prisma.ScoutSportsClubUpdateManyWithoutStudentsNestedInput
+  user?: Prisma.UserUpdateOneRequiredWithoutStudent_profileNestedInput
+  active_class?: Prisma.ClassUpdateOneRequiredWithoutActive_studentsNestedInput
+  created_by?: Prisma.UserUpdateOneWithoutCreated_studentsNestedInput
+  updated_by?: Prisma.UserUpdateOneWithoutUpdated_studentsNestedInput
 }
 
 export type StudentUncheckedUpdateWithoutClassesInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
-  quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
   responsible_guardian_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
   created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedUpdateManyWithoutStudentNestedInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedUpdateManyWithoutStudentsNestedInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedUpdateOneWithoutStudentNestedInput
   cultural_club_options?: Prisma.CulturalClubUncheckedUpdateManyWithoutStudentsNestedInput
   language_club_options?: Prisma.LanguageClubUncheckedUpdateManyWithoutStudentsNestedInput
   quran_club_options?: Prisma.QuranClubUncheckedUpdateManyWithoutStudentsNestedInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedUpdateManyWithoutStudentsNestedInput
   science_club_options?: Prisma.ScienceClubUncheckedUpdateManyWithoutStudentsNestedInput
   scout_sports_club_options?: Prisma.ScoutSportsClubUncheckedUpdateManyWithoutStudentsNestedInput
 }
 
 export type StudentUncheckedUpdateManyWithoutClassesInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
-  quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
   responsible_guardian_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
   created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -2338,56 +2476,62 @@ export type StudentUncheckedUpdateManyWithoutClassesInput = {
 
 export type StudentUpdateWithoutCultural_club_optionsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
   quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  classes?: Prisma.ClassUpdateManyWithoutStudentsNestedInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUpdateManyWithoutStudentNestedInput
-  active_class?: Prisma.ClassUpdateOneRequiredWithoutActive_studentsNestedInput
-  created_by?: Prisma.UserUpdateOneWithoutCreated_studentsNestedInput
-  quranic_subject?: Prisma.QuranicSubjectUpdateOneWithoutStudentsNestedInput
   responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsUpdateOneWithoutStudentsNestedInput
-  updated_by?: Prisma.UserUpdateOneWithoutUpdated_studentsNestedInput
-  user?: Prisma.UserUpdateOneRequiredWithoutStudent_profileNestedInput
+  quranic_subject?: Prisma.QuranicSubjectUpdateOneWithoutStudentsNestedInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodUpdateManyWithoutStudentsNestedInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUpdateOneWithoutStudentNestedInput
   language_club_options?: Prisma.LanguageClubUpdateManyWithoutStudentsNestedInput
   quran_club_options?: Prisma.QuranClubUpdateManyWithoutStudentsNestedInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodUpdateManyWithoutStudentsNestedInput
   science_club_options?: Prisma.ScienceClubUpdateManyWithoutStudentsNestedInput
   scout_sports_club_options?: Prisma.ScoutSportsClubUpdateManyWithoutStudentsNestedInput
-  classes?: Prisma.ClassUpdateManyWithoutStudentsNestedInput
+  user?: Prisma.UserUpdateOneRequiredWithoutStudent_profileNestedInput
+  active_class?: Prisma.ClassUpdateOneRequiredWithoutActive_studentsNestedInput
+  created_by?: Prisma.UserUpdateOneWithoutCreated_studentsNestedInput
+  updated_by?: Prisma.UserUpdateOneWithoutUpdated_studentsNestedInput
 }
 
 export type StudentUncheckedUpdateWithoutCultural_club_optionsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
-  quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
   responsible_guardian_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
   created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  classes?: Prisma.ClassUncheckedUpdateManyWithoutStudentsNestedInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedUpdateManyWithoutStudentNestedInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedUpdateManyWithoutStudentsNestedInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedUpdateOneWithoutStudentNestedInput
   language_club_options?: Prisma.LanguageClubUncheckedUpdateManyWithoutStudentsNestedInput
   quran_club_options?: Prisma.QuranClubUncheckedUpdateManyWithoutStudentsNestedInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedUpdateManyWithoutStudentsNestedInput
   science_club_options?: Prisma.ScienceClubUncheckedUpdateManyWithoutStudentsNestedInput
   scout_sports_club_options?: Prisma.ScoutSportsClubUncheckedUpdateManyWithoutStudentsNestedInput
-  classes?: Prisma.ClassUncheckedUpdateManyWithoutStudentsNestedInput
 }
 
 export type StudentUncheckedUpdateManyWithoutCultural_club_optionsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
-  quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
   responsible_guardian_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
   created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -2396,56 +2540,62 @@ export type StudentUncheckedUpdateManyWithoutCultural_club_optionsInput = {
 
 export type StudentUpdateWithoutLanguage_club_optionsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
   quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  classes?: Prisma.ClassUpdateManyWithoutStudentsNestedInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUpdateManyWithoutStudentNestedInput
-  active_class?: Prisma.ClassUpdateOneRequiredWithoutActive_studentsNestedInput
-  created_by?: Prisma.UserUpdateOneWithoutCreated_studentsNestedInput
-  quranic_subject?: Prisma.QuranicSubjectUpdateOneWithoutStudentsNestedInput
   responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsUpdateOneWithoutStudentsNestedInput
-  updated_by?: Prisma.UserUpdateOneWithoutUpdated_studentsNestedInput
-  user?: Prisma.UserUpdateOneRequiredWithoutStudent_profileNestedInput
+  quranic_subject?: Prisma.QuranicSubjectUpdateOneWithoutStudentsNestedInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodUpdateManyWithoutStudentsNestedInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUpdateOneWithoutStudentNestedInput
   cultural_club_options?: Prisma.CulturalClubUpdateManyWithoutStudentsNestedInput
   quran_club_options?: Prisma.QuranClubUpdateManyWithoutStudentsNestedInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodUpdateManyWithoutStudentsNestedInput
   science_club_options?: Prisma.ScienceClubUpdateManyWithoutStudentsNestedInput
   scout_sports_club_options?: Prisma.ScoutSportsClubUpdateManyWithoutStudentsNestedInput
-  classes?: Prisma.ClassUpdateManyWithoutStudentsNestedInput
+  user?: Prisma.UserUpdateOneRequiredWithoutStudent_profileNestedInput
+  active_class?: Prisma.ClassUpdateOneRequiredWithoutActive_studentsNestedInput
+  created_by?: Prisma.UserUpdateOneWithoutCreated_studentsNestedInput
+  updated_by?: Prisma.UserUpdateOneWithoutUpdated_studentsNestedInput
 }
 
 export type StudentUncheckedUpdateWithoutLanguage_club_optionsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
-  quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
   responsible_guardian_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
   created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  classes?: Prisma.ClassUncheckedUpdateManyWithoutStudentsNestedInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedUpdateManyWithoutStudentNestedInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedUpdateManyWithoutStudentsNestedInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedUpdateOneWithoutStudentNestedInput
   cultural_club_options?: Prisma.CulturalClubUncheckedUpdateManyWithoutStudentsNestedInput
   quran_club_options?: Prisma.QuranClubUncheckedUpdateManyWithoutStudentsNestedInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedUpdateManyWithoutStudentsNestedInput
   science_club_options?: Prisma.ScienceClubUncheckedUpdateManyWithoutStudentsNestedInput
   scout_sports_club_options?: Prisma.ScoutSportsClubUncheckedUpdateManyWithoutStudentsNestedInput
-  classes?: Prisma.ClassUncheckedUpdateManyWithoutStudentsNestedInput
 }
 
 export type StudentUncheckedUpdateManyWithoutLanguage_club_optionsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
-  quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
   responsible_guardian_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
   created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -2454,56 +2604,62 @@ export type StudentUncheckedUpdateManyWithoutLanguage_club_optionsInput = {
 
 export type StudentUpdateWithoutQuran_club_optionsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
   quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  classes?: Prisma.ClassUpdateManyWithoutStudentsNestedInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUpdateManyWithoutStudentNestedInput
-  active_class?: Prisma.ClassUpdateOneRequiredWithoutActive_studentsNestedInput
-  created_by?: Prisma.UserUpdateOneWithoutCreated_studentsNestedInput
-  quranic_subject?: Prisma.QuranicSubjectUpdateOneWithoutStudentsNestedInput
   responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsUpdateOneWithoutStudentsNestedInput
-  updated_by?: Prisma.UserUpdateOneWithoutUpdated_studentsNestedInput
-  user?: Prisma.UserUpdateOneRequiredWithoutStudent_profileNestedInput
+  quranic_subject?: Prisma.QuranicSubjectUpdateOneWithoutStudentsNestedInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodUpdateManyWithoutStudentsNestedInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUpdateOneWithoutStudentNestedInput
   cultural_club_options?: Prisma.CulturalClubUpdateManyWithoutStudentsNestedInput
   language_club_options?: Prisma.LanguageClubUpdateManyWithoutStudentsNestedInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodUpdateManyWithoutStudentsNestedInput
   science_club_options?: Prisma.ScienceClubUpdateManyWithoutStudentsNestedInput
   scout_sports_club_options?: Prisma.ScoutSportsClubUpdateManyWithoutStudentsNestedInput
-  classes?: Prisma.ClassUpdateManyWithoutStudentsNestedInput
+  user?: Prisma.UserUpdateOneRequiredWithoutStudent_profileNestedInput
+  active_class?: Prisma.ClassUpdateOneRequiredWithoutActive_studentsNestedInput
+  created_by?: Prisma.UserUpdateOneWithoutCreated_studentsNestedInput
+  updated_by?: Prisma.UserUpdateOneWithoutUpdated_studentsNestedInput
 }
 
 export type StudentUncheckedUpdateWithoutQuran_club_optionsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
-  quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
   responsible_guardian_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
   created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  classes?: Prisma.ClassUncheckedUpdateManyWithoutStudentsNestedInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedUpdateManyWithoutStudentNestedInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedUpdateManyWithoutStudentsNestedInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedUpdateOneWithoutStudentNestedInput
   cultural_club_options?: Prisma.CulturalClubUncheckedUpdateManyWithoutStudentsNestedInput
   language_club_options?: Prisma.LanguageClubUncheckedUpdateManyWithoutStudentsNestedInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedUpdateManyWithoutStudentsNestedInput
   science_club_options?: Prisma.ScienceClubUncheckedUpdateManyWithoutStudentsNestedInput
   scout_sports_club_options?: Prisma.ScoutSportsClubUncheckedUpdateManyWithoutStudentsNestedInput
-  classes?: Prisma.ClassUncheckedUpdateManyWithoutStudentsNestedInput
 }
 
 export type StudentUncheckedUpdateManyWithoutQuran_club_optionsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
-  quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
   responsible_guardian_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
   created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -2512,38 +2668,43 @@ export type StudentUncheckedUpdateManyWithoutQuran_club_optionsInput = {
 
 export type StudentUpdateWithoutQuranic_special_periodsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
   quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  classes?: Prisma.ClassUpdateManyWithoutStudentsNestedInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUpdateManyWithoutStudentNestedInput
-  active_class?: Prisma.ClassUpdateOneRequiredWithoutActive_studentsNestedInput
-  created_by?: Prisma.UserUpdateOneWithoutCreated_studentsNestedInput
-  quranic_subject?: Prisma.QuranicSubjectUpdateOneWithoutStudentsNestedInput
   responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsUpdateOneWithoutStudentsNestedInput
-  updated_by?: Prisma.UserUpdateOneWithoutUpdated_studentsNestedInput
-  user?: Prisma.UserUpdateOneRequiredWithoutStudent_profileNestedInput
+  quranic_subject?: Prisma.QuranicSubjectUpdateOneWithoutStudentsNestedInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUpdateOneWithoutStudentNestedInput
   cultural_club_options?: Prisma.CulturalClubUpdateManyWithoutStudentsNestedInput
   language_club_options?: Prisma.LanguageClubUpdateManyWithoutStudentsNestedInput
   quran_club_options?: Prisma.QuranClubUpdateManyWithoutStudentsNestedInput
   science_club_options?: Prisma.ScienceClubUpdateManyWithoutStudentsNestedInput
   scout_sports_club_options?: Prisma.ScoutSportsClubUpdateManyWithoutStudentsNestedInput
-  classes?: Prisma.ClassUpdateManyWithoutStudentsNestedInput
+  user?: Prisma.UserUpdateOneRequiredWithoutStudent_profileNestedInput
+  active_class?: Prisma.ClassUpdateOneRequiredWithoutActive_studentsNestedInput
+  created_by?: Prisma.UserUpdateOneWithoutCreated_studentsNestedInput
+  updated_by?: Prisma.UserUpdateOneWithoutUpdated_studentsNestedInput
 }
 
 export type StudentUncheckedUpdateWithoutQuranic_special_periodsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
-  quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
   responsible_guardian_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
   created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  classes?: Prisma.ClassUncheckedUpdateManyWithoutStudentsNestedInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedUpdateManyWithoutStudentNestedInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedUpdateOneWithoutStudentNestedInput
   cultural_club_options?: Prisma.CulturalClubUncheckedUpdateManyWithoutStudentsNestedInput
@@ -2551,17 +2712,18 @@ export type StudentUncheckedUpdateWithoutQuranic_special_periodsInput = {
   quran_club_options?: Prisma.QuranClubUncheckedUpdateManyWithoutStudentsNestedInput
   science_club_options?: Prisma.ScienceClubUncheckedUpdateManyWithoutStudentsNestedInput
   scout_sports_club_options?: Prisma.ScoutSportsClubUncheckedUpdateManyWithoutStudentsNestedInput
-  classes?: Prisma.ClassUncheckedUpdateManyWithoutStudentsNestedInput
 }
 
 export type StudentUncheckedUpdateManyWithoutQuranic_special_periodsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
-  quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
   responsible_guardian_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
   created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -2570,11 +2732,13 @@ export type StudentUncheckedUpdateManyWithoutQuranic_special_periodsInput = {
 
 export type StudentCreateManyQuranic_subjectInput = {
   id?: string
-  quranic_section?: $Enums.Quranic_Section | null
-  active_class_id: string
+  full_name: string
+  mobile_number: string
   responsible_guardian_id?: string | null
-  user_id: string
+  quranic_section?: $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: boolean
+  user_id: string
+  active_class_id: string
   created_by_id?: string | null
   updated_by_id?: string | null
   created_at?: Date | string
@@ -2583,55 +2747,61 @@ export type StudentCreateManyQuranic_subjectInput = {
 
 export type StudentUpdateWithoutQuranic_subjectInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
   quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  classes?: Prisma.ClassUpdateManyWithoutStudentsNestedInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUpdateManyWithoutStudentNestedInput
-  active_class?: Prisma.ClassUpdateOneRequiredWithoutActive_studentsNestedInput
-  created_by?: Prisma.UserUpdateOneWithoutCreated_studentsNestedInput
   responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsUpdateOneWithoutStudentsNestedInput
-  updated_by?: Prisma.UserUpdateOneWithoutUpdated_studentsNestedInput
-  user?: Prisma.UserUpdateOneRequiredWithoutStudent_profileNestedInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodUpdateManyWithoutStudentsNestedInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUpdateOneWithoutStudentNestedInput
   cultural_club_options?: Prisma.CulturalClubUpdateManyWithoutStudentsNestedInput
   language_club_options?: Prisma.LanguageClubUpdateManyWithoutStudentsNestedInput
   quran_club_options?: Prisma.QuranClubUpdateManyWithoutStudentsNestedInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodUpdateManyWithoutStudentsNestedInput
   science_club_options?: Prisma.ScienceClubUpdateManyWithoutStudentsNestedInput
   scout_sports_club_options?: Prisma.ScoutSportsClubUpdateManyWithoutStudentsNestedInput
-  classes?: Prisma.ClassUpdateManyWithoutStudentsNestedInput
+  user?: Prisma.UserUpdateOneRequiredWithoutStudent_profileNestedInput
+  active_class?: Prisma.ClassUpdateOneRequiredWithoutActive_studentsNestedInput
+  created_by?: Prisma.UserUpdateOneWithoutCreated_studentsNestedInput
+  updated_by?: Prisma.UserUpdateOneWithoutUpdated_studentsNestedInput
 }
 
 export type StudentUncheckedUpdateWithoutQuranic_subjectInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
-  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
   responsible_guardian_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
   created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  classes?: Prisma.ClassUncheckedUpdateManyWithoutStudentsNestedInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedUpdateManyWithoutStudentNestedInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedUpdateManyWithoutStudentsNestedInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedUpdateOneWithoutStudentNestedInput
   cultural_club_options?: Prisma.CulturalClubUncheckedUpdateManyWithoutStudentsNestedInput
   language_club_options?: Prisma.LanguageClubUncheckedUpdateManyWithoutStudentsNestedInput
   quran_club_options?: Prisma.QuranClubUncheckedUpdateManyWithoutStudentsNestedInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedUpdateManyWithoutStudentsNestedInput
   science_club_options?: Prisma.ScienceClubUncheckedUpdateManyWithoutStudentsNestedInput
   scout_sports_club_options?: Prisma.ScoutSportsClubUncheckedUpdateManyWithoutStudentsNestedInput
-  classes?: Prisma.ClassUncheckedUpdateManyWithoutStudentsNestedInput
 }
 
 export type StudentUncheckedUpdateManyWithoutQuranic_subjectInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
-  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
   responsible_guardian_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
   created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -2640,56 +2810,62 @@ export type StudentUncheckedUpdateManyWithoutQuranic_subjectInput = {
 
 export type StudentUpdateWithoutScience_club_optionsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
   quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  classes?: Prisma.ClassUpdateManyWithoutStudentsNestedInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUpdateManyWithoutStudentNestedInput
-  active_class?: Prisma.ClassUpdateOneRequiredWithoutActive_studentsNestedInput
-  created_by?: Prisma.UserUpdateOneWithoutCreated_studentsNestedInput
-  quranic_subject?: Prisma.QuranicSubjectUpdateOneWithoutStudentsNestedInput
   responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsUpdateOneWithoutStudentsNestedInput
-  updated_by?: Prisma.UserUpdateOneWithoutUpdated_studentsNestedInput
-  user?: Prisma.UserUpdateOneRequiredWithoutStudent_profileNestedInput
+  quranic_subject?: Prisma.QuranicSubjectUpdateOneWithoutStudentsNestedInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodUpdateManyWithoutStudentsNestedInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUpdateOneWithoutStudentNestedInput
   cultural_club_options?: Prisma.CulturalClubUpdateManyWithoutStudentsNestedInput
   language_club_options?: Prisma.LanguageClubUpdateManyWithoutStudentsNestedInput
   quran_club_options?: Prisma.QuranClubUpdateManyWithoutStudentsNestedInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodUpdateManyWithoutStudentsNestedInput
   scout_sports_club_options?: Prisma.ScoutSportsClubUpdateManyWithoutStudentsNestedInput
-  classes?: Prisma.ClassUpdateManyWithoutStudentsNestedInput
+  user?: Prisma.UserUpdateOneRequiredWithoutStudent_profileNestedInput
+  active_class?: Prisma.ClassUpdateOneRequiredWithoutActive_studentsNestedInput
+  created_by?: Prisma.UserUpdateOneWithoutCreated_studentsNestedInput
+  updated_by?: Prisma.UserUpdateOneWithoutUpdated_studentsNestedInput
 }
 
 export type StudentUncheckedUpdateWithoutScience_club_optionsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
-  quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
   responsible_guardian_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
   created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  classes?: Prisma.ClassUncheckedUpdateManyWithoutStudentsNestedInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedUpdateManyWithoutStudentNestedInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedUpdateManyWithoutStudentsNestedInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedUpdateOneWithoutStudentNestedInput
   cultural_club_options?: Prisma.CulturalClubUncheckedUpdateManyWithoutStudentsNestedInput
   language_club_options?: Prisma.LanguageClubUncheckedUpdateManyWithoutStudentsNestedInput
   quran_club_options?: Prisma.QuranClubUncheckedUpdateManyWithoutStudentsNestedInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedUpdateManyWithoutStudentsNestedInput
   scout_sports_club_options?: Prisma.ScoutSportsClubUncheckedUpdateManyWithoutStudentsNestedInput
-  classes?: Prisma.ClassUncheckedUpdateManyWithoutStudentsNestedInput
 }
 
 export type StudentUncheckedUpdateManyWithoutScience_club_optionsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
-  quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
   responsible_guardian_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
   created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -2698,56 +2874,62 @@ export type StudentUncheckedUpdateManyWithoutScience_club_optionsInput = {
 
 export type StudentUpdateWithoutScout_sports_club_optionsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
   quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  classes?: Prisma.ClassUpdateManyWithoutStudentsNestedInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUpdateManyWithoutStudentNestedInput
-  active_class?: Prisma.ClassUpdateOneRequiredWithoutActive_studentsNestedInput
-  created_by?: Prisma.UserUpdateOneWithoutCreated_studentsNestedInput
-  quranic_subject?: Prisma.QuranicSubjectUpdateOneWithoutStudentsNestedInput
   responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsUpdateOneWithoutStudentsNestedInput
-  updated_by?: Prisma.UserUpdateOneWithoutUpdated_studentsNestedInput
-  user?: Prisma.UserUpdateOneRequiredWithoutStudent_profileNestedInput
+  quranic_subject?: Prisma.QuranicSubjectUpdateOneWithoutStudentsNestedInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodUpdateManyWithoutStudentsNestedInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUpdateOneWithoutStudentNestedInput
   cultural_club_options?: Prisma.CulturalClubUpdateManyWithoutStudentsNestedInput
   language_club_options?: Prisma.LanguageClubUpdateManyWithoutStudentsNestedInput
   quran_club_options?: Prisma.QuranClubUpdateManyWithoutStudentsNestedInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodUpdateManyWithoutStudentsNestedInput
   science_club_options?: Prisma.ScienceClubUpdateManyWithoutStudentsNestedInput
-  classes?: Prisma.ClassUpdateManyWithoutStudentsNestedInput
+  user?: Prisma.UserUpdateOneRequiredWithoutStudent_profileNestedInput
+  active_class?: Prisma.ClassUpdateOneRequiredWithoutActive_studentsNestedInput
+  created_by?: Prisma.UserUpdateOneWithoutCreated_studentsNestedInput
+  updated_by?: Prisma.UserUpdateOneWithoutUpdated_studentsNestedInput
 }
 
 export type StudentUncheckedUpdateWithoutScout_sports_club_optionsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
-  quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
   responsible_guardian_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
   created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  classes?: Prisma.ClassUncheckedUpdateManyWithoutStudentsNestedInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedUpdateManyWithoutStudentNestedInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedUpdateManyWithoutStudentsNestedInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedUpdateOneWithoutStudentNestedInput
   cultural_club_options?: Prisma.CulturalClubUncheckedUpdateManyWithoutStudentsNestedInput
   language_club_options?: Prisma.LanguageClubUncheckedUpdateManyWithoutStudentsNestedInput
   quran_club_options?: Prisma.QuranClubUncheckedUpdateManyWithoutStudentsNestedInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedUpdateManyWithoutStudentsNestedInput
   science_club_options?: Prisma.ScienceClubUncheckedUpdateManyWithoutStudentsNestedInput
-  classes?: Prisma.ClassUncheckedUpdateManyWithoutStudentsNestedInput
 }
 
 export type StudentUncheckedUpdateManyWithoutScout_sports_club_optionsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
-  quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
   responsible_guardian_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
   created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -2756,11 +2938,13 @@ export type StudentUncheckedUpdateManyWithoutScout_sports_club_optionsInput = {
 
 export type StudentCreateManyResponsible_guardianInput = {
   id?: string
-  quranic_section?: $Enums.Quranic_Section | null
+  full_name: string
+  mobile_number: string
   quranic_subject_id?: string | null
-  active_class_id: string
-  user_id: string
+  quranic_section?: $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: boolean
+  user_id: string
+  active_class_id: string
   created_by_id?: string | null
   updated_by_id?: string | null
   created_at?: Date | string
@@ -2769,55 +2953,61 @@ export type StudentCreateManyResponsible_guardianInput = {
 
 export type StudentUpdateWithoutResponsible_guardianInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
   quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  classes?: Prisma.ClassUpdateManyWithoutStudentsNestedInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUpdateManyWithoutStudentNestedInput
-  active_class?: Prisma.ClassUpdateOneRequiredWithoutActive_studentsNestedInput
-  created_by?: Prisma.UserUpdateOneWithoutCreated_studentsNestedInput
   quranic_subject?: Prisma.QuranicSubjectUpdateOneWithoutStudentsNestedInput
-  updated_by?: Prisma.UserUpdateOneWithoutUpdated_studentsNestedInput
-  user?: Prisma.UserUpdateOneRequiredWithoutStudent_profileNestedInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodUpdateManyWithoutStudentsNestedInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUpdateOneWithoutStudentNestedInput
   cultural_club_options?: Prisma.CulturalClubUpdateManyWithoutStudentsNestedInput
   language_club_options?: Prisma.LanguageClubUpdateManyWithoutStudentsNestedInput
   quran_club_options?: Prisma.QuranClubUpdateManyWithoutStudentsNestedInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodUpdateManyWithoutStudentsNestedInput
   science_club_options?: Prisma.ScienceClubUpdateManyWithoutStudentsNestedInput
   scout_sports_club_options?: Prisma.ScoutSportsClubUpdateManyWithoutStudentsNestedInput
-  classes?: Prisma.ClassUpdateManyWithoutStudentsNestedInput
+  user?: Prisma.UserUpdateOneRequiredWithoutStudent_profileNestedInput
+  active_class?: Prisma.ClassUpdateOneRequiredWithoutActive_studentsNestedInput
+  created_by?: Prisma.UserUpdateOneWithoutCreated_studentsNestedInput
+  updated_by?: Prisma.UserUpdateOneWithoutUpdated_studentsNestedInput
 }
 
 export type StudentUncheckedUpdateWithoutResponsible_guardianInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
   quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
-  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
   created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  classes?: Prisma.ClassUncheckedUpdateManyWithoutStudentsNestedInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedUpdateManyWithoutStudentNestedInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedUpdateManyWithoutStudentsNestedInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedUpdateOneWithoutStudentNestedInput
   cultural_club_options?: Prisma.CulturalClubUncheckedUpdateManyWithoutStudentsNestedInput
   language_club_options?: Prisma.LanguageClubUncheckedUpdateManyWithoutStudentsNestedInput
   quran_club_options?: Prisma.QuranClubUncheckedUpdateManyWithoutStudentsNestedInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedUpdateManyWithoutStudentsNestedInput
   science_club_options?: Prisma.ScienceClubUncheckedUpdateManyWithoutStudentsNestedInput
   scout_sports_club_options?: Prisma.ScoutSportsClubUncheckedUpdateManyWithoutStudentsNestedInput
-  classes?: Prisma.ClassUncheckedUpdateManyWithoutStudentsNestedInput
 }
 
 export type StudentUncheckedUpdateManyWithoutResponsible_guardianInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
   quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
-  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
   created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -2826,12 +3016,14 @@ export type StudentUncheckedUpdateManyWithoutResponsible_guardianInput = {
 
 export type StudentCreateManyCreated_byInput = {
   id?: string
-  quranic_section?: $Enums.Quranic_Section | null
-  quranic_subject_id?: string | null
-  active_class_id: string
+  full_name: string
+  mobile_number: string
   responsible_guardian_id?: string | null
-  user_id: string
+  quranic_subject_id?: string | null
+  quranic_section?: $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: boolean
+  user_id: string
+  active_class_id: string
   updated_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
@@ -2839,12 +3031,14 @@ export type StudentCreateManyCreated_byInput = {
 
 export type StudentCreateManyUpdated_byInput = {
   id?: string
-  quranic_section?: $Enums.Quranic_Section | null
-  quranic_subject_id?: string | null
-  active_class_id: string
+  full_name: string
+  mobile_number: string
   responsible_guardian_id?: string | null
-  user_id: string
+  quranic_subject_id?: string | null
+  quranic_section?: $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: boolean
+  user_id: string
+  active_class_id: string
   created_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
@@ -2852,56 +3046,62 @@ export type StudentCreateManyUpdated_byInput = {
 
 export type StudentUpdateWithoutCreated_byInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
   quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  classes?: Prisma.ClassUpdateManyWithoutStudentsNestedInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUpdateManyWithoutStudentNestedInput
-  active_class?: Prisma.ClassUpdateOneRequiredWithoutActive_studentsNestedInput
-  quranic_subject?: Prisma.QuranicSubjectUpdateOneWithoutStudentsNestedInput
   responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsUpdateOneWithoutStudentsNestedInput
-  updated_by?: Prisma.UserUpdateOneWithoutUpdated_studentsNestedInput
-  user?: Prisma.UserUpdateOneRequiredWithoutStudent_profileNestedInput
+  quranic_subject?: Prisma.QuranicSubjectUpdateOneWithoutStudentsNestedInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodUpdateManyWithoutStudentsNestedInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUpdateOneWithoutStudentNestedInput
   cultural_club_options?: Prisma.CulturalClubUpdateManyWithoutStudentsNestedInput
   language_club_options?: Prisma.LanguageClubUpdateManyWithoutStudentsNestedInput
   quran_club_options?: Prisma.QuranClubUpdateManyWithoutStudentsNestedInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodUpdateManyWithoutStudentsNestedInput
   science_club_options?: Prisma.ScienceClubUpdateManyWithoutStudentsNestedInput
   scout_sports_club_options?: Prisma.ScoutSportsClubUpdateManyWithoutStudentsNestedInput
-  classes?: Prisma.ClassUpdateManyWithoutStudentsNestedInput
+  user?: Prisma.UserUpdateOneRequiredWithoutStudent_profileNestedInput
+  active_class?: Prisma.ClassUpdateOneRequiredWithoutActive_studentsNestedInput
+  updated_by?: Prisma.UserUpdateOneWithoutUpdated_studentsNestedInput
 }
 
 export type StudentUncheckedUpdateWithoutCreated_byInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
-  quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
   responsible_guardian_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  classes?: Prisma.ClassUncheckedUpdateManyWithoutStudentsNestedInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedUpdateManyWithoutStudentNestedInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedUpdateManyWithoutStudentsNestedInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedUpdateOneWithoutStudentNestedInput
   cultural_club_options?: Prisma.CulturalClubUncheckedUpdateManyWithoutStudentsNestedInput
   language_club_options?: Prisma.LanguageClubUncheckedUpdateManyWithoutStudentsNestedInput
   quran_club_options?: Prisma.QuranClubUncheckedUpdateManyWithoutStudentsNestedInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedUpdateManyWithoutStudentsNestedInput
   science_club_options?: Prisma.ScienceClubUncheckedUpdateManyWithoutStudentsNestedInput
   scout_sports_club_options?: Prisma.ScoutSportsClubUncheckedUpdateManyWithoutStudentsNestedInput
-  classes?: Prisma.ClassUncheckedUpdateManyWithoutStudentsNestedInput
 }
 
 export type StudentUncheckedUpdateManyWithoutCreated_byInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
-  quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
   responsible_guardian_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -2909,56 +3109,62 @@ export type StudentUncheckedUpdateManyWithoutCreated_byInput = {
 
 export type StudentUpdateWithoutUpdated_byInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
   quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  classes?: Prisma.ClassUpdateManyWithoutStudentsNestedInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUpdateManyWithoutStudentNestedInput
-  active_class?: Prisma.ClassUpdateOneRequiredWithoutActive_studentsNestedInput
-  created_by?: Prisma.UserUpdateOneWithoutCreated_studentsNestedInput
-  quranic_subject?: Prisma.QuranicSubjectUpdateOneWithoutStudentsNestedInput
   responsible_guardian?: Prisma.StudentResponsibleGuardianDetailsUpdateOneWithoutStudentsNestedInput
-  user?: Prisma.UserUpdateOneRequiredWithoutStudent_profileNestedInput
+  quranic_subject?: Prisma.QuranicSubjectUpdateOneWithoutStudentsNestedInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodUpdateManyWithoutStudentsNestedInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUpdateOneWithoutStudentNestedInput
   cultural_club_options?: Prisma.CulturalClubUpdateManyWithoutStudentsNestedInput
   language_club_options?: Prisma.LanguageClubUpdateManyWithoutStudentsNestedInput
   quran_club_options?: Prisma.QuranClubUpdateManyWithoutStudentsNestedInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodUpdateManyWithoutStudentsNestedInput
   science_club_options?: Prisma.ScienceClubUpdateManyWithoutStudentsNestedInput
   scout_sports_club_options?: Prisma.ScoutSportsClubUpdateManyWithoutStudentsNestedInput
-  classes?: Prisma.ClassUpdateManyWithoutStudentsNestedInput
+  user?: Prisma.UserUpdateOneRequiredWithoutStudent_profileNestedInput
+  active_class?: Prisma.ClassUpdateOneRequiredWithoutActive_studentsNestedInput
+  created_by?: Prisma.UserUpdateOneWithoutCreated_studentsNestedInput
 }
 
 export type StudentUncheckedUpdateWithoutUpdated_byInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
-  quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
   responsible_guardian_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
   created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  classes?: Prisma.ClassUncheckedUpdateManyWithoutStudentsNestedInput
   previous_institute_information?: Prisma.StudentPreviousInstituteInformationUncheckedUpdateManyWithoutStudentNestedInput
+  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedUpdateManyWithoutStudentsNestedInput
   assigned_responsible_teacher?: Prisma.StudentResponsibilityUncheckedUpdateOneWithoutStudentNestedInput
   cultural_club_options?: Prisma.CulturalClubUncheckedUpdateManyWithoutStudentsNestedInput
   language_club_options?: Prisma.LanguageClubUncheckedUpdateManyWithoutStudentsNestedInput
   quran_club_options?: Prisma.QuranClubUncheckedUpdateManyWithoutStudentsNestedInput
-  quranic_special_periods?: Prisma.QuranicSpecialPeriodUncheckedUpdateManyWithoutStudentsNestedInput
   science_club_options?: Prisma.ScienceClubUncheckedUpdateManyWithoutStudentsNestedInput
   scout_sports_club_options?: Prisma.ScoutSportsClubUncheckedUpdateManyWithoutStudentsNestedInput
-  classes?: Prisma.ClassUncheckedUpdateManyWithoutStudentsNestedInput
 }
 
 export type StudentUncheckedUpdateManyWithoutUpdated_byInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
-  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
-  quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  mobile_number?: Prisma.StringFieldUpdateOperationsInput | string
   responsible_guardian_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  quranic_subject_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  quranic_section?: Prisma.NullableEnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section | null
   isActiveResponsibleTeacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  user_id?: Prisma.StringFieldUpdateOperationsInput | string
+  active_class_id?: Prisma.StringFieldUpdateOperationsInput | string
   created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
@@ -2970,25 +3176,25 @@ export type StudentUncheckedUpdateManyWithoutUpdated_byInput = {
  */
 
 export type StudentCountOutputType = {
+  classes: number
   previous_institute_information: number
+  quranic_special_periods: number
   cultural_club_options: number
   language_club_options: number
   quran_club_options: number
-  quranic_special_periods: number
   science_club_options: number
   scout_sports_club_options: number
-  classes: number
 }
 
 export type StudentCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  classes?: boolean | StudentCountOutputTypeCountClassesArgs
   previous_institute_information?: boolean | StudentCountOutputTypeCountPrevious_institute_informationArgs
+  quranic_special_periods?: boolean | StudentCountOutputTypeCountQuranic_special_periodsArgs
   cultural_club_options?: boolean | StudentCountOutputTypeCountCultural_club_optionsArgs
   language_club_options?: boolean | StudentCountOutputTypeCountLanguage_club_optionsArgs
   quran_club_options?: boolean | StudentCountOutputTypeCountQuran_club_optionsArgs
-  quranic_special_periods?: boolean | StudentCountOutputTypeCountQuranic_special_periodsArgs
   science_club_options?: boolean | StudentCountOutputTypeCountScience_club_optionsArgs
   scout_sports_club_options?: boolean | StudentCountOutputTypeCountScout_sports_club_optionsArgs
-  classes?: boolean | StudentCountOutputTypeCountClassesArgs
 }
 
 /**
@@ -3004,8 +3210,22 @@ export type StudentCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Exte
 /**
  * StudentCountOutputType without action
  */
+export type StudentCountOutputTypeCountClassesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.ClassWhereInput
+}
+
+/**
+ * StudentCountOutputType without action
+ */
 export type StudentCountOutputTypeCountPrevious_institute_informationArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   where?: Prisma.StudentPreviousInstituteInformationWhereInput
+}
+
+/**
+ * StudentCountOutputType without action
+ */
+export type StudentCountOutputTypeCountQuranic_special_periodsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.QuranicSpecialPeriodWhereInput
 }
 
 /**
@@ -3032,13 +3252,6 @@ export type StudentCountOutputTypeCountQuran_club_optionsArgs<ExtArgs extends ru
 /**
  * StudentCountOutputType without action
  */
-export type StudentCountOutputTypeCountQuranic_special_periodsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.QuranicSpecialPeriodWhereInput
-}
-
-/**
- * StudentCountOutputType without action
- */
 export type StudentCountOutputTypeCountScience_club_optionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   where?: Prisma.ScienceClubWhereInput
 }
@@ -3050,161 +3263,164 @@ export type StudentCountOutputTypeCountScout_sports_club_optionsArgs<ExtArgs ext
   where?: Prisma.ScoutSportsClubWhereInput
 }
 
-/**
- * StudentCountOutputType without action
- */
-export type StudentCountOutputTypeCountClassesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.ClassWhereInput
-}
-
 
 export type StudentSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  quranic_section?: boolean
-  quranic_subject_id?: boolean
-  active_class_id?: boolean
+  full_name?: boolean
+  mobile_number?: boolean
   responsible_guardian_id?: boolean
-  user_id?: boolean
+  quranic_subject_id?: boolean
+  quranic_section?: boolean
   isActiveResponsibleTeacher?: boolean
+  user_id?: boolean
+  active_class_id?: boolean
   created_by_id?: boolean
   updated_by_id?: boolean
   created_at?: boolean
   updated_at?: boolean
+  classes?: boolean | Prisma.Student$classesArgs<ExtArgs>
   previous_institute_information?: boolean | Prisma.Student$previous_institute_informationArgs<ExtArgs>
-  active_class?: boolean | Prisma.ClassDefaultArgs<ExtArgs>
-  created_by?: boolean | Prisma.Student$created_byArgs<ExtArgs>
-  quranic_subject?: boolean | Prisma.Student$quranic_subjectArgs<ExtArgs>
   responsible_guardian?: boolean | Prisma.Student$responsible_guardianArgs<ExtArgs>
-  updated_by?: boolean | Prisma.Student$updated_byArgs<ExtArgs>
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  quranic_subject?: boolean | Prisma.Student$quranic_subjectArgs<ExtArgs>
+  quranic_special_periods?: boolean | Prisma.Student$quranic_special_periodsArgs<ExtArgs>
   assigned_responsible_teacher?: boolean | Prisma.Student$assigned_responsible_teacherArgs<ExtArgs>
   cultural_club_options?: boolean | Prisma.Student$cultural_club_optionsArgs<ExtArgs>
   language_club_options?: boolean | Prisma.Student$language_club_optionsArgs<ExtArgs>
   quran_club_options?: boolean | Prisma.Student$quran_club_optionsArgs<ExtArgs>
-  quranic_special_periods?: boolean | Prisma.Student$quranic_special_periodsArgs<ExtArgs>
   science_club_options?: boolean | Prisma.Student$science_club_optionsArgs<ExtArgs>
   scout_sports_club_options?: boolean | Prisma.Student$scout_sports_club_optionsArgs<ExtArgs>
-  classes?: boolean | Prisma.Student$classesArgs<ExtArgs>
+  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  active_class?: boolean | Prisma.ClassDefaultArgs<ExtArgs>
+  created_by?: boolean | Prisma.Student$created_byArgs<ExtArgs>
+  updated_by?: boolean | Prisma.Student$updated_byArgs<ExtArgs>
   _count?: boolean | Prisma.StudentCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["student"]>
 
 export type StudentSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  quranic_section?: boolean
-  quranic_subject_id?: boolean
-  active_class_id?: boolean
+  full_name?: boolean
+  mobile_number?: boolean
   responsible_guardian_id?: boolean
-  user_id?: boolean
+  quranic_subject_id?: boolean
+  quranic_section?: boolean
   isActiveResponsibleTeacher?: boolean
+  user_id?: boolean
+  active_class_id?: boolean
   created_by_id?: boolean
   updated_by_id?: boolean
   created_at?: boolean
   updated_at?: boolean
+  responsible_guardian?: boolean | Prisma.Student$responsible_guardianArgs<ExtArgs>
+  quranic_subject?: boolean | Prisma.Student$quranic_subjectArgs<ExtArgs>
+  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   active_class?: boolean | Prisma.ClassDefaultArgs<ExtArgs>
   created_by?: boolean | Prisma.Student$created_byArgs<ExtArgs>
-  quranic_subject?: boolean | Prisma.Student$quranic_subjectArgs<ExtArgs>
-  responsible_guardian?: boolean | Prisma.Student$responsible_guardianArgs<ExtArgs>
   updated_by?: boolean | Prisma.Student$updated_byArgs<ExtArgs>
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["student"]>
 
 export type StudentSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  quranic_section?: boolean
-  quranic_subject_id?: boolean
-  active_class_id?: boolean
+  full_name?: boolean
+  mobile_number?: boolean
   responsible_guardian_id?: boolean
-  user_id?: boolean
+  quranic_subject_id?: boolean
+  quranic_section?: boolean
   isActiveResponsibleTeacher?: boolean
+  user_id?: boolean
+  active_class_id?: boolean
   created_by_id?: boolean
   updated_by_id?: boolean
   created_at?: boolean
   updated_at?: boolean
+  responsible_guardian?: boolean | Prisma.Student$responsible_guardianArgs<ExtArgs>
+  quranic_subject?: boolean | Prisma.Student$quranic_subjectArgs<ExtArgs>
+  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   active_class?: boolean | Prisma.ClassDefaultArgs<ExtArgs>
   created_by?: boolean | Prisma.Student$created_byArgs<ExtArgs>
-  quranic_subject?: boolean | Prisma.Student$quranic_subjectArgs<ExtArgs>
-  responsible_guardian?: boolean | Prisma.Student$responsible_guardianArgs<ExtArgs>
   updated_by?: boolean | Prisma.Student$updated_byArgs<ExtArgs>
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["student"]>
 
 export type StudentSelectScalar = {
   id?: boolean
-  quranic_section?: boolean
-  quranic_subject_id?: boolean
-  active_class_id?: boolean
+  full_name?: boolean
+  mobile_number?: boolean
   responsible_guardian_id?: boolean
-  user_id?: boolean
+  quranic_subject_id?: boolean
+  quranic_section?: boolean
   isActiveResponsibleTeacher?: boolean
+  user_id?: boolean
+  active_class_id?: boolean
   created_by_id?: boolean
   updated_by_id?: boolean
   created_at?: boolean
   updated_at?: boolean
 }
 
-export type StudentOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "quranic_section" | "quranic_subject_id" | "active_class_id" | "responsible_guardian_id" | "user_id" | "isActiveResponsibleTeacher" | "created_by_id" | "updated_by_id" | "created_at" | "updated_at", ExtArgs["result"]["student"]>
+export type StudentOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "full_name" | "mobile_number" | "responsible_guardian_id" | "quranic_subject_id" | "quranic_section" | "isActiveResponsibleTeacher" | "user_id" | "active_class_id" | "created_by_id" | "updated_by_id" | "created_at" | "updated_at", ExtArgs["result"]["student"]>
 export type StudentInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  classes?: boolean | Prisma.Student$classesArgs<ExtArgs>
   previous_institute_information?: boolean | Prisma.Student$previous_institute_informationArgs<ExtArgs>
-  active_class?: boolean | Prisma.ClassDefaultArgs<ExtArgs>
-  created_by?: boolean | Prisma.Student$created_byArgs<ExtArgs>
-  quranic_subject?: boolean | Prisma.Student$quranic_subjectArgs<ExtArgs>
   responsible_guardian?: boolean | Prisma.Student$responsible_guardianArgs<ExtArgs>
-  updated_by?: boolean | Prisma.Student$updated_byArgs<ExtArgs>
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  quranic_subject?: boolean | Prisma.Student$quranic_subjectArgs<ExtArgs>
+  quranic_special_periods?: boolean | Prisma.Student$quranic_special_periodsArgs<ExtArgs>
   assigned_responsible_teacher?: boolean | Prisma.Student$assigned_responsible_teacherArgs<ExtArgs>
   cultural_club_options?: boolean | Prisma.Student$cultural_club_optionsArgs<ExtArgs>
   language_club_options?: boolean | Prisma.Student$language_club_optionsArgs<ExtArgs>
   quran_club_options?: boolean | Prisma.Student$quran_club_optionsArgs<ExtArgs>
-  quranic_special_periods?: boolean | Prisma.Student$quranic_special_periodsArgs<ExtArgs>
   science_club_options?: boolean | Prisma.Student$science_club_optionsArgs<ExtArgs>
   scout_sports_club_options?: boolean | Prisma.Student$scout_sports_club_optionsArgs<ExtArgs>
-  classes?: boolean | Prisma.Student$classesArgs<ExtArgs>
+  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
+  active_class?: boolean | Prisma.ClassDefaultArgs<ExtArgs>
+  created_by?: boolean | Prisma.Student$created_byArgs<ExtArgs>
+  updated_by?: boolean | Prisma.Student$updated_byArgs<ExtArgs>
   _count?: boolean | Prisma.StudentCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type StudentIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  responsible_guardian?: boolean | Prisma.Student$responsible_guardianArgs<ExtArgs>
+  quranic_subject?: boolean | Prisma.Student$quranic_subjectArgs<ExtArgs>
+  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   active_class?: boolean | Prisma.ClassDefaultArgs<ExtArgs>
   created_by?: boolean | Prisma.Student$created_byArgs<ExtArgs>
-  quranic_subject?: boolean | Prisma.Student$quranic_subjectArgs<ExtArgs>
-  responsible_guardian?: boolean | Prisma.Student$responsible_guardianArgs<ExtArgs>
   updated_by?: boolean | Prisma.Student$updated_byArgs<ExtArgs>
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }
 export type StudentIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  responsible_guardian?: boolean | Prisma.Student$responsible_guardianArgs<ExtArgs>
+  quranic_subject?: boolean | Prisma.Student$quranic_subjectArgs<ExtArgs>
+  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
   active_class?: boolean | Prisma.ClassDefaultArgs<ExtArgs>
   created_by?: boolean | Prisma.Student$created_byArgs<ExtArgs>
-  quranic_subject?: boolean | Prisma.Student$quranic_subjectArgs<ExtArgs>
-  responsible_guardian?: boolean | Prisma.Student$responsible_guardianArgs<ExtArgs>
   updated_by?: boolean | Prisma.Student$updated_byArgs<ExtArgs>
-  user?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }
 
 export type $StudentPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Student"
   objects: {
+    classes: Prisma.$ClassPayload<ExtArgs>[]
     previous_institute_information: Prisma.$StudentPreviousInstituteInformationPayload<ExtArgs>[]
-    active_class: Prisma.$ClassPayload<ExtArgs>
-    created_by: Prisma.$UserPayload<ExtArgs> | null
-    quranic_subject: Prisma.$QuranicSubjectPayload<ExtArgs> | null
     responsible_guardian: Prisma.$StudentResponsibleGuardianDetailsPayload<ExtArgs> | null
-    updated_by: Prisma.$UserPayload<ExtArgs> | null
-    user: Prisma.$UserPayload<ExtArgs>
+    quranic_subject: Prisma.$QuranicSubjectPayload<ExtArgs> | null
+    quranic_special_periods: Prisma.$QuranicSpecialPeriodPayload<ExtArgs>[]
     assigned_responsible_teacher: Prisma.$StudentResponsibilityPayload<ExtArgs> | null
     cultural_club_options: Prisma.$CulturalClubPayload<ExtArgs>[]
     language_club_options: Prisma.$LanguageClubPayload<ExtArgs>[]
     quran_club_options: Prisma.$QuranClubPayload<ExtArgs>[]
-    quranic_special_periods: Prisma.$QuranicSpecialPeriodPayload<ExtArgs>[]
     science_club_options: Prisma.$ScienceClubPayload<ExtArgs>[]
     scout_sports_club_options: Prisma.$ScoutSportsClubPayload<ExtArgs>[]
-    classes: Prisma.$ClassPayload<ExtArgs>[]
+    user: Prisma.$UserPayload<ExtArgs>
+    active_class: Prisma.$ClassPayload<ExtArgs>
+    created_by: Prisma.$UserPayload<ExtArgs> | null
+    updated_by: Prisma.$UserPayload<ExtArgs> | null
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
-    quranic_section: $Enums.Quranic_Section | null
-    quranic_subject_id: string | null
-    active_class_id: string
+    full_name: string
+    mobile_number: string
     responsible_guardian_id: string | null
-    user_id: string
+    quranic_subject_id: string | null
+    quranic_section: $Enums.Quranic_Section | null
     isActiveResponsibleTeacher: boolean
+    user_id: string
+    active_class_id: string
     created_by_id: string | null
     updated_by_id: string | null
     created_at: Date
@@ -3603,21 +3819,21 @@ readonly fields: StudentFieldRefs;
  */
 export interface Prisma__StudentClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
+  classes<T extends Prisma.Student$classesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Student$classesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ClassPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   previous_institute_information<T extends Prisma.Student$previous_institute_informationArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Student$previous_institute_informationArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$StudentPreviousInstituteInformationPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  active_class<T extends Prisma.ClassDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ClassDefaultArgs<ExtArgs>>): Prisma.Prisma__ClassClient<runtime.Types.Result.GetResult<Prisma.$ClassPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  created_by<T extends Prisma.Student$created_byArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Student$created_byArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-  quranic_subject<T extends Prisma.Student$quranic_subjectArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Student$quranic_subjectArgs<ExtArgs>>): Prisma.Prisma__QuranicSubjectClient<runtime.Types.Result.GetResult<Prisma.$QuranicSubjectPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   responsible_guardian<T extends Prisma.Student$responsible_guardianArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Student$responsible_guardianArgs<ExtArgs>>): Prisma.Prisma__StudentResponsibleGuardianDetailsClient<runtime.Types.Result.GetResult<Prisma.$StudentResponsibleGuardianDetailsPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-  updated_by<T extends Prisma.Student$updated_byArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Student$updated_byArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-  user<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  quranic_subject<T extends Prisma.Student$quranic_subjectArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Student$quranic_subjectArgs<ExtArgs>>): Prisma.Prisma__QuranicSubjectClient<runtime.Types.Result.GetResult<Prisma.$QuranicSubjectPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  quranic_special_periods<T extends Prisma.Student$quranic_special_periodsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Student$quranic_special_periodsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$QuranicSpecialPeriodPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   assigned_responsible_teacher<T extends Prisma.Student$assigned_responsible_teacherArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Student$assigned_responsible_teacherArgs<ExtArgs>>): Prisma.Prisma__StudentResponsibilityClient<runtime.Types.Result.GetResult<Prisma.$StudentResponsibilityPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   cultural_club_options<T extends Prisma.Student$cultural_club_optionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Student$cultural_club_optionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$CulturalClubPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   language_club_options<T extends Prisma.Student$language_club_optionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Student$language_club_optionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$LanguageClubPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   quran_club_options<T extends Prisma.Student$quran_club_optionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Student$quran_club_optionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$QuranClubPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  quranic_special_periods<T extends Prisma.Student$quranic_special_periodsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Student$quranic_special_periodsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$QuranicSpecialPeriodPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   science_club_options<T extends Prisma.Student$science_club_optionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Student$science_club_optionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ScienceClubPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   scout_sports_club_options<T extends Prisma.Student$scout_sports_club_optionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Student$scout_sports_club_optionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ScoutSportsClubPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  classes<T extends Prisma.Student$classesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Student$classesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ClassPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  user<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  active_class<T extends Prisma.ClassDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ClassDefaultArgs<ExtArgs>>): Prisma.Prisma__ClassClient<runtime.Types.Result.GetResult<Prisma.$ClassPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  created_by<T extends Prisma.Student$created_byArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Student$created_byArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  updated_by<T extends Prisma.Student$updated_byArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Student$updated_byArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -3648,12 +3864,14 @@ export interface Prisma__StudentClient<T, Null = never, ExtArgs extends runtime.
  */
 export interface StudentFieldRefs {
   readonly id: Prisma.FieldRef<"Student", 'String'>
-  readonly quranic_section: Prisma.FieldRef<"Student", 'Quranic_Section'>
-  readonly quranic_subject_id: Prisma.FieldRef<"Student", 'String'>
-  readonly active_class_id: Prisma.FieldRef<"Student", 'String'>
+  readonly full_name: Prisma.FieldRef<"Student", 'String'>
+  readonly mobile_number: Prisma.FieldRef<"Student", 'String'>
   readonly responsible_guardian_id: Prisma.FieldRef<"Student", 'String'>
-  readonly user_id: Prisma.FieldRef<"Student", 'String'>
+  readonly quranic_subject_id: Prisma.FieldRef<"Student", 'String'>
+  readonly quranic_section: Prisma.FieldRef<"Student", 'Quranic_Section'>
   readonly isActiveResponsibleTeacher: Prisma.FieldRef<"Student", 'Boolean'>
+  readonly user_id: Prisma.FieldRef<"Student", 'String'>
+  readonly active_class_id: Prisma.FieldRef<"Student", 'String'>
   readonly created_by_id: Prisma.FieldRef<"Student", 'String'>
   readonly updated_by_id: Prisma.FieldRef<"Student", 'String'>
   readonly created_at: Prisma.FieldRef<"Student", 'DateTime'>
@@ -4059,6 +4277,30 @@ export type StudentDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.Inter
 }
 
 /**
+ * Student.classes
+ */
+export type Student$classesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Class
+   */
+  select?: Prisma.ClassSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Class
+   */
+  omit?: Prisma.ClassOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ClassInclude<ExtArgs> | null
+  where?: Prisma.ClassWhereInput
+  orderBy?: Prisma.ClassOrderByWithRelationInput | Prisma.ClassOrderByWithRelationInput[]
+  cursor?: Prisma.ClassWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.ClassScalarFieldEnum | Prisma.ClassScalarFieldEnum[]
+}
+
+/**
  * Student.previous_institute_information
  */
 export type Student$previous_institute_informationArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -4083,22 +4325,22 @@ export type Student$previous_institute_informationArgs<ExtArgs extends runtime.T
 }
 
 /**
- * Student.created_by
+ * Student.responsible_guardian
  */
-export type Student$created_byArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Student$responsible_guardianArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the User
+   * Select specific fields to fetch from the StudentResponsibleGuardianDetails
    */
-  select?: Prisma.UserSelect<ExtArgs> | null
+  select?: Prisma.StudentResponsibleGuardianDetailsSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the User
+   * Omit specific fields from the StudentResponsibleGuardianDetails
    */
-  omit?: Prisma.UserOmit<ExtArgs> | null
+  omit?: Prisma.StudentResponsibleGuardianDetailsOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.UserInclude<ExtArgs> | null
-  where?: Prisma.UserWhereInput
+  include?: Prisma.StudentResponsibleGuardianDetailsInclude<ExtArgs> | null
+  where?: Prisma.StudentResponsibleGuardianDetailsWhereInput
 }
 
 /**
@@ -4121,41 +4363,27 @@ export type Student$quranic_subjectArgs<ExtArgs extends runtime.Types.Extensions
 }
 
 /**
- * Student.responsible_guardian
+ * Student.quranic_special_periods
  */
-export type Student$responsible_guardianArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Student$quranic_special_periodsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the StudentResponsibleGuardianDetails
+   * Select specific fields to fetch from the QuranicSpecialPeriod
    */
-  select?: Prisma.StudentResponsibleGuardianDetailsSelect<ExtArgs> | null
+  select?: Prisma.QuranicSpecialPeriodSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the StudentResponsibleGuardianDetails
+   * Omit specific fields from the QuranicSpecialPeriod
    */
-  omit?: Prisma.StudentResponsibleGuardianDetailsOmit<ExtArgs> | null
+  omit?: Prisma.QuranicSpecialPeriodOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.StudentResponsibleGuardianDetailsInclude<ExtArgs> | null
-  where?: Prisma.StudentResponsibleGuardianDetailsWhereInput
-}
-
-/**
- * Student.updated_by
- */
-export type Student$updated_byArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the User
-   */
-  select?: Prisma.UserSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the User
-   */
-  omit?: Prisma.UserOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.UserInclude<ExtArgs> | null
-  where?: Prisma.UserWhereInput
+  include?: Prisma.QuranicSpecialPeriodInclude<ExtArgs> | null
+  where?: Prisma.QuranicSpecialPeriodWhereInput
+  orderBy?: Prisma.QuranicSpecialPeriodOrderByWithRelationInput | Prisma.QuranicSpecialPeriodOrderByWithRelationInput[]
+  cursor?: Prisma.QuranicSpecialPeriodWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.QuranicSpecialPeriodScalarFieldEnum | Prisma.QuranicSpecialPeriodScalarFieldEnum[]
 }
 
 /**
@@ -4250,30 +4478,6 @@ export type Student$quran_club_optionsArgs<ExtArgs extends runtime.Types.Extensi
 }
 
 /**
- * Student.quranic_special_periods
- */
-export type Student$quranic_special_periodsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the QuranicSpecialPeriod
-   */
-  select?: Prisma.QuranicSpecialPeriodSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the QuranicSpecialPeriod
-   */
-  omit?: Prisma.QuranicSpecialPeriodOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.QuranicSpecialPeriodInclude<ExtArgs> | null
-  where?: Prisma.QuranicSpecialPeriodWhereInput
-  orderBy?: Prisma.QuranicSpecialPeriodOrderByWithRelationInput | Prisma.QuranicSpecialPeriodOrderByWithRelationInput[]
-  cursor?: Prisma.QuranicSpecialPeriodWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.QuranicSpecialPeriodScalarFieldEnum | Prisma.QuranicSpecialPeriodScalarFieldEnum[]
-}
-
-/**
  * Student.science_club_options
  */
 export type Student$science_club_optionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -4322,27 +4526,41 @@ export type Student$scout_sports_club_optionsArgs<ExtArgs extends runtime.Types.
 }
 
 /**
- * Student.classes
+ * Student.created_by
  */
-export type Student$classesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type Student$created_byArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Class
+   * Select specific fields to fetch from the User
    */
-  select?: Prisma.ClassSelect<ExtArgs> | null
+  select?: Prisma.UserSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Class
+   * Omit specific fields from the User
    */
-  omit?: Prisma.ClassOmit<ExtArgs> | null
+  omit?: Prisma.UserOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.ClassInclude<ExtArgs> | null
-  where?: Prisma.ClassWhereInput
-  orderBy?: Prisma.ClassOrderByWithRelationInput | Prisma.ClassOrderByWithRelationInput[]
-  cursor?: Prisma.ClassWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.ClassScalarFieldEnum | Prisma.ClassScalarFieldEnum[]
+  include?: Prisma.UserInclude<ExtArgs> | null
+  where?: Prisma.UserWhereInput
+}
+
+/**
+ * Student.updated_by
+ */
+export type Student$updated_byArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the User
+   */
+  select?: Prisma.UserSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the User
+   */
+  omit?: Prisma.UserOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UserInclude<ExtArgs> | null
+  where?: Prisma.UserWhereInput
 }
 
 /**

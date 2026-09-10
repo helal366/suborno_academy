@@ -328,10 +328,10 @@ export type PresentAddressWhereInput = {
   updated_by_id?: Prisma.StringNullableFilter<"PresentAddress"> | string | null
   created_at?: Prisma.DateTimeFilter<"PresentAddress"> | Date | string
   updated_at?: Prisma.DateTimeNullableFilter<"PresentAddress"> | Date | string | null
-  created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
-  spouse?: Prisma.XOR<Prisma.SpouseInformationNullableScalarRelationFilter, Prisma.SpouseInformationWhereInput> | null
-  updated_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
   user?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
+  spouse?: Prisma.XOR<Prisma.SpouseInformationNullableScalarRelationFilter, Prisma.SpouseInformationWhereInput> | null
+  created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
+  updated_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
 }
 
 export type PresentAddressOrderByWithRelationInput = {
@@ -354,10 +354,10 @@ export type PresentAddressOrderByWithRelationInput = {
   updated_by_id?: Prisma.SortOrderInput | Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrderInput | Prisma.SortOrder
-  created_by?: Prisma.UserOrderByWithRelationInput
-  spouse?: Prisma.SpouseInformationOrderByWithRelationInput
-  updated_by?: Prisma.UserOrderByWithRelationInput
   user?: Prisma.UserOrderByWithRelationInput
+  spouse?: Prisma.SpouseInformationOrderByWithRelationInput
+  created_by?: Prisma.UserOrderByWithRelationInput
+  updated_by?: Prisma.UserOrderByWithRelationInput
 }
 
 export type PresentAddressWhereUniqueInput = Prisma.AtLeast<{
@@ -383,10 +383,10 @@ export type PresentAddressWhereUniqueInput = Prisma.AtLeast<{
   updated_by_id?: Prisma.StringNullableFilter<"PresentAddress"> | string | null
   created_at?: Prisma.DateTimeFilter<"PresentAddress"> | Date | string
   updated_at?: Prisma.DateTimeNullableFilter<"PresentAddress"> | Date | string | null
-  created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
-  spouse?: Prisma.XOR<Prisma.SpouseInformationNullableScalarRelationFilter, Prisma.SpouseInformationWhereInput> | null
-  updated_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
   user?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
+  spouse?: Prisma.XOR<Prisma.SpouseInformationNullableScalarRelationFilter, Prisma.SpouseInformationWhereInput> | null
+  created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
+  updated_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
 }, "id" | "user_id" | "spouse_id">
 
 export type PresentAddressOrderByWithAggregationInput = {
@@ -457,10 +457,10 @@ export type PresentAddressCreateInput = {
   country?: string
   created_at?: Date | string
   updated_at?: Date | string | null
-  created_by?: Prisma.UserCreateNestedOneWithoutCreated_present_addressInput
-  spouse?: Prisma.SpouseInformationCreateNestedOneWithoutPresent_addressInput
-  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_present_addressInput
   user?: Prisma.UserCreateNestedOneWithoutPresent_addressInput
+  spouse?: Prisma.SpouseInformationCreateNestedOneWithoutPresent_addressInput
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_present_addressInput
+  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_present_addressInput
 }
 
 export type PresentAddressUncheckedCreateInput = {
@@ -501,10 +501,10 @@ export type PresentAddressUpdateInput = {
   country?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  created_by?: Prisma.UserUpdateOneWithoutCreated_present_addressNestedInput
-  spouse?: Prisma.SpouseInformationUpdateOneWithoutPresent_addressNestedInput
-  updated_by?: Prisma.UserUpdateOneWithoutUpdated_present_addressNestedInput
   user?: Prisma.UserUpdateOneWithoutPresent_addressNestedInput
+  spouse?: Prisma.SpouseInformationUpdateOneWithoutPresent_addressNestedInput
+  created_by?: Prisma.UserUpdateOneWithoutCreated_present_addressNestedInput
+  updated_by?: Prisma.UserUpdateOneWithoutUpdated_present_addressNestedInput
 }
 
 export type PresentAddressUncheckedUpdateInput = {
@@ -712,6 +712,12 @@ export type PresentAddressUncheckedUpdateOneWithoutSpouseNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.PresentAddressUpdateToOneWithWhereWithoutSpouseInput, Prisma.PresentAddressUpdateWithoutSpouseInput>, Prisma.PresentAddressUncheckedUpdateWithoutSpouseInput>
 }
 
+export type PresentAddressCreateNestedOneWithoutUserInput = {
+  create?: Prisma.XOR<Prisma.PresentAddressCreateWithoutUserInput, Prisma.PresentAddressUncheckedCreateWithoutUserInput>
+  connectOrCreate?: Prisma.PresentAddressCreateOrConnectWithoutUserInput
+  connect?: Prisma.PresentAddressWhereUniqueInput
+}
+
 export type PresentAddressCreateNestedManyWithoutCreated_byInput = {
   create?: Prisma.XOR<Prisma.PresentAddressCreateWithoutCreated_byInput, Prisma.PresentAddressUncheckedCreateWithoutCreated_byInput> | Prisma.PresentAddressCreateWithoutCreated_byInput[] | Prisma.PresentAddressUncheckedCreateWithoutCreated_byInput[]
   connectOrCreate?: Prisma.PresentAddressCreateOrConnectWithoutCreated_byInput | Prisma.PresentAddressCreateOrConnectWithoutCreated_byInput[]
@@ -726,7 +732,7 @@ export type PresentAddressCreateNestedManyWithoutUpdated_byInput = {
   connect?: Prisma.PresentAddressWhereUniqueInput | Prisma.PresentAddressWhereUniqueInput[]
 }
 
-export type PresentAddressCreateNestedOneWithoutUserInput = {
+export type PresentAddressUncheckedCreateNestedOneWithoutUserInput = {
   create?: Prisma.XOR<Prisma.PresentAddressCreateWithoutUserInput, Prisma.PresentAddressUncheckedCreateWithoutUserInput>
   connectOrCreate?: Prisma.PresentAddressCreateOrConnectWithoutUserInput
   connect?: Prisma.PresentAddressWhereUniqueInput
@@ -746,10 +752,14 @@ export type PresentAddressUncheckedCreateNestedManyWithoutUpdated_byInput = {
   connect?: Prisma.PresentAddressWhereUniqueInput | Prisma.PresentAddressWhereUniqueInput[]
 }
 
-export type PresentAddressUncheckedCreateNestedOneWithoutUserInput = {
+export type PresentAddressUpdateOneWithoutUserNestedInput = {
   create?: Prisma.XOR<Prisma.PresentAddressCreateWithoutUserInput, Prisma.PresentAddressUncheckedCreateWithoutUserInput>
   connectOrCreate?: Prisma.PresentAddressCreateOrConnectWithoutUserInput
+  upsert?: Prisma.PresentAddressUpsertWithoutUserInput
+  disconnect?: Prisma.PresentAddressWhereInput | boolean
+  delete?: Prisma.PresentAddressWhereInput | boolean
   connect?: Prisma.PresentAddressWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.PresentAddressUpdateToOneWithWhereWithoutUserInput, Prisma.PresentAddressUpdateWithoutUserInput>, Prisma.PresentAddressUncheckedUpdateWithoutUserInput>
 }
 
 export type PresentAddressUpdateManyWithoutCreated_byNestedInput = {
@@ -780,7 +790,7 @@ export type PresentAddressUpdateManyWithoutUpdated_byNestedInput = {
   deleteMany?: Prisma.PresentAddressScalarWhereInput | Prisma.PresentAddressScalarWhereInput[]
 }
 
-export type PresentAddressUpdateOneWithoutUserNestedInput = {
+export type PresentAddressUncheckedUpdateOneWithoutUserNestedInput = {
   create?: Prisma.XOR<Prisma.PresentAddressCreateWithoutUserInput, Prisma.PresentAddressUncheckedCreateWithoutUserInput>
   connectOrCreate?: Prisma.PresentAddressCreateOrConnectWithoutUserInput
   upsert?: Prisma.PresentAddressUpsertWithoutUserInput
@@ -818,16 +828,6 @@ export type PresentAddressUncheckedUpdateManyWithoutUpdated_byNestedInput = {
   deleteMany?: Prisma.PresentAddressScalarWhereInput | Prisma.PresentAddressScalarWhereInput[]
 }
 
-export type PresentAddressUncheckedUpdateOneWithoutUserNestedInput = {
-  create?: Prisma.XOR<Prisma.PresentAddressCreateWithoutUserInput, Prisma.PresentAddressUncheckedCreateWithoutUserInput>
-  connectOrCreate?: Prisma.PresentAddressCreateOrConnectWithoutUserInput
-  upsert?: Prisma.PresentAddressUpsertWithoutUserInput
-  disconnect?: Prisma.PresentAddressWhereInput | boolean
-  delete?: Prisma.PresentAddressWhereInput | boolean
-  connect?: Prisma.PresentAddressWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.PresentAddressUpdateToOneWithWhereWithoutUserInput, Prisma.PresentAddressUpdateWithoutUserInput>, Prisma.PresentAddressUncheckedUpdateWithoutUserInput>
-}
-
 export type PresentAddressCreateWithoutSpouseInput = {
   id?: string
   house_no?: string | null
@@ -844,9 +844,9 @@ export type PresentAddressCreateWithoutSpouseInput = {
   country?: string
   created_at?: Date | string
   updated_at?: Date | string | null
+  user?: Prisma.UserCreateNestedOneWithoutPresent_addressInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_present_addressInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_present_addressInput
-  user?: Prisma.UserCreateNestedOneWithoutPresent_addressInput
 }
 
 export type PresentAddressUncheckedCreateWithoutSpouseInput = {
@@ -902,9 +902,9 @@ export type PresentAddressUpdateWithoutSpouseInput = {
   country?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  user?: Prisma.UserUpdateOneWithoutPresent_addressNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_present_addressNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_present_addressNestedInput
-  user?: Prisma.UserUpdateOneWithoutPresent_addressNestedInput
 }
 
 export type PresentAddressUncheckedUpdateWithoutSpouseInput = {
@@ -928,7 +928,7 @@ export type PresentAddressUncheckedUpdateWithoutSpouseInput = {
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
 }
 
-export type PresentAddressCreateWithoutCreated_byInput = {
+export type PresentAddressCreateWithoutUserInput = {
   id?: string
   house_no?: string | null
   house_name?: string | null
@@ -945,8 +945,55 @@ export type PresentAddressCreateWithoutCreated_byInput = {
   created_at?: Date | string
   updated_at?: Date | string | null
   spouse?: Prisma.SpouseInformationCreateNestedOneWithoutPresent_addressInput
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_present_addressInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_present_addressInput
+}
+
+export type PresentAddressUncheckedCreateWithoutUserInput = {
+  id?: string
+  house_no?: string | null
+  house_name?: string | null
+  plot_no?: string | null
+  road_no?: string | null
+  neighbourhood?: string | null
+  region?: string | null
+  village?: string | null
+  post_code?: number | null
+  post_office?: string | null
+  thana: string
+  district: string
+  country?: string
+  spouse_id?: string | null
+  created_by_id?: string | null
+  updated_by_id?: string | null
+  created_at?: Date | string
+  updated_at?: Date | string | null
+}
+
+export type PresentAddressCreateOrConnectWithoutUserInput = {
+  where: Prisma.PresentAddressWhereUniqueInput
+  create: Prisma.XOR<Prisma.PresentAddressCreateWithoutUserInput, Prisma.PresentAddressUncheckedCreateWithoutUserInput>
+}
+
+export type PresentAddressCreateWithoutCreated_byInput = {
+  id?: string
+  house_no?: string | null
+  house_name?: string | null
+  plot_no?: string | null
+  road_no?: string | null
+  neighbourhood?: string | null
+  region?: string | null
+  village?: string | null
+  post_code?: number | null
+  post_office?: string | null
+  thana: string
+  district: string
+  country?: string
+  created_at?: Date | string
+  updated_at?: Date | string | null
   user?: Prisma.UserCreateNestedOneWithoutPresent_addressInput
+  spouse?: Prisma.SpouseInformationCreateNestedOneWithoutPresent_addressInput
+  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_present_addressInput
 }
 
 export type PresentAddressUncheckedCreateWithoutCreated_byInput = {
@@ -996,9 +1043,9 @@ export type PresentAddressCreateWithoutUpdated_byInput = {
   country?: string
   created_at?: Date | string
   updated_at?: Date | string | null
-  created_by?: Prisma.UserCreateNestedOneWithoutCreated_present_addressInput
-  spouse?: Prisma.SpouseInformationCreateNestedOneWithoutPresent_addressInput
   user?: Prisma.UserCreateNestedOneWithoutPresent_addressInput
+  spouse?: Prisma.SpouseInformationCreateNestedOneWithoutPresent_addressInput
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_present_addressInput
 }
 
 export type PresentAddressUncheckedCreateWithoutUpdated_byInput = {
@@ -1032,51 +1079,57 @@ export type PresentAddressCreateManyUpdated_byInputEnvelope = {
   skipDuplicates?: boolean
 }
 
-export type PresentAddressCreateWithoutUserInput = {
-  id?: string
-  house_no?: string | null
-  house_name?: string | null
-  plot_no?: string | null
-  road_no?: string | null
-  neighbourhood?: string | null
-  region?: string | null
-  village?: string | null
-  post_code?: number | null
-  post_office?: string | null
-  thana: string
-  district: string
-  country?: string
-  created_at?: Date | string
-  updated_at?: Date | string | null
-  created_by?: Prisma.UserCreateNestedOneWithoutCreated_present_addressInput
-  spouse?: Prisma.SpouseInformationCreateNestedOneWithoutPresent_addressInput
-  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_present_addressInput
-}
-
-export type PresentAddressUncheckedCreateWithoutUserInput = {
-  id?: string
-  house_no?: string | null
-  house_name?: string | null
-  plot_no?: string | null
-  road_no?: string | null
-  neighbourhood?: string | null
-  region?: string | null
-  village?: string | null
-  post_code?: number | null
-  post_office?: string | null
-  thana: string
-  district: string
-  country?: string
-  spouse_id?: string | null
-  created_by_id?: string | null
-  updated_by_id?: string | null
-  created_at?: Date | string
-  updated_at?: Date | string | null
-}
-
-export type PresentAddressCreateOrConnectWithoutUserInput = {
-  where: Prisma.PresentAddressWhereUniqueInput
+export type PresentAddressUpsertWithoutUserInput = {
+  update: Prisma.XOR<Prisma.PresentAddressUpdateWithoutUserInput, Prisma.PresentAddressUncheckedUpdateWithoutUserInput>
   create: Prisma.XOR<Prisma.PresentAddressCreateWithoutUserInput, Prisma.PresentAddressUncheckedCreateWithoutUserInput>
+  where?: Prisma.PresentAddressWhereInput
+}
+
+export type PresentAddressUpdateToOneWithWhereWithoutUserInput = {
+  where?: Prisma.PresentAddressWhereInput
+  data: Prisma.XOR<Prisma.PresentAddressUpdateWithoutUserInput, Prisma.PresentAddressUncheckedUpdateWithoutUserInput>
+}
+
+export type PresentAddressUpdateWithoutUserInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  house_no?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  house_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  plot_no?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  road_no?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  neighbourhood?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  region?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  village?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  post_code?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  post_office?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  thana?: Prisma.StringFieldUpdateOperationsInput | string
+  district?: Prisma.StringFieldUpdateOperationsInput | string
+  country?: Prisma.StringFieldUpdateOperationsInput | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  spouse?: Prisma.SpouseInformationUpdateOneWithoutPresent_addressNestedInput
+  created_by?: Prisma.UserUpdateOneWithoutCreated_present_addressNestedInput
+  updated_by?: Prisma.UserUpdateOneWithoutUpdated_present_addressNestedInput
+}
+
+export type PresentAddressUncheckedUpdateWithoutUserInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  house_no?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  house_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  plot_no?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  road_no?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  neighbourhood?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  region?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  village?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  post_code?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  post_office?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  thana?: Prisma.StringFieldUpdateOperationsInput | string
+  district?: Prisma.StringFieldUpdateOperationsInput | string
+  country?: Prisma.StringFieldUpdateOperationsInput | string
+  spouse_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
 }
 
 export type PresentAddressUpsertWithWhereUniqueWithoutCreated_byInput = {
@@ -1134,59 +1187,6 @@ export type PresentAddressUpdateWithWhereUniqueWithoutUpdated_byInput = {
 export type PresentAddressUpdateManyWithWhereWithoutUpdated_byInput = {
   where: Prisma.PresentAddressScalarWhereInput
   data: Prisma.XOR<Prisma.PresentAddressUpdateManyMutationInput, Prisma.PresentAddressUncheckedUpdateManyWithoutUpdated_byInput>
-}
-
-export type PresentAddressUpsertWithoutUserInput = {
-  update: Prisma.XOR<Prisma.PresentAddressUpdateWithoutUserInput, Prisma.PresentAddressUncheckedUpdateWithoutUserInput>
-  create: Prisma.XOR<Prisma.PresentAddressCreateWithoutUserInput, Prisma.PresentAddressUncheckedCreateWithoutUserInput>
-  where?: Prisma.PresentAddressWhereInput
-}
-
-export type PresentAddressUpdateToOneWithWhereWithoutUserInput = {
-  where?: Prisma.PresentAddressWhereInput
-  data: Prisma.XOR<Prisma.PresentAddressUpdateWithoutUserInput, Prisma.PresentAddressUncheckedUpdateWithoutUserInput>
-}
-
-export type PresentAddressUpdateWithoutUserInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  house_no?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  house_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  plot_no?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  road_no?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  neighbourhood?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  region?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  village?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  post_code?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  post_office?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  thana?: Prisma.StringFieldUpdateOperationsInput | string
-  district?: Prisma.StringFieldUpdateOperationsInput | string
-  country?: Prisma.StringFieldUpdateOperationsInput | string
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  created_by?: Prisma.UserUpdateOneWithoutCreated_present_addressNestedInput
-  spouse?: Prisma.SpouseInformationUpdateOneWithoutPresent_addressNestedInput
-  updated_by?: Prisma.UserUpdateOneWithoutUpdated_present_addressNestedInput
-}
-
-export type PresentAddressUncheckedUpdateWithoutUserInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  house_no?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  house_name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  plot_no?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  road_no?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  neighbourhood?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  region?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  village?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  post_code?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  post_office?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  thana?: Prisma.StringFieldUpdateOperationsInput | string
-  district?: Prisma.StringFieldUpdateOperationsInput | string
-  country?: Prisma.StringFieldUpdateOperationsInput | string
-  spouse_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
 }
 
 export type PresentAddressCreateManyCreated_byInput = {
@@ -1247,9 +1247,9 @@ export type PresentAddressUpdateWithoutCreated_byInput = {
   country?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  user?: Prisma.UserUpdateOneWithoutPresent_addressNestedInput
   spouse?: Prisma.SpouseInformationUpdateOneWithoutPresent_addressNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_present_addressNestedInput
-  user?: Prisma.UserUpdateOneWithoutPresent_addressNestedInput
 }
 
 export type PresentAddressUncheckedUpdateWithoutCreated_byInput = {
@@ -1310,9 +1310,9 @@ export type PresentAddressUpdateWithoutUpdated_byInput = {
   country?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  created_by?: Prisma.UserUpdateOneWithoutCreated_present_addressNestedInput
-  spouse?: Prisma.SpouseInformationUpdateOneWithoutPresent_addressNestedInput
   user?: Prisma.UserUpdateOneWithoutPresent_addressNestedInput
+  spouse?: Prisma.SpouseInformationUpdateOneWithoutPresent_addressNestedInput
+  created_by?: Prisma.UserUpdateOneWithoutCreated_present_addressNestedInput
 }
 
 export type PresentAddressUncheckedUpdateWithoutUpdated_byInput = {
@@ -1379,10 +1379,10 @@ export type PresentAddressSelect<ExtArgs extends runtime.Types.Extensions.Intern
   updated_by_id?: boolean
   created_at?: boolean
   updated_at?: boolean
-  created_by?: boolean | Prisma.PresentAddress$created_byArgs<ExtArgs>
-  spouse?: boolean | Prisma.PresentAddress$spouseArgs<ExtArgs>
-  updated_by?: boolean | Prisma.PresentAddress$updated_byArgs<ExtArgs>
   user?: boolean | Prisma.PresentAddress$userArgs<ExtArgs>
+  spouse?: boolean | Prisma.PresentAddress$spouseArgs<ExtArgs>
+  created_by?: boolean | Prisma.PresentAddress$created_byArgs<ExtArgs>
+  updated_by?: boolean | Prisma.PresentAddress$updated_byArgs<ExtArgs>
 }, ExtArgs["result"]["presentAddress"]>
 
 export type PresentAddressSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -1405,10 +1405,10 @@ export type PresentAddressSelectCreateManyAndReturn<ExtArgs extends runtime.Type
   updated_by_id?: boolean
   created_at?: boolean
   updated_at?: boolean
-  created_by?: boolean | Prisma.PresentAddress$created_byArgs<ExtArgs>
-  spouse?: boolean | Prisma.PresentAddress$spouseArgs<ExtArgs>
-  updated_by?: boolean | Prisma.PresentAddress$updated_byArgs<ExtArgs>
   user?: boolean | Prisma.PresentAddress$userArgs<ExtArgs>
+  spouse?: boolean | Prisma.PresentAddress$spouseArgs<ExtArgs>
+  created_by?: boolean | Prisma.PresentAddress$created_byArgs<ExtArgs>
+  updated_by?: boolean | Prisma.PresentAddress$updated_byArgs<ExtArgs>
 }, ExtArgs["result"]["presentAddress"]>
 
 export type PresentAddressSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -1431,10 +1431,10 @@ export type PresentAddressSelectUpdateManyAndReturn<ExtArgs extends runtime.Type
   updated_by_id?: boolean
   created_at?: boolean
   updated_at?: boolean
-  created_by?: boolean | Prisma.PresentAddress$created_byArgs<ExtArgs>
-  spouse?: boolean | Prisma.PresentAddress$spouseArgs<ExtArgs>
-  updated_by?: boolean | Prisma.PresentAddress$updated_byArgs<ExtArgs>
   user?: boolean | Prisma.PresentAddress$userArgs<ExtArgs>
+  spouse?: boolean | Prisma.PresentAddress$spouseArgs<ExtArgs>
+  created_by?: boolean | Prisma.PresentAddress$created_byArgs<ExtArgs>
+  updated_by?: boolean | Prisma.PresentAddress$updated_byArgs<ExtArgs>
 }, ExtArgs["result"]["presentAddress"]>
 
 export type PresentAddressSelectScalar = {
@@ -1461,31 +1461,31 @@ export type PresentAddressSelectScalar = {
 
 export type PresentAddressOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "house_no" | "house_name" | "plot_no" | "road_no" | "neighbourhood" | "region" | "village" | "post_code" | "post_office" | "thana" | "district" | "country" | "user_id" | "spouse_id" | "created_by_id" | "updated_by_id" | "created_at" | "updated_at", ExtArgs["result"]["presentAddress"]>
 export type PresentAddressInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  created_by?: boolean | Prisma.PresentAddress$created_byArgs<ExtArgs>
-  spouse?: boolean | Prisma.PresentAddress$spouseArgs<ExtArgs>
-  updated_by?: boolean | Prisma.PresentAddress$updated_byArgs<ExtArgs>
   user?: boolean | Prisma.PresentAddress$userArgs<ExtArgs>
+  spouse?: boolean | Prisma.PresentAddress$spouseArgs<ExtArgs>
+  created_by?: boolean | Prisma.PresentAddress$created_byArgs<ExtArgs>
+  updated_by?: boolean | Prisma.PresentAddress$updated_byArgs<ExtArgs>
 }
 export type PresentAddressIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  created_by?: boolean | Prisma.PresentAddress$created_byArgs<ExtArgs>
-  spouse?: boolean | Prisma.PresentAddress$spouseArgs<ExtArgs>
-  updated_by?: boolean | Prisma.PresentAddress$updated_byArgs<ExtArgs>
   user?: boolean | Prisma.PresentAddress$userArgs<ExtArgs>
+  spouse?: boolean | Prisma.PresentAddress$spouseArgs<ExtArgs>
+  created_by?: boolean | Prisma.PresentAddress$created_byArgs<ExtArgs>
+  updated_by?: boolean | Prisma.PresentAddress$updated_byArgs<ExtArgs>
 }
 export type PresentAddressIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  created_by?: boolean | Prisma.PresentAddress$created_byArgs<ExtArgs>
-  spouse?: boolean | Prisma.PresentAddress$spouseArgs<ExtArgs>
-  updated_by?: boolean | Prisma.PresentAddress$updated_byArgs<ExtArgs>
   user?: boolean | Prisma.PresentAddress$userArgs<ExtArgs>
+  spouse?: boolean | Prisma.PresentAddress$spouseArgs<ExtArgs>
+  created_by?: boolean | Prisma.PresentAddress$created_byArgs<ExtArgs>
+  updated_by?: boolean | Prisma.PresentAddress$updated_byArgs<ExtArgs>
 }
 
 export type $PresentAddressPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "PresentAddress"
   objects: {
-    created_by: Prisma.$UserPayload<ExtArgs> | null
-    spouse: Prisma.$SpouseInformationPayload<ExtArgs> | null
-    updated_by: Prisma.$UserPayload<ExtArgs> | null
     user: Prisma.$UserPayload<ExtArgs> | null
+    spouse: Prisma.$SpouseInformationPayload<ExtArgs> | null
+    created_by: Prisma.$UserPayload<ExtArgs> | null
+    updated_by: Prisma.$UserPayload<ExtArgs> | null
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1901,10 +1901,10 @@ readonly fields: PresentAddressFieldRefs;
  */
 export interface Prisma__PresentAddressClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  created_by<T extends Prisma.PresentAddress$created_byArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.PresentAddress$created_byArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-  spouse<T extends Prisma.PresentAddress$spouseArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.PresentAddress$spouseArgs<ExtArgs>>): Prisma.Prisma__SpouseInformationClient<runtime.Types.Result.GetResult<Prisma.$SpouseInformationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-  updated_by<T extends Prisma.PresentAddress$updated_byArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.PresentAddress$updated_byArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   user<T extends Prisma.PresentAddress$userArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.PresentAddress$userArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  spouse<T extends Prisma.PresentAddress$spouseArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.PresentAddress$spouseArgs<ExtArgs>>): Prisma.Prisma__SpouseInformationClient<runtime.Types.Result.GetResult<Prisma.$SpouseInformationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  created_by<T extends Prisma.PresentAddress$created_byArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.PresentAddress$created_byArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  updated_by<T extends Prisma.PresentAddress$updated_byArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.PresentAddress$updated_byArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2354,9 +2354,9 @@ export type PresentAddressDeleteManyArgs<ExtArgs extends runtime.Types.Extension
 }
 
 /**
- * PresentAddress.created_by
+ * PresentAddress.user
  */
-export type PresentAddress$created_byArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PresentAddress$userArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
    * Select specific fields to fetch from the User
    */
@@ -2392,9 +2392,9 @@ export type PresentAddress$spouseArgs<ExtArgs extends runtime.Types.Extensions.I
 }
 
 /**
- * PresentAddress.updated_by
+ * PresentAddress.created_by
  */
-export type PresentAddress$updated_byArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PresentAddress$created_byArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
    * Select specific fields to fetch from the User
    */
@@ -2411,9 +2411,9 @@ export type PresentAddress$updated_byArgs<ExtArgs extends runtime.Types.Extensio
 }
 
 /**
- * PresentAddress.user
+ * PresentAddress.updated_by
  */
-export type PresentAddress$userArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PresentAddress$updated_byArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
    * Select specific fields to fetch from the User
    */

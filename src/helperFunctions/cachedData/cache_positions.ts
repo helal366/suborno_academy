@@ -1,8 +1,5 @@
+import { ICachePosition } from "../../commonInterfaces/commonInterfaces.js";
 import { prisma } from "../../lib/prisma.js";
-interface ICachePosition{
-    id: string,
-    position_name: string
-}
 
 let cacheValidPositions: Promise<ICachePosition[]> | null = null;
 
