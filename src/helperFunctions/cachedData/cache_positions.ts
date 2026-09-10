@@ -22,7 +22,7 @@ export const getValidPositions = async():Promise<ICachePosition[]> =>{
 }
 
 // get position names
-export const getValidPositionNames = async()=>{
+export const getValidPositionNames = async(): Promise<string[]> =>{
     const positions = await getValidPositions();
     return positions.map((position)=>position.position_name)
 }

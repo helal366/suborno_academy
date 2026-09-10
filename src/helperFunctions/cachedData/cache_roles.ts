@@ -21,7 +21,7 @@ export const getValidRoles = async():Promise<ICacheRole[]> =>{
 };
 
 // get valid role names
-export const getValidRoleNames=async()=>{
+export const getValidRoleNames=async(): Promise<string[]> =>{
     const rolesFromDB = await getValidRoles();
     return rolesFromDB.map((role)=> role.role_name)
 }
