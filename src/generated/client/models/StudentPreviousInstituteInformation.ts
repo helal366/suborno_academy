@@ -230,9 +230,9 @@ export type StudentPreviousInstituteInformationWhereInput = {
   updated_by_id?: Prisma.StringNullableFilter<"StudentPreviousInstituteInformation"> | string | null
   created_at?: Prisma.DateTimeFilter<"StudentPreviousInstituteInformation"> | Date | string
   updated_at?: Prisma.DateTimeNullableFilter<"StudentPreviousInstituteInformation"> | Date | string | null
+  created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
   institute_address?: Prisma.XOR<Prisma.StudentInstitureAddressNullableScalarRelationFilter, Prisma.StudentInstitureAddressWhereInput> | null
   student?: Prisma.XOR<Prisma.StudentScalarRelationFilter, Prisma.StudentWhereInput>
-  created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
   updated_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
 }
 
@@ -248,9 +248,9 @@ export type StudentPreviousInstituteInformationOrderByWithRelationInput = {
   updated_by_id?: Prisma.SortOrderInput | Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrderInput | Prisma.SortOrder
+  created_by?: Prisma.UserOrderByWithRelationInput
   institute_address?: Prisma.StudentInstitureAddressOrderByWithRelationInput
   student?: Prisma.StudentOrderByWithRelationInput
-  created_by?: Prisma.UserOrderByWithRelationInput
   updated_by?: Prisma.UserOrderByWithRelationInput
 }
 
@@ -269,9 +269,9 @@ export type StudentPreviousInstituteInformationWhereUniqueInput = Prisma.AtLeast
   updated_by_id?: Prisma.StringNullableFilter<"StudentPreviousInstituteInformation"> | string | null
   created_at?: Prisma.DateTimeFilter<"StudentPreviousInstituteInformation"> | Date | string
   updated_at?: Prisma.DateTimeNullableFilter<"StudentPreviousInstituteInformation"> | Date | string | null
+  created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
   institute_address?: Prisma.XOR<Prisma.StudentInstitureAddressNullableScalarRelationFilter, Prisma.StudentInstitureAddressWhereInput> | null
   student?: Prisma.XOR<Prisma.StudentScalarRelationFilter, Prisma.StudentWhereInput>
-  created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
   updated_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
 }, "id" | "institute_address_id">
 
@@ -317,9 +317,9 @@ export type StudentPreviousInstituteInformationCreateInput = {
   tc_no?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_student_previous_institute_informationInput
   institute_address?: Prisma.StudentInstitureAddressCreateNestedOneWithoutInstituteInput
   student: Prisma.StudentCreateNestedOneWithoutPrevious_institute_informationInput
-  created_by?: Prisma.UserCreateNestedOneWithoutCreated_student_previous_institute_informationInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_student_previous_institute_informationInput
 }
 
@@ -345,9 +345,9 @@ export type StudentPreviousInstituteInformationUpdateInput = {
   tc_no?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  created_by?: Prisma.UserUpdateOneWithoutCreated_student_previous_institute_informationNestedInput
   institute_address?: Prisma.StudentInstitureAddressUpdateOneWithoutInstituteNestedInput
   student?: Prisma.StudentUpdateOneRequiredWithoutPrevious_institute_informationNestedInput
-  created_by?: Prisma.UserUpdateOneWithoutCreated_student_previous_institute_informationNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_student_previous_institute_informationNestedInput
 }
 
@@ -626,8 +626,8 @@ export type StudentPreviousInstituteInformationCreateWithoutStudentInput = {
   tc_no?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
-  institute_address?: Prisma.StudentInstitureAddressCreateNestedOneWithoutInstituteInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_student_previous_institute_informationInput
+  institute_address?: Prisma.StudentInstitureAddressCreateNestedOneWithoutInstituteInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_student_previous_institute_informationInput
 }
 
@@ -695,8 +695,8 @@ export type StudentPreviousInstituteInformationCreateWithoutInstitute_addressInp
   tc_no?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
-  student: Prisma.StudentCreateNestedOneWithoutPrevious_institute_informationInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_student_previous_institute_informationInput
+  student: Prisma.StudentCreateNestedOneWithoutPrevious_institute_informationInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_student_previous_institute_informationInput
 }
 
@@ -737,8 +737,8 @@ export type StudentPreviousInstituteInformationUpdateWithoutInstitute_addressInp
   tc_no?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  student?: Prisma.StudentUpdateOneRequiredWithoutPrevious_institute_informationNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_student_previous_institute_informationNestedInput
+  student?: Prisma.StudentUpdateOneRequiredWithoutPrevious_institute_informationNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_student_previous_institute_informationNestedInput
 }
 
@@ -799,9 +799,9 @@ export type StudentPreviousInstituteInformationCreateWithoutUpdated_byInput = {
   tc_no?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_student_previous_institute_informationInput
   institute_address?: Prisma.StudentInstitureAddressCreateNestedOneWithoutInstituteInput
   student: Prisma.StudentCreateNestedOneWithoutPrevious_institute_informationInput
-  created_by?: Prisma.UserCreateNestedOneWithoutCreated_student_previous_institute_informationInput
 }
 
 export type StudentPreviousInstituteInformationUncheckedCreateWithoutUpdated_byInput = {
@@ -880,8 +880,8 @@ export type StudentPreviousInstituteInformationUpdateWithoutStudentInput = {
   tc_no?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  institute_address?: Prisma.StudentInstitureAddressUpdateOneWithoutInstituteNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_student_previous_institute_informationNestedInput
+  institute_address?: Prisma.StudentInstitureAddressUpdateOneWithoutInstituteNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_student_previous_institute_informationNestedInput
 }
 
@@ -984,9 +984,9 @@ export type StudentPreviousInstituteInformationUpdateWithoutUpdated_byInput = {
   tc_no?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  created_by?: Prisma.UserUpdateOneWithoutCreated_student_previous_institute_informationNestedInput
   institute_address?: Prisma.StudentInstitureAddressUpdateOneWithoutInstituteNestedInput
   student?: Prisma.StudentUpdateOneRequiredWithoutPrevious_institute_informationNestedInput
-  created_by?: Prisma.UserUpdateOneWithoutCreated_student_previous_institute_informationNestedInput
 }
 
 export type StudentPreviousInstituteInformationUncheckedUpdateWithoutUpdated_byInput = {
@@ -1029,9 +1029,9 @@ export type StudentPreviousInstituteInformationSelect<ExtArgs extends runtime.Ty
   updated_by_id?: boolean
   created_at?: boolean
   updated_at?: boolean
+  created_by?: boolean | Prisma.StudentPreviousInstituteInformation$created_byArgs<ExtArgs>
   institute_address?: boolean | Prisma.StudentPreviousInstituteInformation$institute_addressArgs<ExtArgs>
   student?: boolean | Prisma.StudentDefaultArgs<ExtArgs>
-  created_by?: boolean | Prisma.StudentPreviousInstituteInformation$created_byArgs<ExtArgs>
   updated_by?: boolean | Prisma.StudentPreviousInstituteInformation$updated_byArgs<ExtArgs>
 }, ExtArgs["result"]["studentPreviousInstituteInformation"]>
 
@@ -1047,9 +1047,9 @@ export type StudentPreviousInstituteInformationSelectCreateManyAndReturn<ExtArgs
   updated_by_id?: boolean
   created_at?: boolean
   updated_at?: boolean
+  created_by?: boolean | Prisma.StudentPreviousInstituteInformation$created_byArgs<ExtArgs>
   institute_address?: boolean | Prisma.StudentPreviousInstituteInformation$institute_addressArgs<ExtArgs>
   student?: boolean | Prisma.StudentDefaultArgs<ExtArgs>
-  created_by?: boolean | Prisma.StudentPreviousInstituteInformation$created_byArgs<ExtArgs>
   updated_by?: boolean | Prisma.StudentPreviousInstituteInformation$updated_byArgs<ExtArgs>
 }, ExtArgs["result"]["studentPreviousInstituteInformation"]>
 
@@ -1065,9 +1065,9 @@ export type StudentPreviousInstituteInformationSelectUpdateManyAndReturn<ExtArgs
   updated_by_id?: boolean
   created_at?: boolean
   updated_at?: boolean
+  created_by?: boolean | Prisma.StudentPreviousInstituteInformation$created_byArgs<ExtArgs>
   institute_address?: boolean | Prisma.StudentPreviousInstituteInformation$institute_addressArgs<ExtArgs>
   student?: boolean | Prisma.StudentDefaultArgs<ExtArgs>
-  created_by?: boolean | Prisma.StudentPreviousInstituteInformation$created_byArgs<ExtArgs>
   updated_by?: boolean | Prisma.StudentPreviousInstituteInformation$updated_byArgs<ExtArgs>
 }, ExtArgs["result"]["studentPreviousInstituteInformation"]>
 
@@ -1087,30 +1087,30 @@ export type StudentPreviousInstituteInformationSelectScalar = {
 
 export type StudentPreviousInstituteInformationOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "institute_name" | "class" | "result" | "tc_no" | "institute_address_id" | "student_id" | "created_by_id" | "updated_by_id" | "created_at" | "updated_at", ExtArgs["result"]["studentPreviousInstituteInformation"]>
 export type StudentPreviousInstituteInformationInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  created_by?: boolean | Prisma.StudentPreviousInstituteInformation$created_byArgs<ExtArgs>
   institute_address?: boolean | Prisma.StudentPreviousInstituteInformation$institute_addressArgs<ExtArgs>
   student?: boolean | Prisma.StudentDefaultArgs<ExtArgs>
-  created_by?: boolean | Prisma.StudentPreviousInstituteInformation$created_byArgs<ExtArgs>
   updated_by?: boolean | Prisma.StudentPreviousInstituteInformation$updated_byArgs<ExtArgs>
 }
 export type StudentPreviousInstituteInformationIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  created_by?: boolean | Prisma.StudentPreviousInstituteInformation$created_byArgs<ExtArgs>
   institute_address?: boolean | Prisma.StudentPreviousInstituteInformation$institute_addressArgs<ExtArgs>
   student?: boolean | Prisma.StudentDefaultArgs<ExtArgs>
-  created_by?: boolean | Prisma.StudentPreviousInstituteInformation$created_byArgs<ExtArgs>
   updated_by?: boolean | Prisma.StudentPreviousInstituteInformation$updated_byArgs<ExtArgs>
 }
 export type StudentPreviousInstituteInformationIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  created_by?: boolean | Prisma.StudentPreviousInstituteInformation$created_byArgs<ExtArgs>
   institute_address?: boolean | Prisma.StudentPreviousInstituteInformation$institute_addressArgs<ExtArgs>
   student?: boolean | Prisma.StudentDefaultArgs<ExtArgs>
-  created_by?: boolean | Prisma.StudentPreviousInstituteInformation$created_byArgs<ExtArgs>
   updated_by?: boolean | Prisma.StudentPreviousInstituteInformation$updated_byArgs<ExtArgs>
 }
 
 export type $StudentPreviousInstituteInformationPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "StudentPreviousInstituteInformation"
   objects: {
+    created_by: Prisma.$UserPayload<ExtArgs> | null
     institute_address: Prisma.$StudentInstitureAddressPayload<ExtArgs> | null
     student: Prisma.$StudentPayload<ExtArgs>
-    created_by: Prisma.$UserPayload<ExtArgs> | null
     updated_by: Prisma.$UserPayload<ExtArgs> | null
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
@@ -1519,9 +1519,9 @@ readonly fields: StudentPreviousInstituteInformationFieldRefs;
  */
 export interface Prisma__StudentPreviousInstituteInformationClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
+  created_by<T extends Prisma.StudentPreviousInstituteInformation$created_byArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.StudentPreviousInstituteInformation$created_byArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   institute_address<T extends Prisma.StudentPreviousInstituteInformation$institute_addressArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.StudentPreviousInstituteInformation$institute_addressArgs<ExtArgs>>): Prisma.Prisma__StudentInstitureAddressClient<runtime.Types.Result.GetResult<Prisma.$StudentInstitureAddressPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   student<T extends Prisma.StudentDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.StudentDefaultArgs<ExtArgs>>): Prisma.Prisma__StudentClient<runtime.Types.Result.GetResult<Prisma.$StudentPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  created_by<T extends Prisma.StudentPreviousInstituteInformation$created_byArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.StudentPreviousInstituteInformation$created_byArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   updated_by<T extends Prisma.StudentPreviousInstituteInformation$updated_byArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.StudentPreviousInstituteInformation$updated_byArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -1964,25 +1964,6 @@ export type StudentPreviousInstituteInformationDeleteManyArgs<ExtArgs extends ru
 }
 
 /**
- * StudentPreviousInstituteInformation.institute_address
- */
-export type StudentPreviousInstituteInformation$institute_addressArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the StudentInstitureAddress
-   */
-  select?: Prisma.StudentInstitureAddressSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the StudentInstitureAddress
-   */
-  omit?: Prisma.StudentInstitureAddressOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.StudentInstitureAddressInclude<ExtArgs> | null
-  where?: Prisma.StudentInstitureAddressWhereInput
-}
-
-/**
  * StudentPreviousInstituteInformation.created_by
  */
 export type StudentPreviousInstituteInformation$created_byArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1999,6 +1980,25 @@ export type StudentPreviousInstituteInformation$created_byArgs<ExtArgs extends r
    */
   include?: Prisma.UserInclude<ExtArgs> | null
   where?: Prisma.UserWhereInput
+}
+
+/**
+ * StudentPreviousInstituteInformation.institute_address
+ */
+export type StudentPreviousInstituteInformation$institute_addressArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the StudentInstitureAddress
+   */
+  select?: Prisma.StudentInstitureAddressSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the StudentInstitureAddress
+   */
+  omit?: Prisma.StudentInstitureAddressOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.StudentInstitureAddressInclude<ExtArgs> | null
+  where?: Prisma.StudentInstitureAddressWhereInput
 }
 
 /**

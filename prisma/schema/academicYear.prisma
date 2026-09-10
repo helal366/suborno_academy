@@ -1,19 +1,15 @@
 model AcademicYear {
-  id                   String @id @default(uuid())
-  academic_year_number Int
-
-  students_responsibility StudentResponsibility[]
-  class_routine           ClassRoutine[]
+  id                      String                  @id @default(uuid())
+  academic_year_number    Int
+  created_by_id           String?
+  updated_by_id           String?
+  created_at              DateTime                @default(now())
+  updated_at              DateTime?               @updatedAt
+  created_by              User?                   @relation("academic_year_created_by", fields: [created_by_id], references: [id])
+  updated_by              User?                   @relation("academic_year_updated_by", fields: [updated_by_id], references: [id])
   book_classes            BookClass[]
-
-  created_by_id String?
-  created_by    User?   @relation("academic_year_created_by", fields: [created_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
-
-  updated_by_id String?
-  updated_by    User?   @relation("academic_year_updated_by", fields: [updated_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
-
-  created_at DateTime  @default(now())
-  updated_at DateTime? @updatedAt
+  class_routine           ClassRoutine[]
+  students_responsibility StudentResponsibility[]
 
   @@map("academic_years")
 }

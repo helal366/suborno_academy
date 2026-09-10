@@ -1,22 +1,18 @@
 model PromotedHistory {
-  id                             String   @id @default(uuid())
-  previous_position              String
-  promoted_position              String
-  previous_position_joining_date DateTime
-  previous_position_ending_date  DateTime
-  promoted_position_joining_date DateTime
-
-  academic_administrative_staff_id String?  @unique
-  academic_administrative_staff    AcademicAdministrativeStaff? @relation(fields: [academic_administrative_staff_id], references: [id], onDelete: Cascade, onUpdate: Cascade)
-
-  created_by_id String?
-  created_by    User?   @relation("teacher_promoted_history_created_by", fields: [created_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
-
-  updated_by_id String?
-  updated_by    User?   @relation("teacher_promoted_history_updated_by", fields: [updated_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
-
-  created_at DateTime  @default(now())
-  updated_at DateTime? @updatedAt
+  id                               String                       @id @default(uuid())
+  previous_position                String
+  promoted_position                String
+  previous_position_joining_date   DateTime
+  previous_position_ending_date    DateTime
+  promoted_position_joining_date   DateTime
+  academic_administrative_staff_id String?                      @unique
+  created_by_id                    String?
+  updated_by_id                    String?
+  created_at                       DateTime                     @default(now())
+  updated_at                       DateTime?                    @updatedAt
+  academic_administrative_staff    AcademicAdministrativeStaff? @relation(fields: [academic_administrative_staff_id], references: [id], onDelete: Cascade)
+  created_by                       User?                        @relation("teacher_promoted_history_created_by", fields: [created_by_id], references: [id])
+  updated_by                       User?                        @relation("teacher_promoted_history_updated_by", fields: [updated_by_id], references: [id])
 
   @@map("teacher_promoted_history")
 }

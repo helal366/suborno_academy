@@ -1,15 +1,32 @@
 import { prisma } from "../../lib/prisma.js";
+interface ICacheRole{
+    id:string;
+    role_name:string;
+}
 
-let cachedRoles: string[] | null = null;
-export const getValidRoles = async():Promise<string[]> =>{
-    if(!cachedRoles){
-        const rolesFromDB = await prisma.userRole.findMany({select:{role_name: true}});
-        cachedRoles = rolesFromDB.map((role)=>role.role_name)
+let cacheValidRoles: Promise<ICacheRole[]> | null = null;
+export const getValidRoles = async():Promise<ICacheRole[]> =>{
+    if(!cacheValidRoles){
+        cacheValidRoles = (async() =>{
+            try {
+                return  await prisma.userRole.findMany({select:{id: true, role_name: true}});               
+            } catch (error) {
+                cacheValidRoles=null;
+                throw error 
+            }
+        } )()
+            
     };
-    return cachedRoles;
+    return cacheValidRoles;
 };
 
-// if role update
-export const clearCacheRoles = async():Promise<void> =>{
-    cachedRoles = null;
+// get valid role names
+export const getValidRoleNames=async()=>{
+    const rolesFromDB = await getValidRoles();
+    return rolesFromDB.map((role)=> role.role_name)
+}
+
+// if role update or create new role
+export const clearCacheRoles = ():void=>{
+    cacheValidRoles = null;
 }

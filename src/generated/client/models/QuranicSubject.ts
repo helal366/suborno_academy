@@ -198,9 +198,9 @@ export type QuranicSubjectWhereInput = {
   updated_by_id?: Prisma.StringNullableFilter<"QuranicSubject"> | string | null
   created_at?: Prisma.DateTimeFilter<"QuranicSubject"> | Date | string
   updated_at?: Prisma.DateTimeNullableFilter<"QuranicSubject"> | Date | string | null
-  students?: Prisma.StudentListRelationFilter
   created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
   updated_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
+  students?: Prisma.StudentListRelationFilter
 }
 
 export type QuranicSubjectOrderByWithRelationInput = {
@@ -211,9 +211,9 @@ export type QuranicSubjectOrderByWithRelationInput = {
   updated_by_id?: Prisma.SortOrderInput | Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrderInput | Prisma.SortOrder
-  students?: Prisma.StudentOrderByRelationAggregateInput
   created_by?: Prisma.UserOrderByWithRelationInput
   updated_by?: Prisma.UserOrderByWithRelationInput
+  students?: Prisma.StudentOrderByRelationAggregateInput
 }
 
 export type QuranicSubjectWhereUniqueInput = Prisma.AtLeast<{
@@ -227,9 +227,9 @@ export type QuranicSubjectWhereUniqueInput = Prisma.AtLeast<{
   updated_by_id?: Prisma.StringNullableFilter<"QuranicSubject"> | string | null
   created_at?: Prisma.DateTimeFilter<"QuranicSubject"> | Date | string
   updated_at?: Prisma.DateTimeNullableFilter<"QuranicSubject"> | Date | string | null
-  students?: Prisma.StudentListRelationFilter
   created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
   updated_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
+  students?: Prisma.StudentListRelationFilter
 }, "id" | "subject_name">
 
 export type QuranicSubjectOrderByWithAggregationInput = {
@@ -264,9 +264,9 @@ export type QuranicSubjectCreateInput = {
   quranic_section: $Enums.Quranic_Section
   created_at?: Date | string
   updated_at?: Date | string | null
-  students?: Prisma.StudentCreateNestedManyWithoutQuranic_subjectInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_quranic_subjectsInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_quranic_subjectsInput
+  students?: Prisma.StudentCreateNestedManyWithoutQuranic_subjectInput
 }
 
 export type QuranicSubjectUncheckedCreateInput = {
@@ -286,9 +286,9 @@ export type QuranicSubjectUpdateInput = {
   quranic_section?: Prisma.EnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  students?: Prisma.StudentUpdateManyWithoutQuranic_subjectNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_quranic_subjectsNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_quranic_subjectsNestedInput
+  students?: Prisma.StudentUpdateManyWithoutQuranic_subjectNestedInput
 }
 
 export type QuranicSubjectUncheckedUpdateInput = {
@@ -541,8 +541,8 @@ export type QuranicSubjectCreateWithoutCreated_byInput = {
   quranic_section: $Enums.Quranic_Section
   created_at?: Date | string
   updated_at?: Date | string | null
-  students?: Prisma.StudentCreateNestedManyWithoutQuranic_subjectInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_quranic_subjectsInput
+  students?: Prisma.StudentCreateNestedManyWithoutQuranic_subjectInput
 }
 
 export type QuranicSubjectUncheckedCreateWithoutCreated_byInput = {
@@ -571,8 +571,8 @@ export type QuranicSubjectCreateWithoutUpdated_byInput = {
   quranic_section: $Enums.Quranic_Section
   created_at?: Date | string
   updated_at?: Date | string | null
-  students?: Prisma.StudentCreateNestedManyWithoutQuranic_subjectInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_quranic_subjectsInput
+  students?: Prisma.StudentCreateNestedManyWithoutQuranic_subjectInput
 }
 
 export type QuranicSubjectUncheckedCreateWithoutUpdated_byInput = {
@@ -664,8 +664,8 @@ export type QuranicSubjectUpdateWithoutCreated_byInput = {
   quranic_section?: Prisma.EnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  students?: Prisma.StudentUpdateManyWithoutQuranic_subjectNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_quranic_subjectsNestedInput
+  students?: Prisma.StudentUpdateManyWithoutQuranic_subjectNestedInput
 }
 
 export type QuranicSubjectUncheckedUpdateWithoutCreated_byInput = {
@@ -693,8 +693,8 @@ export type QuranicSubjectUpdateWithoutUpdated_byInput = {
   quranic_section?: Prisma.EnumQuranic_SectionFieldUpdateOperationsInput | $Enums.Quranic_Section
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  students?: Prisma.StudentUpdateManyWithoutQuranic_subjectNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_quranic_subjectsNestedInput
+  students?: Prisma.StudentUpdateManyWithoutQuranic_subjectNestedInput
 }
 
 export type QuranicSubjectUncheckedUpdateWithoutUpdated_byInput = {
@@ -755,9 +755,9 @@ export type QuranicSubjectSelect<ExtArgs extends runtime.Types.Extensions.Intern
   updated_by_id?: boolean
   created_at?: boolean
   updated_at?: boolean
-  students?: boolean | Prisma.QuranicSubject$studentsArgs<ExtArgs>
   created_by?: boolean | Prisma.QuranicSubject$created_byArgs<ExtArgs>
   updated_by?: boolean | Prisma.QuranicSubject$updated_byArgs<ExtArgs>
+  students?: boolean | Prisma.QuranicSubject$studentsArgs<ExtArgs>
   _count?: boolean | Prisma.QuranicSubjectCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["quranicSubject"]>
 
@@ -797,9 +797,9 @@ export type QuranicSubjectSelectScalar = {
 
 export type QuranicSubjectOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "subject_name" | "quranic_section" | "created_by_id" | "updated_by_id" | "created_at" | "updated_at", ExtArgs["result"]["quranicSubject"]>
 export type QuranicSubjectInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  students?: boolean | Prisma.QuranicSubject$studentsArgs<ExtArgs>
   created_by?: boolean | Prisma.QuranicSubject$created_byArgs<ExtArgs>
   updated_by?: boolean | Prisma.QuranicSubject$updated_byArgs<ExtArgs>
+  students?: boolean | Prisma.QuranicSubject$studentsArgs<ExtArgs>
   _count?: boolean | Prisma.QuranicSubjectCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type QuranicSubjectIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -814,9 +814,9 @@ export type QuranicSubjectIncludeUpdateManyAndReturn<ExtArgs extends runtime.Typ
 export type $QuranicSubjectPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "QuranicSubject"
   objects: {
-    students: Prisma.$StudentPayload<ExtArgs>[]
     created_by: Prisma.$UserPayload<ExtArgs> | null
     updated_by: Prisma.$UserPayload<ExtArgs> | null
+    students: Prisma.$StudentPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1220,9 +1220,9 @@ readonly fields: QuranicSubjectFieldRefs;
  */
 export interface Prisma__QuranicSubjectClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  students<T extends Prisma.QuranicSubject$studentsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.QuranicSubject$studentsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$StudentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   created_by<T extends Prisma.QuranicSubject$created_byArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.QuranicSubject$created_byArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   updated_by<T extends Prisma.QuranicSubject$updated_byArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.QuranicSubject$updated_byArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  students<T extends Prisma.QuranicSubject$studentsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.QuranicSubject$studentsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$StudentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1660,30 +1660,6 @@ export type QuranicSubjectDeleteManyArgs<ExtArgs extends runtime.Types.Extension
 }
 
 /**
- * QuranicSubject.students
- */
-export type QuranicSubject$studentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the Student
-   */
-  select?: Prisma.StudentSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the Student
-   */
-  omit?: Prisma.StudentOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.StudentInclude<ExtArgs> | null
-  where?: Prisma.StudentWhereInput
-  orderBy?: Prisma.StudentOrderByWithRelationInput | Prisma.StudentOrderByWithRelationInput[]
-  cursor?: Prisma.StudentWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.StudentScalarFieldEnum | Prisma.StudentScalarFieldEnum[]
-}
-
-/**
  * QuranicSubject.created_by
  */
 export type QuranicSubject$created_byArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1719,6 +1695,30 @@ export type QuranicSubject$updated_byArgs<ExtArgs extends runtime.Types.Extensio
    */
   include?: Prisma.UserInclude<ExtArgs> | null
   where?: Prisma.UserWhereInput
+}
+
+/**
+ * QuranicSubject.students
+ */
+export type QuranicSubject$studentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Student
+   */
+  select?: Prisma.StudentSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Student
+   */
+  omit?: Prisma.StudentOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.StudentInclude<ExtArgs> | null
+  where?: Prisma.StudentWhereInput
+  orderBy?: Prisma.StudentOrderByWithRelationInput | Prisma.StudentOrderByWithRelationInput[]
+  cursor?: Prisma.StudentWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.StudentScalarFieldEnum | Prisma.StudentScalarFieldEnum[]
 }
 
 /**

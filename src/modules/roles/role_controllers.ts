@@ -4,15 +4,14 @@ import { sendResponse } from "../../utils/sendResponse.js";
 import { StatusCodes } from "http-status-codes";
 import { AppError } from "../../utils/appError.js";
 import { roleServices } from "./role_services.js";
+import { TRoleCreateZodSchema } from "./role_zod_validation.js";
 
 const createRole = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
-    const roleData: string | undefined = req.body.role;
-    if (!roleData || typeof roleData !== "string" || roleData.trim() === "") {
-      throw new AppError("Invalid role data provided", StatusCodes.BAD_REQUEST);
-    }
+    const payload:TRoleCreateZodSchema = req.body;
+    
 
-    const newRole = await roleServices.createRole(roleData);
+    const newRole = await roleServices.createRole(payload);
     sendResponse(res, {
       success: true,
       statusCode: StatusCodes.OK,

@@ -198,10 +198,10 @@ export type QuranClubWhereInput = {
   updated_by_id?: Prisma.StringNullableFilter<"QuranClub"> | string | null
   created_at?: Prisma.DateTimeFilter<"QuranClub"> | Date | string
   updated_at?: Prisma.DateTimeNullableFilter<"QuranClub"> | Date | string | null
-  students?: Prisma.StudentListRelationFilter
-  extra_curriculum_activity?: Prisma.XOR<Prisma.ExtraCurriculumActivityNullableScalarRelationFilter, Prisma.ExtraCurriculumActivityWhereInput> | null
   created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
+  extra_curriculum_activity?: Prisma.XOR<Prisma.ExtraCurriculumActivityNullableScalarRelationFilter, Prisma.ExtraCurriculumActivityWhereInput> | null
   updated_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
+  students?: Prisma.StudentListRelationFilter
 }
 
 export type QuranClubOrderByWithRelationInput = {
@@ -212,10 +212,10 @@ export type QuranClubOrderByWithRelationInput = {
   updated_by_id?: Prisma.SortOrderInput | Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrderInput | Prisma.SortOrder
-  students?: Prisma.StudentOrderByRelationAggregateInput
-  extra_curriculum_activity?: Prisma.ExtraCurriculumActivityOrderByWithRelationInput
   created_by?: Prisma.UserOrderByWithRelationInput
+  extra_curriculum_activity?: Prisma.ExtraCurriculumActivityOrderByWithRelationInput
   updated_by?: Prisma.UserOrderByWithRelationInput
+  students?: Prisma.StudentOrderByRelationAggregateInput
 }
 
 export type QuranClubWhereUniqueInput = Prisma.AtLeast<{
@@ -229,10 +229,10 @@ export type QuranClubWhereUniqueInput = Prisma.AtLeast<{
   updated_by_id?: Prisma.StringNullableFilter<"QuranClub"> | string | null
   created_at?: Prisma.DateTimeFilter<"QuranClub"> | Date | string
   updated_at?: Prisma.DateTimeNullableFilter<"QuranClub"> | Date | string | null
-  students?: Prisma.StudentListRelationFilter
-  extra_curriculum_activity?: Prisma.XOR<Prisma.ExtraCurriculumActivityNullableScalarRelationFilter, Prisma.ExtraCurriculumActivityWhereInput> | null
   created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
+  extra_curriculum_activity?: Prisma.XOR<Prisma.ExtraCurriculumActivityNullableScalarRelationFilter, Prisma.ExtraCurriculumActivityWhereInput> | null
   updated_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
+  students?: Prisma.StudentListRelationFilter
 }, "id">
 
 export type QuranClubOrderByWithAggregationInput = {
@@ -266,10 +266,10 @@ export type QuranClubCreateInput = {
   quran_name: string
   created_at?: Date | string
   updated_at?: Date | string | null
-  students?: Prisma.StudentCreateNestedManyWithoutQuran_club_optionsInput
-  extra_curriculum_activity?: Prisma.ExtraCurriculumActivityCreateNestedOneWithoutQuran_club_optionsInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_quran_clubsInput
+  extra_curriculum_activity?: Prisma.ExtraCurriculumActivityCreateNestedOneWithoutQuran_club_optionsInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_quran_clubsInput
+  students?: Prisma.StudentCreateNestedManyWithoutQuran_club_optionsInput
 }
 
 export type QuranClubUncheckedCreateInput = {
@@ -288,10 +288,10 @@ export type QuranClubUpdateInput = {
   quran_name?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  students?: Prisma.StudentUpdateManyWithoutQuran_club_optionsNestedInput
-  extra_curriculum_activity?: Prisma.ExtraCurriculumActivityUpdateOneWithoutQuran_club_optionsNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_quran_clubsNestedInput
+  extra_curriculum_activity?: Prisma.ExtraCurriculumActivityUpdateOneWithoutQuran_club_optionsNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_quran_clubsNestedInput
+  students?: Prisma.StudentUpdateManyWithoutQuran_club_optionsNestedInput
 }
 
 export type QuranClubUncheckedUpdateInput = {
@@ -541,9 +541,9 @@ export type QuranClubCreateWithoutExtra_curriculum_activityInput = {
   quran_name: string
   created_at?: Date | string
   updated_at?: Date | string | null
-  students?: Prisma.StudentCreateNestedManyWithoutQuran_club_optionsInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_quran_clubsInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_quran_clubsInput
+  students?: Prisma.StudentCreateNestedManyWithoutQuran_club_optionsInput
 }
 
 export type QuranClubUncheckedCreateWithoutExtra_curriculum_activityInput = {
@@ -600,8 +600,8 @@ export type QuranClubCreateWithoutStudentsInput = {
   quran_name: string
   created_at?: Date | string
   updated_at?: Date | string | null
-  extra_curriculum_activity?: Prisma.ExtraCurriculumActivityCreateNestedOneWithoutQuran_club_optionsInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_quran_clubsInput
+  extra_curriculum_activity?: Prisma.ExtraCurriculumActivityCreateNestedOneWithoutQuran_club_optionsInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_quran_clubsInput
 }
 
@@ -641,9 +641,9 @@ export type QuranClubCreateWithoutCreated_byInput = {
   quran_name: string
   created_at?: Date | string
   updated_at?: Date | string | null
-  students?: Prisma.StudentCreateNestedManyWithoutQuran_club_optionsInput
   extra_curriculum_activity?: Prisma.ExtraCurriculumActivityCreateNestedOneWithoutQuran_club_optionsInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_quran_clubsInput
+  students?: Prisma.StudentCreateNestedManyWithoutQuran_club_optionsInput
 }
 
 export type QuranClubUncheckedCreateWithoutCreated_byInput = {
@@ -671,9 +671,9 @@ export type QuranClubCreateWithoutUpdated_byInput = {
   quran_name: string
   created_at?: Date | string
   updated_at?: Date | string | null
-  students?: Prisma.StudentCreateNestedManyWithoutQuran_club_optionsInput
-  extra_curriculum_activity?: Prisma.ExtraCurriculumActivityCreateNestedOneWithoutQuran_club_optionsInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_quran_clubsInput
+  extra_curriculum_activity?: Prisma.ExtraCurriculumActivityCreateNestedOneWithoutQuran_club_optionsInput
+  students?: Prisma.StudentCreateNestedManyWithoutQuran_club_optionsInput
 }
 
 export type QuranClubUncheckedCreateWithoutUpdated_byInput = {
@@ -742,9 +742,9 @@ export type QuranClubUpdateWithoutExtra_curriculum_activityInput = {
   quran_name?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  students?: Prisma.StudentUpdateManyWithoutQuran_club_optionsNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_quran_clubsNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_quran_clubsNestedInput
+  students?: Prisma.StudentUpdateManyWithoutQuran_club_optionsNestedInput
 }
 
 export type QuranClubUncheckedUpdateWithoutExtra_curriculum_activityInput = {
@@ -771,8 +771,8 @@ export type QuranClubUpdateWithoutStudentsInput = {
   quran_name?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  extra_curriculum_activity?: Prisma.ExtraCurriculumActivityUpdateOneWithoutQuran_club_optionsNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_quran_clubsNestedInput
+  extra_curriculum_activity?: Prisma.ExtraCurriculumActivityUpdateOneWithoutQuran_club_optionsNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_quran_clubsNestedInput
 }
 
@@ -819,9 +819,9 @@ export type QuranClubUpdateWithoutCreated_byInput = {
   quran_name?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  students?: Prisma.StudentUpdateManyWithoutQuran_club_optionsNestedInput
   extra_curriculum_activity?: Prisma.ExtraCurriculumActivityUpdateOneWithoutQuran_club_optionsNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_quran_clubsNestedInput
+  students?: Prisma.StudentUpdateManyWithoutQuran_club_optionsNestedInput
 }
 
 export type QuranClubUncheckedUpdateWithoutCreated_byInput = {
@@ -848,9 +848,9 @@ export type QuranClubUpdateWithoutUpdated_byInput = {
   quran_name?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  students?: Prisma.StudentUpdateManyWithoutQuran_club_optionsNestedInput
-  extra_curriculum_activity?: Prisma.ExtraCurriculumActivityUpdateOneWithoutQuran_club_optionsNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_quran_clubsNestedInput
+  extra_curriculum_activity?: Prisma.ExtraCurriculumActivityUpdateOneWithoutQuran_club_optionsNestedInput
+  students?: Prisma.StudentUpdateManyWithoutQuran_club_optionsNestedInput
 }
 
 export type QuranClubUncheckedUpdateWithoutUpdated_byInput = {
@@ -911,10 +911,10 @@ export type QuranClubSelect<ExtArgs extends runtime.Types.Extensions.InternalArg
   updated_by_id?: boolean
   created_at?: boolean
   updated_at?: boolean
-  students?: boolean | Prisma.QuranClub$studentsArgs<ExtArgs>
-  extra_curriculum_activity?: boolean | Prisma.QuranClub$extra_curriculum_activityArgs<ExtArgs>
   created_by?: boolean | Prisma.QuranClub$created_byArgs<ExtArgs>
+  extra_curriculum_activity?: boolean | Prisma.QuranClub$extra_curriculum_activityArgs<ExtArgs>
   updated_by?: boolean | Prisma.QuranClub$updated_byArgs<ExtArgs>
+  students?: boolean | Prisma.QuranClub$studentsArgs<ExtArgs>
   _count?: boolean | Prisma.QuranClubCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["quranClub"]>
 
@@ -926,8 +926,8 @@ export type QuranClubSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Ext
   updated_by_id?: boolean
   created_at?: boolean
   updated_at?: boolean
-  extra_curriculum_activity?: boolean | Prisma.QuranClub$extra_curriculum_activityArgs<ExtArgs>
   created_by?: boolean | Prisma.QuranClub$created_byArgs<ExtArgs>
+  extra_curriculum_activity?: boolean | Prisma.QuranClub$extra_curriculum_activityArgs<ExtArgs>
   updated_by?: boolean | Prisma.QuranClub$updated_byArgs<ExtArgs>
 }, ExtArgs["result"]["quranClub"]>
 
@@ -939,8 +939,8 @@ export type QuranClubSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Ext
   updated_by_id?: boolean
   created_at?: boolean
   updated_at?: boolean
-  extra_curriculum_activity?: boolean | Prisma.QuranClub$extra_curriculum_activityArgs<ExtArgs>
   created_by?: boolean | Prisma.QuranClub$created_byArgs<ExtArgs>
+  extra_curriculum_activity?: boolean | Prisma.QuranClub$extra_curriculum_activityArgs<ExtArgs>
   updated_by?: boolean | Prisma.QuranClub$updated_byArgs<ExtArgs>
 }, ExtArgs["result"]["quranClub"]>
 
@@ -956,30 +956,30 @@ export type QuranClubSelectScalar = {
 
 export type QuranClubOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "quran_name" | "extra_curriculum_activity_id" | "created_by_id" | "updated_by_id" | "created_at" | "updated_at", ExtArgs["result"]["quranClub"]>
 export type QuranClubInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  students?: boolean | Prisma.QuranClub$studentsArgs<ExtArgs>
-  extra_curriculum_activity?: boolean | Prisma.QuranClub$extra_curriculum_activityArgs<ExtArgs>
   created_by?: boolean | Prisma.QuranClub$created_byArgs<ExtArgs>
+  extra_curriculum_activity?: boolean | Prisma.QuranClub$extra_curriculum_activityArgs<ExtArgs>
   updated_by?: boolean | Prisma.QuranClub$updated_byArgs<ExtArgs>
+  students?: boolean | Prisma.QuranClub$studentsArgs<ExtArgs>
   _count?: boolean | Prisma.QuranClubCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type QuranClubIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  extra_curriculum_activity?: boolean | Prisma.QuranClub$extra_curriculum_activityArgs<ExtArgs>
   created_by?: boolean | Prisma.QuranClub$created_byArgs<ExtArgs>
+  extra_curriculum_activity?: boolean | Prisma.QuranClub$extra_curriculum_activityArgs<ExtArgs>
   updated_by?: boolean | Prisma.QuranClub$updated_byArgs<ExtArgs>
 }
 export type QuranClubIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  extra_curriculum_activity?: boolean | Prisma.QuranClub$extra_curriculum_activityArgs<ExtArgs>
   created_by?: boolean | Prisma.QuranClub$created_byArgs<ExtArgs>
+  extra_curriculum_activity?: boolean | Prisma.QuranClub$extra_curriculum_activityArgs<ExtArgs>
   updated_by?: boolean | Prisma.QuranClub$updated_byArgs<ExtArgs>
 }
 
 export type $QuranClubPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "QuranClub"
   objects: {
-    students: Prisma.$StudentPayload<ExtArgs>[]
-    extra_curriculum_activity: Prisma.$ExtraCurriculumActivityPayload<ExtArgs> | null
     created_by: Prisma.$UserPayload<ExtArgs> | null
+    extra_curriculum_activity: Prisma.$ExtraCurriculumActivityPayload<ExtArgs> | null
     updated_by: Prisma.$UserPayload<ExtArgs> | null
+    students: Prisma.$StudentPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1383,10 +1383,10 @@ readonly fields: QuranClubFieldRefs;
  */
 export interface Prisma__QuranClubClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  students<T extends Prisma.QuranClub$studentsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.QuranClub$studentsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$StudentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  extra_curriculum_activity<T extends Prisma.QuranClub$extra_curriculum_activityArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.QuranClub$extra_curriculum_activityArgs<ExtArgs>>): Prisma.Prisma__ExtraCurriculumActivityClient<runtime.Types.Result.GetResult<Prisma.$ExtraCurriculumActivityPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   created_by<T extends Prisma.QuranClub$created_byArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.QuranClub$created_byArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  extra_curriculum_activity<T extends Prisma.QuranClub$extra_curriculum_activityArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.QuranClub$extra_curriculum_activityArgs<ExtArgs>>): Prisma.Prisma__ExtraCurriculumActivityClient<runtime.Types.Result.GetResult<Prisma.$ExtraCurriculumActivityPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   updated_by<T extends Prisma.QuranClub$updated_byArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.QuranClub$updated_byArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  students<T extends Prisma.QuranClub$studentsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.QuranClub$studentsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$StudentPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1824,27 +1824,22 @@ export type QuranClubDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.Int
 }
 
 /**
- * QuranClub.students
+ * QuranClub.created_by
  */
-export type QuranClub$studentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type QuranClub$created_byArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Student
+   * Select specific fields to fetch from the User
    */
-  select?: Prisma.StudentSelect<ExtArgs> | null
+  select?: Prisma.UserSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Student
+   * Omit specific fields from the User
    */
-  omit?: Prisma.StudentOmit<ExtArgs> | null
+  omit?: Prisma.UserOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.StudentInclude<ExtArgs> | null
-  where?: Prisma.StudentWhereInput
-  orderBy?: Prisma.StudentOrderByWithRelationInput | Prisma.StudentOrderByWithRelationInput[]
-  cursor?: Prisma.StudentWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.StudentScalarFieldEnum | Prisma.StudentScalarFieldEnum[]
+  include?: Prisma.UserInclude<ExtArgs> | null
+  where?: Prisma.UserWhereInput
 }
 
 /**
@@ -1867,25 +1862,6 @@ export type QuranClub$extra_curriculum_activityArgs<ExtArgs extends runtime.Type
 }
 
 /**
- * QuranClub.created_by
- */
-export type QuranClub$created_byArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the User
-   */
-  select?: Prisma.UserSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the User
-   */
-  omit?: Prisma.UserOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.UserInclude<ExtArgs> | null
-  where?: Prisma.UserWhereInput
-}
-
-/**
  * QuranClub.updated_by
  */
 export type QuranClub$updated_byArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1902,6 +1878,30 @@ export type QuranClub$updated_byArgs<ExtArgs extends runtime.Types.Extensions.In
    */
   include?: Prisma.UserInclude<ExtArgs> | null
   where?: Prisma.UserWhereInput
+}
+
+/**
+ * QuranClub.students
+ */
+export type QuranClub$studentsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Student
+   */
+  select?: Prisma.StudentSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Student
+   */
+  omit?: Prisma.StudentOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.StudentInclude<ExtArgs> | null
+  where?: Prisma.StudentWhereInput
+  orderBy?: Prisma.StudentOrderByWithRelationInput | Prisma.StudentOrderByWithRelationInput[]
+  cursor?: Prisma.StudentWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.StudentScalarFieldEnum | Prisma.StudentScalarFieldEnum[]
 }
 
 /**

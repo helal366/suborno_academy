@@ -288,23 +288,23 @@ export type AcademicAdministrativeStaffWhereInput = {
   updated_by_id?: Prisma.StringNullableFilter<"AcademicAdministrativeStaff"> | string | null
   created_at?: Prisma.DateTimeFilter<"AcademicAdministrativeStaff"> | Date | string
   updated_at?: Prisma.DateTimeNullableFilter<"AcademicAdministrativeStaff"> | Date | string | null
+  academic_results?: Prisma.XOR<Prisma.AcademicResultNullableScalarRelationFilter, Prisma.AcademicResultWhereInput> | null
+  created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
   current_position?: Prisma.XOR<Prisma.UserPositionScalarRelationFilter, Prisma.UserPositionWhereInput>
   current_role?: Prisma.XOR<Prisma.UserRoleScalarRelationFilter, Prisma.UserRoleWhereInput>
-  positions?: Prisma.UserPositionListRelationFilter
-  roles?: Prisma.UserRoleListRelationFilter
-  joining_history?: Prisma.JoiningHistoryListRelationFilter
-  promoted_history?: Prisma.PromotedHistoryListRelationFilter
+  updated_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
   user_primary_data?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
-  spouse_information?: Prisma.XOR<Prisma.SpouseInformationNullableScalarRelationFilter, Prisma.SpouseInformationWhereInput> | null
-  academic_results?: Prisma.XOR<Prisma.AcademicResultNullableScalarRelationFilter, Prisma.AcademicResultWhereInput> | null
+  my_classes?: Prisma.ClassRoutineListRelationFilter
   grade_teacher_class_name?: Prisma.XOR<Prisma.ClassNullableScalarRelationFilter, Prisma.ClassWhereInput> | null
   group_teacher_class_name?: Prisma.XOR<Prisma.ClassNullableScalarRelationFilter, Prisma.ClassWhereInput> | null
-  subjects?: Prisma.SubjectTeacherListRelationFilter
+  spouse_information?: Prisma.XOR<Prisma.SpouseInformationNullableScalarRelationFilter, Prisma.SpouseInformationWhereInput> | null
   students_in_responsibility?: Prisma.StudentResponsibilityListRelationFilter
+  subjects?: Prisma.SubjectTeacherListRelationFilter
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityListRelationFilter
-  my_classes?: Prisma.ClassRoutineListRelationFilter
-  created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
-  updated_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
+  joining_history?: Prisma.JoiningHistoryListRelationFilter
+  promoted_history?: Prisma.XOR<Prisma.PromotedHistoryNullableScalarRelationFilter, Prisma.PromotedHistoryWhereInput> | null
+  positions?: Prisma.UserPositionListRelationFilter
+  roles?: Prisma.UserRoleListRelationFilter
 }
 
 export type AcademicAdministrativeStaffOrderByWithRelationInput = {
@@ -322,23 +322,23 @@ export type AcademicAdministrativeStaffOrderByWithRelationInput = {
   updated_by_id?: Prisma.SortOrderInput | Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrderInput | Prisma.SortOrder
+  academic_results?: Prisma.AcademicResultOrderByWithRelationInput
+  created_by?: Prisma.UserOrderByWithRelationInput
   current_position?: Prisma.UserPositionOrderByWithRelationInput
   current_role?: Prisma.UserRoleOrderByWithRelationInput
-  positions?: Prisma.UserPositionOrderByRelationAggregateInput
-  roles?: Prisma.UserRoleOrderByRelationAggregateInput
-  joining_history?: Prisma.JoiningHistoryOrderByRelationAggregateInput
-  promoted_history?: Prisma.PromotedHistoryOrderByRelationAggregateInput
+  updated_by?: Prisma.UserOrderByWithRelationInput
   user_primary_data?: Prisma.UserOrderByWithRelationInput
-  spouse_information?: Prisma.SpouseInformationOrderByWithRelationInput
-  academic_results?: Prisma.AcademicResultOrderByWithRelationInput
+  my_classes?: Prisma.ClassRoutineOrderByRelationAggregateInput
   grade_teacher_class_name?: Prisma.ClassOrderByWithRelationInput
   group_teacher_class_name?: Prisma.ClassOrderByWithRelationInput
-  subjects?: Prisma.SubjectTeacherOrderByRelationAggregateInput
+  spouse_information?: Prisma.SpouseInformationOrderByWithRelationInput
   students_in_responsibility?: Prisma.StudentResponsibilityOrderByRelationAggregateInput
+  subjects?: Prisma.SubjectTeacherOrderByRelationAggregateInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityOrderByRelationAggregateInput
-  my_classes?: Prisma.ClassRoutineOrderByRelationAggregateInput
-  created_by?: Prisma.UserOrderByWithRelationInput
-  updated_by?: Prisma.UserOrderByWithRelationInput
+  joining_history?: Prisma.JoiningHistoryOrderByRelationAggregateInput
+  promoted_history?: Prisma.PromotedHistoryOrderByWithRelationInput
+  positions?: Prisma.UserPositionOrderByRelationAggregateInput
+  roles?: Prisma.UserRoleOrderByRelationAggregateInput
 }
 
 export type AcademicAdministrativeStaffWhereUniqueInput = Prisma.AtLeast<{
@@ -359,23 +359,23 @@ export type AcademicAdministrativeStaffWhereUniqueInput = Prisma.AtLeast<{
   updated_by_id?: Prisma.StringNullableFilter<"AcademicAdministrativeStaff"> | string | null
   created_at?: Prisma.DateTimeFilter<"AcademicAdministrativeStaff"> | Date | string
   updated_at?: Prisma.DateTimeNullableFilter<"AcademicAdministrativeStaff"> | Date | string | null
+  academic_results?: Prisma.XOR<Prisma.AcademicResultNullableScalarRelationFilter, Prisma.AcademicResultWhereInput> | null
+  created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
   current_position?: Prisma.XOR<Prisma.UserPositionScalarRelationFilter, Prisma.UserPositionWhereInput>
   current_role?: Prisma.XOR<Prisma.UserRoleScalarRelationFilter, Prisma.UserRoleWhereInput>
-  positions?: Prisma.UserPositionListRelationFilter
-  roles?: Prisma.UserRoleListRelationFilter
-  joining_history?: Prisma.JoiningHistoryListRelationFilter
-  promoted_history?: Prisma.PromotedHistoryListRelationFilter
+  updated_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
   user_primary_data?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
-  spouse_information?: Prisma.XOR<Prisma.SpouseInformationNullableScalarRelationFilter, Prisma.SpouseInformationWhereInput> | null
-  academic_results?: Prisma.XOR<Prisma.AcademicResultNullableScalarRelationFilter, Prisma.AcademicResultWhereInput> | null
+  my_classes?: Prisma.ClassRoutineListRelationFilter
   grade_teacher_class_name?: Prisma.XOR<Prisma.ClassNullableScalarRelationFilter, Prisma.ClassWhereInput> | null
   group_teacher_class_name?: Prisma.XOR<Prisma.ClassNullableScalarRelationFilter, Prisma.ClassWhereInput> | null
-  subjects?: Prisma.SubjectTeacherListRelationFilter
+  spouse_information?: Prisma.XOR<Prisma.SpouseInformationNullableScalarRelationFilter, Prisma.SpouseInformationWhereInput> | null
   students_in_responsibility?: Prisma.StudentResponsibilityListRelationFilter
+  subjects?: Prisma.SubjectTeacherListRelationFilter
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityListRelationFilter
-  my_classes?: Prisma.ClassRoutineListRelationFilter
-  created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
-  updated_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
+  joining_history?: Prisma.JoiningHistoryListRelationFilter
+  promoted_history?: Prisma.XOR<Prisma.PromotedHistoryNullableScalarRelationFilter, Prisma.PromotedHistoryWhereInput> | null
+  positions?: Prisma.UserPositionListRelationFilter
+  roles?: Prisma.UserRoleListRelationFilter
 }, "id" | "user_id">
 
 export type AcademicAdministrativeStaffOrderByWithAggregationInput = {
@@ -430,23 +430,23 @@ export type AcademicAdministrativeStaffCreateInput = {
   is_responsible_teacher?: boolean
   created_at?: Date | string
   updated_at?: Date | string | null
+  academic_results?: Prisma.AcademicResultCreateNestedOneWithoutTeacherInput
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_academic_teachersInput
   current_position: Prisma.UserPositionCreateNestedOneWithoutCurrent_academic_teachersInput
   current_role: Prisma.UserRoleCreateNestedOneWithoutCurrent_academic_teachersInput
-  positions?: Prisma.UserPositionCreateNestedManyWithoutAcademic_teachersInput
-  roles?: Prisma.UserRoleCreateNestedManyWithoutAcademic_teachersInput
-  joining_history?: Prisma.JoiningHistoryCreateNestedManyWithoutTeacherInput
-  promoted_history?: Prisma.PromotedHistoryCreateNestedManyWithoutAcademic_administrative_staffInput
+  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_academic_teachersInput
   user_primary_data: Prisma.UserCreateNestedOneWithoutTeacher_profileInput
-  spouse_information?: Prisma.SpouseInformationCreateNestedOneWithoutTeacherInput
-  academic_results?: Prisma.AcademicResultCreateNestedOneWithoutTeacherInput
+  my_classes?: Prisma.ClassRoutineCreateNestedManyWithoutTeacherInput
   grade_teacher_class_name?: Prisma.ClassCreateNestedOneWithoutGrade_teacherInput
   group_teacher_class_name?: Prisma.ClassCreateNestedOneWithoutGroup_teacherInput
-  subjects?: Prisma.SubjectTeacherCreateNestedManyWithoutTeacherInput
+  spouse_information?: Prisma.SpouseInformationCreateNestedOneWithoutTeacherInput
   students_in_responsibility?: Prisma.StudentResponsibilityCreateNestedManyWithoutTeacherInput
+  subjects?: Prisma.SubjectTeacherCreateNestedManyWithoutTeacherInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityCreateNestedManyWithoutTeacherInput
-  my_classes?: Prisma.ClassRoutineCreateNestedManyWithoutTeacherInput
-  created_by?: Prisma.UserCreateNestedOneWithoutCreated_academic_teachersInput
-  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_academic_teachersInput
+  joining_history?: Prisma.JoiningHistoryCreateNestedManyWithoutTeacherInput
+  promoted_history?: Prisma.PromotedHistoryCreateNestedOneWithoutAcademic_administrative_staffInput
+  positions?: Prisma.UserPositionCreateNestedManyWithoutAcademic_administrative_staffsInput
+  roles?: Prisma.UserRoleCreateNestedManyWithoutAcademic_teachersInput
 }
 
 export type AcademicAdministrativeStaffUncheckedCreateInput = {
@@ -464,18 +464,18 @@ export type AcademicAdministrativeStaffUncheckedCreateInput = {
   updated_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
-  positions?: Prisma.UserPositionUncheckedCreateNestedManyWithoutAcademic_teachersInput
-  roles?: Prisma.UserRoleUncheckedCreateNestedManyWithoutAcademic_teachersInput
-  joining_history?: Prisma.JoiningHistoryUncheckedCreateNestedManyWithoutTeacherInput
-  promoted_history?: Prisma.PromotedHistoryUncheckedCreateNestedManyWithoutAcademic_administrative_staffInput
-  spouse_information?: Prisma.SpouseInformationUncheckedCreateNestedOneWithoutTeacherInput
   academic_results?: Prisma.AcademicResultUncheckedCreateNestedOneWithoutTeacherInput
+  my_classes?: Prisma.ClassRoutineUncheckedCreateNestedManyWithoutTeacherInput
   grade_teacher_class_name?: Prisma.ClassUncheckedCreateNestedOneWithoutGrade_teacherInput
   group_teacher_class_name?: Prisma.ClassUncheckedCreateNestedOneWithoutGroup_teacherInput
-  subjects?: Prisma.SubjectTeacherUncheckedCreateNestedManyWithoutTeacherInput
+  spouse_information?: Prisma.SpouseInformationUncheckedCreateNestedOneWithoutTeacherInput
   students_in_responsibility?: Prisma.StudentResponsibilityUncheckedCreateNestedManyWithoutTeacherInput
+  subjects?: Prisma.SubjectTeacherUncheckedCreateNestedManyWithoutTeacherInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUncheckedCreateNestedManyWithoutTeacherInput
-  my_classes?: Prisma.ClassRoutineUncheckedCreateNestedManyWithoutTeacherInput
+  joining_history?: Prisma.JoiningHistoryUncheckedCreateNestedManyWithoutTeacherInput
+  promoted_history?: Prisma.PromotedHistoryUncheckedCreateNestedOneWithoutAcademic_administrative_staffInput
+  positions?: Prisma.UserPositionUncheckedCreateNestedManyWithoutAcademic_administrative_staffsInput
+  roles?: Prisma.UserRoleUncheckedCreateNestedManyWithoutAcademic_teachersInput
 }
 
 export type AcademicAdministrativeStaffUpdateInput = {
@@ -488,23 +488,23 @@ export type AcademicAdministrativeStaffUpdateInput = {
   is_responsible_teacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  academic_results?: Prisma.AcademicResultUpdateOneWithoutTeacherNestedInput
+  created_by?: Prisma.UserUpdateOneWithoutCreated_academic_teachersNestedInput
   current_position?: Prisma.UserPositionUpdateOneRequiredWithoutCurrent_academic_teachersNestedInput
   current_role?: Prisma.UserRoleUpdateOneRequiredWithoutCurrent_academic_teachersNestedInput
-  positions?: Prisma.UserPositionUpdateManyWithoutAcademic_teachersNestedInput
-  roles?: Prisma.UserRoleUpdateManyWithoutAcademic_teachersNestedInput
-  joining_history?: Prisma.JoiningHistoryUpdateManyWithoutTeacherNestedInput
-  promoted_history?: Prisma.PromotedHistoryUpdateManyWithoutAcademic_administrative_staffNestedInput
+  updated_by?: Prisma.UserUpdateOneWithoutUpdated_academic_teachersNestedInput
   user_primary_data?: Prisma.UserUpdateOneRequiredWithoutTeacher_profileNestedInput
-  spouse_information?: Prisma.SpouseInformationUpdateOneWithoutTeacherNestedInput
-  academic_results?: Prisma.AcademicResultUpdateOneWithoutTeacherNestedInput
+  my_classes?: Prisma.ClassRoutineUpdateManyWithoutTeacherNestedInput
   grade_teacher_class_name?: Prisma.ClassUpdateOneWithoutGrade_teacherNestedInput
   group_teacher_class_name?: Prisma.ClassUpdateOneWithoutGroup_teacherNestedInput
-  subjects?: Prisma.SubjectTeacherUpdateManyWithoutTeacherNestedInput
+  spouse_information?: Prisma.SpouseInformationUpdateOneWithoutTeacherNestedInput
   students_in_responsibility?: Prisma.StudentResponsibilityUpdateManyWithoutTeacherNestedInput
+  subjects?: Prisma.SubjectTeacherUpdateManyWithoutTeacherNestedInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUpdateManyWithoutTeacherNestedInput
-  my_classes?: Prisma.ClassRoutineUpdateManyWithoutTeacherNestedInput
-  created_by?: Prisma.UserUpdateOneWithoutCreated_academic_teachersNestedInput
-  updated_by?: Prisma.UserUpdateOneWithoutUpdated_academic_teachersNestedInput
+  joining_history?: Prisma.JoiningHistoryUpdateManyWithoutTeacherNestedInput
+  promoted_history?: Prisma.PromotedHistoryUpdateOneWithoutAcademic_administrative_staffNestedInput
+  positions?: Prisma.UserPositionUpdateManyWithoutAcademic_administrative_staffsNestedInput
+  roles?: Prisma.UserRoleUpdateManyWithoutAcademic_teachersNestedInput
 }
 
 export type AcademicAdministrativeStaffUncheckedUpdateInput = {
@@ -522,18 +522,18 @@ export type AcademicAdministrativeStaffUncheckedUpdateInput = {
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  positions?: Prisma.UserPositionUncheckedUpdateManyWithoutAcademic_teachersNestedInput
-  roles?: Prisma.UserRoleUncheckedUpdateManyWithoutAcademic_teachersNestedInput
-  joining_history?: Prisma.JoiningHistoryUncheckedUpdateManyWithoutTeacherNestedInput
-  promoted_history?: Prisma.PromotedHistoryUncheckedUpdateManyWithoutAcademic_administrative_staffNestedInput
-  spouse_information?: Prisma.SpouseInformationUncheckedUpdateOneWithoutTeacherNestedInput
   academic_results?: Prisma.AcademicResultUncheckedUpdateOneWithoutTeacherNestedInput
+  my_classes?: Prisma.ClassRoutineUncheckedUpdateManyWithoutTeacherNestedInput
   grade_teacher_class_name?: Prisma.ClassUncheckedUpdateOneWithoutGrade_teacherNestedInput
   group_teacher_class_name?: Prisma.ClassUncheckedUpdateOneWithoutGroup_teacherNestedInput
-  subjects?: Prisma.SubjectTeacherUncheckedUpdateManyWithoutTeacherNestedInput
+  spouse_information?: Prisma.SpouseInformationUncheckedUpdateOneWithoutTeacherNestedInput
   students_in_responsibility?: Prisma.StudentResponsibilityUncheckedUpdateManyWithoutTeacherNestedInput
+  subjects?: Prisma.SubjectTeacherUncheckedUpdateManyWithoutTeacherNestedInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUncheckedUpdateManyWithoutTeacherNestedInput
-  my_classes?: Prisma.ClassRoutineUncheckedUpdateManyWithoutTeacherNestedInput
+  joining_history?: Prisma.JoiningHistoryUncheckedUpdateManyWithoutTeacherNestedInput
+  promoted_history?: Prisma.PromotedHistoryUncheckedUpdateOneWithoutAcademic_administrative_staffNestedInput
+  positions?: Prisma.UserPositionUncheckedUpdateManyWithoutAcademic_administrative_staffsNestedInput
+  roles?: Prisma.UserRoleUncheckedUpdateManyWithoutAcademic_teachersNestedInput
 }
 
 export type AcademicAdministrativeStaffCreateManyInput = {
@@ -862,12 +862,6 @@ export type AcademicAdministrativeStaffUpdateOneWithoutHonourable_responsibiliti
   update?: Prisma.XOR<Prisma.XOR<Prisma.AcademicAdministrativeStaffUpdateToOneWithWhereWithoutHonourable_responsibilitiesInput, Prisma.AcademicAdministrativeStaffUpdateWithoutHonourable_responsibilitiesInput>, Prisma.AcademicAdministrativeStaffUncheckedUpdateWithoutHonourable_responsibilitiesInput>
 }
 
-export type AcademicAdministrativeStaffCreateNestedOneWithoutUser_primary_dataInput = {
-  create?: Prisma.XOR<Prisma.AcademicAdministrativeStaffCreateWithoutUser_primary_dataInput, Prisma.AcademicAdministrativeStaffUncheckedCreateWithoutUser_primary_dataInput>
-  connectOrCreate?: Prisma.AcademicAdministrativeStaffCreateOrConnectWithoutUser_primary_dataInput
-  connect?: Prisma.AcademicAdministrativeStaffWhereUniqueInput
-}
-
 export type AcademicAdministrativeStaffCreateNestedManyWithoutCreated_byInput = {
   create?: Prisma.XOR<Prisma.AcademicAdministrativeStaffCreateWithoutCreated_byInput, Prisma.AcademicAdministrativeStaffUncheckedCreateWithoutCreated_byInput> | Prisma.AcademicAdministrativeStaffCreateWithoutCreated_byInput[] | Prisma.AcademicAdministrativeStaffUncheckedCreateWithoutCreated_byInput[]
   connectOrCreate?: Prisma.AcademicAdministrativeStaffCreateOrConnectWithoutCreated_byInput | Prisma.AcademicAdministrativeStaffCreateOrConnectWithoutCreated_byInput[]
@@ -882,7 +876,7 @@ export type AcademicAdministrativeStaffCreateNestedManyWithoutUpdated_byInput = 
   connect?: Prisma.AcademicAdministrativeStaffWhereUniqueInput | Prisma.AcademicAdministrativeStaffWhereUniqueInput[]
 }
 
-export type AcademicAdministrativeStaffUncheckedCreateNestedOneWithoutUser_primary_dataInput = {
+export type AcademicAdministrativeStaffCreateNestedOneWithoutUser_primary_dataInput = {
   create?: Prisma.XOR<Prisma.AcademicAdministrativeStaffCreateWithoutUser_primary_dataInput, Prisma.AcademicAdministrativeStaffUncheckedCreateWithoutUser_primary_dataInput>
   connectOrCreate?: Prisma.AcademicAdministrativeStaffCreateOrConnectWithoutUser_primary_dataInput
   connect?: Prisma.AcademicAdministrativeStaffWhereUniqueInput
@@ -902,14 +896,10 @@ export type AcademicAdministrativeStaffUncheckedCreateNestedManyWithoutUpdated_b
   connect?: Prisma.AcademicAdministrativeStaffWhereUniqueInput | Prisma.AcademicAdministrativeStaffWhereUniqueInput[]
 }
 
-export type AcademicAdministrativeStaffUpdateOneWithoutUser_primary_dataNestedInput = {
+export type AcademicAdministrativeStaffUncheckedCreateNestedOneWithoutUser_primary_dataInput = {
   create?: Prisma.XOR<Prisma.AcademicAdministrativeStaffCreateWithoutUser_primary_dataInput, Prisma.AcademicAdministrativeStaffUncheckedCreateWithoutUser_primary_dataInput>
   connectOrCreate?: Prisma.AcademicAdministrativeStaffCreateOrConnectWithoutUser_primary_dataInput
-  upsert?: Prisma.AcademicAdministrativeStaffUpsertWithoutUser_primary_dataInput
-  disconnect?: Prisma.AcademicAdministrativeStaffWhereInput | boolean
-  delete?: Prisma.AcademicAdministrativeStaffWhereInput | boolean
   connect?: Prisma.AcademicAdministrativeStaffWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.AcademicAdministrativeStaffUpdateToOneWithWhereWithoutUser_primary_dataInput, Prisma.AcademicAdministrativeStaffUpdateWithoutUser_primary_dataInput>, Prisma.AcademicAdministrativeStaffUncheckedUpdateWithoutUser_primary_dataInput>
 }
 
 export type AcademicAdministrativeStaffUpdateManyWithoutCreated_byNestedInput = {
@@ -940,7 +930,7 @@ export type AcademicAdministrativeStaffUpdateManyWithoutUpdated_byNestedInput = 
   deleteMany?: Prisma.AcademicAdministrativeStaffScalarWhereInput | Prisma.AcademicAdministrativeStaffScalarWhereInput[]
 }
 
-export type AcademicAdministrativeStaffUncheckedUpdateOneWithoutUser_primary_dataNestedInput = {
+export type AcademicAdministrativeStaffUpdateOneWithoutUser_primary_dataNestedInput = {
   create?: Prisma.XOR<Prisma.AcademicAdministrativeStaffCreateWithoutUser_primary_dataInput, Prisma.AcademicAdministrativeStaffUncheckedCreateWithoutUser_primary_dataInput>
   connectOrCreate?: Prisma.AcademicAdministrativeStaffCreateOrConnectWithoutUser_primary_dataInput
   upsert?: Prisma.AcademicAdministrativeStaffUpsertWithoutUser_primary_dataInput
@@ -976,6 +966,16 @@ export type AcademicAdministrativeStaffUncheckedUpdateManyWithoutUpdated_byNeste
   update?: Prisma.AcademicAdministrativeStaffUpdateWithWhereUniqueWithoutUpdated_byInput | Prisma.AcademicAdministrativeStaffUpdateWithWhereUniqueWithoutUpdated_byInput[]
   updateMany?: Prisma.AcademicAdministrativeStaffUpdateManyWithWhereWithoutUpdated_byInput | Prisma.AcademicAdministrativeStaffUpdateManyWithWhereWithoutUpdated_byInput[]
   deleteMany?: Prisma.AcademicAdministrativeStaffScalarWhereInput | Prisma.AcademicAdministrativeStaffScalarWhereInput[]
+}
+
+export type AcademicAdministrativeStaffUncheckedUpdateOneWithoutUser_primary_dataNestedInput = {
+  create?: Prisma.XOR<Prisma.AcademicAdministrativeStaffCreateWithoutUser_primary_dataInput, Prisma.AcademicAdministrativeStaffUncheckedCreateWithoutUser_primary_dataInput>
+  connectOrCreate?: Prisma.AcademicAdministrativeStaffCreateOrConnectWithoutUser_primary_dataInput
+  upsert?: Prisma.AcademicAdministrativeStaffUpsertWithoutUser_primary_dataInput
+  disconnect?: Prisma.AcademicAdministrativeStaffWhereInput | boolean
+  delete?: Prisma.AcademicAdministrativeStaffWhereInput | boolean
+  connect?: Prisma.AcademicAdministrativeStaffWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.AcademicAdministrativeStaffUpdateToOneWithWhereWithoutUser_primary_dataInput, Prisma.AcademicAdministrativeStaffUpdateWithoutUser_primary_dataInput>, Prisma.AcademicAdministrativeStaffUncheckedUpdateWithoutUser_primary_dataInput>
 }
 
 export type AcademicAdministrativeStaffCreateNestedManyWithoutCurrent_positionInput = {
@@ -1148,22 +1148,22 @@ export type AcademicAdministrativeStaffCreateWithoutAcademic_resultsInput = {
   is_responsible_teacher?: boolean
   created_at?: Date | string
   updated_at?: Date | string | null
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_academic_teachersInput
   current_position: Prisma.UserPositionCreateNestedOneWithoutCurrent_academic_teachersInput
   current_role: Prisma.UserRoleCreateNestedOneWithoutCurrent_academic_teachersInput
-  positions?: Prisma.UserPositionCreateNestedManyWithoutAcademic_teachersInput
-  roles?: Prisma.UserRoleCreateNestedManyWithoutAcademic_teachersInput
-  joining_history?: Prisma.JoiningHistoryCreateNestedManyWithoutTeacherInput
-  promoted_history?: Prisma.PromotedHistoryCreateNestedManyWithoutAcademic_administrative_staffInput
+  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_academic_teachersInput
   user_primary_data: Prisma.UserCreateNestedOneWithoutTeacher_profileInput
-  spouse_information?: Prisma.SpouseInformationCreateNestedOneWithoutTeacherInput
+  my_classes?: Prisma.ClassRoutineCreateNestedManyWithoutTeacherInput
   grade_teacher_class_name?: Prisma.ClassCreateNestedOneWithoutGrade_teacherInput
   group_teacher_class_name?: Prisma.ClassCreateNestedOneWithoutGroup_teacherInput
-  subjects?: Prisma.SubjectTeacherCreateNestedManyWithoutTeacherInput
+  spouse_information?: Prisma.SpouseInformationCreateNestedOneWithoutTeacherInput
   students_in_responsibility?: Prisma.StudentResponsibilityCreateNestedManyWithoutTeacherInput
+  subjects?: Prisma.SubjectTeacherCreateNestedManyWithoutTeacherInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityCreateNestedManyWithoutTeacherInput
-  my_classes?: Prisma.ClassRoutineCreateNestedManyWithoutTeacherInput
-  created_by?: Prisma.UserCreateNestedOneWithoutCreated_academic_teachersInput
-  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_academic_teachersInput
+  joining_history?: Prisma.JoiningHistoryCreateNestedManyWithoutTeacherInput
+  promoted_history?: Prisma.PromotedHistoryCreateNestedOneWithoutAcademic_administrative_staffInput
+  positions?: Prisma.UserPositionCreateNestedManyWithoutAcademic_administrative_staffsInput
+  roles?: Prisma.UserRoleCreateNestedManyWithoutAcademic_teachersInput
 }
 
 export type AcademicAdministrativeStaffUncheckedCreateWithoutAcademic_resultsInput = {
@@ -1181,17 +1181,17 @@ export type AcademicAdministrativeStaffUncheckedCreateWithoutAcademic_resultsInp
   updated_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
-  positions?: Prisma.UserPositionUncheckedCreateNestedManyWithoutAcademic_teachersInput
-  roles?: Prisma.UserRoleUncheckedCreateNestedManyWithoutAcademic_teachersInput
-  joining_history?: Prisma.JoiningHistoryUncheckedCreateNestedManyWithoutTeacherInput
-  promoted_history?: Prisma.PromotedHistoryUncheckedCreateNestedManyWithoutAcademic_administrative_staffInput
-  spouse_information?: Prisma.SpouseInformationUncheckedCreateNestedOneWithoutTeacherInput
+  my_classes?: Prisma.ClassRoutineUncheckedCreateNestedManyWithoutTeacherInput
   grade_teacher_class_name?: Prisma.ClassUncheckedCreateNestedOneWithoutGrade_teacherInput
   group_teacher_class_name?: Prisma.ClassUncheckedCreateNestedOneWithoutGroup_teacherInput
-  subjects?: Prisma.SubjectTeacherUncheckedCreateNestedManyWithoutTeacherInput
+  spouse_information?: Prisma.SpouseInformationUncheckedCreateNestedOneWithoutTeacherInput
   students_in_responsibility?: Prisma.StudentResponsibilityUncheckedCreateNestedManyWithoutTeacherInput
+  subjects?: Prisma.SubjectTeacherUncheckedCreateNestedManyWithoutTeacherInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUncheckedCreateNestedManyWithoutTeacherInput
-  my_classes?: Prisma.ClassRoutineUncheckedCreateNestedManyWithoutTeacherInput
+  joining_history?: Prisma.JoiningHistoryUncheckedCreateNestedManyWithoutTeacherInput
+  promoted_history?: Prisma.PromotedHistoryUncheckedCreateNestedOneWithoutAcademic_administrative_staffInput
+  positions?: Prisma.UserPositionUncheckedCreateNestedManyWithoutAcademic_administrative_staffsInput
+  roles?: Prisma.UserRoleUncheckedCreateNestedManyWithoutAcademic_teachersInput
 }
 
 export type AcademicAdministrativeStaffCreateOrConnectWithoutAcademic_resultsInput = {
@@ -1220,22 +1220,22 @@ export type AcademicAdministrativeStaffUpdateWithoutAcademic_resultsInput = {
   is_responsible_teacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  created_by?: Prisma.UserUpdateOneWithoutCreated_academic_teachersNestedInput
   current_position?: Prisma.UserPositionUpdateOneRequiredWithoutCurrent_academic_teachersNestedInput
   current_role?: Prisma.UserRoleUpdateOneRequiredWithoutCurrent_academic_teachersNestedInput
-  positions?: Prisma.UserPositionUpdateManyWithoutAcademic_teachersNestedInput
-  roles?: Prisma.UserRoleUpdateManyWithoutAcademic_teachersNestedInput
-  joining_history?: Prisma.JoiningHistoryUpdateManyWithoutTeacherNestedInput
-  promoted_history?: Prisma.PromotedHistoryUpdateManyWithoutAcademic_administrative_staffNestedInput
+  updated_by?: Prisma.UserUpdateOneWithoutUpdated_academic_teachersNestedInput
   user_primary_data?: Prisma.UserUpdateOneRequiredWithoutTeacher_profileNestedInput
-  spouse_information?: Prisma.SpouseInformationUpdateOneWithoutTeacherNestedInput
+  my_classes?: Prisma.ClassRoutineUpdateManyWithoutTeacherNestedInput
   grade_teacher_class_name?: Prisma.ClassUpdateOneWithoutGrade_teacherNestedInput
   group_teacher_class_name?: Prisma.ClassUpdateOneWithoutGroup_teacherNestedInput
-  subjects?: Prisma.SubjectTeacherUpdateManyWithoutTeacherNestedInput
+  spouse_information?: Prisma.SpouseInformationUpdateOneWithoutTeacherNestedInput
   students_in_responsibility?: Prisma.StudentResponsibilityUpdateManyWithoutTeacherNestedInput
+  subjects?: Prisma.SubjectTeacherUpdateManyWithoutTeacherNestedInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUpdateManyWithoutTeacherNestedInput
-  my_classes?: Prisma.ClassRoutineUpdateManyWithoutTeacherNestedInput
-  created_by?: Prisma.UserUpdateOneWithoutCreated_academic_teachersNestedInput
-  updated_by?: Prisma.UserUpdateOneWithoutUpdated_academic_teachersNestedInput
+  joining_history?: Prisma.JoiningHistoryUpdateManyWithoutTeacherNestedInput
+  promoted_history?: Prisma.PromotedHistoryUpdateOneWithoutAcademic_administrative_staffNestedInput
+  positions?: Prisma.UserPositionUpdateManyWithoutAcademic_administrative_staffsNestedInput
+  roles?: Prisma.UserRoleUpdateManyWithoutAcademic_teachersNestedInput
 }
 
 export type AcademicAdministrativeStaffUncheckedUpdateWithoutAcademic_resultsInput = {
@@ -1253,17 +1253,17 @@ export type AcademicAdministrativeStaffUncheckedUpdateWithoutAcademic_resultsInp
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  positions?: Prisma.UserPositionUncheckedUpdateManyWithoutAcademic_teachersNestedInput
-  roles?: Prisma.UserRoleUncheckedUpdateManyWithoutAcademic_teachersNestedInput
-  joining_history?: Prisma.JoiningHistoryUncheckedUpdateManyWithoutTeacherNestedInput
-  promoted_history?: Prisma.PromotedHistoryUncheckedUpdateManyWithoutAcademic_administrative_staffNestedInput
-  spouse_information?: Prisma.SpouseInformationUncheckedUpdateOneWithoutTeacherNestedInput
+  my_classes?: Prisma.ClassRoutineUncheckedUpdateManyWithoutTeacherNestedInput
   grade_teacher_class_name?: Prisma.ClassUncheckedUpdateOneWithoutGrade_teacherNestedInput
   group_teacher_class_name?: Prisma.ClassUncheckedUpdateOneWithoutGroup_teacherNestedInput
-  subjects?: Prisma.SubjectTeacherUncheckedUpdateManyWithoutTeacherNestedInput
+  spouse_information?: Prisma.SpouseInformationUncheckedUpdateOneWithoutTeacherNestedInput
   students_in_responsibility?: Prisma.StudentResponsibilityUncheckedUpdateManyWithoutTeacherNestedInput
+  subjects?: Prisma.SubjectTeacherUncheckedUpdateManyWithoutTeacherNestedInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUncheckedUpdateManyWithoutTeacherNestedInput
-  my_classes?: Prisma.ClassRoutineUncheckedUpdateManyWithoutTeacherNestedInput
+  joining_history?: Prisma.JoiningHistoryUncheckedUpdateManyWithoutTeacherNestedInput
+  promoted_history?: Prisma.PromotedHistoryUncheckedUpdateOneWithoutAcademic_administrative_staffNestedInput
+  positions?: Prisma.UserPositionUncheckedUpdateManyWithoutAcademic_administrative_staffsNestedInput
+  roles?: Prisma.UserRoleUncheckedUpdateManyWithoutAcademic_teachersNestedInput
 }
 
 export type AcademicAdministrativeStaffCreateWithoutGrade_teacher_class_nameInput = {
@@ -1276,22 +1276,22 @@ export type AcademicAdministrativeStaffCreateWithoutGrade_teacher_class_nameInpu
   is_responsible_teacher?: boolean
   created_at?: Date | string
   updated_at?: Date | string | null
+  academic_results?: Prisma.AcademicResultCreateNestedOneWithoutTeacherInput
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_academic_teachersInput
   current_position: Prisma.UserPositionCreateNestedOneWithoutCurrent_academic_teachersInput
   current_role: Prisma.UserRoleCreateNestedOneWithoutCurrent_academic_teachersInput
-  positions?: Prisma.UserPositionCreateNestedManyWithoutAcademic_teachersInput
-  roles?: Prisma.UserRoleCreateNestedManyWithoutAcademic_teachersInput
-  joining_history?: Prisma.JoiningHistoryCreateNestedManyWithoutTeacherInput
-  promoted_history?: Prisma.PromotedHistoryCreateNestedManyWithoutAcademic_administrative_staffInput
-  user_primary_data: Prisma.UserCreateNestedOneWithoutTeacher_profileInput
-  spouse_information?: Prisma.SpouseInformationCreateNestedOneWithoutTeacherInput
-  academic_results?: Prisma.AcademicResultCreateNestedOneWithoutTeacherInput
-  group_teacher_class_name?: Prisma.ClassCreateNestedOneWithoutGroup_teacherInput
-  subjects?: Prisma.SubjectTeacherCreateNestedManyWithoutTeacherInput
-  students_in_responsibility?: Prisma.StudentResponsibilityCreateNestedManyWithoutTeacherInput
-  honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityCreateNestedManyWithoutTeacherInput
-  my_classes?: Prisma.ClassRoutineCreateNestedManyWithoutTeacherInput
-  created_by?: Prisma.UserCreateNestedOneWithoutCreated_academic_teachersInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_academic_teachersInput
+  user_primary_data: Prisma.UserCreateNestedOneWithoutTeacher_profileInput
+  my_classes?: Prisma.ClassRoutineCreateNestedManyWithoutTeacherInput
+  group_teacher_class_name?: Prisma.ClassCreateNestedOneWithoutGroup_teacherInput
+  spouse_information?: Prisma.SpouseInformationCreateNestedOneWithoutTeacherInput
+  students_in_responsibility?: Prisma.StudentResponsibilityCreateNestedManyWithoutTeacherInput
+  subjects?: Prisma.SubjectTeacherCreateNestedManyWithoutTeacherInput
+  honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityCreateNestedManyWithoutTeacherInput
+  joining_history?: Prisma.JoiningHistoryCreateNestedManyWithoutTeacherInput
+  promoted_history?: Prisma.PromotedHistoryCreateNestedOneWithoutAcademic_administrative_staffInput
+  positions?: Prisma.UserPositionCreateNestedManyWithoutAcademic_administrative_staffsInput
+  roles?: Prisma.UserRoleCreateNestedManyWithoutAcademic_teachersInput
 }
 
 export type AcademicAdministrativeStaffUncheckedCreateWithoutGrade_teacher_class_nameInput = {
@@ -1309,17 +1309,17 @@ export type AcademicAdministrativeStaffUncheckedCreateWithoutGrade_teacher_class
   updated_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
-  positions?: Prisma.UserPositionUncheckedCreateNestedManyWithoutAcademic_teachersInput
-  roles?: Prisma.UserRoleUncheckedCreateNestedManyWithoutAcademic_teachersInput
-  joining_history?: Prisma.JoiningHistoryUncheckedCreateNestedManyWithoutTeacherInput
-  promoted_history?: Prisma.PromotedHistoryUncheckedCreateNestedManyWithoutAcademic_administrative_staffInput
-  spouse_information?: Prisma.SpouseInformationUncheckedCreateNestedOneWithoutTeacherInput
   academic_results?: Prisma.AcademicResultUncheckedCreateNestedOneWithoutTeacherInput
-  group_teacher_class_name?: Prisma.ClassUncheckedCreateNestedOneWithoutGroup_teacherInput
-  subjects?: Prisma.SubjectTeacherUncheckedCreateNestedManyWithoutTeacherInput
-  students_in_responsibility?: Prisma.StudentResponsibilityUncheckedCreateNestedManyWithoutTeacherInput
-  honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUncheckedCreateNestedManyWithoutTeacherInput
   my_classes?: Prisma.ClassRoutineUncheckedCreateNestedManyWithoutTeacherInput
+  group_teacher_class_name?: Prisma.ClassUncheckedCreateNestedOneWithoutGroup_teacherInput
+  spouse_information?: Prisma.SpouseInformationUncheckedCreateNestedOneWithoutTeacherInput
+  students_in_responsibility?: Prisma.StudentResponsibilityUncheckedCreateNestedManyWithoutTeacherInput
+  subjects?: Prisma.SubjectTeacherUncheckedCreateNestedManyWithoutTeacherInput
+  honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUncheckedCreateNestedManyWithoutTeacherInput
+  joining_history?: Prisma.JoiningHistoryUncheckedCreateNestedManyWithoutTeacherInput
+  promoted_history?: Prisma.PromotedHistoryUncheckedCreateNestedOneWithoutAcademic_administrative_staffInput
+  positions?: Prisma.UserPositionUncheckedCreateNestedManyWithoutAcademic_administrative_staffsInput
+  roles?: Prisma.UserRoleUncheckedCreateNestedManyWithoutAcademic_teachersInput
 }
 
 export type AcademicAdministrativeStaffCreateOrConnectWithoutGrade_teacher_class_nameInput = {
@@ -1337,22 +1337,22 @@ export type AcademicAdministrativeStaffCreateWithoutGroup_teacher_class_nameInpu
   is_responsible_teacher?: boolean
   created_at?: Date | string
   updated_at?: Date | string | null
+  academic_results?: Prisma.AcademicResultCreateNestedOneWithoutTeacherInput
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_academic_teachersInput
   current_position: Prisma.UserPositionCreateNestedOneWithoutCurrent_academic_teachersInput
   current_role: Prisma.UserRoleCreateNestedOneWithoutCurrent_academic_teachersInput
-  positions?: Prisma.UserPositionCreateNestedManyWithoutAcademic_teachersInput
-  roles?: Prisma.UserRoleCreateNestedManyWithoutAcademic_teachersInput
-  joining_history?: Prisma.JoiningHistoryCreateNestedManyWithoutTeacherInput
-  promoted_history?: Prisma.PromotedHistoryCreateNestedManyWithoutAcademic_administrative_staffInput
-  user_primary_data: Prisma.UserCreateNestedOneWithoutTeacher_profileInput
-  spouse_information?: Prisma.SpouseInformationCreateNestedOneWithoutTeacherInput
-  academic_results?: Prisma.AcademicResultCreateNestedOneWithoutTeacherInput
-  grade_teacher_class_name?: Prisma.ClassCreateNestedOneWithoutGrade_teacherInput
-  subjects?: Prisma.SubjectTeacherCreateNestedManyWithoutTeacherInput
-  students_in_responsibility?: Prisma.StudentResponsibilityCreateNestedManyWithoutTeacherInput
-  honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityCreateNestedManyWithoutTeacherInput
-  my_classes?: Prisma.ClassRoutineCreateNestedManyWithoutTeacherInput
-  created_by?: Prisma.UserCreateNestedOneWithoutCreated_academic_teachersInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_academic_teachersInput
+  user_primary_data: Prisma.UserCreateNestedOneWithoutTeacher_profileInput
+  my_classes?: Prisma.ClassRoutineCreateNestedManyWithoutTeacherInput
+  grade_teacher_class_name?: Prisma.ClassCreateNestedOneWithoutGrade_teacherInput
+  spouse_information?: Prisma.SpouseInformationCreateNestedOneWithoutTeacherInput
+  students_in_responsibility?: Prisma.StudentResponsibilityCreateNestedManyWithoutTeacherInput
+  subjects?: Prisma.SubjectTeacherCreateNestedManyWithoutTeacherInput
+  honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityCreateNestedManyWithoutTeacherInput
+  joining_history?: Prisma.JoiningHistoryCreateNestedManyWithoutTeacherInput
+  promoted_history?: Prisma.PromotedHistoryCreateNestedOneWithoutAcademic_administrative_staffInput
+  positions?: Prisma.UserPositionCreateNestedManyWithoutAcademic_administrative_staffsInput
+  roles?: Prisma.UserRoleCreateNestedManyWithoutAcademic_teachersInput
 }
 
 export type AcademicAdministrativeStaffUncheckedCreateWithoutGroup_teacher_class_nameInput = {
@@ -1370,17 +1370,17 @@ export type AcademicAdministrativeStaffUncheckedCreateWithoutGroup_teacher_class
   updated_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
-  positions?: Prisma.UserPositionUncheckedCreateNestedManyWithoutAcademic_teachersInput
-  roles?: Prisma.UserRoleUncheckedCreateNestedManyWithoutAcademic_teachersInput
-  joining_history?: Prisma.JoiningHistoryUncheckedCreateNestedManyWithoutTeacherInput
-  promoted_history?: Prisma.PromotedHistoryUncheckedCreateNestedManyWithoutAcademic_administrative_staffInput
-  spouse_information?: Prisma.SpouseInformationUncheckedCreateNestedOneWithoutTeacherInput
   academic_results?: Prisma.AcademicResultUncheckedCreateNestedOneWithoutTeacherInput
-  grade_teacher_class_name?: Prisma.ClassUncheckedCreateNestedOneWithoutGrade_teacherInput
-  subjects?: Prisma.SubjectTeacherUncheckedCreateNestedManyWithoutTeacherInput
-  students_in_responsibility?: Prisma.StudentResponsibilityUncheckedCreateNestedManyWithoutTeacherInput
-  honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUncheckedCreateNestedManyWithoutTeacherInput
   my_classes?: Prisma.ClassRoutineUncheckedCreateNestedManyWithoutTeacherInput
+  grade_teacher_class_name?: Prisma.ClassUncheckedCreateNestedOneWithoutGrade_teacherInput
+  spouse_information?: Prisma.SpouseInformationUncheckedCreateNestedOneWithoutTeacherInput
+  students_in_responsibility?: Prisma.StudentResponsibilityUncheckedCreateNestedManyWithoutTeacherInput
+  subjects?: Prisma.SubjectTeacherUncheckedCreateNestedManyWithoutTeacherInput
+  honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUncheckedCreateNestedManyWithoutTeacherInput
+  joining_history?: Prisma.JoiningHistoryUncheckedCreateNestedManyWithoutTeacherInput
+  promoted_history?: Prisma.PromotedHistoryUncheckedCreateNestedOneWithoutAcademic_administrative_staffInput
+  positions?: Prisma.UserPositionUncheckedCreateNestedManyWithoutAcademic_administrative_staffsInput
+  roles?: Prisma.UserRoleUncheckedCreateNestedManyWithoutAcademic_teachersInput
 }
 
 export type AcademicAdministrativeStaffCreateOrConnectWithoutGroup_teacher_class_nameInput = {
@@ -1409,22 +1409,22 @@ export type AcademicAdministrativeStaffUpdateWithoutGrade_teacher_class_nameInpu
   is_responsible_teacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  academic_results?: Prisma.AcademicResultUpdateOneWithoutTeacherNestedInput
+  created_by?: Prisma.UserUpdateOneWithoutCreated_academic_teachersNestedInput
   current_position?: Prisma.UserPositionUpdateOneRequiredWithoutCurrent_academic_teachersNestedInput
   current_role?: Prisma.UserRoleUpdateOneRequiredWithoutCurrent_academic_teachersNestedInput
-  positions?: Prisma.UserPositionUpdateManyWithoutAcademic_teachersNestedInput
-  roles?: Prisma.UserRoleUpdateManyWithoutAcademic_teachersNestedInput
-  joining_history?: Prisma.JoiningHistoryUpdateManyWithoutTeacherNestedInput
-  promoted_history?: Prisma.PromotedHistoryUpdateManyWithoutAcademic_administrative_staffNestedInput
-  user_primary_data?: Prisma.UserUpdateOneRequiredWithoutTeacher_profileNestedInput
-  spouse_information?: Prisma.SpouseInformationUpdateOneWithoutTeacherNestedInput
-  academic_results?: Prisma.AcademicResultUpdateOneWithoutTeacherNestedInput
-  group_teacher_class_name?: Prisma.ClassUpdateOneWithoutGroup_teacherNestedInput
-  subjects?: Prisma.SubjectTeacherUpdateManyWithoutTeacherNestedInput
-  students_in_responsibility?: Prisma.StudentResponsibilityUpdateManyWithoutTeacherNestedInput
-  honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUpdateManyWithoutTeacherNestedInput
-  my_classes?: Prisma.ClassRoutineUpdateManyWithoutTeacherNestedInput
-  created_by?: Prisma.UserUpdateOneWithoutCreated_academic_teachersNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_academic_teachersNestedInput
+  user_primary_data?: Prisma.UserUpdateOneRequiredWithoutTeacher_profileNestedInput
+  my_classes?: Prisma.ClassRoutineUpdateManyWithoutTeacherNestedInput
+  group_teacher_class_name?: Prisma.ClassUpdateOneWithoutGroup_teacherNestedInput
+  spouse_information?: Prisma.SpouseInformationUpdateOneWithoutTeacherNestedInput
+  students_in_responsibility?: Prisma.StudentResponsibilityUpdateManyWithoutTeacherNestedInput
+  subjects?: Prisma.SubjectTeacherUpdateManyWithoutTeacherNestedInput
+  honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUpdateManyWithoutTeacherNestedInput
+  joining_history?: Prisma.JoiningHistoryUpdateManyWithoutTeacherNestedInput
+  promoted_history?: Prisma.PromotedHistoryUpdateOneWithoutAcademic_administrative_staffNestedInput
+  positions?: Prisma.UserPositionUpdateManyWithoutAcademic_administrative_staffsNestedInput
+  roles?: Prisma.UserRoleUpdateManyWithoutAcademic_teachersNestedInput
 }
 
 export type AcademicAdministrativeStaffUncheckedUpdateWithoutGrade_teacher_class_nameInput = {
@@ -1442,17 +1442,17 @@ export type AcademicAdministrativeStaffUncheckedUpdateWithoutGrade_teacher_class
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  positions?: Prisma.UserPositionUncheckedUpdateManyWithoutAcademic_teachersNestedInput
-  roles?: Prisma.UserRoleUncheckedUpdateManyWithoutAcademic_teachersNestedInput
-  joining_history?: Prisma.JoiningHistoryUncheckedUpdateManyWithoutTeacherNestedInput
-  promoted_history?: Prisma.PromotedHistoryUncheckedUpdateManyWithoutAcademic_administrative_staffNestedInput
-  spouse_information?: Prisma.SpouseInformationUncheckedUpdateOneWithoutTeacherNestedInput
   academic_results?: Prisma.AcademicResultUncheckedUpdateOneWithoutTeacherNestedInput
-  group_teacher_class_name?: Prisma.ClassUncheckedUpdateOneWithoutGroup_teacherNestedInput
-  subjects?: Prisma.SubjectTeacherUncheckedUpdateManyWithoutTeacherNestedInput
-  students_in_responsibility?: Prisma.StudentResponsibilityUncheckedUpdateManyWithoutTeacherNestedInput
-  honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUncheckedUpdateManyWithoutTeacherNestedInput
   my_classes?: Prisma.ClassRoutineUncheckedUpdateManyWithoutTeacherNestedInput
+  group_teacher_class_name?: Prisma.ClassUncheckedUpdateOneWithoutGroup_teacherNestedInput
+  spouse_information?: Prisma.SpouseInformationUncheckedUpdateOneWithoutTeacherNestedInput
+  students_in_responsibility?: Prisma.StudentResponsibilityUncheckedUpdateManyWithoutTeacherNestedInput
+  subjects?: Prisma.SubjectTeacherUncheckedUpdateManyWithoutTeacherNestedInput
+  honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUncheckedUpdateManyWithoutTeacherNestedInput
+  joining_history?: Prisma.JoiningHistoryUncheckedUpdateManyWithoutTeacherNestedInput
+  promoted_history?: Prisma.PromotedHistoryUncheckedUpdateOneWithoutAcademic_administrative_staffNestedInput
+  positions?: Prisma.UserPositionUncheckedUpdateManyWithoutAcademic_administrative_staffsNestedInput
+  roles?: Prisma.UserRoleUncheckedUpdateManyWithoutAcademic_teachersNestedInput
 }
 
 export type AcademicAdministrativeStaffUpsertWithoutGroup_teacher_class_nameInput = {
@@ -1476,22 +1476,22 @@ export type AcademicAdministrativeStaffUpdateWithoutGroup_teacher_class_nameInpu
   is_responsible_teacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  academic_results?: Prisma.AcademicResultUpdateOneWithoutTeacherNestedInput
+  created_by?: Prisma.UserUpdateOneWithoutCreated_academic_teachersNestedInput
   current_position?: Prisma.UserPositionUpdateOneRequiredWithoutCurrent_academic_teachersNestedInput
   current_role?: Prisma.UserRoleUpdateOneRequiredWithoutCurrent_academic_teachersNestedInput
-  positions?: Prisma.UserPositionUpdateManyWithoutAcademic_teachersNestedInput
-  roles?: Prisma.UserRoleUpdateManyWithoutAcademic_teachersNestedInput
-  joining_history?: Prisma.JoiningHistoryUpdateManyWithoutTeacherNestedInput
-  promoted_history?: Prisma.PromotedHistoryUpdateManyWithoutAcademic_administrative_staffNestedInput
-  user_primary_data?: Prisma.UserUpdateOneRequiredWithoutTeacher_profileNestedInput
-  spouse_information?: Prisma.SpouseInformationUpdateOneWithoutTeacherNestedInput
-  academic_results?: Prisma.AcademicResultUpdateOneWithoutTeacherNestedInput
-  grade_teacher_class_name?: Prisma.ClassUpdateOneWithoutGrade_teacherNestedInput
-  subjects?: Prisma.SubjectTeacherUpdateManyWithoutTeacherNestedInput
-  students_in_responsibility?: Prisma.StudentResponsibilityUpdateManyWithoutTeacherNestedInput
-  honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUpdateManyWithoutTeacherNestedInput
-  my_classes?: Prisma.ClassRoutineUpdateManyWithoutTeacherNestedInput
-  created_by?: Prisma.UserUpdateOneWithoutCreated_academic_teachersNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_academic_teachersNestedInput
+  user_primary_data?: Prisma.UserUpdateOneRequiredWithoutTeacher_profileNestedInput
+  my_classes?: Prisma.ClassRoutineUpdateManyWithoutTeacherNestedInput
+  grade_teacher_class_name?: Prisma.ClassUpdateOneWithoutGrade_teacherNestedInput
+  spouse_information?: Prisma.SpouseInformationUpdateOneWithoutTeacherNestedInput
+  students_in_responsibility?: Prisma.StudentResponsibilityUpdateManyWithoutTeacherNestedInput
+  subjects?: Prisma.SubjectTeacherUpdateManyWithoutTeacherNestedInput
+  honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUpdateManyWithoutTeacherNestedInput
+  joining_history?: Prisma.JoiningHistoryUpdateManyWithoutTeacherNestedInput
+  promoted_history?: Prisma.PromotedHistoryUpdateOneWithoutAcademic_administrative_staffNestedInput
+  positions?: Prisma.UserPositionUpdateManyWithoutAcademic_administrative_staffsNestedInput
+  roles?: Prisma.UserRoleUpdateManyWithoutAcademic_teachersNestedInput
 }
 
 export type AcademicAdministrativeStaffUncheckedUpdateWithoutGroup_teacher_class_nameInput = {
@@ -1509,17 +1509,17 @@ export type AcademicAdministrativeStaffUncheckedUpdateWithoutGroup_teacher_class
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  positions?: Prisma.UserPositionUncheckedUpdateManyWithoutAcademic_teachersNestedInput
-  roles?: Prisma.UserRoleUncheckedUpdateManyWithoutAcademic_teachersNestedInput
-  joining_history?: Prisma.JoiningHistoryUncheckedUpdateManyWithoutTeacherNestedInput
-  promoted_history?: Prisma.PromotedHistoryUncheckedUpdateManyWithoutAcademic_administrative_staffNestedInput
-  spouse_information?: Prisma.SpouseInformationUncheckedUpdateOneWithoutTeacherNestedInput
   academic_results?: Prisma.AcademicResultUncheckedUpdateOneWithoutTeacherNestedInput
-  grade_teacher_class_name?: Prisma.ClassUncheckedUpdateOneWithoutGrade_teacherNestedInput
-  subjects?: Prisma.SubjectTeacherUncheckedUpdateManyWithoutTeacherNestedInput
-  students_in_responsibility?: Prisma.StudentResponsibilityUncheckedUpdateManyWithoutTeacherNestedInput
-  honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUncheckedUpdateManyWithoutTeacherNestedInput
   my_classes?: Prisma.ClassRoutineUncheckedUpdateManyWithoutTeacherNestedInput
+  grade_teacher_class_name?: Prisma.ClassUncheckedUpdateOneWithoutGrade_teacherNestedInput
+  spouse_information?: Prisma.SpouseInformationUncheckedUpdateOneWithoutTeacherNestedInput
+  students_in_responsibility?: Prisma.StudentResponsibilityUncheckedUpdateManyWithoutTeacherNestedInput
+  subjects?: Prisma.SubjectTeacherUncheckedUpdateManyWithoutTeacherNestedInput
+  honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUncheckedUpdateManyWithoutTeacherNestedInput
+  joining_history?: Prisma.JoiningHistoryUncheckedUpdateManyWithoutTeacherNestedInput
+  promoted_history?: Prisma.PromotedHistoryUncheckedUpdateOneWithoutAcademic_administrative_staffNestedInput
+  positions?: Prisma.UserPositionUncheckedUpdateManyWithoutAcademic_administrative_staffsNestedInput
+  roles?: Prisma.UserRoleUncheckedUpdateManyWithoutAcademic_teachersNestedInput
 }
 
 export type AcademicAdministrativeStaffCreateWithoutMy_classesInput = {
@@ -1532,22 +1532,22 @@ export type AcademicAdministrativeStaffCreateWithoutMy_classesInput = {
   is_responsible_teacher?: boolean
   created_at?: Date | string
   updated_at?: Date | string | null
+  academic_results?: Prisma.AcademicResultCreateNestedOneWithoutTeacherInput
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_academic_teachersInput
   current_position: Prisma.UserPositionCreateNestedOneWithoutCurrent_academic_teachersInput
   current_role: Prisma.UserRoleCreateNestedOneWithoutCurrent_academic_teachersInput
-  positions?: Prisma.UserPositionCreateNestedManyWithoutAcademic_teachersInput
-  roles?: Prisma.UserRoleCreateNestedManyWithoutAcademic_teachersInput
-  joining_history?: Prisma.JoiningHistoryCreateNestedManyWithoutTeacherInput
-  promoted_history?: Prisma.PromotedHistoryCreateNestedManyWithoutAcademic_administrative_staffInput
+  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_academic_teachersInput
   user_primary_data: Prisma.UserCreateNestedOneWithoutTeacher_profileInput
-  spouse_information?: Prisma.SpouseInformationCreateNestedOneWithoutTeacherInput
-  academic_results?: Prisma.AcademicResultCreateNestedOneWithoutTeacherInput
   grade_teacher_class_name?: Prisma.ClassCreateNestedOneWithoutGrade_teacherInput
   group_teacher_class_name?: Prisma.ClassCreateNestedOneWithoutGroup_teacherInput
-  subjects?: Prisma.SubjectTeacherCreateNestedManyWithoutTeacherInput
+  spouse_information?: Prisma.SpouseInformationCreateNestedOneWithoutTeacherInput
   students_in_responsibility?: Prisma.StudentResponsibilityCreateNestedManyWithoutTeacherInput
+  subjects?: Prisma.SubjectTeacherCreateNestedManyWithoutTeacherInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityCreateNestedManyWithoutTeacherInput
-  created_by?: Prisma.UserCreateNestedOneWithoutCreated_academic_teachersInput
-  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_academic_teachersInput
+  joining_history?: Prisma.JoiningHistoryCreateNestedManyWithoutTeacherInput
+  promoted_history?: Prisma.PromotedHistoryCreateNestedOneWithoutAcademic_administrative_staffInput
+  positions?: Prisma.UserPositionCreateNestedManyWithoutAcademic_administrative_staffsInput
+  roles?: Prisma.UserRoleCreateNestedManyWithoutAcademic_teachersInput
 }
 
 export type AcademicAdministrativeStaffUncheckedCreateWithoutMy_classesInput = {
@@ -1565,17 +1565,17 @@ export type AcademicAdministrativeStaffUncheckedCreateWithoutMy_classesInput = {
   updated_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
-  positions?: Prisma.UserPositionUncheckedCreateNestedManyWithoutAcademic_teachersInput
-  roles?: Prisma.UserRoleUncheckedCreateNestedManyWithoutAcademic_teachersInput
-  joining_history?: Prisma.JoiningHistoryUncheckedCreateNestedManyWithoutTeacherInput
-  promoted_history?: Prisma.PromotedHistoryUncheckedCreateNestedManyWithoutAcademic_administrative_staffInput
-  spouse_information?: Prisma.SpouseInformationUncheckedCreateNestedOneWithoutTeacherInput
   academic_results?: Prisma.AcademicResultUncheckedCreateNestedOneWithoutTeacherInput
   grade_teacher_class_name?: Prisma.ClassUncheckedCreateNestedOneWithoutGrade_teacherInput
   group_teacher_class_name?: Prisma.ClassUncheckedCreateNestedOneWithoutGroup_teacherInput
-  subjects?: Prisma.SubjectTeacherUncheckedCreateNestedManyWithoutTeacherInput
+  spouse_information?: Prisma.SpouseInformationUncheckedCreateNestedOneWithoutTeacherInput
   students_in_responsibility?: Prisma.StudentResponsibilityUncheckedCreateNestedManyWithoutTeacherInput
+  subjects?: Prisma.SubjectTeacherUncheckedCreateNestedManyWithoutTeacherInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUncheckedCreateNestedManyWithoutTeacherInput
+  joining_history?: Prisma.JoiningHistoryUncheckedCreateNestedManyWithoutTeacherInput
+  promoted_history?: Prisma.PromotedHistoryUncheckedCreateNestedOneWithoutAcademic_administrative_staffInput
+  positions?: Prisma.UserPositionUncheckedCreateNestedManyWithoutAcademic_administrative_staffsInput
+  roles?: Prisma.UserRoleUncheckedCreateNestedManyWithoutAcademic_teachersInput
 }
 
 export type AcademicAdministrativeStaffCreateOrConnectWithoutMy_classesInput = {
@@ -1604,22 +1604,22 @@ export type AcademicAdministrativeStaffUpdateWithoutMy_classesInput = {
   is_responsible_teacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  academic_results?: Prisma.AcademicResultUpdateOneWithoutTeacherNestedInput
+  created_by?: Prisma.UserUpdateOneWithoutCreated_academic_teachersNestedInput
   current_position?: Prisma.UserPositionUpdateOneRequiredWithoutCurrent_academic_teachersNestedInput
   current_role?: Prisma.UserRoleUpdateOneRequiredWithoutCurrent_academic_teachersNestedInput
-  positions?: Prisma.UserPositionUpdateManyWithoutAcademic_teachersNestedInput
-  roles?: Prisma.UserRoleUpdateManyWithoutAcademic_teachersNestedInput
-  joining_history?: Prisma.JoiningHistoryUpdateManyWithoutTeacherNestedInput
-  promoted_history?: Prisma.PromotedHistoryUpdateManyWithoutAcademic_administrative_staffNestedInput
+  updated_by?: Prisma.UserUpdateOneWithoutUpdated_academic_teachersNestedInput
   user_primary_data?: Prisma.UserUpdateOneRequiredWithoutTeacher_profileNestedInput
-  spouse_information?: Prisma.SpouseInformationUpdateOneWithoutTeacherNestedInput
-  academic_results?: Prisma.AcademicResultUpdateOneWithoutTeacherNestedInput
   grade_teacher_class_name?: Prisma.ClassUpdateOneWithoutGrade_teacherNestedInput
   group_teacher_class_name?: Prisma.ClassUpdateOneWithoutGroup_teacherNestedInput
-  subjects?: Prisma.SubjectTeacherUpdateManyWithoutTeacherNestedInput
+  spouse_information?: Prisma.SpouseInformationUpdateOneWithoutTeacherNestedInput
   students_in_responsibility?: Prisma.StudentResponsibilityUpdateManyWithoutTeacherNestedInput
+  subjects?: Prisma.SubjectTeacherUpdateManyWithoutTeacherNestedInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUpdateManyWithoutTeacherNestedInput
-  created_by?: Prisma.UserUpdateOneWithoutCreated_academic_teachersNestedInput
-  updated_by?: Prisma.UserUpdateOneWithoutUpdated_academic_teachersNestedInput
+  joining_history?: Prisma.JoiningHistoryUpdateManyWithoutTeacherNestedInput
+  promoted_history?: Prisma.PromotedHistoryUpdateOneWithoutAcademic_administrative_staffNestedInput
+  positions?: Prisma.UserPositionUpdateManyWithoutAcademic_administrative_staffsNestedInput
+  roles?: Prisma.UserRoleUpdateManyWithoutAcademic_teachersNestedInput
 }
 
 export type AcademicAdministrativeStaffUncheckedUpdateWithoutMy_classesInput = {
@@ -1637,17 +1637,17 @@ export type AcademicAdministrativeStaffUncheckedUpdateWithoutMy_classesInput = {
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  positions?: Prisma.UserPositionUncheckedUpdateManyWithoutAcademic_teachersNestedInput
-  roles?: Prisma.UserRoleUncheckedUpdateManyWithoutAcademic_teachersNestedInput
-  joining_history?: Prisma.JoiningHistoryUncheckedUpdateManyWithoutTeacherNestedInput
-  promoted_history?: Prisma.PromotedHistoryUncheckedUpdateManyWithoutAcademic_administrative_staffNestedInput
-  spouse_information?: Prisma.SpouseInformationUncheckedUpdateOneWithoutTeacherNestedInput
   academic_results?: Prisma.AcademicResultUncheckedUpdateOneWithoutTeacherNestedInput
   grade_teacher_class_name?: Prisma.ClassUncheckedUpdateOneWithoutGrade_teacherNestedInput
   group_teacher_class_name?: Prisma.ClassUncheckedUpdateOneWithoutGroup_teacherNestedInput
-  subjects?: Prisma.SubjectTeacherUncheckedUpdateManyWithoutTeacherNestedInput
+  spouse_information?: Prisma.SpouseInformationUncheckedUpdateOneWithoutTeacherNestedInput
   students_in_responsibility?: Prisma.StudentResponsibilityUncheckedUpdateManyWithoutTeacherNestedInput
+  subjects?: Prisma.SubjectTeacherUncheckedUpdateManyWithoutTeacherNestedInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUncheckedUpdateManyWithoutTeacherNestedInput
+  joining_history?: Prisma.JoiningHistoryUncheckedUpdateManyWithoutTeacherNestedInput
+  promoted_history?: Prisma.PromotedHistoryUncheckedUpdateOneWithoutAcademic_administrative_staffNestedInput
+  positions?: Prisma.UserPositionUncheckedUpdateManyWithoutAcademic_administrative_staffsNestedInput
+  roles?: Prisma.UserRoleUncheckedUpdateManyWithoutAcademic_teachersNestedInput
 }
 
 export type AcademicAdministrativeStaffCreateWithoutJoining_historyInput = {
@@ -1660,22 +1660,22 @@ export type AcademicAdministrativeStaffCreateWithoutJoining_historyInput = {
   is_responsible_teacher?: boolean
   created_at?: Date | string
   updated_at?: Date | string | null
+  academic_results?: Prisma.AcademicResultCreateNestedOneWithoutTeacherInput
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_academic_teachersInput
   current_position: Prisma.UserPositionCreateNestedOneWithoutCurrent_academic_teachersInput
   current_role: Prisma.UserRoleCreateNestedOneWithoutCurrent_academic_teachersInput
-  positions?: Prisma.UserPositionCreateNestedManyWithoutAcademic_teachersInput
-  roles?: Prisma.UserRoleCreateNestedManyWithoutAcademic_teachersInput
-  promoted_history?: Prisma.PromotedHistoryCreateNestedManyWithoutAcademic_administrative_staffInput
+  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_academic_teachersInput
   user_primary_data: Prisma.UserCreateNestedOneWithoutTeacher_profileInput
-  spouse_information?: Prisma.SpouseInformationCreateNestedOneWithoutTeacherInput
-  academic_results?: Prisma.AcademicResultCreateNestedOneWithoutTeacherInput
+  my_classes?: Prisma.ClassRoutineCreateNestedManyWithoutTeacherInput
   grade_teacher_class_name?: Prisma.ClassCreateNestedOneWithoutGrade_teacherInput
   group_teacher_class_name?: Prisma.ClassCreateNestedOneWithoutGroup_teacherInput
-  subjects?: Prisma.SubjectTeacherCreateNestedManyWithoutTeacherInput
+  spouse_information?: Prisma.SpouseInformationCreateNestedOneWithoutTeacherInput
   students_in_responsibility?: Prisma.StudentResponsibilityCreateNestedManyWithoutTeacherInput
+  subjects?: Prisma.SubjectTeacherCreateNestedManyWithoutTeacherInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityCreateNestedManyWithoutTeacherInput
-  my_classes?: Prisma.ClassRoutineCreateNestedManyWithoutTeacherInput
-  created_by?: Prisma.UserCreateNestedOneWithoutCreated_academic_teachersInput
-  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_academic_teachersInput
+  promoted_history?: Prisma.PromotedHistoryCreateNestedOneWithoutAcademic_administrative_staffInput
+  positions?: Prisma.UserPositionCreateNestedManyWithoutAcademic_administrative_staffsInput
+  roles?: Prisma.UserRoleCreateNestedManyWithoutAcademic_teachersInput
 }
 
 export type AcademicAdministrativeStaffUncheckedCreateWithoutJoining_historyInput = {
@@ -1693,17 +1693,17 @@ export type AcademicAdministrativeStaffUncheckedCreateWithoutJoining_historyInpu
   updated_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
-  positions?: Prisma.UserPositionUncheckedCreateNestedManyWithoutAcademic_teachersInput
-  roles?: Prisma.UserRoleUncheckedCreateNestedManyWithoutAcademic_teachersInput
-  promoted_history?: Prisma.PromotedHistoryUncheckedCreateNestedManyWithoutAcademic_administrative_staffInput
-  spouse_information?: Prisma.SpouseInformationUncheckedCreateNestedOneWithoutTeacherInput
   academic_results?: Prisma.AcademicResultUncheckedCreateNestedOneWithoutTeacherInput
+  my_classes?: Prisma.ClassRoutineUncheckedCreateNestedManyWithoutTeacherInput
   grade_teacher_class_name?: Prisma.ClassUncheckedCreateNestedOneWithoutGrade_teacherInput
   group_teacher_class_name?: Prisma.ClassUncheckedCreateNestedOneWithoutGroup_teacherInput
-  subjects?: Prisma.SubjectTeacherUncheckedCreateNestedManyWithoutTeacherInput
+  spouse_information?: Prisma.SpouseInformationUncheckedCreateNestedOneWithoutTeacherInput
   students_in_responsibility?: Prisma.StudentResponsibilityUncheckedCreateNestedManyWithoutTeacherInput
+  subjects?: Prisma.SubjectTeacherUncheckedCreateNestedManyWithoutTeacherInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUncheckedCreateNestedManyWithoutTeacherInput
-  my_classes?: Prisma.ClassRoutineUncheckedCreateNestedManyWithoutTeacherInput
+  promoted_history?: Prisma.PromotedHistoryUncheckedCreateNestedOneWithoutAcademic_administrative_staffInput
+  positions?: Prisma.UserPositionUncheckedCreateNestedManyWithoutAcademic_administrative_staffsInput
+  roles?: Prisma.UserRoleUncheckedCreateNestedManyWithoutAcademic_teachersInput
 }
 
 export type AcademicAdministrativeStaffCreateOrConnectWithoutJoining_historyInput = {
@@ -1732,22 +1732,22 @@ export type AcademicAdministrativeStaffUpdateWithoutJoining_historyInput = {
   is_responsible_teacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  academic_results?: Prisma.AcademicResultUpdateOneWithoutTeacherNestedInput
+  created_by?: Prisma.UserUpdateOneWithoutCreated_academic_teachersNestedInput
   current_position?: Prisma.UserPositionUpdateOneRequiredWithoutCurrent_academic_teachersNestedInput
   current_role?: Prisma.UserRoleUpdateOneRequiredWithoutCurrent_academic_teachersNestedInput
-  positions?: Prisma.UserPositionUpdateManyWithoutAcademic_teachersNestedInput
-  roles?: Prisma.UserRoleUpdateManyWithoutAcademic_teachersNestedInput
-  promoted_history?: Prisma.PromotedHistoryUpdateManyWithoutAcademic_administrative_staffNestedInput
+  updated_by?: Prisma.UserUpdateOneWithoutUpdated_academic_teachersNestedInput
   user_primary_data?: Prisma.UserUpdateOneRequiredWithoutTeacher_profileNestedInput
-  spouse_information?: Prisma.SpouseInformationUpdateOneWithoutTeacherNestedInput
-  academic_results?: Prisma.AcademicResultUpdateOneWithoutTeacherNestedInput
+  my_classes?: Prisma.ClassRoutineUpdateManyWithoutTeacherNestedInput
   grade_teacher_class_name?: Prisma.ClassUpdateOneWithoutGrade_teacherNestedInput
   group_teacher_class_name?: Prisma.ClassUpdateOneWithoutGroup_teacherNestedInput
-  subjects?: Prisma.SubjectTeacherUpdateManyWithoutTeacherNestedInput
+  spouse_information?: Prisma.SpouseInformationUpdateOneWithoutTeacherNestedInput
   students_in_responsibility?: Prisma.StudentResponsibilityUpdateManyWithoutTeacherNestedInput
+  subjects?: Prisma.SubjectTeacherUpdateManyWithoutTeacherNestedInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUpdateManyWithoutTeacherNestedInput
-  my_classes?: Prisma.ClassRoutineUpdateManyWithoutTeacherNestedInput
-  created_by?: Prisma.UserUpdateOneWithoutCreated_academic_teachersNestedInput
-  updated_by?: Prisma.UserUpdateOneWithoutUpdated_academic_teachersNestedInput
+  promoted_history?: Prisma.PromotedHistoryUpdateOneWithoutAcademic_administrative_staffNestedInput
+  positions?: Prisma.UserPositionUpdateManyWithoutAcademic_administrative_staffsNestedInput
+  roles?: Prisma.UserRoleUpdateManyWithoutAcademic_teachersNestedInput
 }
 
 export type AcademicAdministrativeStaffUncheckedUpdateWithoutJoining_historyInput = {
@@ -1765,17 +1765,17 @@ export type AcademicAdministrativeStaffUncheckedUpdateWithoutJoining_historyInpu
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  positions?: Prisma.UserPositionUncheckedUpdateManyWithoutAcademic_teachersNestedInput
-  roles?: Prisma.UserRoleUncheckedUpdateManyWithoutAcademic_teachersNestedInput
-  promoted_history?: Prisma.PromotedHistoryUncheckedUpdateManyWithoutAcademic_administrative_staffNestedInput
-  spouse_information?: Prisma.SpouseInformationUncheckedUpdateOneWithoutTeacherNestedInput
   academic_results?: Prisma.AcademicResultUncheckedUpdateOneWithoutTeacherNestedInput
+  my_classes?: Prisma.ClassRoutineUncheckedUpdateManyWithoutTeacherNestedInput
   grade_teacher_class_name?: Prisma.ClassUncheckedUpdateOneWithoutGrade_teacherNestedInput
   group_teacher_class_name?: Prisma.ClassUncheckedUpdateOneWithoutGroup_teacherNestedInput
-  subjects?: Prisma.SubjectTeacherUncheckedUpdateManyWithoutTeacherNestedInput
+  spouse_information?: Prisma.SpouseInformationUncheckedUpdateOneWithoutTeacherNestedInput
   students_in_responsibility?: Prisma.StudentResponsibilityUncheckedUpdateManyWithoutTeacherNestedInput
+  subjects?: Prisma.SubjectTeacherUncheckedUpdateManyWithoutTeacherNestedInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUncheckedUpdateManyWithoutTeacherNestedInput
-  my_classes?: Prisma.ClassRoutineUncheckedUpdateManyWithoutTeacherNestedInput
+  promoted_history?: Prisma.PromotedHistoryUncheckedUpdateOneWithoutAcademic_administrative_staffNestedInput
+  positions?: Prisma.UserPositionUncheckedUpdateManyWithoutAcademic_administrative_staffsNestedInput
+  roles?: Prisma.UserRoleUncheckedUpdateManyWithoutAcademic_teachersNestedInput
 }
 
 export type AcademicAdministrativeStaffCreateWithoutPromoted_historyInput = {
@@ -1788,22 +1788,22 @@ export type AcademicAdministrativeStaffCreateWithoutPromoted_historyInput = {
   is_responsible_teacher?: boolean
   created_at?: Date | string
   updated_at?: Date | string | null
+  academic_results?: Prisma.AcademicResultCreateNestedOneWithoutTeacherInput
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_academic_teachersInput
   current_position: Prisma.UserPositionCreateNestedOneWithoutCurrent_academic_teachersInput
   current_role: Prisma.UserRoleCreateNestedOneWithoutCurrent_academic_teachersInput
-  positions?: Prisma.UserPositionCreateNestedManyWithoutAcademic_teachersInput
-  roles?: Prisma.UserRoleCreateNestedManyWithoutAcademic_teachersInput
-  joining_history?: Prisma.JoiningHistoryCreateNestedManyWithoutTeacherInput
+  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_academic_teachersInput
   user_primary_data: Prisma.UserCreateNestedOneWithoutTeacher_profileInput
-  spouse_information?: Prisma.SpouseInformationCreateNestedOneWithoutTeacherInput
-  academic_results?: Prisma.AcademicResultCreateNestedOneWithoutTeacherInput
+  my_classes?: Prisma.ClassRoutineCreateNestedManyWithoutTeacherInput
   grade_teacher_class_name?: Prisma.ClassCreateNestedOneWithoutGrade_teacherInput
   group_teacher_class_name?: Prisma.ClassCreateNestedOneWithoutGroup_teacherInput
-  subjects?: Prisma.SubjectTeacherCreateNestedManyWithoutTeacherInput
+  spouse_information?: Prisma.SpouseInformationCreateNestedOneWithoutTeacherInput
   students_in_responsibility?: Prisma.StudentResponsibilityCreateNestedManyWithoutTeacherInput
+  subjects?: Prisma.SubjectTeacherCreateNestedManyWithoutTeacherInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityCreateNestedManyWithoutTeacherInput
-  my_classes?: Prisma.ClassRoutineCreateNestedManyWithoutTeacherInput
-  created_by?: Prisma.UserCreateNestedOneWithoutCreated_academic_teachersInput
-  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_academic_teachersInput
+  joining_history?: Prisma.JoiningHistoryCreateNestedManyWithoutTeacherInput
+  positions?: Prisma.UserPositionCreateNestedManyWithoutAcademic_administrative_staffsInput
+  roles?: Prisma.UserRoleCreateNestedManyWithoutAcademic_teachersInput
 }
 
 export type AcademicAdministrativeStaffUncheckedCreateWithoutPromoted_historyInput = {
@@ -1821,17 +1821,17 @@ export type AcademicAdministrativeStaffUncheckedCreateWithoutPromoted_historyInp
   updated_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
-  positions?: Prisma.UserPositionUncheckedCreateNestedManyWithoutAcademic_teachersInput
-  roles?: Prisma.UserRoleUncheckedCreateNestedManyWithoutAcademic_teachersInput
-  joining_history?: Prisma.JoiningHistoryUncheckedCreateNestedManyWithoutTeacherInput
-  spouse_information?: Prisma.SpouseInformationUncheckedCreateNestedOneWithoutTeacherInput
   academic_results?: Prisma.AcademicResultUncheckedCreateNestedOneWithoutTeacherInput
+  my_classes?: Prisma.ClassRoutineUncheckedCreateNestedManyWithoutTeacherInput
   grade_teacher_class_name?: Prisma.ClassUncheckedCreateNestedOneWithoutGrade_teacherInput
   group_teacher_class_name?: Prisma.ClassUncheckedCreateNestedOneWithoutGroup_teacherInput
-  subjects?: Prisma.SubjectTeacherUncheckedCreateNestedManyWithoutTeacherInput
+  spouse_information?: Prisma.SpouseInformationUncheckedCreateNestedOneWithoutTeacherInput
   students_in_responsibility?: Prisma.StudentResponsibilityUncheckedCreateNestedManyWithoutTeacherInput
+  subjects?: Prisma.SubjectTeacherUncheckedCreateNestedManyWithoutTeacherInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUncheckedCreateNestedManyWithoutTeacherInput
-  my_classes?: Prisma.ClassRoutineUncheckedCreateNestedManyWithoutTeacherInput
+  joining_history?: Prisma.JoiningHistoryUncheckedCreateNestedManyWithoutTeacherInput
+  positions?: Prisma.UserPositionUncheckedCreateNestedManyWithoutAcademic_administrative_staffsInput
+  roles?: Prisma.UserRoleUncheckedCreateNestedManyWithoutAcademic_teachersInput
 }
 
 export type AcademicAdministrativeStaffCreateOrConnectWithoutPromoted_historyInput = {
@@ -1860,22 +1860,22 @@ export type AcademicAdministrativeStaffUpdateWithoutPromoted_historyInput = {
   is_responsible_teacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  academic_results?: Prisma.AcademicResultUpdateOneWithoutTeacherNestedInput
+  created_by?: Prisma.UserUpdateOneWithoutCreated_academic_teachersNestedInput
   current_position?: Prisma.UserPositionUpdateOneRequiredWithoutCurrent_academic_teachersNestedInput
   current_role?: Prisma.UserRoleUpdateOneRequiredWithoutCurrent_academic_teachersNestedInput
-  positions?: Prisma.UserPositionUpdateManyWithoutAcademic_teachersNestedInput
-  roles?: Prisma.UserRoleUpdateManyWithoutAcademic_teachersNestedInput
-  joining_history?: Prisma.JoiningHistoryUpdateManyWithoutTeacherNestedInput
+  updated_by?: Prisma.UserUpdateOneWithoutUpdated_academic_teachersNestedInput
   user_primary_data?: Prisma.UserUpdateOneRequiredWithoutTeacher_profileNestedInput
-  spouse_information?: Prisma.SpouseInformationUpdateOneWithoutTeacherNestedInput
-  academic_results?: Prisma.AcademicResultUpdateOneWithoutTeacherNestedInput
+  my_classes?: Prisma.ClassRoutineUpdateManyWithoutTeacherNestedInput
   grade_teacher_class_name?: Prisma.ClassUpdateOneWithoutGrade_teacherNestedInput
   group_teacher_class_name?: Prisma.ClassUpdateOneWithoutGroup_teacherNestedInput
-  subjects?: Prisma.SubjectTeacherUpdateManyWithoutTeacherNestedInput
+  spouse_information?: Prisma.SpouseInformationUpdateOneWithoutTeacherNestedInput
   students_in_responsibility?: Prisma.StudentResponsibilityUpdateManyWithoutTeacherNestedInput
+  subjects?: Prisma.SubjectTeacherUpdateManyWithoutTeacherNestedInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUpdateManyWithoutTeacherNestedInput
-  my_classes?: Prisma.ClassRoutineUpdateManyWithoutTeacherNestedInput
-  created_by?: Prisma.UserUpdateOneWithoutCreated_academic_teachersNestedInput
-  updated_by?: Prisma.UserUpdateOneWithoutUpdated_academic_teachersNestedInput
+  joining_history?: Prisma.JoiningHistoryUpdateManyWithoutTeacherNestedInput
+  positions?: Prisma.UserPositionUpdateManyWithoutAcademic_administrative_staffsNestedInput
+  roles?: Prisma.UserRoleUpdateManyWithoutAcademic_teachersNestedInput
 }
 
 export type AcademicAdministrativeStaffUncheckedUpdateWithoutPromoted_historyInput = {
@@ -1893,17 +1893,17 @@ export type AcademicAdministrativeStaffUncheckedUpdateWithoutPromoted_historyInp
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  positions?: Prisma.UserPositionUncheckedUpdateManyWithoutAcademic_teachersNestedInput
-  roles?: Prisma.UserRoleUncheckedUpdateManyWithoutAcademic_teachersNestedInput
-  joining_history?: Prisma.JoiningHistoryUncheckedUpdateManyWithoutTeacherNestedInput
-  spouse_information?: Prisma.SpouseInformationUncheckedUpdateOneWithoutTeacherNestedInput
   academic_results?: Prisma.AcademicResultUncheckedUpdateOneWithoutTeacherNestedInput
+  my_classes?: Prisma.ClassRoutineUncheckedUpdateManyWithoutTeacherNestedInput
   grade_teacher_class_name?: Prisma.ClassUncheckedUpdateOneWithoutGrade_teacherNestedInput
   group_teacher_class_name?: Prisma.ClassUncheckedUpdateOneWithoutGroup_teacherNestedInput
-  subjects?: Prisma.SubjectTeacherUncheckedUpdateManyWithoutTeacherNestedInput
+  spouse_information?: Prisma.SpouseInformationUncheckedUpdateOneWithoutTeacherNestedInput
   students_in_responsibility?: Prisma.StudentResponsibilityUncheckedUpdateManyWithoutTeacherNestedInput
+  subjects?: Prisma.SubjectTeacherUncheckedUpdateManyWithoutTeacherNestedInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUncheckedUpdateManyWithoutTeacherNestedInput
-  my_classes?: Prisma.ClassRoutineUncheckedUpdateManyWithoutTeacherNestedInput
+  joining_history?: Prisma.JoiningHistoryUncheckedUpdateManyWithoutTeacherNestedInput
+  positions?: Prisma.UserPositionUncheckedUpdateManyWithoutAcademic_administrative_staffsNestedInput
+  roles?: Prisma.UserRoleUncheckedUpdateManyWithoutAcademic_teachersNestedInput
 }
 
 export type AcademicAdministrativeStaffCreateWithoutSpouse_informationInput = {
@@ -1916,22 +1916,22 @@ export type AcademicAdministrativeStaffCreateWithoutSpouse_informationInput = {
   is_responsible_teacher?: boolean
   created_at?: Date | string
   updated_at?: Date | string | null
+  academic_results?: Prisma.AcademicResultCreateNestedOneWithoutTeacherInput
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_academic_teachersInput
   current_position: Prisma.UserPositionCreateNestedOneWithoutCurrent_academic_teachersInput
   current_role: Prisma.UserRoleCreateNestedOneWithoutCurrent_academic_teachersInput
-  positions?: Prisma.UserPositionCreateNestedManyWithoutAcademic_teachersInput
-  roles?: Prisma.UserRoleCreateNestedManyWithoutAcademic_teachersInput
-  joining_history?: Prisma.JoiningHistoryCreateNestedManyWithoutTeacherInput
-  promoted_history?: Prisma.PromotedHistoryCreateNestedManyWithoutAcademic_administrative_staffInput
+  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_academic_teachersInput
   user_primary_data: Prisma.UserCreateNestedOneWithoutTeacher_profileInput
-  academic_results?: Prisma.AcademicResultCreateNestedOneWithoutTeacherInput
+  my_classes?: Prisma.ClassRoutineCreateNestedManyWithoutTeacherInput
   grade_teacher_class_name?: Prisma.ClassCreateNestedOneWithoutGrade_teacherInput
   group_teacher_class_name?: Prisma.ClassCreateNestedOneWithoutGroup_teacherInput
-  subjects?: Prisma.SubjectTeacherCreateNestedManyWithoutTeacherInput
   students_in_responsibility?: Prisma.StudentResponsibilityCreateNestedManyWithoutTeacherInput
+  subjects?: Prisma.SubjectTeacherCreateNestedManyWithoutTeacherInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityCreateNestedManyWithoutTeacherInput
-  my_classes?: Prisma.ClassRoutineCreateNestedManyWithoutTeacherInput
-  created_by?: Prisma.UserCreateNestedOneWithoutCreated_academic_teachersInput
-  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_academic_teachersInput
+  joining_history?: Prisma.JoiningHistoryCreateNestedManyWithoutTeacherInput
+  promoted_history?: Prisma.PromotedHistoryCreateNestedOneWithoutAcademic_administrative_staffInput
+  positions?: Prisma.UserPositionCreateNestedManyWithoutAcademic_administrative_staffsInput
+  roles?: Prisma.UserRoleCreateNestedManyWithoutAcademic_teachersInput
 }
 
 export type AcademicAdministrativeStaffUncheckedCreateWithoutSpouse_informationInput = {
@@ -1949,17 +1949,17 @@ export type AcademicAdministrativeStaffUncheckedCreateWithoutSpouse_informationI
   updated_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
-  positions?: Prisma.UserPositionUncheckedCreateNestedManyWithoutAcademic_teachersInput
-  roles?: Prisma.UserRoleUncheckedCreateNestedManyWithoutAcademic_teachersInput
-  joining_history?: Prisma.JoiningHistoryUncheckedCreateNestedManyWithoutTeacherInput
-  promoted_history?: Prisma.PromotedHistoryUncheckedCreateNestedManyWithoutAcademic_administrative_staffInput
   academic_results?: Prisma.AcademicResultUncheckedCreateNestedOneWithoutTeacherInput
+  my_classes?: Prisma.ClassRoutineUncheckedCreateNestedManyWithoutTeacherInput
   grade_teacher_class_name?: Prisma.ClassUncheckedCreateNestedOneWithoutGrade_teacherInput
   group_teacher_class_name?: Prisma.ClassUncheckedCreateNestedOneWithoutGroup_teacherInput
-  subjects?: Prisma.SubjectTeacherUncheckedCreateNestedManyWithoutTeacherInput
   students_in_responsibility?: Prisma.StudentResponsibilityUncheckedCreateNestedManyWithoutTeacherInput
+  subjects?: Prisma.SubjectTeacherUncheckedCreateNestedManyWithoutTeacherInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUncheckedCreateNestedManyWithoutTeacherInput
-  my_classes?: Prisma.ClassRoutineUncheckedCreateNestedManyWithoutTeacherInput
+  joining_history?: Prisma.JoiningHistoryUncheckedCreateNestedManyWithoutTeacherInput
+  promoted_history?: Prisma.PromotedHistoryUncheckedCreateNestedOneWithoutAcademic_administrative_staffInput
+  positions?: Prisma.UserPositionUncheckedCreateNestedManyWithoutAcademic_administrative_staffsInput
+  roles?: Prisma.UserRoleUncheckedCreateNestedManyWithoutAcademic_teachersInput
 }
 
 export type AcademicAdministrativeStaffCreateOrConnectWithoutSpouse_informationInput = {
@@ -1988,22 +1988,22 @@ export type AcademicAdministrativeStaffUpdateWithoutSpouse_informationInput = {
   is_responsible_teacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  academic_results?: Prisma.AcademicResultUpdateOneWithoutTeacherNestedInput
+  created_by?: Prisma.UserUpdateOneWithoutCreated_academic_teachersNestedInput
   current_position?: Prisma.UserPositionUpdateOneRequiredWithoutCurrent_academic_teachersNestedInput
   current_role?: Prisma.UserRoleUpdateOneRequiredWithoutCurrent_academic_teachersNestedInput
-  positions?: Prisma.UserPositionUpdateManyWithoutAcademic_teachersNestedInput
-  roles?: Prisma.UserRoleUpdateManyWithoutAcademic_teachersNestedInput
-  joining_history?: Prisma.JoiningHistoryUpdateManyWithoutTeacherNestedInput
-  promoted_history?: Prisma.PromotedHistoryUpdateManyWithoutAcademic_administrative_staffNestedInput
+  updated_by?: Prisma.UserUpdateOneWithoutUpdated_academic_teachersNestedInput
   user_primary_data?: Prisma.UserUpdateOneRequiredWithoutTeacher_profileNestedInput
-  academic_results?: Prisma.AcademicResultUpdateOneWithoutTeacherNestedInput
+  my_classes?: Prisma.ClassRoutineUpdateManyWithoutTeacherNestedInput
   grade_teacher_class_name?: Prisma.ClassUpdateOneWithoutGrade_teacherNestedInput
   group_teacher_class_name?: Prisma.ClassUpdateOneWithoutGroup_teacherNestedInput
-  subjects?: Prisma.SubjectTeacherUpdateManyWithoutTeacherNestedInput
   students_in_responsibility?: Prisma.StudentResponsibilityUpdateManyWithoutTeacherNestedInput
+  subjects?: Prisma.SubjectTeacherUpdateManyWithoutTeacherNestedInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUpdateManyWithoutTeacherNestedInput
-  my_classes?: Prisma.ClassRoutineUpdateManyWithoutTeacherNestedInput
-  created_by?: Prisma.UserUpdateOneWithoutCreated_academic_teachersNestedInput
-  updated_by?: Prisma.UserUpdateOneWithoutUpdated_academic_teachersNestedInput
+  joining_history?: Prisma.JoiningHistoryUpdateManyWithoutTeacherNestedInput
+  promoted_history?: Prisma.PromotedHistoryUpdateOneWithoutAcademic_administrative_staffNestedInput
+  positions?: Prisma.UserPositionUpdateManyWithoutAcademic_administrative_staffsNestedInput
+  roles?: Prisma.UserRoleUpdateManyWithoutAcademic_teachersNestedInput
 }
 
 export type AcademicAdministrativeStaffUncheckedUpdateWithoutSpouse_informationInput = {
@@ -2021,17 +2021,17 @@ export type AcademicAdministrativeStaffUncheckedUpdateWithoutSpouse_informationI
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  positions?: Prisma.UserPositionUncheckedUpdateManyWithoutAcademic_teachersNestedInput
-  roles?: Prisma.UserRoleUncheckedUpdateManyWithoutAcademic_teachersNestedInput
-  joining_history?: Prisma.JoiningHistoryUncheckedUpdateManyWithoutTeacherNestedInput
-  promoted_history?: Prisma.PromotedHistoryUncheckedUpdateManyWithoutAcademic_administrative_staffNestedInput
   academic_results?: Prisma.AcademicResultUncheckedUpdateOneWithoutTeacherNestedInput
+  my_classes?: Prisma.ClassRoutineUncheckedUpdateManyWithoutTeacherNestedInput
   grade_teacher_class_name?: Prisma.ClassUncheckedUpdateOneWithoutGrade_teacherNestedInput
   group_teacher_class_name?: Prisma.ClassUncheckedUpdateOneWithoutGroup_teacherNestedInput
-  subjects?: Prisma.SubjectTeacherUncheckedUpdateManyWithoutTeacherNestedInput
   students_in_responsibility?: Prisma.StudentResponsibilityUncheckedUpdateManyWithoutTeacherNestedInput
+  subjects?: Prisma.SubjectTeacherUncheckedUpdateManyWithoutTeacherNestedInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUncheckedUpdateManyWithoutTeacherNestedInput
-  my_classes?: Prisma.ClassRoutineUncheckedUpdateManyWithoutTeacherNestedInput
+  joining_history?: Prisma.JoiningHistoryUncheckedUpdateManyWithoutTeacherNestedInput
+  promoted_history?: Prisma.PromotedHistoryUncheckedUpdateOneWithoutAcademic_administrative_staffNestedInput
+  positions?: Prisma.UserPositionUncheckedUpdateManyWithoutAcademic_administrative_staffsNestedInput
+  roles?: Prisma.UserRoleUncheckedUpdateManyWithoutAcademic_teachersNestedInput
 }
 
 export type AcademicAdministrativeStaffCreateWithoutStudents_in_responsibilityInput = {
@@ -2044,22 +2044,22 @@ export type AcademicAdministrativeStaffCreateWithoutStudents_in_responsibilityIn
   is_responsible_teacher?: boolean
   created_at?: Date | string
   updated_at?: Date | string | null
+  academic_results?: Prisma.AcademicResultCreateNestedOneWithoutTeacherInput
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_academic_teachersInput
   current_position: Prisma.UserPositionCreateNestedOneWithoutCurrent_academic_teachersInput
   current_role: Prisma.UserRoleCreateNestedOneWithoutCurrent_academic_teachersInput
-  positions?: Prisma.UserPositionCreateNestedManyWithoutAcademic_teachersInput
-  roles?: Prisma.UserRoleCreateNestedManyWithoutAcademic_teachersInput
-  joining_history?: Prisma.JoiningHistoryCreateNestedManyWithoutTeacherInput
-  promoted_history?: Prisma.PromotedHistoryCreateNestedManyWithoutAcademic_administrative_staffInput
+  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_academic_teachersInput
   user_primary_data: Prisma.UserCreateNestedOneWithoutTeacher_profileInput
-  spouse_information?: Prisma.SpouseInformationCreateNestedOneWithoutTeacherInput
-  academic_results?: Prisma.AcademicResultCreateNestedOneWithoutTeacherInput
+  my_classes?: Prisma.ClassRoutineCreateNestedManyWithoutTeacherInput
   grade_teacher_class_name?: Prisma.ClassCreateNestedOneWithoutGrade_teacherInput
   group_teacher_class_name?: Prisma.ClassCreateNestedOneWithoutGroup_teacherInput
+  spouse_information?: Prisma.SpouseInformationCreateNestedOneWithoutTeacherInput
   subjects?: Prisma.SubjectTeacherCreateNestedManyWithoutTeacherInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityCreateNestedManyWithoutTeacherInput
-  my_classes?: Prisma.ClassRoutineCreateNestedManyWithoutTeacherInput
-  created_by?: Prisma.UserCreateNestedOneWithoutCreated_academic_teachersInput
-  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_academic_teachersInput
+  joining_history?: Prisma.JoiningHistoryCreateNestedManyWithoutTeacherInput
+  promoted_history?: Prisma.PromotedHistoryCreateNestedOneWithoutAcademic_administrative_staffInput
+  positions?: Prisma.UserPositionCreateNestedManyWithoutAcademic_administrative_staffsInput
+  roles?: Prisma.UserRoleCreateNestedManyWithoutAcademic_teachersInput
 }
 
 export type AcademicAdministrativeStaffUncheckedCreateWithoutStudents_in_responsibilityInput = {
@@ -2077,17 +2077,17 @@ export type AcademicAdministrativeStaffUncheckedCreateWithoutStudents_in_respons
   updated_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
-  positions?: Prisma.UserPositionUncheckedCreateNestedManyWithoutAcademic_teachersInput
-  roles?: Prisma.UserRoleUncheckedCreateNestedManyWithoutAcademic_teachersInput
-  joining_history?: Prisma.JoiningHistoryUncheckedCreateNestedManyWithoutTeacherInput
-  promoted_history?: Prisma.PromotedHistoryUncheckedCreateNestedManyWithoutAcademic_administrative_staffInput
-  spouse_information?: Prisma.SpouseInformationUncheckedCreateNestedOneWithoutTeacherInput
   academic_results?: Prisma.AcademicResultUncheckedCreateNestedOneWithoutTeacherInput
+  my_classes?: Prisma.ClassRoutineUncheckedCreateNestedManyWithoutTeacherInput
   grade_teacher_class_name?: Prisma.ClassUncheckedCreateNestedOneWithoutGrade_teacherInput
   group_teacher_class_name?: Prisma.ClassUncheckedCreateNestedOneWithoutGroup_teacherInput
+  spouse_information?: Prisma.SpouseInformationUncheckedCreateNestedOneWithoutTeacherInput
   subjects?: Prisma.SubjectTeacherUncheckedCreateNestedManyWithoutTeacherInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUncheckedCreateNestedManyWithoutTeacherInput
-  my_classes?: Prisma.ClassRoutineUncheckedCreateNestedManyWithoutTeacherInput
+  joining_history?: Prisma.JoiningHistoryUncheckedCreateNestedManyWithoutTeacherInput
+  promoted_history?: Prisma.PromotedHistoryUncheckedCreateNestedOneWithoutAcademic_administrative_staffInput
+  positions?: Prisma.UserPositionUncheckedCreateNestedManyWithoutAcademic_administrative_staffsInput
+  roles?: Prisma.UserRoleUncheckedCreateNestedManyWithoutAcademic_teachersInput
 }
 
 export type AcademicAdministrativeStaffCreateOrConnectWithoutStudents_in_responsibilityInput = {
@@ -2116,22 +2116,22 @@ export type AcademicAdministrativeStaffUpdateWithoutStudents_in_responsibilityIn
   is_responsible_teacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  academic_results?: Prisma.AcademicResultUpdateOneWithoutTeacherNestedInput
+  created_by?: Prisma.UserUpdateOneWithoutCreated_academic_teachersNestedInput
   current_position?: Prisma.UserPositionUpdateOneRequiredWithoutCurrent_academic_teachersNestedInput
   current_role?: Prisma.UserRoleUpdateOneRequiredWithoutCurrent_academic_teachersNestedInput
-  positions?: Prisma.UserPositionUpdateManyWithoutAcademic_teachersNestedInput
-  roles?: Prisma.UserRoleUpdateManyWithoutAcademic_teachersNestedInput
-  joining_history?: Prisma.JoiningHistoryUpdateManyWithoutTeacherNestedInput
-  promoted_history?: Prisma.PromotedHistoryUpdateManyWithoutAcademic_administrative_staffNestedInput
+  updated_by?: Prisma.UserUpdateOneWithoutUpdated_academic_teachersNestedInput
   user_primary_data?: Prisma.UserUpdateOneRequiredWithoutTeacher_profileNestedInput
-  spouse_information?: Prisma.SpouseInformationUpdateOneWithoutTeacherNestedInput
-  academic_results?: Prisma.AcademicResultUpdateOneWithoutTeacherNestedInput
+  my_classes?: Prisma.ClassRoutineUpdateManyWithoutTeacherNestedInput
   grade_teacher_class_name?: Prisma.ClassUpdateOneWithoutGrade_teacherNestedInput
   group_teacher_class_name?: Prisma.ClassUpdateOneWithoutGroup_teacherNestedInput
+  spouse_information?: Prisma.SpouseInformationUpdateOneWithoutTeacherNestedInput
   subjects?: Prisma.SubjectTeacherUpdateManyWithoutTeacherNestedInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUpdateManyWithoutTeacherNestedInput
-  my_classes?: Prisma.ClassRoutineUpdateManyWithoutTeacherNestedInput
-  created_by?: Prisma.UserUpdateOneWithoutCreated_academic_teachersNestedInput
-  updated_by?: Prisma.UserUpdateOneWithoutUpdated_academic_teachersNestedInput
+  joining_history?: Prisma.JoiningHistoryUpdateManyWithoutTeacherNestedInput
+  promoted_history?: Prisma.PromotedHistoryUpdateOneWithoutAcademic_administrative_staffNestedInput
+  positions?: Prisma.UserPositionUpdateManyWithoutAcademic_administrative_staffsNestedInput
+  roles?: Prisma.UserRoleUpdateManyWithoutAcademic_teachersNestedInput
 }
 
 export type AcademicAdministrativeStaffUncheckedUpdateWithoutStudents_in_responsibilityInput = {
@@ -2149,17 +2149,17 @@ export type AcademicAdministrativeStaffUncheckedUpdateWithoutStudents_in_respons
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  positions?: Prisma.UserPositionUncheckedUpdateManyWithoutAcademic_teachersNestedInput
-  roles?: Prisma.UserRoleUncheckedUpdateManyWithoutAcademic_teachersNestedInput
-  joining_history?: Prisma.JoiningHistoryUncheckedUpdateManyWithoutTeacherNestedInput
-  promoted_history?: Prisma.PromotedHistoryUncheckedUpdateManyWithoutAcademic_administrative_staffNestedInput
-  spouse_information?: Prisma.SpouseInformationUncheckedUpdateOneWithoutTeacherNestedInput
   academic_results?: Prisma.AcademicResultUncheckedUpdateOneWithoutTeacherNestedInput
+  my_classes?: Prisma.ClassRoutineUncheckedUpdateManyWithoutTeacherNestedInput
   grade_teacher_class_name?: Prisma.ClassUncheckedUpdateOneWithoutGrade_teacherNestedInput
   group_teacher_class_name?: Prisma.ClassUncheckedUpdateOneWithoutGroup_teacherNestedInput
+  spouse_information?: Prisma.SpouseInformationUncheckedUpdateOneWithoutTeacherNestedInput
   subjects?: Prisma.SubjectTeacherUncheckedUpdateManyWithoutTeacherNestedInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUncheckedUpdateManyWithoutTeacherNestedInput
-  my_classes?: Prisma.ClassRoutineUncheckedUpdateManyWithoutTeacherNestedInput
+  joining_history?: Prisma.JoiningHistoryUncheckedUpdateManyWithoutTeacherNestedInput
+  promoted_history?: Prisma.PromotedHistoryUncheckedUpdateOneWithoutAcademic_administrative_staffNestedInput
+  positions?: Prisma.UserPositionUncheckedUpdateManyWithoutAcademic_administrative_staffsNestedInput
+  roles?: Prisma.UserRoleUncheckedUpdateManyWithoutAcademic_teachersNestedInput
 }
 
 export type AcademicAdministrativeStaffCreateWithoutSubjectsInput = {
@@ -2172,22 +2172,22 @@ export type AcademicAdministrativeStaffCreateWithoutSubjectsInput = {
   is_responsible_teacher?: boolean
   created_at?: Date | string
   updated_at?: Date | string | null
+  academic_results?: Prisma.AcademicResultCreateNestedOneWithoutTeacherInput
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_academic_teachersInput
   current_position: Prisma.UserPositionCreateNestedOneWithoutCurrent_academic_teachersInput
   current_role: Prisma.UserRoleCreateNestedOneWithoutCurrent_academic_teachersInput
-  positions?: Prisma.UserPositionCreateNestedManyWithoutAcademic_teachersInput
-  roles?: Prisma.UserRoleCreateNestedManyWithoutAcademic_teachersInput
-  joining_history?: Prisma.JoiningHistoryCreateNestedManyWithoutTeacherInput
-  promoted_history?: Prisma.PromotedHistoryCreateNestedManyWithoutAcademic_administrative_staffInput
+  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_academic_teachersInput
   user_primary_data: Prisma.UserCreateNestedOneWithoutTeacher_profileInput
-  spouse_information?: Prisma.SpouseInformationCreateNestedOneWithoutTeacherInput
-  academic_results?: Prisma.AcademicResultCreateNestedOneWithoutTeacherInput
+  my_classes?: Prisma.ClassRoutineCreateNestedManyWithoutTeacherInput
   grade_teacher_class_name?: Prisma.ClassCreateNestedOneWithoutGrade_teacherInput
   group_teacher_class_name?: Prisma.ClassCreateNestedOneWithoutGroup_teacherInput
+  spouse_information?: Prisma.SpouseInformationCreateNestedOneWithoutTeacherInput
   students_in_responsibility?: Prisma.StudentResponsibilityCreateNestedManyWithoutTeacherInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityCreateNestedManyWithoutTeacherInput
-  my_classes?: Prisma.ClassRoutineCreateNestedManyWithoutTeacherInput
-  created_by?: Prisma.UserCreateNestedOneWithoutCreated_academic_teachersInput
-  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_academic_teachersInput
+  joining_history?: Prisma.JoiningHistoryCreateNestedManyWithoutTeacherInput
+  promoted_history?: Prisma.PromotedHistoryCreateNestedOneWithoutAcademic_administrative_staffInput
+  positions?: Prisma.UserPositionCreateNestedManyWithoutAcademic_administrative_staffsInput
+  roles?: Prisma.UserRoleCreateNestedManyWithoutAcademic_teachersInput
 }
 
 export type AcademicAdministrativeStaffUncheckedCreateWithoutSubjectsInput = {
@@ -2205,17 +2205,17 @@ export type AcademicAdministrativeStaffUncheckedCreateWithoutSubjectsInput = {
   updated_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
-  positions?: Prisma.UserPositionUncheckedCreateNestedManyWithoutAcademic_teachersInput
-  roles?: Prisma.UserRoleUncheckedCreateNestedManyWithoutAcademic_teachersInput
-  joining_history?: Prisma.JoiningHistoryUncheckedCreateNestedManyWithoutTeacherInput
-  promoted_history?: Prisma.PromotedHistoryUncheckedCreateNestedManyWithoutAcademic_administrative_staffInput
-  spouse_information?: Prisma.SpouseInformationUncheckedCreateNestedOneWithoutTeacherInput
   academic_results?: Prisma.AcademicResultUncheckedCreateNestedOneWithoutTeacherInput
+  my_classes?: Prisma.ClassRoutineUncheckedCreateNestedManyWithoutTeacherInput
   grade_teacher_class_name?: Prisma.ClassUncheckedCreateNestedOneWithoutGrade_teacherInput
   group_teacher_class_name?: Prisma.ClassUncheckedCreateNestedOneWithoutGroup_teacherInput
+  spouse_information?: Prisma.SpouseInformationUncheckedCreateNestedOneWithoutTeacherInput
   students_in_responsibility?: Prisma.StudentResponsibilityUncheckedCreateNestedManyWithoutTeacherInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUncheckedCreateNestedManyWithoutTeacherInput
-  my_classes?: Prisma.ClassRoutineUncheckedCreateNestedManyWithoutTeacherInput
+  joining_history?: Prisma.JoiningHistoryUncheckedCreateNestedManyWithoutTeacherInput
+  promoted_history?: Prisma.PromotedHistoryUncheckedCreateNestedOneWithoutAcademic_administrative_staffInput
+  positions?: Prisma.UserPositionUncheckedCreateNestedManyWithoutAcademic_administrative_staffsInput
+  roles?: Prisma.UserRoleUncheckedCreateNestedManyWithoutAcademic_teachersInput
 }
 
 export type AcademicAdministrativeStaffCreateOrConnectWithoutSubjectsInput = {
@@ -2244,22 +2244,22 @@ export type AcademicAdministrativeStaffUpdateWithoutSubjectsInput = {
   is_responsible_teacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  academic_results?: Prisma.AcademicResultUpdateOneWithoutTeacherNestedInput
+  created_by?: Prisma.UserUpdateOneWithoutCreated_academic_teachersNestedInput
   current_position?: Prisma.UserPositionUpdateOneRequiredWithoutCurrent_academic_teachersNestedInput
   current_role?: Prisma.UserRoleUpdateOneRequiredWithoutCurrent_academic_teachersNestedInput
-  positions?: Prisma.UserPositionUpdateManyWithoutAcademic_teachersNestedInput
-  roles?: Prisma.UserRoleUpdateManyWithoutAcademic_teachersNestedInput
-  joining_history?: Prisma.JoiningHistoryUpdateManyWithoutTeacherNestedInput
-  promoted_history?: Prisma.PromotedHistoryUpdateManyWithoutAcademic_administrative_staffNestedInput
+  updated_by?: Prisma.UserUpdateOneWithoutUpdated_academic_teachersNestedInput
   user_primary_data?: Prisma.UserUpdateOneRequiredWithoutTeacher_profileNestedInput
-  spouse_information?: Prisma.SpouseInformationUpdateOneWithoutTeacherNestedInput
-  academic_results?: Prisma.AcademicResultUpdateOneWithoutTeacherNestedInput
+  my_classes?: Prisma.ClassRoutineUpdateManyWithoutTeacherNestedInput
   grade_teacher_class_name?: Prisma.ClassUpdateOneWithoutGrade_teacherNestedInput
   group_teacher_class_name?: Prisma.ClassUpdateOneWithoutGroup_teacherNestedInput
+  spouse_information?: Prisma.SpouseInformationUpdateOneWithoutTeacherNestedInput
   students_in_responsibility?: Prisma.StudentResponsibilityUpdateManyWithoutTeacherNestedInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUpdateManyWithoutTeacherNestedInput
-  my_classes?: Prisma.ClassRoutineUpdateManyWithoutTeacherNestedInput
-  created_by?: Prisma.UserUpdateOneWithoutCreated_academic_teachersNestedInput
-  updated_by?: Prisma.UserUpdateOneWithoutUpdated_academic_teachersNestedInput
+  joining_history?: Prisma.JoiningHistoryUpdateManyWithoutTeacherNestedInput
+  promoted_history?: Prisma.PromotedHistoryUpdateOneWithoutAcademic_administrative_staffNestedInput
+  positions?: Prisma.UserPositionUpdateManyWithoutAcademic_administrative_staffsNestedInput
+  roles?: Prisma.UserRoleUpdateManyWithoutAcademic_teachersNestedInput
 }
 
 export type AcademicAdministrativeStaffUncheckedUpdateWithoutSubjectsInput = {
@@ -2277,17 +2277,17 @@ export type AcademicAdministrativeStaffUncheckedUpdateWithoutSubjectsInput = {
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  positions?: Prisma.UserPositionUncheckedUpdateManyWithoutAcademic_teachersNestedInput
-  roles?: Prisma.UserRoleUncheckedUpdateManyWithoutAcademic_teachersNestedInput
-  joining_history?: Prisma.JoiningHistoryUncheckedUpdateManyWithoutTeacherNestedInput
-  promoted_history?: Prisma.PromotedHistoryUncheckedUpdateManyWithoutAcademic_administrative_staffNestedInput
-  spouse_information?: Prisma.SpouseInformationUncheckedUpdateOneWithoutTeacherNestedInput
   academic_results?: Prisma.AcademicResultUncheckedUpdateOneWithoutTeacherNestedInput
+  my_classes?: Prisma.ClassRoutineUncheckedUpdateManyWithoutTeacherNestedInput
   grade_teacher_class_name?: Prisma.ClassUncheckedUpdateOneWithoutGrade_teacherNestedInput
   group_teacher_class_name?: Prisma.ClassUncheckedUpdateOneWithoutGroup_teacherNestedInput
+  spouse_information?: Prisma.SpouseInformationUncheckedUpdateOneWithoutTeacherNestedInput
   students_in_responsibility?: Prisma.StudentResponsibilityUncheckedUpdateManyWithoutTeacherNestedInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUncheckedUpdateManyWithoutTeacherNestedInput
-  my_classes?: Prisma.ClassRoutineUncheckedUpdateManyWithoutTeacherNestedInput
+  joining_history?: Prisma.JoiningHistoryUncheckedUpdateManyWithoutTeacherNestedInput
+  promoted_history?: Prisma.PromotedHistoryUncheckedUpdateOneWithoutAcademic_administrative_staffNestedInput
+  positions?: Prisma.UserPositionUncheckedUpdateManyWithoutAcademic_administrative_staffsNestedInput
+  roles?: Prisma.UserRoleUncheckedUpdateManyWithoutAcademic_teachersNestedInput
 }
 
 export type AcademicAdministrativeStaffCreateWithoutHonourable_responsibilitiesInput = {
@@ -2300,22 +2300,22 @@ export type AcademicAdministrativeStaffCreateWithoutHonourable_responsibilitiesI
   is_responsible_teacher?: boolean
   created_at?: Date | string
   updated_at?: Date | string | null
+  academic_results?: Prisma.AcademicResultCreateNestedOneWithoutTeacherInput
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_academic_teachersInput
   current_position: Prisma.UserPositionCreateNestedOneWithoutCurrent_academic_teachersInput
   current_role: Prisma.UserRoleCreateNestedOneWithoutCurrent_academic_teachersInput
-  positions?: Prisma.UserPositionCreateNestedManyWithoutAcademic_teachersInput
-  roles?: Prisma.UserRoleCreateNestedManyWithoutAcademic_teachersInput
-  joining_history?: Prisma.JoiningHistoryCreateNestedManyWithoutTeacherInput
-  promoted_history?: Prisma.PromotedHistoryCreateNestedManyWithoutAcademic_administrative_staffInput
+  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_academic_teachersInput
   user_primary_data: Prisma.UserCreateNestedOneWithoutTeacher_profileInput
-  spouse_information?: Prisma.SpouseInformationCreateNestedOneWithoutTeacherInput
-  academic_results?: Prisma.AcademicResultCreateNestedOneWithoutTeacherInput
+  my_classes?: Prisma.ClassRoutineCreateNestedManyWithoutTeacherInput
   grade_teacher_class_name?: Prisma.ClassCreateNestedOneWithoutGrade_teacherInput
   group_teacher_class_name?: Prisma.ClassCreateNestedOneWithoutGroup_teacherInput
-  subjects?: Prisma.SubjectTeacherCreateNestedManyWithoutTeacherInput
+  spouse_information?: Prisma.SpouseInformationCreateNestedOneWithoutTeacherInput
   students_in_responsibility?: Prisma.StudentResponsibilityCreateNestedManyWithoutTeacherInput
-  my_classes?: Prisma.ClassRoutineCreateNestedManyWithoutTeacherInput
-  created_by?: Prisma.UserCreateNestedOneWithoutCreated_academic_teachersInput
-  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_academic_teachersInput
+  subjects?: Prisma.SubjectTeacherCreateNestedManyWithoutTeacherInput
+  joining_history?: Prisma.JoiningHistoryCreateNestedManyWithoutTeacherInput
+  promoted_history?: Prisma.PromotedHistoryCreateNestedOneWithoutAcademic_administrative_staffInput
+  positions?: Prisma.UserPositionCreateNestedManyWithoutAcademic_administrative_staffsInput
+  roles?: Prisma.UserRoleCreateNestedManyWithoutAcademic_teachersInput
 }
 
 export type AcademicAdministrativeStaffUncheckedCreateWithoutHonourable_responsibilitiesInput = {
@@ -2333,17 +2333,17 @@ export type AcademicAdministrativeStaffUncheckedCreateWithoutHonourable_responsi
   updated_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
-  positions?: Prisma.UserPositionUncheckedCreateNestedManyWithoutAcademic_teachersInput
-  roles?: Prisma.UserRoleUncheckedCreateNestedManyWithoutAcademic_teachersInput
-  joining_history?: Prisma.JoiningHistoryUncheckedCreateNestedManyWithoutTeacherInput
-  promoted_history?: Prisma.PromotedHistoryUncheckedCreateNestedManyWithoutAcademic_administrative_staffInput
-  spouse_information?: Prisma.SpouseInformationUncheckedCreateNestedOneWithoutTeacherInput
   academic_results?: Prisma.AcademicResultUncheckedCreateNestedOneWithoutTeacherInput
+  my_classes?: Prisma.ClassRoutineUncheckedCreateNestedManyWithoutTeacherInput
   grade_teacher_class_name?: Prisma.ClassUncheckedCreateNestedOneWithoutGrade_teacherInput
   group_teacher_class_name?: Prisma.ClassUncheckedCreateNestedOneWithoutGroup_teacherInput
-  subjects?: Prisma.SubjectTeacherUncheckedCreateNestedManyWithoutTeacherInput
+  spouse_information?: Prisma.SpouseInformationUncheckedCreateNestedOneWithoutTeacherInput
   students_in_responsibility?: Prisma.StudentResponsibilityUncheckedCreateNestedManyWithoutTeacherInput
-  my_classes?: Prisma.ClassRoutineUncheckedCreateNestedManyWithoutTeacherInput
+  subjects?: Prisma.SubjectTeacherUncheckedCreateNestedManyWithoutTeacherInput
+  joining_history?: Prisma.JoiningHistoryUncheckedCreateNestedManyWithoutTeacherInput
+  promoted_history?: Prisma.PromotedHistoryUncheckedCreateNestedOneWithoutAcademic_administrative_staffInput
+  positions?: Prisma.UserPositionUncheckedCreateNestedManyWithoutAcademic_administrative_staffsInput
+  roles?: Prisma.UserRoleUncheckedCreateNestedManyWithoutAcademic_teachersInput
 }
 
 export type AcademicAdministrativeStaffCreateOrConnectWithoutHonourable_responsibilitiesInput = {
@@ -2372,22 +2372,22 @@ export type AcademicAdministrativeStaffUpdateWithoutHonourable_responsibilitiesI
   is_responsible_teacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  academic_results?: Prisma.AcademicResultUpdateOneWithoutTeacherNestedInput
+  created_by?: Prisma.UserUpdateOneWithoutCreated_academic_teachersNestedInput
   current_position?: Prisma.UserPositionUpdateOneRequiredWithoutCurrent_academic_teachersNestedInput
   current_role?: Prisma.UserRoleUpdateOneRequiredWithoutCurrent_academic_teachersNestedInput
-  positions?: Prisma.UserPositionUpdateManyWithoutAcademic_teachersNestedInput
-  roles?: Prisma.UserRoleUpdateManyWithoutAcademic_teachersNestedInput
-  joining_history?: Prisma.JoiningHistoryUpdateManyWithoutTeacherNestedInput
-  promoted_history?: Prisma.PromotedHistoryUpdateManyWithoutAcademic_administrative_staffNestedInput
+  updated_by?: Prisma.UserUpdateOneWithoutUpdated_academic_teachersNestedInput
   user_primary_data?: Prisma.UserUpdateOneRequiredWithoutTeacher_profileNestedInput
-  spouse_information?: Prisma.SpouseInformationUpdateOneWithoutTeacherNestedInput
-  academic_results?: Prisma.AcademicResultUpdateOneWithoutTeacherNestedInput
+  my_classes?: Prisma.ClassRoutineUpdateManyWithoutTeacherNestedInput
   grade_teacher_class_name?: Prisma.ClassUpdateOneWithoutGrade_teacherNestedInput
   group_teacher_class_name?: Prisma.ClassUpdateOneWithoutGroup_teacherNestedInput
-  subjects?: Prisma.SubjectTeacherUpdateManyWithoutTeacherNestedInput
+  spouse_information?: Prisma.SpouseInformationUpdateOneWithoutTeacherNestedInput
   students_in_responsibility?: Prisma.StudentResponsibilityUpdateManyWithoutTeacherNestedInput
-  my_classes?: Prisma.ClassRoutineUpdateManyWithoutTeacherNestedInput
-  created_by?: Prisma.UserUpdateOneWithoutCreated_academic_teachersNestedInput
-  updated_by?: Prisma.UserUpdateOneWithoutUpdated_academic_teachersNestedInput
+  subjects?: Prisma.SubjectTeacherUpdateManyWithoutTeacherNestedInput
+  joining_history?: Prisma.JoiningHistoryUpdateManyWithoutTeacherNestedInput
+  promoted_history?: Prisma.PromotedHistoryUpdateOneWithoutAcademic_administrative_staffNestedInput
+  positions?: Prisma.UserPositionUpdateManyWithoutAcademic_administrative_staffsNestedInput
+  roles?: Prisma.UserRoleUpdateManyWithoutAcademic_teachersNestedInput
 }
 
 export type AcademicAdministrativeStaffUncheckedUpdateWithoutHonourable_responsibilitiesInput = {
@@ -2405,78 +2405,17 @@ export type AcademicAdministrativeStaffUncheckedUpdateWithoutHonourable_responsi
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  positions?: Prisma.UserPositionUncheckedUpdateManyWithoutAcademic_teachersNestedInput
-  roles?: Prisma.UserRoleUncheckedUpdateManyWithoutAcademic_teachersNestedInput
-  joining_history?: Prisma.JoiningHistoryUncheckedUpdateManyWithoutTeacherNestedInput
-  promoted_history?: Prisma.PromotedHistoryUncheckedUpdateManyWithoutAcademic_administrative_staffNestedInput
-  spouse_information?: Prisma.SpouseInformationUncheckedUpdateOneWithoutTeacherNestedInput
   academic_results?: Prisma.AcademicResultUncheckedUpdateOneWithoutTeacherNestedInput
+  my_classes?: Prisma.ClassRoutineUncheckedUpdateManyWithoutTeacherNestedInput
   grade_teacher_class_name?: Prisma.ClassUncheckedUpdateOneWithoutGrade_teacherNestedInput
   group_teacher_class_name?: Prisma.ClassUncheckedUpdateOneWithoutGroup_teacherNestedInput
-  subjects?: Prisma.SubjectTeacherUncheckedUpdateManyWithoutTeacherNestedInput
+  spouse_information?: Prisma.SpouseInformationUncheckedUpdateOneWithoutTeacherNestedInput
   students_in_responsibility?: Prisma.StudentResponsibilityUncheckedUpdateManyWithoutTeacherNestedInput
-  my_classes?: Prisma.ClassRoutineUncheckedUpdateManyWithoutTeacherNestedInput
-}
-
-export type AcademicAdministrativeStaffCreateWithoutUser_primary_dataInput = {
-  id?: string
-  full_name: string
-  teaching_working_experience_year?: number | null
-  teaching_working_experience_month?: number | null
-  alternative_contact_no?: Prisma.AcademicAdministrativeStaffCreatealternative_contact_noInput | string[]
-  is_subject_teacher?: boolean
-  is_responsible_teacher?: boolean
-  created_at?: Date | string
-  updated_at?: Date | string | null
-  current_position: Prisma.UserPositionCreateNestedOneWithoutCurrent_academic_teachersInput
-  current_role: Prisma.UserRoleCreateNestedOneWithoutCurrent_academic_teachersInput
-  positions?: Prisma.UserPositionCreateNestedManyWithoutAcademic_teachersInput
-  roles?: Prisma.UserRoleCreateNestedManyWithoutAcademic_teachersInput
-  joining_history?: Prisma.JoiningHistoryCreateNestedManyWithoutTeacherInput
-  promoted_history?: Prisma.PromotedHistoryCreateNestedManyWithoutAcademic_administrative_staffInput
-  spouse_information?: Prisma.SpouseInformationCreateNestedOneWithoutTeacherInput
-  academic_results?: Prisma.AcademicResultCreateNestedOneWithoutTeacherInput
-  grade_teacher_class_name?: Prisma.ClassCreateNestedOneWithoutGrade_teacherInput
-  group_teacher_class_name?: Prisma.ClassCreateNestedOneWithoutGroup_teacherInput
-  subjects?: Prisma.SubjectTeacherCreateNestedManyWithoutTeacherInput
-  students_in_responsibility?: Prisma.StudentResponsibilityCreateNestedManyWithoutTeacherInput
-  honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityCreateNestedManyWithoutTeacherInput
-  my_classes?: Prisma.ClassRoutineCreateNestedManyWithoutTeacherInput
-  created_by?: Prisma.UserCreateNestedOneWithoutCreated_academic_teachersInput
-  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_academic_teachersInput
-}
-
-export type AcademicAdministrativeStaffUncheckedCreateWithoutUser_primary_dataInput = {
-  id?: string
-  full_name: string
-  current_position_id: string
-  current_role_id: string
-  teaching_working_experience_year?: number | null
-  teaching_working_experience_month?: number | null
-  alternative_contact_no?: Prisma.AcademicAdministrativeStaffCreatealternative_contact_noInput | string[]
-  is_subject_teacher?: boolean
-  is_responsible_teacher?: boolean
-  created_by_id?: string | null
-  updated_by_id?: string | null
-  created_at?: Date | string
-  updated_at?: Date | string | null
-  positions?: Prisma.UserPositionUncheckedCreateNestedManyWithoutAcademic_teachersInput
-  roles?: Prisma.UserRoleUncheckedCreateNestedManyWithoutAcademic_teachersInput
-  joining_history?: Prisma.JoiningHistoryUncheckedCreateNestedManyWithoutTeacherInput
-  promoted_history?: Prisma.PromotedHistoryUncheckedCreateNestedManyWithoutAcademic_administrative_staffInput
-  spouse_information?: Prisma.SpouseInformationUncheckedCreateNestedOneWithoutTeacherInput
-  academic_results?: Prisma.AcademicResultUncheckedCreateNestedOneWithoutTeacherInput
-  grade_teacher_class_name?: Prisma.ClassUncheckedCreateNestedOneWithoutGrade_teacherInput
-  group_teacher_class_name?: Prisma.ClassUncheckedCreateNestedOneWithoutGroup_teacherInput
-  subjects?: Prisma.SubjectTeacherUncheckedCreateNestedManyWithoutTeacherInput
-  students_in_responsibility?: Prisma.StudentResponsibilityUncheckedCreateNestedManyWithoutTeacherInput
-  honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUncheckedCreateNestedManyWithoutTeacherInput
-  my_classes?: Prisma.ClassRoutineUncheckedCreateNestedManyWithoutTeacherInput
-}
-
-export type AcademicAdministrativeStaffCreateOrConnectWithoutUser_primary_dataInput = {
-  where: Prisma.AcademicAdministrativeStaffWhereUniqueInput
-  create: Prisma.XOR<Prisma.AcademicAdministrativeStaffCreateWithoutUser_primary_dataInput, Prisma.AcademicAdministrativeStaffUncheckedCreateWithoutUser_primary_dataInput>
+  subjects?: Prisma.SubjectTeacherUncheckedUpdateManyWithoutTeacherNestedInput
+  joining_history?: Prisma.JoiningHistoryUncheckedUpdateManyWithoutTeacherNestedInput
+  promoted_history?: Prisma.PromotedHistoryUncheckedUpdateOneWithoutAcademic_administrative_staffNestedInput
+  positions?: Prisma.UserPositionUncheckedUpdateManyWithoutAcademic_administrative_staffsNestedInput
+  roles?: Prisma.UserRoleUncheckedUpdateManyWithoutAcademic_teachersNestedInput
 }
 
 export type AcademicAdministrativeStaffCreateWithoutCreated_byInput = {
@@ -2489,22 +2428,22 @@ export type AcademicAdministrativeStaffCreateWithoutCreated_byInput = {
   is_responsible_teacher?: boolean
   created_at?: Date | string
   updated_at?: Date | string | null
+  academic_results?: Prisma.AcademicResultCreateNestedOneWithoutTeacherInput
   current_position: Prisma.UserPositionCreateNestedOneWithoutCurrent_academic_teachersInput
   current_role: Prisma.UserRoleCreateNestedOneWithoutCurrent_academic_teachersInput
-  positions?: Prisma.UserPositionCreateNestedManyWithoutAcademic_teachersInput
-  roles?: Prisma.UserRoleCreateNestedManyWithoutAcademic_teachersInput
-  joining_history?: Prisma.JoiningHistoryCreateNestedManyWithoutTeacherInput
-  promoted_history?: Prisma.PromotedHistoryCreateNestedManyWithoutAcademic_administrative_staffInput
+  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_academic_teachersInput
   user_primary_data: Prisma.UserCreateNestedOneWithoutTeacher_profileInput
-  spouse_information?: Prisma.SpouseInformationCreateNestedOneWithoutTeacherInput
-  academic_results?: Prisma.AcademicResultCreateNestedOneWithoutTeacherInput
+  my_classes?: Prisma.ClassRoutineCreateNestedManyWithoutTeacherInput
   grade_teacher_class_name?: Prisma.ClassCreateNestedOneWithoutGrade_teacherInput
   group_teacher_class_name?: Prisma.ClassCreateNestedOneWithoutGroup_teacherInput
-  subjects?: Prisma.SubjectTeacherCreateNestedManyWithoutTeacherInput
+  spouse_information?: Prisma.SpouseInformationCreateNestedOneWithoutTeacherInput
   students_in_responsibility?: Prisma.StudentResponsibilityCreateNestedManyWithoutTeacherInput
+  subjects?: Prisma.SubjectTeacherCreateNestedManyWithoutTeacherInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityCreateNestedManyWithoutTeacherInput
-  my_classes?: Prisma.ClassRoutineCreateNestedManyWithoutTeacherInput
-  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_academic_teachersInput
+  joining_history?: Prisma.JoiningHistoryCreateNestedManyWithoutTeacherInput
+  promoted_history?: Prisma.PromotedHistoryCreateNestedOneWithoutAcademic_administrative_staffInput
+  positions?: Prisma.UserPositionCreateNestedManyWithoutAcademic_administrative_staffsInput
+  roles?: Prisma.UserRoleCreateNestedManyWithoutAcademic_teachersInput
 }
 
 export type AcademicAdministrativeStaffUncheckedCreateWithoutCreated_byInput = {
@@ -2521,18 +2460,18 @@ export type AcademicAdministrativeStaffUncheckedCreateWithoutCreated_byInput = {
   updated_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
-  positions?: Prisma.UserPositionUncheckedCreateNestedManyWithoutAcademic_teachersInput
-  roles?: Prisma.UserRoleUncheckedCreateNestedManyWithoutAcademic_teachersInput
-  joining_history?: Prisma.JoiningHistoryUncheckedCreateNestedManyWithoutTeacherInput
-  promoted_history?: Prisma.PromotedHistoryUncheckedCreateNestedManyWithoutAcademic_administrative_staffInput
-  spouse_information?: Prisma.SpouseInformationUncheckedCreateNestedOneWithoutTeacherInput
   academic_results?: Prisma.AcademicResultUncheckedCreateNestedOneWithoutTeacherInput
+  my_classes?: Prisma.ClassRoutineUncheckedCreateNestedManyWithoutTeacherInput
   grade_teacher_class_name?: Prisma.ClassUncheckedCreateNestedOneWithoutGrade_teacherInput
   group_teacher_class_name?: Prisma.ClassUncheckedCreateNestedOneWithoutGroup_teacherInput
-  subjects?: Prisma.SubjectTeacherUncheckedCreateNestedManyWithoutTeacherInput
+  spouse_information?: Prisma.SpouseInformationUncheckedCreateNestedOneWithoutTeacherInput
   students_in_responsibility?: Prisma.StudentResponsibilityUncheckedCreateNestedManyWithoutTeacherInput
+  subjects?: Prisma.SubjectTeacherUncheckedCreateNestedManyWithoutTeacherInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUncheckedCreateNestedManyWithoutTeacherInput
-  my_classes?: Prisma.ClassRoutineUncheckedCreateNestedManyWithoutTeacherInput
+  joining_history?: Prisma.JoiningHistoryUncheckedCreateNestedManyWithoutTeacherInput
+  promoted_history?: Prisma.PromotedHistoryUncheckedCreateNestedOneWithoutAcademic_administrative_staffInput
+  positions?: Prisma.UserPositionUncheckedCreateNestedManyWithoutAcademic_administrative_staffsInput
+  roles?: Prisma.UserRoleUncheckedCreateNestedManyWithoutAcademic_teachersInput
 }
 
 export type AcademicAdministrativeStaffCreateOrConnectWithoutCreated_byInput = {
@@ -2555,22 +2494,22 @@ export type AcademicAdministrativeStaffCreateWithoutUpdated_byInput = {
   is_responsible_teacher?: boolean
   created_at?: Date | string
   updated_at?: Date | string | null
+  academic_results?: Prisma.AcademicResultCreateNestedOneWithoutTeacherInput
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_academic_teachersInput
   current_position: Prisma.UserPositionCreateNestedOneWithoutCurrent_academic_teachersInput
   current_role: Prisma.UserRoleCreateNestedOneWithoutCurrent_academic_teachersInput
-  positions?: Prisma.UserPositionCreateNestedManyWithoutAcademic_teachersInput
-  roles?: Prisma.UserRoleCreateNestedManyWithoutAcademic_teachersInput
-  joining_history?: Prisma.JoiningHistoryCreateNestedManyWithoutTeacherInput
-  promoted_history?: Prisma.PromotedHistoryCreateNestedManyWithoutAcademic_administrative_staffInput
   user_primary_data: Prisma.UserCreateNestedOneWithoutTeacher_profileInput
-  spouse_information?: Prisma.SpouseInformationCreateNestedOneWithoutTeacherInput
-  academic_results?: Prisma.AcademicResultCreateNestedOneWithoutTeacherInput
+  my_classes?: Prisma.ClassRoutineCreateNestedManyWithoutTeacherInput
   grade_teacher_class_name?: Prisma.ClassCreateNestedOneWithoutGrade_teacherInput
   group_teacher_class_name?: Prisma.ClassCreateNestedOneWithoutGroup_teacherInput
-  subjects?: Prisma.SubjectTeacherCreateNestedManyWithoutTeacherInput
+  spouse_information?: Prisma.SpouseInformationCreateNestedOneWithoutTeacherInput
   students_in_responsibility?: Prisma.StudentResponsibilityCreateNestedManyWithoutTeacherInput
+  subjects?: Prisma.SubjectTeacherCreateNestedManyWithoutTeacherInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityCreateNestedManyWithoutTeacherInput
-  my_classes?: Prisma.ClassRoutineCreateNestedManyWithoutTeacherInput
-  created_by?: Prisma.UserCreateNestedOneWithoutCreated_academic_teachersInput
+  joining_history?: Prisma.JoiningHistoryCreateNestedManyWithoutTeacherInput
+  promoted_history?: Prisma.PromotedHistoryCreateNestedOneWithoutAcademic_administrative_staffInput
+  positions?: Prisma.UserPositionCreateNestedManyWithoutAcademic_administrative_staffsInput
+  roles?: Prisma.UserRoleCreateNestedManyWithoutAcademic_teachersInput
 }
 
 export type AcademicAdministrativeStaffUncheckedCreateWithoutUpdated_byInput = {
@@ -2587,18 +2526,18 @@ export type AcademicAdministrativeStaffUncheckedCreateWithoutUpdated_byInput = {
   created_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
-  positions?: Prisma.UserPositionUncheckedCreateNestedManyWithoutAcademic_teachersInput
-  roles?: Prisma.UserRoleUncheckedCreateNestedManyWithoutAcademic_teachersInput
-  joining_history?: Prisma.JoiningHistoryUncheckedCreateNestedManyWithoutTeacherInput
-  promoted_history?: Prisma.PromotedHistoryUncheckedCreateNestedManyWithoutAcademic_administrative_staffInput
-  spouse_information?: Prisma.SpouseInformationUncheckedCreateNestedOneWithoutTeacherInput
   academic_results?: Prisma.AcademicResultUncheckedCreateNestedOneWithoutTeacherInput
+  my_classes?: Prisma.ClassRoutineUncheckedCreateNestedManyWithoutTeacherInput
   grade_teacher_class_name?: Prisma.ClassUncheckedCreateNestedOneWithoutGrade_teacherInput
   group_teacher_class_name?: Prisma.ClassUncheckedCreateNestedOneWithoutGroup_teacherInput
-  subjects?: Prisma.SubjectTeacherUncheckedCreateNestedManyWithoutTeacherInput
+  spouse_information?: Prisma.SpouseInformationUncheckedCreateNestedOneWithoutTeacherInput
   students_in_responsibility?: Prisma.StudentResponsibilityUncheckedCreateNestedManyWithoutTeacherInput
+  subjects?: Prisma.SubjectTeacherUncheckedCreateNestedManyWithoutTeacherInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUncheckedCreateNestedManyWithoutTeacherInput
-  my_classes?: Prisma.ClassRoutineUncheckedCreateNestedManyWithoutTeacherInput
+  joining_history?: Prisma.JoiningHistoryUncheckedCreateNestedManyWithoutTeacherInput
+  promoted_history?: Prisma.PromotedHistoryUncheckedCreateNestedOneWithoutAcademic_administrative_staffInput
+  positions?: Prisma.UserPositionUncheckedCreateNestedManyWithoutAcademic_administrative_staffsInput
+  roles?: Prisma.UserRoleUncheckedCreateNestedManyWithoutAcademic_teachersInput
 }
 
 export type AcademicAdministrativeStaffCreateOrConnectWithoutUpdated_byInput = {
@@ -2611,71 +2550,65 @@ export type AcademicAdministrativeStaffCreateManyUpdated_byInputEnvelope = {
   skipDuplicates?: boolean
 }
 
-export type AcademicAdministrativeStaffUpsertWithoutUser_primary_dataInput = {
-  update: Prisma.XOR<Prisma.AcademicAdministrativeStaffUpdateWithoutUser_primary_dataInput, Prisma.AcademicAdministrativeStaffUncheckedUpdateWithoutUser_primary_dataInput>
+export type AcademicAdministrativeStaffCreateWithoutUser_primary_dataInput = {
+  id?: string
+  full_name: string
+  teaching_working_experience_year?: number | null
+  teaching_working_experience_month?: number | null
+  alternative_contact_no?: Prisma.AcademicAdministrativeStaffCreatealternative_contact_noInput | string[]
+  is_subject_teacher?: boolean
+  is_responsible_teacher?: boolean
+  created_at?: Date | string
+  updated_at?: Date | string | null
+  academic_results?: Prisma.AcademicResultCreateNestedOneWithoutTeacherInput
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_academic_teachersInput
+  current_position: Prisma.UserPositionCreateNestedOneWithoutCurrent_academic_teachersInput
+  current_role: Prisma.UserRoleCreateNestedOneWithoutCurrent_academic_teachersInput
+  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_academic_teachersInput
+  my_classes?: Prisma.ClassRoutineCreateNestedManyWithoutTeacherInput
+  grade_teacher_class_name?: Prisma.ClassCreateNestedOneWithoutGrade_teacherInput
+  group_teacher_class_name?: Prisma.ClassCreateNestedOneWithoutGroup_teacherInput
+  spouse_information?: Prisma.SpouseInformationCreateNestedOneWithoutTeacherInput
+  students_in_responsibility?: Prisma.StudentResponsibilityCreateNestedManyWithoutTeacherInput
+  subjects?: Prisma.SubjectTeacherCreateNestedManyWithoutTeacherInput
+  honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityCreateNestedManyWithoutTeacherInput
+  joining_history?: Prisma.JoiningHistoryCreateNestedManyWithoutTeacherInput
+  promoted_history?: Prisma.PromotedHistoryCreateNestedOneWithoutAcademic_administrative_staffInput
+  positions?: Prisma.UserPositionCreateNestedManyWithoutAcademic_administrative_staffsInput
+  roles?: Prisma.UserRoleCreateNestedManyWithoutAcademic_teachersInput
+}
+
+export type AcademicAdministrativeStaffUncheckedCreateWithoutUser_primary_dataInput = {
+  id?: string
+  full_name: string
+  current_position_id: string
+  current_role_id: string
+  teaching_working_experience_year?: number | null
+  teaching_working_experience_month?: number | null
+  alternative_contact_no?: Prisma.AcademicAdministrativeStaffCreatealternative_contact_noInput | string[]
+  is_subject_teacher?: boolean
+  is_responsible_teacher?: boolean
+  created_by_id?: string | null
+  updated_by_id?: string | null
+  created_at?: Date | string
+  updated_at?: Date | string | null
+  academic_results?: Prisma.AcademicResultUncheckedCreateNestedOneWithoutTeacherInput
+  my_classes?: Prisma.ClassRoutineUncheckedCreateNestedManyWithoutTeacherInput
+  grade_teacher_class_name?: Prisma.ClassUncheckedCreateNestedOneWithoutGrade_teacherInput
+  group_teacher_class_name?: Prisma.ClassUncheckedCreateNestedOneWithoutGroup_teacherInput
+  spouse_information?: Prisma.SpouseInformationUncheckedCreateNestedOneWithoutTeacherInput
+  students_in_responsibility?: Prisma.StudentResponsibilityUncheckedCreateNestedManyWithoutTeacherInput
+  subjects?: Prisma.SubjectTeacherUncheckedCreateNestedManyWithoutTeacherInput
+  honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUncheckedCreateNestedManyWithoutTeacherInput
+  joining_history?: Prisma.JoiningHistoryUncheckedCreateNestedManyWithoutTeacherInput
+  promoted_history?: Prisma.PromotedHistoryUncheckedCreateNestedOneWithoutAcademic_administrative_staffInput
+  positions?: Prisma.UserPositionUncheckedCreateNestedManyWithoutAcademic_administrative_staffsInput
+  roles?: Prisma.UserRoleUncheckedCreateNestedManyWithoutAcademic_teachersInput
+}
+
+export type AcademicAdministrativeStaffCreateOrConnectWithoutUser_primary_dataInput = {
+  where: Prisma.AcademicAdministrativeStaffWhereUniqueInput
   create: Prisma.XOR<Prisma.AcademicAdministrativeStaffCreateWithoutUser_primary_dataInput, Prisma.AcademicAdministrativeStaffUncheckedCreateWithoutUser_primary_dataInput>
-  where?: Prisma.AcademicAdministrativeStaffWhereInput
-}
-
-export type AcademicAdministrativeStaffUpdateToOneWithWhereWithoutUser_primary_dataInput = {
-  where?: Prisma.AcademicAdministrativeStaffWhereInput
-  data: Prisma.XOR<Prisma.AcademicAdministrativeStaffUpdateWithoutUser_primary_dataInput, Prisma.AcademicAdministrativeStaffUncheckedUpdateWithoutUser_primary_dataInput>
-}
-
-export type AcademicAdministrativeStaffUpdateWithoutUser_primary_dataInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  full_name?: Prisma.StringFieldUpdateOperationsInput | string
-  teaching_working_experience_year?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  teaching_working_experience_month?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  alternative_contact_no?: Prisma.AcademicAdministrativeStaffUpdatealternative_contact_noInput | string[]
-  is_subject_teacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  is_responsible_teacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  current_position?: Prisma.UserPositionUpdateOneRequiredWithoutCurrent_academic_teachersNestedInput
-  current_role?: Prisma.UserRoleUpdateOneRequiredWithoutCurrent_academic_teachersNestedInput
-  positions?: Prisma.UserPositionUpdateManyWithoutAcademic_teachersNestedInput
-  roles?: Prisma.UserRoleUpdateManyWithoutAcademic_teachersNestedInput
-  joining_history?: Prisma.JoiningHistoryUpdateManyWithoutTeacherNestedInput
-  promoted_history?: Prisma.PromotedHistoryUpdateManyWithoutAcademic_administrative_staffNestedInput
-  spouse_information?: Prisma.SpouseInformationUpdateOneWithoutTeacherNestedInput
-  academic_results?: Prisma.AcademicResultUpdateOneWithoutTeacherNestedInput
-  grade_teacher_class_name?: Prisma.ClassUpdateOneWithoutGrade_teacherNestedInput
-  group_teacher_class_name?: Prisma.ClassUpdateOneWithoutGroup_teacherNestedInput
-  subjects?: Prisma.SubjectTeacherUpdateManyWithoutTeacherNestedInput
-  students_in_responsibility?: Prisma.StudentResponsibilityUpdateManyWithoutTeacherNestedInput
-  honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUpdateManyWithoutTeacherNestedInput
-  my_classes?: Prisma.ClassRoutineUpdateManyWithoutTeacherNestedInput
-  created_by?: Prisma.UserUpdateOneWithoutCreated_academic_teachersNestedInput
-  updated_by?: Prisma.UserUpdateOneWithoutUpdated_academic_teachersNestedInput
-}
-
-export type AcademicAdministrativeStaffUncheckedUpdateWithoutUser_primary_dataInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  full_name?: Prisma.StringFieldUpdateOperationsInput | string
-  current_position_id?: Prisma.StringFieldUpdateOperationsInput | string
-  current_role_id?: Prisma.StringFieldUpdateOperationsInput | string
-  teaching_working_experience_year?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  teaching_working_experience_month?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  alternative_contact_no?: Prisma.AcademicAdministrativeStaffUpdatealternative_contact_noInput | string[]
-  is_subject_teacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  is_responsible_teacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  positions?: Prisma.UserPositionUncheckedUpdateManyWithoutAcademic_teachersNestedInput
-  roles?: Prisma.UserRoleUncheckedUpdateManyWithoutAcademic_teachersNestedInput
-  joining_history?: Prisma.JoiningHistoryUncheckedUpdateManyWithoutTeacherNestedInput
-  promoted_history?: Prisma.PromotedHistoryUncheckedUpdateManyWithoutAcademic_administrative_staffNestedInput
-  spouse_information?: Prisma.SpouseInformationUncheckedUpdateOneWithoutTeacherNestedInput
-  academic_results?: Prisma.AcademicResultUncheckedUpdateOneWithoutTeacherNestedInput
-  grade_teacher_class_name?: Prisma.ClassUncheckedUpdateOneWithoutGrade_teacherNestedInput
-  group_teacher_class_name?: Prisma.ClassUncheckedUpdateOneWithoutGroup_teacherNestedInput
-  subjects?: Prisma.SubjectTeacherUncheckedUpdateManyWithoutTeacherNestedInput
-  students_in_responsibility?: Prisma.StudentResponsibilityUncheckedUpdateManyWithoutTeacherNestedInput
-  honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUncheckedUpdateManyWithoutTeacherNestedInput
-  my_classes?: Prisma.ClassRoutineUncheckedUpdateManyWithoutTeacherNestedInput
 }
 
 export type AcademicAdministrativeStaffUpsertWithWhereUniqueWithoutCreated_byInput = {
@@ -2730,6 +2663,73 @@ export type AcademicAdministrativeStaffUpdateManyWithWhereWithoutUpdated_byInput
   data: Prisma.XOR<Prisma.AcademicAdministrativeStaffUpdateManyMutationInput, Prisma.AcademicAdministrativeStaffUncheckedUpdateManyWithoutUpdated_byInput>
 }
 
+export type AcademicAdministrativeStaffUpsertWithoutUser_primary_dataInput = {
+  update: Prisma.XOR<Prisma.AcademicAdministrativeStaffUpdateWithoutUser_primary_dataInput, Prisma.AcademicAdministrativeStaffUncheckedUpdateWithoutUser_primary_dataInput>
+  create: Prisma.XOR<Prisma.AcademicAdministrativeStaffCreateWithoutUser_primary_dataInput, Prisma.AcademicAdministrativeStaffUncheckedCreateWithoutUser_primary_dataInput>
+  where?: Prisma.AcademicAdministrativeStaffWhereInput
+}
+
+export type AcademicAdministrativeStaffUpdateToOneWithWhereWithoutUser_primary_dataInput = {
+  where?: Prisma.AcademicAdministrativeStaffWhereInput
+  data: Prisma.XOR<Prisma.AcademicAdministrativeStaffUpdateWithoutUser_primary_dataInput, Prisma.AcademicAdministrativeStaffUncheckedUpdateWithoutUser_primary_dataInput>
+}
+
+export type AcademicAdministrativeStaffUpdateWithoutUser_primary_dataInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  teaching_working_experience_year?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  teaching_working_experience_month?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  alternative_contact_no?: Prisma.AcademicAdministrativeStaffUpdatealternative_contact_noInput | string[]
+  is_subject_teacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  is_responsible_teacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  academic_results?: Prisma.AcademicResultUpdateOneWithoutTeacherNestedInput
+  created_by?: Prisma.UserUpdateOneWithoutCreated_academic_teachersNestedInput
+  current_position?: Prisma.UserPositionUpdateOneRequiredWithoutCurrent_academic_teachersNestedInput
+  current_role?: Prisma.UserRoleUpdateOneRequiredWithoutCurrent_academic_teachersNestedInput
+  updated_by?: Prisma.UserUpdateOneWithoutUpdated_academic_teachersNestedInput
+  my_classes?: Prisma.ClassRoutineUpdateManyWithoutTeacherNestedInput
+  grade_teacher_class_name?: Prisma.ClassUpdateOneWithoutGrade_teacherNestedInput
+  group_teacher_class_name?: Prisma.ClassUpdateOneWithoutGroup_teacherNestedInput
+  spouse_information?: Prisma.SpouseInformationUpdateOneWithoutTeacherNestedInput
+  students_in_responsibility?: Prisma.StudentResponsibilityUpdateManyWithoutTeacherNestedInput
+  subjects?: Prisma.SubjectTeacherUpdateManyWithoutTeacherNestedInput
+  honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUpdateManyWithoutTeacherNestedInput
+  joining_history?: Prisma.JoiningHistoryUpdateManyWithoutTeacherNestedInput
+  promoted_history?: Prisma.PromotedHistoryUpdateOneWithoutAcademic_administrative_staffNestedInput
+  positions?: Prisma.UserPositionUpdateManyWithoutAcademic_administrative_staffsNestedInput
+  roles?: Prisma.UserRoleUpdateManyWithoutAcademic_teachersNestedInput
+}
+
+export type AcademicAdministrativeStaffUncheckedUpdateWithoutUser_primary_dataInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  full_name?: Prisma.StringFieldUpdateOperationsInput | string
+  current_position_id?: Prisma.StringFieldUpdateOperationsInput | string
+  current_role_id?: Prisma.StringFieldUpdateOperationsInput | string
+  teaching_working_experience_year?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  teaching_working_experience_month?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  alternative_contact_no?: Prisma.AcademicAdministrativeStaffUpdatealternative_contact_noInput | string[]
+  is_subject_teacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  is_responsible_teacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
+  created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  academic_results?: Prisma.AcademicResultUncheckedUpdateOneWithoutTeacherNestedInput
+  my_classes?: Prisma.ClassRoutineUncheckedUpdateManyWithoutTeacherNestedInput
+  grade_teacher_class_name?: Prisma.ClassUncheckedUpdateOneWithoutGrade_teacherNestedInput
+  group_teacher_class_name?: Prisma.ClassUncheckedUpdateOneWithoutGroup_teacherNestedInput
+  spouse_information?: Prisma.SpouseInformationUncheckedUpdateOneWithoutTeacherNestedInput
+  students_in_responsibility?: Prisma.StudentResponsibilityUncheckedUpdateManyWithoutTeacherNestedInput
+  subjects?: Prisma.SubjectTeacherUncheckedUpdateManyWithoutTeacherNestedInput
+  honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUncheckedUpdateManyWithoutTeacherNestedInput
+  joining_history?: Prisma.JoiningHistoryUncheckedUpdateManyWithoutTeacherNestedInput
+  promoted_history?: Prisma.PromotedHistoryUncheckedUpdateOneWithoutAcademic_administrative_staffNestedInput
+  positions?: Prisma.UserPositionUncheckedUpdateManyWithoutAcademic_administrative_staffsNestedInput
+  roles?: Prisma.UserRoleUncheckedUpdateManyWithoutAcademic_teachersNestedInput
+}
+
 export type AcademicAdministrativeStaffCreateWithoutCurrent_positionInput = {
   id?: string
   full_name: string
@@ -2740,22 +2740,22 @@ export type AcademicAdministrativeStaffCreateWithoutCurrent_positionInput = {
   is_responsible_teacher?: boolean
   created_at?: Date | string
   updated_at?: Date | string | null
-  current_role: Prisma.UserRoleCreateNestedOneWithoutCurrent_academic_teachersInput
-  positions?: Prisma.UserPositionCreateNestedManyWithoutAcademic_teachersInput
-  roles?: Prisma.UserRoleCreateNestedManyWithoutAcademic_teachersInput
-  joining_history?: Prisma.JoiningHistoryCreateNestedManyWithoutTeacherInput
-  promoted_history?: Prisma.PromotedHistoryCreateNestedManyWithoutAcademic_administrative_staffInput
-  user_primary_data: Prisma.UserCreateNestedOneWithoutTeacher_profileInput
-  spouse_information?: Prisma.SpouseInformationCreateNestedOneWithoutTeacherInput
   academic_results?: Prisma.AcademicResultCreateNestedOneWithoutTeacherInput
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_academic_teachersInput
+  current_role: Prisma.UserRoleCreateNestedOneWithoutCurrent_academic_teachersInput
+  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_academic_teachersInput
+  user_primary_data: Prisma.UserCreateNestedOneWithoutTeacher_profileInput
+  my_classes?: Prisma.ClassRoutineCreateNestedManyWithoutTeacherInput
   grade_teacher_class_name?: Prisma.ClassCreateNestedOneWithoutGrade_teacherInput
   group_teacher_class_name?: Prisma.ClassCreateNestedOneWithoutGroup_teacherInput
-  subjects?: Prisma.SubjectTeacherCreateNestedManyWithoutTeacherInput
+  spouse_information?: Prisma.SpouseInformationCreateNestedOneWithoutTeacherInput
   students_in_responsibility?: Prisma.StudentResponsibilityCreateNestedManyWithoutTeacherInput
+  subjects?: Prisma.SubjectTeacherCreateNestedManyWithoutTeacherInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityCreateNestedManyWithoutTeacherInput
-  my_classes?: Prisma.ClassRoutineCreateNestedManyWithoutTeacherInput
-  created_by?: Prisma.UserCreateNestedOneWithoutCreated_academic_teachersInput
-  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_academic_teachersInput
+  joining_history?: Prisma.JoiningHistoryCreateNestedManyWithoutTeacherInput
+  promoted_history?: Prisma.PromotedHistoryCreateNestedOneWithoutAcademic_administrative_staffInput
+  positions?: Prisma.UserPositionCreateNestedManyWithoutAcademic_administrative_staffsInput
+  roles?: Prisma.UserRoleCreateNestedManyWithoutAcademic_teachersInput
 }
 
 export type AcademicAdministrativeStaffUncheckedCreateWithoutCurrent_positionInput = {
@@ -2772,18 +2772,18 @@ export type AcademicAdministrativeStaffUncheckedCreateWithoutCurrent_positionInp
   updated_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
-  positions?: Prisma.UserPositionUncheckedCreateNestedManyWithoutAcademic_teachersInput
-  roles?: Prisma.UserRoleUncheckedCreateNestedManyWithoutAcademic_teachersInput
-  joining_history?: Prisma.JoiningHistoryUncheckedCreateNestedManyWithoutTeacherInput
-  promoted_history?: Prisma.PromotedHistoryUncheckedCreateNestedManyWithoutAcademic_administrative_staffInput
-  spouse_information?: Prisma.SpouseInformationUncheckedCreateNestedOneWithoutTeacherInput
   academic_results?: Prisma.AcademicResultUncheckedCreateNestedOneWithoutTeacherInput
+  my_classes?: Prisma.ClassRoutineUncheckedCreateNestedManyWithoutTeacherInput
   grade_teacher_class_name?: Prisma.ClassUncheckedCreateNestedOneWithoutGrade_teacherInput
   group_teacher_class_name?: Prisma.ClassUncheckedCreateNestedOneWithoutGroup_teacherInput
-  subjects?: Prisma.SubjectTeacherUncheckedCreateNestedManyWithoutTeacherInput
+  spouse_information?: Prisma.SpouseInformationUncheckedCreateNestedOneWithoutTeacherInput
   students_in_responsibility?: Prisma.StudentResponsibilityUncheckedCreateNestedManyWithoutTeacherInput
+  subjects?: Prisma.SubjectTeacherUncheckedCreateNestedManyWithoutTeacherInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUncheckedCreateNestedManyWithoutTeacherInput
-  my_classes?: Prisma.ClassRoutineUncheckedCreateNestedManyWithoutTeacherInput
+  joining_history?: Prisma.JoiningHistoryUncheckedCreateNestedManyWithoutTeacherInput
+  promoted_history?: Prisma.PromotedHistoryUncheckedCreateNestedOneWithoutAcademic_administrative_staffInput
+  positions?: Prisma.UserPositionUncheckedCreateNestedManyWithoutAcademic_administrative_staffsInput
+  roles?: Prisma.UserRoleUncheckedCreateNestedManyWithoutAcademic_teachersInput
 }
 
 export type AcademicAdministrativeStaffCreateOrConnectWithoutCurrent_positionInput = {
@@ -2806,22 +2806,22 @@ export type AcademicAdministrativeStaffCreateWithoutPositionsInput = {
   is_responsible_teacher?: boolean
   created_at?: Date | string
   updated_at?: Date | string | null
+  academic_results?: Prisma.AcademicResultCreateNestedOneWithoutTeacherInput
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_academic_teachersInput
   current_position: Prisma.UserPositionCreateNestedOneWithoutCurrent_academic_teachersInput
   current_role: Prisma.UserRoleCreateNestedOneWithoutCurrent_academic_teachersInput
-  roles?: Prisma.UserRoleCreateNestedManyWithoutAcademic_teachersInput
-  joining_history?: Prisma.JoiningHistoryCreateNestedManyWithoutTeacherInput
-  promoted_history?: Prisma.PromotedHistoryCreateNestedManyWithoutAcademic_administrative_staffInput
+  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_academic_teachersInput
   user_primary_data: Prisma.UserCreateNestedOneWithoutTeacher_profileInput
-  spouse_information?: Prisma.SpouseInformationCreateNestedOneWithoutTeacherInput
-  academic_results?: Prisma.AcademicResultCreateNestedOneWithoutTeacherInput
+  my_classes?: Prisma.ClassRoutineCreateNestedManyWithoutTeacherInput
   grade_teacher_class_name?: Prisma.ClassCreateNestedOneWithoutGrade_teacherInput
   group_teacher_class_name?: Prisma.ClassCreateNestedOneWithoutGroup_teacherInput
-  subjects?: Prisma.SubjectTeacherCreateNestedManyWithoutTeacherInput
+  spouse_information?: Prisma.SpouseInformationCreateNestedOneWithoutTeacherInput
   students_in_responsibility?: Prisma.StudentResponsibilityCreateNestedManyWithoutTeacherInput
+  subjects?: Prisma.SubjectTeacherCreateNestedManyWithoutTeacherInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityCreateNestedManyWithoutTeacherInput
-  my_classes?: Prisma.ClassRoutineCreateNestedManyWithoutTeacherInput
-  created_by?: Prisma.UserCreateNestedOneWithoutCreated_academic_teachersInput
-  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_academic_teachersInput
+  joining_history?: Prisma.JoiningHistoryCreateNestedManyWithoutTeacherInput
+  promoted_history?: Prisma.PromotedHistoryCreateNestedOneWithoutAcademic_administrative_staffInput
+  roles?: Prisma.UserRoleCreateNestedManyWithoutAcademic_teachersInput
 }
 
 export type AcademicAdministrativeStaffUncheckedCreateWithoutPositionsInput = {
@@ -2839,17 +2839,17 @@ export type AcademicAdministrativeStaffUncheckedCreateWithoutPositionsInput = {
   updated_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
-  roles?: Prisma.UserRoleUncheckedCreateNestedManyWithoutAcademic_teachersInput
-  joining_history?: Prisma.JoiningHistoryUncheckedCreateNestedManyWithoutTeacherInput
-  promoted_history?: Prisma.PromotedHistoryUncheckedCreateNestedManyWithoutAcademic_administrative_staffInput
-  spouse_information?: Prisma.SpouseInformationUncheckedCreateNestedOneWithoutTeacherInput
   academic_results?: Prisma.AcademicResultUncheckedCreateNestedOneWithoutTeacherInput
+  my_classes?: Prisma.ClassRoutineUncheckedCreateNestedManyWithoutTeacherInput
   grade_teacher_class_name?: Prisma.ClassUncheckedCreateNestedOneWithoutGrade_teacherInput
   group_teacher_class_name?: Prisma.ClassUncheckedCreateNestedOneWithoutGroup_teacherInput
-  subjects?: Prisma.SubjectTeacherUncheckedCreateNestedManyWithoutTeacherInput
+  spouse_information?: Prisma.SpouseInformationUncheckedCreateNestedOneWithoutTeacherInput
   students_in_responsibility?: Prisma.StudentResponsibilityUncheckedCreateNestedManyWithoutTeacherInput
+  subjects?: Prisma.SubjectTeacherUncheckedCreateNestedManyWithoutTeacherInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUncheckedCreateNestedManyWithoutTeacherInput
-  my_classes?: Prisma.ClassRoutineUncheckedCreateNestedManyWithoutTeacherInput
+  joining_history?: Prisma.JoiningHistoryUncheckedCreateNestedManyWithoutTeacherInput
+  promoted_history?: Prisma.PromotedHistoryUncheckedCreateNestedOneWithoutAcademic_administrative_staffInput
+  roles?: Prisma.UserRoleUncheckedCreateNestedManyWithoutAcademic_teachersInput
 }
 
 export type AcademicAdministrativeStaffCreateOrConnectWithoutPositionsInput = {
@@ -2899,22 +2899,22 @@ export type AcademicAdministrativeStaffCreateWithoutCurrent_roleInput = {
   is_responsible_teacher?: boolean
   created_at?: Date | string
   updated_at?: Date | string | null
-  current_position: Prisma.UserPositionCreateNestedOneWithoutCurrent_academic_teachersInput
-  positions?: Prisma.UserPositionCreateNestedManyWithoutAcademic_teachersInput
-  roles?: Prisma.UserRoleCreateNestedManyWithoutAcademic_teachersInput
-  joining_history?: Prisma.JoiningHistoryCreateNestedManyWithoutTeacherInput
-  promoted_history?: Prisma.PromotedHistoryCreateNestedManyWithoutAcademic_administrative_staffInput
-  user_primary_data: Prisma.UserCreateNestedOneWithoutTeacher_profileInput
-  spouse_information?: Prisma.SpouseInformationCreateNestedOneWithoutTeacherInput
   academic_results?: Prisma.AcademicResultCreateNestedOneWithoutTeacherInput
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_academic_teachersInput
+  current_position: Prisma.UserPositionCreateNestedOneWithoutCurrent_academic_teachersInput
+  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_academic_teachersInput
+  user_primary_data: Prisma.UserCreateNestedOneWithoutTeacher_profileInput
+  my_classes?: Prisma.ClassRoutineCreateNestedManyWithoutTeacherInput
   grade_teacher_class_name?: Prisma.ClassCreateNestedOneWithoutGrade_teacherInput
   group_teacher_class_name?: Prisma.ClassCreateNestedOneWithoutGroup_teacherInput
-  subjects?: Prisma.SubjectTeacherCreateNestedManyWithoutTeacherInput
+  spouse_information?: Prisma.SpouseInformationCreateNestedOneWithoutTeacherInput
   students_in_responsibility?: Prisma.StudentResponsibilityCreateNestedManyWithoutTeacherInput
+  subjects?: Prisma.SubjectTeacherCreateNestedManyWithoutTeacherInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityCreateNestedManyWithoutTeacherInput
-  my_classes?: Prisma.ClassRoutineCreateNestedManyWithoutTeacherInput
-  created_by?: Prisma.UserCreateNestedOneWithoutCreated_academic_teachersInput
-  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_academic_teachersInput
+  joining_history?: Prisma.JoiningHistoryCreateNestedManyWithoutTeacherInput
+  promoted_history?: Prisma.PromotedHistoryCreateNestedOneWithoutAcademic_administrative_staffInput
+  positions?: Prisma.UserPositionCreateNestedManyWithoutAcademic_administrative_staffsInput
+  roles?: Prisma.UserRoleCreateNestedManyWithoutAcademic_teachersInput
 }
 
 export type AcademicAdministrativeStaffUncheckedCreateWithoutCurrent_roleInput = {
@@ -2931,18 +2931,18 @@ export type AcademicAdministrativeStaffUncheckedCreateWithoutCurrent_roleInput =
   updated_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
-  positions?: Prisma.UserPositionUncheckedCreateNestedManyWithoutAcademic_teachersInput
-  roles?: Prisma.UserRoleUncheckedCreateNestedManyWithoutAcademic_teachersInput
-  joining_history?: Prisma.JoiningHistoryUncheckedCreateNestedManyWithoutTeacherInput
-  promoted_history?: Prisma.PromotedHistoryUncheckedCreateNestedManyWithoutAcademic_administrative_staffInput
-  spouse_information?: Prisma.SpouseInformationUncheckedCreateNestedOneWithoutTeacherInput
   academic_results?: Prisma.AcademicResultUncheckedCreateNestedOneWithoutTeacherInput
+  my_classes?: Prisma.ClassRoutineUncheckedCreateNestedManyWithoutTeacherInput
   grade_teacher_class_name?: Prisma.ClassUncheckedCreateNestedOneWithoutGrade_teacherInput
   group_teacher_class_name?: Prisma.ClassUncheckedCreateNestedOneWithoutGroup_teacherInput
-  subjects?: Prisma.SubjectTeacherUncheckedCreateNestedManyWithoutTeacherInput
+  spouse_information?: Prisma.SpouseInformationUncheckedCreateNestedOneWithoutTeacherInput
   students_in_responsibility?: Prisma.StudentResponsibilityUncheckedCreateNestedManyWithoutTeacherInput
+  subjects?: Prisma.SubjectTeacherUncheckedCreateNestedManyWithoutTeacherInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUncheckedCreateNestedManyWithoutTeacherInput
-  my_classes?: Prisma.ClassRoutineUncheckedCreateNestedManyWithoutTeacherInput
+  joining_history?: Prisma.JoiningHistoryUncheckedCreateNestedManyWithoutTeacherInput
+  promoted_history?: Prisma.PromotedHistoryUncheckedCreateNestedOneWithoutAcademic_administrative_staffInput
+  positions?: Prisma.UserPositionUncheckedCreateNestedManyWithoutAcademic_administrative_staffsInput
+  roles?: Prisma.UserRoleUncheckedCreateNestedManyWithoutAcademic_teachersInput
 }
 
 export type AcademicAdministrativeStaffCreateOrConnectWithoutCurrent_roleInput = {
@@ -2965,22 +2965,22 @@ export type AcademicAdministrativeStaffCreateWithoutRolesInput = {
   is_responsible_teacher?: boolean
   created_at?: Date | string
   updated_at?: Date | string | null
+  academic_results?: Prisma.AcademicResultCreateNestedOneWithoutTeacherInput
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_academic_teachersInput
   current_position: Prisma.UserPositionCreateNestedOneWithoutCurrent_academic_teachersInput
   current_role: Prisma.UserRoleCreateNestedOneWithoutCurrent_academic_teachersInput
-  positions?: Prisma.UserPositionCreateNestedManyWithoutAcademic_teachersInput
-  joining_history?: Prisma.JoiningHistoryCreateNestedManyWithoutTeacherInput
-  promoted_history?: Prisma.PromotedHistoryCreateNestedManyWithoutAcademic_administrative_staffInput
+  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_academic_teachersInput
   user_primary_data: Prisma.UserCreateNestedOneWithoutTeacher_profileInput
-  spouse_information?: Prisma.SpouseInformationCreateNestedOneWithoutTeacherInput
-  academic_results?: Prisma.AcademicResultCreateNestedOneWithoutTeacherInput
+  my_classes?: Prisma.ClassRoutineCreateNestedManyWithoutTeacherInput
   grade_teacher_class_name?: Prisma.ClassCreateNestedOneWithoutGrade_teacherInput
   group_teacher_class_name?: Prisma.ClassCreateNestedOneWithoutGroup_teacherInput
-  subjects?: Prisma.SubjectTeacherCreateNestedManyWithoutTeacherInput
+  spouse_information?: Prisma.SpouseInformationCreateNestedOneWithoutTeacherInput
   students_in_responsibility?: Prisma.StudentResponsibilityCreateNestedManyWithoutTeacherInput
+  subjects?: Prisma.SubjectTeacherCreateNestedManyWithoutTeacherInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityCreateNestedManyWithoutTeacherInput
-  my_classes?: Prisma.ClassRoutineCreateNestedManyWithoutTeacherInput
-  created_by?: Prisma.UserCreateNestedOneWithoutCreated_academic_teachersInput
-  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_academic_teachersInput
+  joining_history?: Prisma.JoiningHistoryCreateNestedManyWithoutTeacherInput
+  promoted_history?: Prisma.PromotedHistoryCreateNestedOneWithoutAcademic_administrative_staffInput
+  positions?: Prisma.UserPositionCreateNestedManyWithoutAcademic_administrative_staffsInput
 }
 
 export type AcademicAdministrativeStaffUncheckedCreateWithoutRolesInput = {
@@ -2998,17 +2998,17 @@ export type AcademicAdministrativeStaffUncheckedCreateWithoutRolesInput = {
   updated_by_id?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
-  positions?: Prisma.UserPositionUncheckedCreateNestedManyWithoutAcademic_teachersInput
-  joining_history?: Prisma.JoiningHistoryUncheckedCreateNestedManyWithoutTeacherInput
-  promoted_history?: Prisma.PromotedHistoryUncheckedCreateNestedManyWithoutAcademic_administrative_staffInput
-  spouse_information?: Prisma.SpouseInformationUncheckedCreateNestedOneWithoutTeacherInput
   academic_results?: Prisma.AcademicResultUncheckedCreateNestedOneWithoutTeacherInput
+  my_classes?: Prisma.ClassRoutineUncheckedCreateNestedManyWithoutTeacherInput
   grade_teacher_class_name?: Prisma.ClassUncheckedCreateNestedOneWithoutGrade_teacherInput
   group_teacher_class_name?: Prisma.ClassUncheckedCreateNestedOneWithoutGroup_teacherInput
-  subjects?: Prisma.SubjectTeacherUncheckedCreateNestedManyWithoutTeacherInput
+  spouse_information?: Prisma.SpouseInformationUncheckedCreateNestedOneWithoutTeacherInput
   students_in_responsibility?: Prisma.StudentResponsibilityUncheckedCreateNestedManyWithoutTeacherInput
+  subjects?: Prisma.SubjectTeacherUncheckedCreateNestedManyWithoutTeacherInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUncheckedCreateNestedManyWithoutTeacherInput
-  my_classes?: Prisma.ClassRoutineUncheckedCreateNestedManyWithoutTeacherInput
+  joining_history?: Prisma.JoiningHistoryUncheckedCreateNestedManyWithoutTeacherInput
+  promoted_history?: Prisma.PromotedHistoryUncheckedCreateNestedOneWithoutAcademic_administrative_staffInput
+  positions?: Prisma.UserPositionUncheckedCreateNestedManyWithoutAcademic_administrative_staffsInput
 }
 
 export type AcademicAdministrativeStaffCreateOrConnectWithoutRolesInput = {
@@ -3090,22 +3090,22 @@ export type AcademicAdministrativeStaffUpdateWithoutCreated_byInput = {
   is_responsible_teacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  academic_results?: Prisma.AcademicResultUpdateOneWithoutTeacherNestedInput
   current_position?: Prisma.UserPositionUpdateOneRequiredWithoutCurrent_academic_teachersNestedInput
   current_role?: Prisma.UserRoleUpdateOneRequiredWithoutCurrent_academic_teachersNestedInput
-  positions?: Prisma.UserPositionUpdateManyWithoutAcademic_teachersNestedInput
-  roles?: Prisma.UserRoleUpdateManyWithoutAcademic_teachersNestedInput
-  joining_history?: Prisma.JoiningHistoryUpdateManyWithoutTeacherNestedInput
-  promoted_history?: Prisma.PromotedHistoryUpdateManyWithoutAcademic_administrative_staffNestedInput
+  updated_by?: Prisma.UserUpdateOneWithoutUpdated_academic_teachersNestedInput
   user_primary_data?: Prisma.UserUpdateOneRequiredWithoutTeacher_profileNestedInput
-  spouse_information?: Prisma.SpouseInformationUpdateOneWithoutTeacherNestedInput
-  academic_results?: Prisma.AcademicResultUpdateOneWithoutTeacherNestedInput
+  my_classes?: Prisma.ClassRoutineUpdateManyWithoutTeacherNestedInput
   grade_teacher_class_name?: Prisma.ClassUpdateOneWithoutGrade_teacherNestedInput
   group_teacher_class_name?: Prisma.ClassUpdateOneWithoutGroup_teacherNestedInput
-  subjects?: Prisma.SubjectTeacherUpdateManyWithoutTeacherNestedInput
+  spouse_information?: Prisma.SpouseInformationUpdateOneWithoutTeacherNestedInput
   students_in_responsibility?: Prisma.StudentResponsibilityUpdateManyWithoutTeacherNestedInput
+  subjects?: Prisma.SubjectTeacherUpdateManyWithoutTeacherNestedInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUpdateManyWithoutTeacherNestedInput
-  my_classes?: Prisma.ClassRoutineUpdateManyWithoutTeacherNestedInput
-  updated_by?: Prisma.UserUpdateOneWithoutUpdated_academic_teachersNestedInput
+  joining_history?: Prisma.JoiningHistoryUpdateManyWithoutTeacherNestedInput
+  promoted_history?: Prisma.PromotedHistoryUpdateOneWithoutAcademic_administrative_staffNestedInput
+  positions?: Prisma.UserPositionUpdateManyWithoutAcademic_administrative_staffsNestedInput
+  roles?: Prisma.UserRoleUpdateManyWithoutAcademic_teachersNestedInput
 }
 
 export type AcademicAdministrativeStaffUncheckedUpdateWithoutCreated_byInput = {
@@ -3122,18 +3122,18 @@ export type AcademicAdministrativeStaffUncheckedUpdateWithoutCreated_byInput = {
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  positions?: Prisma.UserPositionUncheckedUpdateManyWithoutAcademic_teachersNestedInput
-  roles?: Prisma.UserRoleUncheckedUpdateManyWithoutAcademic_teachersNestedInput
-  joining_history?: Prisma.JoiningHistoryUncheckedUpdateManyWithoutTeacherNestedInput
-  promoted_history?: Prisma.PromotedHistoryUncheckedUpdateManyWithoutAcademic_administrative_staffNestedInput
-  spouse_information?: Prisma.SpouseInformationUncheckedUpdateOneWithoutTeacherNestedInput
   academic_results?: Prisma.AcademicResultUncheckedUpdateOneWithoutTeacherNestedInput
+  my_classes?: Prisma.ClassRoutineUncheckedUpdateManyWithoutTeacherNestedInput
   grade_teacher_class_name?: Prisma.ClassUncheckedUpdateOneWithoutGrade_teacherNestedInput
   group_teacher_class_name?: Prisma.ClassUncheckedUpdateOneWithoutGroup_teacherNestedInput
-  subjects?: Prisma.SubjectTeacherUncheckedUpdateManyWithoutTeacherNestedInput
+  spouse_information?: Prisma.SpouseInformationUncheckedUpdateOneWithoutTeacherNestedInput
   students_in_responsibility?: Prisma.StudentResponsibilityUncheckedUpdateManyWithoutTeacherNestedInput
+  subjects?: Prisma.SubjectTeacherUncheckedUpdateManyWithoutTeacherNestedInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUncheckedUpdateManyWithoutTeacherNestedInput
-  my_classes?: Prisma.ClassRoutineUncheckedUpdateManyWithoutTeacherNestedInput
+  joining_history?: Prisma.JoiningHistoryUncheckedUpdateManyWithoutTeacherNestedInput
+  promoted_history?: Prisma.PromotedHistoryUncheckedUpdateOneWithoutAcademic_administrative_staffNestedInput
+  positions?: Prisma.UserPositionUncheckedUpdateManyWithoutAcademic_administrative_staffsNestedInput
+  roles?: Prisma.UserRoleUncheckedUpdateManyWithoutAcademic_teachersNestedInput
 }
 
 export type AcademicAdministrativeStaffUncheckedUpdateManyWithoutCreated_byInput = {
@@ -3162,22 +3162,22 @@ export type AcademicAdministrativeStaffUpdateWithoutUpdated_byInput = {
   is_responsible_teacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  academic_results?: Prisma.AcademicResultUpdateOneWithoutTeacherNestedInput
+  created_by?: Prisma.UserUpdateOneWithoutCreated_academic_teachersNestedInput
   current_position?: Prisma.UserPositionUpdateOneRequiredWithoutCurrent_academic_teachersNestedInput
   current_role?: Prisma.UserRoleUpdateOneRequiredWithoutCurrent_academic_teachersNestedInput
-  positions?: Prisma.UserPositionUpdateManyWithoutAcademic_teachersNestedInput
-  roles?: Prisma.UserRoleUpdateManyWithoutAcademic_teachersNestedInput
-  joining_history?: Prisma.JoiningHistoryUpdateManyWithoutTeacherNestedInput
-  promoted_history?: Prisma.PromotedHistoryUpdateManyWithoutAcademic_administrative_staffNestedInput
   user_primary_data?: Prisma.UserUpdateOneRequiredWithoutTeacher_profileNestedInput
-  spouse_information?: Prisma.SpouseInformationUpdateOneWithoutTeacherNestedInput
-  academic_results?: Prisma.AcademicResultUpdateOneWithoutTeacherNestedInput
+  my_classes?: Prisma.ClassRoutineUpdateManyWithoutTeacherNestedInput
   grade_teacher_class_name?: Prisma.ClassUpdateOneWithoutGrade_teacherNestedInput
   group_teacher_class_name?: Prisma.ClassUpdateOneWithoutGroup_teacherNestedInput
-  subjects?: Prisma.SubjectTeacherUpdateManyWithoutTeacherNestedInput
+  spouse_information?: Prisma.SpouseInformationUpdateOneWithoutTeacherNestedInput
   students_in_responsibility?: Prisma.StudentResponsibilityUpdateManyWithoutTeacherNestedInput
+  subjects?: Prisma.SubjectTeacherUpdateManyWithoutTeacherNestedInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUpdateManyWithoutTeacherNestedInput
-  my_classes?: Prisma.ClassRoutineUpdateManyWithoutTeacherNestedInput
-  created_by?: Prisma.UserUpdateOneWithoutCreated_academic_teachersNestedInput
+  joining_history?: Prisma.JoiningHistoryUpdateManyWithoutTeacherNestedInput
+  promoted_history?: Prisma.PromotedHistoryUpdateOneWithoutAcademic_administrative_staffNestedInput
+  positions?: Prisma.UserPositionUpdateManyWithoutAcademic_administrative_staffsNestedInput
+  roles?: Prisma.UserRoleUpdateManyWithoutAcademic_teachersNestedInput
 }
 
 export type AcademicAdministrativeStaffUncheckedUpdateWithoutUpdated_byInput = {
@@ -3194,18 +3194,18 @@ export type AcademicAdministrativeStaffUncheckedUpdateWithoutUpdated_byInput = {
   created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  positions?: Prisma.UserPositionUncheckedUpdateManyWithoutAcademic_teachersNestedInput
-  roles?: Prisma.UserRoleUncheckedUpdateManyWithoutAcademic_teachersNestedInput
-  joining_history?: Prisma.JoiningHistoryUncheckedUpdateManyWithoutTeacherNestedInput
-  promoted_history?: Prisma.PromotedHistoryUncheckedUpdateManyWithoutAcademic_administrative_staffNestedInput
-  spouse_information?: Prisma.SpouseInformationUncheckedUpdateOneWithoutTeacherNestedInput
   academic_results?: Prisma.AcademicResultUncheckedUpdateOneWithoutTeacherNestedInput
+  my_classes?: Prisma.ClassRoutineUncheckedUpdateManyWithoutTeacherNestedInput
   grade_teacher_class_name?: Prisma.ClassUncheckedUpdateOneWithoutGrade_teacherNestedInput
   group_teacher_class_name?: Prisma.ClassUncheckedUpdateOneWithoutGroup_teacherNestedInput
-  subjects?: Prisma.SubjectTeacherUncheckedUpdateManyWithoutTeacherNestedInput
+  spouse_information?: Prisma.SpouseInformationUncheckedUpdateOneWithoutTeacherNestedInput
   students_in_responsibility?: Prisma.StudentResponsibilityUncheckedUpdateManyWithoutTeacherNestedInput
+  subjects?: Prisma.SubjectTeacherUncheckedUpdateManyWithoutTeacherNestedInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUncheckedUpdateManyWithoutTeacherNestedInput
-  my_classes?: Prisma.ClassRoutineUncheckedUpdateManyWithoutTeacherNestedInput
+  joining_history?: Prisma.JoiningHistoryUncheckedUpdateManyWithoutTeacherNestedInput
+  promoted_history?: Prisma.PromotedHistoryUncheckedUpdateOneWithoutAcademic_administrative_staffNestedInput
+  positions?: Prisma.UserPositionUncheckedUpdateManyWithoutAcademic_administrative_staffsNestedInput
+  roles?: Prisma.UserRoleUncheckedUpdateManyWithoutAcademic_teachersNestedInput
 }
 
 export type AcademicAdministrativeStaffUncheckedUpdateManyWithoutUpdated_byInput = {
@@ -3250,22 +3250,22 @@ export type AcademicAdministrativeStaffUpdateWithoutCurrent_positionInput = {
   is_responsible_teacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  current_role?: Prisma.UserRoleUpdateOneRequiredWithoutCurrent_academic_teachersNestedInput
-  positions?: Prisma.UserPositionUpdateManyWithoutAcademic_teachersNestedInput
-  roles?: Prisma.UserRoleUpdateManyWithoutAcademic_teachersNestedInput
-  joining_history?: Prisma.JoiningHistoryUpdateManyWithoutTeacherNestedInput
-  promoted_history?: Prisma.PromotedHistoryUpdateManyWithoutAcademic_administrative_staffNestedInput
-  user_primary_data?: Prisma.UserUpdateOneRequiredWithoutTeacher_profileNestedInput
-  spouse_information?: Prisma.SpouseInformationUpdateOneWithoutTeacherNestedInput
   academic_results?: Prisma.AcademicResultUpdateOneWithoutTeacherNestedInput
+  created_by?: Prisma.UserUpdateOneWithoutCreated_academic_teachersNestedInput
+  current_role?: Prisma.UserRoleUpdateOneRequiredWithoutCurrent_academic_teachersNestedInput
+  updated_by?: Prisma.UserUpdateOneWithoutUpdated_academic_teachersNestedInput
+  user_primary_data?: Prisma.UserUpdateOneRequiredWithoutTeacher_profileNestedInput
+  my_classes?: Prisma.ClassRoutineUpdateManyWithoutTeacherNestedInput
   grade_teacher_class_name?: Prisma.ClassUpdateOneWithoutGrade_teacherNestedInput
   group_teacher_class_name?: Prisma.ClassUpdateOneWithoutGroup_teacherNestedInput
-  subjects?: Prisma.SubjectTeacherUpdateManyWithoutTeacherNestedInput
+  spouse_information?: Prisma.SpouseInformationUpdateOneWithoutTeacherNestedInput
   students_in_responsibility?: Prisma.StudentResponsibilityUpdateManyWithoutTeacherNestedInput
+  subjects?: Prisma.SubjectTeacherUpdateManyWithoutTeacherNestedInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUpdateManyWithoutTeacherNestedInput
-  my_classes?: Prisma.ClassRoutineUpdateManyWithoutTeacherNestedInput
-  created_by?: Prisma.UserUpdateOneWithoutCreated_academic_teachersNestedInput
-  updated_by?: Prisma.UserUpdateOneWithoutUpdated_academic_teachersNestedInput
+  joining_history?: Prisma.JoiningHistoryUpdateManyWithoutTeacherNestedInput
+  promoted_history?: Prisma.PromotedHistoryUpdateOneWithoutAcademic_administrative_staffNestedInput
+  positions?: Prisma.UserPositionUpdateManyWithoutAcademic_administrative_staffsNestedInput
+  roles?: Prisma.UserRoleUpdateManyWithoutAcademic_teachersNestedInput
 }
 
 export type AcademicAdministrativeStaffUncheckedUpdateWithoutCurrent_positionInput = {
@@ -3282,18 +3282,18 @@ export type AcademicAdministrativeStaffUncheckedUpdateWithoutCurrent_positionInp
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  positions?: Prisma.UserPositionUncheckedUpdateManyWithoutAcademic_teachersNestedInput
-  roles?: Prisma.UserRoleUncheckedUpdateManyWithoutAcademic_teachersNestedInput
-  joining_history?: Prisma.JoiningHistoryUncheckedUpdateManyWithoutTeacherNestedInput
-  promoted_history?: Prisma.PromotedHistoryUncheckedUpdateManyWithoutAcademic_administrative_staffNestedInput
-  spouse_information?: Prisma.SpouseInformationUncheckedUpdateOneWithoutTeacherNestedInput
   academic_results?: Prisma.AcademicResultUncheckedUpdateOneWithoutTeacherNestedInput
+  my_classes?: Prisma.ClassRoutineUncheckedUpdateManyWithoutTeacherNestedInput
   grade_teacher_class_name?: Prisma.ClassUncheckedUpdateOneWithoutGrade_teacherNestedInput
   group_teacher_class_name?: Prisma.ClassUncheckedUpdateOneWithoutGroup_teacherNestedInput
-  subjects?: Prisma.SubjectTeacherUncheckedUpdateManyWithoutTeacherNestedInput
+  spouse_information?: Prisma.SpouseInformationUncheckedUpdateOneWithoutTeacherNestedInput
   students_in_responsibility?: Prisma.StudentResponsibilityUncheckedUpdateManyWithoutTeacherNestedInput
+  subjects?: Prisma.SubjectTeacherUncheckedUpdateManyWithoutTeacherNestedInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUncheckedUpdateManyWithoutTeacherNestedInput
-  my_classes?: Prisma.ClassRoutineUncheckedUpdateManyWithoutTeacherNestedInput
+  joining_history?: Prisma.JoiningHistoryUncheckedUpdateManyWithoutTeacherNestedInput
+  promoted_history?: Prisma.PromotedHistoryUncheckedUpdateOneWithoutAcademic_administrative_staffNestedInput
+  positions?: Prisma.UserPositionUncheckedUpdateManyWithoutAcademic_administrative_staffsNestedInput
+  roles?: Prisma.UserRoleUncheckedUpdateManyWithoutAcademic_teachersNestedInput
 }
 
 export type AcademicAdministrativeStaffUncheckedUpdateManyWithoutCurrent_positionInput = {
@@ -3322,22 +3322,22 @@ export type AcademicAdministrativeStaffUpdateWithoutPositionsInput = {
   is_responsible_teacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  academic_results?: Prisma.AcademicResultUpdateOneWithoutTeacherNestedInput
+  created_by?: Prisma.UserUpdateOneWithoutCreated_academic_teachersNestedInput
   current_position?: Prisma.UserPositionUpdateOneRequiredWithoutCurrent_academic_teachersNestedInput
   current_role?: Prisma.UserRoleUpdateOneRequiredWithoutCurrent_academic_teachersNestedInput
-  roles?: Prisma.UserRoleUpdateManyWithoutAcademic_teachersNestedInput
-  joining_history?: Prisma.JoiningHistoryUpdateManyWithoutTeacherNestedInput
-  promoted_history?: Prisma.PromotedHistoryUpdateManyWithoutAcademic_administrative_staffNestedInput
+  updated_by?: Prisma.UserUpdateOneWithoutUpdated_academic_teachersNestedInput
   user_primary_data?: Prisma.UserUpdateOneRequiredWithoutTeacher_profileNestedInput
-  spouse_information?: Prisma.SpouseInformationUpdateOneWithoutTeacherNestedInput
-  academic_results?: Prisma.AcademicResultUpdateOneWithoutTeacherNestedInput
+  my_classes?: Prisma.ClassRoutineUpdateManyWithoutTeacherNestedInput
   grade_teacher_class_name?: Prisma.ClassUpdateOneWithoutGrade_teacherNestedInput
   group_teacher_class_name?: Prisma.ClassUpdateOneWithoutGroup_teacherNestedInput
-  subjects?: Prisma.SubjectTeacherUpdateManyWithoutTeacherNestedInput
+  spouse_information?: Prisma.SpouseInformationUpdateOneWithoutTeacherNestedInput
   students_in_responsibility?: Prisma.StudentResponsibilityUpdateManyWithoutTeacherNestedInput
+  subjects?: Prisma.SubjectTeacherUpdateManyWithoutTeacherNestedInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUpdateManyWithoutTeacherNestedInput
-  my_classes?: Prisma.ClassRoutineUpdateManyWithoutTeacherNestedInput
-  created_by?: Prisma.UserUpdateOneWithoutCreated_academic_teachersNestedInput
-  updated_by?: Prisma.UserUpdateOneWithoutUpdated_academic_teachersNestedInput
+  joining_history?: Prisma.JoiningHistoryUpdateManyWithoutTeacherNestedInput
+  promoted_history?: Prisma.PromotedHistoryUpdateOneWithoutAcademic_administrative_staffNestedInput
+  roles?: Prisma.UserRoleUpdateManyWithoutAcademic_teachersNestedInput
 }
 
 export type AcademicAdministrativeStaffUncheckedUpdateWithoutPositionsInput = {
@@ -3355,17 +3355,17 @@ export type AcademicAdministrativeStaffUncheckedUpdateWithoutPositionsInput = {
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  roles?: Prisma.UserRoleUncheckedUpdateManyWithoutAcademic_teachersNestedInput
-  joining_history?: Prisma.JoiningHistoryUncheckedUpdateManyWithoutTeacherNestedInput
-  promoted_history?: Prisma.PromotedHistoryUncheckedUpdateManyWithoutAcademic_administrative_staffNestedInput
-  spouse_information?: Prisma.SpouseInformationUncheckedUpdateOneWithoutTeacherNestedInput
   academic_results?: Prisma.AcademicResultUncheckedUpdateOneWithoutTeacherNestedInput
+  my_classes?: Prisma.ClassRoutineUncheckedUpdateManyWithoutTeacherNestedInput
   grade_teacher_class_name?: Prisma.ClassUncheckedUpdateOneWithoutGrade_teacherNestedInput
   group_teacher_class_name?: Prisma.ClassUncheckedUpdateOneWithoutGroup_teacherNestedInput
-  subjects?: Prisma.SubjectTeacherUncheckedUpdateManyWithoutTeacherNestedInput
+  spouse_information?: Prisma.SpouseInformationUncheckedUpdateOneWithoutTeacherNestedInput
   students_in_responsibility?: Prisma.StudentResponsibilityUncheckedUpdateManyWithoutTeacherNestedInput
+  subjects?: Prisma.SubjectTeacherUncheckedUpdateManyWithoutTeacherNestedInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUncheckedUpdateManyWithoutTeacherNestedInput
-  my_classes?: Prisma.ClassRoutineUncheckedUpdateManyWithoutTeacherNestedInput
+  joining_history?: Prisma.JoiningHistoryUncheckedUpdateManyWithoutTeacherNestedInput
+  promoted_history?: Prisma.PromotedHistoryUncheckedUpdateOneWithoutAcademic_administrative_staffNestedInput
+  roles?: Prisma.UserRoleUncheckedUpdateManyWithoutAcademic_teachersNestedInput
 }
 
 export type AcademicAdministrativeStaffUncheckedUpdateManyWithoutPositionsInput = {
@@ -3411,22 +3411,22 @@ export type AcademicAdministrativeStaffUpdateWithoutCurrent_roleInput = {
   is_responsible_teacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  current_position?: Prisma.UserPositionUpdateOneRequiredWithoutCurrent_academic_teachersNestedInput
-  positions?: Prisma.UserPositionUpdateManyWithoutAcademic_teachersNestedInput
-  roles?: Prisma.UserRoleUpdateManyWithoutAcademic_teachersNestedInput
-  joining_history?: Prisma.JoiningHistoryUpdateManyWithoutTeacherNestedInput
-  promoted_history?: Prisma.PromotedHistoryUpdateManyWithoutAcademic_administrative_staffNestedInput
-  user_primary_data?: Prisma.UserUpdateOneRequiredWithoutTeacher_profileNestedInput
-  spouse_information?: Prisma.SpouseInformationUpdateOneWithoutTeacherNestedInput
   academic_results?: Prisma.AcademicResultUpdateOneWithoutTeacherNestedInput
+  created_by?: Prisma.UserUpdateOneWithoutCreated_academic_teachersNestedInput
+  current_position?: Prisma.UserPositionUpdateOneRequiredWithoutCurrent_academic_teachersNestedInput
+  updated_by?: Prisma.UserUpdateOneWithoutUpdated_academic_teachersNestedInput
+  user_primary_data?: Prisma.UserUpdateOneRequiredWithoutTeacher_profileNestedInput
+  my_classes?: Prisma.ClassRoutineUpdateManyWithoutTeacherNestedInput
   grade_teacher_class_name?: Prisma.ClassUpdateOneWithoutGrade_teacherNestedInput
   group_teacher_class_name?: Prisma.ClassUpdateOneWithoutGroup_teacherNestedInput
-  subjects?: Prisma.SubjectTeacherUpdateManyWithoutTeacherNestedInput
+  spouse_information?: Prisma.SpouseInformationUpdateOneWithoutTeacherNestedInput
   students_in_responsibility?: Prisma.StudentResponsibilityUpdateManyWithoutTeacherNestedInput
+  subjects?: Prisma.SubjectTeacherUpdateManyWithoutTeacherNestedInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUpdateManyWithoutTeacherNestedInput
-  my_classes?: Prisma.ClassRoutineUpdateManyWithoutTeacherNestedInput
-  created_by?: Prisma.UserUpdateOneWithoutCreated_academic_teachersNestedInput
-  updated_by?: Prisma.UserUpdateOneWithoutUpdated_academic_teachersNestedInput
+  joining_history?: Prisma.JoiningHistoryUpdateManyWithoutTeacherNestedInput
+  promoted_history?: Prisma.PromotedHistoryUpdateOneWithoutAcademic_administrative_staffNestedInput
+  positions?: Prisma.UserPositionUpdateManyWithoutAcademic_administrative_staffsNestedInput
+  roles?: Prisma.UserRoleUpdateManyWithoutAcademic_teachersNestedInput
 }
 
 export type AcademicAdministrativeStaffUncheckedUpdateWithoutCurrent_roleInput = {
@@ -3443,18 +3443,18 @@ export type AcademicAdministrativeStaffUncheckedUpdateWithoutCurrent_roleInput =
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  positions?: Prisma.UserPositionUncheckedUpdateManyWithoutAcademic_teachersNestedInput
-  roles?: Prisma.UserRoleUncheckedUpdateManyWithoutAcademic_teachersNestedInput
-  joining_history?: Prisma.JoiningHistoryUncheckedUpdateManyWithoutTeacherNestedInput
-  promoted_history?: Prisma.PromotedHistoryUncheckedUpdateManyWithoutAcademic_administrative_staffNestedInput
-  spouse_information?: Prisma.SpouseInformationUncheckedUpdateOneWithoutTeacherNestedInput
   academic_results?: Prisma.AcademicResultUncheckedUpdateOneWithoutTeacherNestedInput
+  my_classes?: Prisma.ClassRoutineUncheckedUpdateManyWithoutTeacherNestedInput
   grade_teacher_class_name?: Prisma.ClassUncheckedUpdateOneWithoutGrade_teacherNestedInput
   group_teacher_class_name?: Prisma.ClassUncheckedUpdateOneWithoutGroup_teacherNestedInput
-  subjects?: Prisma.SubjectTeacherUncheckedUpdateManyWithoutTeacherNestedInput
+  spouse_information?: Prisma.SpouseInformationUncheckedUpdateOneWithoutTeacherNestedInput
   students_in_responsibility?: Prisma.StudentResponsibilityUncheckedUpdateManyWithoutTeacherNestedInput
+  subjects?: Prisma.SubjectTeacherUncheckedUpdateManyWithoutTeacherNestedInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUncheckedUpdateManyWithoutTeacherNestedInput
-  my_classes?: Prisma.ClassRoutineUncheckedUpdateManyWithoutTeacherNestedInput
+  joining_history?: Prisma.JoiningHistoryUncheckedUpdateManyWithoutTeacherNestedInput
+  promoted_history?: Prisma.PromotedHistoryUncheckedUpdateOneWithoutAcademic_administrative_staffNestedInput
+  positions?: Prisma.UserPositionUncheckedUpdateManyWithoutAcademic_administrative_staffsNestedInput
+  roles?: Prisma.UserRoleUncheckedUpdateManyWithoutAcademic_teachersNestedInput
 }
 
 export type AcademicAdministrativeStaffUncheckedUpdateManyWithoutCurrent_roleInput = {
@@ -3483,22 +3483,22 @@ export type AcademicAdministrativeStaffUpdateWithoutRolesInput = {
   is_responsible_teacher?: Prisma.BoolFieldUpdateOperationsInput | boolean
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  academic_results?: Prisma.AcademicResultUpdateOneWithoutTeacherNestedInput
+  created_by?: Prisma.UserUpdateOneWithoutCreated_academic_teachersNestedInput
   current_position?: Prisma.UserPositionUpdateOneRequiredWithoutCurrent_academic_teachersNestedInput
   current_role?: Prisma.UserRoleUpdateOneRequiredWithoutCurrent_academic_teachersNestedInput
-  positions?: Prisma.UserPositionUpdateManyWithoutAcademic_teachersNestedInput
-  joining_history?: Prisma.JoiningHistoryUpdateManyWithoutTeacherNestedInput
-  promoted_history?: Prisma.PromotedHistoryUpdateManyWithoutAcademic_administrative_staffNestedInput
+  updated_by?: Prisma.UserUpdateOneWithoutUpdated_academic_teachersNestedInput
   user_primary_data?: Prisma.UserUpdateOneRequiredWithoutTeacher_profileNestedInput
-  spouse_information?: Prisma.SpouseInformationUpdateOneWithoutTeacherNestedInput
-  academic_results?: Prisma.AcademicResultUpdateOneWithoutTeacherNestedInput
+  my_classes?: Prisma.ClassRoutineUpdateManyWithoutTeacherNestedInput
   grade_teacher_class_name?: Prisma.ClassUpdateOneWithoutGrade_teacherNestedInput
   group_teacher_class_name?: Prisma.ClassUpdateOneWithoutGroup_teacherNestedInput
-  subjects?: Prisma.SubjectTeacherUpdateManyWithoutTeacherNestedInput
+  spouse_information?: Prisma.SpouseInformationUpdateOneWithoutTeacherNestedInput
   students_in_responsibility?: Prisma.StudentResponsibilityUpdateManyWithoutTeacherNestedInput
+  subjects?: Prisma.SubjectTeacherUpdateManyWithoutTeacherNestedInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUpdateManyWithoutTeacherNestedInput
-  my_classes?: Prisma.ClassRoutineUpdateManyWithoutTeacherNestedInput
-  created_by?: Prisma.UserUpdateOneWithoutCreated_academic_teachersNestedInput
-  updated_by?: Prisma.UserUpdateOneWithoutUpdated_academic_teachersNestedInput
+  joining_history?: Prisma.JoiningHistoryUpdateManyWithoutTeacherNestedInput
+  promoted_history?: Prisma.PromotedHistoryUpdateOneWithoutAcademic_administrative_staffNestedInput
+  positions?: Prisma.UserPositionUpdateManyWithoutAcademic_administrative_staffsNestedInput
 }
 
 export type AcademicAdministrativeStaffUncheckedUpdateWithoutRolesInput = {
@@ -3516,17 +3516,17 @@ export type AcademicAdministrativeStaffUncheckedUpdateWithoutRolesInput = {
   updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  positions?: Prisma.UserPositionUncheckedUpdateManyWithoutAcademic_teachersNestedInput
-  joining_history?: Prisma.JoiningHistoryUncheckedUpdateManyWithoutTeacherNestedInput
-  promoted_history?: Prisma.PromotedHistoryUncheckedUpdateManyWithoutAcademic_administrative_staffNestedInput
-  spouse_information?: Prisma.SpouseInformationUncheckedUpdateOneWithoutTeacherNestedInput
   academic_results?: Prisma.AcademicResultUncheckedUpdateOneWithoutTeacherNestedInput
+  my_classes?: Prisma.ClassRoutineUncheckedUpdateManyWithoutTeacherNestedInput
   grade_teacher_class_name?: Prisma.ClassUncheckedUpdateOneWithoutGrade_teacherNestedInput
   group_teacher_class_name?: Prisma.ClassUncheckedUpdateOneWithoutGroup_teacherNestedInput
-  subjects?: Prisma.SubjectTeacherUncheckedUpdateManyWithoutTeacherNestedInput
+  spouse_information?: Prisma.SpouseInformationUncheckedUpdateOneWithoutTeacherNestedInput
   students_in_responsibility?: Prisma.StudentResponsibilityUncheckedUpdateManyWithoutTeacherNestedInput
+  subjects?: Prisma.SubjectTeacherUncheckedUpdateManyWithoutTeacherNestedInput
   honourable_responsibilities?: Prisma.TeacherHonourableResponsibilityUncheckedUpdateManyWithoutTeacherNestedInput
-  my_classes?: Prisma.ClassRoutineUncheckedUpdateManyWithoutTeacherNestedInput
+  joining_history?: Prisma.JoiningHistoryUncheckedUpdateManyWithoutTeacherNestedInput
+  promoted_history?: Prisma.PromotedHistoryUncheckedUpdateOneWithoutAcademic_administrative_staffNestedInput
+  positions?: Prisma.UserPositionUncheckedUpdateManyWithoutAcademic_administrative_staffsNestedInput
 }
 
 export type AcademicAdministrativeStaffUncheckedUpdateManyWithoutRolesInput = {
@@ -3552,25 +3552,23 @@ export type AcademicAdministrativeStaffUncheckedUpdateManyWithoutRolesInput = {
  */
 
 export type AcademicAdministrativeStaffCountOutputType = {
+  my_classes: number
+  students_in_responsibility: number
+  subjects: number
+  honourable_responsibilities: number
+  joining_history: number
   positions: number
   roles: number
-  joining_history: number
-  promoted_history: number
-  subjects: number
-  students_in_responsibility: number
-  honourable_responsibilities: number
-  my_classes: number
 }
 
 export type AcademicAdministrativeStaffCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  my_classes?: boolean | AcademicAdministrativeStaffCountOutputTypeCountMy_classesArgs
+  students_in_responsibility?: boolean | AcademicAdministrativeStaffCountOutputTypeCountStudents_in_responsibilityArgs
+  subjects?: boolean | AcademicAdministrativeStaffCountOutputTypeCountSubjectsArgs
+  honourable_responsibilities?: boolean | AcademicAdministrativeStaffCountOutputTypeCountHonourable_responsibilitiesArgs
+  joining_history?: boolean | AcademicAdministrativeStaffCountOutputTypeCountJoining_historyArgs
   positions?: boolean | AcademicAdministrativeStaffCountOutputTypeCountPositionsArgs
   roles?: boolean | AcademicAdministrativeStaffCountOutputTypeCountRolesArgs
-  joining_history?: boolean | AcademicAdministrativeStaffCountOutputTypeCountJoining_historyArgs
-  promoted_history?: boolean | AcademicAdministrativeStaffCountOutputTypeCountPromoted_historyArgs
-  subjects?: boolean | AcademicAdministrativeStaffCountOutputTypeCountSubjectsArgs
-  students_in_responsibility?: boolean | AcademicAdministrativeStaffCountOutputTypeCountStudents_in_responsibilityArgs
-  honourable_responsibilities?: boolean | AcademicAdministrativeStaffCountOutputTypeCountHonourable_responsibilitiesArgs
-  my_classes?: boolean | AcademicAdministrativeStaffCountOutputTypeCountMy_classesArgs
 }
 
 /**
@@ -3586,36 +3584,8 @@ export type AcademicAdministrativeStaffCountOutputTypeDefaultArgs<ExtArgs extend
 /**
  * AcademicAdministrativeStaffCountOutputType without action
  */
-export type AcademicAdministrativeStaffCountOutputTypeCountPositionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.UserPositionWhereInput
-}
-
-/**
- * AcademicAdministrativeStaffCountOutputType without action
- */
-export type AcademicAdministrativeStaffCountOutputTypeCountRolesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.UserRoleWhereInput
-}
-
-/**
- * AcademicAdministrativeStaffCountOutputType without action
- */
-export type AcademicAdministrativeStaffCountOutputTypeCountJoining_historyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.JoiningHistoryWhereInput
-}
-
-/**
- * AcademicAdministrativeStaffCountOutputType without action
- */
-export type AcademicAdministrativeStaffCountOutputTypeCountPromoted_historyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.PromotedHistoryWhereInput
-}
-
-/**
- * AcademicAdministrativeStaffCountOutputType without action
- */
-export type AcademicAdministrativeStaffCountOutputTypeCountSubjectsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.SubjectTeacherWhereInput
+export type AcademicAdministrativeStaffCountOutputTypeCountMy_classesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.ClassRoutineWhereInput
 }
 
 /**
@@ -3628,6 +3598,13 @@ export type AcademicAdministrativeStaffCountOutputTypeCountStudents_in_responsib
 /**
  * AcademicAdministrativeStaffCountOutputType without action
  */
+export type AcademicAdministrativeStaffCountOutputTypeCountSubjectsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.SubjectTeacherWhereInput
+}
+
+/**
+ * AcademicAdministrativeStaffCountOutputType without action
+ */
 export type AcademicAdministrativeStaffCountOutputTypeCountHonourable_responsibilitiesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   where?: Prisma.TeacherHonourableResponsibilityWhereInput
 }
@@ -3635,8 +3612,22 @@ export type AcademicAdministrativeStaffCountOutputTypeCountHonourable_responsibi
 /**
  * AcademicAdministrativeStaffCountOutputType without action
  */
-export type AcademicAdministrativeStaffCountOutputTypeCountMy_classesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.ClassRoutineWhereInput
+export type AcademicAdministrativeStaffCountOutputTypeCountJoining_historyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.JoiningHistoryWhereInput
+}
+
+/**
+ * AcademicAdministrativeStaffCountOutputType without action
+ */
+export type AcademicAdministrativeStaffCountOutputTypeCountPositionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.UserPositionWhereInput
+}
+
+/**
+ * AcademicAdministrativeStaffCountOutputType without action
+ */
+export type AcademicAdministrativeStaffCountOutputTypeCountRolesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.UserRoleWhereInput
 }
 
 
@@ -3655,23 +3646,23 @@ export type AcademicAdministrativeStaffSelect<ExtArgs extends runtime.Types.Exte
   updated_by_id?: boolean
   created_at?: boolean
   updated_at?: boolean
+  academic_results?: boolean | Prisma.AcademicAdministrativeStaff$academic_resultsArgs<ExtArgs>
+  created_by?: boolean | Prisma.AcademicAdministrativeStaff$created_byArgs<ExtArgs>
   current_position?: boolean | Prisma.UserPositionDefaultArgs<ExtArgs>
   current_role?: boolean | Prisma.UserRoleDefaultArgs<ExtArgs>
-  positions?: boolean | Prisma.AcademicAdministrativeStaff$positionsArgs<ExtArgs>
-  roles?: boolean | Prisma.AcademicAdministrativeStaff$rolesArgs<ExtArgs>
-  joining_history?: boolean | Prisma.AcademicAdministrativeStaff$joining_historyArgs<ExtArgs>
-  promoted_history?: boolean | Prisma.AcademicAdministrativeStaff$promoted_historyArgs<ExtArgs>
+  updated_by?: boolean | Prisma.AcademicAdministrativeStaff$updated_byArgs<ExtArgs>
   user_primary_data?: boolean | Prisma.UserDefaultArgs<ExtArgs>
-  spouse_information?: boolean | Prisma.AcademicAdministrativeStaff$spouse_informationArgs<ExtArgs>
-  academic_results?: boolean | Prisma.AcademicAdministrativeStaff$academic_resultsArgs<ExtArgs>
+  my_classes?: boolean | Prisma.AcademicAdministrativeStaff$my_classesArgs<ExtArgs>
   grade_teacher_class_name?: boolean | Prisma.AcademicAdministrativeStaff$grade_teacher_class_nameArgs<ExtArgs>
   group_teacher_class_name?: boolean | Prisma.AcademicAdministrativeStaff$group_teacher_class_nameArgs<ExtArgs>
-  subjects?: boolean | Prisma.AcademicAdministrativeStaff$subjectsArgs<ExtArgs>
+  spouse_information?: boolean | Prisma.AcademicAdministrativeStaff$spouse_informationArgs<ExtArgs>
   students_in_responsibility?: boolean | Prisma.AcademicAdministrativeStaff$students_in_responsibilityArgs<ExtArgs>
+  subjects?: boolean | Prisma.AcademicAdministrativeStaff$subjectsArgs<ExtArgs>
   honourable_responsibilities?: boolean | Prisma.AcademicAdministrativeStaff$honourable_responsibilitiesArgs<ExtArgs>
-  my_classes?: boolean | Prisma.AcademicAdministrativeStaff$my_classesArgs<ExtArgs>
-  created_by?: boolean | Prisma.AcademicAdministrativeStaff$created_byArgs<ExtArgs>
-  updated_by?: boolean | Prisma.AcademicAdministrativeStaff$updated_byArgs<ExtArgs>
+  joining_history?: boolean | Prisma.AcademicAdministrativeStaff$joining_historyArgs<ExtArgs>
+  promoted_history?: boolean | Prisma.AcademicAdministrativeStaff$promoted_historyArgs<ExtArgs>
+  positions?: boolean | Prisma.AcademicAdministrativeStaff$positionsArgs<ExtArgs>
+  roles?: boolean | Prisma.AcademicAdministrativeStaff$rolesArgs<ExtArgs>
   _count?: boolean | Prisma.AcademicAdministrativeStaffCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["academicAdministrativeStaff"]>
 
@@ -3690,11 +3681,11 @@ export type AcademicAdministrativeStaffSelectCreateManyAndReturn<ExtArgs extends
   updated_by_id?: boolean
   created_at?: boolean
   updated_at?: boolean
+  created_by?: boolean | Prisma.AcademicAdministrativeStaff$created_byArgs<ExtArgs>
   current_position?: boolean | Prisma.UserPositionDefaultArgs<ExtArgs>
   current_role?: boolean | Prisma.UserRoleDefaultArgs<ExtArgs>
-  user_primary_data?: boolean | Prisma.UserDefaultArgs<ExtArgs>
-  created_by?: boolean | Prisma.AcademicAdministrativeStaff$created_byArgs<ExtArgs>
   updated_by?: boolean | Prisma.AcademicAdministrativeStaff$updated_byArgs<ExtArgs>
+  user_primary_data?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["academicAdministrativeStaff"]>
 
 export type AcademicAdministrativeStaffSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -3712,11 +3703,11 @@ export type AcademicAdministrativeStaffSelectUpdateManyAndReturn<ExtArgs extends
   updated_by_id?: boolean
   created_at?: boolean
   updated_at?: boolean
+  created_by?: boolean | Prisma.AcademicAdministrativeStaff$created_byArgs<ExtArgs>
   current_position?: boolean | Prisma.UserPositionDefaultArgs<ExtArgs>
   current_role?: boolean | Prisma.UserRoleDefaultArgs<ExtArgs>
-  user_primary_data?: boolean | Prisma.UserDefaultArgs<ExtArgs>
-  created_by?: boolean | Prisma.AcademicAdministrativeStaff$created_byArgs<ExtArgs>
   updated_by?: boolean | Prisma.AcademicAdministrativeStaff$updated_byArgs<ExtArgs>
+  user_primary_data?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["academicAdministrativeStaff"]>
 
 export type AcademicAdministrativeStaffSelectScalar = {
@@ -3738,60 +3729,60 @@ export type AcademicAdministrativeStaffSelectScalar = {
 
 export type AcademicAdministrativeStaffOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "full_name" | "current_position_id" | "current_role_id" | "teaching_working_experience_year" | "teaching_working_experience_month" | "alternative_contact_no" | "user_id" | "is_subject_teacher" | "is_responsible_teacher" | "created_by_id" | "updated_by_id" | "created_at" | "updated_at", ExtArgs["result"]["academicAdministrativeStaff"]>
 export type AcademicAdministrativeStaffInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  academic_results?: boolean | Prisma.AcademicAdministrativeStaff$academic_resultsArgs<ExtArgs>
+  created_by?: boolean | Prisma.AcademicAdministrativeStaff$created_byArgs<ExtArgs>
   current_position?: boolean | Prisma.UserPositionDefaultArgs<ExtArgs>
   current_role?: boolean | Prisma.UserRoleDefaultArgs<ExtArgs>
-  positions?: boolean | Prisma.AcademicAdministrativeStaff$positionsArgs<ExtArgs>
-  roles?: boolean | Prisma.AcademicAdministrativeStaff$rolesArgs<ExtArgs>
-  joining_history?: boolean | Prisma.AcademicAdministrativeStaff$joining_historyArgs<ExtArgs>
-  promoted_history?: boolean | Prisma.AcademicAdministrativeStaff$promoted_historyArgs<ExtArgs>
+  updated_by?: boolean | Prisma.AcademicAdministrativeStaff$updated_byArgs<ExtArgs>
   user_primary_data?: boolean | Prisma.UserDefaultArgs<ExtArgs>
-  spouse_information?: boolean | Prisma.AcademicAdministrativeStaff$spouse_informationArgs<ExtArgs>
-  academic_results?: boolean | Prisma.AcademicAdministrativeStaff$academic_resultsArgs<ExtArgs>
+  my_classes?: boolean | Prisma.AcademicAdministrativeStaff$my_classesArgs<ExtArgs>
   grade_teacher_class_name?: boolean | Prisma.AcademicAdministrativeStaff$grade_teacher_class_nameArgs<ExtArgs>
   group_teacher_class_name?: boolean | Prisma.AcademicAdministrativeStaff$group_teacher_class_nameArgs<ExtArgs>
-  subjects?: boolean | Prisma.AcademicAdministrativeStaff$subjectsArgs<ExtArgs>
+  spouse_information?: boolean | Prisma.AcademicAdministrativeStaff$spouse_informationArgs<ExtArgs>
   students_in_responsibility?: boolean | Prisma.AcademicAdministrativeStaff$students_in_responsibilityArgs<ExtArgs>
+  subjects?: boolean | Prisma.AcademicAdministrativeStaff$subjectsArgs<ExtArgs>
   honourable_responsibilities?: boolean | Prisma.AcademicAdministrativeStaff$honourable_responsibilitiesArgs<ExtArgs>
-  my_classes?: boolean | Prisma.AcademicAdministrativeStaff$my_classesArgs<ExtArgs>
-  created_by?: boolean | Prisma.AcademicAdministrativeStaff$created_byArgs<ExtArgs>
-  updated_by?: boolean | Prisma.AcademicAdministrativeStaff$updated_byArgs<ExtArgs>
+  joining_history?: boolean | Prisma.AcademicAdministrativeStaff$joining_historyArgs<ExtArgs>
+  promoted_history?: boolean | Prisma.AcademicAdministrativeStaff$promoted_historyArgs<ExtArgs>
+  positions?: boolean | Prisma.AcademicAdministrativeStaff$positionsArgs<ExtArgs>
+  roles?: boolean | Prisma.AcademicAdministrativeStaff$rolesArgs<ExtArgs>
   _count?: boolean | Prisma.AcademicAdministrativeStaffCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type AcademicAdministrativeStaffIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  created_by?: boolean | Prisma.AcademicAdministrativeStaff$created_byArgs<ExtArgs>
   current_position?: boolean | Prisma.UserPositionDefaultArgs<ExtArgs>
   current_role?: boolean | Prisma.UserRoleDefaultArgs<ExtArgs>
-  user_primary_data?: boolean | Prisma.UserDefaultArgs<ExtArgs>
-  created_by?: boolean | Prisma.AcademicAdministrativeStaff$created_byArgs<ExtArgs>
   updated_by?: boolean | Prisma.AcademicAdministrativeStaff$updated_byArgs<ExtArgs>
+  user_primary_data?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }
 export type AcademicAdministrativeStaffIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  created_by?: boolean | Prisma.AcademicAdministrativeStaff$created_byArgs<ExtArgs>
   current_position?: boolean | Prisma.UserPositionDefaultArgs<ExtArgs>
   current_role?: boolean | Prisma.UserRoleDefaultArgs<ExtArgs>
-  user_primary_data?: boolean | Prisma.UserDefaultArgs<ExtArgs>
-  created_by?: boolean | Prisma.AcademicAdministrativeStaff$created_byArgs<ExtArgs>
   updated_by?: boolean | Prisma.AcademicAdministrativeStaff$updated_byArgs<ExtArgs>
+  user_primary_data?: boolean | Prisma.UserDefaultArgs<ExtArgs>
 }
 
 export type $AcademicAdministrativeStaffPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "AcademicAdministrativeStaff"
   objects: {
+    academic_results: Prisma.$AcademicResultPayload<ExtArgs> | null
+    created_by: Prisma.$UserPayload<ExtArgs> | null
     current_position: Prisma.$UserPositionPayload<ExtArgs>
     current_role: Prisma.$UserRolePayload<ExtArgs>
-    positions: Prisma.$UserPositionPayload<ExtArgs>[]
-    roles: Prisma.$UserRolePayload<ExtArgs>[]
-    joining_history: Prisma.$JoiningHistoryPayload<ExtArgs>[]
-    promoted_history: Prisma.$PromotedHistoryPayload<ExtArgs>[]
+    updated_by: Prisma.$UserPayload<ExtArgs> | null
     user_primary_data: Prisma.$UserPayload<ExtArgs>
-    spouse_information: Prisma.$SpouseInformationPayload<ExtArgs> | null
-    academic_results: Prisma.$AcademicResultPayload<ExtArgs> | null
+    my_classes: Prisma.$ClassRoutinePayload<ExtArgs>[]
     grade_teacher_class_name: Prisma.$ClassPayload<ExtArgs> | null
     group_teacher_class_name: Prisma.$ClassPayload<ExtArgs> | null
-    subjects: Prisma.$SubjectTeacherPayload<ExtArgs>[]
+    spouse_information: Prisma.$SpouseInformationPayload<ExtArgs> | null
     students_in_responsibility: Prisma.$StudentResponsibilityPayload<ExtArgs>[]
+    subjects: Prisma.$SubjectTeacherPayload<ExtArgs>[]
     honourable_responsibilities: Prisma.$TeacherHonourableResponsibilityPayload<ExtArgs>[]
-    my_classes: Prisma.$ClassRoutinePayload<ExtArgs>[]
-    created_by: Prisma.$UserPayload<ExtArgs> | null
-    updated_by: Prisma.$UserPayload<ExtArgs> | null
+    joining_history: Prisma.$JoiningHistoryPayload<ExtArgs>[]
+    promoted_history: Prisma.$PromotedHistoryPayload<ExtArgs> | null
+    positions: Prisma.$UserPositionPayload<ExtArgs>[]
+    roles: Prisma.$UserRolePayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -4202,23 +4193,23 @@ readonly fields: AcademicAdministrativeStaffFieldRefs;
  */
 export interface Prisma__AcademicAdministrativeStaffClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
+  academic_results<T extends Prisma.AcademicAdministrativeStaff$academic_resultsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AcademicAdministrativeStaff$academic_resultsArgs<ExtArgs>>): Prisma.Prisma__AcademicResultClient<runtime.Types.Result.GetResult<Prisma.$AcademicResultPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  created_by<T extends Prisma.AcademicAdministrativeStaff$created_byArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AcademicAdministrativeStaff$created_byArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   current_position<T extends Prisma.UserPositionDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserPositionDefaultArgs<ExtArgs>>): Prisma.Prisma__UserPositionClient<runtime.Types.Result.GetResult<Prisma.$UserPositionPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   current_role<T extends Prisma.UserRoleDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserRoleDefaultArgs<ExtArgs>>): Prisma.Prisma__UserRoleClient<runtime.Types.Result.GetResult<Prisma.$UserRolePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  positions<T extends Prisma.AcademicAdministrativeStaff$positionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AcademicAdministrativeStaff$positionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$UserPositionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  roles<T extends Prisma.AcademicAdministrativeStaff$rolesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AcademicAdministrativeStaff$rolesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$UserRolePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  joining_history<T extends Prisma.AcademicAdministrativeStaff$joining_historyArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AcademicAdministrativeStaff$joining_historyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$JoiningHistoryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  promoted_history<T extends Prisma.AcademicAdministrativeStaff$promoted_historyArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AcademicAdministrativeStaff$promoted_historyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PromotedHistoryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  updated_by<T extends Prisma.AcademicAdministrativeStaff$updated_byArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AcademicAdministrativeStaff$updated_byArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   user_primary_data<T extends Prisma.UserDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.UserDefaultArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  spouse_information<T extends Prisma.AcademicAdministrativeStaff$spouse_informationArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AcademicAdministrativeStaff$spouse_informationArgs<ExtArgs>>): Prisma.Prisma__SpouseInformationClient<runtime.Types.Result.GetResult<Prisma.$SpouseInformationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-  academic_results<T extends Prisma.AcademicAdministrativeStaff$academic_resultsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AcademicAdministrativeStaff$academic_resultsArgs<ExtArgs>>): Prisma.Prisma__AcademicResultClient<runtime.Types.Result.GetResult<Prisma.$AcademicResultPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  my_classes<T extends Prisma.AcademicAdministrativeStaff$my_classesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AcademicAdministrativeStaff$my_classesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ClassRoutinePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   grade_teacher_class_name<T extends Prisma.AcademicAdministrativeStaff$grade_teacher_class_nameArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AcademicAdministrativeStaff$grade_teacher_class_nameArgs<ExtArgs>>): Prisma.Prisma__ClassClient<runtime.Types.Result.GetResult<Prisma.$ClassPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   group_teacher_class_name<T extends Prisma.AcademicAdministrativeStaff$group_teacher_class_nameArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AcademicAdministrativeStaff$group_teacher_class_nameArgs<ExtArgs>>): Prisma.Prisma__ClassClient<runtime.Types.Result.GetResult<Prisma.$ClassPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-  subjects<T extends Prisma.AcademicAdministrativeStaff$subjectsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AcademicAdministrativeStaff$subjectsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SubjectTeacherPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  spouse_information<T extends Prisma.AcademicAdministrativeStaff$spouse_informationArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AcademicAdministrativeStaff$spouse_informationArgs<ExtArgs>>): Prisma.Prisma__SpouseInformationClient<runtime.Types.Result.GetResult<Prisma.$SpouseInformationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   students_in_responsibility<T extends Prisma.AcademicAdministrativeStaff$students_in_responsibilityArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AcademicAdministrativeStaff$students_in_responsibilityArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$StudentResponsibilityPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  subjects<T extends Prisma.AcademicAdministrativeStaff$subjectsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AcademicAdministrativeStaff$subjectsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$SubjectTeacherPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   honourable_responsibilities<T extends Prisma.AcademicAdministrativeStaff$honourable_responsibilitiesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AcademicAdministrativeStaff$honourable_responsibilitiesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$TeacherHonourableResponsibilityPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  my_classes<T extends Prisma.AcademicAdministrativeStaff$my_classesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AcademicAdministrativeStaff$my_classesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ClassRoutinePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  created_by<T extends Prisma.AcademicAdministrativeStaff$created_byArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AcademicAdministrativeStaff$created_byArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-  updated_by<T extends Prisma.AcademicAdministrativeStaff$updated_byArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AcademicAdministrativeStaff$updated_byArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  joining_history<T extends Prisma.AcademicAdministrativeStaff$joining_historyArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AcademicAdministrativeStaff$joining_historyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$JoiningHistoryPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  promoted_history<T extends Prisma.AcademicAdministrativeStaff$promoted_historyArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AcademicAdministrativeStaff$promoted_historyArgs<ExtArgs>>): Prisma.Prisma__PromotedHistoryClient<runtime.Types.Result.GetResult<Prisma.$PromotedHistoryPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  positions<T extends Prisma.AcademicAdministrativeStaff$positionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AcademicAdministrativeStaff$positionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$UserPositionPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  roles<T extends Prisma.AcademicAdministrativeStaff$rolesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AcademicAdministrativeStaff$rolesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$UserRolePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -4663,6 +4654,259 @@ export type AcademicAdministrativeStaffDeleteManyArgs<ExtArgs extends runtime.Ty
 }
 
 /**
+ * AcademicAdministrativeStaff.academic_results
+ */
+export type AcademicAdministrativeStaff$academic_resultsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the AcademicResult
+   */
+  select?: Prisma.AcademicResultSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the AcademicResult
+   */
+  omit?: Prisma.AcademicResultOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.AcademicResultInclude<ExtArgs> | null
+  where?: Prisma.AcademicResultWhereInput
+}
+
+/**
+ * AcademicAdministrativeStaff.created_by
+ */
+export type AcademicAdministrativeStaff$created_byArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the User
+   */
+  select?: Prisma.UserSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the User
+   */
+  omit?: Prisma.UserOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UserInclude<ExtArgs> | null
+  where?: Prisma.UserWhereInput
+}
+
+/**
+ * AcademicAdministrativeStaff.updated_by
+ */
+export type AcademicAdministrativeStaff$updated_byArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the User
+   */
+  select?: Prisma.UserSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the User
+   */
+  omit?: Prisma.UserOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UserInclude<ExtArgs> | null
+  where?: Prisma.UserWhereInput
+}
+
+/**
+ * AcademicAdministrativeStaff.my_classes
+ */
+export type AcademicAdministrativeStaff$my_classesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the ClassRoutine
+   */
+  select?: Prisma.ClassRoutineSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the ClassRoutine
+   */
+  omit?: Prisma.ClassRoutineOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ClassRoutineInclude<ExtArgs> | null
+  where?: Prisma.ClassRoutineWhereInput
+  orderBy?: Prisma.ClassRoutineOrderByWithRelationInput | Prisma.ClassRoutineOrderByWithRelationInput[]
+  cursor?: Prisma.ClassRoutineWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.ClassRoutineScalarFieldEnum | Prisma.ClassRoutineScalarFieldEnum[]
+}
+
+/**
+ * AcademicAdministrativeStaff.grade_teacher_class_name
+ */
+export type AcademicAdministrativeStaff$grade_teacher_class_nameArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Class
+   */
+  select?: Prisma.ClassSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Class
+   */
+  omit?: Prisma.ClassOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ClassInclude<ExtArgs> | null
+  where?: Prisma.ClassWhereInput
+}
+
+/**
+ * AcademicAdministrativeStaff.group_teacher_class_name
+ */
+export type AcademicAdministrativeStaff$group_teacher_class_nameArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the Class
+   */
+  select?: Prisma.ClassSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the Class
+   */
+  omit?: Prisma.ClassOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ClassInclude<ExtArgs> | null
+  where?: Prisma.ClassWhereInput
+}
+
+/**
+ * AcademicAdministrativeStaff.spouse_information
+ */
+export type AcademicAdministrativeStaff$spouse_informationArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the SpouseInformation
+   */
+  select?: Prisma.SpouseInformationSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the SpouseInformation
+   */
+  omit?: Prisma.SpouseInformationOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.SpouseInformationInclude<ExtArgs> | null
+  where?: Prisma.SpouseInformationWhereInput
+}
+
+/**
+ * AcademicAdministrativeStaff.students_in_responsibility
+ */
+export type AcademicAdministrativeStaff$students_in_responsibilityArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the StudentResponsibility
+   */
+  select?: Prisma.StudentResponsibilitySelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the StudentResponsibility
+   */
+  omit?: Prisma.StudentResponsibilityOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.StudentResponsibilityInclude<ExtArgs> | null
+  where?: Prisma.StudentResponsibilityWhereInput
+  orderBy?: Prisma.StudentResponsibilityOrderByWithRelationInput | Prisma.StudentResponsibilityOrderByWithRelationInput[]
+  cursor?: Prisma.StudentResponsibilityWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.StudentResponsibilityScalarFieldEnum | Prisma.StudentResponsibilityScalarFieldEnum[]
+}
+
+/**
+ * AcademicAdministrativeStaff.subjects
+ */
+export type AcademicAdministrativeStaff$subjectsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the SubjectTeacher
+   */
+  select?: Prisma.SubjectTeacherSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the SubjectTeacher
+   */
+  omit?: Prisma.SubjectTeacherOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.SubjectTeacherInclude<ExtArgs> | null
+  where?: Prisma.SubjectTeacherWhereInput
+  orderBy?: Prisma.SubjectTeacherOrderByWithRelationInput | Prisma.SubjectTeacherOrderByWithRelationInput[]
+  cursor?: Prisma.SubjectTeacherWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.SubjectTeacherScalarFieldEnum | Prisma.SubjectTeacherScalarFieldEnum[]
+}
+
+/**
+ * AcademicAdministrativeStaff.honourable_responsibilities
+ */
+export type AcademicAdministrativeStaff$honourable_responsibilitiesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the TeacherHonourableResponsibility
+   */
+  select?: Prisma.TeacherHonourableResponsibilitySelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the TeacherHonourableResponsibility
+   */
+  omit?: Prisma.TeacherHonourableResponsibilityOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.TeacherHonourableResponsibilityInclude<ExtArgs> | null
+  where?: Prisma.TeacherHonourableResponsibilityWhereInput
+  orderBy?: Prisma.TeacherHonourableResponsibilityOrderByWithRelationInput | Prisma.TeacherHonourableResponsibilityOrderByWithRelationInput[]
+  cursor?: Prisma.TeacherHonourableResponsibilityWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.TeacherHonourableResponsibilityScalarFieldEnum | Prisma.TeacherHonourableResponsibilityScalarFieldEnum[]
+}
+
+/**
+ * AcademicAdministrativeStaff.joining_history
+ */
+export type AcademicAdministrativeStaff$joining_historyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the JoiningHistory
+   */
+  select?: Prisma.JoiningHistorySelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the JoiningHistory
+   */
+  omit?: Prisma.JoiningHistoryOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.JoiningHistoryInclude<ExtArgs> | null
+  where?: Prisma.JoiningHistoryWhereInput
+  orderBy?: Prisma.JoiningHistoryOrderByWithRelationInput | Prisma.JoiningHistoryOrderByWithRelationInput[]
+  cursor?: Prisma.JoiningHistoryWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.JoiningHistoryScalarFieldEnum | Prisma.JoiningHistoryScalarFieldEnum[]
+}
+
+/**
+ * AcademicAdministrativeStaff.promoted_history
+ */
+export type AcademicAdministrativeStaff$promoted_historyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the PromotedHistory
+   */
+  select?: Prisma.PromotedHistorySelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the PromotedHistory
+   */
+  omit?: Prisma.PromotedHistoryOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.PromotedHistoryInclude<ExtArgs> | null
+  where?: Prisma.PromotedHistoryWhereInput
+}
+
+/**
  * AcademicAdministrativeStaff.positions
  */
 export type AcademicAdministrativeStaff$positionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -4708,264 +4952,6 @@ export type AcademicAdministrativeStaff$rolesArgs<ExtArgs extends runtime.Types.
   take?: number
   skip?: number
   distinct?: Prisma.UserRoleScalarFieldEnum | Prisma.UserRoleScalarFieldEnum[]
-}
-
-/**
- * AcademicAdministrativeStaff.joining_history
- */
-export type AcademicAdministrativeStaff$joining_historyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the JoiningHistory
-   */
-  select?: Prisma.JoiningHistorySelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the JoiningHistory
-   */
-  omit?: Prisma.JoiningHistoryOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.JoiningHistoryInclude<ExtArgs> | null
-  where?: Prisma.JoiningHistoryWhereInput
-  orderBy?: Prisma.JoiningHistoryOrderByWithRelationInput | Prisma.JoiningHistoryOrderByWithRelationInput[]
-  cursor?: Prisma.JoiningHistoryWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.JoiningHistoryScalarFieldEnum | Prisma.JoiningHistoryScalarFieldEnum[]
-}
-
-/**
- * AcademicAdministrativeStaff.promoted_history
- */
-export type AcademicAdministrativeStaff$promoted_historyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the PromotedHistory
-   */
-  select?: Prisma.PromotedHistorySelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the PromotedHistory
-   */
-  omit?: Prisma.PromotedHistoryOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.PromotedHistoryInclude<ExtArgs> | null
-  where?: Prisma.PromotedHistoryWhereInput
-  orderBy?: Prisma.PromotedHistoryOrderByWithRelationInput | Prisma.PromotedHistoryOrderByWithRelationInput[]
-  cursor?: Prisma.PromotedHistoryWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.PromotedHistoryScalarFieldEnum | Prisma.PromotedHistoryScalarFieldEnum[]
-}
-
-/**
- * AcademicAdministrativeStaff.spouse_information
- */
-export type AcademicAdministrativeStaff$spouse_informationArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the SpouseInformation
-   */
-  select?: Prisma.SpouseInformationSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the SpouseInformation
-   */
-  omit?: Prisma.SpouseInformationOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.SpouseInformationInclude<ExtArgs> | null
-  where?: Prisma.SpouseInformationWhereInput
-}
-
-/**
- * AcademicAdministrativeStaff.academic_results
- */
-export type AcademicAdministrativeStaff$academic_resultsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the AcademicResult
-   */
-  select?: Prisma.AcademicResultSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the AcademicResult
-   */
-  omit?: Prisma.AcademicResultOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.AcademicResultInclude<ExtArgs> | null
-  where?: Prisma.AcademicResultWhereInput
-}
-
-/**
- * AcademicAdministrativeStaff.grade_teacher_class_name
- */
-export type AcademicAdministrativeStaff$grade_teacher_class_nameArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the Class
-   */
-  select?: Prisma.ClassSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the Class
-   */
-  omit?: Prisma.ClassOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.ClassInclude<ExtArgs> | null
-  where?: Prisma.ClassWhereInput
-}
-
-/**
- * AcademicAdministrativeStaff.group_teacher_class_name
- */
-export type AcademicAdministrativeStaff$group_teacher_class_nameArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the Class
-   */
-  select?: Prisma.ClassSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the Class
-   */
-  omit?: Prisma.ClassOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.ClassInclude<ExtArgs> | null
-  where?: Prisma.ClassWhereInput
-}
-
-/**
- * AcademicAdministrativeStaff.subjects
- */
-export type AcademicAdministrativeStaff$subjectsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the SubjectTeacher
-   */
-  select?: Prisma.SubjectTeacherSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the SubjectTeacher
-   */
-  omit?: Prisma.SubjectTeacherOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.SubjectTeacherInclude<ExtArgs> | null
-  where?: Prisma.SubjectTeacherWhereInput
-  orderBy?: Prisma.SubjectTeacherOrderByWithRelationInput | Prisma.SubjectTeacherOrderByWithRelationInput[]
-  cursor?: Prisma.SubjectTeacherWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.SubjectTeacherScalarFieldEnum | Prisma.SubjectTeacherScalarFieldEnum[]
-}
-
-/**
- * AcademicAdministrativeStaff.students_in_responsibility
- */
-export type AcademicAdministrativeStaff$students_in_responsibilityArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the StudentResponsibility
-   */
-  select?: Prisma.StudentResponsibilitySelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the StudentResponsibility
-   */
-  omit?: Prisma.StudentResponsibilityOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.StudentResponsibilityInclude<ExtArgs> | null
-  where?: Prisma.StudentResponsibilityWhereInput
-  orderBy?: Prisma.StudentResponsibilityOrderByWithRelationInput | Prisma.StudentResponsibilityOrderByWithRelationInput[]
-  cursor?: Prisma.StudentResponsibilityWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.StudentResponsibilityScalarFieldEnum | Prisma.StudentResponsibilityScalarFieldEnum[]
-}
-
-/**
- * AcademicAdministrativeStaff.honourable_responsibilities
- */
-export type AcademicAdministrativeStaff$honourable_responsibilitiesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the TeacherHonourableResponsibility
-   */
-  select?: Prisma.TeacherHonourableResponsibilitySelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the TeacherHonourableResponsibility
-   */
-  omit?: Prisma.TeacherHonourableResponsibilityOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.TeacherHonourableResponsibilityInclude<ExtArgs> | null
-  where?: Prisma.TeacherHonourableResponsibilityWhereInput
-  orderBy?: Prisma.TeacherHonourableResponsibilityOrderByWithRelationInput | Prisma.TeacherHonourableResponsibilityOrderByWithRelationInput[]
-  cursor?: Prisma.TeacherHonourableResponsibilityWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.TeacherHonourableResponsibilityScalarFieldEnum | Prisma.TeacherHonourableResponsibilityScalarFieldEnum[]
-}
-
-/**
- * AcademicAdministrativeStaff.my_classes
- */
-export type AcademicAdministrativeStaff$my_classesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the ClassRoutine
-   */
-  select?: Prisma.ClassRoutineSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the ClassRoutine
-   */
-  omit?: Prisma.ClassRoutineOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.ClassRoutineInclude<ExtArgs> | null
-  where?: Prisma.ClassRoutineWhereInput
-  orderBy?: Prisma.ClassRoutineOrderByWithRelationInput | Prisma.ClassRoutineOrderByWithRelationInput[]
-  cursor?: Prisma.ClassRoutineWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.ClassRoutineScalarFieldEnum | Prisma.ClassRoutineScalarFieldEnum[]
-}
-
-/**
- * AcademicAdministrativeStaff.created_by
- */
-export type AcademicAdministrativeStaff$created_byArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the User
-   */
-  select?: Prisma.UserSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the User
-   */
-  omit?: Prisma.UserOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.UserInclude<ExtArgs> | null
-  where?: Prisma.UserWhereInput
-}
-
-/**
- * AcademicAdministrativeStaff.updated_by
- */
-export type AcademicAdministrativeStaff$updated_byArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the User
-   */
-  select?: Prisma.UserSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the User
-   */
-  omit?: Prisma.UserOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.UserInclude<ExtArgs> | null
-  where?: Prisma.UserWhereInput
 }
 
 /**

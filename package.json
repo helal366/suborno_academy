@@ -4,7 +4,8 @@
   "main": "dist/server.js",
   "imports": {
     "#db-client": {
-      "default": "./dist/src/generated/client/client.js"
+      "default": "./dist/src/generated/client/client.js",
+      "development": "./src/generated/client/client.ts"
     }
   },
   "scripts": {

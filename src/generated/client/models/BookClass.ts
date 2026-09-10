@@ -198,9 +198,9 @@ export type BookClassWhereInput = {
   created_by_id?: Prisma.StringNullableFilter<"BookClass"> | string | null
   created_at?: Prisma.DateTimeFilter<"BookClass"> | Date | string
   updated_at?: Prisma.DateTimeNullableFilter<"BookClass"> | Date | string | null
-  class?: Prisma.XOR<Prisma.ClassScalarRelationFilter, Prisma.ClassWhereInput>
-  book?: Prisma.XOR<Prisma.BookScalarRelationFilter, Prisma.BookWhereInput>
   academic_year?: Prisma.XOR<Prisma.AcademicYearScalarRelationFilter, Prisma.AcademicYearWhereInput>
+  book?: Prisma.XOR<Prisma.BookScalarRelationFilter, Prisma.BookWhereInput>
+  class?: Prisma.XOR<Prisma.ClassScalarRelationFilter, Prisma.ClassWhereInput>
   created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
 }
 
@@ -212,9 +212,9 @@ export type BookClassOrderByWithRelationInput = {
   created_by_id?: Prisma.SortOrderInput | Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrderInput | Prisma.SortOrder
-  class?: Prisma.ClassOrderByWithRelationInput
-  book?: Prisma.BookOrderByWithRelationInput
   academic_year?: Prisma.AcademicYearOrderByWithRelationInput
+  book?: Prisma.BookOrderByWithRelationInput
+  class?: Prisma.ClassOrderByWithRelationInput
   created_by?: Prisma.UserOrderByWithRelationInput
 }
 
@@ -230,9 +230,9 @@ export type BookClassWhereUniqueInput = Prisma.AtLeast<{
   created_by_id?: Prisma.StringNullableFilter<"BookClass"> | string | null
   created_at?: Prisma.DateTimeFilter<"BookClass"> | Date | string
   updated_at?: Prisma.DateTimeNullableFilter<"BookClass"> | Date | string | null
-  class?: Prisma.XOR<Prisma.ClassScalarRelationFilter, Prisma.ClassWhereInput>
-  book?: Prisma.XOR<Prisma.BookScalarRelationFilter, Prisma.BookWhereInput>
   academic_year?: Prisma.XOR<Prisma.AcademicYearScalarRelationFilter, Prisma.AcademicYearWhereInput>
+  book?: Prisma.XOR<Prisma.BookScalarRelationFilter, Prisma.BookWhereInput>
+  class?: Prisma.XOR<Prisma.ClassScalarRelationFilter, Prisma.ClassWhereInput>
   created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
 }, "book_id_class_id_academic_year_id" | "id">
 
@@ -266,9 +266,9 @@ export type BookClassCreateInput = {
   id?: string
   created_at?: Date | string
   updated_at?: Date | string | null
-  class: Prisma.ClassCreateNestedOneWithoutBook_classesInput
-  book: Prisma.BookCreateNestedOneWithoutBook_classesInput
   academic_year: Prisma.AcademicYearCreateNestedOneWithoutBook_classesInput
+  book: Prisma.BookCreateNestedOneWithoutBook_classesInput
+  class: Prisma.ClassCreateNestedOneWithoutBook_classesInput
   created_by?: Prisma.UserCreateNestedOneWithoutBook_linksInput
 }
 
@@ -286,9 +286,9 @@ export type BookClassUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  class?: Prisma.ClassUpdateOneRequiredWithoutBook_classesNestedInput
-  book?: Prisma.BookUpdateOneRequiredWithoutBook_classesNestedInput
   academic_year?: Prisma.AcademicYearUpdateOneRequiredWithoutBook_classesNestedInput
+  book?: Prisma.BookUpdateOneRequiredWithoutBook_classesNestedInput
+  class?: Prisma.ClassUpdateOneRequiredWithoutBook_classesNestedInput
   created_by?: Prisma.UserUpdateOneWithoutBook_linksNestedInput
 }
 
@@ -546,8 +546,8 @@ export type BookClassCreateWithoutAcademic_yearInput = {
   id?: string
   created_at?: Date | string
   updated_at?: Date | string | null
-  class: Prisma.ClassCreateNestedOneWithoutBook_classesInput
   book: Prisma.BookCreateNestedOneWithoutBook_classesInput
+  class: Prisma.ClassCreateNestedOneWithoutBook_classesInput
   created_by?: Prisma.UserCreateNestedOneWithoutBook_linksInput
 }
 
@@ -603,8 +603,8 @@ export type BookClassCreateWithoutBookInput = {
   id?: string
   created_at?: Date | string
   updated_at?: Date | string | null
-  class: Prisma.ClassCreateNestedOneWithoutBook_classesInput
   academic_year: Prisma.AcademicYearCreateNestedOneWithoutBook_classesInput
+  class: Prisma.ClassCreateNestedOneWithoutBook_classesInput
   created_by?: Prisma.UserCreateNestedOneWithoutBook_linksInput
 }
 
@@ -647,8 +647,8 @@ export type BookClassCreateWithoutClassInput = {
   id?: string
   created_at?: Date | string
   updated_at?: Date | string | null
-  book: Prisma.BookCreateNestedOneWithoutBook_classesInput
   academic_year: Prisma.AcademicYearCreateNestedOneWithoutBook_classesInput
+  book: Prisma.BookCreateNestedOneWithoutBook_classesInput
   created_by?: Prisma.UserCreateNestedOneWithoutBook_linksInput
 }
 
@@ -691,9 +691,9 @@ export type BookClassCreateWithoutCreated_byInput = {
   id?: string
   created_at?: Date | string
   updated_at?: Date | string | null
-  class: Prisma.ClassCreateNestedOneWithoutBook_classesInput
-  book: Prisma.BookCreateNestedOneWithoutBook_classesInput
   academic_year: Prisma.AcademicYearCreateNestedOneWithoutBook_classesInput
+  book: Prisma.BookCreateNestedOneWithoutBook_classesInput
+  class: Prisma.ClassCreateNestedOneWithoutBook_classesInput
 }
 
 export type BookClassUncheckedCreateWithoutCreated_byInput = {
@@ -744,8 +744,8 @@ export type BookClassUpdateWithoutAcademic_yearInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  class?: Prisma.ClassUpdateOneRequiredWithoutBook_classesNestedInput
   book?: Prisma.BookUpdateOneRequiredWithoutBook_classesNestedInput
+  class?: Prisma.ClassUpdateOneRequiredWithoutBook_classesNestedInput
   created_by?: Prisma.UserUpdateOneWithoutBook_linksNestedInput
 }
 
@@ -780,8 +780,8 @@ export type BookClassUpdateWithoutBookInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  class?: Prisma.ClassUpdateOneRequiredWithoutBook_classesNestedInput
   academic_year?: Prisma.AcademicYearUpdateOneRequiredWithoutBook_classesNestedInput
+  class?: Prisma.ClassUpdateOneRequiredWithoutBook_classesNestedInput
   created_by?: Prisma.UserUpdateOneWithoutBook_linksNestedInput
 }
 
@@ -816,8 +816,8 @@ export type BookClassUpdateWithoutClassInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  book?: Prisma.BookUpdateOneRequiredWithoutBook_classesNestedInput
   academic_year?: Prisma.AcademicYearUpdateOneRequiredWithoutBook_classesNestedInput
+  book?: Prisma.BookUpdateOneRequiredWithoutBook_classesNestedInput
   created_by?: Prisma.UserUpdateOneWithoutBook_linksNestedInput
 }
 
@@ -852,9 +852,9 @@ export type BookClassUpdateWithoutCreated_byInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  class?: Prisma.ClassUpdateOneRequiredWithoutBook_classesNestedInput
-  book?: Prisma.BookUpdateOneRequiredWithoutBook_classesNestedInput
   academic_year?: Prisma.AcademicYearUpdateOneRequiredWithoutBook_classesNestedInput
+  book?: Prisma.BookUpdateOneRequiredWithoutBook_classesNestedInput
+  class?: Prisma.ClassUpdateOneRequiredWithoutBook_classesNestedInput
 }
 
 export type BookClassUncheckedUpdateWithoutCreated_byInput = {
@@ -885,9 +885,9 @@ export type BookClassSelect<ExtArgs extends runtime.Types.Extensions.InternalArg
   created_by_id?: boolean
   created_at?: boolean
   updated_at?: boolean
-  class?: boolean | Prisma.ClassDefaultArgs<ExtArgs>
-  book?: boolean | Prisma.BookDefaultArgs<ExtArgs>
   academic_year?: boolean | Prisma.AcademicYearDefaultArgs<ExtArgs>
+  book?: boolean | Prisma.BookDefaultArgs<ExtArgs>
+  class?: boolean | Prisma.ClassDefaultArgs<ExtArgs>
   created_by?: boolean | Prisma.BookClass$created_byArgs<ExtArgs>
 }, ExtArgs["result"]["bookClass"]>
 
@@ -899,9 +899,9 @@ export type BookClassSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Ext
   created_by_id?: boolean
   created_at?: boolean
   updated_at?: boolean
-  class?: boolean | Prisma.ClassDefaultArgs<ExtArgs>
-  book?: boolean | Prisma.BookDefaultArgs<ExtArgs>
   academic_year?: boolean | Prisma.AcademicYearDefaultArgs<ExtArgs>
+  book?: boolean | Prisma.BookDefaultArgs<ExtArgs>
+  class?: boolean | Prisma.ClassDefaultArgs<ExtArgs>
   created_by?: boolean | Prisma.BookClass$created_byArgs<ExtArgs>
 }, ExtArgs["result"]["bookClass"]>
 
@@ -913,9 +913,9 @@ export type BookClassSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Ext
   created_by_id?: boolean
   created_at?: boolean
   updated_at?: boolean
-  class?: boolean | Prisma.ClassDefaultArgs<ExtArgs>
-  book?: boolean | Prisma.BookDefaultArgs<ExtArgs>
   academic_year?: boolean | Prisma.AcademicYearDefaultArgs<ExtArgs>
+  book?: boolean | Prisma.BookDefaultArgs<ExtArgs>
+  class?: boolean | Prisma.ClassDefaultArgs<ExtArgs>
   created_by?: boolean | Prisma.BookClass$created_byArgs<ExtArgs>
 }, ExtArgs["result"]["bookClass"]>
 
@@ -931,30 +931,30 @@ export type BookClassSelectScalar = {
 
 export type BookClassOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "class_id" | "book_id" | "academic_year_id" | "created_by_id" | "created_at" | "updated_at", ExtArgs["result"]["bookClass"]>
 export type BookClassInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  class?: boolean | Prisma.ClassDefaultArgs<ExtArgs>
-  book?: boolean | Prisma.BookDefaultArgs<ExtArgs>
   academic_year?: boolean | Prisma.AcademicYearDefaultArgs<ExtArgs>
+  book?: boolean | Prisma.BookDefaultArgs<ExtArgs>
+  class?: boolean | Prisma.ClassDefaultArgs<ExtArgs>
   created_by?: boolean | Prisma.BookClass$created_byArgs<ExtArgs>
 }
 export type BookClassIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  class?: boolean | Prisma.ClassDefaultArgs<ExtArgs>
-  book?: boolean | Prisma.BookDefaultArgs<ExtArgs>
   academic_year?: boolean | Prisma.AcademicYearDefaultArgs<ExtArgs>
+  book?: boolean | Prisma.BookDefaultArgs<ExtArgs>
+  class?: boolean | Prisma.ClassDefaultArgs<ExtArgs>
   created_by?: boolean | Prisma.BookClass$created_byArgs<ExtArgs>
 }
 export type BookClassIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  class?: boolean | Prisma.ClassDefaultArgs<ExtArgs>
-  book?: boolean | Prisma.BookDefaultArgs<ExtArgs>
   academic_year?: boolean | Prisma.AcademicYearDefaultArgs<ExtArgs>
+  book?: boolean | Prisma.BookDefaultArgs<ExtArgs>
+  class?: boolean | Prisma.ClassDefaultArgs<ExtArgs>
   created_by?: boolean | Prisma.BookClass$created_byArgs<ExtArgs>
 }
 
 export type $BookClassPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "BookClass"
   objects: {
-    class: Prisma.$ClassPayload<ExtArgs>
-    book: Prisma.$BookPayload<ExtArgs>
     academic_year: Prisma.$AcademicYearPayload<ExtArgs>
+    book: Prisma.$BookPayload<ExtArgs>
+    class: Prisma.$ClassPayload<ExtArgs>
     created_by: Prisma.$UserPayload<ExtArgs> | null
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
@@ -1359,9 +1359,9 @@ readonly fields: BookClassFieldRefs;
  */
 export interface Prisma__BookClassClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  class<T extends Prisma.ClassDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ClassDefaultArgs<ExtArgs>>): Prisma.Prisma__ClassClient<runtime.Types.Result.GetResult<Prisma.$ClassPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
-  book<T extends Prisma.BookDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.BookDefaultArgs<ExtArgs>>): Prisma.Prisma__BookClient<runtime.Types.Result.GetResult<Prisma.$BookPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   academic_year<T extends Prisma.AcademicYearDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.AcademicYearDefaultArgs<ExtArgs>>): Prisma.Prisma__AcademicYearClient<runtime.Types.Result.GetResult<Prisma.$AcademicYearPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  book<T extends Prisma.BookDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.BookDefaultArgs<ExtArgs>>): Prisma.Prisma__BookClient<runtime.Types.Result.GetResult<Prisma.$BookPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  class<T extends Prisma.ClassDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.ClassDefaultArgs<ExtArgs>>): Prisma.Prisma__ClassClient<runtime.Types.Result.GetResult<Prisma.$ClassPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   created_by<T extends Prisma.BookClass$created_byArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.BookClass$created_byArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.

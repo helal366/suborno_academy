@@ -1,4 +1,7 @@
 import "dotenv/config";
+import net from "node:net";
+
+net.setDefaultAutoSelectFamily(false);
 import pg from "pg";
 import { PrismaPg } from "@prisma/adapter-pg";
 import { PrismaClient } from "#db-client"; // Automatically maps to client.ts / client.js

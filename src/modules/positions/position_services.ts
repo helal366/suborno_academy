@@ -1,38 +1,42 @@
 import { StatusCodes } from "http-status-codes";
 import { prisma } from "../../lib/prisma.js";
 import { AppError } from "../../utils/appError.js";
-import { ICreatePosition } from "./position_interfaces.js";
+import { TPositionCreateZodSchema } from "./position_zod_validation.js";
+import { clearCachePositions, getValidPositions } from "../../helperFunctions/cachedData/cache_positions.js";
 
-const createPosition = async (payload: ICreatePosition) => {
+const createPosition = async (payload: TPositionCreateZodSchema) => {
   const { position_name, role_name } = payload;
-  const clean_position_name = position_name.trim().toUpperCase();
-  const clean_role_name = role_name.trim().toUpperCase();
-  const role = await prisma.userRole.findUnique({
-    where: {
-      role_name: clean_role_name,
-    },
-    select: {
-      id: true,
-    },
-  });
-  if (!role) {
-    throw new AppError("Invalid role provided.", StatusCodes.BAD_REQUEST);
-  }
-  const existing = await prisma.userPosition.findUnique({
-    where: {
-      position_name: clean_position_name,
-    },
-  });
-  if (existing) {
-    throw new AppError(`Position already exists`, StatusCodes.CONFLICT);
-  }
-  const createdPosition = await prisma.userPosition.create({
-    data: {
-      position_name: clean_position_name,
-      role_id: role.id,
-    },
-  });
-  return createdPosition;
+  const clean_position_name = position_name.toUpperCase();
+  const clean_role_name = role_name.toUpperCase();
+  return await prisma.$transaction(async(tx)=>{
+    const existingRole = await tx.userRole.findUnique({
+      where: {
+        role_name: clean_role_name,
+      },
+      select: {
+        id: true,
+      },
+    });
+
+    if (!existingRole) {
+      throw new AppError("Invalid role provided.", StatusCodes.BAD_REQUEST);
+    }
+
+    const existingPositions = await getValidPositions()
+    if (existingPositions.includes(clean_position_name)) {
+      throw new AppError(`Position already exists`, StatusCodes.CONFLICT);
+    }
+
+    const createdPosition = await tx.userPosition.create({
+      data: {
+        position_name: clean_position_name,
+        role_id: existingRole.id,
+      },
+    });
+
+    clearCachePositions();
+    return createdPosition;
+  })
 };
 
 const deletePosition = async (position_name: string) => {

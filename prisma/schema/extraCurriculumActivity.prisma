@@ -1,20 +1,16 @@
 model ExtraCurriculumActivity {
-  id String @id @default(uuid())
-
+  id                        String            @id @default(uuid())
+  created_by_id             String?
+  updated_by_id             String?
+  created_at                DateTime          @default(now())
+  updated_at                DateTime?         @updatedAt
   cultural_club_options     CulturalClub[]
-  quran_club_options        QuranClub[]
+  created_by                User?             @relation("extra_curriculum_activity_created_by", fields: [created_by_id], references: [id])
+  updated_by                User?             @relation("extra_curriculum_activity_updated_by", fields: [updated_by_id], references: [id])
   language_club_options     LanguageClub[]
+  quran_club_options        QuranClub[]
   science_club_options      ScienceClub[]
   scout_sports_club_options ScoutSportsClub[]
-
-  created_by_id String?
-  created_by    User?   @relation("extra_curriculum_activity_created_by", fields: [created_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
-
-  updated_by_id String?
-  updated_by    User?   @relation("extra_curriculum_activity_updated_by", fields: [updated_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
-
-  created_at DateTime  @default(now())
-  updated_at DateTime? @updatedAt
 
   @@map("extra_curriculum_activities")
 }

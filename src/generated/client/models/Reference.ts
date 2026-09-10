@@ -254,8 +254,8 @@ export type ReferenceWhereInput = {
   updated_by_id?: Prisma.StringNullableFilter<"Reference"> | string | null
   created_at?: Prisma.DateTimeFilter<"Reference"> | Date | string
   updated_at?: Prisma.DateTimeNullableFilter<"Reference"> | Date | string | null
-  joining_history?: Prisma.XOR<Prisma.JoiningHistoryNullableScalarRelationFilter, Prisma.JoiningHistoryWhereInput> | null
   created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
+  joining_history?: Prisma.XOR<Prisma.JoiningHistoryNullableScalarRelationFilter, Prisma.JoiningHistoryWhereInput> | null
   updated_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
 }
 
@@ -274,8 +274,8 @@ export type ReferenceOrderByWithRelationInput = {
   updated_by_id?: Prisma.SortOrderInput | Prisma.SortOrder
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrderInput | Prisma.SortOrder
-  joining_history?: Prisma.JoiningHistoryOrderByWithRelationInput
   created_by?: Prisma.UserOrderByWithRelationInput
+  joining_history?: Prisma.JoiningHistoryOrderByWithRelationInput
   updated_by?: Prisma.UserOrderByWithRelationInput
 }
 
@@ -297,8 +297,8 @@ export type ReferenceWhereUniqueInput = Prisma.AtLeast<{
   updated_by_id?: Prisma.StringNullableFilter<"Reference"> | string | null
   created_at?: Prisma.DateTimeFilter<"Reference"> | Date | string
   updated_at?: Prisma.DateTimeNullableFilter<"Reference"> | Date | string | null
-  joining_history?: Prisma.XOR<Prisma.JoiningHistoryNullableScalarRelationFilter, Prisma.JoiningHistoryWhereInput> | null
   created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
+  joining_history?: Prisma.XOR<Prisma.JoiningHistoryNullableScalarRelationFilter, Prisma.JoiningHistoryWhereInput> | null
   updated_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
 }, "id" | "joining_history_id">
 
@@ -354,8 +354,8 @@ export type ReferenceCreateInput = {
   ref2_job_title?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
-  joining_history?: Prisma.JoiningHistoryCreateNestedOneWithoutReferencesInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_teacher_referencesInput
+  joining_history?: Prisma.JoiningHistoryCreateNestedOneWithoutReferencesInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_teacher_referencesInput
 }
 
@@ -388,8 +388,8 @@ export type ReferenceUpdateInput = {
   ref2_job_title?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  joining_history?: Prisma.JoiningHistoryUpdateOneWithoutReferencesNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_teacher_referencesNestedInput
+  joining_history?: Prisma.JoiningHistoryUpdateOneWithoutReferencesNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_teacher_referencesNestedInput
 }
 
@@ -774,8 +774,8 @@ export type ReferenceCreateWithoutUpdated_byInput = {
   ref2_job_title?: string | null
   created_at?: Date | string
   updated_at?: Date | string | null
-  joining_history?: Prisma.JoiningHistoryCreateNestedOneWithoutReferencesInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_teacher_referencesInput
+  joining_history?: Prisma.JoiningHistoryCreateNestedOneWithoutReferencesInput
 }
 
 export type ReferenceUncheckedCreateWithoutUpdated_byInput = {
@@ -948,8 +948,8 @@ export type ReferenceUpdateWithoutUpdated_byInput = {
   ref2_job_title?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  joining_history?: Prisma.JoiningHistoryUpdateOneWithoutReferencesNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_teacher_referencesNestedInput
+  joining_history?: Prisma.JoiningHistoryUpdateOneWithoutReferencesNestedInput
 }
 
 export type ReferenceUncheckedUpdateWithoutUpdated_byInput = {
@@ -1001,8 +1001,8 @@ export type ReferenceSelect<ExtArgs extends runtime.Types.Extensions.InternalArg
   updated_by_id?: boolean
   created_at?: boolean
   updated_at?: boolean
-  joining_history?: boolean | Prisma.Reference$joining_historyArgs<ExtArgs>
   created_by?: boolean | Prisma.Reference$created_byArgs<ExtArgs>
+  joining_history?: boolean | Prisma.Reference$joining_historyArgs<ExtArgs>
   updated_by?: boolean | Prisma.Reference$updated_byArgs<ExtArgs>
 }, ExtArgs["result"]["reference"]>
 
@@ -1021,8 +1021,8 @@ export type ReferenceSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Ext
   updated_by_id?: boolean
   created_at?: boolean
   updated_at?: boolean
-  joining_history?: boolean | Prisma.Reference$joining_historyArgs<ExtArgs>
   created_by?: boolean | Prisma.Reference$created_byArgs<ExtArgs>
+  joining_history?: boolean | Prisma.Reference$joining_historyArgs<ExtArgs>
   updated_by?: boolean | Prisma.Reference$updated_byArgs<ExtArgs>
 }, ExtArgs["result"]["reference"]>
 
@@ -1041,8 +1041,8 @@ export type ReferenceSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Ext
   updated_by_id?: boolean
   created_at?: boolean
   updated_at?: boolean
-  joining_history?: boolean | Prisma.Reference$joining_historyArgs<ExtArgs>
   created_by?: boolean | Prisma.Reference$created_byArgs<ExtArgs>
+  joining_history?: boolean | Prisma.Reference$joining_historyArgs<ExtArgs>
   updated_by?: boolean | Prisma.Reference$updated_byArgs<ExtArgs>
 }, ExtArgs["result"]["reference"]>
 
@@ -1065,26 +1065,26 @@ export type ReferenceSelectScalar = {
 
 export type ReferenceOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "ref1_name" | "ref1_mobile_number" | "ref1_occupation" | "ref1_job_title" | "ref2_name" | "ref2_mobile_number" | "ref2_occupation" | "ref2_job_title" | "joining_history_id" | "created_by_id" | "updated_by_id" | "created_at" | "updated_at", ExtArgs["result"]["reference"]>
 export type ReferenceInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  joining_history?: boolean | Prisma.Reference$joining_historyArgs<ExtArgs>
   created_by?: boolean | Prisma.Reference$created_byArgs<ExtArgs>
+  joining_history?: boolean | Prisma.Reference$joining_historyArgs<ExtArgs>
   updated_by?: boolean | Prisma.Reference$updated_byArgs<ExtArgs>
 }
 export type ReferenceIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  joining_history?: boolean | Prisma.Reference$joining_historyArgs<ExtArgs>
   created_by?: boolean | Prisma.Reference$created_byArgs<ExtArgs>
+  joining_history?: boolean | Prisma.Reference$joining_historyArgs<ExtArgs>
   updated_by?: boolean | Prisma.Reference$updated_byArgs<ExtArgs>
 }
 export type ReferenceIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  joining_history?: boolean | Prisma.Reference$joining_historyArgs<ExtArgs>
   created_by?: boolean | Prisma.Reference$created_byArgs<ExtArgs>
+  joining_history?: boolean | Prisma.Reference$joining_historyArgs<ExtArgs>
   updated_by?: boolean | Prisma.Reference$updated_byArgs<ExtArgs>
 }
 
 export type $ReferencePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Reference"
   objects: {
-    joining_history: Prisma.$JoiningHistoryPayload<ExtArgs> | null
     created_by: Prisma.$UserPayload<ExtArgs> | null
+    joining_history: Prisma.$JoiningHistoryPayload<ExtArgs> | null
     updated_by: Prisma.$UserPayload<ExtArgs> | null
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
@@ -1496,8 +1496,8 @@ readonly fields: ReferenceFieldRefs;
  */
 export interface Prisma__ReferenceClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  joining_history<T extends Prisma.Reference$joining_historyArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Reference$joining_historyArgs<ExtArgs>>): Prisma.Prisma__JoiningHistoryClient<runtime.Types.Result.GetResult<Prisma.$JoiningHistoryPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   created_by<T extends Prisma.Reference$created_byArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Reference$created_byArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  joining_history<T extends Prisma.Reference$joining_historyArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Reference$joining_historyArgs<ExtArgs>>): Prisma.Prisma__JoiningHistoryClient<runtime.Types.Result.GetResult<Prisma.$JoiningHistoryPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   updated_by<T extends Prisma.Reference$updated_byArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Reference$updated_byArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -1943,25 +1943,6 @@ export type ReferenceDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.Int
 }
 
 /**
- * Reference.joining_history
- */
-export type Reference$joining_historyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the JoiningHistory
-   */
-  select?: Prisma.JoiningHistorySelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the JoiningHistory
-   */
-  omit?: Prisma.JoiningHistoryOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.JoiningHistoryInclude<ExtArgs> | null
-  where?: Prisma.JoiningHistoryWhereInput
-}
-
-/**
  * Reference.created_by
  */
 export type Reference$created_byArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1978,6 +1959,25 @@ export type Reference$created_byArgs<ExtArgs extends runtime.Types.Extensions.In
    */
   include?: Prisma.UserInclude<ExtArgs> | null
   where?: Prisma.UserWhereInput
+}
+
+/**
+ * Reference.joining_history
+ */
+export type Reference$joining_historyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the JoiningHistory
+   */
+  select?: Prisma.JoiningHistorySelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the JoiningHistory
+   */
+  omit?: Prisma.JoiningHistoryOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.JoiningHistoryInclude<ExtArgs> | null
+  where?: Prisma.JoiningHistoryWhereInput
 }
 
 /**

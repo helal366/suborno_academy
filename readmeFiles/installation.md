@@ -1,8 +1,4 @@
-- first command
-
-```
-git init
-```
+# Installation
 
 - create .gitignore file and write
   node_modules

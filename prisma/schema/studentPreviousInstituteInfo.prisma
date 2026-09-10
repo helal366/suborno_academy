@@ -1,24 +1,19 @@
 model StudentPreviousInstituteInformation {
-  id             String  @id @default(uuid())
-  institute_name String
-  class          String
-  result         String?
-  tc_no          String?
-
+  id                   String                   @id @default(uuid())
+  institute_name       String
+  class                String
+  result               String?
+  tc_no                String?
   institute_address_id String?                  @unique
+  student_id           String
+  created_by_id        String?
+  updated_by_id        String?
+  created_at           DateTime                 @default(now())
+  updated_at           DateTime?                @updatedAt
+  created_by           User?                    @relation("student_previous_institute_information_created_by", fields: [created_by_id], references: [id])
   institute_address    StudentInstitureAddress? @relation(fields: [institute_address_id], references: [id])
-
-  student_id String
-  student    Student @relation(fields: [student_id], references: [id])
-
-  created_by_id String?
-  created_by    User?   @relation("student_previous_institute_information_created_by", fields: [created_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
-
-  updated_by_id String?
-  updated_by    User?   @relation("student_previous_institute_information_updated_by", fields: [updated_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
-
-  created_at DateTime  @default(now())
-  updated_at DateTime? @updatedAt
+  student              Student                  @relation(fields: [student_id], references: [id])
+  updated_by           User?                    @relation("student_previous_institute_information_updated_by", fields: [updated_by_id], references: [id])
 
   @@map("student_previous_institute_information")
 }

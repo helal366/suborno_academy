@@ -2,7 +2,7 @@ import { BloodGroup, Gender, Religion} from "#db-client";
 import z4 from "zod/v4";
 
 export const authRegistrationZodSchema = z4.object({
-    full_name: z4.string().trim().min(1, "Full name is required."),
+    full_name: z4.string("Invalid name format").trim().min(1, "Full name is required."),
     mobile_number: z4.string().trim().length(14, "Mobile number must be 11 digit").regex(/^\+880[1]\d{9}$/, "Invalid Bangladeshi mobile number."),
     gender: z4.enum(Gender, "Invalid gender."),
     blood_group: z4.enum(BloodGroup, "Invalid blood group.").optional(),

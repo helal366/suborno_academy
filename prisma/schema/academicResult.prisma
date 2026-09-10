@@ -1,5 +1,5 @@
 model AcademicResult {
-  id             String  @id @default(uuid())
+  id             String                       @id @default(uuid())
   ssc_result     String?
   dakhil_result  String?
   hsc_result     String?
@@ -8,18 +8,14 @@ model AcademicResult {
   fazil_result   String?
   masters_result String?
   kamil          String?
-
-  teacher_id String?          @unique
-  teacher    AcademicAdministrativeStaff? @relation(fields: [teacher_id], references: [id], onDelete: Cascade, onUpdate: Cascade)
-
-  created_by_id String?
-  created_by    User?   @relation("academic_result_created_by", fields: [created_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
-
-  updated_by_id String?
-  updated_by    User?   @relation("academic_result_updated_by", fields: [updated_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
-
-  created_at DateTime  @default(now())
-  updated_at DateTime? @updatedAt
+  teacher_id     String?                      @unique
+  created_by_id  String?
+  updated_by_id  String?
+  created_at     DateTime                     @default(now())
+  updated_at     DateTime?                    @updatedAt
+  created_by     User?                        @relation("academic_result_created_by", fields: [created_by_id], references: [id])
+  teacher        AcademicAdministrativeStaff? @relation(fields: [teacher_id], references: [id], onDelete: Cascade)
+  updated_by     User?                        @relation("academic_result_updated_by", fields: [updated_by_id], references: [id])
 
   @@map("academic_results")
 }

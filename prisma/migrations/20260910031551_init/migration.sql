@@ -808,6 +808,9 @@ CREATE UNIQUE INDEX "students_user_id_key" ON "students"("user_id");
 CREATE UNIQUE INDEX "student_previous_institute_information_institute_address_id_key" ON "student_previous_institute_information"("institute_address_id");
 
 -- CreateIndex
+CREATE UNIQUE INDEX "student_single_active_responsibility_idx" ON "students_responsibility"("student_id") WHERE ("isActive" = true);
+
+-- CreateIndex
 CREATE UNIQUE INDEX "teacher_honourableresponsibilities_responsibility_name_key" ON "teacher_honourableresponsibilities"("responsibility_name");
 
 -- CreateIndex
@@ -853,25 +856,25 @@ CREATE INDEX "_ScienceClubToStudent_B_index" ON "_ScienceClubToStudent"("B");
 CREATE INDEX "_ScoutSportsClubToStudent_B_index" ON "_ScoutSportsClubToStudent"("B");
 
 -- AddForeignKey
+ALTER TABLE "academic_teachers" ADD CONSTRAINT "academic_teachers_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
 ALTER TABLE "academic_teachers" ADD CONSTRAINT "academic_teachers_current_position_id_fkey" FOREIGN KEY ("current_position_id") REFERENCES "user_positions"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "academic_teachers" ADD CONSTRAINT "academic_teachers_current_role_id_fkey" FOREIGN KEY ("current_role_id") REFERENCES "user_roles"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "academic_teachers" ADD CONSTRAINT "academic_teachers_user_id_fkey" FOREIGN KEY ("user_id") REFERENCES "users"("id") ON DELETE CASCADE ON UPDATE CASCADE;
-
--- AddForeignKey
-ALTER TABLE "academic_teachers" ADD CONSTRAINT "academic_teachers_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
-
--- AddForeignKey
 ALTER TABLE "academic_teachers" ADD CONSTRAINT "academic_teachers_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "academic_results" ADD CONSTRAINT "academic_results_teacher_id_fkey" FOREIGN KEY ("teacher_id") REFERENCES "academic_teachers"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE "academic_teachers" ADD CONSTRAINT "academic_teachers_user_id_fkey" FOREIGN KEY ("user_id") REFERENCES "users"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "academic_results" ADD CONSTRAINT "academic_results_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "academic_results" ADD CONSTRAINT "academic_results_teacher_id_fkey" FOREIGN KEY ("teacher_id") REFERENCES "academic_teachers"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "academic_results" ADD CONSTRAINT "academic_results_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
@@ -892,16 +895,19 @@ ALTER TABLE "books" ADD CONSTRAINT "books_created_by_id_fkey" FOREIGN KEY ("crea
 ALTER TABLE "books" ADD CONSTRAINT "books_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "books_classes" ADD CONSTRAINT "books_classes_class_id_fkey" FOREIGN KEY ("class_id") REFERENCES "classes"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "books_classes" ADD CONSTRAINT "books_classes_academic_year_id_fkey" FOREIGN KEY ("academic_year_id") REFERENCES "academic_years"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "books_classes" ADD CONSTRAINT "books_classes_book_id_fkey" FOREIGN KEY ("book_id") REFERENCES "books"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "books_classes" ADD CONSTRAINT "books_classes_academic_year_id_fkey" FOREIGN KEY ("academic_year_id") REFERENCES "academic_years"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "books_classes" ADD CONSTRAINT "books_classes_class_id_fkey" FOREIGN KEY ("class_id") REFERENCES "classes"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "books_classes" ADD CONSTRAINT "books_classes_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "classes" ADD CONSTRAINT "classes_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "classes" ADD CONSTRAINT "classes_grade_teacher_id_fkey" FOREIGN KEY ("grade_teacher_id") REFERENCES "academic_teachers"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
@@ -910,37 +916,34 @@ ALTER TABLE "classes" ADD CONSTRAINT "classes_grade_teacher_id_fkey" FOREIGN KEY
 ALTER TABLE "classes" ADD CONSTRAINT "classes_group_teacher_id_fkey" FOREIGN KEY ("group_teacher_id") REFERENCES "academic_teachers"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "classes" ADD CONSTRAINT "classes_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
-
--- AddForeignKey
 ALTER TABLE "classes" ADD CONSTRAINT "classes_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
-
--- AddForeignKey
-ALTER TABLE "class_routine" ADD CONSTRAINT "class_routine_shift_id_fkey" FOREIGN KEY ("shift_id") REFERENCES "shifts"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
-
--- AddForeignKey
-ALTER TABLE "class_routine" ADD CONSTRAINT "class_routine_period_id_fkey" FOREIGN KEY ("period_id") REFERENCES "periods"("id") ON DELETE CASCADE ON UPDATE CASCADE;
-
--- AddForeignKey
-ALTER TABLE "class_routine" ADD CONSTRAINT "class_routine_teacher_id_fkey" FOREIGN KEY ("teacher_id") REFERENCES "academic_teachers"("id") ON DELETE CASCADE ON UPDATE CASCADE;
-
--- AddForeignKey
-ALTER TABLE "class_routine" ADD CONSTRAINT "class_routine_class_id_fkey" FOREIGN KEY ("class_id") REFERENCES "classes"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "class_routine" ADD CONSTRAINT "class_routine_academic_year_id_fkey" FOREIGN KEY ("academic_year_id") REFERENCES "academic_years"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
+ALTER TABLE "class_routine" ADD CONSTRAINT "class_routine_class_id_fkey" FOREIGN KEY ("class_id") REFERENCES "classes"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
 ALTER TABLE "class_routine" ADD CONSTRAINT "class_routine_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "class_routine" ADD CONSTRAINT "class_routine_period_id_fkey" FOREIGN KEY ("period_id") REFERENCES "periods"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "class_routine" ADD CONSTRAINT "class_routine_shift_id_fkey" FOREIGN KEY ("shift_id") REFERENCES "shifts"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "class_routine" ADD CONSTRAINT "class_routine_teacher_id_fkey" FOREIGN KEY ("teacher_id") REFERENCES "academic_teachers"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "class_routine" ADD CONSTRAINT "class_routine_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "cultural_club" ADD CONSTRAINT "cultural_club_extra_curriculum_activity_id_fkey" FOREIGN KEY ("extra_curriculum_activity_id") REFERENCES "extra_curriculum_activities"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE "cultural_club" ADD CONSTRAINT "cultural_club_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "cultural_club" ADD CONSTRAINT "cultural_club_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE "cultural_club" ADD CONSTRAINT "cultural_club_extra_curriculum_activity_id_fkey" FOREIGN KEY ("extra_curriculum_activity_id") REFERENCES "extra_curriculum_activities"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "cultural_club" ADD CONSTRAINT "cultural_club_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
@@ -952,28 +955,28 @@ ALTER TABLE "extra_curriculum_activities" ADD CONSTRAINT "extra_curriculum_activ
 ALTER TABLE "extra_curriculum_activities" ADD CONSTRAINT "extra_curriculum_activities_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "teacher_interview_information" ADD CONSTRAINT "teacher_interview_information_joining_history_id_fkey" FOREIGN KEY ("joining_history_id") REFERENCES "teacher_joining_history"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE "teacher_interview_information" ADD CONSTRAINT "teacher_interview_information_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "teacher_interview_information" ADD CONSTRAINT "teacher_interview_information_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE "teacher_interview_information" ADD CONSTRAINT "teacher_interview_information_joining_history_id_fkey" FOREIGN KEY ("joining_history_id") REFERENCES "teacher_joining_history"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "teacher_interview_information" ADD CONSTRAINT "teacher_interview_information_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "teacher_joining_history" ADD CONSTRAINT "teacher_joining_history_teacher_id_fkey" FOREIGN KEY ("teacher_id") REFERENCES "academic_teachers"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE "teacher_joining_history" ADD CONSTRAINT "teacher_joining_history_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "teacher_joining_history" ADD CONSTRAINT "teacher_joining_history_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE "teacher_joining_history" ADD CONSTRAINT "teacher_joining_history_teacher_id_fkey" FOREIGN KEY ("teacher_id") REFERENCES "academic_teachers"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "teacher_joining_history" ADD CONSTRAINT "teacher_joining_history_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "language_club" ADD CONSTRAINT "language_club_extra_curriculum_activity_id_fkey" FOREIGN KEY ("extra_curriculum_activity_id") REFERENCES "extra_curriculum_activities"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE "language_club" ADD CONSTRAINT "language_club_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "language_club" ADD CONSTRAINT "language_club_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE "language_club" ADD CONSTRAINT "language_club_extra_curriculum_activity_id_fkey" FOREIGN KEY ("extra_curriculum_activity_id") REFERENCES "extra_curriculum_activities"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "language_club" ADD CONSTRAINT "language_club_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
@@ -985,34 +988,34 @@ ALTER TABLE "periods" ADD CONSTRAINT "periods_created_by_id_fkey" FOREIGN KEY ("
 ALTER TABLE "periods" ADD CONSTRAINT "periods_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "permanent_addresses" ADD CONSTRAINT "permanent_addresses_user_id_fkey" FOREIGN KEY ("user_id") REFERENCES "users"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE "permanent_addresses" ADD CONSTRAINT "permanent_addresses_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "permanent_addresses" ADD CONSTRAINT "permanent_addresses_spouse_id_fkey" FOREIGN KEY ("spouse_id") REFERENCES "spouse_infromation"("spouse_id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "permanent_addresses" ADD CONSTRAINT "permanent_addresses_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
-
--- AddForeignKey
 ALTER TABLE "permanent_addresses" ADD CONSTRAINT "permanent_addresses_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "present_addresses" ADD CONSTRAINT "present_addresses_user_id_fkey" FOREIGN KEY ("user_id") REFERENCES "users"("id") ON DELETE CASCADE ON UPDATE CASCADE;
-
--- AddForeignKey
-ALTER TABLE "present_addresses" ADD CONSTRAINT "present_addresses_spouse_id_fkey" FOREIGN KEY ("spouse_id") REFERENCES "spouse_infromation"("spouse_id") ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE "permanent_addresses" ADD CONSTRAINT "permanent_addresses_user_id_fkey" FOREIGN KEY ("user_id") REFERENCES "users"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "present_addresses" ADD CONSTRAINT "present_addresses_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
+ALTER TABLE "present_addresses" ADD CONSTRAINT "present_addresses_spouse_id_fkey" FOREIGN KEY ("spouse_id") REFERENCES "spouse_infromation"("spouse_id") ON DELETE CASCADE ON UPDATE CASCADE;
+
+-- AddForeignKey
 ALTER TABLE "present_addresses" ADD CONSTRAINT "present_addresses_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "teacher_previous_institute_information" ADD CONSTRAINT "teacher_previous_institute_information_joining_history_id_fkey" FOREIGN KEY ("joining_history_id") REFERENCES "teacher_joining_history"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE "present_addresses" ADD CONSTRAINT "present_addresses_user_id_fkey" FOREIGN KEY ("user_id") REFERENCES "users"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "teacher_previous_institute_information" ADD CONSTRAINT "teacher_previous_institute_information_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "teacher_previous_institute_information" ADD CONSTRAINT "teacher_previous_institute_information_joining_history_id_fkey" FOREIGN KEY ("joining_history_id") REFERENCES "teacher_joining_history"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "teacher_previous_institute_information" ADD CONSTRAINT "teacher_previous_institute_information_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
@@ -1027,10 +1030,10 @@ ALTER TABLE "teacher_promoted_history" ADD CONSTRAINT "teacher_promoted_history_
 ALTER TABLE "teacher_promoted_history" ADD CONSTRAINT "teacher_promoted_history_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "quran_club" ADD CONSTRAINT "quran_club_extra_curriculum_activity_id_fkey" FOREIGN KEY ("extra_curriculum_activity_id") REFERENCES "extra_curriculum_activities"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE "quran_club" ADD CONSTRAINT "quran_club_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "quran_club" ADD CONSTRAINT "quran_club_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE "quran_club" ADD CONSTRAINT "quran_club_extra_curriculum_activity_id_fkey" FOREIGN KEY ("extra_curriculum_activity_id") REFERENCES "extra_curriculum_activities"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "quran_club" ADD CONSTRAINT "quran_club_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
@@ -1048,28 +1051,28 @@ ALTER TABLE "quranic_subjects" ADD CONSTRAINT "quranic_subjects_created_by_id_fk
 ALTER TABLE "quranic_subjects" ADD CONSTRAINT "quranic_subjects_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "teacher_references" ADD CONSTRAINT "teacher_references_joining_history_id_fkey" FOREIGN KEY ("joining_history_id") REFERENCES "teacher_joining_history"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE "teacher_references" ADD CONSTRAINT "teacher_references_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "teacher_references" ADD CONSTRAINT "teacher_references_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE "teacher_references" ADD CONSTRAINT "teacher_references_joining_history_id_fkey" FOREIGN KEY ("joining_history_id") REFERENCES "teacher_joining_history"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "teacher_references" ADD CONSTRAINT "teacher_references_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "science_club" ADD CONSTRAINT "science_club_extra_curriculum_activity_id_fkey" FOREIGN KEY ("extra_curriculum_activity_id") REFERENCES "extra_curriculum_activities"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE "science_club" ADD CONSTRAINT "science_club_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "science_club" ADD CONSTRAINT "science_club_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE "science_club" ADD CONSTRAINT "science_club_extra_curriculum_activity_id_fkey" FOREIGN KEY ("extra_curriculum_activity_id") REFERENCES "extra_curriculum_activities"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "science_club" ADD CONSTRAINT "science_club_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "scout_sports_club" ADD CONSTRAINT "scout_sports_club_extra_curriculum_activity_id_fkey" FOREIGN KEY ("extra_curriculum_activity_id") REFERENCES "extra_curriculum_activities"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE "scout_sports_club" ADD CONSTRAINT "scout_sports_club_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "scout_sports_club" ADD CONSTRAINT "scout_sports_club_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE "scout_sports_club" ADD CONSTRAINT "scout_sports_club_extra_curriculum_activity_id_fkey" FOREIGN KEY ("extra_curriculum_activity_id") REFERENCES "extra_curriculum_activities"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "scout_sports_club" ADD CONSTRAINT "scout_sports_club_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
@@ -1081,31 +1084,31 @@ ALTER TABLE "shifts" ADD CONSTRAINT "shifts_created_by_id_fkey" FOREIGN KEY ("cr
 ALTER TABLE "shifts" ADD CONSTRAINT "shifts_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "spouse_infromation" ADD CONSTRAINT "spouse_infromation_teacher_id_fkey" FOREIGN KEY ("teacher_id") REFERENCES "academic_teachers"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE "spouse_infromation" ADD CONSTRAINT "spouse_infromation_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "spouse_infromation" ADD CONSTRAINT "spouse_infromation_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE "spouse_infromation" ADD CONSTRAINT "spouse_infromation_teacher_id_fkey" FOREIGN KEY ("teacher_id") REFERENCES "academic_teachers"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "spouse_infromation" ADD CONSTRAINT "spouse_infromation_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "students" ADD CONSTRAINT "students_quranic_subject_id_fkey" FOREIGN KEY ("quranic_subject_id") REFERENCES "quranic_subjects"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
-
--- AddForeignKey
 ALTER TABLE "students" ADD CONSTRAINT "students_active_class_id_fkey" FOREIGN KEY ("active_class_id") REFERENCES "classes"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
-
--- AddForeignKey
-ALTER TABLE "students" ADD CONSTRAINT "students_responsible_guardian_id_fkey" FOREIGN KEY ("responsible_guardian_id") REFERENCES "student_responsible_guardians"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
-
--- AddForeignKey
-ALTER TABLE "students" ADD CONSTRAINT "students_user_id_fkey" FOREIGN KEY ("user_id") REFERENCES "users"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "students" ADD CONSTRAINT "students_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
+ALTER TABLE "students" ADD CONSTRAINT "students_quranic_subject_id_fkey" FOREIGN KEY ("quranic_subject_id") REFERENCES "quranic_subjects"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "students" ADD CONSTRAINT "students_responsible_guardian_id_fkey" FOREIGN KEY ("responsible_guardian_id") REFERENCES "student_responsible_guardians"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+
+-- AddForeignKey
 ALTER TABLE "students" ADD CONSTRAINT "students_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "students" ADD CONSTRAINT "students_user_id_fkey" FOREIGN KEY ("user_id") REFERENCES "users"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "student_institute_addresses" ADD CONSTRAINT "student_institute_addresses_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
@@ -1114,13 +1117,13 @@ ALTER TABLE "student_institute_addresses" ADD CONSTRAINT "student_institute_addr
 ALTER TABLE "student_institute_addresses" ADD CONSTRAINT "student_institute_addresses_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
+ALTER TABLE "student_previous_institute_information" ADD CONSTRAINT "student_previous_institute_information_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
 ALTER TABLE "student_previous_institute_information" ADD CONSTRAINT "student_previous_institute_information_institute_address_i_fkey" FOREIGN KEY ("institute_address_id") REFERENCES "student_institute_addresses"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "student_previous_institute_information" ADD CONSTRAINT "student_previous_institute_information_student_id_fkey" FOREIGN KEY ("student_id") REFERENCES "students"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
-
--- AddForeignKey
-ALTER TABLE "student_previous_institute_information" ADD CONSTRAINT "student_previous_institute_information_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "student_previous_institute_information" ADD CONSTRAINT "student_previous_institute_information_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
@@ -1129,13 +1132,13 @@ ALTER TABLE "student_previous_institute_information" ADD CONSTRAINT "student_pre
 ALTER TABLE "students_responsibility" ADD CONSTRAINT "students_responsibility_academic_year_id_fkey" FOREIGN KEY ("academic_year_id") REFERENCES "academic_years"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "students_responsibility" ADD CONSTRAINT "students_responsibility_teacher_id_fkey" FOREIGN KEY ("teacher_id") REFERENCES "academic_teachers"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE "students_responsibility" ADD CONSTRAINT "students_responsibility_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "students_responsibility" ADD CONSTRAINT "students_responsibility_student_id_fkey" FOREIGN KEY ("student_id") REFERENCES "students"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "students_responsibility" ADD CONSTRAINT "students_responsibility_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE "students_responsibility" ADD CONSTRAINT "students_responsibility_teacher_id_fkey" FOREIGN KEY ("teacher_id") REFERENCES "academic_teachers"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "students_responsibility" ADD CONSTRAINT "students_responsibility_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
@@ -1147,19 +1150,19 @@ ALTER TABLE "student_responsible_guardians" ADD CONSTRAINT "student_responsible_
 ALTER TABLE "student_responsible_guardians" ADD CONSTRAINT "student_responsible_guardians_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "subject_teachers" ADD CONSTRAINT "subject_teachers_teacher_id_fkey" FOREIGN KEY ("teacher_id") REFERENCES "academic_teachers"("id") ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE "subject_teachers" ADD CONSTRAINT "subject_teachers_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "subject_teachers" ADD CONSTRAINT "subject_teachers_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE "subject_teachers" ADD CONSTRAINT "subject_teachers_teacher_id_fkey" FOREIGN KEY ("teacher_id") REFERENCES "academic_teachers"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "subject_teachers" ADD CONSTRAINT "subject_teachers_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "teacher_honourableresponsibilities" ADD CONSTRAINT "teacher_honourableresponsibilities_teacher_id_fkey" FOREIGN KEY ("teacher_id") REFERENCES "academic_teachers"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "teacher_honourableresponsibilities" ADD CONSTRAINT "teacher_honourableresponsibilities_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "teacher_honourableresponsibilities" ADD CONSTRAINT "teacher_honourableresponsibilities_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE "teacher_honourableresponsibilities" ADD CONSTRAINT "teacher_honourableresponsibilities_teacher_id_fkey" FOREIGN KEY ("teacher_id") REFERENCES "academic_teachers"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "teacher_honourableresponsibilities" ADD CONSTRAINT "teacher_honourableresponsibilities_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
@@ -1177,13 +1180,13 @@ ALTER TABLE "users" ADD CONSTRAINT "users_position_id_fkey" FOREIGN KEY ("positi
 ALTER TABLE "users" ADD CONSTRAINT "users_role_name_fkey" FOREIGN KEY ("role_name") REFERENCES "user_roles"("role_name") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "active_inactive_histories" ADD CONSTRAINT "active_inactive_histories_user_id_fkey" FOREIGN KEY ("user_id") REFERENCES "users"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
-
--- AddForeignKey
 ALTER TABLE "active_inactive_histories" ADD CONSTRAINT "active_inactive_histories_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "active_inactive_histories" ADD CONSTRAINT "active_inactive_histories_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+
+-- AddForeignKey
+ALTER TABLE "active_inactive_histories" ADD CONSTRAINT "active_inactive_histories_user_id_fkey" FOREIGN KEY ("user_id") REFERENCES "users"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "user_father_details" ADD CONSTRAINT "user_father_details_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
@@ -1198,10 +1201,10 @@ ALTER TABLE "user_mother_details" ADD CONSTRAINT "user_mother_details_created_by
 ALTER TABLE "user_mother_details" ADD CONSTRAINT "user_mother_details_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "user_positions" ADD CONSTRAINT "user_positions_role_id_fkey" FOREIGN KEY ("role_id") REFERENCES "user_roles"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
+ALTER TABLE "user_positions" ADD CONSTRAINT "user_positions_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
 
 -- AddForeignKey
-ALTER TABLE "user_positions" ADD CONSTRAINT "user_positions_created_by_id_fkey" FOREIGN KEY ("created_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
+ALTER TABLE "user_positions" ADD CONSTRAINT "user_positions_role_id_fkey" FOREIGN KEY ("role_id") REFERENCES "user_roles"("id") ON DELETE RESTRICT ON UPDATE CASCADE;
 
 -- AddForeignKey
 ALTER TABLE "user_positions" ADD CONSTRAINT "user_positions_updated_by_id_fkey" FOREIGN KEY ("updated_by_id") REFERENCES "users"("id") ON DELETE SET NULL ON UPDATE CASCADE;
@@ -1266,7 +1269,3 @@ ALTER TABLE "_ScoutSportsClubToStudent" ADD CONSTRAINT "_ScoutSportsClubToStuden
 -- AddForeignKey
 ALTER TABLE "_ScoutSportsClubToStudent" ADD CONSTRAINT "_ScoutSportsClubToStudent_B_fkey" FOREIGN KEY ("B") REFERENCES "students"("id") ON DELETE CASCADE ON UPDATE CASCADE;
 
--- AddUniqueConstraintForSingleResponsibleTeacher
-CREATE UNIQUE INDEX student_single_active_responsibility_idx 
-ON "students_responsibility" ("student_id") 
-WHERE "isActive" = true;

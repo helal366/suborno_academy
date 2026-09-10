@@ -1,43 +1,17 @@
 model UserPosition {
-  id            String @id @default(uuid())
-  position_name String @unique
-
-  role_id String
-  role    UserRole @relation(name: "role_position_relation", fields: [role_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
-
-  user User[] @relation("user_position_relation")
-
+  id                        String                        @id @default(uuid())
+  position_name             String                        @unique
+  created_by_id             String?
+  updated_by_id             String?
+  created_at                DateTime                      @default(now())
+  updated_at                DateTime?                     @updatedAt
   current_academic_teachers AcademicAdministrativeStaff[] @relation("academic_teacher_current_position")
-  academic_teachers         AcademicAdministrativeStaff[] @relation("academic_teacher_positions")
-
-  created_by_id String?
-  created_by    User?   @relation("user_position_created_by", fields: [created_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
-
-  updated_by_id String?
-  updated_by    User?   @relation("user_position_updated_by", fields: [updated_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
-
-  created_at DateTime  @default(now())
-  updated_at DateTime? @updatedAt
+  created_by                User?                         @relation("user_position_created_by", fields: [created_by_id], references: [id])
+  role_id                   String
+  role                      UserRole                      @relation("role_position_relation", fields: [role_id], references: [id])
+  updated_by                User?                         @relation("user_position_updated_by", fields: [updated_by_id], references: [id])
+  user                      User[]                        @relation("user_position_relation")
+  academic_administrative_staffs     AcademicAdministrativeStaff[] @relation("academic_teacher_positions")
 
   @@map("user_positions")
 }
-
-// positions:
-
-// PRINCIPAL
-// VICE_PRINCIPAL
-// ADMINISTRATIVE_INCHARGE
-// ACADEMIC_INCHARGE
-// LOGISTIC_OFFICER
-// ACADEMIC_STAFF
-// ADMINISTRATIVE_STAFF
-// TEACHER
-// ASSISTANT_TEACHER
-// TEACHER_ASSISTANT
-// CO-ORDINATOR
-// ACCOUNTANT
-// STUDENT
-// GOVERNING_BODY
-// AAYA
-// GUARD
-// CLEANER

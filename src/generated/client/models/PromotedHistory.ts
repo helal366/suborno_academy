@@ -401,14 +401,9 @@ export type PromotedHistoryUncheckedUpdateManyInput = {
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
 }
 
-export type PromotedHistoryListRelationFilter = {
-  every?: Prisma.PromotedHistoryWhereInput
-  some?: Prisma.PromotedHistoryWhereInput
-  none?: Prisma.PromotedHistoryWhereInput
-}
-
-export type PromotedHistoryOrderByRelationAggregateInput = {
-  _count?: Prisma.SortOrder
+export type PromotedHistoryNullableScalarRelationFilter = {
+  is?: Prisma.PromotedHistoryWhereInput | null
+  isNot?: Prisma.PromotedHistoryWhereInput | null
 }
 
 export type PromotedHistoryCountOrderByAggregateInput = {
@@ -453,46 +448,46 @@ export type PromotedHistoryMinOrderByAggregateInput = {
   updated_at?: Prisma.SortOrder
 }
 
-export type PromotedHistoryCreateNestedManyWithoutAcademic_administrative_staffInput = {
-  create?: Prisma.XOR<Prisma.PromotedHistoryCreateWithoutAcademic_administrative_staffInput, Prisma.PromotedHistoryUncheckedCreateWithoutAcademic_administrative_staffInput> | Prisma.PromotedHistoryCreateWithoutAcademic_administrative_staffInput[] | Prisma.PromotedHistoryUncheckedCreateWithoutAcademic_administrative_staffInput[]
-  connectOrCreate?: Prisma.PromotedHistoryCreateOrConnectWithoutAcademic_administrative_staffInput | Prisma.PromotedHistoryCreateOrConnectWithoutAcademic_administrative_staffInput[]
-  createMany?: Prisma.PromotedHistoryCreateManyAcademic_administrative_staffInputEnvelope
-  connect?: Prisma.PromotedHistoryWhereUniqueInput | Prisma.PromotedHistoryWhereUniqueInput[]
+export type PromotedHistoryListRelationFilter = {
+  every?: Prisma.PromotedHistoryWhereInput
+  some?: Prisma.PromotedHistoryWhereInput
+  none?: Prisma.PromotedHistoryWhereInput
 }
 
-export type PromotedHistoryUncheckedCreateNestedManyWithoutAcademic_administrative_staffInput = {
-  create?: Prisma.XOR<Prisma.PromotedHistoryCreateWithoutAcademic_administrative_staffInput, Prisma.PromotedHistoryUncheckedCreateWithoutAcademic_administrative_staffInput> | Prisma.PromotedHistoryCreateWithoutAcademic_administrative_staffInput[] | Prisma.PromotedHistoryUncheckedCreateWithoutAcademic_administrative_staffInput[]
-  connectOrCreate?: Prisma.PromotedHistoryCreateOrConnectWithoutAcademic_administrative_staffInput | Prisma.PromotedHistoryCreateOrConnectWithoutAcademic_administrative_staffInput[]
-  createMany?: Prisma.PromotedHistoryCreateManyAcademic_administrative_staffInputEnvelope
-  connect?: Prisma.PromotedHistoryWhereUniqueInput | Prisma.PromotedHistoryWhereUniqueInput[]
+export type PromotedHistoryOrderByRelationAggregateInput = {
+  _count?: Prisma.SortOrder
 }
 
-export type PromotedHistoryUpdateManyWithoutAcademic_administrative_staffNestedInput = {
-  create?: Prisma.XOR<Prisma.PromotedHistoryCreateWithoutAcademic_administrative_staffInput, Prisma.PromotedHistoryUncheckedCreateWithoutAcademic_administrative_staffInput> | Prisma.PromotedHistoryCreateWithoutAcademic_administrative_staffInput[] | Prisma.PromotedHistoryUncheckedCreateWithoutAcademic_administrative_staffInput[]
-  connectOrCreate?: Prisma.PromotedHistoryCreateOrConnectWithoutAcademic_administrative_staffInput | Prisma.PromotedHistoryCreateOrConnectWithoutAcademic_administrative_staffInput[]
-  upsert?: Prisma.PromotedHistoryUpsertWithWhereUniqueWithoutAcademic_administrative_staffInput | Prisma.PromotedHistoryUpsertWithWhereUniqueWithoutAcademic_administrative_staffInput[]
-  createMany?: Prisma.PromotedHistoryCreateManyAcademic_administrative_staffInputEnvelope
-  set?: Prisma.PromotedHistoryWhereUniqueInput | Prisma.PromotedHistoryWhereUniqueInput[]
-  disconnect?: Prisma.PromotedHistoryWhereUniqueInput | Prisma.PromotedHistoryWhereUniqueInput[]
-  delete?: Prisma.PromotedHistoryWhereUniqueInput | Prisma.PromotedHistoryWhereUniqueInput[]
-  connect?: Prisma.PromotedHistoryWhereUniqueInput | Prisma.PromotedHistoryWhereUniqueInput[]
-  update?: Prisma.PromotedHistoryUpdateWithWhereUniqueWithoutAcademic_administrative_staffInput | Prisma.PromotedHistoryUpdateWithWhereUniqueWithoutAcademic_administrative_staffInput[]
-  updateMany?: Prisma.PromotedHistoryUpdateManyWithWhereWithoutAcademic_administrative_staffInput | Prisma.PromotedHistoryUpdateManyWithWhereWithoutAcademic_administrative_staffInput[]
-  deleteMany?: Prisma.PromotedHistoryScalarWhereInput | Prisma.PromotedHistoryScalarWhereInput[]
+export type PromotedHistoryCreateNestedOneWithoutAcademic_administrative_staffInput = {
+  create?: Prisma.XOR<Prisma.PromotedHistoryCreateWithoutAcademic_administrative_staffInput, Prisma.PromotedHistoryUncheckedCreateWithoutAcademic_administrative_staffInput>
+  connectOrCreate?: Prisma.PromotedHistoryCreateOrConnectWithoutAcademic_administrative_staffInput
+  connect?: Prisma.PromotedHistoryWhereUniqueInput
 }
 
-export type PromotedHistoryUncheckedUpdateManyWithoutAcademic_administrative_staffNestedInput = {
-  create?: Prisma.XOR<Prisma.PromotedHistoryCreateWithoutAcademic_administrative_staffInput, Prisma.PromotedHistoryUncheckedCreateWithoutAcademic_administrative_staffInput> | Prisma.PromotedHistoryCreateWithoutAcademic_administrative_staffInput[] | Prisma.PromotedHistoryUncheckedCreateWithoutAcademic_administrative_staffInput[]
-  connectOrCreate?: Prisma.PromotedHistoryCreateOrConnectWithoutAcademic_administrative_staffInput | Prisma.PromotedHistoryCreateOrConnectWithoutAcademic_administrative_staffInput[]
-  upsert?: Prisma.PromotedHistoryUpsertWithWhereUniqueWithoutAcademic_administrative_staffInput | Prisma.PromotedHistoryUpsertWithWhereUniqueWithoutAcademic_administrative_staffInput[]
-  createMany?: Prisma.PromotedHistoryCreateManyAcademic_administrative_staffInputEnvelope
-  set?: Prisma.PromotedHistoryWhereUniqueInput | Prisma.PromotedHistoryWhereUniqueInput[]
-  disconnect?: Prisma.PromotedHistoryWhereUniqueInput | Prisma.PromotedHistoryWhereUniqueInput[]
-  delete?: Prisma.PromotedHistoryWhereUniqueInput | Prisma.PromotedHistoryWhereUniqueInput[]
-  connect?: Prisma.PromotedHistoryWhereUniqueInput | Prisma.PromotedHistoryWhereUniqueInput[]
-  update?: Prisma.PromotedHistoryUpdateWithWhereUniqueWithoutAcademic_administrative_staffInput | Prisma.PromotedHistoryUpdateWithWhereUniqueWithoutAcademic_administrative_staffInput[]
-  updateMany?: Prisma.PromotedHistoryUpdateManyWithWhereWithoutAcademic_administrative_staffInput | Prisma.PromotedHistoryUpdateManyWithWhereWithoutAcademic_administrative_staffInput[]
-  deleteMany?: Prisma.PromotedHistoryScalarWhereInput | Prisma.PromotedHistoryScalarWhereInput[]
+export type PromotedHistoryUncheckedCreateNestedOneWithoutAcademic_administrative_staffInput = {
+  create?: Prisma.XOR<Prisma.PromotedHistoryCreateWithoutAcademic_administrative_staffInput, Prisma.PromotedHistoryUncheckedCreateWithoutAcademic_administrative_staffInput>
+  connectOrCreate?: Prisma.PromotedHistoryCreateOrConnectWithoutAcademic_administrative_staffInput
+  connect?: Prisma.PromotedHistoryWhereUniqueInput
+}
+
+export type PromotedHistoryUpdateOneWithoutAcademic_administrative_staffNestedInput = {
+  create?: Prisma.XOR<Prisma.PromotedHistoryCreateWithoutAcademic_administrative_staffInput, Prisma.PromotedHistoryUncheckedCreateWithoutAcademic_administrative_staffInput>
+  connectOrCreate?: Prisma.PromotedHistoryCreateOrConnectWithoutAcademic_administrative_staffInput
+  upsert?: Prisma.PromotedHistoryUpsertWithoutAcademic_administrative_staffInput
+  disconnect?: Prisma.PromotedHistoryWhereInput | boolean
+  delete?: Prisma.PromotedHistoryWhereInput | boolean
+  connect?: Prisma.PromotedHistoryWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.PromotedHistoryUpdateToOneWithWhereWithoutAcademic_administrative_staffInput, Prisma.PromotedHistoryUpdateWithoutAcademic_administrative_staffInput>, Prisma.PromotedHistoryUncheckedUpdateWithoutAcademic_administrative_staffInput>
+}
+
+export type PromotedHistoryUncheckedUpdateOneWithoutAcademic_administrative_staffNestedInput = {
+  create?: Prisma.XOR<Prisma.PromotedHistoryCreateWithoutAcademic_administrative_staffInput, Prisma.PromotedHistoryUncheckedCreateWithoutAcademic_administrative_staffInput>
+  connectOrCreate?: Prisma.PromotedHistoryCreateOrConnectWithoutAcademic_administrative_staffInput
+  upsert?: Prisma.PromotedHistoryUpsertWithoutAcademic_administrative_staffInput
+  disconnect?: Prisma.PromotedHistoryWhereInput | boolean
+  delete?: Prisma.PromotedHistoryWhereInput | boolean
+  connect?: Prisma.PromotedHistoryWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.PromotedHistoryUpdateToOneWithWhereWithoutAcademic_administrative_staffInput, Prisma.PromotedHistoryUpdateWithoutAcademic_administrative_staffInput>, Prisma.PromotedHistoryUncheckedUpdateWithoutAcademic_administrative_staffInput>
 }
 
 export type PromotedHistoryCreateNestedManyWithoutCreated_byInput = {
@@ -610,42 +605,41 @@ export type PromotedHistoryCreateOrConnectWithoutAcademic_administrative_staffIn
   create: Prisma.XOR<Prisma.PromotedHistoryCreateWithoutAcademic_administrative_staffInput, Prisma.PromotedHistoryUncheckedCreateWithoutAcademic_administrative_staffInput>
 }
 
-export type PromotedHistoryCreateManyAcademic_administrative_staffInputEnvelope = {
-  data: Prisma.PromotedHistoryCreateManyAcademic_administrative_staffInput | Prisma.PromotedHistoryCreateManyAcademic_administrative_staffInput[]
-  skipDuplicates?: boolean
-}
-
-export type PromotedHistoryUpsertWithWhereUniqueWithoutAcademic_administrative_staffInput = {
-  where: Prisma.PromotedHistoryWhereUniqueInput
+export type PromotedHistoryUpsertWithoutAcademic_administrative_staffInput = {
   update: Prisma.XOR<Prisma.PromotedHistoryUpdateWithoutAcademic_administrative_staffInput, Prisma.PromotedHistoryUncheckedUpdateWithoutAcademic_administrative_staffInput>
   create: Prisma.XOR<Prisma.PromotedHistoryCreateWithoutAcademic_administrative_staffInput, Prisma.PromotedHistoryUncheckedCreateWithoutAcademic_administrative_staffInput>
+  where?: Prisma.PromotedHistoryWhereInput
 }
 
-export type PromotedHistoryUpdateWithWhereUniqueWithoutAcademic_administrative_staffInput = {
-  where: Prisma.PromotedHistoryWhereUniqueInput
+export type PromotedHistoryUpdateToOneWithWhereWithoutAcademic_administrative_staffInput = {
+  where?: Prisma.PromotedHistoryWhereInput
   data: Prisma.XOR<Prisma.PromotedHistoryUpdateWithoutAcademic_administrative_staffInput, Prisma.PromotedHistoryUncheckedUpdateWithoutAcademic_administrative_staffInput>
 }
 
-export type PromotedHistoryUpdateManyWithWhereWithoutAcademic_administrative_staffInput = {
-  where: Prisma.PromotedHistoryScalarWhereInput
-  data: Prisma.XOR<Prisma.PromotedHistoryUpdateManyMutationInput, Prisma.PromotedHistoryUncheckedUpdateManyWithoutAcademic_administrative_staffInput>
+export type PromotedHistoryUpdateWithoutAcademic_administrative_staffInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  previous_position?: Prisma.StringFieldUpdateOperationsInput | string
+  promoted_position?: Prisma.StringFieldUpdateOperationsInput | string
+  previous_position_joining_date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  previous_position_ending_date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  promoted_position_joining_date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  created_by?: Prisma.UserUpdateOneWithoutCreated_teacher_promoted_historiesNestedInput
+  updated_by?: Prisma.UserUpdateOneWithoutUpdated_teacher_promoted_historiesNestedInput
 }
 
-export type PromotedHistoryScalarWhereInput = {
-  AND?: Prisma.PromotedHistoryScalarWhereInput | Prisma.PromotedHistoryScalarWhereInput[]
-  OR?: Prisma.PromotedHistoryScalarWhereInput[]
-  NOT?: Prisma.PromotedHistoryScalarWhereInput | Prisma.PromotedHistoryScalarWhereInput[]
-  id?: Prisma.StringFilter<"PromotedHistory"> | string
-  previous_position?: Prisma.StringFilter<"PromotedHistory"> | string
-  promoted_position?: Prisma.StringFilter<"PromotedHistory"> | string
-  previous_position_joining_date?: Prisma.DateTimeFilter<"PromotedHistory"> | Date | string
-  previous_position_ending_date?: Prisma.DateTimeFilter<"PromotedHistory"> | Date | string
-  promoted_position_joining_date?: Prisma.DateTimeFilter<"PromotedHistory"> | Date | string
-  academic_administrative_staff_id?: Prisma.StringNullableFilter<"PromotedHistory"> | string | null
-  created_by_id?: Prisma.StringNullableFilter<"PromotedHistory"> | string | null
-  updated_by_id?: Prisma.StringNullableFilter<"PromotedHistory"> | string | null
-  created_at?: Prisma.DateTimeFilter<"PromotedHistory"> | Date | string
-  updated_at?: Prisma.DateTimeNullableFilter<"PromotedHistory"> | Date | string | null
+export type PromotedHistoryUncheckedUpdateWithoutAcademic_administrative_staffInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  previous_position?: Prisma.StringFieldUpdateOperationsInput | string
+  promoted_position?: Prisma.StringFieldUpdateOperationsInput | string
+  previous_position_joining_date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  previous_position_ending_date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  promoted_position_joining_date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
 }
 
 export type PromotedHistoryCreateWithoutCreated_byInput = {
@@ -736,6 +730,23 @@ export type PromotedHistoryUpdateManyWithWhereWithoutCreated_byInput = {
   data: Prisma.XOR<Prisma.PromotedHistoryUpdateManyMutationInput, Prisma.PromotedHistoryUncheckedUpdateManyWithoutCreated_byInput>
 }
 
+export type PromotedHistoryScalarWhereInput = {
+  AND?: Prisma.PromotedHistoryScalarWhereInput | Prisma.PromotedHistoryScalarWhereInput[]
+  OR?: Prisma.PromotedHistoryScalarWhereInput[]
+  NOT?: Prisma.PromotedHistoryScalarWhereInput | Prisma.PromotedHistoryScalarWhereInput[]
+  id?: Prisma.StringFilter<"PromotedHistory"> | string
+  previous_position?: Prisma.StringFilter<"PromotedHistory"> | string
+  promoted_position?: Prisma.StringFilter<"PromotedHistory"> | string
+  previous_position_joining_date?: Prisma.DateTimeFilter<"PromotedHistory"> | Date | string
+  previous_position_ending_date?: Prisma.DateTimeFilter<"PromotedHistory"> | Date | string
+  promoted_position_joining_date?: Prisma.DateTimeFilter<"PromotedHistory"> | Date | string
+  academic_administrative_staff_id?: Prisma.StringNullableFilter<"PromotedHistory"> | string | null
+  created_by_id?: Prisma.StringNullableFilter<"PromotedHistory"> | string | null
+  updated_by_id?: Prisma.StringNullableFilter<"PromotedHistory"> | string | null
+  created_at?: Prisma.DateTimeFilter<"PromotedHistory"> | Date | string
+  updated_at?: Prisma.DateTimeNullableFilter<"PromotedHistory"> | Date | string | null
+}
+
 export type PromotedHistoryUpsertWithWhereUniqueWithoutUpdated_byInput = {
   where: Prisma.PromotedHistoryWhereUniqueInput
   update: Prisma.XOR<Prisma.PromotedHistoryUpdateWithoutUpdated_byInput, Prisma.PromotedHistoryUncheckedUpdateWithoutUpdated_byInput>
@@ -750,58 +761,6 @@ export type PromotedHistoryUpdateWithWhereUniqueWithoutUpdated_byInput = {
 export type PromotedHistoryUpdateManyWithWhereWithoutUpdated_byInput = {
   where: Prisma.PromotedHistoryScalarWhereInput
   data: Prisma.XOR<Prisma.PromotedHistoryUpdateManyMutationInput, Prisma.PromotedHistoryUncheckedUpdateManyWithoutUpdated_byInput>
-}
-
-export type PromotedHistoryCreateManyAcademic_administrative_staffInput = {
-  id?: string
-  previous_position: string
-  promoted_position: string
-  previous_position_joining_date: Date | string
-  previous_position_ending_date: Date | string
-  promoted_position_joining_date: Date | string
-  created_by_id?: string | null
-  updated_by_id?: string | null
-  created_at?: Date | string
-  updated_at?: Date | string | null
-}
-
-export type PromotedHistoryUpdateWithoutAcademic_administrative_staffInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  previous_position?: Prisma.StringFieldUpdateOperationsInput | string
-  promoted_position?: Prisma.StringFieldUpdateOperationsInput | string
-  previous_position_joining_date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  previous_position_ending_date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  promoted_position_joining_date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  created_by?: Prisma.UserUpdateOneWithoutCreated_teacher_promoted_historiesNestedInput
-  updated_by?: Prisma.UserUpdateOneWithoutUpdated_teacher_promoted_historiesNestedInput
-}
-
-export type PromotedHistoryUncheckedUpdateWithoutAcademic_administrative_staffInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  previous_position?: Prisma.StringFieldUpdateOperationsInput | string
-  promoted_position?: Prisma.StringFieldUpdateOperationsInput | string
-  previous_position_joining_date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  previous_position_ending_date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  promoted_position_joining_date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-}
-
-export type PromotedHistoryUncheckedUpdateManyWithoutAcademic_administrative_staffInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  previous_position?: Prisma.StringFieldUpdateOperationsInput | string
-  promoted_position?: Prisma.StringFieldUpdateOperationsInput | string
-  previous_position_joining_date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  previous_position_ending_date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  promoted_position_joining_date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  created_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  updated_by_id?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
 }
 
 export type PromotedHistoryCreateManyCreated_byInput = {

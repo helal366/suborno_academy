@@ -9,17 +9,13 @@ model UserMotherDetails {
   mobile_no_1               String?
   mobile_no_2               String?
   mobile_no_3               String?
-
-  user User[] @relation(name: "user_mother_details")
-
-  created_by_id String?
-  created_by    User?   @relation("user_mother_details_created_by", fields: [created_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
-
-  updated_by_id String?
-  updated_by    User?   @relation("user_mother_details_updated_by", fields: [updated_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
-
-  created_at DateTime  @default(now())
-  updated_at DateTime? @updatedAt
+  created_by_id             String?
+  updated_by_id             String?
+  created_at                DateTime         @default(now())
+  updated_at                DateTime?        @updatedAt
+  created_by                User?            @relation("user_mother_details_created_by", fields: [created_by_id], references: [id])
+  updated_by                User?            @relation("user_mother_details_updated_by", fields: [updated_by_id], references: [id])
+  user                      User[]           @relation("user_mother_details")
 
   @@map("user_mother_details")
 }

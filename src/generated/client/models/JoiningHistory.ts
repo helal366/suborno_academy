@@ -215,11 +215,11 @@ export type JoiningHistoryWhereInput = {
   created_at?: Prisma.DateTimeFilter<"JoiningHistory"> | Date | string
   updated_at?: Prisma.DateTimeNullableFilter<"JoiningHistory"> | Date | string | null
   interview_information?: Prisma.XOR<Prisma.InterviewInformationNullableScalarRelationFilter, Prisma.InterviewInformationWhereInput> | null
+  created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
+  teacher?: Prisma.XOR<Prisma.AcademicAdministrativeStaffNullableScalarRelationFilter, Prisma.AcademicAdministrativeStaffWhereInput> | null
+  updated_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
   previous_institute_information?: Prisma.XOR<Prisma.PreviousInstituteInformationNullableScalarRelationFilter, Prisma.PreviousInstituteInformationWhereInput> | null
   references?: Prisma.XOR<Prisma.ReferenceNullableScalarRelationFilter, Prisma.ReferenceWhereInput> | null
-  teacher?: Prisma.XOR<Prisma.AcademicAdministrativeStaffNullableScalarRelationFilter, Prisma.AcademicAdministrativeStaffWhereInput> | null
-  created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
-  updated_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
 }
 
 export type JoiningHistoryOrderByWithRelationInput = {
@@ -233,11 +233,11 @@ export type JoiningHistoryOrderByWithRelationInput = {
   created_at?: Prisma.SortOrder
   updated_at?: Prisma.SortOrderInput | Prisma.SortOrder
   interview_information?: Prisma.InterviewInformationOrderByWithRelationInput
+  created_by?: Prisma.UserOrderByWithRelationInput
+  teacher?: Prisma.AcademicAdministrativeStaffOrderByWithRelationInput
+  updated_by?: Prisma.UserOrderByWithRelationInput
   previous_institute_information?: Prisma.PreviousInstituteInformationOrderByWithRelationInput
   references?: Prisma.ReferenceOrderByWithRelationInput
-  teacher?: Prisma.AcademicAdministrativeStaffOrderByWithRelationInput
-  created_by?: Prisma.UserOrderByWithRelationInput
-  updated_by?: Prisma.UserOrderByWithRelationInput
 }
 
 export type JoiningHistoryWhereUniqueInput = Prisma.AtLeast<{
@@ -254,11 +254,11 @@ export type JoiningHistoryWhereUniqueInput = Prisma.AtLeast<{
   created_at?: Prisma.DateTimeFilter<"JoiningHistory"> | Date | string
   updated_at?: Prisma.DateTimeNullableFilter<"JoiningHistory"> | Date | string | null
   interview_information?: Prisma.XOR<Prisma.InterviewInformationNullableScalarRelationFilter, Prisma.InterviewInformationWhereInput> | null
+  created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
+  teacher?: Prisma.XOR<Prisma.AcademicAdministrativeStaffNullableScalarRelationFilter, Prisma.AcademicAdministrativeStaffWhereInput> | null
+  updated_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
   previous_institute_information?: Prisma.XOR<Prisma.PreviousInstituteInformationNullableScalarRelationFilter, Prisma.PreviousInstituteInformationWhereInput> | null
   references?: Prisma.XOR<Prisma.ReferenceNullableScalarRelationFilter, Prisma.ReferenceWhereInput> | null
-  teacher?: Prisma.XOR<Prisma.AcademicAdministrativeStaffNullableScalarRelationFilter, Prisma.AcademicAdministrativeStaffWhereInput> | null
-  created_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
-  updated_by?: Prisma.XOR<Prisma.UserNullableScalarRelationFilter, Prisma.UserWhereInput> | null
 }, "id">
 
 export type JoiningHistoryOrderByWithAggregationInput = {
@@ -299,11 +299,11 @@ export type JoiningHistoryCreateInput = {
   created_at?: Date | string
   updated_at?: Date | string | null
   interview_information?: Prisma.InterviewInformationCreateNestedOneWithoutJoining_historyInput
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_teacher_joining_historiesInput
+  teacher?: Prisma.AcademicAdministrativeStaffCreateNestedOneWithoutJoining_historyInput
+  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_teacher_joining_historiesInput
   previous_institute_information?: Prisma.PreviousInstituteInformationCreateNestedOneWithoutJoining_historyInput
   references?: Prisma.ReferenceCreateNestedOneWithoutJoining_historyInput
-  teacher?: Prisma.AcademicAdministrativeStaffCreateNestedOneWithoutJoining_historyInput
-  created_by?: Prisma.UserCreateNestedOneWithoutCreated_teacher_joining_historiesInput
-  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_teacher_joining_historiesInput
 }
 
 export type JoiningHistoryUncheckedCreateInput = {
@@ -329,11 +329,11 @@ export type JoiningHistoryUpdateInput = {
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   interview_information?: Prisma.InterviewInformationUpdateOneWithoutJoining_historyNestedInput
+  created_by?: Prisma.UserUpdateOneWithoutCreated_teacher_joining_historiesNestedInput
+  teacher?: Prisma.AcademicAdministrativeStaffUpdateOneWithoutJoining_historyNestedInput
+  updated_by?: Prisma.UserUpdateOneWithoutUpdated_teacher_joining_historiesNestedInput
   previous_institute_information?: Prisma.PreviousInstituteInformationUpdateOneWithoutJoining_historyNestedInput
   references?: Prisma.ReferenceUpdateOneWithoutJoining_historyNestedInput
-  teacher?: Prisma.AcademicAdministrativeStaffUpdateOneWithoutJoining_historyNestedInput
-  created_by?: Prisma.UserUpdateOneWithoutCreated_teacher_joining_historiesNestedInput
-  updated_by?: Prisma.UserUpdateOneWithoutUpdated_teacher_joining_historiesNestedInput
 }
 
 export type JoiningHistoryUncheckedUpdateInput = {
@@ -617,10 +617,10 @@ export type JoiningHistoryCreateWithoutTeacherInput = {
   created_at?: Date | string
   updated_at?: Date | string | null
   interview_information?: Prisma.InterviewInformationCreateNestedOneWithoutJoining_historyInput
-  previous_institute_information?: Prisma.PreviousInstituteInformationCreateNestedOneWithoutJoining_historyInput
-  references?: Prisma.ReferenceCreateNestedOneWithoutJoining_historyInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_teacher_joining_historiesInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_teacher_joining_historiesInput
+  previous_institute_information?: Prisma.PreviousInstituteInformationCreateNestedOneWithoutJoining_historyInput
+  references?: Prisma.ReferenceCreateNestedOneWithoutJoining_historyInput
 }
 
 export type JoiningHistoryUncheckedCreateWithoutTeacherInput = {
@@ -685,11 +685,11 @@ export type JoiningHistoryCreateWithoutInterview_informationInput = {
   resign_data?: Date | string | null
   created_at?: Date | string
   updated_at?: Date | string | null
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_teacher_joining_historiesInput
+  teacher?: Prisma.AcademicAdministrativeStaffCreateNestedOneWithoutJoining_historyInput
+  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_teacher_joining_historiesInput
   previous_institute_information?: Prisma.PreviousInstituteInformationCreateNestedOneWithoutJoining_historyInput
   references?: Prisma.ReferenceCreateNestedOneWithoutJoining_historyInput
-  teacher?: Prisma.AcademicAdministrativeStaffCreateNestedOneWithoutJoining_historyInput
-  created_by?: Prisma.UserCreateNestedOneWithoutCreated_teacher_joining_historiesInput
-  updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_teacher_joining_historiesInput
 }
 
 export type JoiningHistoryUncheckedCreateWithoutInterview_informationInput = {
@@ -729,11 +729,11 @@ export type JoiningHistoryUpdateWithoutInterview_informationInput = {
   resign_data?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
+  created_by?: Prisma.UserUpdateOneWithoutCreated_teacher_joining_historiesNestedInput
+  teacher?: Prisma.AcademicAdministrativeStaffUpdateOneWithoutJoining_historyNestedInput
+  updated_by?: Prisma.UserUpdateOneWithoutUpdated_teacher_joining_historiesNestedInput
   previous_institute_information?: Prisma.PreviousInstituteInformationUpdateOneWithoutJoining_historyNestedInput
   references?: Prisma.ReferenceUpdateOneWithoutJoining_historyNestedInput
-  teacher?: Prisma.AcademicAdministrativeStaffUpdateOneWithoutJoining_historyNestedInput
-  created_by?: Prisma.UserUpdateOneWithoutCreated_teacher_joining_historiesNestedInput
-  updated_by?: Prisma.UserUpdateOneWithoutUpdated_teacher_joining_historiesNestedInput
 }
 
 export type JoiningHistoryUncheckedUpdateWithoutInterview_informationInput = {
@@ -758,10 +758,10 @@ export type JoiningHistoryCreateWithoutPrevious_institute_informationInput = {
   created_at?: Date | string
   updated_at?: Date | string | null
   interview_information?: Prisma.InterviewInformationCreateNestedOneWithoutJoining_historyInput
-  references?: Prisma.ReferenceCreateNestedOneWithoutJoining_historyInput
-  teacher?: Prisma.AcademicAdministrativeStaffCreateNestedOneWithoutJoining_historyInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_teacher_joining_historiesInput
+  teacher?: Prisma.AcademicAdministrativeStaffCreateNestedOneWithoutJoining_historyInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_teacher_joining_historiesInput
+  references?: Prisma.ReferenceCreateNestedOneWithoutJoining_historyInput
 }
 
 export type JoiningHistoryUncheckedCreateWithoutPrevious_institute_informationInput = {
@@ -802,10 +802,10 @@ export type JoiningHistoryUpdateWithoutPrevious_institute_informationInput = {
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   interview_information?: Prisma.InterviewInformationUpdateOneWithoutJoining_historyNestedInput
-  references?: Prisma.ReferenceUpdateOneWithoutJoining_historyNestedInput
-  teacher?: Prisma.AcademicAdministrativeStaffUpdateOneWithoutJoining_historyNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_teacher_joining_historiesNestedInput
+  teacher?: Prisma.AcademicAdministrativeStaffUpdateOneWithoutJoining_historyNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_teacher_joining_historiesNestedInput
+  references?: Prisma.ReferenceUpdateOneWithoutJoining_historyNestedInput
 }
 
 export type JoiningHistoryUncheckedUpdateWithoutPrevious_institute_informationInput = {
@@ -830,10 +830,10 @@ export type JoiningHistoryCreateWithoutReferencesInput = {
   created_at?: Date | string
   updated_at?: Date | string | null
   interview_information?: Prisma.InterviewInformationCreateNestedOneWithoutJoining_historyInput
-  previous_institute_information?: Prisma.PreviousInstituteInformationCreateNestedOneWithoutJoining_historyInput
-  teacher?: Prisma.AcademicAdministrativeStaffCreateNestedOneWithoutJoining_historyInput
   created_by?: Prisma.UserCreateNestedOneWithoutCreated_teacher_joining_historiesInput
+  teacher?: Prisma.AcademicAdministrativeStaffCreateNestedOneWithoutJoining_historyInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_teacher_joining_historiesInput
+  previous_institute_information?: Prisma.PreviousInstituteInformationCreateNestedOneWithoutJoining_historyInput
 }
 
 export type JoiningHistoryUncheckedCreateWithoutReferencesInput = {
@@ -874,10 +874,10 @@ export type JoiningHistoryUpdateWithoutReferencesInput = {
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   interview_information?: Prisma.InterviewInformationUpdateOneWithoutJoining_historyNestedInput
-  previous_institute_information?: Prisma.PreviousInstituteInformationUpdateOneWithoutJoining_historyNestedInput
-  teacher?: Prisma.AcademicAdministrativeStaffUpdateOneWithoutJoining_historyNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_teacher_joining_historiesNestedInput
+  teacher?: Prisma.AcademicAdministrativeStaffUpdateOneWithoutJoining_historyNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_teacher_joining_historiesNestedInput
+  previous_institute_information?: Prisma.PreviousInstituteInformationUpdateOneWithoutJoining_historyNestedInput
 }
 
 export type JoiningHistoryUncheckedUpdateWithoutReferencesInput = {
@@ -902,10 +902,10 @@ export type JoiningHistoryCreateWithoutCreated_byInput = {
   created_at?: Date | string
   updated_at?: Date | string | null
   interview_information?: Prisma.InterviewInformationCreateNestedOneWithoutJoining_historyInput
-  previous_institute_information?: Prisma.PreviousInstituteInformationCreateNestedOneWithoutJoining_historyInput
-  references?: Prisma.ReferenceCreateNestedOneWithoutJoining_historyInput
   teacher?: Prisma.AcademicAdministrativeStaffCreateNestedOneWithoutJoining_historyInput
   updated_by?: Prisma.UserCreateNestedOneWithoutUpdated_teacher_joining_historiesInput
+  previous_institute_information?: Prisma.PreviousInstituteInformationCreateNestedOneWithoutJoining_historyInput
+  references?: Prisma.ReferenceCreateNestedOneWithoutJoining_historyInput
 }
 
 export type JoiningHistoryUncheckedCreateWithoutCreated_byInput = {
@@ -940,10 +940,10 @@ export type JoiningHistoryCreateWithoutUpdated_byInput = {
   created_at?: Date | string
   updated_at?: Date | string | null
   interview_information?: Prisma.InterviewInformationCreateNestedOneWithoutJoining_historyInput
+  created_by?: Prisma.UserCreateNestedOneWithoutCreated_teacher_joining_historiesInput
+  teacher?: Prisma.AcademicAdministrativeStaffCreateNestedOneWithoutJoining_historyInput
   previous_institute_information?: Prisma.PreviousInstituteInformationCreateNestedOneWithoutJoining_historyInput
   references?: Prisma.ReferenceCreateNestedOneWithoutJoining_historyInput
-  teacher?: Prisma.AcademicAdministrativeStaffCreateNestedOneWithoutJoining_historyInput
-  created_by?: Prisma.UserCreateNestedOneWithoutCreated_teacher_joining_historiesInput
 }
 
 export type JoiningHistoryUncheckedCreateWithoutUpdated_byInput = {
@@ -1021,10 +1021,10 @@ export type JoiningHistoryUpdateWithoutTeacherInput = {
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   interview_information?: Prisma.InterviewInformationUpdateOneWithoutJoining_historyNestedInput
-  previous_institute_information?: Prisma.PreviousInstituteInformationUpdateOneWithoutJoining_historyNestedInput
-  references?: Prisma.ReferenceUpdateOneWithoutJoining_historyNestedInput
   created_by?: Prisma.UserUpdateOneWithoutCreated_teacher_joining_historiesNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_teacher_joining_historiesNestedInput
+  previous_institute_information?: Prisma.PreviousInstituteInformationUpdateOneWithoutJoining_historyNestedInput
+  references?: Prisma.ReferenceUpdateOneWithoutJoining_historyNestedInput
 }
 
 export type JoiningHistoryUncheckedUpdateWithoutTeacherInput = {
@@ -1082,10 +1082,10 @@ export type JoiningHistoryUpdateWithoutCreated_byInput = {
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   interview_information?: Prisma.InterviewInformationUpdateOneWithoutJoining_historyNestedInput
-  previous_institute_information?: Prisma.PreviousInstituteInformationUpdateOneWithoutJoining_historyNestedInput
-  references?: Prisma.ReferenceUpdateOneWithoutJoining_historyNestedInput
   teacher?: Prisma.AcademicAdministrativeStaffUpdateOneWithoutJoining_historyNestedInput
   updated_by?: Prisma.UserUpdateOneWithoutUpdated_teacher_joining_historiesNestedInput
+  previous_institute_information?: Prisma.PreviousInstituteInformationUpdateOneWithoutJoining_historyNestedInput
+  references?: Prisma.ReferenceUpdateOneWithoutJoining_historyNestedInput
 }
 
 export type JoiningHistoryUncheckedUpdateWithoutCreated_byInput = {
@@ -1121,10 +1121,10 @@ export type JoiningHistoryUpdateWithoutUpdated_byInput = {
   created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updated_at?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
   interview_information?: Prisma.InterviewInformationUpdateOneWithoutJoining_historyNestedInput
+  created_by?: Prisma.UserUpdateOneWithoutCreated_teacher_joining_historiesNestedInput
+  teacher?: Prisma.AcademicAdministrativeStaffUpdateOneWithoutJoining_historyNestedInput
   previous_institute_information?: Prisma.PreviousInstituteInformationUpdateOneWithoutJoining_historyNestedInput
   references?: Prisma.ReferenceUpdateOneWithoutJoining_historyNestedInput
-  teacher?: Prisma.AcademicAdministrativeStaffUpdateOneWithoutJoining_historyNestedInput
-  created_by?: Prisma.UserUpdateOneWithoutCreated_teacher_joining_historiesNestedInput
 }
 
 export type JoiningHistoryUncheckedUpdateWithoutUpdated_byInput = {
@@ -1165,11 +1165,11 @@ export type JoiningHistorySelect<ExtArgs extends runtime.Types.Extensions.Intern
   created_at?: boolean
   updated_at?: boolean
   interview_information?: boolean | Prisma.JoiningHistory$interview_informationArgs<ExtArgs>
+  created_by?: boolean | Prisma.JoiningHistory$created_byArgs<ExtArgs>
+  teacher?: boolean | Prisma.JoiningHistory$teacherArgs<ExtArgs>
+  updated_by?: boolean | Prisma.JoiningHistory$updated_byArgs<ExtArgs>
   previous_institute_information?: boolean | Prisma.JoiningHistory$previous_institute_informationArgs<ExtArgs>
   references?: boolean | Prisma.JoiningHistory$referencesArgs<ExtArgs>
-  teacher?: boolean | Prisma.JoiningHistory$teacherArgs<ExtArgs>
-  created_by?: boolean | Prisma.JoiningHistory$created_byArgs<ExtArgs>
-  updated_by?: boolean | Prisma.JoiningHistory$updated_byArgs<ExtArgs>
 }, ExtArgs["result"]["joiningHistory"]>
 
 export type JoiningHistorySelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -1182,8 +1182,8 @@ export type JoiningHistorySelectCreateManyAndReturn<ExtArgs extends runtime.Type
   updated_by_id?: boolean
   created_at?: boolean
   updated_at?: boolean
-  teacher?: boolean | Prisma.JoiningHistory$teacherArgs<ExtArgs>
   created_by?: boolean | Prisma.JoiningHistory$created_byArgs<ExtArgs>
+  teacher?: boolean | Prisma.JoiningHistory$teacherArgs<ExtArgs>
   updated_by?: boolean | Prisma.JoiningHistory$updated_byArgs<ExtArgs>
 }, ExtArgs["result"]["joiningHistory"]>
 
@@ -1197,8 +1197,8 @@ export type JoiningHistorySelectUpdateManyAndReturn<ExtArgs extends runtime.Type
   updated_by_id?: boolean
   created_at?: boolean
   updated_at?: boolean
-  teacher?: boolean | Prisma.JoiningHistory$teacherArgs<ExtArgs>
   created_by?: boolean | Prisma.JoiningHistory$created_byArgs<ExtArgs>
+  teacher?: boolean | Prisma.JoiningHistory$teacherArgs<ExtArgs>
   updated_by?: boolean | Prisma.JoiningHistory$updated_byArgs<ExtArgs>
 }, ExtArgs["result"]["joiningHistory"]>
 
@@ -1217,20 +1217,20 @@ export type JoiningHistorySelectScalar = {
 export type JoiningHistoryOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "applied_position" | "joining_date" | "resign_data" | "teacher_id" | "created_by_id" | "updated_by_id" | "created_at" | "updated_at", ExtArgs["result"]["joiningHistory"]>
 export type JoiningHistoryInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   interview_information?: boolean | Prisma.JoiningHistory$interview_informationArgs<ExtArgs>
+  created_by?: boolean | Prisma.JoiningHistory$created_byArgs<ExtArgs>
+  teacher?: boolean | Prisma.JoiningHistory$teacherArgs<ExtArgs>
+  updated_by?: boolean | Prisma.JoiningHistory$updated_byArgs<ExtArgs>
   previous_institute_information?: boolean | Prisma.JoiningHistory$previous_institute_informationArgs<ExtArgs>
   references?: boolean | Prisma.JoiningHistory$referencesArgs<ExtArgs>
-  teacher?: boolean | Prisma.JoiningHistory$teacherArgs<ExtArgs>
-  created_by?: boolean | Prisma.JoiningHistory$created_byArgs<ExtArgs>
-  updated_by?: boolean | Prisma.JoiningHistory$updated_byArgs<ExtArgs>
 }
 export type JoiningHistoryIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  teacher?: boolean | Prisma.JoiningHistory$teacherArgs<ExtArgs>
   created_by?: boolean | Prisma.JoiningHistory$created_byArgs<ExtArgs>
+  teacher?: boolean | Prisma.JoiningHistory$teacherArgs<ExtArgs>
   updated_by?: boolean | Prisma.JoiningHistory$updated_byArgs<ExtArgs>
 }
 export type JoiningHistoryIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  teacher?: boolean | Prisma.JoiningHistory$teacherArgs<ExtArgs>
   created_by?: boolean | Prisma.JoiningHistory$created_byArgs<ExtArgs>
+  teacher?: boolean | Prisma.JoiningHistory$teacherArgs<ExtArgs>
   updated_by?: boolean | Prisma.JoiningHistory$updated_byArgs<ExtArgs>
 }
 
@@ -1238,11 +1238,11 @@ export type $JoiningHistoryPayload<ExtArgs extends runtime.Types.Extensions.Inte
   name: "JoiningHistory"
   objects: {
     interview_information: Prisma.$InterviewInformationPayload<ExtArgs> | null
+    created_by: Prisma.$UserPayload<ExtArgs> | null
+    teacher: Prisma.$AcademicAdministrativeStaffPayload<ExtArgs> | null
+    updated_by: Prisma.$UserPayload<ExtArgs> | null
     previous_institute_information: Prisma.$PreviousInstituteInformationPayload<ExtArgs> | null
     references: Prisma.$ReferencePayload<ExtArgs> | null
-    teacher: Prisma.$AcademicAdministrativeStaffPayload<ExtArgs> | null
-    created_by: Prisma.$UserPayload<ExtArgs> | null
-    updated_by: Prisma.$UserPayload<ExtArgs> | null
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1649,11 +1649,11 @@ readonly fields: JoiningHistoryFieldRefs;
 export interface Prisma__JoiningHistoryClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
   interview_information<T extends Prisma.JoiningHistory$interview_informationArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.JoiningHistory$interview_informationArgs<ExtArgs>>): Prisma.Prisma__InterviewInformationClient<runtime.Types.Result.GetResult<Prisma.$InterviewInformationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  created_by<T extends Prisma.JoiningHistory$created_byArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.JoiningHistory$created_byArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  teacher<T extends Prisma.JoiningHistory$teacherArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.JoiningHistory$teacherArgs<ExtArgs>>): Prisma.Prisma__AcademicAdministrativeStaffClient<runtime.Types.Result.GetResult<Prisma.$AcademicAdministrativeStaffPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  updated_by<T extends Prisma.JoiningHistory$updated_byArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.JoiningHistory$updated_byArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   previous_institute_information<T extends Prisma.JoiningHistory$previous_institute_informationArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.JoiningHistory$previous_institute_informationArgs<ExtArgs>>): Prisma.Prisma__PreviousInstituteInformationClient<runtime.Types.Result.GetResult<Prisma.$PreviousInstituteInformationPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   references<T extends Prisma.JoiningHistory$referencesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.JoiningHistory$referencesArgs<ExtArgs>>): Prisma.Prisma__ReferenceClient<runtime.Types.Result.GetResult<Prisma.$ReferencePayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-  teacher<T extends Prisma.JoiningHistory$teacherArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.JoiningHistory$teacherArgs<ExtArgs>>): Prisma.Prisma__AcademicAdministrativeStaffClient<runtime.Types.Result.GetResult<Prisma.$AcademicAdministrativeStaffPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-  created_by<T extends Prisma.JoiningHistory$created_byArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.JoiningHistory$created_byArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-  updated_by<T extends Prisma.JoiningHistory$updated_byArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.JoiningHistory$updated_byArgs<ExtArgs>>): Prisma.Prisma__UserClient<runtime.Types.Result.GetResult<Prisma.$UserPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -2112,6 +2112,63 @@ export type JoiningHistory$interview_informationArgs<ExtArgs extends runtime.Typ
 }
 
 /**
+ * JoiningHistory.created_by
+ */
+export type JoiningHistory$created_byArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the User
+   */
+  select?: Prisma.UserSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the User
+   */
+  omit?: Prisma.UserOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UserInclude<ExtArgs> | null
+  where?: Prisma.UserWhereInput
+}
+
+/**
+ * JoiningHistory.teacher
+ */
+export type JoiningHistory$teacherArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the AcademicAdministrativeStaff
+   */
+  select?: Prisma.AcademicAdministrativeStaffSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the AcademicAdministrativeStaff
+   */
+  omit?: Prisma.AcademicAdministrativeStaffOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.AcademicAdministrativeStaffInclude<ExtArgs> | null
+  where?: Prisma.AcademicAdministrativeStaffWhereInput
+}
+
+/**
+ * JoiningHistory.updated_by
+ */
+export type JoiningHistory$updated_byArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the User
+   */
+  select?: Prisma.UserSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the User
+   */
+  omit?: Prisma.UserOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UserInclude<ExtArgs> | null
+  where?: Prisma.UserWhereInput
+}
+
+/**
  * JoiningHistory.previous_institute_information
  */
 export type JoiningHistory$previous_institute_informationArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -2147,63 +2204,6 @@ export type JoiningHistory$referencesArgs<ExtArgs extends runtime.Types.Extensio
    */
   include?: Prisma.ReferenceInclude<ExtArgs> | null
   where?: Prisma.ReferenceWhereInput
-}
-
-/**
- * JoiningHistory.teacher
- */
-export type JoiningHistory$teacherArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the AcademicAdministrativeStaff
-   */
-  select?: Prisma.AcademicAdministrativeStaffSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the AcademicAdministrativeStaff
-   */
-  omit?: Prisma.AcademicAdministrativeStaffOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.AcademicAdministrativeStaffInclude<ExtArgs> | null
-  where?: Prisma.AcademicAdministrativeStaffWhereInput
-}
-
-/**
- * JoiningHistory.created_by
- */
-export type JoiningHistory$created_byArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the User
-   */
-  select?: Prisma.UserSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the User
-   */
-  omit?: Prisma.UserOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.UserInclude<ExtArgs> | null
-  where?: Prisma.UserWhereInput
-}
-
-/**
- * JoiningHistory.updated_by
- */
-export type JoiningHistory$updated_byArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the User
-   */
-  select?: Prisma.UserSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the User
-   */
-  omit?: Prisma.UserOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.UserInclude<ExtArgs> | null
-  where?: Prisma.UserWhereInput
 }
 
 /**

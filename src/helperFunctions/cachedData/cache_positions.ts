@@ -1,16 +1,33 @@
 import { prisma } from "../../lib/prisma.js";
-
-let cachePositions: string[] | null = null;
-
-export const getValidPositions = async():Promise<string[]>=>{
-    if(!cachePositions){
-        const positionsFromDB = await prisma.userPosition.findMany({select: {position_name: true}});
-        cachePositions = positionsFromDB.map((position)=> position.position_name);
-    }
-    return cachePositions
+interface ICachePosition{
+    id: string,
+    position_name: string
 }
 
-// if position update
-export const clearCachePositions = async():Promise<void>=>{
-    cachePositions = null;
+let cacheValidPositions: Promise<ICachePosition[]> | null = null;
+
+export const getValidPositions = async():Promise<ICachePosition[]> =>{
+    if(!cacheValidPositions){
+        cacheValidPositions=(async()=>{
+            try {
+                 return await prisma.userPosition.findMany({select: {id: true, position_name: true}});
+                
+            } catch (error) {
+                cacheValidPositions=null;
+                throw error
+            }
+        })()
+    }
+    return cacheValidPositions
+}
+
+// get position names
+export const getValidPositionNames = async()=>{
+    const positions = await getValidPositions();
+    return positions.map((position)=>position.position_name)
+}
+
+// if position update or new position create
+export const clearCachePositions = ():void=>{
+    cacheValidPositions = null;
 }

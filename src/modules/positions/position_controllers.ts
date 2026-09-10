@@ -4,15 +4,15 @@ import { AppError } from "../../utils/appError.js";
 import { StatusCodes } from "http-status-codes";
 import { positionServices } from "./position_services.js";
 import { sendResponse } from "../../utils/sendResponse.js";
-import { ICreatePosition } from "./position_interfaces.js";
+import { TPositionCreateZodSchema } from "./position_zod_validation.js";
 
 const createPosition = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
-    const payload: ICreatePosition = req.body;
-    const { position_name, role_name } = payload;
-    if (!position_name || !role_name || typeof position_name !== "string" || typeof role_name !== "string" || position_name.trim() === "" || role_name.trim() === "" ) {
-      throw new AppError("Invalid or missing field_values.", StatusCodes.BAD_REQUEST);
-    }
+    const payload: TPositionCreateZodSchema = req.body;
+    // const { position_name, role_name } = payload;
+    // if (!position_name || !role_name || typeof position_name !== "string" || typeof role_name !== "string" || position_name.trim() === "" || role_name.trim() === "" ) {
+    //   throw new AppError("Invalid or missing field_values.", StatusCodes.BAD_REQUEST);
+    // }
     const result = await positionServices.createPosition(payload);
     sendResponse(res, {
       success: true,

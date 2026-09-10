@@ -1,5 +1,5 @@
 model Reference {
-  id                 String  @id @default(uuid())
+  id                 String          @id @default(uuid())
   ref1_name          String?
   ref1_mobile_number String?
   ref1_occupation    String?
@@ -8,18 +8,14 @@ model Reference {
   ref2_mobile_number String?
   ref2_occupation    String?
   ref2_job_title     String?
-
-  joining_history_id String?                @unique
-  joining_history    JoiningHistory? @relation(fields: [joining_history_id], references: [id], onDelete: Cascade, onUpdate: Cascade)
-
-  created_by_id String?
-  created_by    User?   @relation("teacher_reference_created_by", fields: [created_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
-
-  updated_by_id String?
-  updated_by    User?   @relation("teacher_reference_updated_by", fields: [updated_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
-
-  created_at DateTime  @default(now())
-  updated_at DateTime? @updatedAt
+  joining_history_id String?         @unique
+  created_by_id      String?
+  updated_by_id      String?
+  created_at         DateTime        @default(now())
+  updated_at         DateTime?       @updatedAt
+  created_by         User?           @relation("teacher_reference_created_by", fields: [created_by_id], references: [id])
+  joining_history    JoiningHistory? @relation(fields: [joining_history_id], references: [id], onDelete: Cascade)
+  updated_by         User?           @relation("teacher_reference_updated_by", fields: [updated_by_id], references: [id])
 
   @@map("teacher_references")
 }

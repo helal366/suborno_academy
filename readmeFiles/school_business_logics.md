@@ -18,6 +18,7 @@
 * Each teacher will be able to see their own class routine.
 * Each GRADE and GROUP teacher will be able to see the specific class's class routine which class's GRADE TEACHER or GROUP TEACHER he/she is.
 * ADMIN and SUPER_ADMIN can see any class's class routine and any teacher's class routine.
+* HIFZ teacher can see the NURANI and NAZERA teachers' class routine with his own class routine.
 
 ## Hifz Nazera Class:
 *  Hifz and Nazera class separation depends on the students number. If the number of students is low then the authority will continue Hifz and Nazera in one class. But if number increase then the authority will separate the Hifz and Nazera class.

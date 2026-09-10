@@ -1,9 +1,12 @@
 import { StatusCodes } from "http-status-codes";
 import { prisma } from "../../lib/prisma.js";
 import { AppError } from "../../utils/appError.js";
+import { TRoleCreateZodSchema } from "./role_zod_validation.js";
 
-const createRole = async (role_name: string) => {
-  const clean_role_name = role_name.trim().toUpperCase();
+const createRole = async (payload: TRoleCreateZodSchema) => {
+  const clean_role_name = payload.role_name.toUpperCase();
+  
+try {
   const existingRole = await prisma.userRole.findUnique({
     where: {
       role_name: clean_role_name,
@@ -12,6 +15,11 @@ const createRole = async (role_name: string) => {
   if (existingRole) {
     throw new AppError("Role already exists", StatusCodes.CONFLICT);
   }
+} catch (e) {
+  console.dir(e, { depth: null });
+  throw e;
+}
+  
   const createdRole = await prisma.userRole.create({
     data: {
       role_name: clean_role_name,

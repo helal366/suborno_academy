@@ -1,5 +1,5 @@
 model PresentAddress {
-  id            String  @id @default(uuid())
+  id            String             @id @default(uuid())
   house_no      String?
   house_name    String?
   plot_no       String?
@@ -11,22 +11,17 @@ model PresentAddress {
   post_office   String?
   thana         String
   district      String
-  country       String  @default("Bangladesh")
-
-  user_id String? @unique
-  user    User?   @relation(fields: [user_id], references: [id], onDelete: Cascade, onUpdate: Cascade)
-
-  spouse_id String?            @unique
-  spouse    SpouseInformation? @relation(fields: [spouse_id], references: [spouse_id], onDelete: Cascade, onUpdate: Cascade)
-
+  country       String             @default("Bangladesh")
+  user_id       String?            @unique
+  spouse_id     String?            @unique
   created_by_id String?
-  created_by    User?   @relation("present_address_created_by", fields: [created_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
-
   updated_by_id String?
-  updated_by    User?   @relation("present_address_updated_by", fields: [updated_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
-
-  created_at DateTime  @default(now())
-  updated_at DateTime? @updatedAt
+  created_at    DateTime           @default(now())
+  updated_at    DateTime?          @updatedAt
+  created_by    User?              @relation("present_address_created_by", fields: [created_by_id], references: [id])
+  spouse        SpouseInformation? @relation(fields: [spouse_id], references: [spouse_id], onDelete: Cascade)
+  updated_by    User?              @relation("present_address_updated_by", fields: [updated_by_id], references: [id])
+  user          User?              @relation(fields: [user_id], references: [id], onDelete: Cascade)
 
   @@map("present_addresses")
 }

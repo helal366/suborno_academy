@@ -1,26 +1,20 @@
 model StudentResponsibility {
-  id                   String    @id @default(uuid())
-  responsibility_start DateTime  @default(now())
+  id                   String                       @id @default(uuid())
+  responsibility_start DateTime                     @default(now())
   responsibility_end   DateTime?
-
-  isActive         Boolean      @default(true)
-  academic_year_id String
-  academic_year    AcademicYear @relation(fields: [academic_year_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
-
-  teacher_id String?
-  teacher    AcademicAdministrativeStaff? @relation(fields: [teacher_id], references: [id], onDelete: Cascade, onUpdate: Cascade)
-
-  student_id String?
-  student    Student? @relation(fields: [student_id], references: [id], onDelete: Restrict, onUpdate: Cascade)
-
-  created_by_id String?
-  created_by    User?   @relation("student_responsibility_created_by", fields: [created_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
-
-  updated_by_id String?
-  updated_by    User?   @relation("student_responsibility_updated_by", fields: [updated_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
-
-  created_at DateTime  @default(now())
-  updated_at DateTime? @updatedAt
+  isActive             Boolean                      @default(true)
+  academic_year_id     String
+  teacher_id           String?
+  student_id           String?                      @unique(map: "student_single_active_responsibility_idx", where: raw("(\"isActive\" = true)"))
+  created_by_id        String?
+  updated_by_id        String?
+  created_at           DateTime                     @default(now())
+  updated_at           DateTime?                    @updatedAt
+  academic_year        AcademicYear                 @relation(fields: [academic_year_id], references: [id])
+  created_by           User?                        @relation("student_responsibility_created_by", fields: [created_by_id], references: [id])
+  student              Student?                     @relation(fields: [student_id], references: [id], onDelete: Restrict)
+  teacher              AcademicAdministrativeStaff? @relation(fields: [teacher_id], references: [id], onDelete: Cascade)
+  updated_by           User?                        @relation("student_responsibility_updated_by", fields: [updated_by_id], references: [id])
 
   @@map("students_responsibility")
 }

@@ -1,20 +1,15 @@
 model CulturalClub {
-  id            String @id @default(uuid())
-  cultural_name String
-
-  students Student[]
-
+  id                           String                   @id @default(uuid())
+  cultural_name                String
   extra_curriculum_activity_id String?
+  created_by_id                String?
+  updated_by_id                String?
+  created_at                   DateTime                 @default(now())
+  updated_at                   DateTime?                @updatedAt
+  created_by                   User?                    @relation("cultural_club_created_by", fields: [created_by_id], references: [id])
   extra_curriculum_activity    ExtraCurriculumActivity? @relation(fields: [extra_curriculum_activity_id], references: [id])
-
-  created_by_id String?
-  created_by    User?   @relation("cultural_club_created_by", fields: [created_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
-
-  updated_by_id String?
-  updated_by    User?   @relation("cultural_club_updated_by", fields: [updated_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
-
-  created_at DateTime  @default(now())
-  updated_at DateTime? @updatedAt
+  updated_by                   User?                    @relation("cultural_club_updated_by", fields: [updated_by_id], references: [id])
+  students                     Student[]                @relation("CulturalClubToStudent")
 
   @@map("cultural_club")
 }

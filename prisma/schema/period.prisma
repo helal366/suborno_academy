@@ -1,17 +1,13 @@
 model Period {
-  id          String @id @default(uuid())
-  period_name String
-
+  id                   String         @id @default(uuid())
+  period_name          String
+  created_by_id        String?
+  updated_by_id        String?
+  created_at           DateTime       @default(now())
+  updated_at           DateTime?      @updatedAt
   classes_from_routine ClassRoutine[]
-
-  created_by_id String?
-  created_by    User?   @relation("period_created_by", fields: [created_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
-
-  updated_by_id String?
-  updated_by    User?   @relation("period_updated_by", fields: [updated_by_id], references: [id], onDelete: SetNull, onUpdate: Cascade)
-
-  created_at DateTime  @default(now())
-  updated_at DateTime? @updatedAt
+  created_by           User?          @relation("period_created_by", fields: [created_by_id], references: [id])
+  updated_by           User?          @relation("period_updated_by", fields: [updated_by_id], references: [id])
 
   @@map("periods")
 }
