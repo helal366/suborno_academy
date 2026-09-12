@@ -16,7 +16,9 @@ pnpm add @prisma/client
 pnpm add -D prisma
 pnpm approve-builds
 pnpm add @prisma/adapter-pg
+pnpm add ws
 pnpm add -D @types/ws
+pnpm prisma init --output ../generated/prisma
 <!-- pnpm install -->
 pnpm add pg dotenv
 pnpm add  --save-dev @types/pg -D @types/dotenv
@@ -74,15 +76,6 @@ pnpm add  --save-dev @types/pg -D @types/dotenv
   "include": ["src/**/*", "prisma.config.ts"], // Include prisma.config.ts here
   "exclude": ["node_modules", "prisma/generated"] // Remove prisma.config.ts from here
 }
-```
-
-#### prisma 
-- then the following commands:
-
-```
-pnpm dlx prisma
-pnpm approve-builds
-pnpm dlx prisma init --output ../generated/prisma
 ```
 
 #### package installation with type dependencies:
