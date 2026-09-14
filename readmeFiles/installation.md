@@ -12,10 +12,10 @@ pnpm add typescript tsx @types/node --save-dev
 pnpm approve-builds
 <!-- pnpm install -->
 pnpm exec tsc --init
-pnpm add @prisma/client
-pnpm add -D prisma
+pnpm add -D prisma@7.8.0
+pnpm add @prisma/client@7.8.0
 pnpm approve-builds
-pnpm add @prisma/adapter-pg
+pnpm add @prisma/adapter-pg@7.8.0
 pnpm add ws
 pnpm add -D @types/ws
 pnpm prisma init --output ../generated/prisma

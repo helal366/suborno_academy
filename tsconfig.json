@@ -22,3 +22,4 @@
   "include": ["src/**/*", "prisma.config.ts"], // Include prisma.config.ts here
   "exclude": ["node_modules", "prisma/generated"] // Remove prisma.config.ts from here
 }
+
