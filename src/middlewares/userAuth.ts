@@ -6,6 +6,7 @@ import { sendResponse } from "../utils/sendResponse.js";
 import { StatusCodes } from "http-status-codes";
 import { prisma } from "../lib/prisma.js";
 import { AppError } from "../utils/appError.js";
+import type { JwtPayload } from "jsonwebtoken";
 
 declare global {
   namespace Express {
@@ -22,11 +23,22 @@ declare global {
 }
 export const userAuth = (...requiredRoles: string[]) => {
   return catchAsync(async (req: Request, res: Response, next: NextFunction) => {
-    const token = req.cookies.accessToken
-      ? req.cookies.accessToken
-      : req.headers.authorization?.startsWith("Bearer")
-        ? req.headers.authorization.split(" ")[1]
-        : req.headers.authorization;
+    const authorization = req.headers.authorization;
+    const token =
+      req.cookies?.accessToken ??
+      (authorization?.startsWith("Bearer ")
+        ? authorization.slice("Bearer ".length).trim()
+        : authorization);
+
+    if (!token) {
+      sendResponse(res, {
+        success: false,
+        message: "Authentication token is required",
+        statusCode: StatusCodes.UNAUTHORIZED,
+      });
+      return;
+    }
+
     const verifiedAccessToken = jwtTokens.verifyToken(
       token,
       envVars.JWT_ACCESS_SECRET,
@@ -40,10 +52,28 @@ export const userAuth = (...requiredRoles: string[]) => {
       return;
     }
 
-    if (
-      !verifiedAccessToken.data ||
-      typeof verifiedAccessToken.data === "string"
-    ) {
+    const payload = verifiedAccessToken.data;
+    const hasValidPayload = (
+      value: string | JwtPayload,
+    ): value is JwtPayload & {
+      user_id: string;
+      full_name: string;
+      role_name: string;
+      position_name?: string;
+      user_name: string;
+    } => {
+      return (
+        typeof value !== "string" &&
+        typeof value.user_id === "string" &&
+        typeof value.full_name === "string" &&
+        typeof value.role_name === "string" &&
+        typeof value.user_name === "string" &&
+        (value.position_name === undefined ||
+          typeof value.position_name === "string")
+      );
+    };
+
+    if (!payload || !hasValidPayload(payload)) {
       sendResponse(res, {
         success: false,
         message: "Invalid token payload",
@@ -51,18 +81,10 @@ export const userAuth = (...requiredRoles: string[]) => {
       });
       return;
     }
-    // if (!requiredRoles.length) {
-    //   sendResponse(res, {
-    //     success: false,
-    //     message: "The Role is not defined.",
-    //     statusCode: StatusCodes.FORBIDDEN,
-    //   });
-    //   return;
-    // }
-    const userRole = verifiedAccessToken.data.role_name;
-    const validRoles = (await prisma.userRole.findMany()).map(
-      (role) => role.role_name,
-    );
+
+    const validRoles = requiredRoles.length
+      ? (await prisma.userRole.findMany()).map((role) => role.role_name)
+      : [];
 
     const invalidRoles = requiredRoles.filter(
       (role) => !validRoles.includes(role),
@@ -77,25 +99,13 @@ export const userAuth = (...requiredRoles: string[]) => {
       });
       return;
     }
-    // console.log(validRoles)
-    if (requiredRoles.length > 0 && !validRoles.includes(userRole)) {
-      sendResponse(res, {
-        success: false,
-        message: "Credential Role is invalid",
-        statusCode: StatusCodes.FORBIDDEN,
-      });
-      return;
-    }
 
-    const { user_id, full_name, role_name, position_name, user_name } =
-      verifiedAccessToken.data;
-    // console.log(verifiedAccessToken);
     const user = await prisma.user.findUnique({
       where: {
-        id: user_id,
+        id: payload.user_id,
       },
-      omit: {
-        user_password: true,
+      include: {
+        position: true,
       },
     });
     if (!user) {
@@ -109,7 +119,28 @@ export const userAuth = (...requiredRoles: string[]) => {
       });
       return;
     }
-    req.user = { user_id, full_name, role_name, position_name, user_name };
+
+    if (
+      user.role_name !== payload.role_name ||
+      (requiredRoles.length > 0 &&
+        !requiredRoles.includes(user.role_name ?? ""))
+    ) {
+      sendResponse(res, {
+        success: false,
+        message: "You do not have permission to access this resource",
+        statusCode: StatusCodes.FORBIDDEN,
+      });
+      return;
+    }
+
+    req.user = {
+      user_id: user.id,
+      full_name: user.full_name,
+      role_name: user.role_name ?? payload.role_name,
+      position_name:
+        user.position?.position_name ?? payload.position_name ?? "",
+      user_name: user.user_name ?? payload.user_name,
+    };
     next();
   });
 };
